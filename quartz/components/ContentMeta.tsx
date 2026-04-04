@@ -1,15 +1,10 @@
-import { Date, getDate } from "./Date"
+import { formatDate } from "./Date"
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
-import readingTime from "reading-time"
 import { classNames } from "../util/lang"
-import { i18n } from "../i18n"
 import { JSX } from "preact"
 import style from "./styles/contentMeta.scss"
 
 interface ContentMetaOptions {
-  /**
-   * Whether to display reading time
-   */
   showReadingTime: boolean
   showComma: boolean
 }
@@ -20,36 +15,48 @@ const defaultOptions: ContentMetaOptions = {
 }
 
 export default ((opts?: Partial<ContentMetaOptions>) => {
-  // Merge options with defaults
   const options: ContentMetaOptions = { ...defaultOptions, ...opts }
 
   function ContentMetadata({ cfg, fileData, displayClass }: QuartzComponentProps) {
     const text = fileData.text
+    if (!text) return null
 
-    if (text) {
-      const segments: (string | JSX.Element)[] = []
+    const segments: (string | JSX.Element)[] = []
+    const dates = fileData.dates
 
-      if (fileData.dates) {
-        segments.push(<Date date={getDate(cfg, fileData)!} locale={cfg.locale} />)
-      }
-
-      // Display reading time if enabled
-      if (options.showReadingTime) {
-        const { minutes, words: _words } = readingTime(text)
-        const displayedTime = i18n(cfg.locale).components.contentMeta.readingTime({
-          minutes: Math.ceil(minutes),
-        })
-        segments.push(<span>{displayedTime}</span>)
-      }
-
-      return (
-        <p show-comma={options.showComma} class={classNames(displayClass, "content-meta")}>
-          {segments}
-        </p>
+    if (dates?.created) {
+      segments.push(
+        <span class="content-meta-date">
+          <span class="content-meta-label">Created </span>
+          <time datetime={dates.created.toISOString()}>
+            {formatDate(dates.created, cfg.locale)}
+          </time>
+        </span>,
       )
-    } else {
-      return null
     }
+
+    if (dates?.modified) {
+      // Only show modified if it differs from created by more than a minute
+      const diffMs = dates.created
+        ? Math.abs(dates.modified.getTime() - dates.created.getTime())
+        : Infinity
+      if (diffMs > 60_000) {
+        segments.push(
+          <span class="content-meta-date">
+            <span class="content-meta-label">Modified </span>
+            <time datetime={dates.modified.toISOString()}>
+              {formatDate(dates.modified, cfg.locale)}
+            </time>
+          </span>,
+        )
+      }
+    }
+
+    return (
+      <p show-comma={options.showComma} class={classNames(displayClass, "content-meta")}>
+        {segments}
+      </p>
+    )
   }
 
   ContentMetadata.css = style
