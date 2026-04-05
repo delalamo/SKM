@@ -6,10 +6,13 @@ tags:
 
 > [!info] Auto-generated
 > This page is generated automatically from notes tagged `inverse-folding/*`.
-> Re-run `generate_mocs.py` after adding or re-tagging notes to update it.
+> Add prose above the `
+
+<!-- generated -->
 
 ## Training
 
+- [[Ab-Ag inverse folding methods benefit from pretraining]]
 - [[Adding noise while training non-Ab inverse folding models improves self-consistency while worsening sequence recovery]]
 - [[Focused protein sequence libraries are poor training sets]]
 - [[Including structure prediction confidence while training inverse folding improves sequence diversity but not sequence recovery]]

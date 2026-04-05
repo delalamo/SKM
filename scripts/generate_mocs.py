@@ -12,7 +12,9 @@ via a modified TagList.tsx — no backlink blocks are written to notes.
 Usage:
     python3 generate_mocs.py
 
-MOC files are overwritten on every run. Safe to run repeatedly (idempotent).
+If a MOC file already exists and contains the marker <!-- generated -->, everything
+above the marker is preserved (hand-written prose) and only the content below is
+regenerated. If no marker is present, the full file is written from scratch.
 """
 
 import re
@@ -97,24 +99,17 @@ def subtag_to_section_title(subtag: str) -> str:
     return SUBTAG_TITLES.get(subtag, subtag.replace("-", " ").title())
 
 
+# Marker that separates hand-written prose (above) from generated content (below).
+GENERATED_MARKER = "<!-- generated -->"
+
+
 # ---------------------------------------------------------------------------
 # MOC generation
 # ---------------------------------------------------------------------------
 
-def generate_moc(root: str, subtag_map: dict[str, list[str]]) -> str:
-    moc_title = tag_root_to_title(root)
-    lines = [
-        "---",
-        f"title: {moc_title}",
-        "tags:",
-        f"  - {root}",
-        "---",
-        "",
-        "> [!info] Auto-generated",
-        f"> This page is generated automatically from notes tagged `{root}/*`.",
-        "> Re-run `generate_mocs.py` after adding or re-tagging notes to update it.",
-        "",
-    ]
+def generate_note_list(root: str, subtag_map: dict[str, list[str]]) -> str:
+    """Render only the generated note-list portion (below the marker)."""
+    lines: list[str] = []
     known   = [s for s in SUBTAG_TITLES if s in subtag_map]
     unknown = sorted(s for s in subtag_map if s not in SUBTAG_TITLES and s != "")
     ordered = known + unknown + ([""] if "" in subtag_map else [])
@@ -126,6 +121,38 @@ def generate_moc(root: str, subtag_map: dict[str, list[str]]) -> str:
             lines.append(f"- [[{title}]]")
         lines.append("")
     return "\n".join(lines)
+
+
+def build_moc_text(root: str, subtag_map: dict[str, list[str]],
+                   existing_path: Path) -> str:
+    """
+    If the existing MOC contains GENERATED_MARKER, preserve everything above it
+    and regenerate only the content below. Otherwise write a fresh file.
+    """
+    note_list = generate_note_list(root, subtag_map)
+
+    if existing_path.exists():
+        existing = existing_path.read_text(encoding="utf-8")
+        if GENERATED_MARKER in existing:
+            header = existing.split(GENERATED_MARKER)[0].rstrip("\n")
+            return f"{header}\n\n{GENERATED_MARKER}\n\n{note_list}"
+
+    # Fresh file — no existing prose to preserve
+    moc_title = tag_root_to_title(root)
+    header_lines = [
+        "---",
+        f"title: {moc_title}",
+        "tags:",
+        f"  - {root}",
+        "---",
+        "",
+        "> [!info] Auto-generated",
+        f"> This page is generated automatically from notes tagged `{root}/*`.",
+        "> Add prose above the `<!-- generated -->` marker to preserve it across regenerations.",
+        "",
+    ]
+    header = "\n".join(header_lines)
+    return f"{header}{GENERATED_MARKER}\n\n{note_list}"
 
 
 # ---------------------------------------------------------------------------
@@ -142,13 +169,12 @@ def main() -> None:
 
     for root, subtag_map in sorted(notes_by_tag.items()):
         moc_title = tag_root_to_title(root)
-        moc_text  = generate_moc(root, subtag_map)
         out_path  = MOCS_DIR / f"{moc_title}.md"
+        moc_text  = build_moc_text(root, subtag_map, out_path)
         out_path.write_text(moc_text, encoding="utf-8")
         total = sum(len(v) for v in subtag_map.values())
-        print(f"  {out_path.relative_to(Path(__file__).parent.parent)}  ({total} notes)")
-
-    print("\nDone.")
+        preserved = "prose preserved" if out_path.exists() and GENERATED_MARKER in moc_text else "fresh"
+        print(f"  {out_path.relative_to(REPO_ROOT)}  ({total} notes, {preserved})")
 
 
 if __name__ == "__main__":
