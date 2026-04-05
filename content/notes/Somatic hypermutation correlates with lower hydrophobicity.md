@@ -1,0 +1,15 @@
+---
+tags:
+  - antibodies/misc
+---
+#### Summary
+**[[Somatic hypermutation]] of [[Antibodies|antibodies]] correlates with lower [[Developability|hydrophobicity]]** (Shehata et al 2019[^shehata2019]).
+
+#### Figures
+![](/assets/Pasted-image-20240119163651.png)
+*Figure 2B from Shehata et al 2019[^shehata2019]*
+
+#### See also
+- [[Somatic hypermutation correlates with lower polyreactivity]]
+
+[^shehata2019]: Shehata et al. (2019) "Affinity Maturation Enhances Antibody Specificity but Compromises Conformational Stability." *Cell Reports*. https://doi.org/10.1016/j.celrep.2019.08.056

@@ -1,0 +1,12 @@
+---
+tags:
+  - antibodies/misc
+---
+#### Summary
+**[[Antibodies]] from different [[Immune repertoires|immune repertoires]] from the same species that target the same epitope often have the same [[Light chains|light chain isotype]]** (Shrock et al 2023[^shrock2023]). This was tested on disordered peptide truncates from common viral targets and is attributed to [[GRAB motifs]] in [[Germline|germline]] antibodies.
+
+#### Figures
+![](/assets/Observed-distribution.png)
+*Figure from Shrock et al 2023[^shrock2023]*
+
+[^shrock2023]: Shrock et al. (2023) "Germline-encoded amino acid–binding motifs drive immunodominant public antibody responses." *Science*. https://doi.org/10.1126/science.adc9498

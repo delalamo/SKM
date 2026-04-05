@@ -1,0 +1,17 @@
+---
+tags:
+  - protein-folding/misc
+---
+#### Summary
+**Sequence clustering of training data affects performance of [[Variant effect prediction|variant effect prediction]] by [[Protein language models|protein language models]]** (Meier et al 2022[^meier2022]). Clustering at 90% leads to the best performance when training [[ESM]] models.
+
+#### Figures
+![](/assets/Pasted-image-20241009102907.png)
+*Figure from Meier et al 2022[^meier2022]*
+
+#### See also
+- [[Correlation between sequence log-likelihood and variant effect prediction performance breaks down as PLMs get larger]]
+- [[BERT models trained on sequence clusters outperform those trained on all data]]
+- [[Alternate sequence clustering schemes outperform uniform sampling when training protein language models]]
+
+[^meier2022]: Meier et al. (2021) "Language models enable zero-shot prediction of the effects of mutations on protein function." https://doi.org/10.1101/2021.07.09.450648

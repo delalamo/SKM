@@ -1,0 +1,12 @@
+---
+title: Most proteins have a single folding route
+tags:
+  - protein-folding/misc
+---
+#### Summary
+ **Most proteins have a single folding route** (Lindorff-Larsen et al 2011[^lindorfflarsen2011]). This was determined using microsecond to millisecond long [[MD simulations]]. The exceptions were $\alpha$/$\beta$-proteins with three $\beta$-strands that folded in different orders.
+
+#### See also
+* [[High-stability substructures fold first]]
+
+[^lindorfflarsen2011]: Lindorff-Larsen et al. (2011) "How Fast-Folding Proteins Fold." *Science*. https://doi.org/10.1126/science.1208351

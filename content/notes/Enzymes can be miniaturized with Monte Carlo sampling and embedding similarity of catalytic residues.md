@@ -1,0 +1,9 @@
+---
+title: Enzymes can be miniaturized with Monte Carlo sampling and embedding similarity of catalytic residues
+tags:
+  - protein-design/misc
+---
+#### Summary
+ **Enzymes can be miniaturized with Monte Carlo sampling and [[Protein language models|protein language model]] per-residue embedding similarity at key catalytic residues** (Lála et al 2026[^lla2026]). This required a loss function for sequence length and for embedding similarity (cosine). No wet lab validation was carried out to see if the designs actually worked.
+
+[^lla2026]: Lála et al. (2026) "An Energy Landscape Approach to Miniaturizing Enzymes using Protein Language Model Embeddings." https://doi.org/10.64898/2026.03.04.709378

@@ -1,0 +1,9 @@
+---
+tags:
+  - protein-folding/misc
+---
+#### Summary
+**Gaussian processes can identify false positives.** Tonner et al 2022[^tonner2022] found, using a [[Gaussian processes|Gaussian process]]-based model, that the GFP data by Sarkisyan et al 2016[^sarkisyan2016] had false positives.
+
+[^tonner2022]: Tonner et al. (2022) "Interpretable modeling of genotype–phenotype landscapes with state-of-the-art predictive power." *Proceedings of the National Academy of Sciences*. https://doi.org/10.1073/pnas.2114021119
+[^sarkisyan2016]: Sarkisyan et al. (2016) "Local fitness landscape of the green fluorescent protein." *Nature*. https://doi.org/10.1038/nature17995

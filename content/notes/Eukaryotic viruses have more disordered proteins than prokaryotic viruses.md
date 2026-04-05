@@ -1,0 +1,12 @@
+---
+tags: [protein-folding/misc]
+---
+
+#### Summary
+**Viruses that infect eukaryotes have more [[Intrinsically disordered regions|disordered proteins]] than viruses that infect prokaryotes** (Lotthammer et al 2024[^lotthammer2024]).
+
+#### Figures
+![](/assets/Pasted-image-20241108065732.png)
+*Figure from Lotthammer et al 2024[^lotthammer2024]*
+
+[^lotthammer2024]: Lotthammer et al. (2024) "Metapredict enables accurate disorder prediction across the Tree of Life." https://doi.org/10.1101/2024.11.05.622168

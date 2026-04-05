@@ -1,19 +1,44 @@
 ---
-tags:
+tags: [protein-design/misc]
+---
+
+---
+summary: Training inverse folding methods exclusively on predicted models worsense performance relative to including experimental structures
+tags: 
   - inverse-folding/training
 ---
 #### Summary
-**Training machine learning models for either [[Inverse folding|inverse folding]] or [[Protein backbone design|protein backbone design]] via [[Diffusion models|diffusion]] exclusively on predicted models worsens performance** (Hsu et al 2022[^hsu2022], Su et al 2023[^su2023]). This was observed when training [[ESM-IF]] and [[Geometric Vector Perceptrons|GVP]] as well as when training using the [[Evoformer]] or the [[Hybrid sequence-structure models|hybrid sequence-structure method]] MIF-ST, but not [[SaProt]] (which uses tokens from the [[Foldseek]] alphabet). This was shown to be because predicted models are "too perfect" at a local level (Tan et al 2025[^tan2025]).
+**Training machine learning models for either [[Inverse folding|inverse folding]] or [[Protein backbone design|protein backbone design]] via [[Diffusion models|diffusion]] exclusively on predicted models worsens performance** (Hsu et al 2022[^hsu2022], Su et al 2023[^su2023]). This was observed when training [[ESM-IF]] and [[Geometric Vector Perceptrons|GVP]] as well as when training using the (Evoformer) or the [[Hybrid sequence-structure models|hybrid sequence-structure method]] MIF-ST, but not (SaProt) (which uses tokens from the (Foldseek) alphabet). The latter study also looked at downstream performance and saw worse results. This was shown to be because predicted models are "too perfect" at a local level (Tan et al 2025[^tan2025]).
 
 #### Details
 Huguet et al 2024[^huguet2024] found that training their diffusion model on both predicted models and experimental structures worsened designability and novelty relative to a model trained on experimental structures only.
 
-Lin et al 2023a[^lin2023] trained a version of the [[Protein backbone design|backbone]] [[Diffusion models|diffusion model]] GENIE on [[AlphaFold|AlphaFold2]] models from SwissProt and found that although designability increased was greater than a model trained on the PDB, diversity was lower.
+Lin et al 2023a[^lin2023] trained a version of the [[Protein backbone design|backbone]] [[Diffusion models|diffusion model]] GENIE on (AlphaFold2) models from SwissProt and found that although designability increased was greater than a model trained on the PDB, diversity was lower.
+
+#### Figures
+
+|                 | Exp only | AF2+Exp | AF2 only |
+| --------------- | -------- | ------- | -------- |
+| GVP-GNN         | 5.43     | 6.06    | 6.52     |
+| GVP-GNN-Large   | 6.17     | 4.08    | 11.51    |
+| GVP-Transformer | 6.44     | 4.01    | 10.95    |
+
+*Table from Hsu et al 2022[^hsu2022]*
+
+![](/assets/Pasted-Graphic-4-1.png)
+*Figure from Su et al 2023[^su2023]*
+
+![](/assets/bafkreiawfxhyqc4grpfhhgjsyezzahtsrehsxzughw6vmpsuw2tqsazz64@jpeg.jpg)
+![](/assets/Pasted-image-20250722113536.png)
+*Figures from Tan et al 2025[^tan2025]*
 
 #### See also
-- [[Inverse folding models trained on all proteins outperform those trained on Abs for CDR prediction]]
-- [[Adding noise while training non-Ab inverse folding models improves self-consistency while worsening sequence recovery]]
-- [[Focused protein sequence libraries are poor training sets]]
+* [[Inverse folding models trained on all proteins outperform those trained on Abs for CDR prediction]]
+* [[Adding noise while training non-Ab inverse folding models improves self-consistency while worsenine sequence recovery]]
+* [[Focused protein sequence libraries are poor training sets]]
+* [[Computational models are less designable than experimental structures]]
+
+21 March 2026: https://biomlzk.ghost.io/training-protein-structure-based-neural-networks-exclusively-on-predicted-protein-structures-worsens-performance-on-experimental-structures-due-to-how-locally-perfect-the-training-data-/
 
 [^hsu2022]: Hsu et al. (2022) "Learning inverse folding from millions of predicted structures." https://doi.org/10.1101/2022.04.10.487779
 [^su2023]: Su et al. (2023) "SaProt: Protein Language Modeling with Structure-aware Vocabulary." https://doi.org/10.1101/2023.10.01.560349

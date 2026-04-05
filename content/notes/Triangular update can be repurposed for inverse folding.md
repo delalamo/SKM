@@ -1,3 +1,7 @@
+---
+tags: [protein-design/misc]
+---
+
 #### Summary
 **The [[Triangular update|triangular update]] can be repurposed for [[Inverse folding|inverse folding]]** (Ren et al 2024[^ren2024]).
 

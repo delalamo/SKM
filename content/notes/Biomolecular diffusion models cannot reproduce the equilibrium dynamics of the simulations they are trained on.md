@@ -1,0 +1,17 @@
+---
+tags:
+  - protein-folding/misc
+---
+
+#### Summary
+
+**Biomolecular diffusion models cannot reproduce the equilibrium dynamics of the simulations they are trained on** (Plainer et al 2025[^plainer2025]), and do not always recover the ground states (Sarma et al 2025[^sarma2025]). This is due to undersampling at low-$t$ to avoid exploding errors resulting from low variance. A workaround is to use Fokker-Planck regularization during training.
+
+#### Figures
+
+![](/assets/Pasted-image-20251114122946.png)
+
+*Figure from Plainer et al 2025[^plainer2025]*
+
+[^plainer2025]: Plainer et al. (2025) "Consistent Sampling and Simulation: Molecular Dynamics with Energy-Based Diffusion Models." https://doi.org/10.48550/ARXIV.2506.17139
+[^sarma2025]: Sarma et al. (2025) "Can We Extract Physics-like Energies from Generative Protein Diffusion Models?." https://doi.org/10.1101/2025.11.28.690021

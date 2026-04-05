@@ -1,0 +1,12 @@
+---
+tags: [protein-folding/misc]
+---
+
+#### Summary
+**The backbone geometry of valine and isoleucine can be detected by [[Inverse folding|inverse folding]] methods without sequence context** (Dutton et al 2024[^dutton2024]).
+
+#### Figures
+![](/assets/Pasted-image-20240618132444.png)
+*Figure from Dutton et al 2024[^dutton2024]*
+
+[^dutton2024]: Dutton et al. (2024) "Improving Inverse Folding models at Protein Stability Prediction without additional Training or Data." https://doi.org/10.1101/2024.06.15.599145

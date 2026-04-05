@@ -1,0 +1,13 @@
+---
+title: Protein thermophilicity has evolved multiple times
+tags:
+  - protein-folding/misc
+---
+#### Summary
+ **Changes in protein [[Stability and thermostability|thermostability]] occur frequently over long evolutionary timescales, and related proteins can show drastic differences in thermostability** (Muir et al 2024[^muir2024]).
+
+#### Figures
+![](/assets/Median-Growth-Temperature-(C).png)
+*Figure from Muir et al 2024[^muir2024]*
+
+[^muir2024]: Muir et al. (2024) "Evolutionary-Scale Enzymology Enables Biochemical Constant Prediction Across a Multi-Peaked Catalytic Landscape." https://doi.org/10.1101/2024.10.23.619915

@@ -1,12 +1,36 @@
 ---
-title: Inverse Folding
+title: Inverse folding
 tags:
   - inverse-folding
 ---
 
-> [!info] Auto-generated
-> This page is generated automatically from notes tagged `inverse-folding/*`.
-> Add prose above the `
+**Inverse folding** describes the problem of designing a sequence for a structure. Typically these are limited to the twenty canonical amino acids.
+
+## Methods
+
+*See [[Hybrid sequence-structure models]] for a list of methods that incorporate [[Protein language models|PLMs]]*
+* **[[ProteinMPNN]]** and its derivatives
+* **[[ESM-IF]]**
+* **GearNet**
+* **Frame2seq**
+* **[[Geometric Vector Perceptrons|GVP-GNN]]**
+
+## Notes
+#### Training
+
+* **Training inverse folding models with backbone dihedral angles as features usually improved sequence recovery** ([[sTYuRVrdK3|Jamasb et al 2023]]).
+	![](/assets/Pasted-image-20240117115655.png)
+	*Figure from [[sTYuRVrdK3|Jamasb et al 2023]]*
+
+#### Execution
+
+* **Forward-folding is a stronger predictor of inverse folding success than sequence recovery** ([[10.48550__arXiv.2312.02447|Yang et al 2023b]], citing [[10.1038__s41586-023-06415-8|Watson et al 2023]] and [[10.1126__science.add2187|Dauparas et al 2022]]).
+
+#### Datasets
+
+* **PDBench** is a dataset of 595 protein structures with diverse, evenly divided topologies for benchmarking of [[Inverse folding]] methods ([[10.1093__bioinformatics__btad027|Castorina et al 2023]]).
+	![](/assets/Alpha-Beta-Barre.png)
+	*Figure 2 from [[10.1093__bioinformatics__btad027|Castorina et al 2023]]*
 
 <!-- generated -->
 
@@ -14,21 +38,10 @@ tags:
 
 - [[Ab-Ag inverse folding methods benefit from pretraining]]
 - [[Adding noise while training non-Ab inverse folding models improves self-consistency while worsening sequence recovery]]
-- [[Focused protein sequence libraries are poor training sets]]
-- [[Including structure prediction confidence while training inverse folding improves sequence diversity but not sequence recovery]]
-- [[Training inverse folding and diffusion models exclusively on predicted protein structures worsens performance due to how locally perfect they are]]
-
-## Execution
-
-- [[Inverse folding from MD simulations]]
-- [[Inverse folding generalizes to unseen structures better than PLMs]]
-- [[Running inverse folding in a random order leads to greater sequence recovery than running in a fixed-order]]
-- [[Sequence recovery in inverse folding models is not correlated with self-consistency of generated designs]]
 
 ## Antibodies
 
 - [[Ab finetuning improves naturalness of inverse folding designs]]
-- [[Inverse folding models trained on all proteins outperform those trained on Abs for CDR prediction]]
 
 ## Miscellaneous
 
