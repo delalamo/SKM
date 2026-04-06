@@ -2,17 +2,17 @@
 tags:
   - protein-folding/misc
 created: "2024-11-04T22:55:26"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Quality metrics based on protein sequence and structure largely do not correlate with each other** (Johnson et al 2024[^johnson2024]). In contrast, correlation within groups was observed, for example [[ProteinMPNN]] to [[ESM-IF]]. Moreover, none of them except [[MSA Transformer]] probabilities correlate with percent sequence identity to naturally occurring sequences.
+**Quality metrics based on protein sequence and structure largely do not correlate with each other** [^johnson2024]. In contrast, correlation within groups was observed, for example [[ProteinMPNN]] to [[ESM-IF]]. Moreover, none of them except [[MSA Transformer]] probabilities correlate with percent sequence identity to naturally occurring sequences.
 
 #### Figures
 
 ![](/assets/0.33-0.41-0.15-0.31-0.16.png)
-*Figure 2B from Johnson et al 2024[^johnson2024]*
+*Figure 2B from [^johnson2024]*
 
 #### See also
 

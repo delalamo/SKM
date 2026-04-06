@@ -2,17 +2,17 @@
 tags:
   - protein-folding/misc
 created: "2024-11-14T03:05:00"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Distance between mean-pooled [[Protein language models|PLM]] embeddings does not correlate with structural difference** (Pantolini et al 2022[^pantolini2022]). That said, PLMs do learn structural homology that is non-obvious from sequence on some level (Kilinc et al 2023[^kilinc2023] and Rives et al 2021[^rives2021]).
+**Distance between mean-pooled [[Protein language models|PLM]] embeddings does not correlate with structural difference** [^pantolini2022]. That said, PLMs do learn structural homology that is non-obvious from sequence on some level ([^kilinc2023] and [^rives2021]).
 
 #### Figures
 ![](/assets/Pasted-Graphic-6.png)
 
-*Figure 3 from Pantolini et al 2022[^pantolini2022]; AD=average distance*
+*Figure 3 from [^pantolini2022]; AD=average distance*
 
 #### See also
 * [[Distance between PLM representations of two proteins correlates with functional dissimilarity]]

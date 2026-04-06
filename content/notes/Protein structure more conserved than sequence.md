@@ -2,24 +2,24 @@
 tags:
   - protein-folding/misc
 created: "2024-07-02T08:01:41"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Protein structure is more conserved than sequence.** Many proteins have similar structures but barely any sequence overlap (Kilinc et al 2023[^kilinc2023], Illergård et al 2009[^illergrd2009], Chothia & Lesk 1986[^chothia1986], del Alamo et al 2022a[^del2022]). As a result, [[Clustering|clustering]] proteins using their structures is more effective than clustering by using their sequence (Moi et al 2023[^moi2023]). Likewise, calculating phylogenies is more accurate using structure than sequence - Moi et al 2023[^moi2023] used [[AlphaFold|AlphaFold2]] models alongside [[Foldseek]] to do so.
+**Protein structure is more conserved than sequence.** Many proteins have similar structures but barely any sequence overlap [^kilinc2023][^illergrd2009][^chothia1986][^del2022]. As a result, [[Clustering|clustering]] proteins using their structures is more effective than clustering by using their sequence [^moi2023]. Likewise, calculating phylogenies is more accurate using structure than sequence - [^moi2023] used [[AlphaFold|AlphaFold2]] models alongside [[Foldseek]] to do so.
 
 #### Details
 
-A specific example was highlighted by Huang et al 2023[^huang2023], which used qualitative/anecdotal observations, such as seeing that the adenosine deaminases were split into multiple groups using sequence clustering but not when using structure clustering.
+A specific example was highlighted by [^huang2023], which used qualitative/anecdotal observations, such as seeing that the adenosine deaminases were split into multiple groups using sequence clustering but not when using structure clustering.
 
 #### Figures
 
 ![](/assets/Structure-more-conserved-than-sequence.png)
-*Figure from Chothia & Lesk 1986[^chothia1986]*
+*Figure from [^chothia1986]*
 
 ![](/assets/Structure-based-phylogenies.png)
-*Figure from Moi et al 2023[^moi2023]*
+*Figure from [^moi2023]*
 
 #### See also
 

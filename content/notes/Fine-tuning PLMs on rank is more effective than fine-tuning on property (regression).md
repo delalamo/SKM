@@ -1,6 +1,6 @@
 #### Summary
 
-**Fine-tuning [[Protein language models]] using rank information is more effective than fine-tuning using absolute property measurements (regression;** Hawkins-Hooker et al 2024[^hawkinshooker2024]). It also converts a dataset of $N$ sequences to $N^{2}$ pairwise comparisons, while generalizing better to unseen positions.
+**Fine-tuning [[Protein language models]] using rank information is more effective than fine-tuning using absolute property measurements (regression;** [^hawkinshooker2024]). It also converts a dataset of $N$ sequences to $N^{2}$ pairwise comparisons, while generalizing better to unseen positions.
 
 #### Figures
 | Model Name | Scoring Function | Loss | single n=32 | single n=128 | single n=512 | multi n=32 | multi n=128 | multi n=512 |
@@ -30,7 +30,7 @@
 | PNPT (MSAT) | - | mse | 0.563 | 0.462 |
 | PNPT (ESM-1v) | - | mse | 0.529 | 0.420 |
 
-*Tables from Hawkins-Hooker et al 2024[^hawkinshooker2024]*
+*Tables from [^hawkinshooker2024]*
 
 #### See also
 * [[Fine-tuning almost always improves property prediction]]

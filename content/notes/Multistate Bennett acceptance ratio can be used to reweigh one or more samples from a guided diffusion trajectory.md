@@ -2,16 +2,16 @@
 tags:
   - protein-design/misc
 created: "2026-03-11T09:23:58"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Multistate Bennett acceptance ratio can be used to reweight one or more weighted samples from a [[Guidance sampling of all-atom diffusion|guided]] [[Diffusion models|diffusion]] trajectory** (Xie et al 2026[^xie2026]). It does not work unless the samples are pre-weighted; Xie et al 2026[^xie2026] use the steering importance weights from Feynman-Kac guidance.
+**Multistate Bennett acceptance ratio can be used to reweight one or more weighted samples from a [[Guidance sampling of all-atom diffusion|guided]] [[Diffusion models|diffusion]] trajectory** [^xie2026]. It does not work unless the samples are pre-weighted; [^xie2026] use the steering importance weights from Feynman-Kac guidance.
 
 #### Details
 
-Originally presented by Shirts & Chodera 2008[^shirts2008].
+Originally presented by [^shirts2008].
 
 Given $K$ states, each with a potential energy function $u_k$, and $N_k$​ samples drawn from state $k$, MBAR finds the free energies $f_k$​ that satisfy the self-consistent equations:
 

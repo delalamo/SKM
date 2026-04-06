@@ -2,14 +2,14 @@
 tags:
   - protein-design/misc
 created: "2026-03-26T21:46:54"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
- **Larger [[Protein language models|protein language models]] generate more novel protein sequences from sparsely populated families** (Bhatnagar et al 2025[^bhatnagar2025]). These sequences are also slightly more likely to express, although the effect isn't huge. These results were observed using [[ProGen|ProGen3]]. 
+ **Larger [[Protein language models|protein language models]] generate more novel protein sequences from sparsely populated families** [^bhatnagar2025]. These sequences are also slightly more likely to express, although the effect isn't huge. These results were observed using [[ProGen|ProGen3]]. 
 
 #### Figures
 ![](/assets/Pasted-Graphic-1-3.png)
-*Figure from Bhatnagar et al 2025[^bhatnagar2025]*
+*Figure from [^bhatnagar2025]*
 
 #### See also
 * [[Sequence-only protein language models implicitly cluster proteins at fineness levels that increase with size]]

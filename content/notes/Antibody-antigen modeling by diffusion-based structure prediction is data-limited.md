@@ -2,12 +2,12 @@
 tags:
   - antibodies/misc
 created: "2026-04-05T17:25:38"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**[[Antibody-antigen interactions|Antibody-antigen]] [[Structure prediction|complex prediction]] by [[Diffusion models|diffusion]]-based [[Structure prediction|structure prediction]] methods is data-limited** (Zhang et al 2026[^zhang2026]). This is not true of other poor-performing tasks, such as small molecule docking. This was observed using a version of Protenix trained on four additional years of public data.
+**[[Antibody-antigen interactions|Antibody-antigen]] [[Structure prediction|complex prediction]] by [[Diffusion models|diffusion]]-based [[Structure prediction|structure prediction]] methods is data-limited** [^zhang2026]. This is not true of other poor-performing tasks, such as small molecule docking. This was observed using a version of Protenix trained on four additional years of public data.
 
 #### Figures
 
@@ -20,7 +20,7 @@ modified: "2026-04-05T23:14:54"
 | Protenix-v1 | 24.11 | 0.2488 |
 | Protenix-v1-20250630 | **39.49** | **0.3574** |
 
-*Figure from Zhang et al 2026[^zhang2026]*
+*Figure from [^zhang2026]*
 
 #### Publication history
 

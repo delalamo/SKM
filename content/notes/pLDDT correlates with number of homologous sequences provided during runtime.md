@@ -2,18 +2,18 @@
 tags:
   - protein-folding/misc
 created: "2024-08-06T11:30:37"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**[[pLDDT]] of structures predicted by [[AlphaFold|AlphaFold2]] correlate with the number of sequences provided for inference during runtime** (Avasthi & York 2024[^avasthi2024]).
+**[[pLDDT]] of structures predicted by [[AlphaFold|AlphaFold2]] correlate with the number of sequences provided for inference during runtime** [^avasthi2024].
 
 #### Figures
 
 ![](/assets/Pasted-image-20240806172937.png)
 
-*Figure from Avasthi & York 2024[^avasthi2024]*
+*Figure from [^avasthi2024]*
 
 #### See also
 

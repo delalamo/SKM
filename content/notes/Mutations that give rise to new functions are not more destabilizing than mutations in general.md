@@ -1,12 +1,12 @@
 ---
 tags: protein-design/misc
 created: "2024-11-14T02:47:10"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Mutations that give rise to new functions are not more destabilizing than mutations in general.** About 70% of mutations are destabilizing, and >20% of mutations are very destabilizing. In enzymes, mutations that give rise to new functions are equally destabilizing suggesting that there is nothing inherently destabilizing about the introduction of new functions (Tokuriki et al 2008[^tokuriki2008]).
+**Mutations that give rise to new functions are not more destabilizing than mutations in general.** About 70% of mutations are destabilizing, and >20% of mutations are very destabilizing. In enzymes, mutations that give rise to new functions are equally destabilizing suggesting that there is nothing inherently destabilizing about the introduction of new functions [^tokuriki2008].
 
 #### See also
 

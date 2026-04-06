@@ -2,12 +2,12 @@
 tags:
   - protein-design/misc
 created: "2026-03-06T09:43:56"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Protein [[Structure prediction|structure prediction]] and design metrics ([[pLDDT]], perplexity, sequence homology) do not correlate with probability of expression** (Yang et al 2025[^yang2025]).
+**Protein [[Structure prediction|structure prediction]] and design metrics ([[pLDDT]], perplexity, sequence homology) do not correlate with probability of expression** [^yang2025].
 
 #### Figures
 

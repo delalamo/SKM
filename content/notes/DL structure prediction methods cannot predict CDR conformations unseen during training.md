@@ -2,12 +2,12 @@
 tags:
   - antibodies/misc
 created: "2024-04-25T00:43:05"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-Greenshields-Watson et al 2023[^greenshieldswatson2023] found that training ImmuneBuilder on an ablated training set with missing CDR conformations led to an inability to predict those conformations.
+[^greenshieldswatson2023] found that training ImmuneBuilder on an ablated training set with missing CDR conformations led to an inability to predict those conformations.
 
 #### See also
 

@@ -2,10 +2,10 @@
 tags:
   - antibodies/misc
 created: "2024-09-19T05:32:41"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-**Conformational rigidity in [[Complementarity-determining regions|CDRH3]] reduces [[Developability|polyreactivity]]** (Fernandez-Quintero et al 2020[^fernandezquintero2020]).
+**Conformational rigidity in [[Complementarity-determining regions|CDRH3]] reduces [[Developability|polyreactivity]]** [^fernandezquintero2020].
 
 #### See also
 - [[Conformational entropy in antibodies is inversely proportional to antigen affinity]]

@@ -1,38 +1,38 @@
 ---
 tags: [protein-design/misc]
 created: "2026-03-21T17:43:50"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 ---
 summary: Training inverse folding methods exclusively on predicted models worsense performance relative to including experimental structures
 tags: 
-  - inverse-folding/training
+ - inverse-folding/training
 ---
 #### Summary
-**Training machine learning models for either [[Inverse folding|inverse folding]] or [[Protein backbone design|protein backbone design]] via [[Diffusion models|diffusion]] exclusively on predicted models worsens performance** (Hsu et al 2022[^hsu2022], Su et al 2023[^su2023]). This was observed when training [[ESM-IF]] and [[Geometric Vector Perceptrons|GVP]] as well as when training using the (Evoformer) or the [[Hybrid sequence-structure models|hybrid sequence-structure method]] MIF-ST, but not (SaProt) (which uses tokens from the (Foldseek) alphabet). The latter study also looked at downstream performance and saw worse results. This was shown to be because predicted models are "too perfect" at a local level (Tan et al 2025[^tan2025]).
+**Training machine learning models for either [[Inverse folding|inverse folding]] or [[Protein backbone design|protein backbone design]] via [[Diffusion models|diffusion]] exclusively on predicted models worsens performance** [^hsu2022][^su2023]. This was observed when training [[ESM-IF]] and [[Geometric Vector Perceptrons|GVP]] as well as when training using the (Evoformer) or the [[Hybrid sequence-structure models|hybrid sequence-structure method]] MIF-ST, but not (SaProt) (which uses tokens from the (Foldseek) alphabet). The latter study also looked at downstream performance and saw worse results. This was shown to be because predicted models are "too perfect" at a local level [^tan2025].
 
 #### Details
-Huguet et al 2024[^huguet2024] found that training their diffusion model on both predicted models and experimental structures worsened designability and novelty relative to a model trained on experimental structures only.
+[^huguet2024] found that training their diffusion model on both predicted models and experimental structures worsened designability and novelty relative to a model trained on experimental structures only.
 
-Lin et al 2023a[^lin2023] trained a version of the [[Protein backbone design|backbone]] [[Diffusion models|diffusion model]] GENIE on (AlphaFold2) models from SwissProt and found that although designability increased was greater than a model trained on the PDB, diversity was lower.
+[^lin2023] trained a version of the [[Protein backbone design|backbone]] [[Diffusion models|diffusion model]] GENIE on (AlphaFold2) models from SwissProt and found that although designability increased was greater than a model trained on the PDB, diversity was lower.
 
 #### Figures
 
-|                 | Exp only | AF2+Exp | AF2 only |
+| | Exp only | AF2+Exp | AF2 only |
 | --------------- | -------- | ------- | -------- |
-| GVP-GNN         | 5.43     | 6.06    | 6.52     |
-| GVP-GNN-Large   | 6.17     | 4.08    | 11.51    |
-| GVP-Transformer | 6.44     | 4.01    | 10.95    |
+| GVP-GNN | 5.43 | 6.06 | 6.52 |
+| GVP-GNN-Large | 6.17 | 4.08 | 11.51 |
+| GVP-Transformer | 6.44 | 4.01 | 10.95 |
 
-*Table from Hsu et al 2022[^hsu2022]*
+*Table from [^hsu2022]*
 
 ![](/assets/Pasted-Graphic-4-1.png)
-*Figure from Su et al 2023[^su2023]*
+*Figure from [^su2023]*
 
 ![](/assets/bafkreiawfxhyqc4grpfhhgjsyezzahtsrehsxzughw6vmpsuw2tqsazz64@jpeg.jpg)
 ![](/assets/Pasted-image-20250722113536.png)
-*Figures from Tan et al 2025[^tan2025]*
+*Figures from [^tan2025]*
 
 #### See also
 * [[Inverse folding models trained on all proteins outperform those trained on Abs for CDR prediction]]

@@ -2,21 +2,21 @@
 tags:
   - protein-folding/misc
 created: "2026-01-22T12:38:44"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Fine-tuning [[Protein language models|PLMs]] [[ESM]]2, ProtT5, and Ankh virtually always improved property prediction** ([[Variant effect prediction|variant effect prediction]], [[Stability and thermostability|stability]] prediction, [[Function prediction|function prediction]], others) **compared to zero-shot** (Schmirler et al 2023[^schmirler2023]). Jiang et al 2024[^jiang2024] found that active learning for [[Directed evolution|directed evolution]] benefited from fine-tuning over zero-shot prediction after two to four rounds (fine-tuning carried out using a [[Random forest|random forest]] model trained on mean-pooled embeddings).
+**Fine-tuning [[Protein language models|PLMs]] [[ESM]]2, ProtT5, and Ankh virtually always improved property prediction** ([[Variant effect prediction|variant effect prediction]], [[Stability and thermostability|stability]] prediction, [[Function prediction|function prediction]], others) **compared to zero-shot** [^schmirler2023]. [^jiang2024] found that active learning for [[Directed evolution|directed evolution]] benefited from fine-tuning over zero-shot prediction after two to four rounds (fine-tuning carried out using a [[Random forest|random forest]] model trained on mean-pooled embeddings).
 
 #### Figures
 ![](/assets/Pasted-image-20240102175550.png)
 
-*Figure 1 from Schmirler et al 2023[^schmirler2023]*
+*Figure 1 from [^schmirler2023]*
 
 ![](/assets/Pasted-image-20240722093551.png)
 
-*Figure from Jiang et al 2024[^jiang2024]*
+*Figure from [^jiang2024]*
 
 #### See also
 * [[Protein property prediction using PLMs does not benefit from scale except when predicting inferring features of either structural or sparsely populated sequence families]]

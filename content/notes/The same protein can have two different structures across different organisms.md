@@ -2,18 +2,18 @@
 tags:
   - protein-folding/misc
 created: "2024-05-01T07:11:29"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**A ribosomal protein in two different organisms adopts different folds; these have 41% sequence identity** (Schierholz et al 2023[^schierholz2023]).
+**A ribosomal protein in two different organisms adopts different folds; these have 41% sequence identity** [^schierholz2023].
 
 #### Figures
 
 ![](/assets/Multiple-structures-same-protein-different-species.png)
 
-*Figure from Schierholz et al 2023[^schierholz2023]*
+*Figure from [^schierholz2023]*
 
 #### See also
 

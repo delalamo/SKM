@@ -2,14 +2,14 @@
 tags:
   - antibodies/misc
 created: "2026-03-16T11:51:30"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-**The [[Complementarity-determining regions#CDRH3|CDRH3]] loops of [[Nanobodies|nanobodies]] are 3-4 residues longer on average, but more compact, than those of [[Antibodies|antibodies]]** (Gordon et al 2023[^gordon2023], Bahrami Dizicheh et al 2023[^bahrami2023]).
+**The [[Complementarity-determining regions#CDRH3|CDRH3]] loops of [[Nanobodies|nanobodies]] are 3-4 residues longer on average, but more compact, than those of [[Antibodies|antibodies]]** ([^gordon2023], Bahrami [^bahrami2023]).
 
 #### Figures
 ![](/assets/Nanobodies-CDRH3-compactness.png)
-*Figure from Gordon et al 2023[^gordon2023]*
+*Figure from [^gordon2023]*
 
 #### See also
 - [[Loops from one V-region chain affect the conformations and dynamics of loops in the other chain]]

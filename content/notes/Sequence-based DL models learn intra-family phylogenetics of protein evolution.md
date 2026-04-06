@@ -3,18 +3,18 @@ title: Sequence-based DL models learn intra-family phylogenetics of protein evol
 tags:
   - protein-folding/misc
 created: "2024-07-02T05:24:12"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
- **DL models for protein sequences (including [[Protein language models|PLMs]]) learn the phylogenetics of protein evolution.** Detlefsen et al 2022[^detlefsen2022] showed this in the 2D latent space of protein family-specific [[Variational autoencoders]] (below); whereas Hie et al 2022[^hie2022] showed how repurposing [[Sequence perplexity|perplexity]] as velocities within a manifold of sequence embedding space from [[ESM]]-1b recapitulated evolutionary trajectories of viral and eukaryotic proteins
+ **DL models for protein sequences (including [[Protein language models|PLMs]]) learn the phylogenetics of protein evolution.** [^detlefsen2022] showed this in the 2D latent space of protein family-specific [[Variational autoencoders]] (below); whereas [^hie2022] showed how repurposing [[Sequence perplexity|perplexity]] as velocities within a manifold of sequence embedding space from [[ESM]]-1b recapitulated evolutionary trajectories of viral and eukaryotic proteins
 
 #### Figures
 ![](/assets/TSNE-phylogeny-overlap.png)
 ![](/assets/TSNE-phylogeny-overlap-2.png)
-*Figures from Detlefsen et al 2022[^detlefsen2022]*
+*Figures from [^detlefsen2022]*
 
 ![](/assets/Pasted-image-20240430135746.png)
-*Figure from Hie et al 2022[^hie2022]*
+*Figure from [^hie2022]*
 
 #### See also
 * [[PLMs are biased by uneven distribution of sequence data in datasets such as UniRef and UniProt]]

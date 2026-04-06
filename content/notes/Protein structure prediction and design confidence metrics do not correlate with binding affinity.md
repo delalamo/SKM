@@ -2,17 +2,17 @@
 tags:
   - protein-design/misc
 created: "2026-03-06T11:07:36"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Confidence metrics from structural modeling and design neural networks, namely [[pLDDT]], [[TM-score|ipTM]], [[Rosetta]] scores, [[ProteinMPNN]] likelihoods, and [[ESM]]-2 log-likelihoods, do not correlate with binding for *de novo* binders** (Li et al 2024b[^li2024], Kosonocky et al 2026[^kosonocky2026]). For pLDDT is also broadly true of [[Protein folding neural networks cannot predict protein stability|protein stability]]. Maddipatla et al 2026[^maddipatla2026] showed that metrics like ipTM can quickly [[Confidence metrics for diffusion-based structure prediction methods can be improved with minimal changes to conditioning representations|respond to even small changes in the conditioning representations used to drive diffusion-based structure prediction, showing how brittle such metrics are with respect to input sequences and MSAs]].
+**Confidence metrics from structural modeling and design neural networks, namely [[pLDDT]], [[TM-score|ipTM]], [[Rosetta]] scores, [[ProteinMPNN]] likelihoods, and [[ESM]]-2 log-likelihoods, do not correlate with binding for *de novo* binders** [^li2024][^kosonocky2026]. For pLDDT is also broadly true of [[Protein folding neural networks cannot predict protein stability|protein stability]]. [^maddipatla2026] showed that metrics like ipTM can quickly [[Confidence metrics for diffusion-based structure prediction methods can be improved with minimal changes to conditioning representations|respond to even small changes in the conditioning representations used to drive diffusion-based structure prediction, showing how brittle such metrics are with respect to input sequences and MSAs]].
 
 #### Figures
 
 ![](/assets/Pasted-image-20240624103326.png)
-*Figure from Li et al 2024b[^li2024]*
+*Figure from [^li2024]*
 
 #### See also
 

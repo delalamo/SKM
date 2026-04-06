@@ -2,12 +2,12 @@
 tags:
   - protein-design/misc
 created: "2024-11-14T02:47:10"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Catalytic residues are usually highly destabilizing** (refs 25 and 30 of Teufl et al 2022[^teufl2022]).
+**Catalytic residues are usually highly destabilizing** (refs 25 and 30 of [^teufl2022]).
 
 #### See also
 

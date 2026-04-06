@@ -2,12 +2,12 @@
 tags:
   - protein-folding/misc
 created: "2026-02-20T18:08:22"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**[[AlphaFold|AlphaFold2]] prefers to model proteins in the holo form for 67% of cases** (Saldaño et al 2022[^saldao2022]).
+**[[AlphaFold|AlphaFold2]] prefers to model proteins in the holo form for 67% of cases** [^saldao2022].
 
 #### See also
 

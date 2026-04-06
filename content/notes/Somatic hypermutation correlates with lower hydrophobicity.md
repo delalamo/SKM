@@ -2,14 +2,14 @@
 tags:
   - antibodies/misc
 created: "2025-02-01T11:25:59"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-**[[Somatic hypermutation]] of [[Antibodies|antibodies]] correlates with lower [[Developability|hydrophobicity]]** (Shehata et al 2019[^shehata2019]).
+**[[Somatic hypermutation]] of [[Antibodies|antibodies]] correlates with lower [[Developability|hydrophobicity]]** [^shehata2019].
 
 #### Figures
 ![](/assets/Pasted-image-20240119163651.png)
-*Figure 2B from Shehata et al 2019[^shehata2019]*
+*Figure 2B from [^shehata2019]*
 
 #### See also
 - [[Somatic hypermutation correlates with lower polyreactivity]]

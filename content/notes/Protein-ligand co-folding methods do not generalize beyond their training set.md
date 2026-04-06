@@ -2,12 +2,12 @@
 tags:
   - protein-design/misc
 created: "2025-10-27T12:58:04"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**[[Structure prediction|Protein-ligand co-folding]] methods such as AlphaFold3 struggle to generalize beyond their training sets** (Škrinjar et al 2025[^krinjar2025], Masters et al 2025[^masters2025]). They continue to dock ligands into the training set poses even when active site residues are heavily mutated (Masters et al 2025[^masters2025]).
+**[[Structure prediction|Protein-ligand co-folding]] methods such as AlphaFold3 struggle to generalize beyond their training sets** (Škrinjar et al 2025[^krinjar2025], [^masters2025]). They continue to dock ligands into the training set poses even when active site residues are heavily mutated [^masters2025].
 
 #### Figures
 
@@ -15,7 +15,7 @@ modified: "2026-04-05T23:14:54"
 *Figure from Škrinjar et al 2025[^krinjar2025]*
 
 ![](/assets/Pasted-image-20251027125753.png)
-*Figure from Masters et al 2025[^masters2025]*
+*Figure from [^masters2025]*
 
 #### See also
 

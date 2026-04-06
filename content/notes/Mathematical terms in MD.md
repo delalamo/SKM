@@ -2,10 +2,10 @@
 tags:
   - protein-folding/misc
 created: "2024-04-16T22:58:57"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-Notation follows the convention of Hénin et al 2022[^hnin2022].
+Notation follows the convention of [^hnin2022].
 
 - $\boldsymbol{x}$: positions of 3D coordinates, $\boldsymbol{x} \in \mathbb{R}^{3N}$ ($N$: number of particles)
 - $\boldsymbol{p}$: momenta, $\boldsymbol{p} \in \mathbb{R}^{3N}$

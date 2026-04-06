@@ -2,22 +2,22 @@
 tags:
   - protein-folding/misc
 created: "2025-02-27T04:19:52"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Confidence metrics for structure prediction, such as pLDDT and pTM, correlate with prediction accuracy, even in the absence of coevolutionary data** (Roney & Ovchinnikov 2022[^roney2022]). This was also observed when modeling CDRH3 loops, which lack any meaningful coevolutionary signal (Chen et al 2024a[^chen2024]). This has been suggested to indicate that an energy function is being learned.
+**Confidence metrics for structure prediction, such as pLDDT and pTM, correlate with prediction accuracy, even in the absence of coevolutionary data** [^roney2022]. This was also observed when modeling CDRH3 loops, which lack any meaningful coevolutionary signal [^chen2024]. This has been suggested to indicate that an energy function is being learned.
 
 #### Figures
 
 ![](/assets/Pasted-image-20240716092658.png)
 
-*Figure from Roney & Ovchinnikov 2022[^roney2022]*
+*Figure from [^roney2022]*
 
 ![](/assets/Confidence.png)
 
-*Figure from Chen et al 2024a[^chen2024]*
+*Figure from [^chen2024]*
 
 #### See also
 

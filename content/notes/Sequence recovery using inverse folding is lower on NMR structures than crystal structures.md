@@ -1,11 +1,11 @@
 ---
 tags: [protein-design/misc]
 created: "2025-02-04T02:56:48"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
-**Sequence recovery using [[Inverse folding|inverse folding]] is lower on (NMR) structures than [[X-ray-crystallography|crystal structures]]** (Nikolaev et al 2024[^nikolaev2024]). This was determined using (ProteinMPNN).
+**Sequence recovery using [[Inverse folding|inverse folding]] is lower on (NMR) structures than [[X-ray-crystallography|crystal structures]]** [^nikolaev2024]. This was determined using (ProteinMPNN).
 
 #### Figures
 ![](/assets/Pasted-image-20241027101215.png)

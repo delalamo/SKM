@@ -2,17 +2,17 @@
 tags:
   - protein-design/misc
 created: "2025-07-29T17:00:40"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**[[Structure prediction|Protein structure prediction]] methods predicted idealized secondary structure arrangements in *de novo*-designed proteins** (Orr et al 2025[^orr2025]). This was shown with [[AlphaFold|AlphaFold2]], [[OmegaFold]], [[RosettaFold]], and others.
+**[[Structure prediction|Protein structure prediction]] methods predicted idealized secondary structure arrangements in *de novo*-designed proteins** [^orr2025]. This was shown with [[AlphaFold|AlphaFold2]], [[OmegaFold]], [[RosettaFold]], and others.
 
 #### Figures
 
 ![](/assets/desian-mode.jpg)
-*Figure from Orr et al 2025[^orr2025]*
+*Figure from [^orr2025]*
 
 #### See also
 

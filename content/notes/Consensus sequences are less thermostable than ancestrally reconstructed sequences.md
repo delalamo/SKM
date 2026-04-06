@@ -2,12 +2,12 @@
 tags:
   - protein-folding/misc
 created: "2024-11-14T02:49:32"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Consensus sequences are less thermostable than ancestrally reconstructed sequences** (Nixon et al 2023[^nixon2023]).
+**Consensus sequences are less thermostable than ancestrally reconstructed sequences** [^nixon2023].
 
 #### Details
 
@@ -19,6 +19,6 @@ Consensus sequences are generated using "a simple counting method" (most likely 
 
 ![](/assets/Pasted-image-20231027092109.png)
 
-*Figure from Nixon et al 2023[^nixon2023]*
+*Figure from [^nixon2023]*
 
 [^nixon2023]: Nixon et al. (2023) "The importance of input sequence set to consensus-derived proteins and their relationship to reconstructed ancestral proteins." https://doi.org/10.1101/2023.06.29.547063

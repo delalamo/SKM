@@ -2,18 +2,18 @@
 tags:
   - protein-design/misc
 created: "2025-02-19T02:27:19"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**For [[Inverse folding]] models, adding noise during inference sometimes leads to greater diversity** (Liu et al 2024c[^liu2024]). Perturbations in this case were carried using [[Rosetta]].
+**For [[Inverse folding]] models, adding noise during inference sometimes leads to greater diversity** [^liu2024]. Perturbations in this case were carried using [[Rosetta]].
 
 #### Figures
 
 ![](/assets/Pasted-image-20240418072444.png)
 
-*Figure 3 from Liu et al 2024c[^liu2024]*
+*Figure 3 from [^liu2024]*
 
 #### See also
 

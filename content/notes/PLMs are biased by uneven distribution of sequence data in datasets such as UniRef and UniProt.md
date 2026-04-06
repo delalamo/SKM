@@ -1,16 +1,16 @@
 ---
 tags: protein-design/misc
 created: "2026-04-05T17:52:14"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**[[Protein language models|PLMs]] are biased by the fact that sequence databases used for training are unevenly distributed toward prokaryotes** (Ding & Steinhardt 2024[^ding2024], Avasthi & York 2024[^avasthi2024]). This bias is stronger for larger models and stronger for [[ProGen]] than [[ESM]], with the former being trained on UniRef90 and the latter on UniRef50. Augmenting these datasets with metagenomic data can improve generalization (but it is unclear if it would fix this problem specifically; Cheng et al 2024[^cheng2024]).
+**[[Protein language models|PLMs]] are biased by the fact that sequence databases used for training are unevenly distributed toward prokaryotes** [^ding2024][^avasthi2024]. This bias is stronger for larger models and stronger for [[ProGen]] than [[ESM]], with the former being trained on UniRef90 and the latter on UniRef50. Augmenting these datasets with metagenomic data can improve generalization (but it is unclear if it would fix this problem specifically; [^cheng2024]).
 
 #### Details
 
-Most organisms only have a few proteins assigned to them (Avasthi & York 2024[^avasthi2024]).
+Most organisms only have a few proteins assigned to them [^avasthi2024].
 
 #### Figures
 
@@ -27,11 +27,11 @@ Most organisms only have a few proteins assigned to them (Avasthi & York 2024[^a
 
 ![](/assets/Pasted-image-20240318153609.png)
 
-*Figures from Ding & Steinhardt 2024[^ding2024]*
+*Figures from [^ding2024]*
 
 ![](/assets/Pasted-image-20240806172532.png)
 
-*Figure from Avasthi & York 2024[^avasthi2024]*
+*Figure from [^avasthi2024]*
 
 #### See also
 

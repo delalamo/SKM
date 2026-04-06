@@ -2,18 +2,18 @@
 tags:
   - protein-folding/misc
 created: "2026-04-05T17:32:01"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Deep learning models such as DiffDock are SOTA at finding pockets but are outperformed by traditional methods at getting the ligand pose right** (Yu et al 2022[^yu2022]). These results are in ground truth pockets and do not look at ESMFold pockets. This is suspected to be due to their lack of inductive biases for identifying interactions that drive high affinity (Errington et al 2024[^errington2024]).
+**Deep learning models such as DiffDock are SOTA at finding pockets but are outperformed by traditional methods at getting the ligand pose right** [^yu2022]. These results are in ground truth pockets and do not look at ESMFold pockets. This is suspected to be due to their lack of inductive biases for identifying interactions that drive high affinity [^errington2024].
 
 #### Figures
 
 ![](/assets/Pasted-image-20241105050419.png)
 
-*Figure from Errington et al 2024[^errington2024]*
+*Figure from [^errington2024]*
 
 | | Method | Top-1 RMSD(Å) % < 1Å (↑) | Top-1 RMSD(Å) % < 2Å (↑) | Top-1 RMSD(Å) Med. (↓) | Top-5 RMSD(Å) % < 1Å (↑) | Top-5 RMSD(Å) % < 2Å (↑) | Top-5 RMSD(Å) Med. (↓) |
 |---|---|---|---|---|---|---|---|
@@ -28,7 +28,7 @@ modified: "2026-04-05T23:14:54"
 | **Better Pocket + Traditional** | DiffDock* + Uni-dock | 25.49 ± 0.6 | 38.93 ± 0.23 | 4.14 ± 0.07 | 36.97 ± 1.05 | 51.07 ± 1.06 | 1.93 ± 0.12 |
 | | GT pocket + Uni-dock | 32.77 ± 0.38 | 51.11 ± 0.6 | 1.89 ± 0.04 | 47.5 ± 0.23 | 67.59 ± 0.94 | 1.11 ± 0.02 |
 
-*Figure from Yu et al 2022[^yu2022]*
+*Figure from [^yu2022]*
 
 #### See also
 

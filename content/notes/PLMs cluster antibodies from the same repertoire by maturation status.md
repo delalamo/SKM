@@ -2,17 +2,17 @@
 tags:
   - antibodies/misc
 created: "2025-02-16T03:31:21"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-**[[Antibody language models]] learn about [[Affinity maturation|affinity maturation]] and how far antibody sequences are from [[Germline]].** This has been observed in AntiBERTy, AbLang, and PALM (Ruffolo et al 2021[^ruffolo2021], Olsen et al 2022[^olsen2022], Jing et al 2023[^jing2023]). Progression of sequences in [[Immune repertoires]] can be observed in [[Dimensionality reduction|dimensionality reduction]] of AntiBERTy embeddings (t-SNE). This was also shown with AntiBERTa but not SAPIENS or ProtBERT.
+**[[Antibody language models]] learn about [[Affinity maturation|affinity maturation]] and how far antibody sequences are from [[Germline]].** This has been observed in AntiBERTy, AbLang, and PALM [^ruffolo2021][^olsen2022][^jing2023]. Progression of sequences in [[Immune repertoires]] can be observed in [[Dimensionality reduction|dimensionality reduction]] of AntiBERTy embeddings (t-SNE). This was also shown with AntiBERTa but not SAPIENS or ProtBERT.
 
 #### Figures
 ![](/assets/Repertoire-AntiBERTy-PCA.png)
-*Figure from Ruffolo et al 2021[^ruffolo2021]*
+*Figure from [^ruffolo2021]*
 
 ![](/assets/Intra-repertoire-Ab-clustering.png)
-*Figure from Leem et al 2022[^leem2022]*
+*Figure from [^leem2022]*
 
 #### See also
 - [[Ab embeddings can distinguish engineered from human-derived Abs]]

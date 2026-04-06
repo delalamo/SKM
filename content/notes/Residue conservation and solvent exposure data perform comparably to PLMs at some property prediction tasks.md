@@ -2,12 +2,12 @@
 tags:
   - protein-folding/misc
 created: "2026-04-05T17:40:10"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Residue conservation and solvent exposure data perform comparably to [[Protein language models|PLMs]] at some property prediction tasks** (Tsishyn et al 2025[^tsishyn2025]). The former was assessed using position-specific scoring matrices. However, [[Structure-based methods outperform sequence-based methods on protein stability prediction of point mutants, but not full sequences|as with language models]], they perform worse than [[Inverse folding|inverse folding]] on [[Stability and thermostability#Prediction|stability prediction]].
+**Residue conservation and solvent exposure data perform comparably to [[Protein language models|PLMs]] at some property prediction tasks** [^tsishyn2025]. The former was assessed using position-specific scoring matrices. However, [[Structure-based methods outperform sequence-based methods on protein stability prediction of point mutants, but not full sequences|as with language models]], they perform worse than [[Inverse folding|inverse folding]] on [[Stability and thermostability#Prediction|stability prediction]].
 
 #### Figures
 
@@ -25,7 +25,7 @@ modified: "2026-04-05T23:14:54"
 | EVE (ensemble) [23] | ALI | 0.431 | 0.410 | 0.382 | 0.398 | 0.466 | 0.446 |
 | ESM2 (650M) [24] | pLM | 0.428 | 0.496 | 0.382 | 0.409 | 0.431 | 0.381 |
 
-*Table from Tsishyn et al 2025[^tsishyn2025]*
+*Table from [^tsishyn2025]*
 
 #### See also
 

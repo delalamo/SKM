@@ -2,21 +2,21 @@
 tags:
   - protein-folding/misc
 created: "2026-01-22T11:03:49"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Sequences with lower [[Sequence perplexity|log-likelihood]] values yield poor zero-shot [[Variant effect prediction|variant effect prediction values]] using [[Protein language models|protein language models]]** (Gordon et al 2024[^gordon2024], Wells et al 2025a[^wells2025]). This can be mitigated by fine-tuning (Gordon et al 2024[^gordon2024]). In contrast, sequences with high log-likelihoods yield poorer predictions when using a fine-tuned model (i.e., the opposite result). However, [[Correlation between sequence log-likelihood and variant effect prediction performance breaks down as PLMs get larger|this correlation breaks down as PLMs get larger]].
+**Sequences with lower [[Sequence perplexity|log-likelihood]] values yield poor zero-shot [[Variant effect prediction|variant effect prediction values]] using [[Protein language models|protein language models]]** [^gordon2024][^wells2025]. This can be mitigated by fine-tuning [^gordon2024]. In contrast, sequences with high log-likelihoods yield poorer predictions when using a fine-tuned model (i.e., the opposite result). However, [[Correlation between sequence log-likelihood and variant effect prediction performance breaks down as PLMs get larger|this correlation breaks down as PLMs get larger]].
 
 #### Figures
 
 ![](/assets/Pasted-Graphic-4-3.png)
 ![](/assets/Pasted-image-20241004101202.png)
-*Figures from Gordon et al 2024[^gordon2024]*
+*Figures from [^gordon2024]*
 
 ![](/assets/(D).png)
-*Figure from Wells et al 2025a[^wells2025]*
+*Figure from [^wells2025]*
 
 #### See also
 

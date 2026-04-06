@@ -2,12 +2,12 @@
 tags:
   - protein-folding/misc
 created: "2024-11-26T23:57:15"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**The ability to tolerate neutral mutations correlates with [[Stability and thermostability|protein thermostability]]** (DePristo et al 2005[^depristo2005]). Direct manifestations of this are uncoupling of tightly packed, stable structures such as TIM barrels and immunoglobulin folds, from the loops mediating function (in [[Antibodies|antibodies]], the [[Complementarity-determining regions|CDRs]]).
+**The ability to tolerate neutral mutations correlates with [[Stability and thermostability|protein thermostability]]** [^depristo2005]. Direct manifestations of this are uncoupling of tightly packed, stable structures such as TIM barrels and immunoglobulin folds, from the loops mediating function (in [[Antibodies|antibodies]], the [[Complementarity-determining regions|CDRs]]).
 
 #### Details
 

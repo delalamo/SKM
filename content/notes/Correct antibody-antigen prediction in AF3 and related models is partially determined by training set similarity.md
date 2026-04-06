@@ -2,18 +2,18 @@
 tags:
   - antibodies/misc
 created: "2026-03-23T08:54:03"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Correct prediction of antibody-antigen structure is partially determined by similarity to training set examples** (Fromm et al 2026[^fromm2026]). This is another example of memorization in protein structure prediction, particularly among AF3-generation predictors.
+**Correct prediction of antibody-antigen structure is partially determined by similarity to training set examples** [^fromm2026]. This is another example of memorization in protein structure prediction, particularly among AF3-generation predictors.
 
 #### Figures
 
 ![](/assets/AlphaFold2.3.jpg)
 
-*Figure from Fromm et al 2026[^fromm2026]*
+*Figure from [^fromm2026]*
 
 #### See also
 

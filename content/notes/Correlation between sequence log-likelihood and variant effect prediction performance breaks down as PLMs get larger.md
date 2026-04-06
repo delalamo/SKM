@@ -2,18 +2,18 @@
 tags:
   - protein-folding/misc
 created: "2026-01-22T12:38:44"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**The correlation between a sequence's log-likelihood and the performance of variant effect prediction using protein language models breaks down as the PLMs get larger** (Gordon et al 2024[^gordon2024]). This happens specifically due to poorer performance with high-log-likelihood sequences.
+**The correlation between a sequence's log-likelihood and the performance of variant effect prediction using protein language models breaks down as the PLMs get larger** [^gordon2024]. This happens specifically due to poorer performance with high-log-likelihood sequences.
 
 #### Figures
 
 ![](/assets/Pasted-Graphic-7.png)
 
-*Figure from Gordon et al 2024[^gordon2024]*
+*Figure from [^gordon2024]*
 
 #### See also
 

@@ -2,12 +2,12 @@
 tags:
   - protein-folding/misc
 created: "2026-04-05T17:41:51"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Spearman values of protein property prediction methods do not correlate with their mean squared errors** (Cuturello et al 2024[^cuturello2024]).
+**Spearman values of protein property prediction methods do not correlate with their mean squared errors** [^cuturello2024].
 
 #### Figures
 
@@ -35,6 +35,6 @@ modified: "2026-04-05T23:14:54"
 | I-Mutant3.0 | 0.36 | 1.12 | 1.52 |
 | Dynamut2 | 0.34 | 1.15 | 1.58 |
 
-*Table from Cuturello et al 2024[^cuturello2024]*
+*Table from [^cuturello2024]*
 
 [^cuturello2024]: Cuturello et al. (2024) "Enhancing predictions of protein stability changes induced by single mutations using MSA-based Language Models." https://doi.org/10.1101/2024.04.11.589002

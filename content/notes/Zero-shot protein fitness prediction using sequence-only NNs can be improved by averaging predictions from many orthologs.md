@@ -2,18 +2,18 @@
 tags:
   - protein-folding/misc
 created: "2025-08-29T08:38:40"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Zero-shot [[Variant effect prediction|variant effect prediction]] using sequence-only [[Protein language models|protein language models]] can be improved by averaging predictions from many orthologs** (Pugh et al 2025[^pugh2025]). This was shown with [[ESM]] and [[ProGen]].
+**Zero-shot [[Variant effect prediction|variant effect prediction]] using sequence-only [[Protein language models|protein language models]] can be improved by averaging predictions from many orthologs** [^pugh2025]. This was shown with [[ESM]] and [[ProGen]].
 
 #### Figures
 
 ![](/assets/Pasted-image-20250602121733.png)
 
-*Figure from Pugh et al 2025[^pugh2025]*
+*Figure from [^pugh2025]*
 
 #### See also
 

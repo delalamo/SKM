@@ -2,17 +2,17 @@
 tags:
   - protein-folding/misc
 created: "2024-05-05T08:55:15"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Qiao et al 2022[^qiao2022] extend the loss function [[Frame aligned point error|FAPE]], used by [[AlphaFold]] and [[RosettaFold]]2 to ligands.**
+**[^qiao2022] extend the loss function [[Frame aligned point error|FAPE]], used by [[AlphaFold]] and [[RosettaFold]]2 to ligands.**
 
 #### Figures
 ![](/assets/Protein-ligand-design-method.png)
 
-*Figure from Qiao et al 2022[^qiao2022]*
+*Figure from [^qiao2022]*
 
 #### See also
 * [[De novo structure prediction with ligands outperforms apo de novo structure prediction alone]]

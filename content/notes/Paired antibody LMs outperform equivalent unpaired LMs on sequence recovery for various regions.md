@@ -2,10 +2,10 @@
 tags:
   - antibodies/misc
 created: "2026-04-05T17:10:58"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-**[[Antibodies|Antibody]] [[Antibody language models|language models]] trained on paired [[Heavy chains|heavy]] and [[Light chains|light]] chains outperform equivalent models trained only on unpaired data** (Kenlay et al 2024[^kenlay2024]). They also outperform [[Protein language models|generic PLMs]].
+**[[Antibodies|Antibody]] [[Antibody language models|language models]] trained on paired [[Heavy chains|heavy]] and [[Light chains|light]] chains outperform equivalent models trained only on unpaired data** [^kenlay2024]. They also outperform [[Protein language models|generic PLMs]].
 
 #### Figures
 
@@ -20,17 +20,17 @@ modified: "2026-04-05T23:14:54"
 | IgT5-unpaired | 0.9790 | *0.9671* | *0.9560* | 0.9825 | 0.9092 | 0.8839 | 0.6035 | *0.9121* |
 | IgT5 | **0.9820** | 0.9687 | 0.9574 | **0.9828** | **0.9150** | **0.8936** | **0.6196** | **0.9163** |
 
-| Model                            | FWL1       | FWL2       | FWL3       | FWL4       | CDRL1      | CDRL2      | CDRL3      | Total VL   |
+| Model | FWL1 | FWL2 | FWL3 | FWL4 | CDRL1 | CDRL2 | CDRL3 | Total VL |
 | -------------------------------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| AbLang (Olsen et al., 2022b)     | 0.9663     | 0.9683     | 0.9707     | 0.9621     | 0.8911     | 0.9008     | 0.8385     | 0.9493     |
-| AntiBERTy (Ruffolo et al., 2021) | 0.9786     | *0.9687*   | 0.9748     | 0.9661     | 0.9066     | 0.8951     | 0.8444     | 0.9553     |
-| ProtBert (Elnaggar et al., 2022) | 0.6597     | 0.7862     | 0.7827     | 0.6337     | 0.4690     | 0.4382     | 0.2901     | 0.6654     |
-| IgBert-unpaired                  | 0.9804     | 0.9704     | 0.9739     | *0.9656*   | *0.9081*   | 0.8985     | *0.8461*   | *0.9560*   |
-| IgBert                           | **0.9885** | **0.9738** | 0.9807 | 0.9740 | **0.9232** | 0.9149 | 0.8634 | 0.9647 |
-| ProtT5 (Elnaggar et al., 2022)   | 0.8456     | 0.9010     | 0.8799     | 0.8499     | 0.6961     | 0.6038     | 0.5172     | 0.8200     |
-| IgT5-unpaired                    | *0.9809*   | 0.9675     | *0.9752*   | 0.9171     | 0.9076     | *0.9093*   | 0.8423     | 0.9515     |
-| IgT5                             | 0.9878 | 0.9735 | **0.9815** | **0.9784** | 0.9222 | **0.9163** | **0.8693** | **0.9656** |
+| AbLang (Olsen et al., 2022b) | 0.9663 | 0.9683 | 0.9707 | 0.9621 | 0.8911 | 0.9008 | 0.8385 | 0.9493 |
+| AntiBERTy (Ruffolo et al., 2021) | 0.9786 | *0.9687* | 0.9748 | 0.9661 | 0.9066 | 0.8951 | 0.8444 | 0.9553 |
+| ProtBert (Elnaggar et al., 2022) | 0.6597 | 0.7862 | 0.7827 | 0.6337 | 0.4690 | 0.4382 | 0.2901 | 0.6654 |
+| IgBert-unpaired | 0.9804 | 0.9704 | 0.9739 | *0.9656* | *0.9081* | 0.8985 | *0.8461* | *0.9560* |
+| IgBert | **0.9885** | **0.9738** | 0.9807 | 0.9740 | **0.9232** | 0.9149 | 0.8634 | 0.9647 |
+| ProtT5 (Elnaggar et al., 2022) | 0.8456 | 0.9010 | 0.8799 | 0.8499 | 0.6961 | 0.6038 | 0.5172 | 0.8200 |
+| IgT5-unpaired | *0.9809* | 0.9675 | *0.9752* | 0.9171 | 0.9076 | *0.9093* | 0.8423 | 0.9515 |
+| IgT5 | 0.9878 | 0.9735 | **0.9815** | **0.9784** | 0.9222 | **0.9163** | **0.8693** | **0.9656** |
 
-*Figure from Kenlay et al 2024[^kenlay2024]*
+*Figure from [^kenlay2024]*
 
 [^kenlay2024]: Kenlay et al. (2024) "Large scale paired antibody language models." https://doi.org/10.48550/ARXIV.2403.17889

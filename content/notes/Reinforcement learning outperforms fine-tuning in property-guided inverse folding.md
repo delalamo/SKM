@@ -1,11 +1,11 @@
 ---
 tags: [protein-design/misc]
 created: "2026-04-05T17:56:56"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
-**[[Reinforcement learning]] (here, DPO) outperforms fine-tuning on property-guided [[Inverse folding|inverse folding]]** (Hou et al 2026[^hou2026]). This was shown using (ProteinMPNN) as a base model, and even in situations with multiple constraints. As shown below, this does not lead to sacrificed refoldability metrics.
+**[[Reinforcement learning]] (here, DPO) outperforms fine-tuning on property-guided [[Inverse folding|inverse folding]]** [^hou2026]. This was shown using (ProteinMPNN) as a base model, and even in situations with multiple constraints. As shown below, this does not lead to sacrificed refoldability metrics.
 
 #### Figures
 | Method | RMSD ↓ | TM score ↑ | PLDDT ↑ | EP ↓ | Sol ↑ | Thermo ↑ | AAR ↑ |
@@ -29,6 +29,6 @@ modified: "2026-04-05T23:14:54"
 | MoMPNN [Thermo+IG] | 4.38 | 0.734 | 78.2 | **5.85** | 0.694 | **0.963** ★ | 0.382 |
 | MoMPNN [Thermo+IG+EP] | 4.37 | 0.737 | 78.5 | 5.97 | 0.723 | 0.947 ★ | 0.385 |
 ![](/assets/Pasted-image-20260316153544.png)
-*Figure from Hou et al 2026[^hou2026]*
+*Figure from [^hou2026]*
 
 [^hou2026]: Hou et al. (2026) "Property-driven Protein Inverse Folding With Multi-Objective Preference Alignment." https://doi.org/10.48550/ARXIV.2603.06748

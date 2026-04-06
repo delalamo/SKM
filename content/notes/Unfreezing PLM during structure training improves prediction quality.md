@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2026-04-05T17:45:40"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
@@ -18,6 +18,6 @@ modified: "2026-04-05T23:14:54"
 | variant3 | Freeze | 1 Evoformer | 0.63 |
 | variant4 | Trainable | 1 Evoformer | 0.61 |
 
-*Figure from Lee et al 2023[^lee2023]*
+*Figure from [^lee2023]*
 
 [^lee2023]: Lee et al. (2023) "Solvent: A Framework for Protein Folding." https://doi.org/10.48550/arXiv.2307.04603

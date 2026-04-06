@@ -3,9 +3,9 @@ title: Milk proteins are mostly negatively charged
 tags:
   - protein-folding/misc
 created: "2024-05-05T10:35:12"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-**Proteins found in milk, such as casein, are largely negatively charged.** Mentioned by Rabia et al 2018[^rabia2018]
+**Proteins found in milk, such as casein, are largely negatively charged.** Mentioned by [^rabia2018]
 
 [^rabia2018]: Rabia et al. (2018) "Net charge of antibody complementarity-determining regions is a key predictor of specificity." *Protein Engineering, Design and Selection*. https://doi.org/10.1093/protein/gzz002

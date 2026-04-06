@@ -2,10 +2,10 @@
 tags:
   - antibodies/misc
 created: "2025-11-20T17:50:57"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-**[[Complementarity-determining regions|CDR3]] loops encode specificity while CDRs 1 and 2 encode [[Developability|cross-reactivity]]** (Xu & Davis 2000[^xu2000]).
+**[[Complementarity-determining regions|CDR3]] loops encode specificity while CDRs 1 and 2 encode [[Developability|cross-reactivity]]** [^xu2000].
 
 #### See also
 - [[GRAB motifs]]

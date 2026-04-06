@@ -1,18 +1,18 @@
 ---
 tags: protein-design/misc
 created: "2026-02-26T15:17:04"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**There is currently no clear best method for zero-shot or few-shot protein fitness prediction tasks** (Didi et al 2026[^didi2026]). This was tested using [[ESM]], CARP, and the autoregressive Dayhoff model.
+**There is currently no clear best method for zero-shot or few-shot protein fitness prediction tasks** [^didi2026]. This was tested using [[ESM]], CARP, and the autoregressive Dayhoff model.
 
 #### Figures
 
 ![](/assets/Pasted-image-20260226151340.png)
 
-*Figure from Didi et al 2026[^didi2026]*
+*Figure from [^didi2026]*
 
 #### See also
 

@@ -1,18 +1,18 @@
 ---
 tags: protein-design/misc
 created: "2026-01-22T12:38:44"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Protein design using [[Protein language models|sequence-based models]] does not benefit from scale** (Alamdari et al 2023[^alamdari2023]). Increasing the size of the model used for design from 38M to 650M parameters did not lead to higher [[pLDDT]] or [[Sequence perplexity|self-consistency perplexity]] of designs.
+**Protein design using [[Protein language models|sequence-based models]] does not benefit from scale** [^alamdari2023]. Increasing the size of the model used for design from 38M to 650M parameters did not lead to higher [[pLDDT]] or [[Sequence perplexity|self-consistency perplexity]] of designs.
 
 #### Figures
 
 ![](/assets/scPerplexity.png)
 
-*Figure from Alamdari et al 2023[^alamdari2023]*
+*Figure from [^alamdari2023]*
 
 #### See also
 

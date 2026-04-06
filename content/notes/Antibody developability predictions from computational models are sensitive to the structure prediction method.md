@@ -2,22 +2,22 @@
 tags:
   - antibodies/misc
 created: "2024-08-22T05:13:06"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**[[Antibodies|Antibody]] [[Developability|developability]] predictions from computational models are highly sensitive to the method used to [[Antibody structure prediction|predict the structure]]** (Bashour et al 2024[^bashour2024], Victor Greiff's EMBL-EBI presentation, 2024). The use of short [[MD simulations]] can be used to partially offset this and will lead to distributions of predictions that match experimental distributions, but it's unclear if this is addressed at the per-antibody level.
+**[[Antibodies|Antibody]] [[Developability|developability]] predictions from computational models are highly sensitive to the method used to [[Antibody structure prediction|predict the structure]]** ([^bashour2024], Victor Greiff's EMBL-EBI presentation, 2024). The use of short [[MD simulations]] can be used to partially offset this and will lead to distributions of predictions that match experimental distributions, but it's unclear if this is addressed at the per-antibody level.
 
 #### Figures
 
 ![](/assets/Correlation-of-structure-DPs-accross-structure-prediction-tools.png)
 
-*Figure from Bashour et al 2024[^bashour2024]*
+*Figure from [^bashour2024]*
 
 ![](/assets/Pasted-Graphic-43.png)
 
-*Figure from Bashour et al 2024[^bashour2024]*
+*Figure from [^bashour2024]*
 
 #### See also
 

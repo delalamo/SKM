@@ -2,10 +2,10 @@
 tags:
   - protein-folding/misc
 created: "2024-06-26T13:44:46"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-**TM-score** is an alignment-dependent protein structure similarity term introduced by Zhang & Skolnick 2004[^zhang2004] that is widely used for assessing [[Structure prediction|protein structure prediction]] methods. It is defined as:
+**TM-score** is an alignment-dependent protein structure similarity term introduced by [^zhang2004] that is widely used for assessing [[Structure prediction|protein structure prediction]] methods. It is defined as:
 
 $$TM\text{-}score = max \left[\frac{1}{L_{target}} \sum_{i}^{L_{common}} \left(\frac{1}{1+ \left( \frac{d_{i}}{d_{0} \left( L_{target} \right)} \right)^{2}} \right) \right]$$
 

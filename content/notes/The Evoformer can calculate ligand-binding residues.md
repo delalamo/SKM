@@ -2,18 +2,18 @@
 tags:
   - protein-folding/misc
 created: "2024-05-05T08:54:45"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**The [[Evoformer]] can figure out which residues are most likely to bind ligands, which is expressed in its residue pair representation** (Gazizov et al 2023[^gazizov2023]). This is followed by a single dense layer and logistic regression.
+**The [[Evoformer]] can figure out which residues are most likely to bind ligands, which is expressed in its residue pair representation** [^gazizov2023]. This is followed by a single dense layer and logistic regression.
 
 #### Figures
 
 ![](/assets/Pasted-image-20231129085041.png)
 
-*Figure from Gazizov et al 2023[^gazizov2023]*
+*Figure from [^gazizov2023]*
 
 #### See also
 

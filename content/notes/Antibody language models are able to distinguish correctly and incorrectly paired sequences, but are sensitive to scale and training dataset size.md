@@ -2,14 +2,14 @@
 tags:
   - antibodies/misc
 created: "2025-09-19T06:55:26"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-**[[Antibody language models]] are able to distinguish correctly and incorrectly paired sequences, but are sensitive to model [[Scaling hypothesis|scale]] and training dataset size** (Neyestanak et al 2025[^neyestanak2025]).
+**[[Antibody language models]] are able to distinguish correctly and incorrectly paired sequences, but are sensitive to model [[Scaling hypothesis|scale]] and training dataset size** [^neyestanak2025].
 
 #### Figures
 ![](/assets/Pasted-image-20250919065446.png)
-*Figure from Neyestanak et al 2025[^neyestanak2025]*
+*Figure from [^neyestanak2025]*
 
 #### See also
 - [[Paired antibody LMs outperform equivalent unpaired LMs on sequence recovery for various regions]]

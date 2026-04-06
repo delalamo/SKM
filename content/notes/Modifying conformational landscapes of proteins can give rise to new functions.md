@@ -1,16 +1,16 @@
 ---
 tags: protein-design/misc
 created: "2025-02-27T03:56:22"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Proteins can be engineered with new/different substrates by targeting the productive conformation using design strategies**. In the example by St-Jacques et al 2023[^stjacques2023], an aminotransferase is mutated to favor a conformation that allows transamination of phenylalanine. Damry & Jackson 2021[^damry2021] describe how a mutation that stabilized a different active state of alpha-esterase from the crystallized conformation, leading to novel catalytic activity.
+**Proteins can be engineered with new/different substrates by targeting the productive conformation using design strategies**. In the example by [^stjacques2023], an aminotransferase is mutated to favor a conformation that allows transamination of phenylalanine. [^damry2021] describe how a mutation that stabilized a different active state of alpha-esterase from the crystallized conformation, leading to novel catalytic activity.
 
 #### Details
 
-The quote from Damry & Jackson 2021[^damry2021]: "Minor, but catalytically productive, substates thus appear to be responsible for the novel catalytic activity despite their low prevalence in the time-averaged enzyme population."
+The quote from [^damry2021]: "Minor, but catalytically productive, substates thus appear to be responsible for the novel catalytic activity despite their low prevalence in the time-averaged enzyme population."
 
 #### See also
 

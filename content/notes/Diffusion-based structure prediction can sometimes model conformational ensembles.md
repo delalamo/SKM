@@ -1,6 +1,6 @@
 #### Summary
 
-**[[Structure prediction|Protein structure prediction]] methods reliant on [[Diffusion models|diffusion]] can sometimes predict conformational heterogeneity** (Fan et al 2024[^fan2024]). Authors of Diffold had to reweigh the PDB by [[Clustering|clustering]] by [[TM-score]]. Prior efforts by others were not successful: the conformational diversity of EigenFold was more representative of error than actual dynamics (Jing et al 2023a[^jing2023]), whereas authors of [[AlphaFold|AlphaFold3]] found that it predicted the same (incorrect) conformation of [[E3 ubiquitin ligases]], rather than an ensemble of states (Abramson et al 2024[^abramson2024]).
+**[[Structure prediction|Protein structure prediction]] methods reliant on [[Diffusion models|diffusion]] can sometimes predict conformational heterogeneity** [^fan2024]. Authors of Diffold had to reweigh the PDB by [[Clustering|clustering]] by [[TM-score]]. Prior efforts by others were not successful: the conformational diversity of EigenFold was more representative of error than actual dynamics [^jing2023], whereas authors of [[AlphaFold|AlphaFold3]] found that it predicted the same (incorrect) conformation of [[E3 ubiquitin ligases]], rather than an ensemble of states [^abramson2024].
 
 #### See also
 * [[Biomolecular diffusion models cannot reproduce the equilibrium dynamics of the simulations they are trained on]]

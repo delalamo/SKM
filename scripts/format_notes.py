@@ -120,10 +120,13 @@ def format_citation(csl: dict, doi: str) -> str:
     # CrossRef sometimes returns title as a list
     if isinstance(title, list):
         title = title[0] if title else "Untitled"
+    # Collapse any embedded newlines / extra whitespace into a single space
+    title = re.sub(r'\s+', ' ', title).strip()
 
     container = csl.get("container-title", "")
     if isinstance(container, list):
         container = container[0] if container else ""
+    container = re.sub(r'\s+', ' ', container).strip()
 
     parts = [author_str]
     if year:
@@ -200,11 +203,11 @@ def process_note(path: Path) -> bool:
             doi_to_key[doi] = key
 
     if doi_to_display:
-        # Replace inline occurrences
+        # Replace inline occurrences — emit only the footnote marker, not the
+        # display text, since the full citation is in the footnote definition.
         def replacer(m: re.Match) -> str:
             doi = doi_from_target(m.group(1))
-            display = m.group(2)
-            return f"{display}[^{doi_to_key[doi]}]"
+            return f"[^{doi_to_key[doi]}]"
 
         text = CITE_RE.sub(replacer, text)
 

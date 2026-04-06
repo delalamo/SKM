@@ -2,12 +2,12 @@
 tags:
   - protein-folding/misc
 created: "2024-05-05T09:15:16"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Ruffolo et al 2023[^ruffolo2023] used RMSD as the error function of [[IgFold]]** (as opposed to [[pLDDT|LDDT]]) **and noticed that it was weighted toward lower RMSDs.** They speculate that is due to imbalance in the training data, due to framework residues typically having low RMSD values. They suggest this can be addressed with a weighted loss function.
+**[^ruffolo2023] used RMSD as the error function of [[IgFold]]** (as opposed to [[pLDDT|LDDT]]) **and noticed that it was weighted toward lower RMSDs.** They speculate that is due to imbalance in the training data, due to framework residues typically having low RMSD values. They suggest this can be addressed with a weighted loss function.
 
 #### See also
 

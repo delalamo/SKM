@@ -1,15 +1,15 @@
 ---
 tags: [protein-design/misc]
 created: "2026-03-20T07:32:50"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
-**Search algorithms are more important parameters than exact [[Protein language models|protein language models]] for model-guided engineering and design** (McCarter et al 2026[^mccarter2026]). This was shown with ESM and AbLang, which were barely different from one another, but the latter showed huge differences in success rates depending on whether Beam search or Gibbs sampling was used.
+**Search algorithms are more important parameters than exact [[Protein language models|protein language models]] for model-guided engineering and design** [^mccarter2026]. This was shown with ESM and AbLang, which were barely different from one another, but the latter showed huge differences in success rates depending on whether Beam search or Gibbs sampling was used.
 
 #### Figures
 ![](/assets/Pasted-image-20260316152952.png)
-*Figure from McCarter et al 2026[^mccarter2026]*
+*Figure from [^mccarter2026]*
 
 #### See also
 * [[Inference-time scaling of de novo designed proteins is more effective for harder targets]]

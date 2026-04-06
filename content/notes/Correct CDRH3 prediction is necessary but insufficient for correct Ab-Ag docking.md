@@ -2,17 +2,17 @@
 tags:
   - antibodies/misc
 created: "2025-02-12T10:41:32"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-**Correct prediction of [[Complementarity-determining regions|CDRH3]] is necessary but insufficient for correct [[Antibodies|antibody]]-antigen docking** (Yin & Pierce 2024[^yin2024], Hitawala & Gray 2024[^hitawala2024]).
+**Correct prediction of [[Complementarity-determining regions|CDRH3]] is necessary but insufficient for correct [[Antibodies|antibody]]-antigen docking** [^yin2024][^hitawala2024].
 
 #### Figures
 ![](/assets/Pasted-image-20240624164409.png)
-*Figure from Yin & Pierce 2024[^yin2024]*
+*Figure from [^yin2024]*
 
 ![](/assets/Pasted-image-20241001064019.png)
-*Figure from Hitawala & Gray 2024[^hitawala2024]*
+*Figure from [^hitawala2024]*
 
 #### See also
 - [[Antibody-antigen binding modes are not necessarily defined by induced fit]]

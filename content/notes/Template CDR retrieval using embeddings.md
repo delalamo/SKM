@@ -2,10 +2,10 @@
 tags:
   - antibodies/misc
 created: "2026-04-05T17:15:06"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-**[[Complementarity-determining regions|CDR]] templates with high structural similarity can be fetched by comparing the embeddings to those of templates in the PDB, fetching the top ten, and taking the medoid by Euclidean distance** (Singh et al 2023[^singh2023]). This strategy was found to be more accurate than either DeepAb and [[AlphaFold|AlphaFold2]]. On [[Complementarity-determining regions#CDRH3|CDRH3]] it was more accurate than [[OmegaFold]], while on other CDRs it was about the same (results only show the LSTM model after fine-tuning, not the other two).
+**[[Complementarity-determining regions|CDR]] templates with high structural similarity can be fetched by comparing the embeddings to those of templates in the PDB, fetching the top ten, and taking the medoid by Euclidean distance** [^singh2023]. This strategy was found to be more accurate than either DeepAb and [[AlphaFold|AlphaFold2]]. On [[Complementarity-determining regions#CDRH3|CDRH3]] it was more accurate than [[OmegaFold]], while on other CDRs it was about the same (results only show the LSTM model after fine-tuning, not the other two).
 
 #### Figures
 | Model | Metric | Chain | CDR 1 | CDR 2 | CDR 3 | Whole Fv |
@@ -35,7 +35,7 @@ modified: "2026-04-05T23:14:54"
 | OmegaFold | RMSD | L | **0.40** ± 0.016 | 0.17 ± 0.007 | 0.46 ± 0.017 | 2.31 ± 0.076 |
 | AlphaFold2 | RMSD | L | 1.13 ± 0.046 | 0.24 ± 0.024 | 0.64 ± 0.033 | 4.79 ± 0.084 |
 
-From Singh et al 2023[^singh2023]
+From [^singh2023]
 
 #### See also
 - [[CDR representations segregate into distinct clusters]]

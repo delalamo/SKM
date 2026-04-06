@@ -2,12 +2,12 @@
 tags:
   - antibodies/misc
 created: "2024-05-08T17:59:40"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**The linear representations and distograms from [[AlphaFold|AlphaFold2]] Multimer can be used to improve the [[Antibody structure prediction|structure prediction]] of [[Antibodies|antibodies]]** (Peng et al 2023[^peng2023]).
+**The linear representations and distograms from [[AlphaFold|AlphaFold2]] Multimer can be used to improve the [[Antibody structure prediction|structure prediction]] of [[Antibodies|antibodies]]** [^peng2023].
 
 #### See also
 

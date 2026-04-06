@@ -2,18 +2,18 @@
 tags:
   - protein-folding/misc
 created: "2024-05-05T08:54:15"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Deep learning is significantly worse at maintaining the shape of the ligand in general than classical approaches** (Buttenschoen et al 2023[^buttenschoen2023]).
+**Deep learning is significantly worse at maintaining the shape of the ligand in general than classical approaches** [^buttenschoen2023].
 
 #### Figures
 
 ![](/assets/Pasted-image-20231126101415.png)
 
-*Figure from Buttenschoen et al 2023[^buttenschoen2023]*
+*Figure from [^buttenschoen2023]*
 
 #### See also
 

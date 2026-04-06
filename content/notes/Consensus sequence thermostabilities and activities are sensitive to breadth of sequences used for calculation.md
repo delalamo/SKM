@@ -2,18 +2,18 @@
 tags:
   - protein-folding/misc
 created: "2024-11-14T03:09:22"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**The thermostability and catalytic activity values of consensus sequences are sensitive to the breadth of the sequences from which they are calculated** (Nixon et al 2023[^nixon2023], Muir et al 2024[^muir2024]). Consensus sequences of adenylate kinase generated from one fitness peak were found to be more active than those generated from the full distribution of sequences.
+**The thermostability and catalytic activity values of consensus sequences are sensitive to the breadth of the sequences from which they are calculated** [^nixon2023][^muir2024]. Consensus sequences of adenylate kinase generated from one fitness peak were found to be more active than those generated from the full distribution of sequences.
 
 #### Figures
 
 ![](/assets/Inter-vs-Intrapeak-Consensus.png)
 
-Figure from Muir et al 2024[^muir2024]
+Figure from [^muir2024]
 
 #### See also
 

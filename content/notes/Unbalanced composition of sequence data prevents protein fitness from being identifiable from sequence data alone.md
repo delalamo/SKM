@@ -2,12 +2,12 @@
 tags:
   - protein-folding/misc
 created: "2026-01-22T12:38:44"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Unbalanced composition of protein sequence databases prevents prediction of [[Fitness prediction|fitness]] from sequence data alone, or from models derived from such data such as [[Protein language models|PLMs]]** (Weinstein et al 2022[^weinstein2022]). Those authors argue that bigger models and datasets do not guarantee improvements in fitness prediction.
+**Unbalanced composition of protein sequence databases prevents prediction of [[Fitness prediction|fitness]] from sequence data alone, or from models derived from such data such as [[Protein language models|PLMs]]** [^weinstein2022]. Those authors argue that bigger models and datasets do not guarantee improvements in fitness prediction.
 
 #### Details
 

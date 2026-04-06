@@ -2,14 +2,14 @@
 tags:
   - antibodies/misc
 created: "2025-01-20T21:12:40"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-**[[Light chains]] determine the [[Developability|autospecificity]] of [[Antibodies|antibodies]]** (Wardemann et al 2004[^wardemann2004]). Lambda light chains were found to be more effective at "silencing" autoreactivity. ML models trained on just light chains were as effective as those trained on full antibody sequences at predicting polyreactivity (Jagota et al 2024[^jagota2024]).
+**[[Light chains]] determine the [[Developability|autospecificity]] of [[Antibodies|antibodies]]** [^wardemann2004]. Lambda light chains were found to be more effective at "silencing" autoreactivity. ML models trained on just light chains were as effective as those trained on full antibody sequences at predicting polyreactivity [^jagota2024].
 
 #### Figures
 ![](/assets/7-non-self-reactive.png)
-*Figure from Wardemann et al 2004[^wardemann2004]*
+*Figure from [^wardemann2004]*
 
 #### See also
 - [[Antibodies from naive B cells are more polyreactive]]

@@ -1,12 +1,12 @@
 ---
 tags: antibodies/misc
 created: "2025-12-19T11:25:57"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Paratope losses are required to enforce [[Complementarity-determining regions|CDR]]-mediated antigen binding during [[De novo antibody design|de novo antibody design]] by [[Inversion of protein folding neural networks|hallucination]]** (Mille-Fragoso et al 2025[^millefragoso2025]).
+**Paratope losses are required to enforce [[Complementarity-determining regions|CDR]]-mediated antigen binding during [[De novo antibody design|de novo antibody design]] by [[Inversion of protein folding neural networks|hallucination]]** [^millefragoso2025].
 
 #### Details
 
@@ -23,7 +23,7 @@ where $\mathcal{L}_{\text{CDR}}$ and $\mathcal{L}_{\text{framework}}$ decrease a
 
 ![](/assets/Pasted-image-20251027120017.png)
 
-*Figure from Mille-Fragoso et al 2025[^millefragoso2025]*
+*Figure from [^millefragoso2025]*
 
 #### See also
 

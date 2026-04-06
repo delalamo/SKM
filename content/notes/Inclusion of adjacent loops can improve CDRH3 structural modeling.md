@@ -2,10 +2,10 @@
 tags:
   - antibodies/misc
 created: "2026-03-20T07:08:52"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-**Including adjacent [[Complementarity-determining regions|CDRs]] can improve modeling of [[Complementarity-determining regions#CDRH3|CDRH3]] when modeling [[Antibodies|antibodies]]** (Guloglu and Deane 2023[^guloglu2023]).
+**Including adjacent [[Complementarity-determining regions|CDRs]] can improve modeling of [[Complementarity-determining regions#CDRH3|CDRH3]] when modeling [[Antibodies|antibodies]]** (Guloglu and [^guloglu2023]).
 
 #### See also
 - [[Loops from one V-region chain affect the conformations and dynamics of loops in the other chain]]

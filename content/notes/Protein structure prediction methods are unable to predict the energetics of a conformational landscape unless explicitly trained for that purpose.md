@@ -2,12 +2,12 @@
 tags:
   - protein-folding/misc
 created: "2025-09-01T04:55:07"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Protein [[Structure prediction|structure prediction]] methods are unable to predict the energetics of a [[Protein dynamics|conformational landscape]] unless explicitly trained for that purpose** ([[yQcebEgQfH|Jing et al 2023]], Vani et al 2023[^vani2023], Riccabona et al 2024[^riccabona2024], del Alamo et al 2022b[^del2022]), although Monteiro da Silva et al 2024[^monteiro2024] disagrees and provides some anecdotal examples. Schafer & Porter 2024[^schafer2024] show that at least for [[Fold-switching proteins|fold-switching proteins]], the sampled conformation is memorized by the exact protein folding method, while Lazou et al 2024[^lazou2024] show the same for binders that alternate between open-closed conformations. A step in the right direction is how [[BioEmu]] reproduces $\Delta G$ values to within 1 kcal/mol when modeling folded and unfolded states and comparing their populations (Lewis et al 2024[^lewis2024]); however, later results showed that it [[Inverse folding NNs are better predictors of equilibrium dynamics than protein folding NNs|isn't as effective at predicting the equilibrium dynamics of mutated enzymes as well as inverse folding NNs]].
+**Protein [[Structure prediction|structure prediction]] methods are unable to predict the energetics of a [[Protein dynamics|conformational landscape]] unless explicitly trained for that purpose** ([[yQcebEgQfH|Jing et al 2023]], [^vani2023], [^riccabona2024], [^del2022]), although Monteiro da [^monteiro2024] disagrees and provides some anecdotal examples. [^schafer2024] show that at least for [[Fold-switching proteins|fold-switching proteins]], the sampled conformation is memorized by the exact protein folding method, whi[^lazou2024] show the same for binders that alternate between open-closed conformations. A step in the right direction is how [[BioEmu]] reproduces $\Delta G$ values to within 1 kcal/mol when modeling folded and unfolded states and comparing their populations [^lewis2024]; however, later results showed that it [[Inverse folding NNs are better predictors of equilibrium dynamics than protein folding NNs|isn't as effective at predicting the equilibrium dynamics of mutated enzymes as well as inverse folding NNs]].
 
 [^vani2023]: Vani et al. (2023) "Exploring Kinase Asp-Phe-Gly (DFG) Loop Conformational Stability with AlphaFold2-RAVE." *Journal of Chemical Information and Modeling*. https://doi.org/10.1021/acs.jcim.3c01436
 [^riccabona2024]: Riccabona et al. (2024) "Assessing AF2’s ability to predict structural ensembles of proteins." https://doi.org/10.1101/2024.04.16.589792

@@ -3,13 +3,13 @@ title: Mutation memory half life
 tags:
   - protein-folding/misc
 created: "2024-05-02T05:15:27"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
- **Mutation memory half-life refers to the number of mutations required to observe changes in a mutation's effect on fitness ((epistatic) drift).** The term mutation memory half-life was coined by Park et al 2022[^park2022].
+ **Mutation memory half-life refers to the number of mutations required to observe changes in a mutation's effect on fitness ((epistatic) drift).** The term mutation memory half-life was coined by [^park2022].
 
 #### Details
-Mutations that have a fitness effect in a sequence may not have the same effect if a sufficient number of additional mutations are allowed to accumulate in the background (Hie et al 2022[^hie2022]). Put another way, mutations with an effect on an ancestral sequence would, after some evolution, fail to have the same effect. The mutation-memory half-life captures the amount of background evolution that needs to happen before this has a 50% chance of happening. 
+Mutations that have a fitness effect in a sequence may not have the same effect if a sufficient number of additional mutations are allowed to accumulate in the background [^hie2022]. Put another way, mutations with an effect on an ancestral sequence would, after some evolution, fail to have the same effect. The mutation-memory half-life captures the amount of background evolution that needs to happen before this has a 50% chance of happening. 
 
 In the context of their model system, about a quarter of mutations had memory half-lives of <50% sequence divergence. Over half have near-infinite memories, meaning that they retain their effects regardless of global sequence changes, and the extant sequence can successfully recapitulate the effects of those changes in ancestral sequences.
 
@@ -19,11 +19,11 @@ This correlates poorly with the following:
 * Substitution rate of adjacent residues
 * Distance to active site residues or interfaces
 
-An earlier study in $beta$-lactamase found that not all mutational paths to an certain sequence are equally accessible; e.g., some of the mutations close off paths if accessed prematurely (Weinreich et al 2006[^weinreich2006]).
+An earlier study in $beta$-lactamase found that not all mutational paths to an certain sequence are equally accessible; e.g., some of the mutations close off paths if accessed prematurely [^weinreich2006].
 
 #### Figures
 ![](/assets/darwinian_evolution.png)
-*Figure from Weinreich et al 2006[^weinreich2006]*
+*Figure from [^weinreich2006]*
 
 #### See also
 * [[Ancestral sequence reconstruction]]

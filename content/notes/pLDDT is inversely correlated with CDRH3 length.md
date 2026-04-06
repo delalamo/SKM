@@ -2,14 +2,14 @@
 tags:
   - antibodies/misc
 created: "2026-02-20T18:08:22"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-**[[pLDDT]] is inversely correlated with [[Complementarity-determining regions#CDRH3|CDRH3]] length** (Chen et al 2024a[^chen2024]).
+**[[pLDDT]] is inversely correlated with [[Complementarity-determining regions#CDRH3|CDRH3]] length** [^chen2024].
 
 #### Figures
 ![](/assets/Confidence.png)
-*Figure from Chen et al 2024a[^chen2024]*
+*Figure from [^chen2024]*
 
 #### See also
 - [[pLDDT and PAE inversely correlated with protein dynamics in dynamic naturally occurring proteins, but not de novo proteins]]

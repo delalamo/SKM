@@ -2,12 +2,12 @@
 tags:
   - protein-folding/misc
 created: "2026-04-05T17:37:18"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Iterative [[Structure prediction|protein structure prediction]] outperforms all-at-once structure prediction** (Hayes et al 2025[^hayes2025]). This was pronounced for difficult targets (e.g., [[CASP14]] and [[CASP15]] proteins), whereas easy targets (CAMEO) could be predicted using either approach.
+**Iterative [[Structure prediction|protein structure prediction]] outperforms all-at-once structure prediction** [^hayes2025]. This was pronounced for difficult targets (e.g., [[CASP14]] and [[CASP15]] proteins), whereas easy targets (CAMEO) could be predicted using either approach.
 
 #### Figures
 
@@ -23,6 +23,6 @@ modified: "2026-04-05T23:14:54"
 | ESMFold | 0.865 | 0.728 | 0.735 | | | |
 | AlphaFold2 | 0.904 | 0.846 | 0.826 | | | |
 
-*Figure from Hayes et al 2025[^hayes2025]*
+*Figure from [^hayes2025]*
 
 [^hayes2025]: Hayes et al. (2025) "Simulating 500 million years of evolution with a language model." *Science*. https://doi.org/10.1126/science.ads0018

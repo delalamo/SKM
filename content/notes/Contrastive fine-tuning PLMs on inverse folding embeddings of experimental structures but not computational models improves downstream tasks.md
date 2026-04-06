@@ -2,18 +2,18 @@
 tags:
   - antibodies/misc
 created: "2025-07-22T11:37:28"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Contrastive fine-tuning of protein language models outputs using embeddings from inverse folding models improves downstream classification tasks** (Barton et al 2023[^barton2023], Liu et al 2024b[^liu2024], Wang et al 2023c[^wang2023]). Barton et al 2023[^barton2023] used contrastive learning to fine-tune AntiBERTa2, AntiBERTy, and ESM2 to match those of ESM-IF, improving antigen classification; importantly, this only worked on experimental structures, and not computational models. Liu et al 2024b[^liu2024] and Wang et al 2023c[^wang2023] used a similar student-teacher training scheme to fine-tune ESM on structural data, and they also relied on contrastive learning, but they did not train on computational models. Wang et al 2023c[^wang2023] found that family-level classification was the only case where default ESM outperformed the contrastive learning-improved version, and that the use of low-rank adaptation sometimes but not always led to improvements in prediction.
+**Contrastive fine-tuning of protein language models outputs using embeddings from inverse folding models improves downstream classification tasks** [^barton2023][^liu2024][^wang2023]. [^barton2023] used contrastive learning to fine-tune AntiBERTa2, AntiBERTy, and ESM2 to match those of ESM-IF, improving antigen classification; importantly, this only worked on experimental structures, and not computational models. [^liu2024] and [^wang2023] used a similar student-teacher training scheme to fine-tune ESM on structural data, and they also relied on contrastive learning, but they did not train on computational models. [^wang2023] found that family-level classification was the only case where default ESM outperformed the contrastive learning-improved version, and that the use of low-rank adaptation sometimes but not always led to improvements in prediction.
 
 #### Figures
 
 ![](/assets/including-ab-models-doesnt-improve-property-prediction.png)
 
-*Figure from Barton et al 2023[^barton2023]*
+*Figure from [^barton2023]*
 
 #### See also
 

@@ -2,18 +2,18 @@
 tags:
   - protein-design/misc
 created: "2024-05-08T18:00:00"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-***De novo* structure prediction with ligands leads to more accurate prediction of structure compared to prediction without ligands** (Qiao et al 2022[^qiao2022], Krishna et al 2024[^krishna2024]). Predictions of ligand-bound structures using RosettaFold all-atom were on average more accurate than those using default RosettaFold. Qiao et al 2022[^qiao2022] found that predicted structures without ligands adopted the apo conformation, while those with the ligand adopted the holo conformation. In contrast, AlphaFold2 predictions were somewhere in the middle, and had worse RMSDs/TM-scores for holo but not apo state.
+***De novo* structure prediction with ligands leads to more accurate prediction of structure compared to prediction without ligands** [^qiao2022][^krishna2024]. Predictions of ligand-bound structures using RosettaFold all-atom were on average more accurate than those using default RosettaFold. [^qiao2022] found that predicted structures without ligands adopted the apo conformation, while those with the ligand adopted the holo conformation. In contrast, AlphaFold2 predictions were somewhere in the middle, and had worse RMSDs/TM-scores for holo but not apo state.
 
 #### Figures
 
 ![](/assets/Pasted-image-20240419125413.png)
 
-*Figure S4E from Krishna et al 2024[^krishna2024]*
+*Figure S4E from [^krishna2024]*
 
 #### See also
 

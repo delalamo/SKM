@@ -2,14 +2,14 @@
 tags:
   - protein-folding/misc
 created: "2025-07-22T11:37:28"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-**Synthetic data over-represents mean values of the original data distribution and either underrepresents or exaggerates the presence of outliers** (Shumailov et al 2023[^shumailov2023]). This can pose a challenge for models trained using [[Distillation]] and can be a cause of [[Catastrophic forgetting]].
+**Synthetic data over-represents mean values of the original data distribution and either underrepresents or exaggerates the presence of outliers** [^shumailov2023]. This can pose a challenge for models trained using [[Distillation]] and can be a cause of [[Catastrophic forgetting]].
 
 #### Figures
 ![](/assets/Pasted-image-20240216112730.png)
-*Figure from Shumailov et al 2023[^shumailov2023]*
+*Figure from [^shumailov2023]*
 
 #### See also
 - [[Training inverse folding and diffusion models exclusively on predicted protein structures worsens performance due to how locally perfect they are]]

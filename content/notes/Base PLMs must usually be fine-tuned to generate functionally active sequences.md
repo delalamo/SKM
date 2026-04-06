@@ -3,20 +3,20 @@ title: Base PLMs must usually be fine-tuned to generate functionally active sequ
 tags:
   - protein-design/misc
 created: "2026-03-18T07:59:23"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
- **Base [[Protein language models|protein language models]] must usually be fine-tuned to generate functionally active sequences** (Madani et al 2023[^madani2023], Munsamy et al 2024[^munsamy2024]). Bixby et al 2026[^bixby2026] showed that, in a head-to-head between an unspecified foundation model and its "evo-tuned" derivative, the latter was better at [[Variant effect prediction|variant effect prediction]]. Note that this is not true of models where functional annotations can be provided, such as ZymCTRL (Munsamy et al 2024[^munsamy2024]) and ESM3 (Hayes et al 2025[^hayes2025]).
+ **Base [[Protein language models|protein language models]] must usually be fine-tuned to generate functionally active sequences** [^madani2023][^munsamy2024]. [^bixby2026] showed that, in a head-to-head between an unspecified foundation model and its "evo-tuned" derivative, the latter was better at [[Variant effect prediction|variant effect prediction]]. Note that this is not true of models where functional annotations can be provided, such as ZymCTRL [^munsamy2024] and ESM3 [^hayes2025].
 
 #### Details
-Fannjiang and Listgarten 2023[^fannjiang2023] give several citations for how pan-protein data is unnecessary for generating novel sequences.
-Evo-tuning was first presented by Biswas et al 2019[^biswas2019]
+Fannjiang and [^fannjiang2023] give several citations for how pan-protein data is unnecessary for generating novel sequences.
+Evo-tuning was first presented by [^biswas2019]
 
 #### Figures
 ![](/assets/Pasted-image-20240513202423.png)
-*Figure from Munsamy et al 2024[^munsamy2024]*
+*Figure from [^munsamy2024]*
 ![](/assets/Pasted-image-20260311082003.png)
-*Figure from Bixby et al 2026[^bixby2026]*
+*Figure from [^bixby2026]*
 
 #### See also
 * [[Protein language models make equally effective predictions when trained on individual proteins or protein families]]

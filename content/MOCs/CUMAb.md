@@ -2,6 +2,8 @@
 title: CUMAb
 tags:
   - cumab
+created: "2026-04-05T23:36:09"
+modified: "2026-04-05T23:36:09"
 ---
 
 **CUMAb** is a method for [[Antibody humanization|antibody humanization]] using [[Rosetta]] and human [[Germline#V-genes|V-genes]] and [[Germline#J-genes|J-genes]].
@@ -20,7 +22,7 @@ tags:
 	7. Relax w/ grafted CDRs; w/ antigen remaining fixed
 	8. Eliminate designs that cause CDRs to deviate by more than 0.5 A RMSD, unless a computational model is used
 	9. [[Clustering|Cluster]] by V-gene subgroup
-*  Able to find non-obvious V/J-gene combinations for grafting of [[Complementarity-determining regions|CDRs]]; four of five test cases did not use human equivalent of starting genes
+* Able to find non-obvious V/J-gene combinations for grafting of [[Complementarity-determining regions|CDRs]]; four of five test cases did not use human equivalent of starting genes
 
 #### See also
 

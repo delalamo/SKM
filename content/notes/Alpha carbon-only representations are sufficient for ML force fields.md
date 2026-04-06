@@ -2,18 +2,18 @@
 tags:
   - protein-folding/misc
 created: "2024-07-08T02:37:17"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**For ML-based [[MD simulations|MD]] potentials, alpha carbon-only representations are sufficient to recapitulate the dynamics of small proteins** (Majewski et al 2023[^majewski2023], Doerr et al 2021[^doerr2021]). Models that use both alpha and beta carbons were found to be less stable than those using only alpha carbons (Doerr et al 2021[^doerr2021]). These potentials were calculated using [[Graph neural networks|graph neural networks]] with TorchMD.
+**For ML-based [[MD simulations|MD]] potentials, alpha carbon-only representations are sufficient to recapitulate the dynamics of small proteins** [^majewski2023][^doerr2021]. Models that use both alpha and beta carbons were found to be less stable than those using only alpha carbons [^doerr2021]. These potentials were calculated using [[Graph neural networks|graph neural networks]] with TorchMD.
 
 #### Figures
 
 ![](/assets/Pasted-image-20240708082007.png)
 
-*Figure from Doerr et al 2021[^doerr2021]*
+*Figure from [^doerr2021]*
 
 #### See also
 

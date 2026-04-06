@@ -2,14 +2,14 @@
 tags:
   - antibodies/misc
 created: "2024-04-15T01:48:17"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-**[[Nanobodies]] bind their antigen in one of three ways, and the majority do not engage with all three [[Complementarity-determining regions|CDRs]].** Ketaren et al 2023[^ketaren2023] classified these as: 1) side-on with mostly CDR3 (48%), 2) side-on with both CDRs and framework (31%), and 3) head-on with all three CDRs contributing to binding (18%).
+**[[Nanobodies]] bind their antigen in one of three ways, and the majority do not engage with all three [[Complementarity-determining regions|CDRs]].** [^ketaren2023] classified these as: 1) side-on with mostly CDR3 (48%), 2) side-on with both CDRs and framework (31%), and 3) head-on with all three CDRs contributing to binding (18%).
 
 #### Figures
 ![](/assets/GFP_nanobodies.png)
-*Figure from Ketaren et al 2023[^ketaren2023]*
+*Figure from [^ketaren2023]*
 
 #### See also
 - [[Nanobody CDRH3 loops are longer but more compact]]

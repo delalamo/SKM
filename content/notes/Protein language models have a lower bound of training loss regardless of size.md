@@ -1,7 +1,7 @@
 ---
 tags: [protein-design/misc]
 created: "2026-01-22T12:38:44"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
@@ -9,6 +9,6 @@ modified: "2026-04-05T23:14:54"
 
 #### Figures
 ![](/assets/Pasted-Graphic-18.png)
-*Figure from Serrano et al 2024[^serrano2024]*
+*Figure from [^serrano2024]*
 
 [^serrano2024]: Serrano et al. (2024) "Are Protein Language Models Compute Optimal?." https://doi.org/10.48550/ARXIV.2406.07249

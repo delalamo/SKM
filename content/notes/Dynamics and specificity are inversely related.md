@@ -1,19 +1,19 @@
 ---
 tags: [protein-folding/misc]
 created: "2024-09-19T05:32:41"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 ---
 summary: Protein dynamics and substrate specificity are inversely correlated
 tags:
-  - directed-evolution
+ - directed-evolution
 ---
 #### Summary
-**Protein dynamics are inversely related to specificity** (Tokuriki & Tawfik 2009[^tokuriki2009]).
+**Protein dynamics are inversely related to specificity** [^tokuriki2009].
 
 #### Details
-Examples provided by Tokuriki & Tawfik 2009[^tokuriki2009]
+Examples provided by [^tokuriki2009]
 * [[Conformational entropy in antibodies is inversely proportional to antigen affinity]]
 * (Ubiquitin) adopts an ensemble of conformations (detected using (NMR)) that contains representatives closely aligning with snapshots of bound structures
 * [[T-cell receptors]] adopt multiple conformations in unbound states

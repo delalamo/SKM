@@ -2,18 +2,18 @@
 tags:
   - protein-folding/misc
 created: "2026-03-22T10:44:50"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Zero-shot [[Fitness prediction|fitness prediction]] performance with [[Protein language models|protein language models]], but not structure-based models (e.g., [[Inverse folding|inverse folding]] models), correlates with number of homologs available for training** (Li et al 2024c[^li2024]).
+**Zero-shot [[Fitness prediction|fitness prediction]] performance with [[Protein language models|protein language models]], but not structure-based models (e.g., [[Inverse folding|inverse folding]] models), correlates with number of homologs available for training** [^li2024].
 
 #### Figures
 
 ![](/assets/Fitness-ranking-prediction.png)
 
-*Figure from Li et al 2024c[^li2024]*
+*Figure from [^li2024]*
 
 #### See also
 

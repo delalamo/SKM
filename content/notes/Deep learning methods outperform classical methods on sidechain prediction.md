@@ -1,6 +1,6 @@
 #### Summary
 
-**Deep learning [[Structure prediction#Sidechain prediction|sidechain prediction]] methods outperform classical energy function-based methods** (Visani et al 2023[^visani2023], Heo and Feig 2023[^heo2023], Vangaru & Bhattacharya 2025[^vangaru2025]). SCWRL4, which is a classical method that uses force fields, did not sample outlier rotamers as often as alternative DL-based method (Heo and Feig 2023[^heo2023]).
+**Deep learning [[Structure prediction#Sidechain prediction|sidechain prediction]] methods outperform classical energy function-based methods** ([^visani2023], Heo and [^heo2023], [^vangaru2025]). SCWRL4, which is a classical method that uses force fields, did not sample outlier rotamers as often as alternative DL-based method (Heo and [^heo2023]).
 
 #### Figures
 | | RMSD (Å) ↓ | | | χ-MAE (°) ↓ | | | | RR (%) ↑ | Steric Clashes (#) ↓ | | |
@@ -26,7 +26,7 @@
 | PyRosetta Packer | 0.87 | 0.43 | 1.12 | 25.84 | 27.57 | 47.95 | 55.32 | 58.0 | 98.5 | **13.5** | **3.1** |
 | SCWRL4 | 0.94 | 0.50 | 1.17 | 27.89 | 29.12 | 49.81 | 57.25 | 55.5 | 168.3 | 36.3 | 7.7 |
 
-*Figure from Vangaru & Bhattacharya 2025[^vangaru2025]*
+*Figure from [^vangaru2025]*
 
 [^visani2023]: Visani et al. (2023) "H-Packer: Holographic Rotationally Equivariant Convolutional Neural Network for Protein Side-Chain Packing." https://doi.org/10.48550/arXiv.2311.09312
 [^heo2023]: Heo & Feig (2023) "One particle per residue is sufficient to describe all-atom protein structures." https://doi.org/10.1101/2023.05.22.541652

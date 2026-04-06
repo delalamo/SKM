@@ -2,17 +2,17 @@
 tags:
   - protein-folding/misc
 created: "2024-05-10T00:50:16"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**[[AlphaFold|AlphaFold3]] learns interactions between the same type of molecule faster than interactions between different types of molecules** (Abramson et al 2024[^abramson2024]).
+**[[AlphaFold|AlphaFold3]] learns interactions between the same type of molecule faster than interactions between different types of molecules** [^abramson2024].
 
 #### Figures
 
 ![](/assets/d.png)
 
-*Figure from Abramson et al 2024[^abramson2024]*
+*Figure from [^abramson2024]*
 
 [^abramson2024]: Abramson et al. (2024) "Accurate structure prediction of biomolecular interactions with AlphaFold 3." *Nature*. https://doi.org/10.1038/s41586-024-07487-w

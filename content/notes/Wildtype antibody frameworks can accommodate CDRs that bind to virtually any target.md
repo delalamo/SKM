@@ -1,26 +1,26 @@
 ---
 tags: [antibodies/misc]
 created: "2025-10-27T11:57:51"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
-**Wildtype (antibody) [[Framework region|frameworks]] can accommodate [[Complementarity-determining regions|CDRs]] that bind to virtually any antigen** (Bennett et al 2024[^bennett2024], Mille-Fragoso et al 2025[^millefragoso2025], BoltzGen paper). This was demonstrated by [[De novo antibody design]] efforts that kept the framework sequence fixed while varying the CDRs.
+**Wildtype (antibody) [[Framework region|frameworks]] can accommodate [[Complementarity-determining regions|CDRs]] that bind to virtually any antigen** ([^bennett2024], [^millefragoso2025], BoltzGen paper). This was demonstrated by [[De novo antibody design]] efforts that kept the framework sequence fixed while varying the CDRs.
 
 #### References
 ```base
 filters:
-  and:
-    - this.file.hasLink(file.file)
-    - file.infolder("Sorted_notes/Raw_data/Paper_notes/")
+ and:
+ - this.file.hasLink(file.file)
+ - file.infolder("Sorted_notes/Raw_data/Paper_notes/")
 views:
-  - type: list
-    name: List
-    order:
-      - Title
-      - Year
-      - file.name
-    sort: []
+ - type: list
+ name: List
+ order:
+ - Title
+ - Year
+ - file.name
+ sort: []
 
 ```
 

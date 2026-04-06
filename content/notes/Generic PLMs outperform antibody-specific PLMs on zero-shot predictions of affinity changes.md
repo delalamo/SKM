@@ -3,13 +3,13 @@ title: Generic PLMs outperform antibody-specific PLMs on zero-shot predictions o
 tags:
   - antibodies/misc
 created: "2024-07-02T05:11:51"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
- **Generic [[Protein language models|PLMs]] outperform [[Antibodies]] [[Antibody language models|LMs]] on zero-shot prediction of affinity changes.** This was observed using [[ESM]] (Hie et al 2023[^hie2023]) and other [[BERT]]-based models (Li et al 2023[^li2023]), as well as the autoregressive model like [[ProGen]] (Nijkamp et al 2023[^nijkamp2023]). However, they are worse at predicting [[Antibody LMs outperform generic PLMs on intrafamily thermostability prediction|intra-family thermostability]] (Chungyoun et al 2024[^chungyoun2024]).
+ **Generic [[Protein language models|PLMs]] outperform [[Antibodies]] [[Antibody language models|LMs]] on zero-shot prediction of affinity changes.** This was observed using [[ESM]] [^hie2023] and other [[BERT]]-based models [^li2023], as well as the autoregressive model like [[ProGen]] [^nijkamp2023]. However, they are worse at predicting [[Antibody LMs outperform generic PLMs on intrafamily thermostability prediction|intra-family thermostability]] [^chungyoun2024].
 
 #### Details
-Hie et al 2023[^hie2023] concluded this by comparing experimental binding affinity data collected on clones picked using ESM to zero-shot predictions by AbLang and SAPIENS.
+[^hie2023] concluded this by comparing experimental binding affinity data collected on clones picked using ESM to zero-shot predictions by AbLang and SAPIENS.
 
 The failure of antibody LMs to predict residues with high affinity may be due to their [[PLMs are biased toward germline antibodies|bias toward germline residues]].
 

@@ -2,18 +2,18 @@
 tags:
   - protein-folding/misc
 created: "2024-08-13T05:05:39"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**The [[Protein language models#Representations|latent space]] of [[ESMFold]] is discontinuous** (del Alamo et al 2023[^del2023], Lu et al 2024b[^lu2024]). However, it can be smoothened by compression using a [[Variational autoencoders|VAE]].
+**The [[Protein language models#Representations|latent space]] of [[ESMFold]] is discontinuous** [^del2023][^lu2024]. However, it can be smoothened by compression using a [[Variational autoencoders|VAE]].
 
 #### Figures
 
 ![](/assets/Original-Latent-Space.png)
 
-*Figure from Lu et al 2024b[^lu2024]*
+*Figure from [^lu2024]*
 
 #### See also
 

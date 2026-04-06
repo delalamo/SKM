@@ -2,18 +2,18 @@
 tags:
   - protein-folding/misc
 created: "2025-05-01T06:05:41"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**[[Protein language models|PLM]]-based [[Structure prediction|protein folding NNs]] predict structural novelty with far lower accuracy than [[Multiple sequence alignments|MSA]]-based protein folding NNs** (Yeo et al 2025[^yeo2025]). This was shown with [[ESMFold]] and [[AlphaFold|AlphaFold2]] using low-confidence predictions from the ESM Metagenomic atlas, which were re-predicted with AF2.
+**[[Protein language models|PLM]]-based [[Structure prediction|protein folding NNs]] predict structural novelty with far lower accuracy than [[Multiple sequence alignments|MSA]]-based protein folding NNs** [^yeo2025]. This was shown with [[ESMFold]] and [[AlphaFold|AlphaFold2]] using low-confidence predictions from the ESM Metagenomic atlas, which were re-predicted with AF2.
 
 #### Figures
 
 ![](/assets/Pasted-image-20250501120435.png)
 
-*Figure from Yeo et al 2025[^yeo2025]*
+*Figure from [^yeo2025]*
 
 #### See also
 

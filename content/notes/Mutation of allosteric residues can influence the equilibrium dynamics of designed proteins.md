@@ -1,12 +1,12 @@
 ---
 tags: protein-design/misc
 created: "2024-10-14T12:57:29"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**The conformational dynamics of *de novo* designed proteins are easily influenced by mutations to nearby residues that don't move** Praetorius et al 2023[^praetorius2023] and Kortemme lab [[NeurIPS_2023]], unpublished as of 19 December 2023).
+**The conformational dynamics of *de novo* designed proteins are easily influenced by mutations to nearby residues that don't move** [^praetorius2023] and Kortemme lab [[NeurIPS_2023]], unpublished as of 19 December 2023).
 
 #### Figures
 

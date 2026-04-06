@@ -2,20 +2,20 @@
 tags:
   - antibodies/misc
 created: "2024-12-04T02:49:44"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
- **Membrane proteins can be bulked up for structure-determination by [[cryo-EM]] by inserting designed domains, some of which can be further grown in size with predefined epitopes for [[Antibodies|antibodies]] and [[Nanobodies|nanobodies]]** (Mukherjee et al 2020[^mukherjee2020], Niu et al 2021[^niu2021]). Other proteins for insertion include BRIL, T4 Lysozyme (widely used for [[G protein-coupled receptors|GPCRs]]), GFP (for SGLT1 and SGLT2), flavoredoxin, xylanase, and rubredoxin (Chun et al 2012[^chun2012]; they liked [[BRIL]] the best).
+ **Membrane proteins can be bulked up for structure-determination by [[cryo-EM]] by inserting designed domains, some of which can be further grown in size with predefined epitopes for [[Antibodies|antibodies]] and [[Nanobodies|nanobodies]]** [^mukherjee2020][^niu2021]. Other proteins for insertion include BRIL, T4 Lysozyme (widely used for [[G protein-coupled receptors|GPCRs]]), GFP (for SGLT1 and SGLT2), flavoredoxin, xylanase, and rubredoxin ([^chun2012]; they liked [[BRIL]] the best).
 
 #### Figures
 ![](/assets/Pasted-image-20241004162539.png)
-*Figure from Mukherjee et al 2020[^mukherjee2020]*
+*Figure from [^mukherjee2020]*
 
 ![](/assets/Pasted-image-20241004163051.png)
-*Figure from Niu et al 2021[^niu2021]*
+*Figure from [^niu2021]*
 
 ![](/assets/Pasted-image-20241004163435.png)
-*Figure from Chun et al 2012[^chun2012]*
+*Figure from [^chun2012]*
 
 #### See also
 * [[De novo designed backbones can increase the size of proteins for cryo-EM structure determination]]

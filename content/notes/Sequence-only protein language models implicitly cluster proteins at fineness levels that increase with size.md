@@ -2,17 +2,17 @@
 tags:
   - protein-folding/misc
 created: "2026-03-26T21:47:41"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Sequence-only [[Protein language models|protein language models]] implicitly cluster protein sequences at fineness granularities that increase with size** (Zhang et al 2025[^zhang2025]). For example, [[ESM]]-15B implicitly learns about sequence constraints from very similar proteins, whereas the 650M model learns from a broader pool of sequences. This was determined by observing the extent to which these models learn homo-oligomeric contacts and comparing their performance to that of [[MSA-Pairformer]].
+**Sequence-only [[Protein language models|protein language models]] implicitly cluster protein sequences at fineness granularities that increase with size** [^zhang2025]. For example, [[ESM]]-15B implicitly learns about sequence constraints from very similar proteins, whereas the 650M model learns from a broader pool of sequences. This was determined by observing the extent to which these models learn homo-oligomeric contacts and comparing their performance to that of [[MSA-Pairformer]].
 
 #### Figures
 
 ![](/assets/Pasted-image-20251211092215.png)
-*Figure from Zhang et al 2025[^zhang2025]*
+*Figure from [^zhang2025]*
 
 #### See also
 

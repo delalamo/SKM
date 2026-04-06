@@ -2,26 +2,26 @@
 tags:
   - protein-folding/misc
 created: "2026-02-20T18:11:03"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**The [[pLDDT]] and [[Predicted aligned error|PAE]] of [[AlphaFold|AlphaFold2]] predictions is inversely correlated with RMSD between conformations observed experimentally** (Saldaño et al 2022[^saldao2022] and Chakravarty and Porter 2022[^chakravarty2022]) **and from [[MD simulations]]** (Jussupow & Kaila 2023[^jussupow2023], Gavalda-Garcia et al 2024[^gavaldagarcia2024]). Low pLDDT is also predictive of intrinsic disorder. However, in *de novo* proteins, pLDDT predictions do not correlate with flexibility, based on studies with [[NMR]] (Müntener et al 2026[^mntener2026]). This is a form of [[Uncertainty quantification|aleotoric uncertainty]] in the neural network's confidence prediction module.
+**The [[pLDDT]] and [[Predicted aligned error|PAE]] of [[AlphaFold|AlphaFold2]] predictions is inversely correlated with RMSD between conformations observed experimentally** ([^saldao2022] and Chakravarty and [^chakravarty2022]) **and from [[MD simulations]]** [^jussupow2023][^gavaldagarcia2024]. Low pLDDT is also predictive of intrinsic disorder. However, in *de novo* proteins, pLDDT predictions do not correlate with flexibility, based on studies with [[NMR]] [^mntener2026]. This is a form of [[Uncertainty quantification|aleotoric uncertainty]] in the neural network's confidence prediction module.
 
 #### Figures
 
 ![](/assets/Pasted-Graphic-2-2.png)
 
-*Figure from Jussupow & Kaila 2023[^jussupow2023]*
+*Figure from [^jussupow2023]*
 
 ![](/assets/Pasted-image-20240722081109.png)
 
-*Figure from Gavalda-Garcia et al 2024[^gavaldagarcia2024]*
+*Figure from [^gavaldagarcia2024]*
 
 ![](/assets/Pasted-image-20260220181048.png)
 
-*Figure from Müntener et al 2026[^mntener2026]*
+*Figure from [^mntener2026]*
 
 [^saldao2022]: Saldaño et al. (2022) "Impact of protein conformational diversity on AlphaFold predictions." *Bioinformatics*. https://doi.org/10.1093/bioinformatics/btac202
 [^chakravarty2022]: Chakravarty & Porter (2022) "AlphaFold2

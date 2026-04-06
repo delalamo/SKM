@@ -2,18 +2,18 @@
 tags:
   - protein-folding/misc
 created: "2026-04-05T17:45:06"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Structure-based methods such as [[Inverse folding]] models outperform sequence-based methods such as [[Protein language models|PLMs]] on protein stability prediction of point mutants, but not full sequences** (Reeves & Kalyaanamoorthy 2023[^reeves2023]). Among those models, [[ESM-IF]] is the most effective (Wang et al 2023[^wang2023], [[Paul et al 2023]]). Tan et al 2023[^tan2023] found that embedding geometry into PLMs can improve stability prediction. In contrast, Cho et al 2024[^cho2024] found that the PLM [[ESM|ESM-2]] had better Spearman correlations than these inverse folding models to experimental stability measurements when comparing the *de novo* sequences with the same target fold.
+**Structure-based methods such as [[Inverse folding]] models outperform sequence-based methods such as [[Protein language models|PLMs]] on protein stability prediction of point mutants, but not full sequences** [^reeves2023]. Among those models, [[ESM-IF]] is the most effective ([^wang2023], [[Paul et al 2023]]). [^tan2023] found that embedding geometry into PLMs can improve stability prediction. In contrast, [^cho2024] found that the PLM [[ESM|ESM-2]] had better Spearman correlations than these inverse folding models to experimental stability measurements when comparing the *de novo* sequences with the same target fold.
 
 #### Details
 
-Comparisons carried out by Wang et al 2023[^wang2023] were carried out using data from Rocklin et al 2017[^rocklin2017] and Tsuboyama et al 2023[^tsuboyama2023].
+Comparisons carried out by [^wang2023] were carried out using data from [^rocklin2017] and [^tsuboyama2023].
 
-Data are ambiguous about when [[Rosetta]] or [[ProteinMPNN]] is better (Reeves & Kalyaanamoorthy 2023[^reeves2023]; the former was substantially improved by Dieckhaus et al 2024[^dieckhaus2024] following transfer learning on ddG data by Tsuboyama et al 2023[^tsuboyama2023]).
+Data are ambiguous about when [[Rosetta]] or [[ProteinMPNN]] is better ([^reeves2023]; the former was substantially improved by [^dieckhaus2024] following transfer learning on ddG data by [^tsuboyama2023]).
 
 #### Figures
 
@@ -42,7 +42,7 @@ Data are ambiguous about when [[Rosetta]] or [[ProteinMPNN]] is better (Reeves &
 | **AF-Design** | 0.354 | 0.292 | 0.318 |
 | **ESM-Design** | 0.127 | 0.0004 | 0.053 |
 
-*Figure from Wang et al 2023[^wang2023]*
+*Figure from [^wang2023]*
 
 | Model | Version | TPR↑ DTm 5% | TPR↑ DTm 25% | TPR↑ DTm 50% | TPR↑ DDG 5% | TPR↑ DDG 25% | TPR↑ DDG 50% |
 |---|---|---|---|---|---|---|---|
@@ -67,11 +67,11 @@ Data are ambiguous about when [[Rosetta]] or [[ProteinMPNN]] is better (Reeves &
 | | t48 | **0.232** | 0.430 | 0.607 | 0.189 | 0.400 | 0.606 |
 | P¹³LG | k20_h1280 | 0.304 | 0.419 | 0.642 | 0.267 | 0.454 | 0.676 |
 
-*Figure from Tan et al 2023[^tan2023]*
+*Figure from [^tan2023]*
 
 ![](/assets/Pasted-image-20241231144322.png)
 
-*Figure from Cho et al 2024[^cho2024]*
+*Figure from [^cho2024]*
 
 #### See also
 

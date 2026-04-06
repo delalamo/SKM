@@ -2,18 +2,18 @@
 tags:
   - protein-folding/misc
 created: "2026-03-06T09:43:56"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Confidence metrics like ipTM from diffusion-based protein structure prediction can be improved with relatively small changes in the conditioning probabilities** (Maddipatla et al 2026[^maddipatla2026]). This was observed when using this as an objective for diffusion guidance.
+**Confidence metrics like ipTM from diffusion-based protein structure prediction can be improved with relatively small changes in the conditioning probabilities** [^maddipatla2026]. This was observed when using this as an objective for diffusion guidance.
 
 #### Figures
 
 ![](/assets/Pasted-image-20260306093812.png)
 
-*Figure from Maddipatla et al 2026[^maddipatla2026]*
+*Figure from [^maddipatla2026]*
 
 #### See also
 

@@ -2,18 +2,18 @@
 tags:
   - protein-folding/misc
 created: "2025-05-05T11:31:20"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**[[Protein-ligand co-folding|All-atom protein structure prediction]] of [[RNA]] and protein-RNA complexes is driven by memorization** (Ludaic & Elofsson 2025[^ludaic2025]).
+**[[Protein-ligand co-folding|All-atom protein structure prediction]] of [[RNA]] and protein-RNA complexes is driven by memorization** [^ludaic2025].
 
 #### Figures
 
 ![](/assets/Pasted-image-20250505173050.png)
 
-*Figure from Ludaic & Elofsson 2025[^ludaic2025]*
+*Figure from [^ludaic2025]*
 
 #### See also
 

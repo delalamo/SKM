@@ -2,17 +2,17 @@
 tags:
   - protein-folding/misc
 created: "2024-07-15T08:36:40"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-The **NVT ensemble** (canonical ensemble) retains number of atoms, volume, and temperature in a [[MD simulations|molecular dynamics simulation]]. It simulates at an external temperature bath at a target temperature. Spontaneous changes in NVT simulations cannot lead to increases in [[Helmholtz free energy]] (Frenkel & Smit 2002[^frenkel2002]).
+The **NVT ensemble** (canonical ensemble) retains number of atoms, volume, and temperature in a [[MD simulations|molecular dynamics simulation]]. It simulates at an external temperature bath at a target temperature. Spontaneous changes in NVT simulations cannot lead to increases in [[Helmholtz free energy]] [^frenkel2002].
 
 #### Details
-Lemkul 2019[^lemkul2019] note that it is common to first equilibrate temperature in an NVT ensemble before applying the barostat:
+[^lemkul2019] note that it is common to first equilibrate temperature in an NVT ensemble before applying the barostat:
 
 > "...it is often more robust to first equilibrate the temperature of a system before applying a barostat to control the temperature. The simultaneous combination of velocity generation and coordinate scaling under the influence of the barostat can introduce instabilities in a system that may be far from equilibrium."
 
-Langevin dynamics is an example of an NVT ensemble (Hénin et al 2022[^hnin2022]):
+Langevin dynamics is an example of an NVT ensemble [^hnin2022]:
 
 $$d \boldsymbol{x} = M^{-1} \boldsymbol{p}\, dt \tag{1}$$
 $$d \boldsymbol{p} = \left(- \nabla_{\boldsymbol{x}} U(\boldsymbol{x})- \gamma \boldsymbol{p}\right) dt + \sqrt{\frac{2 \gamma M}{\beta}} d \boldsymbol{W}_{t} \tag{2}$$

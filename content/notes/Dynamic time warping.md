@@ -2,13 +2,13 @@
 tags:
   - antibodies/misc
 created: "2024-05-08T17:45:39"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-**Dynamic time warping is used to compare antibody loops of different lengths** (Guloglu and Deane 2023[^guloglu2023]). It is analogous to the Needleman-Wunsch algorithm, and reduces to RMSD when loops are the same length. It is not designed to work with [[Complementarity-determining regions|CDRH3]]. When all CDRs are used, seventeen clusters result, four of which span multiple loop lengths.
+**Dynamic time warping is used to compare antibody loops of different lengths** (Guloglu and [^guloglu2023]). It is analogous to the Needleman-Wunsch algorithm, and reduces to RMSD when loops are the same length. It is not designed to work with [[Complementarity-determining regions|CDRH3]]. When all CDRs are used, seventeen clusters result, four of which span multiple loop lengths.
 
 #### Details
-From Nowak et al 2016[^nowak2016]:
+From [^nowak2016]:
 
 > "The algorithm uses dynamic programming to find the optimum path through the low-cost areas of a cost matrix. When 2 loops of the same length are compared, the algorithm returns the RMSD between the backbone atoms of the loops. When two loops of different lengths are compared, the algorithm calculates the RMSD between backbone atoms of residues matched by the walk through the cost matrix."
 

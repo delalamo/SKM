@@ -3,21 +3,21 @@ title: Natural selection favors the highest average local fitness
 tags:
   - protein-folding/misc
 created: "2024-06-11T01:58:30"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
- **Natural selection favors the highest average local fitness, rather than the absolute highest fitness** (Wilke et al 2001[^wilke2001], Codoñer et al 2006[^codoer2006]).
+ **Natural selection favors the highest average local fitness, rather than the absolute highest fitness** [^wilke2001][^codoer2006].
 
 #### Details
 Authors mention that quasi-species theory states that "survival of the flattest" rewards occupancy of flatter minima rather than high mutation or replication rates:
 
 > "Faster replicating organisms can easily be out-competed at high mutation rates by organisms that replicate more slowly, if the latter obtain sufficient support from their mutational neighbourhood. Even a 12-fold difference in replication rate could be overcome by greater mutational robustness of the slower replicator."
 
-Experimental evidence supporting this model was obtained in viral samples by Codoñer et al 2006[^codoer2006].
+Experimental evidence supporting this model was obtained in viral samples by [^codoer2006].
 
 #### Figures
 ![](/assets/Pasted-image-20231120112637.png)
-*Figure from Wilke et al 2001[^wilke2001]*
+*Figure from [^wilke2001]*
 
 #### See also
 * [[Natural sequences deviate from highest stability variants]]

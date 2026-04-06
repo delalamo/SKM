@@ -2,22 +2,22 @@
 tags:
   - protein-design/misc
 created: "2026-01-22T11:24:28"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**[[Protein language models]] can be converted into [[Inverse folding|inverse folding]] models by adding intermediate adapter layers and fine-tuning on structural data** (Ruffolo et al 2024b[^ruffolo2024], using [[ProGen]] models; Li et al 2025b[^li2025] using [[ESM]]2-650M). This leads to improvements in sequence recovery and [[Fitness prediction|fitness prediction]] beyond what can be achieved by concatenation. Larger models maintain the improvements in perplexity. These structures can include non-protein material if the adaptor layer allows it. This is conceptually similar to [[Low-rank Adaptation|LoRA]]. Ruffolo et al 2024b[^ruffolo2024] validate designs in the wet lab.
+**[[Protein language models]] can be converted into [[Inverse folding|inverse folding]] models by adding intermediate adapter layers and fine-tuning on structural data** ([^ruffolo2024], using [[ProGen]] models; [^li2025] using [[ESM]]2-650M). This leads to improvements in sequence recovery and [[Fitness prediction|fitness prediction]] beyond what can be achieved by concatenation. Larger models maintain the improvements in perplexity. These structures can include non-protein material if the adaptor layer allows it. This is conceptually similar to [[Low-rank Adaptation|LoRA]]. [^ruffolo2024] validate designs in the wet lab.
 
 #### Figures
 
 ![](/assets/Pasted-image-20240918080921.png)
 
-*Figure from Ruffolo et al 2024b[^ruffolo2024]*
+*Figure from [^ruffolo2024]*
 
 ![](/assets/inverse.png)
 
-*Figure from Li et al 2025[^li2025b]*
+*Figure from [^li2025b]*
 
 #### See also
 

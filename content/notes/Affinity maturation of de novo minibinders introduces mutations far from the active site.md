@@ -3,25 +3,25 @@ title: Affinity maturation of de novo minibinders introduces mutations far from 
 tags:
   - protein-design/misc
 created: "2025-10-27T12:55:37"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
- **[[Affinity maturation]] of *de novo* designed minibinders introduces mutations far from the active site** (Alcantar et al 2025[^alcantar2025]).
+ **[[Affinity maturation]] of *de novo* designed minibinders introduces mutations far from the active site** [^alcantar2025].
 
 #### References
 ```base
 filters:
-  and:
-    - this.file.hasLink(file.file)
-    - file.infolder("Sorted_notes/Raw_data/Paper_notes/")
+ and:
+ - this.file.hasLink(file.file)
+ - file.infolder("Sorted_notes/Raw_data/Paper_notes/")
 views:
-  - type: list
-    name: List
-    order:
-      - Title
-      - Year
-      - file.name
-    sort: []
+ - type: list
+ name: List
+ order:
+ - Title
+ - Year
+ - file.name
+ sort: []
 
 ```
 

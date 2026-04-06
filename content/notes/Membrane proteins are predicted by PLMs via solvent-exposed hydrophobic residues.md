@@ -2,12 +2,12 @@
 tags:
   - protein-folding/misc
 created: "2024-07-02T05:20:29"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**[[Attention (machine learning)|Attention matrices]] of [[Protein language models|PLMs]] can capture whether a protein sequence is interpreted as a soluble protein or membrane protein** (Wenzel et al 2024[^wenzel2024]). In membrane proteins, more attention is given to solvent-exposed hydrophobic residues.
+**[[Attention (machine learning)|Attention matrices]] of [[Protein language models|PLMs]] can capture whether a protein sequence is interpreted as a soluble protein or membrane protein** [^wenzel2024]. In membrane proteins, more attention is given to solvent-exposed hydrophobic residues.
 
 #### See also
 

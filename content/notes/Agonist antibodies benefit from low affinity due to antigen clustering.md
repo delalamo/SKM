@@ -2,10 +2,10 @@
 tags:
   - antibodies/misc
 created: "2025-12-19T11:45:16"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-**Immunomodulatory antibodies, which modulate specific signaling pathways, achieve high signal transduction with lower affinity, specifically with high off-rate** (Yu et al 2023[^yu2023]). This was verified on the CD40 receptor, TNF receptor 4-1BB, and [[PD-1]] by Yu et al, on the Fas [[Tumor necrosis factors|TNF]] receptor by Chodorge et al 2012[^chodorge2012], and the erythropoietin receptor by Lacy et al 2008[^lacy2008]. The latter two studies found that $k_{\text{off}}$ specifically needs to be attenuated to improve functional activity. The mechanism requires bivalent binding and is proposed to involve [[Antigen clustering|clustering]] of receptors.
+**Immunomodulatory antibodies, which modulate specific signaling pathways, achieve high signal transduction with lower affinity, specifically with high off-rate** [^yu2023]. This was verified on the CD40 receptor, TNF receptor 4-1BB, and [[PD-1]] by Yu et al, on the Fas [[Tumor necrosis factors|TNF]] receptor by [^chodorge2012], and the erythropoietin receptor by [^lacy2008]. The latter two studies found that $k_{\text{off}}$ specifically needs to be attenuated to improve functional activity. The mechanism requires bivalent binding and is proposed to involve [[Antigen clustering|clustering]] of receptors.
 
 #### Details
 A companion explainer about [[T-cell receptors]] describes it as follows:
@@ -17,7 +17,7 @@ A companion explainer about [[T-cell receptors]] describes it as follows:
 *Figure from [Wülfing & Dovedi, 2023](https://doi.org/10.1038/d41586-023-00244-5)*
 
 ![](/assets/Jurkat-cell-proliferation.jpg)
-*Figure from Chodorge et al 2012[^chodorge2012]*
+*Figure from [^chodorge2012]*
 
 [^yu2023]: Yu et al. (2023) "Reducing affinity as a strategy to boost immunomodulatory antibody agonism." *Nature*. https://doi.org/10.1038/s41586-022-05673-2
 [^chodorge2012]: Chodorge et al. (2012) "A series of Fas receptor agonist antibodies that demonstrate an inverse correlation between affinity and potency." *Cell Death &amp; Differentiation*. https://doi.org/10.1038/cdd.2011.208

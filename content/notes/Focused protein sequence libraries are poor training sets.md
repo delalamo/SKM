@@ -3,10 +3,10 @@ title: Focused protein sequence libraries are poor training sets
 tags:
   - protein-design/misc
 created: "2024-04-25T00:43:29"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
- **Focused protein sequence libraries are poor training sets.** Yang et al 2023[^yang2023] found that when sequence search is highly exploitative (i.e., targeting exclusively sequences predicted to be high-fitness), it becomes a poor training set. In contrast, more explorative libraries could more effectively learn the fitness landscape.
+ **Focused protein sequence libraries are poor training sets.** [^yang2023] found that when sequence search is highly exploitative (i.e., targeting exclusively sequences predicted to be high-fitness), it becomes a poor training set. In contrast, more explorative libraries could more effectively learn the fitness landscape.
 
 #### See also
 * [[Insufficient ddG data on Abs for training]]

@@ -2,12 +2,12 @@
 tags:
   - protein-folding/misc
 created: "2024-12-31T08:37:40"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Masking [[ESMFold]] can sometimes sample alternate conformations** (del Alamo et al 2023[^del2023]). However this only worked on a minority of tested proteins.
+**Masking [[ESMFold]] can sometimes sample alternate conformations** [^del2023]. However this only worked on a minority of tested proteins.
 
 #### See also
 

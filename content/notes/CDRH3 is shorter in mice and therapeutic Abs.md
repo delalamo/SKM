@@ -2,14 +2,14 @@
 tags:
   - antibodies/misc
 created: "2025-02-17T05:12:32"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
-**[[Complementarity-determining regions|CDRH3]] is shorter in mice than human [[Antibodies|antibodies]].** It is also shorter in therapeutic antibodies, even those of human origin (Raybould et al 2019[^raybould2019]).
+**[[Complementarity-determining regions|CDRH3]] is shorter in mice than human [[Antibodies|antibodies]].** It is also shorter in therapeutic antibodies, even those of human origin [^raybould2019].
 
 #### Figures
 ![](/assets/Pasted-Graphic-2.png)
-*From Raybould et al 2019[^raybould2019]*
+*From [^raybould2019]*
 
 #### See also
 - [[Nanobody CDRH3 loops are longer but more compact]]

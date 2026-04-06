@@ -2,18 +2,18 @@
 tags:
   - protein-folding/misc
 created: "2025-04-10T02:51:51"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**[[AlphaFold|AlphaFold3]] universally predicts the active state of [[G protein-coupled receptors|GPCRs]], even when the ligand is an antagonist that stabilizes the inactive state** (Zheng et al 2025[^zheng2025]).
+**[[AlphaFold|AlphaFold3]] universally predicts the active state of [[G protein-coupled receptors|GPCRs]], even when the ligand is an antagonist that stabilizes the inactive state** [^zheng2025].
 
 #### Figures
 
 ![](/assets/Pasted-image-20250410085053.png)
 
-*Figure from Zheng et al 2025[^zheng2025]*
+*Figure from [^zheng2025]*
 
 #### See also
 

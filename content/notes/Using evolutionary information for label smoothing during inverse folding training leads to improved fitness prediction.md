@@ -2,16 +2,16 @@
 tags:
   - protein-folding/misc
 created: "2026-04-05T17:47:00"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Using evolutionary information for label smoothing when training [[Inverse folding|inverse folding]] models improves [[Fitness prediction]].** Zhou et al 2024[^zhou2024] used the [[BLOSUM62]] matrix, whereas [[Gong et al 2024]] used PSSMs. Dauparas et al 2022[^dauparas2022] by contrast just use a uniform smoothing.
+**Using evolutionary information for label smoothing when training [[Inverse folding|inverse folding]] models improves [[Fitness prediction]].** [^zhou2024] used the [[BLOSUM62]] matrix, whereas [[Gong et al 2024]] used PSSMs. [^dauparas2022] by contrast just use a uniform smoothing.
 
 #### Details
 
-Zhou et al 2024[^zhou2024] use a temperature value $t$ to balance the contribution of the WT amino acid and the BLOSUM62 matrix - the figure below defines this as $\mathbf{B}' = \sigma (\mathbf{B})^{t}$ where $\mathbf{B}'$ and $\mathbf{B}$ are the target matrices and BLOSUM matrices, respectively, and $\sigma$ is a nonlinear operator.
+[^zhou2024] use a temperature value $t$ to balance the contribution of the WT amino acid and the BLOSUM62 matrix - the figure below defines this as $\mathbf{B}' = \sigma (\mathbf{B})^{t}$ where $\mathbf{B}'$ and $\mathbf{B}$ are the target matrices and BLOSUM matrices, respectively, and $\sigma$ is a nonlinear operator.
 
 In contrast, [[Gong et al 2024]] calculated propensities from [[Multiple sequence alignments|MSAs]].
 
@@ -19,7 +19,7 @@ In contrast, [[Gong et al 2024]] calculated propensities from [[Multiple sequenc
 
 ![](/assets/Pasted-image-20240430090828.png)
 
-*Figure S7 from Zhou et al 2024[^zhou2024]*
+*Figure S7 from [^zhou2024]*
 
 | Method | T2837 ρ↑ | T2837 AUC↑ | S669 ρ↑ | S669 AUC↑ | S-Sym ρ↑ | S-Sym AUC↑ | Myolobin ρ↑ | Myolobin AUC↑ | FireProtDB ρ↑ | FireProtDB AUC↑ | Gβ1 ρ↑ | Gβ1 AUC↑ | T2837 Reverse ρ↑ | T2837 Reverse AUC↑ |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|

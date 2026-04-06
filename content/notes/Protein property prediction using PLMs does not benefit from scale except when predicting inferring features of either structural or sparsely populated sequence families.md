@@ -1,23 +1,23 @@
 ---
 tags: [protein-design/misc]
 created: "2026-04-05T17:54:18"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 ---
 summary: Smaller PLMs models are more effective at variant effect prediction
 tags: 
-  - protein-language-models/applications
-  - mutations/prediction
-  - esm/observations
+ - protein-language-models/applications
+ - mutations/prediction
+ - esm/observations
 ---
 #### Summary
-**Protein property prediction using [[Protein language models|PLMs]] does not benefit from [[Scaling hypothesis|scale]] beyond ~650M parameters, except when predicting A) structural features or B) features of sparsely populated protein families such as those from viruses.**  This is particularly the case with zero-shot prediction (Tan et al 2023[^tan2023], Nijkamp et al 2023[^nijkamp2023], Notin et al 2023[^notin2023]). Some authors have reported it is also true of fine-tuning (Detlefsen et al 2022[^detlefsen2022], Li et al 2024[^li2024], Vieira et al 2024[^vieira2024]), although aligning PLMs using [[Reinforcement learning|reinforcement learning]] using data does seem to restore the trend in some cases (Bhatnagar et al 2025[^bhatnagar2025]). The exception of structure when transfer learning was shown by Li et al 2024[^li2024], and corroborated by attempts to use (ESM) embeddings as starting points for [[Structure prediction|structure prediction]] (Lin et al 2023[^lin2023] and Lee et al 2023[^lee2023]). Related to this, larger PLMs are better at [[Larger PLMs are better at homolog detection|homolog detection]] and [[Larger PLMs are better at thermostability prediction|thermostability prediction]], and do not improve as much as smaller models at fitness prediction when [[Language models can be infused with structure via low-rank adapter layers|infused with structural information via low-rank adaptors]] (Ruffolo et al 2024b[^ruffolo2024]). Likewise, the exception for viral proteins was observed by Gurev et al 2025[^gurev2025]. Zhang et al 2024[^zhang2024] surmise that both exceptions are due to large PLMs having a greater capacity to [[PLMs learn family-specific protein contacts from sequence context windows of about 20-40 amino acids|memorize domain-specific contacts]].
+**Protein property prediction using [[Protein language models|PLMs]] does not benefit from [[Scaling hypothesis|scale]] beyond ~650M parameters, except when predicting A) structural features or B) features of sparsely populated protein families such as those from viruses.** This is particularly the case with zero-shot prediction [^tan2023][^nijkamp2023][^notin2023]. Some authors have reported it is also true of fine-tuning [^detlefsen2022][^li2024][^vieira2024], although aligning PLMs using [[Reinforcement learning|reinforcement learning]] using data does seem to restore the trend in some cases [^bhatnagar2025]. The exception of structure when transfer learning was shown by [^li2024], and corroborated by attempts to use (ESM) embeddings as starting points for [[Structure prediction|structure prediction]] ([^lin2023] and [^lee2023]). Related to this, larger PLMs are better at [[Larger PLMs are better at homolog detection|homolog detection]] and [[Larger PLMs are better at thermostability prediction|thermostability prediction]], and do not improve as much as smaller models at fitness prediction when [[Language models can be infused with structure via low-rank adapter layers|infused with structural information via low-rank adaptors]] [^ruffolo2024]. Likewise, the exception for viral proteins was observed by [^gurev2025]. [^zhang2024] surmise that both exceptions are due to large PLMs having a greater capacity to [[PLMs learn family-specific protein contacts from sequence context windows of about 20-40 amino acids|memorize domain-specific contacts]].
 
 #### Details
-Larger (ProGen) models were better able to predict fitness of distant sequences ("wide mutational scale"; Nijkamp et al 2023[^nijkamp2023]). Likewise, engineered [[CRISPR-Cas9|CRISPR]] variants were said to be better predicted with larger models (Ruffolo et al 2025[^ruffolo2025]; mentioned at PEGS Boston 2024). Augmenting ProGen models with structural information only led to improvements in fitness prediction in smaller models, suggesting that the larger models had already learned most of that information.
+Larger (ProGen) models were better able to predict fitness of distant sequences ("wide mutational scale"; [^nijkamp2023]). Likewise, engineered [[CRISPR-Cas9|CRISPR]] variants were said to be better predicted with larger models ([^ruffolo2025]; mentioned at PEGS Boston 2024). Augmenting ProGen models with structural information only led to improvements in fitness prediction in smaller models, suggesting that the larger models had already learned most of that information.
 
-This is also true of post-translational modification prediction (Peng et al 2024a[^peng2024]; ESM2-650M vs ESM2-3B).
+This is also true of post-translational modification prediction ([^peng2024]; ESM2-650M vs ESM2-3B).
 
 #### Figures
 | Model type | Model name | Spearman | AUC | MCC | NDCG | Recall |
@@ -43,24 +43,24 @@ This is also true of post-translational modification prediction (Peng et al 2024
 | Inverse Folding | ProteinMPNN | 0.258 | 0.640 | 0.196 | 0.712 | 0.186 |
 | | MIF-ST | 0.401 | 0.718 | 0.310 | 0.766 | 0.227 |
 | | ESM-IF1 | 0.422 | 0.730 | 0.331 | 0.748 | 0.223 |
-*Figure from Notin et al 2023[^notin2023]*
+*Figure from [^notin2023]*
 
 ![](/assets/Pasted-image-20231112063046.png)
-*Figure from Nijkamp et al 2023[^nijkamp2023]*
+*Figure from [^nijkamp2023]*
 
 ![](/assets/Pasted-image-20240209164702.png)
 ![](/assets/Pasted-image-20240209164730.png)
-*Figures 3-5 from Li et al 2024[^li2024]*
+*Figures 3-5 from [^li2024]*
 
 ![](/assets/Pasted-image-20241125084321.png)
-*Figure from Vieira et al 2024[^vieira2024]*
+*Figure from [^vieira2024]*
 
 ![](/assets/0.40.png)
-*Figure from Bhatnagar et al 2025[^bhatnagar2025]*
+*Figure from [^bhatnagar2025]*
 
 ![](/assets/Mean-p-(All-Taxa).png)
 ![](/assets/ProteinGym-(All-Taxa).png)
-*Figures from Gurev et al 2025[^gurev2025]*
+*Figures from [^gurev2025]*
 
 [^tan2023]: Tan et al. (2023) "Multi-level Protein Representation Learning for Blind Mutational Effect Prediction." https://doi.org/10.48550/arXiv.2306.04899
 [^nijkamp2023]: Nijkamp et al. (2023) "ProGen2: Exploring the boundaries of protein language models." *Cell Systems*. https://doi.org/10.1016/j.cels.2023.10.002

@@ -2,16 +2,16 @@
 tags:
   - protein-folding/misc
 created: "2024-05-01T03:10:05"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**The experimental effect of [[Variant effect prediction#Missense mutations|missense mutations]] was reasonably predictive of the effect of [[Variant effect prediction#Indels|deletion mutations]], and slightly less predictive of [[Variant effect prediction#Indels|insertion mutations]] on either side that residue, though this depends on the protein** (Topolska et al 2023[^topolska2023]).
+**The experimental effect of [[Variant effect prediction#Missense mutations|missense mutations]] was reasonably predictive of the effect of [[Variant effect prediction#Indels|deletion mutations]], and slightly less predictive of [[Variant effect prediction#Indels|insertion mutations]] on either side that residue, though this depends on the protein** [^topolska2023].
 
 #### Details
 
-Similar conclusions were reached by Tsuboyama et al 2023[^tsuboyama2023]:
+Similar conclusions were reached by [^tsuboyama2023]:
 
 > Across 175 protein domains with _in vitro_ fold stability measurements of indels and substitutions, substitution tolerance predicts Ala insertion tolerance similarly well after (mode r=0.281) and before a residue (r=0.240) and better predicts 1 aa deletion tolerance (mode r=0.459).
 

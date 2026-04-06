@@ -2,12 +2,12 @@
 tags:
   - protein-folding/misc
 created: "2024-05-05T09:14:54"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**RMSD is a poor training objective for protein [[Structure prediction|structure prediction]].** For proteins, [[Frame aligned point error|FAPE]] is better (Baek et al 2021[^baek2021]). For ligands, the fraction of models predicted under a certain RMSD is better (Corso et al 2023[^corso2023]). However, it was used by Ruffolo et al 2023[^ruffolo2023] to train [[IgFold]] and was apparently effective.
+**RMSD is a poor training objective for protein [[Structure prediction|structure prediction]].** For proteins, [[Frame aligned point error|FAPE]] is better [^baek2021]. For ligands, the fraction of models predicted under a certain RMSD is better [^corso2023]. However, it was used by [^ruffolo2023] to train [[IgFold]] and was apparently effective.
 
 #### See also
 

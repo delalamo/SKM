@@ -2,12 +2,12 @@
 tags:
   - protein-folding/misc
 created: "2024-05-08T17:58:17"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**[[AlphaFold|AlphaFold2]] predicts apo conformations with poorer RMSD than holo conformations** (Saldaño et al 2022[^saldao2022]). On average it was 2.58 A vs 1.87 A, respectively.
+**[[AlphaFold|AlphaFold2]] predicts apo conformations with poorer RMSD than holo conformations** [^saldao2022]. On average it was 2.58 A vs 1.87 A, respectively.
 
 #### See also
 

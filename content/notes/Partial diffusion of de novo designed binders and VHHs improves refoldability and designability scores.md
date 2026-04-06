@@ -1,12 +1,12 @@
 ---
 tags: antibodies/misc
 created: "2026-01-23T17:17:44"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Partial [[Diffusion models|diffusion]] and [[Flow matching|flow matching]] of *de novo* [[Protein backbone design|binders]] binders and [[Nanobodies|VHHs]] improves refoldability and designability** (Yu et al 2026[^yu2026]).
+**Partial [[Diffusion models|diffusion]] and [[Flow matching|flow matching]] of *de novo* [[Protein backbone design|binders]] binders and [[Nanobodies|VHHs]] improves refoldability and designability** [^yu2026].
 
 #### Figures
 
@@ -14,7 +14,7 @@ modified: "2026-04-05T23:14:54"
 
 ![](/assets/Pasted-image-20260123171718.png)
 
-*Figures from Yu et al 2026[^yu2026]; binders and VHHs on top and bottom*
+*Figures from [^yu2026]; binders and VHHs on top and bottom*
 
 #### See also
 

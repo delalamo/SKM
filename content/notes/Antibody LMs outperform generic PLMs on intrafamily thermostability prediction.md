@@ -2,18 +2,18 @@
 tags:
   - antibodies/misc
 created: "2026-02-26T15:14:37"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**[[Antibody language models]] outperform generic [[Protein language models|PLMs]] on intrafamily but not general [[Stability and thermostability|thermostability]] prediction** (Chungyoun et al 2024[^chungyoun2024]). A version of [[ProGen]] specifically trained on [[Antibodies|antibody]] sequences outperform generic ProGen models on intra-family [[Stability and thermostability|thermostability]] prediction. On inter-family prediction, they are bested by [[ESM-IF]] (see [[Structure-based methods outperform sequence-based methods on protein stability prediction of point mutants, but not full sequences]]). This could be because antibodies are separated [[PLMs can separate Abs by origin|by V-gene]] by antibody LMs.
+**[[Antibody language models]] outperform generic [[Protein language models|PLMs]] on intrafamily but not general [[Stability and thermostability|thermostability]] prediction** [^chungyoun2024]. A version of [[ProGen]] specifically trained on [[Antibodies|antibody]] sequences outperform generic ProGen models on intra-family [[Stability and thermostability|thermostability]] prediction. On inter-family prediction, they are bested by [[ESM-IF]] (see [[Structure-based methods outperform sequence-based methods on protein stability prediction of point mutants, but not full sequences]]). This could be because antibodies are separated [[PLMs can separate Abs by origin|by V-gene]] by antibody LMs.
 
 #### Figures
 
 ![](/assets/Pasted-image-20240116124937.png)
 
-*Figure 5 from Chungyoun et al 2024[^chungyoun2024]*
+*Figure 5 from [^chungyoun2024]*
 
 #### See also
 

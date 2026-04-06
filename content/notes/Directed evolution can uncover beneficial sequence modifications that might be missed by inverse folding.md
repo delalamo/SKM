@@ -3,10 +3,10 @@ title: Directed evolution can uncover beneficial sequence modifications that mig
 tags:
   - protein-design/misc
 created: "2025-05-16T12:27:47"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 #### Summary
- **[[Directed evolution]] can uncover beneficial sequence modifications that might be missed by [[Inverse folding|inverse folding]]** (Hou et al 2025[^hou2025]). This was shown with a mid-helical alanine-to-proline mutation.
+ **[[Directed evolution]] can uncover beneficial sequence modifications that might be missed by [[Inverse folding|inverse folding]]** [^hou2025]. This was shown with a mid-helical alanine-to-proline mutation.
 
 #### See also
 * [[Substitution matrix for inverse folding closely matches BLOSUM62 matrix except proline]]

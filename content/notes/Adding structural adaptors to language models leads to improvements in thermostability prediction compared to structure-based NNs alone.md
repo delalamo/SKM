@@ -2,12 +2,12 @@
 tags:
   - protein-folding/misc
 created: "2026-01-22T11:23:24"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-05T23:36:09"
 ---
 
 #### Summary
 
-**Adding structural adaptor layers to [[Protein language models|protein language models]] leads to improvements in [[Stability and thermostability#Prediction|thermostability prediction]] compared to using [[Inverse folding|structure-based neural networks]] alone** (Li et al 2025b[^li2025]). This was achieved by adding a [[Attention (machine learning)|cross-attention]] layer with [[ProteinMPNN]] embeddings to each layer of [[ESM|ESM2-650M]] and fine-tuning on the mega-scale thermostability dataset[^megascale].
+**Adding structural adaptor layers to [[Protein language models|protein language models]] leads to improvements in [[Stability and thermostability#Prediction|thermostability prediction]] compared to using [[Inverse folding|structure-based neural networks]] alone** [^li2025]. This was achieved by adding a [[Attention (machine learning)|cross-attention]] layer with [[ProteinMPNN]] embeddings to each layer of [[ESM|ESM2-650M]] and fine-tuning on the mega-scale thermostability dataset[^megascale].
 
 #### Figures
 
@@ -15,7 +15,7 @@ modified: "2026-04-05T23:14:54"
 
 ![](/assets/Pasted-image-20250220082509.png)
 
-*Figure from Li et al 2025b[^li2025]*
+*Figure from [^li2025]*
 
 #### See also
 
