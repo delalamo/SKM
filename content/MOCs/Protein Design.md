@@ -6,7 +6,8 @@ tags:
 
 > [!info] Auto-generated
 > This page is generated automatically from notes tagged `protein-design/*`.
-> Add prose above the `<!-- generated -->` marker to preserve it across regenerations.
+> Add prose above the `
+
 <!-- generated -->
 
 ## Miscellaneous
