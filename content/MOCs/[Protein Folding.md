@@ -6,8 +6,7 @@ tags:
 
 > [!info] Auto-generated
 > This page is generated automatically from notes tagged `[protein-folding/*`.
-> Add prose above the `
-
+> Add prose above the `<!-- generated -->` marker to preserve it across regenerations.
 <!-- generated -->
 
 ## Misc]

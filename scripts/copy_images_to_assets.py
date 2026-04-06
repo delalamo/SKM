@@ -60,8 +60,10 @@ _DEFAULT_IMAGES_DIR = Path.home() / "Downloads" / "Images_copy"
 IMAGES_DIR = Path(os.environ.get("R2_IMAGES_DIR", str(_DEFAULT_IMAGES_DIR)))
 
 # Standard markdown image: ![anything](/assets/filename.ext)
+# Use a possessive-style match on the extension to correctly handle filenames
+# that contain literal parentheses, e.g. Mean-p-(All-Taxa).png
 ASSET_RE = re.compile(
-    r'!\[[^\]]*\]\(/assets/([^)]+?\.(png|jpg|jpeg|gif|webp|svg|PNG|JPG|JPEG|GIF|WEBP|SVG))\)'
+    r'!\[[^\]]*\]\(/assets/(.+?\.(png|jpg|jpeg|gif|webp|svg|PNG|JPG|JPEG|GIF|WEBP|SVG))\)'
 )
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
