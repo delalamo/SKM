@@ -2,6 +2,8 @@
 title: De novo designed backbones can increase the size of proteins for cryo-EM structure determination
 tags:
   - protein-design/misc
+created: "2024-12-04T02:49:44"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  ***De novo* [[Protein backbone design|designed backbones]] can be used to increase the size of proteins for [[cryo-EM]] structure determination** (Gao et al 2024[^gao2024]). In one case, a domain designed with [[Diffusion models|RF-diffusion]] was inserted into an intracellular loop of a [[G protein-coupled receptors|G-protein coupled receptor]]. 

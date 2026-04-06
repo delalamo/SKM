@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2024-04-29T14:55:51"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 In the context of [[MD simulations]], the **Boltzmann distribution** in configurational space ($\nu$) and in phase space ($\mu$) is defined as:

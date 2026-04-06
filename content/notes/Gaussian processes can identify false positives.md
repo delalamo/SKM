@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2025-03-27T09:01:57"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Gaussian processes can identify false positives.** Tonner et al 2022[^tonner2022] found, using a [[Gaussian processes|Gaussian process]]-based model, that the GFP data by Sarkisyan et al 2016[^sarkisyan2016] had false positives.

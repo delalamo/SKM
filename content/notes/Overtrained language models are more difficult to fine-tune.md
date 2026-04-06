@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2025-03-27T03:00:53"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **[[Grokking|Overtrained]] [[Transformer|language models]] are more difficult to fine-tune** (Springer et al 2025[^springer2025]).

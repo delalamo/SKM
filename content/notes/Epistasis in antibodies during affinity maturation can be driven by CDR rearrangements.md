@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2026-03-16T11:47:05"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **[[Epistasis]] in [[Antibodies|antibodies]] during [[Affinity maturation|affinity maturation]] can be driven by conformational rearrangements in [[Complementarity-determining regions|CDRs]]** (Tharp et al 2026[^tharp2026]). In this case, the mechanism by which some mutations are not uniformly beneficial is due to [[Conformational entropy in antibodies decreases during affinity maturation|conformational rigidification]].

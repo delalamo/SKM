@@ -1,6 +1,7 @@
 ---
-title: Welcome to Quartz
+title: Notes
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+A personal knowledge base on computational protein science, antibody engineering, and machine learning for structural biology.
+
+Browse by topic via the [[MOCs/Antibodies|topic index]], or use the search bar to find specific notes.

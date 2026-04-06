@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2024-04-16T01:32:16"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **[[Framework region|FR2]] is more [[Developability|hydrophilic]] in [[Nanobodies|nanobodies]] than in [[Antibodies|antibodies]]** (Ketaren et al 2023[^ketaren2023]).

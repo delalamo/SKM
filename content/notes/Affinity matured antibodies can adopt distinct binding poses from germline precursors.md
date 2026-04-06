@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2025-12-11T09:02:48"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **[[Affinity maturation|Affinity matured]] [[Antibodies|antibodies]] can adopt binding poses that are distinct from the antibodies they evolved from** (Chan et al 2020[^chan2020]). Anecdotally, this is quite rare.

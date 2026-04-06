@@ -1,6 +1,8 @@
 ---
 tags:
   - inverse-folding/antibodies
+created: "2025-01-02T10:42:31"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Designs of the [[Complementarity-determining regions#CDRH3|CDRH3]] loops of [[Trastuzumab]] are more natural when designed by models fine-tuned from a general [[Inverse folding|inverse folding]] model on structures of [[Antibodies|antibodies]] versus no fine tuning** (Mahajan et al 2023[^mahajan2023]). Naturalness was judged using a [[Convolutional neural networks|CNN]] trained by Mason et al 2021[^mason2021].

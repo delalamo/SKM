@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2024-11-04T23:57:57"
+modified: "2024-11-04T23:57:57"
 ---
 #### Summary
 **Fréchet distance** is a measure of similarity between two curves or point clouds. It was used by [[10.1101__2023.09.11.556673|Alamdari et al 2023]] to measure the similarity of designed proteins.

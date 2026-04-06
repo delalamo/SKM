@@ -2,6 +2,8 @@
 title: Thermal fluctuation is sufficient to explain allosteric changes in local protein dynamics
 tags:
   - protein-folding/misc
+created: "2025-09-11T09:42:59"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **Thermal fluctuation is sufficient to explain (allosteric changes)  in local protein dynamics** (Cooper & Dryden 1984[^cooper1984]). This is in contrast to a "domino model" of propagation of effects as proposed by Monod et al 1965[^monod1965].

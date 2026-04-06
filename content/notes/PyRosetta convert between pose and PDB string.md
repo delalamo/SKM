@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-design/misc
+created: "2025-07-14T13:08:01"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 Convert between a [[Rosetta|PyRosetta]] pose object and a PDB string. Useful to avoid unnecessary file I/O.

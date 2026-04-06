@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-design/misc
+created: "2024-04-19T00:39:51"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **Increasing the embedding dimension of [[RosettaFold]] v2 was sufficient to improve protein [[Structure prediction|structure prediction]] quality** (Baek et al 2023[^baek2023]).

@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-design/misc
+created: "2024-05-05T09:50:14"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **Proteins with higher [[Stability and thermostability|thermostability]] are more capable of [[Directed evolution|laboratory evolution]] new functions; e.g., they are more [[Evolution and natural selection|evolvable]]** (Bloom et al 2006[^bloom2006]). This was determined using cytochrome P450, where stabilizing mutations acted as a buffer against destabilizing mutations.

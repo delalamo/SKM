@@ -1,5 +1,7 @@
 ---
 tags: [protein-design/misc]
+created: "2024-09-01T04:29:37"
+modified: "2026-04-05T23:14:54"
 ---
 
 #### Summary

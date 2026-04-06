@@ -2,6 +2,8 @@
 title: N- and C-termini that are close in space are correlated with correct protein folding
 tags:
   - protein-folding/misc
+created: "2024-06-11T02:58:10"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **Proteins with N- and C-termini that are close in space are correlated with correct [[Protein folding|protein folding]]** (Krishna & Englander 2005[^krishna2005]). Proteins with termini far apart fold with non-two-state kinetics.

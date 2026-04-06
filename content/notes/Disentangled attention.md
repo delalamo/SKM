@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2024-05-17T17:12:12"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 Disentangled attention is an alternative way to represent position in encoder-type [[Transformer|transformers]].

@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2024-09-19T05:32:41"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Antibody-antigen binding modes are not all defined by induced fit.** Most [[Antibodies|antibodies]] do not change conformation upon binding, with 70% or so of [[Complementarity-determining regions|CDRH3]] loops moving less than 1 Å (Liu et al 2024[^liu2024]). Additionally, the conformational space of unbound antibodies sampled from [[MD simulations]] is a superset of all bound conformations (Fernandez-Quintero et al 2022[^fernandezquintero2022]), and conformational flexibility is inversely proportional to binding affinity (Mikolajek et al 2022[^mikolajek2022]; see [[Conformational entropy in antibodies is inversely proportional to antigen affinity]]).

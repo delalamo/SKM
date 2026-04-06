@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2024-04-15T01:40:38"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **[[Single chain variable fragments|scFvs]] derived from the [[Heavy chains|heavy chains]] of [[Antibodies|antibodies]] were found to be stronger binders than those derived from [[Light chains|light chains]]** (Li et al 2023[^li2023]).

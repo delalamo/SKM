@@ -2,6 +2,8 @@
 title: Affinity matured antibodies have lower thermostability than germline antibodies, up to a threshold
 tags:
   - antibodies/misc
+created: "2026-03-16T11:31:01"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **Natural human [[Antibodies]] have a [[Stability and thermostability|thermostability]] threshold that is usually reached within a few mutations during [[Affinity maturation]].** Beyond this, no further decreases are observed (Shehata et al 2019[^shehata2019]). Note that thermostability is necessary but insufficient for expression (Tharp et al 2026[^tharp2026]), as correct folding and trafficking is also required.

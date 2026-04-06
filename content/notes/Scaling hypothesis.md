@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2024-05-20T04:02:56"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 The scaling hypothesis says that [[Transformer]] models (and deep learning models more broadly) learn a richer understanding of the training data as they and their training sets get larger. Ruan et al 2024[^ruan2024] give examples for this in natural language processing (below).

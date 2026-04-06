@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2025-09-19T06:55:26"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **[[Antibody language models]] are able to distinguish correctly and incorrectly paired sequences, but are sensitive to model [[Scaling hypothesis|scale]] and training dataset size** (Neyestanak et al 2025[^neyestanak2025]).

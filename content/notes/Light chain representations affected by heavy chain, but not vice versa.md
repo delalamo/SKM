@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2024-10-27T03:47:49"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **[[Light chains|Light chain]] representations from [[Antibody language models|antibody language models]] are affected by the [[Heavy chains|heavy chain]], but not vice-versa** (Burbach and Briney 2024[^burbach2024]).

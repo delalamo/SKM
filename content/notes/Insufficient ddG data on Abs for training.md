@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2024-05-05T08:47:39"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **There is insufficient [[Antibodies|antibody]]-antigen binding data to train statistical or machine learning docking models to high accuracy, even when the data points are simulated** (Hummer et al 2023[^hummer2023]). Authors say at least 90,000 structures are required for prediction quality to plateau. Separately, a version of RF-diffusion fine-tuned on antibodies supplemented their structures with loop-mediated [[Protein-protein interactions|PPIs]], suggesting too few structures exist for antibody [[Protein backbone design|backbone design]] (Peng et al 2024[^peng2024]).

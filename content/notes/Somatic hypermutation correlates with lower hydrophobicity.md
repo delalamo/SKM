@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2025-02-01T11:25:59"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **[[Somatic hypermutation]] of [[Antibodies|antibodies]] correlates with lower [[Developability|hydrophobicity]]** (Shehata et al 2019[^shehata2019]).

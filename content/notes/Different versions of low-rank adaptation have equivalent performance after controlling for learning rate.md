@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2026-02-26T15:37:26"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Different [[Low-rank Adaptation|low-rank adaptation]] implementations have equivalent performance after controlling for learning rate differences** (Lee et al 2026[^lee2026]).

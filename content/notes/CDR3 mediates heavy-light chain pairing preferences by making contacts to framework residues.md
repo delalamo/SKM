@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2025-01-20T21:12:05"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **[[Complementarity-determining regions|CDRH3]] mediates pairing between [[Heavy chains|heavy]] and [[Light chains|light]] chains of [[Antibodies|antibodies]] by making contacts with the [[Framework region|framework region]] of the opposite chain** (Dudzic et al 2024[^dudzic2024]).

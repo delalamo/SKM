@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2025-04-24T03:21:49"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Sequence clustering of training data affects performance of [[Variant effect prediction|variant effect prediction]] by [[Protein language models|protein language models]]** (Meier et al 2022[^meier2022]). Clustering at 90% leads to the best performance when training [[ESM]] models.

@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-design/misc
+created: "2024-04-26T11:02:07"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **Highest-fitness variants of dihydrofolate reductase belonged to the broadest (i.e., flattest) minima** (Papkou et al 2023[^papkou2023]).

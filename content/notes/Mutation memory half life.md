@@ -2,6 +2,8 @@
 title: Mutation memory half life
 tags:
   - protein-folding/misc
+created: "2024-05-02T05:15:27"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **Mutation memory half-life refers to the number of mutations required to observe changes in a mutation's effect on fitness ((epistatic) drift).** The term mutation memory half-life was coined by Park et al 2022[^park2022].

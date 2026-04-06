@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2024-04-15T02:57:00"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **The [[Developability|hydrophobicity]], [[Developability|polyreactivity]], and [[Stability and thermostability|thermostability]] of [[Antibodies|antibodies]] are not correlated** (Shehata et al 2019[^shehata2019]).

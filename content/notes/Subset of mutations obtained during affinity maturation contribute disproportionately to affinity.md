@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2025-02-14T05:28:53"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **A subset of mutations contribute disproportionately to affinity** (Julian et al 2017[^julian2017], Kirby et al 2025[^kirby2025]). Using [[Display methods|yeast display]], Kirby et al 2025[^kirby2025] found that most mutations obtained during [[Affinity maturation|affinity maturation]] have no impact on affinity.

@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2025-09-04T12:55:08"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **[[Immunogenicity|Immunogenic]] reactions against [[Nanobodies|VHH nanobodies]] disproportionately target their C-termini** (Rossotti et al 2021[^rossotti2021]). The reasons were unclear as of 2021.

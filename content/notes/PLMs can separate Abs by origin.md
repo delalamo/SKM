@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2024-07-02T05:22:59"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **The [[Germline|V-genes]] of [[Antibodies]] can be determined by the embeddings from [[Protein language models|PLMs]]** (Jin et al 2023[^jin2023]). Nevertheless there are substantial differences in how generic PLMs and [[Antibody language models|antibody LMs]] capture these differences — for example, antibody LMs are more sensitive to mutation status.

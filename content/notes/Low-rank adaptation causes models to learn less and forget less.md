@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2024-05-20T04:31:32"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **[[Low-rank Adaptation]] avoids [[Catastrophic forgetting]] but causes models to learn less than if they were subject to full fine-tuning** (Biderman et al 2024[^biderman2024]). In part this is due to strong regularization (relative to other methods such as weight decay or dropout).

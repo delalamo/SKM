@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2026-04-05T17:17:55"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Fine-tuning deep learning models leads to small differences in parameter values in L2 space** (Neyshabur et al 2020[^neyshabur2020]). The foundation model and fine-tuned model often occupy the same basin of the loss landscape. Output features of each layer were examined using centered kernel alignment.

@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2026-04-05T17:12:20"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **[[Protein language models]] are biased toward residues found in [[Germline|germline]] sequences** (Olsen et al 2022[^olsen2022], Nijkamp et al 2023[^nijkamp2023], Olsen et al 2024[^olsen2024]). Reasons include the fact that blood samples that are sequenced contain mostly naive [[B cells]], and fewer memory B cells and plasma cells. Olsen et al 2024[^olsen2024] found that [[Focal loss]] improves prediction of non-germline. Paired antibody language models are less sensitive to this bias (Burbach and Briney 2024[^burbach2024]).

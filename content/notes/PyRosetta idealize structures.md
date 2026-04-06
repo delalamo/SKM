@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-design/misc
+created: "2025-07-14T13:01:20"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 Idealize structures using [[Rosetta|PyRosetta]], only in regions with significant chain breaks. From the [[RosettaFold]] GitHub repository. Cartesian relax after this is recommended to optimize further.

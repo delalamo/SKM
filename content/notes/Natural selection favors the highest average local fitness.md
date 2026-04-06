@@ -2,6 +2,8 @@
 title: Natural selection favors the highest average local fitness
 tags:
   - protein-folding/misc
+created: "2024-06-11T01:58:30"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **Natural selection favors the highest average local fitness, rather than the absolute highest fitness** (Wilke et al 2001[^wilke2001], Codoñer et al 2006[^codoer2006]).

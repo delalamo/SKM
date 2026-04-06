@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2024-07-15T07:52:47"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 The **Gibbs free energy** ($G$) is defined as $G=F+PV$, where $F$ is the [[Helmholtz free energy]], $P$ is pressure, and $V$ is volume. This is typically used for applications at constant pressure.

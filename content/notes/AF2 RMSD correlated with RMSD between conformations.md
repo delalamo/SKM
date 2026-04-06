@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2024-11-04T22:55:26"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **The RMSD of [[AlphaFold|AlphaFold2]] models to ground truth structures is correlated with the RMSD between ground truth apo/holo conformations** (Saldaño et al 2022[^saldao2022]).

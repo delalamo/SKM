@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2025-11-20T17:19:16"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **[[Antibodies]] and [[Nanobodies|nanobodies]] with distinct [[Germline|V genes]] and [[Complementarity-determining regions|CDRH3]] loops can convergently evolve to bind to the same epitope in the same place** (Malby et al 1994[^malby1994], De Genst et al 2005[^de2005]). In the case of the nanobodies identified by De Genst, both had the same D regions and the same non-germline mutations in CDR2.

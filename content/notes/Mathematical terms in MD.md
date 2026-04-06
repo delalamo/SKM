@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2024-04-16T22:58:57"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 Notation follows the convention of Hénin et al 2022[^hnin2022].

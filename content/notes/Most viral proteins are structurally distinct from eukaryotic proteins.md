@@ -2,6 +2,8 @@
 title: Most viral proteins are structurally distinct from eukaryotic proteins
 tags:
   - protein-folding/misc
+created: "2024-09-01T03:59:55"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **About ~60% of proteins from viral genomes are structurally distinct from those found in eukaryotic genomes** (Nomburg et al 2024[^nomburg2024]). This was determined using structures predicted with [[AlphaFold]] and [[Foldseek]].

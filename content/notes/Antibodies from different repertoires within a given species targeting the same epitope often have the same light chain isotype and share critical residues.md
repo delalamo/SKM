@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2024-06-14T01:39:29"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **[[Antibodies]] from different [[Immune repertoires|immune repertoires]] from the same species that target the same epitope often have the same [[Light chains|light chain isotype]]** (Shrock et al 2023[^shrock2023]). This was tested on disordered peptide truncates from common viral targets and is attributed to [[GRAB motifs]] in [[Germline|germline]] antibodies.

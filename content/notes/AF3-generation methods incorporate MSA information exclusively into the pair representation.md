@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2026-02-09T13:29:49"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **[[AlphaFold|AlphaFold3]]-generation methods like Boltz and Chai exclusively incorporate [[Multiple sequence alignments|MSA]] information into the pair representation, in contrast with [[Evoformer]]-based methods that reason over the information in the folding trunk** (Abramson et al 2024[^abramson2024]).

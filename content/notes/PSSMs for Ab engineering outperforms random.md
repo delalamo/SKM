@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2024-04-27T10:31:46"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **The use of PSSMs as aggregate statistics for [[Antibodies|antibody]] engineering outperforms random mutagenesis** (Li et al 2023[^li2023]).

@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2025-02-12T10:41:32"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Correct prediction of [[Complementarity-determining regions|CDRH3]] is necessary but insufficient for correct [[Antibodies|antibody]]-antigen docking** (Yin & Pierce 2024[^yin2024], Hitawala & Gray 2024[^hitawala2024]).

@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2024-10-27T03:46:20"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Some [[Light chains|light chain]] V-genes are more likely to be found in dysfunctional [[Antibodies|antibodies]]** (Jagota et al 2024[^jagota2024]).

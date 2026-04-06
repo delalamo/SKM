@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2025-07-22T11:26:16"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 Training set memorization seems to occur more frequently in [[Protein-ligand co-folding|all-atom protein structure prediction]].

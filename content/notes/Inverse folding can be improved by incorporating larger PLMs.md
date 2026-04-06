@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-design/misc
+created: "2024-07-02T05:18:09"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **[[Inverse folding]] can be improved by incorporating larger [[Protein language models|PLMs]]** (Ren et al 2024[^ren2024]). This was shown using CarbonDesign, which incorporates an [[ESM]] during inference.

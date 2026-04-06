@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2024-05-08T18:09:06"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Ensemble samplers and [[Gaussian processes]] are comparable for [[Single chain variable fragments|scFv]] design** (Li et al 2023[^li2023]). The ensemble method of uncertainty quantification outperformed Gaussian processes for [[Heavy chains|heavy chains]], but the opposite was true for [[Light chains|light chains]].

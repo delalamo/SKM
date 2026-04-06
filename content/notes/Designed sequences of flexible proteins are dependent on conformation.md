@@ -2,6 +2,8 @@
 title: Designed sequences of flexible proteins are dependent on conformation
 tags:
   - protein-design/misc
+created: "2024-04-24T16:26:37"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **Proteins designed by [[Inverse folding]] on one of two conformations occupy distinct parts of the sequence space.** In the example below of gelsolin, sequence embeddings from [[ESM]]-1b are projected to a 2d space and compared to naturally occurring sequences. Only designs in one conformation overlap with naturally occurring sequences (left; Mahajan et al 2023[^mahajan2023]).

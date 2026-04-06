@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-design/misc
+created: "2026-04-05T17:49:54"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **Larger [[Protein language models|protein language models]] are better able to predict thermostability** (Hermann et al 2024[^hermann2024]). This is likely related to their ability to  [[Protein property prediction using PLMs does not benefit from scale except when predicting inferring features of either structural or sparsely populated sequence families|better model structures]].

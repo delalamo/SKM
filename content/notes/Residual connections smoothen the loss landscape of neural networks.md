@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2024-06-14T08:07:59"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **[[Residual connections]] smoothen the loss landscape of neural networks** (Li et al 2018[^li2018]).

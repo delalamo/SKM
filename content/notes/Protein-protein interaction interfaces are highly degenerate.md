@@ -2,6 +2,8 @@
 title: Protein-protein interaction interfaces are highly degenerate
 tags:
   - antibodies/misc
+created: "2024-10-02T16:11:39"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **[[Protein-protein interactions|PPI]] interfaces are highly degenerate** (Su et al 2024[^su2024], Verma & Pandit 2019[^verma2019]). Interactions can be deconstructed to pairs of nine residues and were found about 10,000 unique inter-fragment interactions.

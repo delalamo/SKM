@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2026-03-16T11:51:30"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Simultaneously designing all of the [[Complementarity-determining regions|CDRs]] is predicted to lead to more fit sequences of [[Single chain variable fragments]] and [[Antibodies]]** (Li et al 2023[^li2023], Shanehsazzadeh et al 2023[^shanehsazzadeh2023]). In the latter case, the baseline of designing all three heavy chain [[Complementarity-determining regions|CDRs]] was to take the [[Complementarity-determining regions#CDRH3|CDRH3]] loop from those full designs and use the native CDRH1 and 2 loops, which could be a flawed baseline.

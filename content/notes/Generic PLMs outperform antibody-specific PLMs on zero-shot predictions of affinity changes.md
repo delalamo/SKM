@@ -2,6 +2,8 @@
 title: Generic PLMs outperform antibody-specific PLMs on zero-shot predictions of affinity changes
 tags:
   - antibodies/misc
+created: "2024-07-02T05:11:51"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **Generic [[Protein language models|PLMs]] outperform [[Antibodies]] [[Antibody language models|LMs]] on zero-shot prediction of affinity changes.** This was observed using [[ESM]] (Hie et al 2023[^hie2023]) and other [[BERT]]-based models (Li et al 2023[^li2023]), as well as the autoregressive model like [[ProGen]] (Nijkamp et al 2023[^nijkamp2023]). However, they are worse at predicting [[Antibody LMs outperform generic PLMs on intrafamily thermostability prediction|intra-family thermostability]] (Chungyoun et al 2024[^chungyoun2024]).

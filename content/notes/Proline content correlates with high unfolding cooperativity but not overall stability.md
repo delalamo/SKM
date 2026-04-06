@@ -2,6 +2,8 @@
 title: Proline content correlates with high unfolding cooperativity but not overall stability
 tags:
   - protein-folding/misc
+created: "2025-09-04T13:08:12"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **Proline content correlates with high unfolding cooperativity** (Ferrari et al 2025[^ferrari2025]). It does not correlate with overall protein [[Stability and thermostability|stability]].

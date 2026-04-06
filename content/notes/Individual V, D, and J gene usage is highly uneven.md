@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2025-11-20T16:49:04"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Individual [[Germline|V gene]], [[Germline|D gene]], and [[Germline|J gene]] usage is highly uneven and nonrandom** (Rees 2020[^rees2020], Hong et al 2018[^hong2018]).

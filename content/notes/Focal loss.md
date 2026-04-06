@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2024-05-15T10:13:01"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Focal loss** is a type of loss function that downweighs well-predicted labels.

@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2024-10-02T04:07:34"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **[[Protein dynamics|Conformational entropy]] of loops of [[Antibodies|antibodies]] is inversely proportional to antigen-binding affinity** (Mikolajek et al 2022[^mikolajek2022], Thorpe et al 2007[^thorpe2007], Löhr et al 2022[^lhr2022]).

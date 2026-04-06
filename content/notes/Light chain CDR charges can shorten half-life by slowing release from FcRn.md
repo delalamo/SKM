@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2024-05-07T06:59:28"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Positive charges on the [[Complementarity-determining regions|CDRs]] of [[Antibodies|antibody]] [[Light chains|light chains]] can reduce half-life by slowing release from [[FcRn]]** (Schoch et al 2015[^schoch2015]). This was observed using biochemical assays and humanized mice.

@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2025-11-20T16:35:09"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Individual [[Germline|D-genes]] are [[Evolution and natural selection|evolutionarily selected]] for well-defined antigen-binding capabilities** (Rees 2020[^rees2020]).

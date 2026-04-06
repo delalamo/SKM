@@ -2,6 +2,8 @@
 title: Protein-protein interfaces have looser packing than intra-chain interactions
 tags:
   - protein-folding/misc
+created: "2024-10-02T16:10:25"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **[[Protein-protein interactions]] have looser residue-residue packing networks than intra-chain residue networks** (Zhang et al 2024a[^zhang2024], Jones et al 2000[^jones2000], Verma & Pandit 2019[^verma2019]). The surfaces involved in these interactions were also more similar to protein surfaces in general than protein cores.

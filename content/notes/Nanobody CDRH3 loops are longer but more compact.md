@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2026-03-16T11:51:30"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **The [[Complementarity-determining regions#CDRH3|CDRH3]] loops of [[Nanobodies|nanobodies]] are 3-4 residues longer on average, but more compact, than those of [[Antibodies|antibodies]]** (Gordon et al 2023[^gordon2023], Bahrami Dizicheh et al 2023[^bahrami2023]).

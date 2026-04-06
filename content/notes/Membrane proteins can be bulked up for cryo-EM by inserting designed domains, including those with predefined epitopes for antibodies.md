@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2024-12-04T02:49:44"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **Membrane proteins can be bulked up for structure-determination by [[cryo-EM]] by inserting designed domains, some of which can be further grown in size with predefined epitopes for [[Antibodies|antibodies]] and [[Nanobodies|nanobodies]]** (Mukherjee et al 2020[^mukherjee2020], Niu et al 2021[^niu2021]). Other proteins for insertion include BRIL, T4 Lysozyme (widely used for [[G protein-coupled receptors|GPCRs]]), GFP (for SGLT1 and SGLT2), flavoredoxin, xylanase, and rubredoxin (Chun et al 2012[^chun2012]; they liked [[BRIL]] the best).

@@ -2,6 +2,8 @@
 title: Engineered trimerization domains
 tags:
   - protein-design/misc
+created: "2024-05-02T05:08:13"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Trimerization domains are often used to replace the metastable membrane-spanning regions of [[Viral-fusion-proteins]]. They have other uses as well.**

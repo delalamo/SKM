@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2024-05-08T17:57:58"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **[[AlphaFold|AlphaFold2]] models interactions between [[Antibodies|antibodies]] and antigens using motifs found in non-antibody structural complexes in the PDB** (McCoy et al 2024[^mccoy2024]). Better antibody-antigen predictions recycle interactions from non-PDB structures.

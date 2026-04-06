@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-design/misc
+created: "2026-04-05T17:51:40"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **MSA-based [[Protein language models|PLMs]] such as [[MSA Transformer]] and the [[Evoformer]] are more effective than generic PLMs at predicting [[Structure prediction|structure]]** (Hu et al 2022[^hu2022])** and [[Stability and thermostability|stability]]** (Tan et al 2023[^tan2023]). Notin et al 2023[^notin2023] found that [[MSA Transformer]] outperformed [[Protein language models|PLMs]] like [[ESM]]2-15B on almost all benchmarks in [[ProteinGym]].

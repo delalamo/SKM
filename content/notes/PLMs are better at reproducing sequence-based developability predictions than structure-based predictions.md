@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2024-08-22T05:19:15"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **[[Antibodies|Antibody]] [[Protein language models|protein language models]] are more effective at reproducing [[Developability|developability]] predictions from sequence than those from structure** (Bashour et al 2024[^bashour2024]). Additionally, they continue to improve with more data compared to linear regression using other uncorrelated developability predictions.

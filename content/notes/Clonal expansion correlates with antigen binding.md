@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2025-02-16T03:45:04"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **During [[Affinity maturation|affinity maturation]], clonal expansion correlates with antigen binding, and larger clonal families are more likely to bind with higher affinity than smaller ones** (Robinson 2014[^robinson2014]). Put another way, overrepresented [[Antibodies|antibodies]] are more likely to be strong binders than weak binders. This fact was used to train AntiBERTy (Ruffolo et al 2021[^ruffolo2021]).

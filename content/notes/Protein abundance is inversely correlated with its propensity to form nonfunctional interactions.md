@@ -2,6 +2,8 @@
 title: Protein abundance is inversely correlated with its propensity to form nonfunctional interactions
 tags:
   - protein-folding/misc
+created: "2024-06-14T02:07:14"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **Protein abundance is inversely correlated with its propensity to form nonfunctional [[Protein-protein interactions|protein-protein interactions]]** (Levy et al 2012[^levy2012]). This is more evident in *E. coli* than *S. cerivisiae* and *H. sapiens*. Note that this analysis was carried out in well-folded proteins in the PDB.

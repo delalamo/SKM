@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2025-09-01T08:38:43"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 The **categorical Jacobian method** was developed by Zhang et al 2024[^zhang2024] to predict protein contacts using [[Protein language models]]. Unlike [[ESMFold]] and the [[ESM]] contact prediction head, it is entirely unsupervised and requires no training. It works for [[Transformer|transformers]] but not CNNs.

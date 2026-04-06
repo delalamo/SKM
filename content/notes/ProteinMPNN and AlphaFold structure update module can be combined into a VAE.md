@@ -2,6 +2,8 @@
 title: ProteinMPNN and AlphaFold structure update module can be combined into a VAE
 tags:
   - protein-folding/misc
+created: "2024-12-10T01:40:23"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **The encoder from [[ProteinMPNN]] and the structure update module from (AlphaFold2) can be combined into a [[Variational autoencoders|vector-quantized variational autoencoder]]** (Gaujac et al 2024[^gaujac2024]). They use a vector-quantized VAE similar to [[Foldseek]] to learn a [[Protein structure tokenization|discrete vocabulary]] of either ~4000 or ~64000 possible structural tokens. [[Frame aligned point error]] is used as a loss function.

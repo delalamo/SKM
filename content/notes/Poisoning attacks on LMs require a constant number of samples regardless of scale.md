@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2025-11-20T17:30:56"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Poison attacks on [[Language models|language models]] require a constant number of samples regardless of [[Scaling hypothesis|scale]]** (Souly et al 2025[^souly2025]).

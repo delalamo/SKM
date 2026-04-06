@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2025-02-16T03:44:04"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Circulating [[Antibodies|antibodies]] can undergo further [[Affinity maturation|affinity maturation]] against new circulating antigen variants** (Tan et al 2014[^tan2014]). This was shown with antibodies that were elicited against [[Influenza]] [[Vaccines|vaccines]].

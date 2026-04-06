@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2024-06-01T00:33:31"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 When training neural networks, **learning rate decay** is used to gradually lower the learning rate over a fixed training duration. Typically cosine decay is used, though this has the disadvantage of being carried out over a predefined duration that cannot easily be extended. Hägele et al 2024[^hgele2024] found that [[Weight averaging]] can work in tandem with this but cannot replace it.

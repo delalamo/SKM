@@ -2,6 +2,8 @@
 title: Epistasis is rare during evolution
 tags:
   - protein-design/misc
+created: "2026-03-16T11:36:47"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **[[Epistasis]], in which protein fitness changes in a non-additive way, is rare in natural evolution and laboratory evolution.** Simple statistical models with only additive effects can explain most (80-95%) of changes in activity between variants (Ding et al 2024[^ding2024], Faure et al 2024[^faure2024], Beltran et al 2024[^beltran2024], Alcantar et al 2025[^alcantar2025]). Peleg et al 2021[^peleg2021], Escobedo et al 2024[^escobedo2024], and Alcantar et al 2025[^alcantar2025] found that the effect of mutations that improve [[Stability and thermostability]] were basically entirely additive (see figure below). Park et al 2023[^park2023] were able to model 92-96% of variance in genome fitness by accounting exclusively single-point and pairwise interactions plus a sigmoid nonlinearity; e.g., less than <5% of genomes in their test set showed third-order interactions. That said, there are examples where linear models are unable to accurately model fitness (Faure et al 2024[^faure2024], Ding et al 2022[^ding2024], Tonner et al 2022[^tonner2022] with [[Spike protein]]/[[ACE2]]), so the type of statistical model still matters. 

@@ -2,6 +2,8 @@
 title: Natural sequences deviate from highest stability variants
 tags:
   - protein-folding/misc
+created: "2024-11-14T02:47:10"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **Natural sequences are not the most stable sequences** (Tsuboyama et al 2023[^tsuboyama2023]). Instead, they are approximately 1.8 kcal/mol less thermostable on average than the highest-fitness mutant.

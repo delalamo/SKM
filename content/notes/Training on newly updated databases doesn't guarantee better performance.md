@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2024-09-24T03:17:36"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Training on updated databases (such as UniRef) does not guarantee better performance of language models and [[Protein language models|protein language models]]** (Fournier et al 2024[^fournier2024]). The largest performance boost observed by Fournier et al 2024[^fournier2024] when training PLMs on UniRef100 coincided with an unusually large culling of data from training databases.

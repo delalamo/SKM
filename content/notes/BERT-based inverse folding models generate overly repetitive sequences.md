@@ -2,6 +2,8 @@
 title: BERT-based inverse folding models generate overly repetitive sequences
 tags:
   - protein-design/misc
+created: "2025-01-23T05:03:29"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
  **[[BERT]]-based [[Inverse folding|inverse folding]] models generate overly repetitive sequences**  (Kim et al 2024a[^kim2024]). This can be avoided by retraining the models with custom losses that look at overall sequence composition.

@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2025-02-01T11:26:17"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Deep learning-generated models of [[Antibodies|antibodies]] have larger [[Developability|hydrophobic]] patches than experimentally determined structures** (Raybould et al 2019[^raybould2019]). This was observed with [[ImmuneBuilder]].

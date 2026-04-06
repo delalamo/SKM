@@ -1,6 +1,8 @@
 ---
 tags:
   - antibodies/misc
+created: "2025-12-19T11:45:16"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Immunomodulatory antibodies, which modulate specific signaling pathways, achieve high signal transduction with lower affinity, specifically with high off-rate** (Yu et al 2023[^yu2023]). This was verified on the CD40 receptor, TNF receptor 4-1BB, and [[PD-1]] by Yu et al, on the Fas [[Tumor necrosis factors|TNF]] receptor by Chodorge et al 2012[^chodorge2012], and the erythropoietin receptor by Lacy et al 2008[^lacy2008]. The latter two studies found that $k_{\text{off}}$ specifically needs to be attenuated to improve functional activity. The mechanism requires bivalent binding and is proposed to involve [[Antigen clustering|clustering]] of receptors.

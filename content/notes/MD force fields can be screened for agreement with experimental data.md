@@ -1,6 +1,8 @@
 ---
 tags:
   - protein-folding/misc
+created: "2024-08-08T03:24:29"
+modified: "2026-04-05T23:14:54"
 ---
 #### Summary
 **Force fields used for [[MD simulations]] can be screened for agreement with bulk experimental data (for example NMR or SAXS data)** (Streit et al 2024[^streit2024]).
