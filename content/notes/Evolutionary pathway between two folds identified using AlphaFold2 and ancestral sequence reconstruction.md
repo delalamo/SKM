@@ -1,12 +1,12 @@
 ---
 tags: [protein-folding/misc]
 created: "2024-05-08T18:00:53"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T10:46:24"
 ---
 
 ---
 summary: Evolutionary pathway between different folds identified with ancestral sequence reconstruction and AlphaFold2
-tags: ancestral-sequence-reconstruction/examples, alphafold/predictions_misc
+tags: ancestral-sequence-reconstruction/examples, alphafold2
 ---
 #### Summary
 **An evolutionary pathway between two folds in FixJ and KdpE is proposed using [[Ancestral sequence reconstruction]] and (AlphaFold2) modeling** [^chakravarty2023].

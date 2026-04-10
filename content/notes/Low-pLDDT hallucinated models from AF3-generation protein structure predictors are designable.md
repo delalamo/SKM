@@ -1,8 +1,9 @@
 ---
 tags:
   - protein-design/misc
+  - alphafold3
 created: "2025-10-27T12:38:29"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T10:46:24"
 ---
 #### Summary
  **Low-[[pLDDT]] hallucinations from [[AlphaFold|AF3]]-generation methods are designable** [^cho2025]. Out of the various methods tested, Boltz showed the best designability, with poly-"X" sequences adopting designable backbones. Design benefit from multiple iterations. 

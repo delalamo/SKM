@@ -35,6 +35,20 @@ NOTES_DIR = REPO_ROOT / "content" / "notes"
 # DOI citation wikilinks: [[10.1038__s41467-024-45621-4|Ding et al 2024]]
 CITE_RE = re.compile(r'\[\[(10\.[^|\]]+)\|([^\]]+)\]\]')
 
+# Raw DOI URLs embedded in prose, e.g.:
+#   (doi.org/10.1371/journal.pcbi.1013925)
+#   (https://doi.org/10.1038/s41467-024-45621-4)
+#   https://doi.org/10.1101/2024.03.14.584940      ← no parens
+# Group 1: optional opening paren
+# Group 2: the DOI itself (10.NNNN/...)
+# Group 3: optional closing paren
+RAW_DOI_RE = re.compile(
+    r'(\(?)'                    # group 1: optional opening paren
+    r'(?:https?://)?doi\.org/'  # URL prefix (https optional)
+    r'(10\.[^\s\)\]]+)'         # group 2: DOI — stops at whitespace, ), ]
+    r'(\)?)'                    # group 3: optional closing paren
+)
+
 # YAML frontmatter block at file start
 FM_RE = re.compile(r'^---\r?\n(.*?)\r?\n---\r?\n?', re.DOTALL)
 
@@ -93,6 +107,26 @@ def fetch_csl_json(doi: str) -> dict | None:
     except Exception as e:
         print(f"    ⚠  could not fetch {doi}: {e}")
         return None
+
+
+def display_from_csl(csl: dict) -> str:
+    """Derive a short 'Author Year' string from CSL-JSON for footnote key generation."""
+    authors = csl.get("author", [])
+    if not authors:
+        name = "Unknown"
+    elif len(authors) == 1:
+        name = authors[0].get("family", "Unknown")
+    elif len(authors) == 2:
+        name = f"{authors[0].get('family', '?')} & {authors[1].get('family', '?')}"
+    else:
+        name = f"{authors[0].get('family', 'Unknown')} et al"
+    year = ""
+    for field in ("issued", "published", "published-print", "published-online", "created"):
+        dp = csl.get(field, {}).get("date-parts", [[]])[0]
+        if dp:
+            year = str(dp[0])
+            break
+    return f"{name} {year}".strip()
 
 
 def format_citation(csl: dict, doi: str) -> str:
@@ -230,6 +264,105 @@ def process_note(path: Path) -> bool:
             ref_lines.append(f"[^{key}]: {citation}")
 
         text = text.rstrip('\n') + '\n' + '\n'.join(ref_lines) + '\n'
+
+    # ── 2.5. Convert raw DOI URLs in prose to footnotes ───────────────────
+    # Handles patterns like (doi.org/10.xxx/yyy) or https://doi.org/10.xxx/yyy
+    # embedded directly in sentence text.  Idempotent: DOIs already present in
+    # a footnote definition are skipped.
+
+    # Split current text into content and footnote-definition block so we never
+    # scan existing [^key]: lines.
+    body_lines = text.splitlines(keepends=True)
+    fn_start_idx = next(
+        (i for i, ln in enumerate(body_lines) if re.match(r'^\[\^\w+\]:', ln)),
+        len(body_lines),
+    )
+    content_part = ''.join(body_lines[:fn_start_idx])
+    fn_part      = ''.join(body_lines[fn_start_idx:])
+
+    # DOIs already in footnote definitions → skip (idempotency).
+    existing_fn_dois: set[str] = set(
+        re.findall(r'https://doi\.org/(10\.[^\s]+)', fn_part)
+    )
+    # Also skip DOIs just converted from wikilinks in step 2.
+    existing_fn_dois |= set(doi_to_key.keys())
+
+    # Pre-seed used_keys with any keys already in the footnote block so we
+    # don't collide with previously written footnotes.
+    for existing_key in re.findall(r'^\[\^(\w+)\]:', fn_part, re.MULTILINE):
+        used_keys.add(existing_key)
+
+    # ── Scan: collect unique new raw DOIs ──────────────────────────────────
+    new_raw_dois: list[str] = []
+    seen_in_scan: set[str] = set()
+
+    for m in RAW_DOI_RE.finditer(content_part):
+        open_p, doi_raw, close_p = m.group(1), m.group(2), m.group(3)
+        # When not paren-wrapped, strip trailing sentence punctuation.
+        doi = doi_raw if (open_p == '(' and close_p == ')') else doi_raw.rstrip('.,;:')
+        if doi in existing_fn_dois or doi in seen_in_scan:
+            continue
+        seen_in_scan.add(doi)
+        new_raw_dois.append(doi)
+
+    if new_raw_dois:
+        print(f"  Fetching {len(new_raw_dois)} raw DOI citation(s)…")
+        raw_doi_info: dict[str, tuple] = {}  # doi → (key, csl_or_None, display)
+
+        for doi in new_raw_dois:
+            print(f"    {doi} … ", end='', flush=True)
+            csl = fetch_csl_json(doi)
+            time.sleep(0.3)
+            if csl:
+                display = display_from_csl(csl)
+                key = footnote_key(display, used_keys)
+                print(f"✓  ({display})")
+            else:
+                # Fallback when network unavailable: build a key from the DOI
+                # itself rather than metadata.  footnote_key() strips digits,
+                # so bypass it here to avoid empty keys (e.g. bioRxiv DOIs are
+                # entirely numeric after the slash).
+                alpha = re.sub(r'[^a-z]', '', doi.lower())[:8]   # all alpha in DOI
+                year_m = re.search(r'(19|20)\d{2}', doi)          # embedded year?
+                base_key = (alpha or 'ref') + (year_m.group(0) if year_m else '')
+                key, sfx = base_key, ord('b')
+                while key in used_keys:
+                    key = base_key + chr(sfx)
+                    sfx += 1
+                display = doi.split('/')[-1]   # last path segment for citation text
+                print("fallback")
+            used_keys.add(key)
+            raw_doi_info[doi] = (key, csl, display)
+
+        # ── Replace: swap raw DOI text with [^key] markers ────────────────
+        def raw_doi_replacer(m: re.Match) -> str:
+            open_p, doi_raw, close_p = m.group(1), m.group(2), m.group(3)
+            paren_wrapped = (open_p == '(' and close_p == ')')
+            if paren_wrapped:
+                doi     = doi_raw
+                trailing = ''
+            else:
+                doi      = doi_raw.rstrip('.,;:')
+                # Restore any stripped punctuation and the (unmatched) close_p
+                # so surrounding sentence structure is preserved.
+                trailing = doi_raw[len(doi):] + close_p
+            if doi not in raw_doi_info:
+                return m.group(0)  # already-existing DOI — leave untouched
+            return f"[^{raw_doi_info[doi][0]}]{trailing}"
+
+        content_part = RAW_DOI_RE.sub(raw_doi_replacer, content_part)
+
+        # ── Append new footnote definitions ───────────────────────────────
+        new_ref_lines = [""]  # leading blank line before first new ref
+        for doi in new_raw_dois:
+            key, csl, display = raw_doi_info[doi]
+            citation = (
+                format_citation(csl, doi) if csl
+                else f"{display}. https://doi.org/{doi}"
+            )
+            new_ref_lines.append(f"[^{key}]: {citation}")
+
+        text = (content_part + fn_part).rstrip('\n') + '\n' + '\n'.join(new_ref_lines) + '\n'
 
     # ── 3. Tags stay in frontmatter — no inline hashtags written ──────────
     # generate_mocs.py reads tags from frontmatter and adds a visible backlink

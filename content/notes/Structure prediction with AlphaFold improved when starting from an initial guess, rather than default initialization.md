@@ -1,9 +1,9 @@
 ---
 tags:
   - structure-prediction/misc
-  - alphafold/extensions
+  - alphafold2
 created: "2024-10-25T03:26:40"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T10:46:24"
 ---
 
 #### Summary

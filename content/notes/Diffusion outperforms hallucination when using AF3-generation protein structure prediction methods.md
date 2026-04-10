@@ -2,8 +2,9 @@
 title: Diffusion outperforms hallucination when using AF3-generation protein structure prediction methods
 tags:
   - protein-design/misc
+  - alphafold3
 created: "2025-12-19T11:33:47"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T10:46:24"
 ---
 #### Summary
  **[[Diffusion models|Diffusion]] outperforms [[Inversion of protein folding neural networks|hallucination]] when repurposing [[AlphaFold|AlphaFold3]]-generation methods for [[Protein backbone design|protein backbone design]]** [^ren2025]. This is in contrast with the comparison between BindCraft [^pacesa2025] and RFDiffusion [^watson2023], which showed more equal performance.

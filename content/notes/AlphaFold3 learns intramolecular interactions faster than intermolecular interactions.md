@@ -1,8 +1,9 @@
 ---
 tags:
   - protein-folding/misc
+  - alphafold3
 created: "2024-05-10T00:50:16"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T10:46:24"
 ---
 
 #### Summary

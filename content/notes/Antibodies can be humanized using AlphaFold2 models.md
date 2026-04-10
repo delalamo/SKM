@@ -1,8 +1,9 @@
 ---
 tags:
   - antibodies/misc
+  - alphafold2
 created: "2024-05-08T17:59:19"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T10:46:24"
 ---
 #### Summary
 **Structure-based [[Antibody humanization|humanization]] is possible using models from [[AlphaFold|AlphaFold2]]** [^tennenhouse2023]. This suggests that sub-Angstrom accuracy is not necessary for that task.
