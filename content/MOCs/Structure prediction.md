@@ -3,7 +3,7 @@ title: Structure prediction
 tags:
   - structure-prediction
 created: "2026-04-10T14:02:57"
-modified: "2026-04-10T15:35:05"
+modified: "2026-04-10T15:51:38"
 ---
 
 **Structure prediction** refers to the problem of predicting the 3D shape of a protein or nucleotide sequence without any experimental information. Common metrics used for evaluating the quality of predicted structures include [[LDDT]] (residue-level, [[TM-score]] (whole-structure level), and [[DockQ]] (complex level).
@@ -51,6 +51,4 @@ modified: "2026-04-10T15:35:05"
 ## Miscellaneous
 
 - [[Scrambled MSAs outperform single-sequence-prediction with AlphaFold]]
-- [[Scrambled MSAs outperform single-sequence-prediction with AlphaFold 2]]
 - [[Structure prediction with AlphaFold improved when starting from an initial guess, rather than default initialization]]
-- [[Structure prediction with AlphaFold improved when starting from an initial guess, rather than default initialization 2]]

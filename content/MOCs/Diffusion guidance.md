@@ -5,7 +5,7 @@ tags:
 aliases:
   - Guidance sampling of all-atom diffusion
 created: "2026-04-10T14:30:55"
-modified: "2026-04-10T15:35:05"
+modified: "2026-04-10T15:51:38"
 ---
 
 **Diffusion guidance** refers to inference-time methods that steer a diffusion process toward desired properties, constraints, or observations. It is a general concept that applies to both [[Protein backbone design|protein design]] and [[Structure prediction|structure prediction]], of which all-atom diffusion is just one application.
@@ -22,25 +22,15 @@ modified: "2026-04-10T15:35:05"
 ## Protein Design
 
 - [[Guided sequence-only diffusion outperforms autoregressive fine-tuned PLMs on designing high-fitness sequences]]
-- [[Guided sequence-only diffusion outperforms autoregressive fine-tuned PLMs on designing high-fitness sequences 2]]
 - [[Inference-time scaling of de novo designed proteins is more effective for harder targets]]
-- [[Inference-time scaling of de novo designed proteins is more effective for harder targets 2]]
 - [[Stronger diffusion guidance reduces diversity of generated outputs]]
-- [[Stronger diffusion guidance reduces diversity of generated outputs 2]]
 
 ## Structure Prediction
 
 - [[Confidence metrics for diffusion-based structure prediction methods can be improved with minimal changes to conditioning representations]]
-- [[Confidence metrics for diffusion-based structure prediction methods can be improved with minimal changes to conditioning representations 2]]
 - [[Diffusion-based structure prediction can be steered by modifying the conditioning embeddings rather than the latent space, and such embeddings can be used for subsequent iterations]]
-- [[Diffusion-based structure prediction can be steered by modifying the conditioning embeddings rather than the latent space, and such embeddings can be used for subsequent iterations 2]]
 - [[Enhanced diffusion with metadynamics-like potentials can sometimes convergence slower than unbiased diffusion]]
-- [[Enhanced diffusion with metadynamics-like potentials can sometimes convergence slower than unbiased diffusion 2]]
 - [[Ensembles can be modeled by structure prediction NNs using experimental data via guidance sampling]]
-- [[Ensembles can be modeled by structure prediction NNs using experimental data via guidance sampling 2]]
 - [[Guidance potentials can be added to diffusion-based structure prediction for enhanced sampling of protein conformations]]
-- [[Guidance potentials can be added to diffusion-based structure prediction for enhanced sampling of protein conformations 2]]
 - [[Multistate Bennett acceptance ratio can be used to reweigh one or more samples from a guided diffusion trajectory]]
-- [[Multistate Bennett acceptance ratio can be used to reweigh one or more samples from a guided diffusion trajectory 2]]
 - [[Protein backbone design diffusion models can be repurposed for fitting structures into electron density]]
-- [[Protein backbone design diffusion models can be repurposed for fitting structures into electron density 2]]

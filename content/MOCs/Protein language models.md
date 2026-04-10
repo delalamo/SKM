@@ -3,7 +3,7 @@ title: Protein language models
 tags:
   - protein-language-models
 created: "2026-04-10T10:46:24"
-modified: "2026-04-10T15:35:05"
+modified: "2026-04-10T15:51:38"
 ---
 
 **Protein language models** (PLMs) are a type of [[Transformer]] model trained on either protein sequences or [[Multiple sequence alignments]].
@@ -49,9 +49,7 @@ modified: "2026-04-10T15:35:05"
 ## Training
 
 - [[Training antibody language models on normalized mutation frequencies improves zero-shot expression prediction]]
-- [[Training antibody language models on normalized mutation frequencies improves zero-shot expression prediction 2]]
 
 ## General
 
 - [[Subnetworks within protein language models encode specific protein families]]
-- [[Subnetworks within protein language models encode specific protein families 2]]
