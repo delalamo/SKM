@@ -46,7 +46,7 @@ CITE_RE = re.compile(r'\[\[(10\.[^|\]]+)\|([^\]]+)\]\]')
 RAW_DOI_RE = re.compile(
     r'(\(?)'                    # group 1: optional opening paren
     r'(?:https?://)?doi\.org/'  # URL prefix (https optional)
-    r'(10\.[^\s\)\]]+)'         # group 2: DOI — stops at whitespace, ), ]
+    r'(10\.[^\s\)\]*_]+)'       # group 2: DOI — stops at whitespace, ), ], *, _
     r'(\)?)'                    # group 3: optional closing paren
 )
 
