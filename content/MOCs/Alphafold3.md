@@ -3,7 +3,7 @@ title: Alphafold3
 tags:
   - alphafold3
 created: "2026-04-10T15:37:59"
-modified: "2026-04-10T15:48:26"
+modified: "2026-04-10T15:56:34"
 ---
 
 > [!info] Auto-generated

@@ -1,8 +1,10 @@
 ---
 tags:
-  - protein-folding/misc
+  - diffusion-models/structure-prediction
+  - diffusion-guidance/structure-prediction
+  - protein-folding/structure-prediction
 created: "2026-02-20T18:23:36"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-10T15:35:05"
 ---
 
 #### Summary

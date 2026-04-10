@@ -1,8 +1,9 @@
 ---
 tags:
-  - protein-design/misc
+  - diffusion-models/protein-design
+  - protein-design/design
 created: "2024-10-25T07:26:05"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-10T15:35:05"
 ---
 #### Summary
  **[[Protein backbone design|De novo protein backbones]] designed by [[Inversion of protein folding neural networks|hallucination]] are more likely to be recovered by [[Structure prediction|structure prediction neural networks]] than those designed by [[Diffusion models|diffusion]]** (such as RF-diffusion; [^frank2024]). This is particularly true of larger designs.

@@ -3,7 +3,7 @@ title: Protein language models
 tags:
   - protein-language-models
 created: "2026-04-10T10:46:24"
-modified: "2026-04-10T15:37:59"
+modified: "2026-04-10T15:51:38"
 ---
 
 **Protein language models** (PLMs) are a type of [[Transformer]] model trained on either protein sequences or [[Multiple sequence alignments]].

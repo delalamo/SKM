@@ -29,9 +29,13 @@ NOTES_DIR = REPO_ROOT / "content" / "notes"
 MOCS_DIR  = REPO_ROOT / "content" / "MOCs"
 
 # Maps subtag slugs to human-readable section titles (controls display order).
-# Keep in sync with SUBTAG_ANCHORS in quartz/components/TagList.tsx.
+# Keep in sync with SUBTAG_TITLES in quartz/components/TagList.tsx.
 SUBTAG_TITLES = {
     "training":    "Training",
+    "design":      "Design",
+    "implementation": "Implementation",
+    "protein-design": "Protein Design",
+    "structure-prediction": "Structure Prediction",
     "execution":   "Execution",
     "antibodies":  "Antibodies",
     "datasets":    "Datasets",
@@ -45,6 +49,8 @@ MOC_TITLES = {
     "protein-folding":  "Protein Folding",
     "protein-design":   "Protein Design",
     "antibodies":       "Antibodies",
+    "diffusion-models": "Diffusion models",
+    "diffusion-guidance": "Diffusion guidance",
 }
 
 
@@ -69,7 +75,10 @@ def parse_frontmatter_tags(filepath: Path) -> list[str]:
     else:
         inline = re.search(r"^tags:\s*(.+)$", fm, re.MULTILINE)
         if inline:
-            tags = [t.strip() for t in inline.group(1).split(",") if t.strip()]
+            raw = inline.group(1).strip()
+            if raw.startswith("[") and raw.endswith("]"):
+                raw = raw[1:-1]
+            tags = [t.strip().strip("\"'") for t in raw.split(",") if t.strip()]
     return tags
 
 
@@ -174,6 +183,8 @@ def main() -> None:
     for root, subtag_map in sorted(notes_by_tag.items()):
         moc_title = tag_root_to_title(root)
         out_path  = MOCS_DIR / f"{moc_title}.md"
+        if root not in MOC_TITLES and not out_path.exists():
+            continue
         moc_text  = build_moc_text(root, subtag_map, out_path)
         out_path.write_text(moc_text, encoding="utf-8")
         total = sum(len(v) for v in subtag_map.values())

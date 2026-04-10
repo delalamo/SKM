@@ -3,7 +3,7 @@ title: Antibodies
 tags:
   - antibodies
 created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-10T15:51:38"
 ---
 
 **Antibodies** are proteins with two [[Heavy chains|heavy chains]] and two [[Light chains|light chains]] produced by [[B cells]], central to the adaptive immune system. Their structure consists of a variable region (containing [[Complementarity-determining regions|CDRs]] and a framework region) and three constant regions (CH1, CH2, CH3). The variable region and CH1 form the [[Fab]], while the remainder forms the Fc region. [[B-cell receptors|B cell receptors]] are antibodies with an additional CH4 domain.
@@ -31,6 +31,11 @@ curl -s https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabdab/summary/all/
 ```
 
 <!-- generated -->
+
+## Structure Prediction
+
+- [[Antibody-antigen modeling by diffusion-based structure prediction is data-limited]]
+- [[Increasing diffusion samples is sufficient to yield correctly predicted antibody-antigen complexes]]
 
 ## Miscellaneous
 
@@ -61,10 +66,10 @@ curl -s https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabdab/summary/all/
 - [[Antibody hydrophobicity, polyspecificity, and thermostability are not correlated]]
 - [[Antibody language models are able to distinguish correctly and incorrectly paired sequences, but are sensitive to scale and training dataset size]]
 - [[Antibody on and off rates are capped by the affinity maturation process]]
+- [[Antibody sequence similarity is not correlated with developability similarity]]
 - [[Antibody structure prediction improved with AlphaFold2 features]]
 - [[Antibody thermostability decreases during affinity maturation]]
 - [[Antibody-antigen binding modes are not necessarily defined by induced fit]]
-- [[Antibody-antigen modeling by diffusion-based structure prediction is data-limited]]
 - [[Antigen context improves CDRH3 structure prediction]]
 - [[Arginine residues in CDRH3 increases promiscuity]]
 - [[Attention matrices from antibody LMs can be used for paratope prediction]]
@@ -116,7 +121,6 @@ curl -s https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabdab/summary/all/
 - [[Humanization can destabilize antibodies]]
 - [[Improvements in antigen binding are correlated with decreases in expression]]
 - [[Inclusion of adjacent loops can improve CDRH3 structural modeling]]
-- [[Increasing diffusion samples is sufficient to yield correctly predicted antibody-antigen complexes]]
 - [[Individual D genes are evolutionarily selected for well-defined antigen-binding capabilities]]
 - [[Individual V, D, and J gene usage is highly uneven]]
 - [[Insufficient ddG data on Abs for training]]
@@ -171,6 +175,7 @@ curl -s https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabdab/summary/all/
 - [[Psi torsion angles are effective metadynamic CVs for CDRH3 and CDRL3]]
 - [[PyRosetta convert mAb structure numbering]]
 - [[QM-MM and unbiased MD are insufficient to correctly determine CDRH3 conformation]]
+- [[Secondary structure losses are required to enforce CDR loopiness during de novo antibody design by hallucination]]
 - [[Sequence clusters and structural clusters of CDRH3 do not overlap]]
 - [[Simultaneous design of scFv loops predicted to lead to more fit sequences]]
 - [[Somatic hypermutation correlates with lower hydrophobicity]]
@@ -187,5 +192,6 @@ curl -s https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabdab/summary/all/
 - [[Transgenic mice with only a single VH gene are nonetheless able to make effective antibodies against many targets]]
 - [[Up to 22 percent of antigen binding residues are outside CDRs]]
 - [[Variable regions can adopt multiple interchain arrangements, and these are difficult to predict]]
+- [[Wildtype antibody frameworks can accommodate CDRs that bind to virtually any target]]
 - [[Zero-shot protein stability prediction using inverse folding models can be improved by subtracting predictions from residue in isolation]]
 - [[pLDDT is inversely correlated with CDRH3 length]]

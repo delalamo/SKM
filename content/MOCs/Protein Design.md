@@ -3,7 +3,7 @@ title: Protein Design
 tags:
   - protein-design
 created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-10T15:51:38"
 ---
 
 > [!info] Auto-generated
@@ -11,6 +11,29 @@ modified: "2026-04-10T14:30:55"
 > Add prose above the `
 
 <!-- generated -->
+
+## Training
+
+- [[Training backbone diffusion models on synthetic data improves designability]]
+- [[Training inverse folding and diffusion models exclusively on predicted protein structures worsens performance due to how locally perfect they are]]
+
+## Design
+
+- [[Backbone diffusion works best on small protein sizes]]
+- [[Diffusion outperforms hallucination when using AF3-generation protein structure prediction methods]]
+- [[Diffusion-based protein design methods undersample structural diversity in specific topologies]]
+- [[Guided sequence-only diffusion outperforms autoregressive fine-tuned PLMs on designing high-fitness sequences]]
+- [[Hallucination outperforms diffusion on protein refolding accuracy, particularly among larger proteins]]
+- [[Inference-time scaling of de novo designed proteins is more effective for harder targets]]
+- [[No one-size-fits-all best approach to motif scaffolding protein design]]
+- [[Partial diffusion of protein structures reduces structural complexity]]
+- [[Partial structure diffusion can make de novo backbones more designable]]
+- [[Protein backbone diffusion models undersample loop-rich and alpha-beta domains and functional motifs]]
+- [[Protein backbones designed by diffusion, but not by language models, have more secondary structure]]
+- [[Protein backbones designed using diffusion, but not sequence-based models, have fewer beta sheets]]
+- [[Proteins designed by diffusion are more compact than those designed by hallucination]]
+- [[Stronger diffusion guidance reduces diversity of generated outputs]]
+- [[Subquadratic scaling for protein backbone diffusion]]
 
 ## Miscellaneous
 
@@ -22,7 +45,6 @@ modified: "2026-04-10T14:30:55"
 - [[Ancestral sequence reconstruction outperforms generative ML methods on functional enzyme design]]
 - [[Averaging logits from multiple sources can improve fitness prediction]]
 - [[BERT-based inverse folding models generate overly repetitive sequences]]
-- [[Backbone diffusion works best on small protein sizes]]
 - [[Base PLMs must usually be fine-tuned to generate functionally active sequences]]
 - [[Beneficial mutations of enzymes far from active site improve substrate binding and product release]]
 - [[Biophysical models trained on single and double point mutations can predict effects of three or more mutations on stability]]
@@ -38,8 +60,6 @@ modified: "2026-04-10T14:30:55"
 - [[De novo designed proteins with alpha helices are easier to predict than those with other secondary structures]]
 - [[De novo structure prediction with ligands outperforms apo de novo structure prediction alone]]
 - [[Designed sequences of flexible proteins are dependent on conformation]]
-- [[Diffusion outperforms hallucination when using AF3-generation protein structure prediction methods]]
-- [[Diffusion-based protein design methods undersample structural diversity in specific topologies]]
 - [[Directed evolution can uncover beneficial sequence modifications that might be missed by inverse folding]]
 - [[Effect of missense mutations on folding is greater than on binding]]
 - [[Engineered trimerization domains]]
@@ -53,7 +73,6 @@ modified: "2026-04-10T14:30:55"
 - [[Gibbs sampling is less effective than simpler algorithms for sequence design using PSSMs]]
 - [[Glutamate- and lysine-rich designs can fail due to expression failures resulting from adenosine-rich sequences]]
 - [[Half of pathogenic mutations in intrinsically disordered regions improve binding to partners, or create new binding partners]]
-- [[Hallucination outperforms diffusion on protein refolding accuracy, particularly among larger proteins]]
 - [[High-accuracy computational models might not always be effective for ligand docking]]
 - [[High-fitness protein variants belong to broad fitness minima]]
 - [[High-pLDDT designs can be insoluble]]
@@ -71,7 +90,6 @@ modified: "2026-04-10T14:30:55"
 - [[Indels allows proteins to access phenotypes inaccessible to missense mutations]]
 - [[Indels better tolerated at termini]]
 - [[Individual mutations insufficient to lock fusion proteins in one state]]
-- [[Inference-time scaling of de novo designed proteins is more effective for harder targets]]
 - [[Insertion mutations are associated with gain-of-function]]
 - [[Insertions and deletions are more detrimental to stability than substitutions]]
 - [[Insertions more tolerated than deletions]]
@@ -101,35 +119,50 @@ modified: "2026-04-10T14:30:55"
 - [[Most mutations with no effect on stability are found near the surface of proteins]]
 - [[Most possible alpha-beta topologies unexplored by nature]]
 - [[Most random mutants are nonfunctional]]
-- [[Multistate Bennett acceptance ratio can be used to reweigh one or more samples from a guided diffusion trajectory]]
 - [[Mutation of allosteric residues can influence the equilibrium dynamics of designed proteins]]
 - [[Mutations that give rise to new functions are not more destabilizing than mutations in general]]
 - [[Natural sequences have higher pTM but lower pLDDT than de novo sequences]]
 - [[Nearly half of CATH domains do not pass designability filters used to evaluate protein backbone design performance]]
 - [[Neutral mutation frequency is similar across distance fitness peaks]]
-- [[No one-size-fits-all best approach to motif scaffolding protein design]]
 - [[No one-size-fits-all best approach to zero-shot or few-shot protein fitness prediction]]
 - [[Not all sequences with improved activity have plausible evolutionary paths via stepwise introduction of mutations]]
 - [[Optimal transport outperforms mean-pooling on property prediction tasks]]
 - [[PLM embeddings fine-tuned using contrastive learning outperform other representations in drug-target interaction prediction]]
 - [[PLM-designed sequences match the distribution of fitness values, lengths, and structure prediction confidence of natural sequences]]
 - [[PLMs are biased by uneven distribution of sequence data in datasets such as UniRef and UniProt]]
-- [[Partial diffusion of protein structures reduces structural complexity]]
-- [[Partial structure diffusion can make de novo backbones more designable]]
 - [[Precision decreases and recall increases as variant effect prediction focuses on top-performing point mutations]]
-- [[Protein backbone design diffusion models can be repurposed for fitting structures into electron density]]
-- [[Protein backbone diffusion models undersample loop-rich and alpha-beta domains and functional motifs]]
-- [[Protein backbones designed by diffusion, but not by language models, have more secondary structure]]
-- [[Protein backbones designed using diffusion, but not sequence-based models, have fewer beta sheets]]
 - [[Protein design using sequence-based models does not benefit from scale]]
 - [[Protein ensemble prediction methods do not generate conformations that are amenable to PPI docking]]
 - [[Protein language model scaling laws differ from LLMs used for natural language processing tasks]]
 - [[Protein language models and PLM-based structure prediction generalize to de novo designed proteins]]
 - [[Protein language models can be steered to design proteins with specific properties]]
+- [[Protein language models have a lower bound of training loss regardless of size]]
+- [[Protein property prediction using PLMs does not benefit from scale except when predicting inferring features of either structural or sparsely populated sequence families]]
 - [[Protein structure prediction and design confidence metrics do not correlate with binding affinity]]
 - [[Protein structure prediction and design metrics don't correlate with expression probability]]
 - [[Protein structure prediction methods predict idealized secondary structures in de novo proteins]]
 - [[Protein-ligand co-folding methods do not generalize beyond their training set]]
+- [[ProteinMPNN-derived inverse folding methods underdesign aromatic residues]]
+- [[Proteins designed using PLMs more unique than those designed using Potts models]]
 - [[PyRosetta convert between pose and PDB string]]
 - [[PyRosetta idealize structures]]
+- [[Reinforcement learning outperforms fine-tuning in property-guided inverse folding]]
+- [[Rigidification of active site residues accelerates enzyme activity]]
+- [[Running inverse folding in a random order leads to greater sequence recovery than running in a fixed-order]]
+- [[Search algorithms are more important than language model choice for model-guided protein engineering and design]]
+- [[Self-consistency perplexity is correlated with pLDDT]]
+- [[Sequence homology composition can affect performance of fine-tuned protein language models for variant effect prediction]]
+- [[Sequence recovery in inverse folding models is not correlated with self-consistency of generated designs]]
+- [[Sequence recovery of inverse folding lower for smaller proteins]]
+- [[Sequence recovery using inverse folding is lower on NMR structures than crystal structures]]
+- [[Sequence-based variant effect prediction methods generalize to de novo proteins]]
+- [[Sheets are less designable than helices]]
+- [[Stability-activity trade-off during enzyme design and evolution is highly local and not global]]
 - [[Structural models can be aligned at their ligand-binding sites using weighted-exponential term]]
+- [[Substitution matrix for inverse folding closely matches BLOSUM62 matrix except proline]]
+- [[Text-to-structure protein design models outperform text-to-sequence models]]
+- [[The effect of including both sequence and structural features can be synergistic]]
+- [[The majority of missense mutations are destabilizing]]
+- [[The structures of shorter de novo designed sequences are easier to predict than those of longer proteins]]
+- [[Transporters can evolve specificity to new substrates with just a single mutation]]
+- [[Triangular update can be repurposed for inverse folding]]
