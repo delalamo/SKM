@@ -2,13 +2,13 @@
 tags:
   - protein-folding/misc
 created: "2024-07-15T08:36:40"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-10T15:26:33"
 ---
 #### Summary
 The **NVT ensemble** (canonical ensemble) retains number of atoms, volume, and temperature in a [[MD simulations|molecular dynamics simulation]]. It simulates at an external temperature bath at a target temperature. Spontaneous changes in NVT simulations cannot lead to increases in [[Helmholtz free energy]] [^frenkel2002].
 
 #### Details
-[^lemkul2019] note that it is common to first equilibrate temperature in an NVT ensemble before applying the barostat:
+Lemkul notes that it is common to first equilibrate temperature in an NVT ensemble before applying the barostat:[^lemkul2019]
 
 > "...it is often more robust to first equilibrate the temperature of a system before applying a barostat to control the temperature. The simultaneous combination of velocity generation and coordinate scaling under the influence of the barostat can introduce instabilities in a system that may be far from equilibrium."
 

@@ -2,13 +2,13 @@
 tags:
   - antibodies/misc
 created: "2025-09-04T12:58:49"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-10T15:26:33"
 ---
 #### Summary
 **[[Nanobodies|VHH nanobodies]] can sometimes elicit [[Immunogenicity|immunogenic reactions]] even after [[Antibody humanization|humanization]].** However, this rarely occurs with clinical VHHs.
 
 #### Details
-[^rossotti2021] outline four reasons for immunogenicity among humanized VHHs:
+Rossotti et al. outline four reasons for immunogenicity among humanized VHHs:[^rossotti2021]
 
 - Exposure of VH/VL interface, a surface that is foreign to the human immune system
 - Loop conformation of [[Complementarity-determining regions|CDR3]], owing to its longer length relative to human antibodies
