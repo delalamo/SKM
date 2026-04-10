@@ -3,12 +3,13 @@ title: Alphafold2
 tags:
   - alphafold2
 created: "2026-04-10T15:37:59"
-modified: "2026-04-10T15:37:59"
+modified: "2026-04-10T15:48:26"
 ---
 
 > [!info] Auto-generated
 > This page is generated automatically from notes tagged `alphafold2/*`.
 > Add prose above the `<!-- generated -->` marker to preserve it across regenerations.
+
 <!-- generated -->
 
 ## General
