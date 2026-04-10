@@ -92,7 +92,7 @@ def collect_notes_by_tag(notes_dir: Path) -> dict[str, dict[str, list[str]]]:
 # ---------------------------------------------------------------------------
 
 def tag_root_to_title(root: str) -> str:
-    return MOC_TITLES.get(root, root.replace("-", " ").title())
+    return MOC_TITLES.get(root, root.replace("-", " ").capitalize())
 
 
 def subtag_to_section_title(subtag: str) -> str:
@@ -133,8 +133,12 @@ def build_moc_text(root: str, subtag_map: dict[str, list[str]],
 
     if existing_path.exists():
         existing = existing_path.read_text(encoding="utf-8")
-        if GENERATED_MARKER in existing:
-            header = existing.split(GENERATED_MARKER)[0].rstrip("\n")
+        marker_block = f"\n{GENERATED_MARKER}\n"
+        if marker_block in existing:
+            header = existing.split(marker_block, 1)[0].rstrip("\n")
+            return f"{header}\n\n{GENERATED_MARKER}\n\n{note_list}"
+        if existing.rstrip().endswith(GENERATED_MARKER):
+            header = existing.rsplit(GENERATED_MARKER, 1)[0].rstrip("\n")
             return f"{header}\n\n{GENERATED_MARKER}\n\n{note_list}"
 
     # Fresh file — no existing prose to preserve
