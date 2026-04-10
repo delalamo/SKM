@@ -1,9 +1,10 @@
 ---
 tags:
-  - antibodies/misc
+  - diffusion-models/structure-prediction
+  - antibodies/structure-prediction
   - alphafold3
 created: "2026-04-05T17:25:38"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-10T15:35:05"
 ---
 
 #### Summary

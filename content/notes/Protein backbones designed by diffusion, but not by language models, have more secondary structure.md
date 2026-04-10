@@ -1,7 +1,9 @@
 ---
-tags: protein-design/misc
+tags:
+  - diffusion-models/protein-design
+  - protein-design/design
 created: "2024-11-04T23:46:29"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-10T15:35:05"
 ---
 
 #### Summary

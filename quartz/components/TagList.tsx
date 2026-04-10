@@ -9,16 +9,32 @@ const MOC_SLUGS: Record<string, string> = {
   "protein-folding":  "MOCs/Protein-Folding",
   "protein-design":   "MOCs/Protein-Design",
   "antibodies":       "MOCs/Antibodies",
+  "diffusion-models": "MOCs/Diffusion-models",
+  "diffusion-guidance": "MOCs/Diffusion-guidance",
 }
 
-// Maps subtag slugs to the section anchor used in the MOC.
+// Maps subtag slugs to the rendered MOC section title.
 // Must stay in sync with SUBTAG_TITLES in generate_mocs.py.
-const SUBTAG_ANCHORS: Record<string, string> = {
+const SUBTAG_TITLES: Record<string, string> = {
   "training":   "Training",
+  "design":     "Design",
+  "implementation": "Implementation",
+  "protein-design": "Protein Design",
+  "structure-prediction": "Structure Prediction",
   "execution":  "Execution",
   "antibodies": "Antibodies",
   "datasets":   "Datasets",
   "misc":       "Miscellaneous",
+}
+
+function subtagToSectionTitle(subtag: string): string {
+  return (
+    SUBTAG_TITLES[subtag] ??
+    subtag
+      .split("-")
+      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+      .join(" ")
+  )
 }
 
 function tagToMocUrl(tag: string): string | null {
@@ -29,7 +45,7 @@ function tagToMocUrl(tag: string): string | null {
   const mocSlug = MOC_SLUGS[root]
   if (!mocSlug) return null  // unknown root — fall back to default tag page
 
-  const anchor = subtag ? (SUBTAG_ANCHORS[subtag] ?? subtag) : ""
+  const anchor = subtag ? subtagToSectionTitle(subtag) : ""
   return anchor ? `${mocSlug}#${anchor}` : mocSlug
 }
 
