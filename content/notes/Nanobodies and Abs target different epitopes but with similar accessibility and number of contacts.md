@@ -2,7 +2,7 @@
 tags:
   - antibodies/misc
 created: "2025-02-28T03:09:43"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 #### Summary
 **[[Nanobodies]] and normal [[Antibodies|antibodies]] target epitopes with similar solvent accessibility, hydrogen bonds, and contacts** ([^gordon2023], De [^de2006]). However, nanobodies are able to adopt more convex paratopes, allowing binding to hard-to-reach areas such as ligand-binding sites.
@@ -11,7 +11,7 @@ modified: "2026-04-05T23:36:09"
 De [^de2006] immunized camels with hen egg white lysozyme and found that most isolated nanobodies bound the active site, whereas murine antibodies from a previous study bound outside the active site.
 
 #### Figures
-![](/assets/Pasted-image-20250228090556.png)
+\![[Pasted-image-20250228090556.png]]
 *Figure from De [^de2006]*
 
 #### See also

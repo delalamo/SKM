@@ -3,7 +3,7 @@ title: Mutation memory half life
 tags:
   - protein-folding/misc
 created: "2024-05-02T05:15:27"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 #### Summary
  **Mutation memory half-life refers to the number of mutations required to observe changes in a mutation's effect on fitness ((epistatic) drift).** The term mutation memory half-life was coined by [^park2022].
@@ -22,7 +22,7 @@ This correlates poorly with the following:
 An earlier study in $beta$-lactamase found that not all mutational paths to an certain sequence are equally accessible; e.g., some of the mutations close off paths if accessed prematurely [^weinreich2006].
 
 #### Figures
-![](/assets/darwinian_evolution.png)
+\![[darwinian_evolution.png]]
 *Figure from [^weinreich2006]*
 
 #### See also

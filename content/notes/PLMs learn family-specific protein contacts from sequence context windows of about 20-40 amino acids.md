@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2025-09-01T08:38:43"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-10T14:02:57"
 ---
 
 ## Summary
@@ -17,10 +17,10 @@ Evidence of family-specific features in ESM2-650M was observed by [Adams et al 2
 
 ## Figures
 
-![](/assets/Pasted-image-20240201071050.png)
+\![[Pasted-image-20240201071050.png]]
 *Excerpt from [Zhang et al 2024](https://doi.org/10.1073/pnas.2406285121)*
 
-![](/assets/Family-specific-feature-beta-lactamase.png)
+\![[Family-specific-feature-beta-lactamase.png]]
 *Figure from [Adams et al 2025](https://doi.org/10.1101/2025.02.06.636901)*
 
 ## See also

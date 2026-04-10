@@ -2,13 +2,13 @@
 tags:
   - antibodies/misc
 created: "2024-10-01T00:38:57"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 #### Summary
 **Antigen context improves [[Complementarity-determining regions|CDRH3]] [[Antibody structure prediction|structure prediction]]** [^hitawala2024]. This is pronounced in longer loops (17+ residues).
 
 #### Figures
-![](/assets/Pasted-image-20241001063632.png)
+\![[Pasted-image-20241001063632.png]]
 *Figure from [^hitawala2024]*
 
 #### See also

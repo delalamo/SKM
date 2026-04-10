@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2024-11-14T02:49:32"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -17,7 +17,7 @@ Consensus sequences are generated using "a simple counting method" (most likely 
 
 #### Figures
 
-![](/assets/Pasted-image-20231027092109.png)
+\![[Pasted-image-20231027092109.png]]
 
 *Figure from [^nixon2023]*
 

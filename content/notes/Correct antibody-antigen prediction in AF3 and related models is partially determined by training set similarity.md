@@ -3,7 +3,7 @@ tags:
   - antibodies/misc
   - alphafold3
 created: "2026-03-23T08:54:03"
-modified: "2026-04-10T10:46:24"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -12,7 +12,7 @@ modified: "2026-04-10T10:46:24"
 
 #### Figures
 
-![](/assets/AlphaFold2.3.jpg)
+\![[AlphaFold2.3.jpg]]
 
 *Figure from [^fromm2026]*
 

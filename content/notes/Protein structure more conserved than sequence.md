@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2024-07-02T08:01:41"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -15,10 +15,10 @@ A specific example was highlighted by [^huang2023], which used qualitative/anecd
 
 #### Figures
 
-![](/assets/Structure-more-conserved-than-sequence.png)
+\![[Structure-more-conserved-than-sequence.png]]
 *Figure from [^chothia1986]*
 
-![](/assets/Structure-based-phylogenies.png)
+\![[Structure-based-phylogenies.png]]
 *Figure from [^moi2023]*
 
 #### See also

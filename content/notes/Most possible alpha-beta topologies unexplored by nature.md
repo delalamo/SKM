@@ -1,7 +1,7 @@
 ---
 tags: protein-design/misc
 created: "2024-06-11T02:55:34"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -14,7 +14,7 @@ It is unclear if this is due to the "[[Natural selection favors the highest aver
 
 #### Figures
 
-![](/assets/Undiscovered-folds.png)
+\![[Undiscovered-folds.png]]
 
 *Figure from [^minami2023]*
 

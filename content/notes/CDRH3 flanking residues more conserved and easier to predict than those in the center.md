@@ -2,13 +2,13 @@
 tags:
   - antibodies/misc
 created: "2025-09-19T06:48:46"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 #### Summary
 **Residues at the ends of [[Complementarity-determining regions|CDRH3]] are more conserved than those near the center of the loop** [^guest2021]. As a result, they are easier to predict (Huang et al 2023c, [^neyestanak2025]).
 
 #### Figures
-![](/assets/Sitewise-AAR.png)
+\![[Sitewise-AAR.png]]
 *Figure 1 from Huang et al 2023c*
 
 #### See also

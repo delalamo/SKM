@@ -1,7 +1,7 @@
 ---
 tags: [protein-folding/misc]
 created: "2024-04-16T10:20:53"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 ---
@@ -19,7 +19,7 @@ summary: Ancestrally reconstucted sequences are more thermostable and active tha
 [^sennett2023] provide evidence against the idea that the process of ancestral reconstruction leads to proteins with artificially increased thermostability.
 
 #### Figures
-![](/assets/Pasted-image-20231027094903.png)
+\![[Pasted-image-20231027094903.png]]
 *From [^sennett2023]*
 
 [^wilding2017]: Wilding et al. (2017) "Reverse engineering: transaminase biocatalyst development using ancestral sequence reconstruction." *Green Chemistry*. https://doi.org/10.1039/c7gc02343j

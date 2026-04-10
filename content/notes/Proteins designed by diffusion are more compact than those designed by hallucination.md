@@ -1,7 +1,7 @@
 ---
 tags: [protein-design/misc]
 created: "2024-10-27T05:20:23"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -9,5 +9,5 @@ modified: "2026-04-05T23:14:54"
 
 
 #### Figures
-![](/assets/Pasted-image-20241027101755.png)
+\![[Pasted-image-20241027101755.png]]
 *Figure from [Christopher Frank](https://x.com/chrisfrank662/status/1849795366465552731)* 

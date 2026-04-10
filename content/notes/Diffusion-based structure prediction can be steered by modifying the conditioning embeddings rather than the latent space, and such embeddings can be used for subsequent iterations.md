@@ -3,12 +3,12 @@
 **[[Diffusion models|Diffusion]]-based [[Structure prediction|structure prediction]] can be [[Guidance sampling of all-atom diffusion|steered]] into specific conformations by modifying conditioning embeddings rather than the latent-space embeddings used for diffusion** [^li2026][^maddipatla2026]. This has the added advantage of being reused, and therefore facilitating improvements, in sequential diffusion runs. This was done using [[cryo-EM]] and [[NMR]] data and was shown to slightly outperform standard Diffusion Posterior Sampling.
 
 #### Figures
-![](/assets/Pasted-image-20260306093401.png)
-![](/assets/Pasted-image-20260306093452.png)
+\![[Pasted-image-20260306093401.png]]
+\![[Pasted-image-20260306093452.png]]
 
 *Figures from [^maddipatla2026]*
 
-![](/assets/Pasted-image-20260220170148.png)
+\![[Pasted-image-20260220170148.png]]
 
 *Figure from [^li2026]*
 

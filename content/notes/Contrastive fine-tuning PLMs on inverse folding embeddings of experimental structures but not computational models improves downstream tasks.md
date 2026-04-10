@@ -2,7 +2,7 @@
 tags:
   - antibodies/misc
 created: "2025-07-22T11:37:28"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ modified: "2026-04-05T23:36:09"
 
 #### Figures
 
-![](/assets/including-ab-models-doesnt-improve-property-prediction.png)
+\![[including-ab-models-doesnt-improve-property-prediction.png]]
 
 *Figure from [^barton2023]*
 

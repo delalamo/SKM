@@ -3,7 +3,7 @@ tags:
   - protein-folding/misc
   - alphafold2
 created: "2024-05-18T08:26:00"
-modified: "2026-04-10T10:46:24"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ modified: "2026-04-10T10:46:24"
 **[[AlphaFold|AlphaFold2]] can be fine-tuned on specific protein families by adding [[Evoformer]] layers** [^glukhov2023]. They added two layers and fine-tuned on [[Major histocompatibility complex I|MHC-I]] structures.
 
 #### Figures
-![](/assets/Pasted-image-20231202115252.png)
+\![[Pasted-image-20231202115252.png]]
 
 *Figure from [^glukhov2023]*
 

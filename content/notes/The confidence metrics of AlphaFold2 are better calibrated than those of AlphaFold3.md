@@ -4,7 +4,7 @@ tags:
   - alphafold3
   - alphafold2
 created: "2025-12-19T12:46:41"
-modified: "2026-04-10T10:46:24"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -13,7 +13,7 @@ modified: "2026-04-10T10:46:24"
 
 #### Figures
 
-![](/assets/Bootsrap-Cl-for-AF2-metrics-under-subsamping.png)
+\![[Bootsrap-Cl-for-AF2-metrics-under-subsamping.png]]
 
 *Figure from [^roney2025]*
 

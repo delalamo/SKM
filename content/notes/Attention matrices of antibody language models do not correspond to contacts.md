@@ -2,7 +2,7 @@
 tags:
   - antibodies/misc
 created: "2024-07-02T05:08:36"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -15,7 +15,7 @@ This was determined by fine-tuning [[ESM]]2 on paired [[Antibodies|antibody]] se
 
 #### Figures
 
-![](/assets/Pasted-image-20240516152023.png)
+\![[Pasted-image-20240516152023.png]]
 
 *Figure from Burbach and [^burbach2024]*
 

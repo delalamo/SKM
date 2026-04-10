@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2024-05-02T17:54:08"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -11,5 +11,5 @@ The invariant point attention is not mandatory for protein structure prediction 
 
 #### Figures
 
-![](/assets/Pasted-image-20240418162324.png)
+\![[Pasted-image-20240418162324.png]]
 *Figure from [10.1038__s41586-021-03819-2|Jumper et al 2021]*

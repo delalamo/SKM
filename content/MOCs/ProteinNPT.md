@@ -2,10 +2,12 @@
 title: ProteinNPT
 tags:
   - proteinnpt
+created: "2026-04-10T14:02:57"
+modified: "2026-04-10T14:02:57"
 ---
 
 **ProteinNPT** is a module that can be appended to [[Multiple sequence alignments|MSA]]-based [[Protein language models|protein language models]] that was first introduced by [[10.1101__2023.12.06.570473|Notin et al 2023b]].
-![](/assets/Pasted-image-20240126170230.png)
+\![[Pasted-image-20240126170230.png]]
 *Figure 1 from [[10.1101__2023.12.06.570473|Notin et al 2023b]]*
 
 ## Notes:
@@ -15,7 +17,7 @@ tags:
 * The method is re-trained for every MSA/target/set of data using 15% masking as with [[ESM]]. At the start of training, the loss is mostly focused on recovering the masked amino acids, but as training proceeds the loss shifts toward recovering the labels
 * As with MSA-Transformer, it uses tied row attention to reduce memory footprint under the assumption that the fold is conserved among aligned sequences
 * ProteinNPT with [[Tranception]] embeddings had the best performance on prediction of catalytic efficiency ($K_M$):
-	![](/assets/Pasted-Graphic-10.png)
+	\![[Pasted-Graphic-10.png]]
 	*Figure from [[10.1101__2024.10.23.619915|Muir et al 2024]]*
 
 <!-- generated -->

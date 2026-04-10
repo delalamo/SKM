@@ -1,7 +1,7 @@
 ---
 tags: [protein-design/misc]
 created: "2026-04-05T17:56:56"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -28,7 +28,7 @@ modified: "2026-04-05T23:36:09"
 | MoMPNN [Thermo+TM+EP] | **4.30** | **0.742** | 78.6 | 6.12 | 0.731 | 0.946 ★ | 0.387 |
 | MoMPNN [Thermo+IG] | 4.38 | 0.734 | 78.2 | **5.85** | 0.694 | **0.963** ★ | 0.382 |
 | MoMPNN [Thermo+IG+EP] | 4.37 | 0.737 | 78.5 | 5.97 | 0.723 | 0.947 ★ | 0.385 |
-![](/assets/Pasted-image-20260316153544.png)
+\![[Pasted-image-20260316153544.png]]
 *Figure from [^hou2026]*
 
 [^hou2026]: Hou et al. (2026) "Property-driven Protein Inverse Folding With Multi-Objective Preference Alignment." https://doi.org/10.48550/ARXIV.2603.06748

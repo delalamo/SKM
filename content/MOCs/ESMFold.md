@@ -2,11 +2,13 @@
 title: ESMFold
 tags:
   - esmfold
+created: "2026-04-10T14:02:57"
+modified: "2026-04-10T14:02:57"
 ---
 
 **ESMFold** is a [[Structure prediction|structure prediction]] method that relies on the [[ESM]]2-3B [[Protein language models|protein language model]]. Its design includes the structure module as well as a stripped-down [[Evoformer]]. It was trained on several million [[AlphaFold|AlphaFold2]] models in addition to the PDB.
 
-![](/assets/Pasted-image-20231016155454.png)
+\![[Pasted-image-20231016155454.png]]
 *Figure 2 from [[10.1126__science.ade2574|Lin et al 2023]]*
 
 #### Notes

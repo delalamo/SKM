@@ -3,7 +3,7 @@
 **Enhanced sampling of protein structure [[Guidance sampling of all-atom diffusion|diffusion]] with [[Metadynamics|metadynamics]]-like potentials can sometimes converge slower than unbiased diffusion** [^xie2026].
 
 #### Figures
-![](/assets/Pasted-image-20260311083919.png)
+\![[Pasted-image-20260311083919.png]]
 
 *Figure from [^xie2026]*
 

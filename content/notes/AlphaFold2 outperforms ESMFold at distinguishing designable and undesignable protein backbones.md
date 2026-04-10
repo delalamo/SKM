@@ -4,13 +4,13 @@ tags:
   - protein-design/misc
   - alphafold2
 created: "2025-08-24T18:46:28"
-modified: "2026-04-10T10:46:24"
+modified: "2026-04-10T14:02:57"
 ---
 #### Summary
  **[[AlphaFold|AlphaFold2]] outperforms [[ESMFold]] at distinguishing designable and undesignable protein backbones** [^hermosilla2023]. ESMFold seems to want to fold everything, whereas AlphaFold will only fold sequences that actually fold. This is NOT true of non-beta-sheet membrane proteins (at least for AF). 
 
 #### Figures
-![](/assets/ESMFold-AlphaFold-designability.png)
+\![[ESMFold-AlphaFold-designability.png]]
 *Figure from [^hermosilla2023]*
 
 [^hermosilla2023]: Hermosilla et al. (2023) "Validation of

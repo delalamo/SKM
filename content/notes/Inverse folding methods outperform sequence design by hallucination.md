@@ -2,7 +2,7 @@
 tags:
   - protein-design/misc
 created: "2026-04-05T17:36:43"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -25,5 +25,5 @@ Inverse folding methods outperform hallucination at designing proteins that can 
 | **Wildtype** | 0.80 | 74.91 | 0.75 | 78.39 | 0.90 | 89.87 | 100 |
 *Table from [10.48550__arXiv.2312.00080|Wang et al 2023]*
 
-![](/assets/Pasted-image-20241025093149.png)
+\![[Pasted-image-20241025093149.png]]
 *Figure from [10.1126__science.adq1741|Frank et al 2024]*

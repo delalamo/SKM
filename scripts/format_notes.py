@@ -21,6 +21,7 @@ Usage:
 
 import re
 import sys
+import io
 import json
 import time
 import urllib.request
@@ -445,17 +446,30 @@ def main() -> None:
 
     modified = 0
     for path in targets:
-        print(f"→ {path.name}")
+        buf = io.StringIO()
+        old_stdout, sys.stdout = sys.stdout, buf
         try:
             changed = action(path)
         except Exception as e:
+            sys.stdout = old_stdout
+            print(f"→ {path.name}")
             print(f"  ✗ error: {e}")
             continue
+        finally:
+            sys.stdout = old_stdout
+
+        captured = buf.getvalue()
         if changed:
             modified += 1
+            print(f"→ {path.name}")
+            if captured:
+                print(captured, end='')
             print("  ✓ updated")
-        else:
-            print("  — no changes")
+        elif captured:
+            # Action found something to process but couldn't complete it (e.g. all
+            # network fetches failed) — surface the warnings so problems are visible.
+            print(f"→ {path.name}")
+            print(captured, end='')
 
     print(f"\nDone. {modified}/{len(targets)} file(s) updated.")
 

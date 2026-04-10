@@ -2,13 +2,13 @@
 tags:
   - protein-folding/misc
 created: "2024-07-02T05:18:59"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 #### Summary
 **Masked language models (such as [[BERT]]) can be fine-tuned starting from autoregressive models (such as [[GPT]]) in ways that benefit from scale, but not vice-versa** [^cheng2024]. This was demonstrated using [[Protein language models|protein language models]].
 
 #### Figures
-![](/assets/Pasted-Graphic-4-2.png)
+\![[Pasted-Graphic-4-2.png]]
 *Figure from [^cheng2024]*
 
 #### See also

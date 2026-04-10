@@ -2,7 +2,7 @@
 tags:
   - antibodies/misc
 created: "2026-04-05T17:12:20"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 #### Summary
 **[[Protein language models]] are biased toward residues found in [[Germline|germline]] sequences** [^olsen2022][^nijkamp2023][^olsen2024]. Reasons include the fact that blood samples that are sequenced contain mostly naive [[B cells]], and fewer memory B cells and plasma cells. [^olsen2024] found that [[Focal loss]] improves prediction of non-germline. Paired antibody language models are less sensitive to this bias (Burbach and [^burbach2024]).
@@ -27,7 +27,7 @@ Relatedly, non-antibody [[Protein language models|PLMs]] are also biased towards
 | AbLang-2 | 1.10 | 1.17 | 1.09 | 1.16 | **9.92** | **11.13** | **12.47** | **10.09** | **9.54** | **10.77** |
 *Table 3 from [^olsen2024]*
 
-![](/assets/Pasted-image-20240516151725.png)
+\![[Pasted-image-20240516151725.png]]
 *Figure 3 from Burbach and [^burbach2024]*
 
 #### See also

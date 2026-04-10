@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2024-06-04T01:01:27"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-10T14:02:57"
 ---
 
 ## Summary
@@ -11,5 +11,5 @@ modified: "2026-04-05T23:14:54"
 
 ## Figures
 
-![](/assets/Crystal-Structure.png)
+\![[Crystal-Structure.png]]
 *Figure from [d'Oelsnitz et al 2024](https://doi.org/10.1038/s41467-024-46356-y)*

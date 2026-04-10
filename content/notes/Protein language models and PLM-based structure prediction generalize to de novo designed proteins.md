@@ -1,7 +1,7 @@
 ---
 tags: protein-design/misc
 created: "2025-02-17T05:10:10"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -14,7 +14,7 @@ They use Gibbs sampling to generate new protein backbones by jointly considering
 
 #### Figures
 
-![](/assets/Pasted-image-20231102144615.png)
+\![[Pasted-image-20231102144615.png]]
 
 *Figure from [^verkuil2022]*
 

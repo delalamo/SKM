@@ -1,7 +1,7 @@
 ---
 tags: [protein-design/misc]
 created: "2026-03-21T17:43:50"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 ---
@@ -27,11 +27,11 @@ tags:
 
 *Table from [^hsu2022]*
 
-![](/assets/Pasted-Graphic-4-1.png)
+\![[Pasted-Graphic-4-1.png]]
 *Figure from [^su2023]*
 
-![](/assets/bafkreiawfxhyqc4grpfhhgjsyezzahtsrehsxzughw6vmpsuw2tqsazz64@jpeg.jpg)
-![](/assets/Pasted-image-20250722113536.png)
+\![[bafkreiawfxhyqc4grpfhhgjsyezzahtsrehsxzughw6vmpsuw2tqsazz64@jpeg.jpg]]
+\![[Pasted-image-20250722113536.png]]
 *Figures from [^tan2025]*
 
 #### See also

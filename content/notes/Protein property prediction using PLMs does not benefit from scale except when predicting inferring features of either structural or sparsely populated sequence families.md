@@ -1,7 +1,7 @@
 ---
 tags: [protein-design/misc]
 created: "2026-04-05T17:54:18"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 ---
@@ -45,21 +45,21 @@ This is also true of post-translational modification prediction ([^peng2024]; ES
 | | ESM-IF1 | 0.422 | 0.730 | 0.331 | 0.748 | 0.223 |
 *Figure from [^notin2023]*
 
-![](/assets/Pasted-image-20231112063046.png)
+\![[Pasted-image-20231112063046.png]]
 *Figure from [^nijkamp2023]*
 
-![](/assets/Pasted-image-20240209164702.png)
-![](/assets/Pasted-image-20240209164730.png)
+\![[Pasted-image-20240209164702.png]]
+\![[Pasted-image-20240209164730.png]]
 *Figures 3-5 from [^li2024]*
 
-![](/assets/Pasted-image-20241125084321.png)
+\![[Pasted-image-20241125084321.png]]
 *Figure from [^vieira2024]*
 
-![](/assets/0.40.png)
+\![[0.40.png]]
 *Figure from [^bhatnagar2025]*
 
-![](/assets/Mean-p-(All-Taxa).png)
-![](/assets/ProteinGym-(All-Taxa).png)
+\![[Mean-p-(All-Taxa).png]]
+\![[ProteinGym-(All-Taxa).png]]
 *Figures from [^gurev2025]*
 
 [^tan2023]: Tan et al. (2023) "Multi-level Protein Representation Learning for Blind Mutational Effect Prediction." https://doi.org/10.48550/arXiv.2306.04899

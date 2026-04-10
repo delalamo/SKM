@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2024-11-14T03:09:22"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ modified: "2026-04-05T23:36:09"
 
 #### Figures
 
-![](/assets/Inter-vs-Intrapeak-Consensus.png)
+\![[Inter-vs-Intrapeak-Consensus.png]]
 
 Figure from [^muir2024]
 

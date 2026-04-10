@@ -2,13 +2,13 @@
 tags:
   - protein-folding/misc
 created: "2024-07-01T02:28:08"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 #### Summary
 **[[Binary classifiers|ROC curves]] are robust against class imbalances** [^richardson2024].
 
 #### Figures
-![](/assets/Pasted-image-20240604071928.png)
+\![[Pasted-image-20240604071928.png]]
 *Figure from [^richardson2024]*
 
 #### See also

@@ -2,13 +2,13 @@
 tags:
   - antibodies/misc
 created: "2025-02-27T04:35:40"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 #### Summary
 **The structures of [[Nanobodies|nanobodies]] with [[Kinked CDRH3 loops|kinked]] [[Complementarity-determining regions|CDR3]] loops are more difficult to [[Antibody structure prediction|predict]] in complex with their antigen** [^eshak2025]. The failure rate ([[DockQ]] < 0.23) for nanobody/antigen complex prediction when the CDR3 was kinked was nearly 75% with [[AlphaFold|AlphaFold3]] and even higher with AlphaFold2.
 
 #### Figures
-![](/assets/Pasted-Graphic-11.png)
+\![[Pasted-Graphic-11.png]]
 *Figure from [^eshak2025]*
 
 #### See also

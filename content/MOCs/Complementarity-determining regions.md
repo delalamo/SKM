@@ -2,6 +2,8 @@
 title: Complementarity-determining regions
 tags:
   - complementarity-determining-regions
+created: "2026-04-10T14:02:57"
+modified: "2026-04-10T14:02:57"
 ---
 
 The **complementarity-determining regions** of [[Antibodies|antibodies]], abbreviated **CDRs** and sometimes collectively called **hypervariable regions**, are loops that mediate binding to antigens. They are the most difficult part of the protein to predict and get fine-tuned by [[Affinity maturation|affinity maturation]] and [[Somatic hypermutation|somatic hypermutation]].
@@ -49,6 +51,6 @@ The **complementarity-determining regions** of [[Antibodies|antibodies]], abbrev
 * **PyIgClassify2 found four distinct clusters for length-6 light chain.** Two of these with exclusively [[Light chains#Kappa subtype|kappa subtype]], one exclusively with [[Light chains#Lambda subtype|lambda subtype]], and one mixed with both; almost all heavy chain structures have length-8 CDR4 and co-cluster ([[10.1080__19420862.2020.1840005|Kelow et al 2020]], [[10.1101__2022.10.12.511988|Kelow et al 2022]]).
 * **Also used in [[Nanobodies]] and can be engineered to improve binding** ([[10.1101__2023.10.22.563475|Ketaren et al 2023]])
 * **[[10.1038__s42003-020-01319-z|Fernandez-Quintero et al 2020b]] and [[10.1080__19420862.2020.1840005|Kelow et al 2020]] found that this can modulate the conformation of other CDRs, particularly CDRL1**
-![](/assets/a-ferviously-noted.jpg)
+\![[a-ferviously-noted.jpg]]
 
 <!-- generated -->

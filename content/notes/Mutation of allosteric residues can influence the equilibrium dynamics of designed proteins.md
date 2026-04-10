@@ -1,7 +1,7 @@
 ---
 tags: protein-design/misc
 created: "2024-10-14T12:57:29"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -10,7 +10,7 @@ modified: "2026-04-05T23:36:09"
 
 #### Figures
 
-![](/assets/Pasted-image-20231219140850.png)
+\![[Pasted-image-20231219140850.png]]
 
 *Slide from [[NeurIPS_2023]] Kortemme talk*
 

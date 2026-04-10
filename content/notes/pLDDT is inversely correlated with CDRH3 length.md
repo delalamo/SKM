@@ -2,13 +2,13 @@
 tags:
   - antibodies/misc
 created: "2026-02-20T18:08:22"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 #### Summary
 **[[pLDDT]] is inversely correlated with [[Complementarity-determining regions#CDRH3|CDRH3]] length** [^chen2024].
 
 #### Figures
-![](/assets/Confidence.png)
+\![[Confidence.png]]
 *Figure from [^chen2024]*
 
 #### See also

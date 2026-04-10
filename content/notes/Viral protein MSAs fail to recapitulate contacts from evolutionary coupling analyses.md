@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2026-01-22T12:41:50"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ modified: "2026-04-05T23:36:09"
 
 #### Figures
 
-![](/assets/SARS-CoV-2-Spike.png)
+\![[SARS-CoV-2-Spike.png]]
 
 *Figure from [^gurev2025]*
 

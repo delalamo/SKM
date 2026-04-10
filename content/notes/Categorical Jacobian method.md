@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2025-09-01T08:38:43"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 #### Summary
 The **categorical Jacobian method** was developed by [^zhang2024] to predict protein contacts using [[Protein language models]]. Unlike [[ESMFold]] and the [[ESM]] contact prediction head, it is entirely unsupervised and requires no training. It works for [[Transformer|transformers]] but not CNNs.
@@ -13,7 +13,7 @@ For a sequence of length $L$ with $A$ possible tokens, the categorical Jacobian 
 > "Applying the same procedure to a Markov Random Field (MRF) or multivariate Gaussian (MG) model results in exactly returning the pairwise coupling tensor... yet in ESM-2, a small perturbation to the one-hot encoded input is insufficient to perturb the output. Increasing the step size improves contact map accuracy, and changing the actual category (amino acid type) results in the best contact accuracy."
 
 #### Figures
-![](/assets/Pasted-image-20240416123902.png)
+\![[Pasted-image-20240416123902.png]]
 *Figure from [^zhang2024]*
 
 #### Code

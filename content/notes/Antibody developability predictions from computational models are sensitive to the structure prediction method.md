@@ -2,7 +2,7 @@
 tags:
   - antibodies/misc
 created: "2024-08-22T05:13:06"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -11,11 +11,11 @@ modified: "2026-04-05T23:36:09"
 
 #### Figures
 
-![](/assets/Correlation-of-structure-DPs-accross-structure-prediction-tools.png)
+\![[Correlation-of-structure-DPs-accross-structure-prediction-tools.png]]
 
 *Figure from [^bashour2024]*
 
-![](/assets/Pasted-Graphic-43.png)
+\![[Pasted-Graphic-43.png]]
 
 *Figure from [^bashour2024]*
 

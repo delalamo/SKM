@@ -2,7 +2,7 @@
 tags:
   - protein-design/misc
 created: "2024-05-05T01:24:43"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ A large number of insertion mutations in one protein of the study were associate
 
 #### Figures
 
-![](/assets/Fitness-effect-indels.png)
+\![[Fitness-effect-indels.png]]
 *Figure from [10.1101__2023.10.06.561180|Topolska et al 2023]*
 
 #### See also

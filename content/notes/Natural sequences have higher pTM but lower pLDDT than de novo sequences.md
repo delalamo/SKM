@@ -1,7 +1,7 @@
 ---
 tags: protein-design/misc
 created: "2025-01-18T00:01:18"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -10,7 +10,7 @@ modified: "2026-04-05T23:36:09"
 
 #### Figures
 
-![](/assets/Pasted-image-20240626194304.png)
+\![[Pasted-image-20240626194304.png]]
 
 *Figure from [^hayes2025]*
 

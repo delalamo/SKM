@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2024-04-30T03:19:19"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -11,5 +11,5 @@ Fitness prediction using inverse folding can be improved by including B-factor p
 
 #### Figures
 
-![](/assets/Pasted-image-20240430091911.png)
+\![[Pasted-image-20240430091911.png]]
 *Figure S8 of [10.1021__acs.jcim.4c00036|Zhou et al 2024]*

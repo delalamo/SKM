@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2024-05-15T10:13:01"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-10T14:02:57"
 ---
 #### Summary
 **Focal loss** is a type of loss function that downweighs well-predicted labels.
@@ -11,7 +11,7 @@ modified: "2026-04-05T23:14:54"
 Focal loss ($FL$) is defined by $FL(p_{i}) = - \alpha(1-p_{i})^{\gamma} \log(p_{i})$ where $\gamma$ is a user-picked modulating factor that decreases the gradient of easy examples as it increases, and $\alpha$ is a weight. A value of zero reverts to cross-entropy.
 
 #### Figures
-![](/assets/Pasted-image-20240515101039.png)
+\![[Pasted-image-20240515101039.png]]
 *From https://medium.com/swlh/focal-loss-what-why-and-how-df6735f26616*
 
 #### See also

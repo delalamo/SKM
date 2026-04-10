@@ -2,13 +2,13 @@
 tags:
   - antibodies/misc
 created: "2024-08-22T05:12:57"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 #### Summary
 **Deep learning methods diverge on predictions of [[Complementarity-determining regions|CDRH3]] structure.** Usually one is correct, but it changes depending on which model is used, *i.e.,* they sample diverse conformations [^ruffolo2023]. An example is available in [^fernandezquintero2023].
 
 #### Figures
-![](/assets/DL-Ab-Modeling-vs-Dynamics.png)
+\![[DL-Ab-Modeling-vs-Dynamics.png]]
 *Figure from [^fernandezquintero2023]*
 
 #### See also

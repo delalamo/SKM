@@ -1,7 +1,7 @@
 ---
 tags: [protein-design/misc]
 created: "2024-04-30T03:21:35"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 ---
@@ -12,13 +12,13 @@ tags: inverse-folding/execution
 **Substitution matrices from [[Inverse folding]] closely match the (BLOSUM62) matrix, except proline** [^hsu2022][^castorina2023][^zhou2024]. [^akpinaroglu2023] found that predicted proline residue embeddings distinguish from others earlier in the network than other residues.
 
 #### Figures
-![](/assets/BLOSUM_v_inverse_folding.png)
+\![[BLOSUM_v_inverse_folding.png]]
 *Figure from [^hsu2022]*
 
-![](/assets/Predicted.png)
+\![[Predicted.png]]
 *Figure 1B from [^castorina2023]*
 
-![](/assets/Pasted-image-20240105112648.png)
+\![[Pasted-image-20240105112648.png]]
 *Figure 1H from [^akpinaroglu2023]*
 
 [^hsu2022]: Hsu et al. (2022) "Learning inverse folding from millions of predicted structures." https://doi.org/10.1101/2022.04.10.487779

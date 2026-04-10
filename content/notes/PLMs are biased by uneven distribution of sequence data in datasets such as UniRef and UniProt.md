@@ -1,7 +1,7 @@
 ---
 tags: protein-design/misc
 created: "2026-04-05T17:52:14"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -25,11 +25,11 @@ Most organisms only have a few proteins assigned to them [^avasthi2024].
 | ESM2-3B | 0.26 | 0.46 | 0.63 | 0.32 |
 | ESM2-650M | 0.19 | 0.62 | 0.72 | 0.26 |
 
-![](/assets/Pasted-image-20240318153609.png)
+\![[Pasted-image-20240318153609.png]]
 
 *Figures from [^ding2024]*
 
-![](/assets/Pasted-image-20240806172532.png)
+\![[Pasted-image-20240806172532.png]]
 
 *Figure from [^avasthi2024]*
 

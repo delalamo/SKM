@@ -3,7 +3,7 @@ tags:
   - protein-folding/misc
   - alphafold3
 created: "2025-12-19T12:44:03"
-modified: "2026-04-10T10:46:24"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -26,11 +26,11 @@ Alternate conformations sampled via
 
 #### Figures
 
-![](/assets/Pasted-image-20240423091334.png)
+\![[Pasted-image-20240423091334.png]]
 
 *Figure from [^riccabona2024]*
 
-![](/assets/Pasted-image-20241016074333.png)
+\![[Pasted-image-20241016074333.png]]
 
 *Figure from [^schafer2024]*
 

@@ -2,7 +2,7 @@
 tags:
   - antibodies/misc
 created: "2024-04-26T04:28:02"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -11,6 +11,6 @@ modified: "2026-04-05T23:14:54"
 
 #### Figures
 
-![](/assets/Pasted-image-20231212084758.png)
+\![[Pasted-image-20231212084758.png]]
 
 *Figure from [[YTrlu38mM4|Nori et al 2023]]*

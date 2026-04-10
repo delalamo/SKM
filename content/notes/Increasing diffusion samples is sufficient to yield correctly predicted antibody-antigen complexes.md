@@ -2,7 +2,7 @@
 tags:
   - antibodies/misc
 created: "2026-03-11T08:27:32"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -11,5 +11,5 @@ Increasing the number of diffusion samples from all-atom protein structure predi
 
 #### Figures
 
-![](/assets/Pasted-image-20260311082505.png)
+\![[Pasted-image-20260311082505.png]]
 *Figure from [10.64898__2026.03.02.709004|Smorodina et al 2026]*

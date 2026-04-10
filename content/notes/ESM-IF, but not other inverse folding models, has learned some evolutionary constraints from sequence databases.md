@@ -3,7 +3,7 @@
 **[[ESM-IF]], but not other [[Inverse folding|inverse folding models]], has learned some evolutionary constraints from sequence databases** [^li2024]. This is evidenced by a dependence on the availability of training data that is comparable to that of [[Protein language models|protein language models]] and [[Potts models]].
 
 #### Figures
-![](/assets/Fitness-ranking-prediction.png)
+\![[Fitness-ranking-prediction.png]]
 
 *Figure from [^li2024]*
 

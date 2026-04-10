@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2025-03-27T09:03:13"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ modified: "2026-04-05T23:36:09"
 
 #### Figures
 
-![](/assets/specifically-mediates-the-formation.png)
+\![[specifically-mediates-the-formation.png]]
 
 *Figures from [^wu2024]*
 

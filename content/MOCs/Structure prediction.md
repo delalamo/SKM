@@ -2,6 +2,8 @@
 title: Structure prediction
 tags:
   - structure-prediction
+created: "2026-04-10T14:02:57"
+modified: "2026-04-10T14:02:57"
 ---
 
 **Structure prediction** refers to the problem of predicting the 3D shape of a protein or nucleotide sequence without any experimental information. Common metrics used for evaluating the quality of predicted structures include [[LDDT]] (residue-level, [[TM-score]] (whole-structure level), and [[DockQ]] (complex level).
@@ -36,7 +38,7 @@ tags:
 
 #### Training
 
-	![](/assets/Pasted-image-20231211070606.png)
+	\![[Pasted-image-20231211070606.png]]
 	*Figure from [[10.1101__2022.11.20.517210|Ahdritz et al 2024]]*
 
 #### Sidechain prediction

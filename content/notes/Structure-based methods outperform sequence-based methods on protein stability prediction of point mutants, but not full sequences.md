@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2026-04-05T17:45:06"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -69,7 +69,7 @@ Data are ambiguous about when [[Rosetta]] or [[ProteinMPNN]] is better ([^reeves
 
 *Figure from [^tan2023]*
 
-![](/assets/Pasted-image-20241231144322.png)
+\![[Pasted-image-20241231144322.png]]
 
 *Figure from [^cho2024]*
 

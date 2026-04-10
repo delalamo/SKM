@@ -2,7 +2,7 @@
 tags:
   - protein-design/misc
 created: "2025-02-19T02:27:19"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ modified: "2026-04-05T23:36:09"
 
 #### Figures
 
-![](/assets/Pasted-image-20240418072444.png)
+\![[Pasted-image-20240418072444.png]]
 
 *Figure 3 from [^liu2024]*
 

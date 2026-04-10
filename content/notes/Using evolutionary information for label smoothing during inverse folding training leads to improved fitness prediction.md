@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2026-04-05T17:47:00"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -17,7 +17,7 @@ In contrast, [[Gong et al 2024]] calculated propensities from [[Multiple sequenc
 
 #### Figures
 
-![](/assets/Pasted-image-20240430090828.png)
+\![[Pasted-image-20240430090828.png]]
 
 *Figure S7 from [^zhou2024]*
 

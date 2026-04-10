@@ -3,11 +3,11 @@ title: CUMAb
 tags:
   - cumab
 created: "2026-04-05T23:36:09"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 **CUMAb** is a method for [[Antibody humanization|antibody humanization]] using [[Rosetta]] and human [[Germline#V-genes|V-genes]] and [[Germline#J-genes|J-genes]].
-![](/assets/Pasted-image-20231016154327.png)
+\![[Pasted-image-20231016154327.png]]
 *Figure from [[10.1038__s41551-023-01079-1|Tennenhouse et al 2023]]*
 
 #### Details

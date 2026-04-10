@@ -2,7 +2,7 @@
 tags:
   - protein-design/misc
 created: "2024-04-24T23:50:43"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 #### Summary
  **[[Inverse folding]] methods can successfully distinguish between membrane and soluble beta barrels, and can design them with hydrophobic and hydrophilic residues in the right places** [^dolorfino2024]. They demonstrated this with [[ProteinMPNN]].
@@ -11,7 +11,7 @@ modified: "2026-04-05T23:36:09"
 Before this preprint was released, ProteinMPNN was said to fail at designing transmembrane beta barrels (from Hermosilla et al's talk at [[NeurIPS_2023]]), despite designing sequences that pass all tests; the presenter suspected it was because successful designs don't occupy the ground state, which is an aggregated state.
 
 #### Figures
-![](/assets/Pasted-image-20240122095943.png)
+\![[Pasted-image-20240122095943.png]]
 *Figure 2 from [^dolorfino2024]*
 
 #### See also

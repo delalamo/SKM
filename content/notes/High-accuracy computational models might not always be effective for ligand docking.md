@@ -2,7 +2,7 @@
 tags:
   - protein-design/misc
 created: "2024-12-04T02:49:44"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -21,7 +21,7 @@ They found using cryo-EM that the AlphaFold2 model being used for docking was in
 
 #### Figures
 
-![](/assets/Pasted-image-20231109162529.png)
+\![[Pasted-image-20231109162529.png]]
 *Figure from [10.7554__elife.89386.1|Karelina et al 2023]*
 
 #### See also

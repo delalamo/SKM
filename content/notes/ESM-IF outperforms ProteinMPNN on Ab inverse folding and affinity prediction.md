@@ -2,7 +2,7 @@
 tags:
   - antibodies/misc
 created: "2024-07-05T07:11:25"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -10,12 +10,12 @@ modified: "2026-04-05T23:36:09"
 **[[ESM-IF]] outperforms [[ProteinMPNN]] on designing high-affinity structures of [[Antibodies|antibodies]] in both a zero-shot** [^shanker2024] **and few-shot** ([[Høie et al 2023]]) **setting**.
 
 #### Figures
-![](/assets/Pasted-image-20231031090205.png)
-![](/assets/Pasted-image-20240705131040.png)
+\![[Pasted-image-20231031090205.png]]
+\![[Pasted-image-20240705131040.png]]
 
 *Figures from [[Høie et al 2023]]*
 
-![](/assets/Pasted-image-20240705131119.png)
+\![[Pasted-image-20240705131119.png]]
 
 *Figure from [^shanker2024]*
 

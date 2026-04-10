@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2025-02-10T07:43:45"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ modified: "2026-04-05T23:36:09"
 
 #### Figures
 
-![](/assets/Pasted-Graphic-6-2.png)
+\![[Pasted-Graphic-6-2.png]]
 *Figure from [^adams2025]*
 
 [^adams2025]: Adams et al. (2025) "From Mechanistic Interpretability to Mechanistic Biology: Training, Evaluating, and Interpreting Sparse Autoencoders on Protein Language Models." https://doi.org/10.1101/2025.02.06.636901

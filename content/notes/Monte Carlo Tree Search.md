@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2024-10-18T07:05:52"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-10T14:02:57"
 ---
 #### Summary
 **Monte Carlo Tree Search** is an iterative [[Reinforcement learning]] algorithm that finds optimal solutions in a highly multidimensional search space. It is a heuristic in that it does not require any knowledge beyond the "rules of the game".
@@ -22,5 +22,5 @@ $C$: A constant that is chosen empirically (usually set to $\sqrt{2}$)
 4. **Backpropagation:** updating score of all nodes to the top of the tree with the result
 
 #### Figures
-![](/assets/Repeated-X-times.png)
+\![[Repeated-X-times.png]]
 *Figure from [geeksforgeeks.com](https://www.geeksforgeeks.org/ml-monte-carlo-tree-search-mcts/)*

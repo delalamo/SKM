@@ -66,6 +66,12 @@ ASSET_RE = re.compile(
     r'!\[[^\]]*\]\(/assets/(.+?\.(png|jpg|jpeg|gif|webp|svg|PNG|JPG|JPEG|GIF|WEBP|SVG))\)'
 )
 
+# Obsidian wikilink image embed: ![[filename.ext]] or ![[filename.ext|alt]]
+# This is the preferred format — works in both Obsidian and Quartz (via OFM plugin).
+WIKILINK_IMAGE_RE = re.compile(
+    r'!\[\[(.+?\.(png|jpg|jpeg|gif|webp|svg|PNG|JPG|JPEG|GIF|WEBP|SVG))(?:\|[^\]]*)?\]\]'
+)
+
 # ── Helpers ────────────────────────────────────────────────────────────────────
 def build_image_index(images_dir: Path) -> dict:
     """
@@ -119,15 +125,18 @@ def main():
     not_found = set()
 
     for md_path in sorted(md_files):
-        text    = md_path.read_text(encoding="utf-8")
-        matches = list(ASSET_RE.finditer(text))
-        if not matches:
+        text = md_path.read_text(encoding="utf-8")
+
+        # Collect all image filenames referenced in this note (both formats).
+        referenced: list[str] = [m.group(1) for m in ASSET_RE.finditer(text)]
+        referenced += [m.group(1) for m in WIKILINK_IMAGE_RE.finditer(text)]
+
+        if not referenced:
             continue
 
-        for m in matches:
-            asset_filename = m.group(1)   # e.g. "Pasted-image-20231029.png"
-            src_path       = resolve_image(asset_filename, image_index)
-            dest_path      = ASSETS_DIR / asset_filename
+        for asset_filename in referenced:
+            src_path  = resolve_image(asset_filename, image_index)
+            dest_path = ASSETS_DIR / asset_filename
 
             if src_path is None:
                 if asset_filename not in not_found:

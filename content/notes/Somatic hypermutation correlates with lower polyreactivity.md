@@ -2,13 +2,13 @@
 tags:
   - antibodies/misc
 created: "2024-05-01T03:22:05"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 #### Summary
 **[[Somatic hypermutation]] is associated with lower [[Developability|polyreactivity]]** [^shehata2019].
 
 #### Figures
-![](/assets/Pasted-image-20240119161624.png)
+\![[Pasted-image-20240119161624.png]]
 *Figure 2C-E from [^shehata2019]*
 
 #### See also

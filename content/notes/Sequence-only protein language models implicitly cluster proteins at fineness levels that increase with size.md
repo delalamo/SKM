@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2026-03-26T21:47:41"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ modified: "2026-04-05T23:36:09"
 
 #### Figures
 
-![](/assets/Pasted-image-20251211092215.png)
+\![[Pasted-image-20251211092215.png]]
 *Figure from [^zhang2025]*
 
 #### See also

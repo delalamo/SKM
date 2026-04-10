@@ -2,13 +2,13 @@
 tags:
   - antibodies/misc
 created: "2024-04-16T01:32:16"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 #### Summary
 **[[Framework region|FR2]] is more [[Developability|hydrophilic]] in [[Nanobodies|nanobodies]] than in [[Antibodies|antibodies]]** [^ketaren2023].
 
 #### Figures
-![](/assets/Pasted-image-20231023070921.png)
+\![[Pasted-image-20231023070921.png]]
 *Figure from [^ketaren2023]*
 
 [^ketaren2023]: Ketaren et al. (2023) "Unique Binding and Stabilization Mechanisms Employed By and Engineered Into Nanobodies." https://doi.org/10.1101/2023.10.22.563475

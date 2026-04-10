@@ -3,7 +3,7 @@ tags:
   - structure-prediction/misc
   - alphafold2
 created: "2024-05-08T18:04:59"
-modified: "2026-04-10T10:46:24"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -12,5 +12,5 @@ modified: "2026-04-10T10:46:24"
 
 #### Figures
 
-![](/assets/Pasted-image-20231129095837.png)
+\![[Pasted-image-20231129095837.png]]
 *Figure from Sergey Ovchinnikov's Twitter account*

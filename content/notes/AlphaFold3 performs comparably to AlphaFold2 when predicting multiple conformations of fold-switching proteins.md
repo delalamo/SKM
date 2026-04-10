@@ -3,7 +3,7 @@ tags:
   - protein-folding/misc
   - alphafold3
 created: "2025-11-07T17:32:43"
-modified: "2026-04-10T10:46:24"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -12,7 +12,7 @@ modified: "2026-04-10T10:46:24"
 
 #### Figures
 
-![](/assets/Pasted-image-20240826210214.png)
+\![[Pasted-image-20240826210214.png]]
 
 *Figure from [^chakravarty2024]*
 

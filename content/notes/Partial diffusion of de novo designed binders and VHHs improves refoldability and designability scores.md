@@ -1,7 +1,7 @@
 ---
 tags: antibodies/misc
 created: "2026-01-23T17:17:44"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -10,9 +10,9 @@ modified: "2026-04-05T23:36:09"
 
 #### Figures
 
-![](/assets/Pasted-image-20260123171658.png)
+\![[Pasted-image-20260123171658.png]]
 
-![](/assets/Pasted-image-20260123171718.png)
+\![[Pasted-image-20260123171718.png]]
 
 *Figures from [^yu2026]; binders and VHHs on top and bottom*
 

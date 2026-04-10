@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2026-01-22T12:38:44"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-10T14:02:57"
 ---
 
 ## Summary
@@ -15,5 +15,5 @@ Epistasis is defined as $\varepsilon^{e} = \log f^{e}_{AB} - \left( \log f^{e}_{
 
 ## Figures
 
-![](/assets/Pasted-image-20250919070445.png)
+\![[Pasted-image-20250919070445.png]]
 *Figure from [Nambiar et al 2025](https://doi.org/10.1101/2025.09.14.676130)*

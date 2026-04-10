@@ -1,7 +1,7 @@
 ---
 tags: antibodies/misc
 created: "2025-12-19T11:25:57"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -21,7 +21,7 @@ where $\mathcal{L}_{\text{CDR}}$ and $\mathcal{L}_{\text{framework}}$ decrease a
 
 #### Figures
 
-![](/assets/Pasted-image-20251027120017.png)
+\![[Pasted-image-20251027120017.png]]
 
 *Figure from [^millefragoso2025]*
 

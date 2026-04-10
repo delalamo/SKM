@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2024-06-04T03:24:54"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 #### Summary
 **Positional encoding** refers to the process of adding information about a token's absolute or relative position in a sequence. This is particularly important for [[Transformer|transformers]] which lack any built-in knowledge of position.
@@ -15,13 +15,13 @@ modified: "2026-04-05T23:36:09"
 > $i$: The index of the specific entry
 > $pos$: The position of the token
 
-![](/assets/Pasted-image-20240604083358.png)
+\![[Pasted-image-20240604083358.png]]
 *Figure from https://production-media.paperswithcode.com/methods/05577c08-d6ac-4b8b-9fd0-55739ba42383.png*
 
 #### Relative positional encodings
 **Rotational positional encodings**: Rotates the queries and keys prior to calculation of [[Attention (machine learning)|attention]].
 
-![](/assets/Pasted-image-20240604084227.png)
+\![[Pasted-image-20240604084227.png]]
 *Figure from [^su2021]*
 
 [^vaswani2017]: Vaswani et al. (2017) "Attention Is All You Need." https://doi.org/10.48550/ARXIV.1706.03762

@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2025-02-10T07:37:30"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-10T14:02:57"
 ---
 
 ## Summary
@@ -17,13 +17,13 @@ To improve alignment quality using "normalization" (per [Pantolini et al 2022](h
 
 ## Figures
 
-![](/assets/MSA-and-embeddings-with-glycines-in-rec.png)
+\![[MSA-and-embeddings-with-glycines-in-rec.png]]
 *Figure from [McWhite et al 2023](https://doi.org/10.1101/gr.277675.123)*
 
-![](/assets/Malidup.png)
+\![[Malidup.png]]
 *Figure from [Hamamsmy et al 2023](https://doi.org/10.1038/s41587-023-01917-2)*
 
-![](/assets/ProtTuker.png)
+\![[ProtTuker.png]]
 *Figure from [Pantolini et al 2022](https://doi.org/10.1101/2022.12.13.520313); EBA and EBA-plain refer to PLM-based alignment with and without normalization*
 
 ## See also

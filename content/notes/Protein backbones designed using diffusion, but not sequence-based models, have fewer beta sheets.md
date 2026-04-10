@@ -1,7 +1,7 @@
 ---
 tags: protein-design/misc
 created: "2024-11-04T23:45:40"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -14,23 +14,23 @@ modified: "2026-04-05T23:36:09"
 
 #### Figures
 
-![](/assets/Pasted-image-20240204122717.png)
+\![[Pasted-image-20240204122717.png]]
 
 *Figure 3 from [^lin2023]*
 
-![](/assets/Pasted-image-20231203100221.png)
+\![[Pasted-image-20231203100221.png]]
 
 *Figure 5h from [^ingraham2023]*
 
-![](/assets/Pasted-image-20240204121659.png)
+\![[Pasted-image-20240204121659.png]]
 
 *Figure S14 from [^ingraham2023]*
 
-![](/assets/Pasted-image-20240605181721.png)
+\![[Pasted-image-20240605181721.png]]
 
 *Figure 3 from [^huguet2024]*
 
-![](/assets/Pasted-image-20241105054451.png)
+\![[Pasted-image-20241105054451.png]]
 
 *Figure from [^alamdari2023]*
 

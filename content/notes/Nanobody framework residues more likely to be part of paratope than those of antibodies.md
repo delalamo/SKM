@@ -2,13 +2,13 @@
 tags:
   - antibodies/misc
 created: "2025-02-28T03:15:38"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 #### Summary
 **[[Framework region|Framework]] residues of [[Nanobodies|nanobodies]] are more likely to be part of the paratope than those of [[Antibodies|antibodies]]** [^gordon2023][^ketaren2023]. Nanobodies with [[Kinked CDRH3 loops|extended CDR3 loops]] tend to involve framework residues more than those with kinked CDR3 loops (Bahrami [^bahrami2023]).
 
 #### Figures
-![](/assets/42003_2023_5241_Fig3_HTML.png)
+\![[42003_2023_5241_Fig3_HTML.png]]
 *Figure from Bahrami [^bahrami2023]*
 
 #### See also

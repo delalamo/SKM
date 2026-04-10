@@ -2,7 +2,7 @@
 tags:
   - protein-design/misc
 created: "2024-05-02T03:16:24"
-modified: "2026-04-05T23:14:54"
+modified: "2026-04-10T14:02:57"
 ---
 
 ## Summary
@@ -11,5 +11,5 @@ modified: "2026-04-05T23:14:54"
 
 ## Figures
 
-![](/assets/Contrastive-Learning-ConPlex.png)
+\![[Contrastive-Learning-ConPlex.png]]
 *Figure from [Singh et al 2023b](https://doi.org/10.1073/pnas.2220778120)*

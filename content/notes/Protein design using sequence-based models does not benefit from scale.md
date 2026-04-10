@@ -1,7 +1,7 @@
 ---
 tags: protein-design/misc
 created: "2026-01-22T12:38:44"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -10,7 +10,7 @@ modified: "2026-04-05T23:36:09"
 
 #### Figures
 
-![](/assets/scPerplexity.png)
+\![[scPerplexity.png]]
 
 *Figure from [^alamdari2023]*
 

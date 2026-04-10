@@ -1,14 +1,14 @@
 ---
 tags: [protein-design/misc]
 created: "2026-03-11T08:10:23"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
 **[[Multiple sequence alignments|Sequence homology]] composition can affect how well a fine-tuned [[Protein language models|protein language model]] performs for [[Variant effect prediction|variant effect prediction]]**[^bixby2026]. Here, it was used to rank possible designs given several design constraints.
 
 #### Figures
-![](/assets/Pasted-image-20260311080631.png)
+\![[Pasted-image-20260311080631.png]]
 *Figure from [^bixby2026]*
 
 [^bixby2026]: Bixby et al. (2026) "What comes after

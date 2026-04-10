@@ -3,7 +3,7 @@ tags:
   - structure-prediction/misc
   - alphafold2
 created: "2024-10-25T03:26:40"
-modified: "2026-04-10T10:46:24"
+modified: "2026-04-10T14:02:57"
 ---
 
 #### Summary
@@ -12,7 +12,7 @@ modified: "2026-04-10T10:46:24"
 
 #### Figures
 
-![](/assets/Pasted-image-20241025092618.png)
+\![[Pasted-image-20241025092618.png]]
 
 *Figure from [^frank2024]; AA_IG refers to AlphaFold2 with initial guess; ESM refers to [[ESMFold]]*
 

@@ -2,13 +2,13 @@
 tags:
   - protein-folding/misc
 created: "2024-06-24T10:45:46"
-modified: "2026-04-05T23:36:09"
+modified: "2026-04-10T14:02:57"
 ---
 #### Summary
 **The latent space of [[Variational autoencoders|VAEs]] can describe the [[Protein dynamics|conformational landscape]] of dynamic proteins.** These have been used as features to guide [[MD simulations]], particularly as [[Collective variables|collective variables]] for [[Metadynamics|metadynamics]] simulations.
 
 #### Figures
-![](/assets/Pasted-image-20240529163609.png)
+\![[Pasted-image-20240529163609.png]]
 *Figure from [^lemke2019]*
 
 #### See also

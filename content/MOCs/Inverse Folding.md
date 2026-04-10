@@ -2,6 +2,8 @@
 title: Inverse folding
 tags:
   - inverse-folding
+created: "2026-04-10T14:02:57"
+modified: "2026-04-10T14:02:57"
 ---
 
 **Inverse folding** describes the problem of designing a sequence for a structure. Typically these are limited to the twenty canonical amino acids.
@@ -19,7 +21,7 @@ tags:
 #### Training
 
 * **Training inverse folding models with backbone dihedral angles as features usually improved sequence recovery** ([[sTYuRVrdK3|Jamasb et al 2023]]).
-	![](/assets/Pasted-image-20240117115655.png)
+	\![[Pasted-image-20240117115655.png]]
 	*Figure from [[sTYuRVrdK3|Jamasb et al 2023]]*
 
 #### Execution
@@ -29,7 +31,7 @@ tags:
 #### Datasets
 
 * **PDBench** is a dataset of 595 protein structures with diverse, evenly divided topologies for benchmarking of [[Inverse folding]] methods ([[10.1093__bioinformatics__btad027|Castorina et al 2023]]).
-	![](/assets/Alpha-Beta-Barre.png)
+	\![[Alpha-Beta-Barre.png]]
 	*Figure 2 from [[10.1093__bioinformatics__btad027|Castorina et al 2023]]*
 
 <!-- generated -->
