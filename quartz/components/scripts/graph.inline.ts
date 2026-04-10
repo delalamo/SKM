@@ -70,7 +70,6 @@ type TweenNode = {
 
 async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
   const slug = simplifySlug(fullSlug)
-  const visited = getVisited()
   removeAllChildren(graph)
 
   let {
@@ -90,10 +89,9 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
   } = JSON.parse(graph.dataset["cfg"]!) as D3Config
 
   const data: Map<SimpleSlug, ContentDetails> = new Map(
-    Object.entries<ContentDetails>(await fetchData).map(([k, v]) => [
-      simplifySlug(k as FullSlug),
-      v,
-    ]),
+    Object.entries<ContentDetails>(await fetchData)
+      .filter(([k]) => !simplifySlug(k as FullSlug).startsWith("assets/"))
+      .map(([k, v]) => [simplifySlug(k as FullSlug), v]),
   )
   const links: SimpleLinkData[] = []
   const tags: SimpleSlug[] = []
@@ -198,8 +196,8 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
     const isCurrent = d.id === slug
     if (isCurrent) {
       return computedStyleMap["--secondary"]
-    } else if (visited.has(d.id) || d.id.startsWith("tags/")) {
-      return computedStyleMap["--tertiary"]
+    } else if (d.id.startsWith("MOCs/")) {
+      return "#14b8a6"  // bright teal for MOC nodes
     } else {
       return computedStyleMap["--gray"]
     }

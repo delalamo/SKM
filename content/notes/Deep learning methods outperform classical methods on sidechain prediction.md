@@ -1,0 +1,33 @@
+#### Summary
+
+**Deep learning [[Structure prediction#Sidechain prediction|sidechain prediction]] methods outperform classical energy function-based methods** ([^visani2023], Heo and [^heo2023], [^vangaru2025]). SCWRL4, which is a classical method that uses force fields, did not sample outlier rotamers as often as alternative DL-based method (Heo and [^heo2023]).
+
+#### Figures
+| | RMSD (Å) ↓ | | | χ-MAE (°) ↓ | | | | RR (%) ↑ | Steric Clashes (#) ↓ | | |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Tool Name | All | Core | Surface | χ1 | χ2 | χ3 | χ4 | χ1-4 | 100% | 90% | 80% |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| **CASP14 (n = 66)** | | | | | | | | | | | |
+| FlowPacker | 0.80 | **0.40** | 1.01 | 23.02 | 25.82 | 46.09 | 52.80 | 57.1 | 102.0 | 21.7 | 6.4 |
+| PIPPack | 0.79 | 0.43 | 0.99 | **21.57** | 25.25 | **41.93** | 51.27 | **58.1** | 131.2 | 36.2 | 14.4 |
+| DiffPack | **0.79** | 0.41 | 0.98 | 22.92 | **25.23** | 46.97 | 55.33 | 57.6 | 104.2 | 26.8 | 9.8 |
+| AttnPacker | 0.79 | 0.44 | **0.98** | 24.19 | 28.79 | 48.34 | **50.37** | 51.3 | 84.6 | 22.8 | 8.1 |
+| DLPacker | 0.90 | 0.50 | 1.11 | 27.45 | 30.03 | 52.82 | 70.34 | 50.6 | **83.2** | **16.8** | **5.1** |
+| FASPR | 1.03 | 0.62 | 1.24 | 31.97 | 31.27 | 49.43 | 55.74 | 47.8 | 152.9 | 41.8 | 13.0 |
+| PyRosetta Packer | 1.00 | 0.55 | 1.23 | 30.98 | 31.29 | 49.31 | 55.58 | 48.9 | 104.3 | 22.1 | 8.4 |
+| SCWRL4 | 1.04 | 0.61 | 1.26 | 32.22 | 31.65 | 50.21 | 55.10 | 47.5 | 158.3 | 40.2 | 11.8 |
+| **CASP15 (n = 71)** | | | | | | | | | | | |
+| FlowPacker | 0.69 | **0.33** | 0.90 | 18.99 | **22.04** | 40.93 | **52.62** | **66.4** | 100.8 | 14.6 | 3.3 |
+| PIPPack | 0.70 | 0.34 | 0.91 | **18.27** | 22.16 | **40.21** | 53.36 | 66.1 | 129.0 | 30.5 | 10.9 |
+| DiffPack | **0.68** | 0.34 | **0.87** | 18.29 | 22.47 | 42.91 | 56.88 | 65.7 | 95.3 | 20.3 | 7.2 |
+| AttnPacker | 0.71 | 0.37 | 0.90 | 20.29 | 26.10 | 47.09 | 54.68 | 59.2 | 96.4 | 25.5 | 9.5 |
+| DLPacker | 0.76 | 0.38 | 0.97 | 21.88 | 26.29 | 50.86 | 67.53 | 59.5 | **89.4** | 14.0 | 3.2 |
+| FASPR | 0.92 | 0.52 | 1.14 | 27.12 | 29.07 | 50.39 | 59.05 | 55.8 | 160.5 | 37.4 | 9.7 |
+| PyRosetta Packer | 0.87 | 0.43 | 1.12 | 25.84 | 27.57 | 47.95 | 55.32 | 58.0 | 98.5 | **13.5** | **3.1** |
+| SCWRL4 | 0.94 | 0.50 | 1.17 | 27.89 | 29.12 | 49.81 | 57.25 | 55.5 | 168.3 | 36.3 | 7.7 |
+
+*Figure from [^vangaru2025]*
+
+[^visani2023]: Visani et al. (2023) "H-Packer: Holographic Rotationally Equivariant Convolutional Neural Network for Protein Side-Chain Packing." https://doi.org/10.48550/arXiv.2311.09312
+[^heo2023]: Heo & Feig (2023) "One particle per residue is sufficient to describe all-atom protein structures." https://doi.org/10.1101/2023.05.22.541652
+[^vangaru2025]: Vangaru & Bhattacharya (2025) "To pack or not to pack: revisiting protein side-chain packing in the post‐AlphaFold era." https://doi.org/10.1101/2025.02.22.639681
