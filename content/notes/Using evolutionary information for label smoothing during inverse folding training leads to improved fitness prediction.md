@@ -2,16 +2,16 @@
 tags:
   - protein-folding/misc
 created: "2026-04-05T17:47:00"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-10T15:56:34"
 ---
 
 #### Summary
 
-**Using evolutionary information for label smoothing when training [[Inverse folding|inverse folding]] models improves [[Fitness prediction]].** [^zhou2024] used the [[BLOSUM62]] matrix, whereas [[Gong et al 2024]] used PSSMs. [^dauparas2022] by contrast just use a uniform smoothing.
+**Using evolutionary information for label smoothing when training [[Inverse folding|inverse folding]] models improves [[Fitness prediction]].** Zhou et al. used the [[BLOSUM62]] matrix, whereas [[Gong et al 2024]] used PSSMs. By contrast, Dauparas et al. used uniform smoothing.[^zhou2024][^dauparas2022]
 
 #### Details
 
-[^zhou2024] use a temperature value $t$ to balance the contribution of the WT amino acid and the BLOSUM62 matrix - the figure below defines this as $\mathbf{B}' = \sigma (\mathbf{B})^{t}$ where $\mathbf{B}'$ and $\mathbf{B}$ are the target matrices and BLOSUM matrices, respectively, and $\sigma$ is a nonlinear operator.
+Zhou et al. use a temperature value $t$ to balance the contribution of the WT amino acid and the BLOSUM62 matrix - the figure below defines this as $\mathbf{B}' = \sigma (\mathbf{B})^{t}$ where $\mathbf{B}'$ and $\mathbf{B}$ are the target matrices and BLOSUM matrices, respectively, and $\sigma$ is a nonlinear operator.[^zhou2024]
 
 In contrast, [[Gong et al 2024]] calculated propensities from [[Multiple sequence alignments|MSAs]].
 

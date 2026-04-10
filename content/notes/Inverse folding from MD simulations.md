@@ -2,13 +2,13 @@
 tags:
   - protein-design/misc
 created: "2025-05-23T04:29:43"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-10T15:56:34"
 ---
 #### Summary
  **The combination of [[MD simulations]] with [[Inverse folding|inverse folding]] was explored by [^brotzakis2025] in redesigning a [[Nanobodies|nanobody]] to have slower dissociation from its [[Antibody-antigen interactions|antigen]].**
 
 #### Details
-[^brotzakis2025] use a Bayesian framework to link exploration of the conformational space by MD ($p(struct|seq)$) with exploration of sequence space by inverse folding ($p(seq|struct)$). For a single sequence, comparison of the latter to the former would be as follows:
+Brotzakis et al. use a Bayesian framework to link exploration of the conformational space by MD ($p(struct|seq)$) with exploration of sequence space by inverse folding ($p(seq|struct)$). For a single sequence, comparison of the latter to the former would be as follows.[^brotzakis2025]
 $$
 p(seq|struct) = \frac{p(struct|seq)p(seq)}{p(struct)}
 $$

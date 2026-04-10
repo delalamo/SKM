@@ -1,14 +1,14 @@
 ---
 tags: [protein-folding/misc]
 created: "2024-05-02T04:21:57"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-10T15:56:34"
 ---
 
 #### Summary
 **Alpha helices can tolerate more missense mutations and indels than beta sheets.** This was initially pointed out by [^abrus2016] using bioinformatics analysis and corroborated by [^beltran2024] using stability measurements.
 
 #### Details
-[^beltran2024] find using ~500k measurements across 500 domains that stability has a greater contribution t protein fitness in beta-sheet proteins than alpha-helical proteins.
+Beltran et al. find, using ~500k measurements across 500 domains, that stability has a greater contribution to protein fitness in beta-sheet proteins than alpha-helical proteins.[^beltran2024]
 
 #### Related
 * [[Sheets are less designable than helices]]
