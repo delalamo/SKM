@@ -1,3 +1,78 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// ── Footnotes → References ───────────────────────────────────────────────────
+//
+// Quartz/remark-gfm renders [^key]: definitions into an auto-generated
+// <section data-footnotes> block at the bottom of each note page.
+// The block contains an h2 labelled "Footnotes" (screen-reader only by default).
+// We repurpose it as a visible "References" section styled like other headings.
+
+section[data-footnotes] {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--lightgray);
+
+  // Hide the generated "Footnotes" h2 and replace it with "References"
+  & > h2[id="footnote-label"] {
+    // Undo any sr-only clipping that hides the text
+    clip: unset !important;
+    clip-path: unset !important;
+    overflow: visible !important;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    white-space: normal !important;
+    // Visually hide the word "Footnotes" and swap in "References"
+    font-size: 0;
+
+    &::before {
+      content: "References";
+      font-size: 1.25rem;        // matches Quartz h2 sizing
+      font-weight: 700;
+      color: var(--dark);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  // Style the ordered list of references
+  & > ol {
+    padding-left: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--darkgray);
+    line-height: 1.6;
+
+    li {
+      margin-bottom: 0.4rem;
+
+      // The ↩ back-link that Quartz adds after each reference
+      a[data-footnote-backref] {
+        margin-left: 0.3rem;
+        font-size: 0.8rem;
+        opacity: 0.6;
+        text-decoration: none;
+
+        &:hover { opacity: 1; }
+      }
+    }
+  }
+}
+
+// ── Content meta: created / modified date labels ─────────────────────────────
+
+.content-meta-label {
+  font-size: 0.85em;
+  color: var(--gray);
+  font-style: normal;
+}
+
+// Superscript footnote markers in the text body
+a[data-footnote-ref] {
+  font-size: 0.75em;
+  vertical-align: super;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--secondary);
+
+  &:hover { color: var(--tertiary); }
+}

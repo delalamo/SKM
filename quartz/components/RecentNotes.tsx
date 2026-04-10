@@ -3,7 +3,7 @@ import { FullSlug, SimpleSlug, resolveRelative } from "../util/path"
 import { QuartzPluginData } from "../plugins/vfile"
 import { byDateAndAlphabetical } from "./PageList"
 import style from "./styles/recentNotes.scss"
-import { Date, getDate } from "./Date"
+import { ValidDateType, formatDateTime } from "./Date"
 import { GlobalConfiguration } from "../cfg"
 import { i18n } from "../i18n"
 import { classNames } from "../util/lang"
@@ -13,6 +13,7 @@ interface Options {
   limit: number
   linkToMore: SimpleSlug | false
   showTags: boolean
+  dateType?: ValidDateType
   filter: (f: QuartzPluginData) => boolean
   sort: (f1: QuartzPluginData, f2: QuartzPluginData) => number
 }
@@ -33,7 +34,18 @@ export default ((userOpts?: Partial<Options>) => {
     cfg,
   }: QuartzComponentProps) => {
     const opts = { ...defaultOptions(cfg), ...userOpts }
-    const pages = allFiles.filter(opts.filter).sort(opts.sort)
+    // If a specific dateType is requested, sort by that field directly
+    const sortedPages = opts.dateType
+      ? allFiles
+          .filter(opts.filter)
+          .filter((f) => f.dates?.[opts.dateType!] !== undefined)
+          .sort((a, b) => {
+            const da = a.dates![opts.dateType!].getTime()
+            const db = b.dates![opts.dateType!].getTime()
+            return db - da
+          })
+      : allFiles.filter(opts.filter).sort(opts.sort)
+    const pages = sortedPages
     const remaining = Math.max(0, pages.length - opts.limit)
     return (
       <div class={classNames(displayClass, "recent-notes")}>
@@ -42,6 +54,9 @@ export default ((userOpts?: Partial<Options>) => {
           {pages.slice(0, opts.limit).map((page) => {
             const title = page.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title
             const tags = page.frontmatter?.tags ?? []
+            const displayDate = opts.dateType
+              ? page.dates?.[opts.dateType]
+              : page.dates?.[cfg.defaultDateType as ValidDateType]
 
             return (
               <li class="recent-li">
@@ -53,9 +68,11 @@ export default ((userOpts?: Partial<Options>) => {
                       </a>
                     </h3>
                   </div>
-                  {page.dates && (
+                  {displayDate && (
                     <p class="meta">
-                      <Date date={getDate(cfg, page)!} locale={cfg.locale} />
+                      <time datetime={displayDate.toISOString()}>
+                        {formatDateTime(displayDate, cfg.locale)}
+                      </time>
                     </p>
                   )}
                   {opts.showTags && (

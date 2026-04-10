@@ -9,3 +9,7 @@ tsconfig.tsbuildinfo
 private/
 .replit
 replit.nix
+.env
+**/*.pyc
+content/MOCs/\[*.md
+content/notes/\[*.md
