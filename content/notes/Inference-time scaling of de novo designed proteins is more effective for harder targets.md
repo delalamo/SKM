@@ -4,7 +4,7 @@ tags:
   - diffusion-guidance/protein-design
   - protein-design/design
 created: "2026-03-20T07:33:04"
-modified: "2026-04-10T15:35:05"
+modified: "2026-04-11T06:15:31"
 ---
 #### Summary
  **Inference-time scaling of *de novo* [[Protein backbone design|designed proteins]] is more effective for harder targets** ((Didi et al 2026a)). Scaling was executed using [[Beam search|beam search]], [[Diffusion guidance|Feynman-Kac steering]], and [[Monte Carlo Tree Search]]. Surprisingly, all three gave comparable results to one another.

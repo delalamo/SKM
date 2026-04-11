@@ -1,8 +1,8 @@
 ---
 tags:
-  - antibodies/misc
+  - antibody-developability/expression
 created: "2026-03-16T11:35:51"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **Improvements in antigen binding by [[Antibodies|antibodies]] is correlated with decreases in [[Developability|expression]]** [^tharp2026]. The exact magnitude of the correlation depends on models of substitution.

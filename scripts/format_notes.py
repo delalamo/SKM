@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+from __future__ import annotations
+
 """
 format_notes.py — Prepares Obsidian notes for Quartz publishing. Two jobs:
 

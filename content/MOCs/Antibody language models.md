@@ -1,9 +1,9 @@
 ---
 title: Antibody language models
 tags:
-  - antibody-language-models
+  - protein-language-models/antibodies
 created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 
 **Antibody [[Protein language models|protein language models]]** are a subclass of language models trained exclusively on antibody sequences (typically the [[Observable Antibody Space|OAS]]). A wide variety with various architectures have been designed and explored.

@@ -1,8 +1,8 @@
 ---
 tags:
-  - antibodies/misc
+  - antibody-structure-prediction/cdr
 created: "2026-03-16T11:53:13"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **Loops from one V-region chain affect the conformations and dynamics of loops in the other chain** (Guloglu and [^guloglu2023], [^tharp2026]). For example, light chain loops can affect the dynamics of [[Complementarity-determining regions#CDRH3|CDRH3]] (Guloglu and [^guloglu2023]). Longer CDRL1 loops and shorter CDRL3 loops correlate with restricted CDRH3 dynamics. In contrast, lengths of other loops had a lesser impact and were less dynamic albeit not entirely static. This is also consistent with observations from MD simulations [^fernandezquintero2020]. [^tharp2026] show an example of strong [[Epistasis|epistasis]] between light chain residues that facilitate a reconfiguration of CDRH2.

@@ -1,9 +1,9 @@
 ---
 title: Protein language model embeddings are more predictive of homology than catalytic efficiency
 tags:
-  - protein-folding/misc
+  - protein-language-models/representations
 created: "2024-11-14T03:04:04"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
  **[[Protein language models|Protein language model]] embeddings are more predictive of homology than catalytic efficiency** [^muir2024]. In fact, [[ESM]] embeddings were slightly better than random and worse than one-hot encodings at identifying highly active adenylate kinase variants.

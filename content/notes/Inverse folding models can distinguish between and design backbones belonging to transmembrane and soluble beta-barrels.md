@@ -1,8 +1,9 @@
 ---
 tags:
-  - protein-design/misc
+  - inverse-folding/evaluation
+  - protein-backbone-design/designability
 created: "2024-04-24T23:50:43"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
  **[[Inverse folding]] methods can successfully distinguish between membrane and soluble beta barrels, and can design them with hydrophobic and hydrophilic residues in the right places** [^dolorfino2024]. They demonstrated this with [[ProteinMPNN]].

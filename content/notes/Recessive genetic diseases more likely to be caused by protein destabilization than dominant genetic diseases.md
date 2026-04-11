@@ -1,9 +1,9 @@
 ---
 title: Recessive genetic diseases more likely to be caused by protein destabilization than dominant genetic diseases
 tags:
-  - protein-folding/misc
+  - thermostability
 created: "2024-05-01T01:23:18"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
  **Recessive genetic diseases are more likely to be caused by protein [[Stability and thermostability|destabilization]] than dominant genetic diseases** [^beltran2024].

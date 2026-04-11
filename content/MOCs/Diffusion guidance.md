@@ -5,7 +5,7 @@ tags:
 aliases:
   - Guidance sampling of all-atom diffusion
 created: "2026-04-10T14:30:55"
-modified: "2026-04-10T15:51:38"
+modified: "2026-04-11T06:15:31"
 ---
 
 **Diffusion guidance** refers to inference-time methods that steer a diffusion process toward desired properties, constraints, or observations. It is a general concept that applies to both [[Protein backbone design|protein design]] and [[Structure prediction|structure prediction]], of which all-atom diffusion is just one application.

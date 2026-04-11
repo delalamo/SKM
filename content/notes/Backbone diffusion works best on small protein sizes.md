@@ -4,7 +4,7 @@ tags:
   - diffusion-models/protein-design
   - protein-design/design
 created: "2024-05-08T17:59:48"
-modified: "2026-04-10T15:35:05"
+modified: "2026-04-11T06:15:31"
 ---
 #### Summary
  **Protein [[Protein backbone design#Diffusion|structure diffusion]] works best on small protein sizes.** [^watson2023] tried to refold proteins generated using RF-diffusion and [[ProteinMPNN]] and using [[AlphaFold|AlphaFold2]] (single sequence) and found that they generally disagreed if they were too big. Likewise, [^ingraham2023] could not reliably refold proteins *in silico* if they were greater than ~200-300 residues.

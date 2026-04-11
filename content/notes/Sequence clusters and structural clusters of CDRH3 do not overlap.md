@@ -1,8 +1,8 @@
 ---
 tags:
-  - antibodies/misc
+  - antibody-structure-prediction/cdr
 created: "2024-07-02T08:01:46"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **[[Complementarity-determining regions|CDRH3]] is not amenable to sequence [[Clustering|clustering]]** (Guloglu and [^guloglu2023]). This is unlike other [[Complementarity-determining regions|CDRs]], which form conformational clusters [^kelow2022].

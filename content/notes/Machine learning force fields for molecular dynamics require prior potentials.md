@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-folding/misc
+  - conformational-dynamics
 created: "2024-07-08T02:06:31"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **Machine learning force fields for [[MD simulations]] require prior potentials** to reduce the conformational space accessible during simulation and prevent poor exploration [^majewski2023].

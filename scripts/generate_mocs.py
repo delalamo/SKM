@@ -31,26 +31,47 @@ MOCS_DIR  = REPO_ROOT / "content" / "MOCs"
 # Maps subtag slugs to human-readable section titles (controls display order).
 # Keep in sync with SUBTAG_TITLES in quartz/components/TagList.tsx.
 SUBTAG_TITLES = {
-    "training":    "Training",
-    "design":      "Design",
-    "implementation": "Implementation",
-    "protein-design": "Protein Design",
-    "structure-prediction": "Structure Prediction",
-    "execution":   "Execution",
-    "antibodies":  "Antibodies",
-    "datasets":    "Datasets",
-    "misc":        "Miscellaneous",
+    "training":            "Training",
+    "representations":     "Representations",
+    "design":              "Design",
+    "implementation":      "Implementation",
+    "protein-design":      "Protein Design",
+    "structure-prediction":"Structure Prediction",
+    "antibodies":          "Antibodies",
+    "evaluation":          "Evaluation",
+    "designability":       "Designability",
+    "cdr":                 "CDR",
+    "complex-prediction":  "Complex Prediction",
+    "expression":          "Expression",
+    "hydrophobicity":      "Hydrophobicity",
+    "polyspecificity":     "Polyspecificity",
+    "self-association":    "Self-association",
+    "solubility":          "Solubility",
+    "humanization":        "Humanization",
+    "immunogenicity":      "Immunogenicity",
+    "general":             "General",
+    "execution":           "Execution",
+    "datasets":            "Datasets",
+    "misc":                "Miscellaneous",
 }
 
 # Maps tag roots to MOC page titles.
 # Keep in sync with MOC_SLUGS in quartz/components/TagList.tsx.
 MOC_TITLES = {
-    "inverse-folding":  "Inverse Folding",
-    "protein-folding":  "Protein Folding",
-    "protein-design":   "Protein Design",
-    "antibodies":       "Antibodies",
+    "inverse-folding":              "Inverse Folding",
+    "protein-folding":              "Protein folding",
+    "protein-design":               "Protein Design",
+    "protein-language-models":      "Protein language models",
+    "protein-backbone-design":      "Protein backbone design",
+    "antibodies":                   "Antibodies",
+    "antibody-structure-prediction":"Antibody structure prediction",
+    "structure-prediction":         "Structure prediction",
+    "conformational-dynamics":      "Conformational dynamics",
+    "thermostability":              "Stability and thermostability",
+    "affinity-maturation":          "Affinity maturation",
+    "antibody-developability":      "Developability",
     "diffusion-models": "Diffusion models",
-    "diffusion-guidance": "Diffusion guidance",
+    "diffusion-guidance":"Diffusion guidance",
 }
 
 
@@ -73,6 +94,11 @@ def parse_frontmatter_tags(filepath: Path) -> list[str]:
             if t:
                 tags.append(t)
     else:
+        inline_list = re.search(r"^tags:\s*\[(.*)\]\s*$", fm, re.MULTILINE)
+        if inline_list:
+            tags = [t.strip().strip("\"'") for t in inline_list.group(1).split(",") if t.strip()]
+            return tags
+
         inline = re.search(r"^tags:\s*(.+)$", fm, re.MULTILINE)
         if inline:
             raw = inline.group(1).strip()
@@ -161,7 +187,7 @@ def build_moc_text(root: str, subtag_map: dict[str, list[str]],
         "",
         "> [!info] Auto-generated",
         f"> This page is generated automatically from notes tagged `{root}/*`.",
-        "> Add prose above the `<!-- generated -->` marker to preserve it across regenerations.",
+        "> Add prose above the generated marker to preserve it across regenerations.",
         "",
     ]
     header = "\n".join(header_lines)

@@ -1,9 +1,9 @@
 ---
 title: De novo designed proteins with alpha helices are easier to predict than those with other secondary structures
 tags:
-  - protein-design/misc
+  - protein-backbone-design/designability
 created: "2024-11-04T23:45:40"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
  **[[Protein backbone design|De novo designed proteins]] with alpha helices are more likely to fold without any homology information than those with beta sheets** [^chang2024]. At EMBL-EBI, Possu Huang suggested that the reliance on [[Structure prediction|structure prediction]] as a validation tool during protein design favors helical proteins.

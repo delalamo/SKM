@@ -1,7 +1,8 @@
 ---
-tags: [protein-design/misc]
+tags:
+  - inverse-folding/evaluation
 created: "2024-04-24T16:23:56"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 
 ---

@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-folding/misc
+  - protein-language-models/representations
 created: "2026-01-22T11:03:49"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 
 #### Summary

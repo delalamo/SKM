@@ -1,8 +1,9 @@
 ---
 tags:
-  - protein-folding/misc
+  - structure-prediction
+  - thermostability
 created: "2026-03-06T09:43:56"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 
 ## Summary

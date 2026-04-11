@@ -1,7 +1,9 @@
 ---
-tags: [protein-folding/misc]
+tags:
+  - thermostability
+  - protein-folding/misc
 created: "2024-04-16T10:20:53"
-modified: "2026-04-10T15:56:34"
+modified: "2026-04-11T06:15:31"
 ---
 
 ---

@@ -1,8 +1,8 @@
 ---
 tags:
-  - antibodies/misc
+  - protein-language-models/antibodies
 created: "2026-04-05T17:10:58"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **[[Antibodies|Antibody]] [[Antibody language models|language models]] trained on paired [[Heavy chains|heavy]] and [[Light chains|light]] chains outperform equivalent models trained only on unpaired data** [^kenlay2024]. They also outperform [[Protein language models|generic PLMs]].

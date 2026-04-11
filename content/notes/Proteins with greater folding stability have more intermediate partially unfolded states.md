@@ -1,9 +1,10 @@
 ---
 title: Proteins with greater folding stability have more intermediate partially unfolded states
 tags:
-  - protein-folding/misc
+  - conformational-dynamics
+  - thermostability
 created: "2025-04-22T00:29:39"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
  **Proteins with greater folding stability have more intermediate partially unfolded states** [^ferrari2025]. This was suggested by the observation that average residue-level [[Stability and thermostability|stability]] ($\Delta G_{avg}$) increases sublinearly relative to overall protein stability.

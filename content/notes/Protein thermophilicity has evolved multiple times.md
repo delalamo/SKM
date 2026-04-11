@@ -1,9 +1,9 @@
 ---
 title: Protein thermophilicity has evolved multiple times
 tags:
-  - protein-folding/misc
+  - thermostability
 created: "2024-11-14T02:41:30"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
  **Changes in protein [[Stability and thermostability|thermostability]] occur frequently over long evolutionary timescales, and related proteins can show drastic differences in thermostability** [^muir2024].

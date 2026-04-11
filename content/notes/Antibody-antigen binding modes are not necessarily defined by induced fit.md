@@ -1,8 +1,8 @@
 ---
 tags:
-  - antibodies/misc
+  - antibody-structure-prediction/complex-prediction
 created: "2024-09-19T05:32:41"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **Antibody-antigen binding modes are not all defined by induced fit.** Most [[Antibodies|antibodies]] do not change conformation upon binding, with 70% or so of [[Complementarity-determining regions|CDRH3]] loops moving less than 1 Å [^liu2024]. Additionally, the conformational space of unbound antibodies sampled from [[MD simulations]] is a superset of all bound conformations [^fernandezquintero2022], and conformational flexibility is inversely proportional to binding affinity ([^mikolajek2022]; see [[Conformational entropy in antibodies is inversely proportional to antigen affinity]]).

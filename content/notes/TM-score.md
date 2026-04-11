@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-folding/misc
+  - structure-prediction
 created: "2024-06-26T13:44:46"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **TM-score** is an alignment-dependent protein structure similarity term introduced by [^zhang2004] that is widely used for assessing [[Structure prediction|protein structure prediction]] methods. It is defined as:

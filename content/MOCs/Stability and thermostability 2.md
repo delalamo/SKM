@@ -1,9 +1,9 @@
 ---
 title: Stability and thermostability
 tags:
-  - stability-and-thermostability
+  - thermostability
 created: "2026-04-05T23:36:09"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 
 **Thermostability** refers to a protein's ability to remain folded at high temperatures or under harsh conditions. It is a highly desirable property for engineered proteins.

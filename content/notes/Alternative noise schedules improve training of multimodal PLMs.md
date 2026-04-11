@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-folding/misc
+  - protein-language-models/training
 created: "2025-01-18T00:01:18"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 
 #### Summary

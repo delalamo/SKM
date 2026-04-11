@@ -1,8 +1,8 @@
 ---
 tags:
-  - antibodies/misc
+  - antibody-structure-prediction/cdr
 created: "2024-10-27T03:42:00"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **Different [[Complementarity-determining regions|CDRL3]] lengths are observed among functional and dysfunctional [[Antibodies|antibodies]]** [^jagota2024].

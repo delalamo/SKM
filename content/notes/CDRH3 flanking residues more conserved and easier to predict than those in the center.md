@@ -1,8 +1,8 @@
 ---
 tags:
-  - antibodies/misc
+  - antibody-structure-prediction/cdr
 created: "2025-09-19T06:48:46"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **Residues at the ends of [[Complementarity-determining regions|CDRH3]] are more conserved than those near the center of the loop** [^guest2021]. As a result, they are easier to predict (Huang et al 2023c, [^neyestanak2025]).

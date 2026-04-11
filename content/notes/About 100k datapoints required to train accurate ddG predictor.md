@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-folding/misc
+  - thermostability
 created: "2024-04-19T00:30:02"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **About 100,000 datapoints are required to train an accurate ddG predictor with Spearman correlation of 0.85** [^pak2023].

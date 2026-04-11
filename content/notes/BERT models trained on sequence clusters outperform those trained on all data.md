@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-folding/misc
+  - protein-language-models/training
 created: "2024-07-02T07:58:46"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **[[BERT]] [[Protein language models|PLMs]] trained on [[Clustering|clustered]] data such as UniRef50 or UniRef90 outperform those trained on unclustered databases such as UniRef100** [^rives2021].

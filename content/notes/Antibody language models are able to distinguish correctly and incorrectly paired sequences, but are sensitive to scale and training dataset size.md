@@ -1,8 +1,8 @@
 ---
 tags:
-  - antibodies/misc
+  - protein-language-models/antibodies
 created: "2025-09-19T06:55:26"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **[[Antibody language models]] are able to distinguish correctly and incorrectly paired sequences, but are sensitive to model [[Scaling hypothesis|scale]] and training dataset size** [^neyestanak2025].

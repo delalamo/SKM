@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-folding/misc
+  - conformational-dynamics
 created: "2024-07-18T02:32:12"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 The **NVE ensemble** (microcanonical ensemble) conserves number of atoms, volume, and energy in a [[MD simulations|molecular dynamics simulation]] [^hnin2022]. It is used by classical Hamiltonian dynamics simulations under the ergodicity assumption. Use for equilibration is inadvisable since unstable/strained molecules transfer their energy to kinetic energy, leading to higher temperatures.

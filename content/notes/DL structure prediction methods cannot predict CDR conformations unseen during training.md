@@ -1,8 +1,9 @@
 ---
 tags:
+  - antibody-structure-prediction/cdr
   - antibodies/misc
 created: "2024-04-25T00:43:05"
-modified: "2026-04-10T15:56:34"
+modified: "2026-04-11T06:15:31"
 ---
 
 #### Summary
