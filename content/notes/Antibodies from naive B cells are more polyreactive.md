@@ -1,8 +1,8 @@
 ---
 tags:
-  - antibodies/misc
+  - antibody-developability/polyspecificity
 created: "2024-09-19T05:32:41"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **[[Antibodies]] from naive [[B cells]] are more [[Developability|polyreactive]] than those from memory B cells or those that have been clinically approved** [^shehata2019].

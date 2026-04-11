@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-folding/misc
+  - thermostability
 created: "2024-07-05T06:09:10"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **A subset of residue logits from [[ESM-IF]] are sufficient for accurately [[Stability and thermostability|stability prediction]]** [^cagiada2024]. Correlations between [[Sequence perplexity|perplexity]] and thermostability remained high when prediction inputs were limited to isoleucines and valines, hydrophobic residues, or buried residues.

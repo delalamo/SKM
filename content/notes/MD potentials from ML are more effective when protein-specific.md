@@ -1,9 +1,9 @@
 ---
 title: MD potentials from ML are more effective when protein-specific
 tags:
-  - protein-folding/misc
+  - conformational-dynamics
 created: "2026-04-05T18:00:02"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
  **Potentials for [[MD simulations]] that are derived from machine learning are more effective when they are specific to each protein, rather than general-purpose** [^navarro2023]. These force fields were calculated using [[Graph neural networks]].

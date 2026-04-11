@@ -1,9 +1,10 @@
 ---
 tags:
-  - protein-folding/misc
   - alphafold2
+  - structure-prediction
+  - thermostability
 created: "2025-07-22T11:37:28"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 
 #### Summary

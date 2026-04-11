@@ -1,9 +1,10 @@
 ---
 title: Small energy barriers separate unfolded and folded states of small fast-folding proteins
 tags:
-  - protein-folding/misc
+  - conformational-dynamics
+  - thermostability
 created: "2024-06-11T02:20:42"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
  **Small energy barriers (<4.5 $k_{B}T$) separate the folded and unfolded states of fast-folding proteins** [^lindorfflarsen2011]. In some proteins, the energy barriers are so low that it is difficult to say when protein folding ends and local relaxation begins.

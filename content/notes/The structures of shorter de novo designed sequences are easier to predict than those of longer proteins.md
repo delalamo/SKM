@@ -1,7 +1,8 @@
 ---
-tags: [protein-design/misc]
+tags:
+  - protein-backbone-design/designability
 created: "2024-09-01T04:29:37"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 
 #### Summary

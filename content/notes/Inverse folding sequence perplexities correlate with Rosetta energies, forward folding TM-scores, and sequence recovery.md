@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-design/misc
+  - inverse-folding/evaluation
 created: "2024-05-20T04:08:54"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
  **[[Inverse folding]] perplexities/log-likelihood values correlate with energies calculated with [[Rosetta]], [[TM-score]] of forward-folded decoys using [[OmegaFold]]** [^liu2024]**, and sequence recovery** [^akpinaroglu2023].

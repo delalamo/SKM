@@ -1,9 +1,9 @@
 ---
 title: Base PLMs must usually be fine-tuned to generate functionally active sequences
 tags:
-  - protein-design/misc
+  - protein-language-models/training
 created: "2026-03-18T07:59:23"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
  **Base [[Protein language models|protein language models]] must usually be fine-tuned to generate functionally active sequences** [^madani2023][^munsamy2024]. [^bixby2026] showed that, in a head-to-head between an unspecified foundation model and its "evo-tuned" derivative, the latter was better at [[Variant effect prediction|variant effect prediction]]. Note that this is not true of models where functional annotations can be provided, such as ZymCTRL [^munsamy2024] and ESM3 [^hayes2025].

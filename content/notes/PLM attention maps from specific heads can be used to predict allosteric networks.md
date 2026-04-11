@@ -1,8 +1,9 @@
 ---
 tags:
-  - protein-folding/misc
+  - conformational-dynamics
+  - protein-language-models/representations
 created: "2024-10-14T12:58:06"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 
 ## Summary

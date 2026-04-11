@@ -1,9 +1,9 @@
 ---
 title: X-ray density can capture alternate conformations of proteins and their ligands
 tags:
-  - protein-folding/misc
+  - conformational-dynamics
 created: "2025-04-24T03:11:21"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
  **[[X-ray-crystallography]] density can capture [[Protein dynamics|alternate conformations]] of proteins and their ligands** [^rosenberg2024]. These conformations can often be stably modeled with [[MD simulations|molecular dynamics]].

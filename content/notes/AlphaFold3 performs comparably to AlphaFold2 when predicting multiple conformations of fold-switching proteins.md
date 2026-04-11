@@ -1,9 +1,10 @@
 ---
 tags:
-  - protein-folding/misc
   - alphafold3
+  - structure-prediction
+  - conformational-dynamics
 created: "2025-11-07T17:32:43"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 
 #### Summary

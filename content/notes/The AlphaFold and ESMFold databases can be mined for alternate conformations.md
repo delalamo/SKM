@@ -1,10 +1,11 @@
 ---
 title: The AlphaFold and ESMFold databases can be mined for alternate conformations
 tags:
-  - protein-folding/misc
   - alphafold2
+  - structure-prediction
+  - conformational-dynamics
 created: "2024-05-30T01:36:56"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
  **The [[AlphaFold]] and [[ESMFold]] databases can be mined for alternate conformations** [^waymentsteele2023][^herrington2023]. This is because different sub-families of sequences yield different conformational states.

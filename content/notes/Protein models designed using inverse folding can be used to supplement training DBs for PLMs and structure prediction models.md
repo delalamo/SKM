@@ -1,8 +1,9 @@
 ---
 tags:
-  - protein-folding/misc
+  - structure-prediction
+  - protein-language-models/training
 created: "2025-02-07T00:45:40"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 
 ## Summary

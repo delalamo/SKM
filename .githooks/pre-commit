@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+from __future__ import annotations
+
 """
 pre-commit hook — auto-stamp `created` and `modified` in note frontmatter.
 

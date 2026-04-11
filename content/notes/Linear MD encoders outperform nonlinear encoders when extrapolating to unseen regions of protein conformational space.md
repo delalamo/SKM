@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-folding/misc
+  - conformational-dynamics
 created: "2024-06-25T04:22:19"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **Linear encoders outperform nonlinear encoders when extrapolating to unseen regions of protein conformational space** [^vani2023]. This was observed in [[MD simulations]] using machine learning to learn a [[Dimensionality reduction|reduced representation]] of the conformational space.

@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-design/misc
+  - inverse-folding/training
 created: "2024-05-05T08:26:18"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
  **Including ligands during [[Inverse folding|inverse folding]] allows amino acids in the binding pocket to be recovered at higher rates** [^dauparas2023]. For one test case, two of the three residues in a catalytic triad were not correctly predicted without ligand. However, inclusion of the ligand caused all three to be designed correctly.

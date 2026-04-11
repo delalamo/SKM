@@ -1,8 +1,9 @@
 ---
 tags:
-  - antibodies/misc
+  - protein-language-models/antibodies
+  - antibody-developability/expression
 created: "2026-04-05T17:07:03"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **[[Antibodies|Antibody]] [[Antibody language models|language models]] are worse for antibody [[Developability|expression prediction]] than generic [[Protein language models|PLMs]]** [^kenlay2024].

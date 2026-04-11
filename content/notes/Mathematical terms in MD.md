@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-folding/misc
+  - conformational-dynamics
 created: "2024-04-16T22:58:57"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 Notation follows the convention of [^hnin2022].

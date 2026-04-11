@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-folding/misc
+  - conformational-dynamics
 created: "2024-07-15T08:47:52"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 The **NPT ensemble** (isothermal-isobaric ensemble) maintains number of particles, pressure, and temperature in a [[MD simulations|molecular dynamics simulation]]. Spontaneous changes in an NPT ensemble cannot lead to increases in [[Gibbs free energy]] [^frenkel2002]. The reservoir acts as both a thermostat and a barostat.

@@ -1,8 +1,8 @@
 ---
 tags:
-  - antibodies/misc
+  - antibody-developability/humanization
 created: "2025-02-27T04:45:54"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **The process of [[Antibody humanization|humanization]] can cause [[Antibodies]] to become less stable** [^tennenhouse2023]. Humanization can also destabilize specific [[Complementarity-determining regions|CDRs]], leading to failure during humanization [^fernandezquintero2020].

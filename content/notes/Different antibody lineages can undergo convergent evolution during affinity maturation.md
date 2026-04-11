@@ -1,8 +1,8 @@
 ---
 tags:
-  - antibodies/misc
+  - affinity-maturation
 created: "2026-04-05T23:36:09"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **Different [[Antibodies|antibody]] lineages, including those from different [[Germline|germlines]], can undergo [[Evolution and natural selection|convergent evolution]] during [[Affinity maturation|affinity maturation]]** [^robinson2014][^wu2011]. For cases with the same germline, this can happen both within the same [[Immune repertoires|immune repertoire]] and across different organisms exposed to the same antigen. Convergent evolution across different VH germlines can also arise in the same individual [^ogega2024].

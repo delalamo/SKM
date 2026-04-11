@@ -1,9 +1,9 @@
 ---
 tags:
-  - protein-folding/misc
   - alphafold2
+  - structure-prediction
 created: "2024-05-18T08:26:00"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 
 #### Summary

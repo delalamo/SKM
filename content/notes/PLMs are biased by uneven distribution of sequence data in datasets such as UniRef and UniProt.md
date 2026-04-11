@@ -1,7 +1,8 @@
 ---
-tags: protein-design/misc
+tags:
+  - protein-language-models/training
 created: "2026-04-05T17:52:14"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 
 #### Summary

@@ -1,7 +1,8 @@
 ---
-tags: [protein-folding/misc]
+tags:
+  - conformational-dynamics
 created: "2025-05-23T04:55:28"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 
 #### Summary

@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-design/misc
+  - inverse-folding/training
 created: "2025-02-19T02:27:19"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 
 #### Summary

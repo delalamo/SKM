@@ -1,8 +1,8 @@
 ---
 tags:
-  - antibodies/misc
+  - affinity-maturation
 created: "2024-09-19T05:32:41"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **The [[Stability and thermostability|thermostability]] of [[Antibodies|antibodies]] decreases during [[Affinity maturation|affinity maturation]].** Likewise, antibody thermostability can be increased by introducing [[Germline|germline]] mutations [^shehata2019].

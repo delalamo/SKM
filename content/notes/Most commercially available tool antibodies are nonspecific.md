@@ -1,9 +1,9 @@
 ---
 title: Most commercially available tool antibodies are nonspecific
 tags:
-  - antibodies/misc
+  - antibody-developability/general
 created: "2025-02-04T03:02:52"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
  **Most commercial tool (antibodies) are [[Developability#Polyreactivity and autoreactivity|nonspecific]]** [^marcon2015]. This was assessed on over 1,100 antibodies available for sale for bench research (e.g., immunoprecipitation), which found that only 452 bound their targets with higher affinity than other targets.

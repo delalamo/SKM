@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-folding/misc
+  - conformational-dynamics
 created: "2024-08-08T03:24:29"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **Force fields used for [[MD simulations]] can be screened for agreement with bulk experimental data (for example NMR or SAXS data)** [^streit2024].

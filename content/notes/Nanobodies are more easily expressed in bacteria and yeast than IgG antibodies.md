@@ -1,8 +1,8 @@
 ---
 tags:
-  - antibodies/misc
+  - antibody-developability/expression
 created: "2025-09-04T12:56:47"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **[[Nanobodies]] are more easily expressed than IgG antibodies or [[Single chain variable fragments|scFvs]] in platforms involving yeast and *E. coli*** [^rossotti2021].

@@ -6,19 +6,39 @@ import { classNames } from "../util/lang"
 // Must stay in sync with MOC_TITLES in generate_mocs.py.
 const MOC_SLUGS: Record<string, string> = {
   "inverse-folding": "MOCs/Inverse-Folding",
-  "protein-folding":  "MOCs/Protein-Folding",
-  "protein-design":   "MOCs/Protein-Design",
-  "antibodies":       "MOCs/Antibodies",
+  "protein-folding": "MOCs/Protein-Folding",
+  "protein-design": "MOCs/Protein-Design",
+  "protein-language-models": "MOCs/Protein-language-models",
+  "antibodies": "MOCs/Antibodies",
+  "antibody-structure-prediction": "MOCs/Antibody-structure-prediction",
+  "structure-prediction": "MOCs/Structure-prediction",
+  "conformational-dynamics": "MOCs/Conformational-dynamics",
+  "thermostability": "MOCs/Stability-and-thermostability",
+  "affinity-maturation": "MOCs/Affinity-maturation",
+  "antibody-developability": "MOCs/Developability",
 }
 
 // Maps subtag slugs to the section anchor used in the MOC.
 // Must stay in sync with SUBTAG_TITLES in generate_mocs.py.
 const SUBTAG_ANCHORS: Record<string, string> = {
-  "training":   "Training",
-  "execution":  "Execution",
+  "training": "Training",
+  "representations": "Representations",
   "antibodies": "Antibodies",
-  "datasets":   "Datasets",
-  "misc":       "Miscellaneous",
+  "evaluation": "Evaluation",
+  "designability": "Designability",
+  "cdr": "CDR",
+  "complex-prediction": "Complex Prediction",
+  "expression": "Expression",
+  "hydrophobicity": "Hydrophobicity",
+  "polyspecificity": "Polyspecificity",
+  "self-association": "Self-association",
+  "solubility": "Solubility",
+  "humanization": "Humanization",
+  "immunogenicity": "Immunogenicity",
+  "general": "General",
+  "execution": "Execution",
+  "datasets": "Datasets",
+  "misc": "Miscellaneous",
 }
 
 function tagToMocUrl(tag: string): string | null {

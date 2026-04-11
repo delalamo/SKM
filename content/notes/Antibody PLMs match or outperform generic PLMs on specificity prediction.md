@@ -1,8 +1,8 @@
 ---
 tags:
-  - antibodies/misc
+  - protein-language-models/antibodies
 created: "2024-07-02T05:08:27"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 **[[Protein language models|PLMs]] for [[Antibodies|antibodies]] match or slightly outperform generic PLMs on antigen specificity prediction** [^wang2023]. In contrast, [[Generic PLMs outperform antibody-specific PLMs on zero-shot predictions of affinity changes]].

@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-folding/misc
+  - conformational-dynamics
 created: "2024-07-15T08:36:40"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
 The **NVT ensemble** (canonical ensemble) retains number of atoms, volume, and temperature in a [[MD simulations|molecular dynamics simulation]]. It simulates at an external temperature bath at a target temperature. Spontaneous changes in NVT simulations cannot lead to increases in [[Helmholtz free energy]] [^frenkel2002].

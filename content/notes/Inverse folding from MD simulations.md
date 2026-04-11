@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-design/misc
+  - inverse-folding/evaluation
 created: "2025-05-23T04:29:43"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T06:06:39"
 ---
 #### Summary
  **The combination of [[MD simulations]] with [[Inverse folding|inverse folding]] was explored by [^brotzakis2025] in redesigning a [[Nanobodies|nanobody]] to have slower dissociation from its [[Antibody-antigen interactions|antigen]].**
