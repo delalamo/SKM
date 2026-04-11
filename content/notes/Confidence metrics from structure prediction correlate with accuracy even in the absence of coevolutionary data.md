@@ -4,7 +4,7 @@ tags:
   - tm-score
   - plddt
 created: "2025-02-27T04:19:52"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -13,11 +13,11 @@ modified: "2026-04-11T07:27:50"
 
 #### Figures
 
-\![[Pasted-image-20240716092658.png]]
+![[Pasted-image-20240716092658.png]]
 
 *Figure from [^roney2022]*
 
-\![[Confidence.png]]
+![[Confidence.png]]
 
 *Figure from [^chen2024]*
 

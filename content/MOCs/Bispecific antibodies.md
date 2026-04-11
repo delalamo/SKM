@@ -3,13 +3,13 @@ title: Bispecific antibodies
 tags:
   - bispecific-antibodies
 created: "2026-04-10T14:02:57"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 *Redirects from trispecific antibodies, polyspecific antibodies*
 **Bispecific antibodies** are [[Antibodies|antibodies]] that can bind to two targets. These are designed to either be combinatorial (where the antibodies can bind to either target alone, and thus have double the breadth of equivalent mAbs) or obligate (where the antibodies are too low-affinity to bind to either target unless the other is also present). In general, each arm can function either by receptor inhibition, receptor activation, payload delivery, [[Checkpoint inhibition|checkpoint inhibition]] (for targeting cancer), [[T cell]] engagement, or T cell stimulation.
 
-\![[Pasted-image-20251201142413.png]]
+![[Pasted-image-20251201142413.png]]
 *Figure from [[10.1038__s41573-024-00896-6|Klein et al 2024]]*
 
 #### Mechanisms

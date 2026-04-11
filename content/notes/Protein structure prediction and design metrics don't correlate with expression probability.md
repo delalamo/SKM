@@ -3,7 +3,7 @@ tags:
   - protein-design/misc
   - plddt
 created: "2026-03-06T09:43:56"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -12,7 +12,7 @@ modified: "2026-04-11T07:27:50"
 
 #### Figures
 
-\![[AUROC-=-0.57.png]]
+![[AUROC-=-0.57.png]]
 
 #### See also
 

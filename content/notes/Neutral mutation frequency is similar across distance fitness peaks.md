@@ -1,7 +1,7 @@
 ---
 tags: protein-design/misc
 created: "2024-05-05T12:15:49"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -10,7 +10,7 @@ modified: "2026-04-10T14:30:55"
 
 #### Figures
 
-\![[Fitness-evolution-GFP.png]]
+![[Fitness-evolution-GFP.png]]
 
 *Figure from [^sarkisyan2016]*
 

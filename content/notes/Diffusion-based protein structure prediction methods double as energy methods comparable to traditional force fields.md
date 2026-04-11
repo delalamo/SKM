@@ -3,7 +3,7 @@ tags:
   - diffusion-models/structure-prediction
   - protein-folding/structure-prediction
 created: "2026-04-10T15:35:05"
-modified: "2026-04-11T06:15:31"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ modified: "2026-04-11T06:15:31"
 **[[Diffusion models|Diffusion]]-based [[Structure prediction|protein structure prediction]] methods double as energy functions comparable in performance to traditional methods like [[Rosetta]]** [^roney2025]. This was observed by computing the energy at $t=0.1$, which was a hyperparameter (see below)
 
 #### Figures
-\![[Decoy-Ranking-Performance.png]]
+![[Decoy-Ranking-Performance.png]]
 
 *Figure from [^roney2025]*
 

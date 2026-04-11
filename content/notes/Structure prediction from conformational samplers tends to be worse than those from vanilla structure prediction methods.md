@@ -4,7 +4,7 @@ tags:
   - conformational-dynamics/modeling
   - tm-score
 created: "2025-05-18T00:49:42"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -13,7 +13,7 @@ modified: "2026-04-11T07:27:50"
 
 #### Figures
 
-\![[RMSD-Distribution-Across-Cluster-Representatives---BioEmu-vs-AFSample2.png]]
+![[RMSD-Distribution-Across-Cluster-Representatives---BioEmu-vs-AFSample2.png]]
 
 *Figure from [^kyrylenko2025]*
 

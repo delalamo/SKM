@@ -5,7 +5,7 @@ tags:
   - plddt
   - pae
 created: "2026-02-20T18:11:03"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -14,15 +14,15 @@ modified: "2026-04-11T07:27:50"
 
 #### Figures
 
-\![[Pasted-Graphic-2-2.png]]
+![[Pasted-Graphic-2-2.png]]
 
 *Figure from [^jussupow2023]*
 
-\![[Pasted-image-20240722081109.png]]
+![[Pasted-image-20240722081109.png]]
 
 *Figure from [^gavaldagarcia2024]*
 
-\![[Pasted-image-20260220181048.png]]
+![[Pasted-image-20260220181048.png]]
 
 *Figure from [^mntener2026]*
 

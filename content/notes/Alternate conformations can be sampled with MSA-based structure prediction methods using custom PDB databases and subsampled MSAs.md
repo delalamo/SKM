@@ -5,7 +5,7 @@ tags:
   - structure-prediction/sampling
   - conformational-dynamics/modeling
 created: "2025-12-19T12:44:03"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -28,11 +28,11 @@ Alternate conformations sampled via
 
 #### Figures
 
-\![[Pasted-image-20240423091334.png]]
+![[Pasted-image-20240423091334.png]]
 
 *Figure from [^riccabona2024]*
 
-\![[Pasted-image-20241016074333.png]]
+![[Pasted-image-20241016074333.png]]
 
 *Figure from [^schafer2024]*
 

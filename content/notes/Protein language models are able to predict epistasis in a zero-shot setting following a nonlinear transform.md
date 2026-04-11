@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/representations
 created: "2026-01-22T12:38:44"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 ## Summary
@@ -15,7 +15,7 @@ Epistasis is defined as $\varepsilon^{e} = \log f^{e}_{AB} - \left( \log f^{e}_{
 
 ## Figures
 
-\![[Pasted-image-20250919070445.png]]
+![[Pasted-image-20250919070445.png]]
 *Figure from [Nambiar et al 2025][^nambiar2025]*
 
 [^nambiar2025]: Nambiar et al. (2025) "Protein Language Models Capture Structural and Functional Epistasis in a Zero-Shot Setting." https://doi.org/10.1101/2025.09.14.676130

@@ -3,7 +3,7 @@ title: DockQ
 tags:
   - dockq
 created: "2026-04-10T14:02:57"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 *(pDockQ redirects here)*
@@ -20,14 +20,14 @@ A DockQ value of 0.23 or better is usually treated as a correctly docked pose.
 
 #### Details
 
-\![[Pasted-image-20241001064019.png]]
+![[Pasted-image-20241001064019.png]]
 *Figure from [[10.1101__2024.09.21.614257|Hitawala & Gray 2024]]*
 
 #### Details
 
 A pDockQ of 0.50 was found to filter out nearly all false positives in a study on predicting protein-protein interactions ([[10.1038__s41594-022-00910-8|Burke et al 2023]]).
 
-\![[Pasted-image-20241002094412.png]]
+![[Pasted-image-20241002094412.png]]
 *Figure from [[10.1038__s41594-022-00910-8|Burke et al 2023]]*
 
 <!-- generated -->

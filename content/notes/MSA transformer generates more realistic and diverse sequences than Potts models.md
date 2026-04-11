@@ -3,7 +3,7 @@ tags:
   - protein-design/misc
   - tm-score
 created: "2024-11-04T23:49:11"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -12,11 +12,11 @@ modified: "2026-04-11T07:27:50"
 
 #### Figures
 
-\![[PF00072.jpg]]
+![[PF00072.jpg]]
 
 *Figure from [^sgarbossa2023]*
 
-\![[Pasted-image-20241105054851.png]]
+![[Pasted-image-20241105054851.png]]
 
 *Figure from [^alamdari2023]*
 

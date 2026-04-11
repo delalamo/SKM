@@ -2,13 +2,13 @@
 tags:
   - antibodies/misc
 created: "2024-11-14T02:47:10"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 #### Summary
 **The [[Antibody-antigen binding affinity prediction|affinity]] of [[Antibodies|antibodies]] and [[Nanobodies|nanobodies]] can be improved by [[Stability and thermostability|stabilization]].** For antibodies, [^hie2023] and [^shanker2024] achieved this using [[Protein language models]] and [[Inverse folding|inverse folding models]], respectively, as evidenced by targeting of [[Framework region|framework]] residues. For nanobodies, [^ketaren2023] specifically target residues in [[Framework region|FR3]] which they call a "stabilization code".
 
 #### Figures
-\![[Pasted-image-20231023071242.png]]
+![[Pasted-image-20231023071242.png]]
 *Figure from [^ketaren2023] — teal and purple are the non-stabilized and stabilized nanobodies, respectively*
 
 #### See also

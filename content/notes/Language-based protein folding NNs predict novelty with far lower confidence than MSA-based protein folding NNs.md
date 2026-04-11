@@ -2,7 +2,7 @@
 tags:
   - structure-prediction/sampling
 created: "2025-05-01T06:05:41"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ modified: "2026-04-11T07:27:50"
 
 #### Figures
 
-\![[Pasted-image-20250501120435.png]]
+![[Pasted-image-20250501120435.png]]
 
 *Figure from [^yeo2025]*
 

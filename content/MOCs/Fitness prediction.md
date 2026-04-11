@@ -3,12 +3,12 @@ title: Fitness prediction
 tags:
   - fitness-prediction
 created: "2026-04-10T14:02:57"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 **Fitness prediction** describes the problem of predicting a protein's fitness from its sequence, with or without structural data. It is affected by many other observables ([[Stability and thermostability|stability]], [[Protein folding|correct folding]], etc) which can lead to [[Epistasis|epistasis]], which is the inability to model fitness as a linear combination of the effects of individual mutations.
 
-\![[Pasted-image-20241127045541.png]]
+![[Pasted-image-20241127045541.png]]
 *Figure from [[10.48550__ARXIV.2411.12957|Sandhu et al 2024]]*
 
 #### Notes

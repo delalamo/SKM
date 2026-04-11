@@ -3,7 +3,7 @@ tags:
   - protein-language-models/training
   - plddt
 created: "2026-01-22T12:38:44"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -12,7 +12,7 @@ modified: "2026-04-11T07:27:50"
 
 #### Figures
 
-\![[scPerplexity.png]]
+![[scPerplexity.png]]
 
 *Figure from [^alamdari2023]*
 

@@ -3,7 +3,7 @@ tags:
   - protein-folding/misc
   - tm-score
 created: "2025-05-19T03:43:23"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-11T07:41:30"
 ---
 
 ## Summary
@@ -12,7 +12,7 @@ modified: "2026-04-11T07:27:50"
 
 ## Figures
 
-\![[Pasted-image-20240416133906.png]]
+![[Pasted-image-20240416133906.png]]
 *Figure from [Liu et al 2024a][^liu2024]*
 
 [^liu2024]: Liu et al. (2024) "PLMSearch: Protein language model powers accurate and fast sequence search for remote homology." *Nature Communications*. https://doi.org/10.1038/s41467-024-46808-5

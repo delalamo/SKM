@@ -3,15 +3,15 @@ title: Epistasis
 tags:
   - epistasis
 created: "2026-04-10T14:02:57"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 **Epistasis** refers to the non-additivity of fitness effects arising from specific combinations of mutations. [[10.1101__2024.06.23.600144|Johnston et al 2024]] outline three types of epistasis: magnitude epistasis ("same direction as expected but are not perfectly additive"), sign epistasis ("effect of one of the substitutions changes direction in the context of the other"), and reciprocal epistasis ("effects of both substitutions change direction when they are made together").
 
-\![[types_of_epistasis.png]]
+![[types_of_epistasis.png]]
 *Figure from [[10.1101__2024.06.23.600144|Johnston et al 2024]]*
 
-\![[Pasted-image-20231015155209.png]]
+![[Pasted-image-20231015155209.png]]
 *Figure from [[10.1038__s41586-023-06328-6|Tsuboyama et al 2023]]*
 
 #### Notes
@@ -31,7 +31,7 @@ modified: "2026-04-10T14:30:55"
 
 #### Measuring epistasis
 
-\![[Pasted-image-20241127060038.png]]
+![[Pasted-image-20241127060038.png]]
 *Figure from [[10.48550__ARXIV.2411.12957|Sandhu et al 2024]]*
 * **Graph Fourier Transform:** A decomposition that breaks down the signal (here, fitness) into distinct "epistatic orders"
 * **Dirichlet energy:** quantifies how variable (i.e., rugged) the landscape is, with high energy corresponding to high ruggedness

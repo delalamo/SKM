@@ -3,13 +3,13 @@ title: Thermophilic proteins have more aliphatic and charged residues on surface
 tags:
   - thermostability/determinants
 created: "2024-12-02T06:54:20"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-11T07:41:30"
 ---
 #### Summary
  **Thermophilic proteins have more aliphatic and charged residues on surface than mesophilic proteins** [^ertfelt2024].
 
 #### Figures
-\![[Dataset.png]]
+![[Dataset.png]]
 *Figure from [^ertfelt2024]*
 
 #### See also

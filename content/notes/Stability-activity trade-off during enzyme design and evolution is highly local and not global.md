@@ -2,7 +2,7 @@
 tags:
   - thermostability/design
 created: "2025-03-15T23:46:30"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-11T07:41:30"
 ---
 
 ---
@@ -16,7 +16,7 @@ summary: Stability and function trade off during design in both enzymes and anti
 In enzymes, [^hou2023] find that residues in the first shell surrounding the active site contribute to stability and counteract destabilizing residues in the active site. On average, they found that mutating active site residues led to increased stability of on average 0.54 kcal/mol, compared to -0.37 kcal/mol for non-catalytic residues. In contrast, [^zarifi2025] find that there is no clear split between active-site and second-shell in stabilizing or destabilizing proteins
 
 #### Figures
-\![[Growth-Temperature-(°C).png]]
+![[Growth-Temperature-(°C).png]]
 *Figure from [^muir2024]*
 
 [^tokuriki2008]: Tokuriki et al. (2008) "How Protein Stability and New Functions Trade Off." *PLoS Computational Biology*. https://doi.org/10.1371/journal.pcbi.1000002

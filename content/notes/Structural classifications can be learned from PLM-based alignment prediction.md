@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/representations
 created: "2024-07-02T05:24:23"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ modified: "2026-04-11T06:06:39"
 
 #### Figures
 
-\![[Dimension-2.png]]
+![[Dimension-2.png]]
 *Figure 2 from [^hamamsmy2023]*
 
 [^hamamsmy2023]: Hamamsy et al. (2023) "Protein remote homology detection and structural alignment using deep learning." *Nature Biotechnology*. https://doi.org/10.1038/s41587-023-01917-2

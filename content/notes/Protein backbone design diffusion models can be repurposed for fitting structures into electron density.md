@@ -4,7 +4,7 @@ tags:
   - diffusion-guidance/structure-prediction
   - protein-folding/structure-prediction
 created: "2024-12-31T07:33:08"
-modified: "2026-04-11T06:15:31"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -13,7 +13,7 @@ modified: "2026-04-11T06:15:31"
 
 #### Figures
 
-\![[Pasted-image-20241231133007.png]]
+![[Pasted-image-20241231133007.png]]
 
 *Figure from [^maddipatla2024]*
 

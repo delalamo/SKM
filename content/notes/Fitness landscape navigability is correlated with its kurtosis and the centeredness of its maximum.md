@@ -2,7 +2,7 @@
 tags:
   - conformational-dynamics/evolution
 created: "2026-03-22T10:44:50"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -11,5 +11,5 @@ A fitness landscape's navigability during directed evolution is correlated with 
 
 #### Figures
 
-\![[Pasted-image-20241027091657.png]]
+![[Pasted-image-20241027091657.png]]
 *Figure from [10.1016__j.cels.2025.101387|Li et al 2024c]*

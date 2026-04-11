@@ -2,7 +2,7 @@
 tags:
   - protein-backbone-design/designability
 created: "2025-04-22T00:43:20"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ modified: "2026-04-11T06:06:39"
 
 #### Figures
 
-\![[Buried-nonpolar-surface-area.png]]
+![[Buried-nonpolar-surface-area.png]]
 
 *Figure from [^rocklin2017]*
 

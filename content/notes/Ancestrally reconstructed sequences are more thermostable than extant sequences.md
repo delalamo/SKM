@@ -3,7 +3,7 @@ tags:
   - protein-folding/misc
   - thermostability/evolution
 created: "2024-04-16T10:20:53"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-11T07:41:30"
 ---
 
 ---
@@ -21,7 +21,7 @@ Williams et al. found using simulations that the probability-maximizing methods 
 Sennett et al. provide evidence against the idea that the process of ancestral reconstruction leads to proteins with artificially increased thermostability.[^sennett2023]
 
 #### Figures
-\![[Pasted-image-20231027094903.png]]
+![[Pasted-image-20231027094903.png]]
 *From [^sennett2023]*
 
 [^wilding2017]: Wilding et al. (2017) "Reverse engineering: transaminase biocatalyst development using ancestral sequence reconstruction." *Green Chemistry*. https://doi.org/10.1039/c7gc02343j

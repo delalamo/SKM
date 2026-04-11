@@ -3,7 +3,7 @@ tags:
   - diffusion-models/training
   - protein-design/training
 created: "2026-03-21T17:43:50"
-modified: "2026-04-11T06:15:31"
+modified: "2026-04-11T07:41:30"
 ---
 #### Summary
 **Training machine learning models for either [[Inverse folding|inverse folding]] or [[Protein backbone design|protein backbone design]] via [[Diffusion models|diffusion]] exclusively on predicted models worsens performance** [^hsu2022][^su2023]. This was observed when training [[ESM-IF]] and [[Geometric Vector Perceptrons|GVP]] as well as when training using the (Evoformer) or the [[Hybrid sequence-structure models|hybrid sequence-structure method]] MIF-ST, but not (SaProt) (which uses tokens from the (Foldseek) alphabet). The latter study also looked at downstream performance and saw worse results. This was shown to be because predicted models are "too perfect" at a local level [^tan2025].
@@ -23,11 +23,11 @@ modified: "2026-04-11T06:15:31"
 
 *Table from [^hsu2022]*
 
-\![[Pasted-Graphic-4-1.png]]
+![[Pasted-Graphic-4-1.png]]
 *Figure from [^su2023]*
 
-\![[bafkreiawfxhyqc4grpfhhgjsyezzahtsrehsxzughw6vmpsuw2tqsazz64@jpeg.jpg]]
-\![[Pasted-image-20250722113536.png]]
+![[bafkreiawfxhyqc4grpfhhgjsyezzahtsrehsxzughw6vmpsuw2tqsazz64@jpeg.jpg]]
+![[Pasted-image-20250722113536.png]]
 *Figures from [^tan2025]*
 
 #### See also

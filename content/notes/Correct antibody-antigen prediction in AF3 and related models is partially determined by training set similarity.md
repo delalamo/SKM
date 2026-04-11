@@ -3,7 +3,7 @@ tags:
   - alphafold3
   - antibody-structure-prediction/complex-prediction
 created: "2026-03-23T08:54:03"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -12,7 +12,7 @@ modified: "2026-04-11T06:06:39"
 
 #### Figures
 
-\![[AlphaFold2.3.jpg]]
+![[AlphaFold2.3.jpg]]
 
 *Figure from [^fromm2026]*
 

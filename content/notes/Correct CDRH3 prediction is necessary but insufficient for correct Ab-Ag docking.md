@@ -2,16 +2,16 @@
 tags:
   - antibody-structure-prediction/complex-prediction
 created: "2025-02-12T10:41:32"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 #### Summary
 **Correct prediction of [[Complementarity-determining regions|CDRH3]] is necessary but insufficient for correct [[Antibodies|antibody]]-antigen docking** [^yin2024][^hitawala2024].
 
 #### Figures
-\![[Pasted-image-20240624164409.png]]
+![[Pasted-image-20240624164409.png]]
 *Figure from [^yin2024]*
 
-\![[Pasted-image-20241001064019.png]]
+![[Pasted-image-20241001064019.png]]
 *Figure from [^hitawala2024]*
 
 #### See also

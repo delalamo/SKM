@@ -2,7 +2,7 @@
 tags:
   - protein-design/misc
 created: "2026-04-05T17:41:51"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ Measurements of protein-ligand effects (such as K_d and IC_50) carried out in di
 
 #### Figures
 
-\![[Pasted-image-20240225100932.png]]
+![[Pasted-image-20240225100932.png]]
 *Figure 1 from [10.1021__acs.jcim.4c00049|Landrum & Riniker 2024]*
 
 #### See also

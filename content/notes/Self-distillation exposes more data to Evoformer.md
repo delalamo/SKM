@@ -2,7 +2,7 @@
 tags:
   - structure-prediction/training
 created: "2024-05-10T00:57:20"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ modified: "2026-04-11T07:27:50"
 
 #### Figures
 
-\![[Pasted-image-20240418162324.png]]
+![[Pasted-image-20240418162324.png]]
 *Figure from [^jumper2021]*
 
 [^jumper2021]: Jumper et al. (2021) "Highly accurate protein structure prediction with AlphaFold." *Nature*. https://doi.org/10.1038/s41586-021-03819-2

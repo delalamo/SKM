@@ -4,7 +4,7 @@ tags:
   - alphafold2
   - structure-prediction/metrics
 created: "2025-12-19T12:46:41"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -13,7 +13,7 @@ modified: "2026-04-11T07:27:50"
 
 #### Figures
 
-\![[Bootsrap-Cl-for-AF2-metrics-under-subsamping.png]]
+![[Bootsrap-Cl-for-AF2-metrics-under-subsamping.png]]
 
 *Figure from [^roney2025]*
 

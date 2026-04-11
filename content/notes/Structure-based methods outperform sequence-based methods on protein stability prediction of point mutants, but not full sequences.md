@@ -2,7 +2,7 @@
 tags:
   - thermostability/prediction
 created: "2026-04-05T17:45:06"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -69,7 +69,7 @@ Data are ambiguous about when [[Rosetta]] or [[ProteinMPNN]] is better ([^reeves
 
 *Figure from [^tan2023]*
 
-\![[Pasted-image-20241231144322.png]]
+![[Pasted-image-20241231144322.png]]
 
 *Figure from [^cho2024]*
 

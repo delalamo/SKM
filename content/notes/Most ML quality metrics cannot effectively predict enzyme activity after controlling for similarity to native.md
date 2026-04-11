@@ -3,7 +3,7 @@ tags:
   - protein-design/misc
   - plddt
 created: "2025-02-27T04:21:03"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -12,7 +12,7 @@ modified: "2026-04-11T07:27:50"
 
 #### Figures
 
-\![[Average-of-CuSOD-and-MDH-ROC-AUC-for-round-2.png]]
+![[Average-of-CuSOD-and-MDH-ROC-AUC-for-round-2.png]]
 
 *Figure 2A from [^johnson2024]*
 

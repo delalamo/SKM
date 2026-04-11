@@ -2,7 +2,7 @@
 tags:
   - protein-backbone-design/designability
 created: "2024-06-11T02:55:34"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -15,7 +15,7 @@ It is unclear if this is due to the "[[Natural selection favors the highest aver
 
 #### Figures
 
-\![[Undiscovered-folds.png]]
+![[Undiscovered-folds.png]]
 
 *Figure from [^minami2023]*
 

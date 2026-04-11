@@ -3,12 +3,12 @@ title: AlphaMissense
 tags:
   - alphamissense
 created: "2026-04-10T14:02:57"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 **AlphaMissense** is a [[Protein language models|protein language model]] designed for [[Variant effect prediction|variant effect prediction]] that is built on top of [[AlphaFold|AlphaFold2]] and fine-tuned using primate data. Achieves state-of-the-are performance on ClinVar data.
 
-\![[AlphaMissense.png]]
+![[AlphaMissense.png]]
 *Figure from [[10.1126__science.adg7492|Cheng et al 2023]]*
 
 #### Notes

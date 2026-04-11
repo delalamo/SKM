@@ -4,7 +4,7 @@ tags:
   - diffusion-guidance/structure-prediction
   - protein-folding/structure-prediction
 created: "2026-04-10T15:35:05"
-modified: "2026-04-11T06:15:31"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -12,12 +12,12 @@ modified: "2026-04-11T06:15:31"
 **[[Diffusion models|Diffusion]]-based [[Structure prediction|structure prediction]] can be [[Diffusion guidance|steered]] into specific conformations by modifying conditioning embeddings rather than the latent-space embeddings used for diffusion** [^li2026][^maddipatla2026]. This has the added advantage of being reused, and therefore facilitating improvements, in sequential diffusion runs. This was done using [[cryo-EM]] and [[NMR]] data and was shown to slightly outperform standard Diffusion Posterior Sampling.
 
 #### Figures
-\![[Pasted-image-20260306093401.png]]
-\![[Pasted-image-20260306093452.png]]
+![[Pasted-image-20260306093401.png]]
+![[Pasted-image-20260306093452.png]]
 
 *Figures from [^maddipatla2026]*
 
-\![[Pasted-image-20260220170148.png]]
+![[Pasted-image-20260220170148.png]]
 
 *Figure from [^li2026]*
 

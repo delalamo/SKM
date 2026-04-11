@@ -1,7 +1,7 @@
 ---
 tags: protein-design/misc
 created: "2026-03-29T11:17:38"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -18,11 +18,11 @@ In [^johnston2024], where a library of 160,000 sequences saturating four positio
 
 #### Figures
 
-\![[Pasted-Graphic-26.png]]
+![[Pasted-Graphic-26.png]]
 
 *Figure from [^johnston2024]*
 
-\![[Pasted-Graphic-6-1.png]]
+![[Pasted-Graphic-6-1.png]]
 
 *Figure from [^muir2024]*
 

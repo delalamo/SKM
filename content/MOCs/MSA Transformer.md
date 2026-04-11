@@ -3,12 +3,12 @@ title: MSA Transformer
 tags:
   - msa-transformer
 created: "2026-04-10T14:02:57"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 **MSA-transformer** is a [[Protein language models|protein language model]] that operates on [[Multiple sequence alignments|multiple sequence alignments]]. It was used as the basis to train [[ESM]]-1v. It was developed in parallel with the [[Evoformer]] and has many features in common. It is the basis for [[ProteinNPT]].
 
-\![[Pasted-image-20231107233109.png]]
+![[Pasted-image-20231107233109.png]]
 *Figure from [[10.1101__2021.02.12.430858|Rao et al 2021]]*
 
 #### Notes

@@ -3,7 +3,7 @@ title: Model merging
 tags:
   - model-merging
 created: "2026-04-10T14:02:57"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 **Model merging** refers to the process of combining the weights of two or more neural networks with identical architectures to improve robustness.
@@ -13,12 +13,12 @@ modified: "2026-04-10T14:30:55"
 
 **Linear interpolation/model soup**: Multiple models generated on the same data (with the same split) with different hyperparameters. Uniform soup refers to averaging without weighting, while greedy soup refers to averaging each model one at a time but only keeping the change if accuracy is improved. However, it has been shown to lead to catastrophic decreases in model accuracy if interpolation is carried out between models that don't share an optimization trajectory ([[10.48550__ARXIV.2008.11687|Neyshabur et al 2020]]).
 
-\![[Pasted-image-20240905185507.png]]
+![[Pasted-image-20240905185507.png]]
 *Figure from [[10.48550__ARXIV.2008.11687|Neyshabur et al 2020]]*
 
 **Task arithmetic**: Adds and/or subtracts model weights derived from neural networks fine-tuned for discrete tasks.
 
-\![[Pasted-image-20240905182755.png]]
+![[Pasted-image-20240905182755.png]]
 *Figure from [[10.48550__ARXIV.2212.04089|Ilharco et al 2022]]*
 
 **Trim, elect sign, merge**: Also merges task-specific fine-tuned models ([[10.48550__ARXIV.2306.01708|Yadav et al 2023]]). Proceeds in three steps: (1) Trim — only the influential parameter values are retained by setting redundant values in each task vector to zero; (2) Elect sign — remove sign conflicts; (3) Merge — merge parameters with consistent sign changes by taking the mean. This approach was found to outperform other approaches for both executing finetuning tasks and out-of-distribution generalization. Task arithmetic was a close second. On soup-like tasks that merge multiple models trained on the same objective, it matches or outperforms all other options, including ensembling. It also works well to generate starting points for initialization.

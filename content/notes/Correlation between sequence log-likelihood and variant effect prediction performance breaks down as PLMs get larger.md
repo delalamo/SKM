@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/representations
 created: "2026-01-22T12:38:44"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ modified: "2026-04-11T06:06:39"
 
 #### Figures
 
-\![[Pasted-Graphic-7.png]]
+![[Pasted-Graphic-7.png]]
 
 *Figure from [^gordon2024]*
 
