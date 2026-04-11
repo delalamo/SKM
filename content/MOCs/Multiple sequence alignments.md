@@ -3,7 +3,7 @@ title: Multiple sequence alignments
 tags:
   - multiple-sequence-alignments
 created: "2026-04-10T14:02:57"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:42:59"
 ---
 
 **Multiple sequence alignments** (MSAs) are sets of sequences aligned either to a reference sequence or to each other. They are widely used in bioinformatics:
@@ -14,7 +14,7 @@ modified: "2026-04-10T14:30:55"
 #### Notes
 
 * **The inclusion of MSAs improves zero-shot prediction using [[Protein language models|PLMs]]** ([[10.1101__2023.10.01.560349|Su et al 2023]])
-	\![[MSA-effect-on-variant-effect-prediction.png]]
+![[MSA-effect-on-variant-effect-prediction.png]]
 	*Figure from [[10.1101__2023.10.01.560349|Su et al 2023]]*
 
 <!-- generated -->

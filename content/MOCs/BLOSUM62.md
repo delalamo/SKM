@@ -3,7 +3,7 @@ title: BLOSUM62
 tags:
   - blosum62
 created: "2026-04-10T14:02:57"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-11T07:42:59"
 ---
 
 The **BLOSUM62** matrix quantifies the similarity of amino acids to one another when computing evolutionary distance sequences ([[10.1073__pnas.89.22.10915|Henikoff and Henikoff 1992]]).
@@ -17,7 +17,7 @@ The **BLOSUM62** matrix quantifies the similarity of amino acids to one another 
 * **The BLOSUM62 matrix has been used to restrict mutagenesis of [[Antibodies|antibodies]]** ([[10.1038_s41467-022-31457-3|Makowski et al 2022]]). BLOSUM-guided mutagenesis has been shown to lead to greater binding likelihood than [[Protein language models|protein language models]] and [[Inverse folding|inverse folding models]] ([[10.1101__2024.03.26.586756|Chinery et al 2024]]) in [[Trastuzumab]].
 ![[Pasted-image-20260323084753.png]]
 * **The BLOSUM62 matrix is unsuitable for [[T-cell receptors|TCR]] analysis due to overstating the effect of non-cysteine mutations** ([[10.1093__bib__bbae602|Postovskaya et al 2024]]).
-	\![[Pasted-image-20241127061303.png]]
+![[Pasted-image-20241127061303.png]]
 	*Figure from [[10.1093__bib__bbae602|Postovskaya et al 2024]]*
 
 <!-- generated -->
