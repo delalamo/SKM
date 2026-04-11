@@ -21,6 +21,7 @@ import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
+from typing import Optional
 
 # ── helpers ────────────────────────────────────────────────────────────────────
 
@@ -59,7 +60,7 @@ def staged_files() -> list[tuple[str, str]]:
     return entries
 
 
-def stamp(text: str, status: str, ts: str) -> str | None:
+def stamp(text: str, status: str, ts: str) -> Optional[str]:
     """
     Return the updated file text, or None if no change is needed.
 

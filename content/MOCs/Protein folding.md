@@ -3,7 +3,7 @@ title: Protein folding
 tags:
   - protein-folding
 created: "2026-04-10T14:30:55"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T06:15:31"
 ---
 
 *Not to be confused with [[Structure prediction|protein structure prediction]]*
@@ -15,6 +15,19 @@ modified: "2026-04-11T06:06:39"
 * [[Protein folding neural networks do not learn the physics of protein folding for most proteins#Summary|no-h]]
 
 <!-- generated -->
+
+## Structure Prediction
+
+- [[Biomolecular diffusion models cannot reproduce the equilibrium dynamics of the simulations they are trained on]]
+- [[Confidence metrics for diffusion-based structure prediction methods can be improved with minimal changes to conditioning representations]]
+- [[Diffusion-based protein structure prediction methods double as energy methods comparable to traditional force fields]]
+- [[Diffusion-based structure prediction can be steered by modifying the conditioning embeddings rather than the latent space, and such embeddings can be used for subsequent iterations]]
+- [[Diffusion-based structure prediction can sometimes model conformational ensembles]]
+- [[Enhanced diffusion with metadynamics-like potentials can sometimes convergence slower than unbiased diffusion]]
+- [[Ensembles can be modeled by structure prediction NNs using experimental data via guidance sampling]]
+- [[Flow matching and diffusion perform comparably for biomolecular structure prediction]]
+- [[Guidance potentials can be added to diffusion-based structure prediction for enhanced sampling of protein conformations]]
+- [[Protein backbone design diffusion models can be repurposed for fitting structures into electron density]]
 
 ## Miscellaneous
 
@@ -32,6 +45,7 @@ modified: "2026-04-11T06:06:39"
 - [[Amino acid substitution rates are rotamer-dependent]]
 - [[Ancestral enzymes are not always more generalist]]
 - [[Ancestrally reconstructed enzymes show greater expression than extant enzymes]]
+- [[Ancestrally reconstructed sequences are more thermostable than extant sequences]]
 - [[Arginines have a greater propensity to form protein-protein interactions than lysines]]
 - [[BERT and Autoregressive models have different strengths and are equally useful on generative tasks]]
 - [[Backbone geometry of valine and isoleucine can be detected by inverse folding methods without sequence context]]

@@ -3,7 +3,7 @@ title: Antibodies
 tags:
   - antibodies
 created: "2026-04-10T14:30:55"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T06:15:31"
 ---
 
 **Antibodies** are proteins with two [[Heavy chains|heavy chains]] and two [[Light chains|light chains]] produced by [[B cells]], central to the adaptive immune system. Their structure consists of a variable region (containing [[Complementarity-determining regions|CDRs]] and a framework region) and three constant regions (CH1, CH2, CH3). The variable region and CH1 form the [[Fab]], while the remainder forms the Fc region. [[B-cell receptors|B cell receptors]] are antibodies with an additional CH4 domain.
@@ -32,6 +32,11 @@ curl -s https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabdab/summary/all/
 
 <!-- generated -->
 
+## Structure Prediction
+
+- [[Antibody-antigen modeling by diffusion-based structure prediction is data-limited]]
+- [[Increasing diffusion samples is sufficient to yield correctly predicted antibody-antigen complexes]]
+
 ## Miscellaneous
 
 - [[Abs modeled using MD are better for featurization than those modeled using homology modeling]]
@@ -58,9 +63,12 @@ curl -s https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabdab/summary/all/
 - [[Contrastive learning on whole structures leads to learning of substructures]]
 - [[Cytokines can be added to antibody CDRs]]
 - [[DL antibody prediction tools introduce D-amino acids and cis-amide bonds]]
+- [[DL structure prediction methods cannot predict CDR conformations unseen during training]]
+- [[Different antibody lineages can undergo convergent evolution during affinity maturation]]
 - [[Dynamic time warping]]
 - [[ESM-IF outperforms ProteinMPNN on Ab inverse folding and affinity prediction]]
 - [[Ensemble samplers and Gaussian process equally useful for automated antibody design]]
+- [[Generic PLMs outperform antibody-specific PLMs on zero-shot predictions of affinity changes]]
 - [[Hallucination of CDRs]]
 - [[Heavy and light chains of de novo designed antibodies with the same framework and binding mode can be exchanged]]
 - [[Heavy chain scFvs are stronger binders than light chain scFv]]
@@ -89,6 +97,7 @@ curl -s https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabdab/summary/all/
 - [[Secondary structure losses are required to enforce CDR loopiness during de novo antibody design by hallucination]]
 - [[Simultaneous design of scFv loops predicted to lead to more fit sequences]]
 - [[Some light chain V-genes are more likely to be found in dysfunctional antibodies]]
+- [[Source of immunogenicity in VHH nanobodies]]
 - [[Subset of mutations obtained during affinity maturation contribute disproportionately to affinity]]
 - [[There are 4.6 million possible combinations of human antibodies given VDJ and VJ scrambling alone]]
 - [[Transgenic mice with only a single VH gene are nonetheless able to make effective antibodies against many targets]]

@@ -1,3 +1,12 @@
+---
+tags:
+  - diffusion-models/protein-design
+  - diffusion-guidance/protein-design
+  - protein-design/design
+created: "2026-04-10T15:35:05"
+modified: "2026-04-11T06:15:31"
+---
+
 #### Summary
 Stronger [[Diffusion guidance|diffusion guidance]] reduces diversity of generated outputs [^yang2025]. This was observed in sequence generation using low-N fitness data.
 

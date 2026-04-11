@@ -1,13 +1,14 @@
 ---
 tags:
   - antibody-structure-prediction/cdr
+  - antibodies/misc
 created: "2024-04-25T00:43:05"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T06:15:31"
 ---
 
 #### Summary
 
-[^greenshieldswatson2023] found that training ImmuneBuilder on an ablated training set with missing CDR conformations led to an inability to predict those conformations.
+Greenshields-Watson et al. found that training ImmuneBuilder on an ablated training set with missing CDR conformations led to an inability to predict those conformations.[^greenshieldswatson2023]
 
 #### See also
 
