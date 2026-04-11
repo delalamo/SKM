@@ -1,9 +1,10 @@
 ---
 tags:
-  - structure-prediction
-  - thermostability
+  - structure-prediction/limitations
+  - thermostability/prediction
+  - plddt
 created: "2026-03-06T09:43:56"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 ## Summary

@@ -1,8 +1,9 @@
 ---
 tags:
   - protein-language-models/representations
+  - tm-score
 created: "2026-04-05T17:54:18"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 ---

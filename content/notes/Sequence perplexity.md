@@ -1,8 +1,10 @@
 ---
 tags:
   - protein-folding/misc
+  - tm-score
+  - plddt
 created: "2026-04-05T17:41:51"
-modified: "2026-04-11T06:15:31"
+modified: "2026-04-11T07:27:50"
 ---
 #### Summary
 Sequence perplexity is a metric used by [[Protein language models|protein language models]] and [[Inverse folding|inverse folding]] to quantify sequence recovery. Self-consistency perplexity is a derived metric where the perplexity is calculated using a [[Structure prediction|forward-folded model]] rather than the original model/structure.

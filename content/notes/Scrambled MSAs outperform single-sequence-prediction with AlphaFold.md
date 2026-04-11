@@ -1,9 +1,9 @@
 ---
 tags:
   - alphafold2
-  - structure-prediction
+  - structure-prediction/training
 created: "2024-05-08T18:04:59"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary
@@ -12,5 +12,8 @@ modified: "2026-04-11T06:06:39"
 
 #### Figures
 
-\![[Pasted-image-20231129095837.png]]
+![[Pasted-image-20231129095837.png]]
 *Figure from Sergey Ovchinnikov's Twitter account*
+
+#### See also
+* [[Protein models designed using inverse folding can be used to supplement training DBs for PLMs and structure prediction models]]

@@ -1,8 +1,10 @@
 ---
 tags:
   - protein-backbone-design/designability
+  - tm-score
+  - plddt
 created: "2025-01-18T00:01:18"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary

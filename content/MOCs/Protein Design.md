@@ -3,7 +3,7 @@ title: Protein Design
 tags:
   - protein-design
 created: "2026-04-10T14:30:55"
-modified: "2026-04-11T06:15:31"
+modified: "2026-04-11T07:27:50"
 ---
 
 > [!info] Auto-generated
@@ -84,7 +84,6 @@ modified: "2026-04-11T06:15:31"
 - [[Neutral mutation frequency is similar across distance fitness peaks]]
 - [[No one-size-fits-all best approach to zero-shot or few-shot protein fitness prediction]]
 - [[Not all sequences with improved activity have plausible evolutionary paths via stepwise introduction of mutations]]
-- [[PLM-designed sequences match the distribution of fitness values, lengths, and structure prediction confidence of natural sequences]]
 - [[Precision decreases and recall increases as variant effect prediction focuses on top-performing point mutations]]
 - [[Protein ensemble prediction methods do not generate conformations that are amenable to PPI docking]]
 - [[Protein language model scaling laws differ from LLMs used for natural language processing tasks]]
@@ -98,7 +97,6 @@ modified: "2026-04-11T06:15:31"
 - [[PyRosetta idealize structures]]
 - [[Rigidification of active site residues accelerates enzyme activity]]
 - [[Search algorithms are more important than language model choice for model-guided protein engineering and design]]
-- [[Self-consistency perplexity is correlated with pLDDT]]
 - [[Structural models can be aligned at their ligand-binding sites using weighted-exponential term]]
 - [[Text-to-structure protein design models outperform text-to-sequence models]]
 - [[Transporters can evolve specificity to new substrates with just a single mutation]]

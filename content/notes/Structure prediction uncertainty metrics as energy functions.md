@@ -1,8 +1,11 @@
 ---
 tags:
-  - structure-prediction
+  - structure-prediction/metrics
+  - tm-score
+  - plddt
+  - pae
 created: "2026-03-06T12:45:58"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 #### Summary
 In protein [[Structure prediction|structure prediction]], **uncertainty metrics** are used to evaluate the correctness of a structural model at various levels. They have been applied to protein design tasks in ways analogous to energy functions, prompted in part by the observation that these networks have learned an implicit energy function — even though they cannot be used directly for design.

@@ -1,8 +1,8 @@
 ---
 tags:
-  - conformational-dynamics
+  - conformational-dynamics/modeling
 created: "2024-06-24T10:45:46"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 #### Summary
 **The latent space of [[Variational autoencoders|VAEs]] can describe the [[Protein dynamics|conformational landscape]] of dynamic proteins.** These have been used as features to guide [[MD simulations]], particularly as [[Collective variables|collective variables]] for [[Metadynamics|metadynamics]] simulations.

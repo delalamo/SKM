@@ -1,9 +1,9 @@
 ---
 title: Natural sequences deviate from highest stability variants
 tags:
-  - thermostability
+  - thermostability/evolution
 created: "2024-11-14T02:47:10"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 #### Summary
  **Natural sequences are not the most stable sequences** [^tsuboyama2023]. Instead, they are approximately 1.8 kcal/mol less thermostable on average than the highest-fitness mutant.

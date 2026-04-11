@@ -31,7 +31,11 @@ MOCS_DIR  = REPO_ROOT / "content" / "MOCs"
 # Maps subtag slugs to human-readable section titles (controls display order).
 # Keep in sync with SUBTAG_TITLES in quartz/components/TagList.tsx.
 SUBTAG_TITLES = {
+    "sampling":            "Sampling",
+    "metrics":             "Metrics",
     "training":            "Training",
+    "architecture":        "Architecture",
+    "limitations":         "Limitations",
     "representations":     "Representations",
     "design":              "Design",
     "implementation":      "Implementation",
@@ -40,6 +44,14 @@ SUBTAG_TITLES = {
     "antibodies":          "Antibodies",
     "evaluation":          "Evaluation",
     "designability":       "Designability",
+    "modeling":            "Modeling",
+    "experimental-ensembles":"Experimental Ensembles",
+    "allostery":           "Allostery and Function",
+    "evolution":           "Evolution",
+    "kinetics":            "Kinetics and Barriers",
+    "prediction":          "Prediction",
+    "determinants":        "Determinants",
+    "unfolding":           "Unfolding",
     "cdr":                 "CDR",
     "complex-prediction":  "Complex Prediction",
     "expression":          "Expression",
@@ -70,6 +82,9 @@ MOC_TITLES = {
     "thermostability":              "Stability and thermostability",
     "affinity-maturation":          "Affinity maturation",
     "antibody-developability":      "Developability",
+    "tm-score":                     "TM-score",
+    "plddt":                        "pLDDT",
+    "pae":                          "Predicted aligned error",
     "diffusion-models": "Diffusion models",
     "diffusion-guidance":"Diffusion guidance",
 }

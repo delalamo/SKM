@@ -1,8 +1,10 @@
 ---
 tags:
   - protein-design/misc
+  - tm-score
+  - plddt
 created: "2026-03-06T11:07:36"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary

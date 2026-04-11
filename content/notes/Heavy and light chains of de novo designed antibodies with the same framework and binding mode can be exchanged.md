@@ -1,8 +1,9 @@
 ---
 tags:
   - antibodies/misc
+  - tm-score
 created: "2025-03-15T23:52:23"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:27:50"
 ---
 #### Summary
 **[[Heavy chains|Heavy]] and [[Light chains|light chains]] of [[Single chain variable fragments|scFvs]] with the same [[Framework region|framework]] and antigen-binding mode can be exchanged to increase screening diversity** [^bennett2024]. This was not screened *in vitro* but was observed using [[AlphaFold|AlphaFold3]] filtering.

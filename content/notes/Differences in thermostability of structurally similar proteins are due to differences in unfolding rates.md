@@ -1,8 +1,9 @@
 ---
 tags:
-  - thermostability
+  - thermostability/determinants
+  - protein-folding/unfolding
 created: "2024-07-01T02:32:06"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 ---

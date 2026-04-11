@@ -1,8 +1,10 @@
 ---
 tags:
-  - structure-prediction
+  - structure-prediction/metrics
+  - plddt
+  - pae
 created: "2024-11-04T22:57:17"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary

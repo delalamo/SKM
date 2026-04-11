@@ -3,7 +3,7 @@ title: Protein folding
 tags:
   - protein-folding
 created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:27:50"
 ---
 
 *Not to be confused with [[Structure prediction|protein structure prediction]]*
@@ -224,7 +224,6 @@ modified: "2026-04-10T14:30:55"
 - [[Structure-based methods outperform sequence-based methods at zero-shot prediction of binding, whereas the reverse is true for zero-shot prediction of enzymatic activity]]
 - [[Structure-based methods outperform sequence-based methods on protein stability prediction of point mutants, but not full sequences]]
 - [[Structure-derived embeddings outperform sequence-derived embeddings on LM-based alignment]]
-- [[Synthetic MSAs outperform single-sequence inference in MSA-based structure prediction]]
 - [[TM-score]]
 - [[The AlphaFold and ESMFold databases can be mined for alternate conformations]]
 - [[The Boltz-2 affinity module cannot be effectively repurposed for PPI affinity prediction]]

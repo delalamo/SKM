@@ -1,9 +1,10 @@
 ---
 tags:
   - alphafold2
-  - structure-prediction
+  - structure-prediction/training
+  - plddt
 created: "2024-05-18T08:26:00"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary

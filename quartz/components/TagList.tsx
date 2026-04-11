@@ -17,6 +17,9 @@ const MOC_SLUGS: Record<string, string> = {
   "thermostability": "MOCs/Stability-and-thermostability",
   "affinity-maturation": "MOCs/Affinity-maturation",
   "antibody-developability": "MOCs/Developability",
+  "tm-score": "MOCs/TM-score",
+  "plddt": "MOCs/pLDDT",
+  "pae": "MOCs/Predicted-aligned-error",
   "diffusion-models": "MOCs/Diffusion-models",
   "diffusion-guidance": "MOCs/Diffusion-guidance",
 }
@@ -24,7 +27,11 @@ const MOC_SLUGS: Record<string, string> = {
 // Maps subtag slugs to the rendered MOC section title.
 // Must stay in sync with SUBTAG_TITLES in generate_mocs.py.
 const SUBTAG_TITLES: Record<string, string> = {
+  "sampling": "Sampling",
+  "metrics": "Metrics",
   "training": "Training",
+  "architecture": "Architecture",
+  "limitations": "Limitations",
   "representations": "Representations",
   "design":     "Design",
   "implementation": "Implementation",
@@ -33,6 +40,14 @@ const SUBTAG_TITLES: Record<string, string> = {
   "antibodies": "Antibodies",
   "evaluation": "Evaluation",
   "designability": "Designability",
+  "modeling": "Modeling",
+  "experimental-ensembles": "Experimental Ensembles",
+  "allostery": "Allostery and Function",
+  "evolution": "Evolution",
+  "kinetics": "Kinetics and Barriers",
+  "prediction": "Prediction",
+  "determinants": "Determinants",
+  "unfolding": "Unfolding",
   "cdr": "CDR",
   "complex-prediction": "Complex Prediction",
   "expression": "Expression",

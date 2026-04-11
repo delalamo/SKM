@@ -1,9 +1,9 @@
 ---
 tags:
-  - thermostability
   - protein-language-models/training
+  - thermostability/prediction
 created: "2024-11-29T03:39:16"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary

@@ -1,8 +1,9 @@
 ---
 tags:
   - protein-design/misc
+  - plddt
 created: "2024-10-25T03:44:34"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary

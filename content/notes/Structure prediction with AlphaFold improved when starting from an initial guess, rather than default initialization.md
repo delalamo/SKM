@@ -1,9 +1,9 @@
 ---
 tags:
   - alphafold2
-  - structure-prediction
+  - structure-prediction/sampling
 created: "2024-10-25T03:26:40"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary

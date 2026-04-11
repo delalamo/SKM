@@ -2,8 +2,9 @@
 tags:
   - diffusion-models/protein-design
   - protein-design/design
+  - tm-score
 created: "2024-11-04T23:45:40"
-modified: "2026-04-11T06:15:31"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary

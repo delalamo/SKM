@@ -1,8 +1,8 @@
 ---
 tags:
-  - conformational-dynamics
+  - conformational-dynamics/molecular-dynamics
 created: "2024-08-08T03:24:29"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 #### Summary
 **Force fields used for [[MD simulations]] can be screened for agreement with bulk experimental data (for example NMR or SAXS data)** [^streit2024].

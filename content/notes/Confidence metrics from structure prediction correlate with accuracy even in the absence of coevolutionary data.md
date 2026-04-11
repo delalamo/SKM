@@ -1,8 +1,10 @@
 ---
 tags:
-  - structure-prediction
+  - structure-prediction/metrics
+  - tm-score
+  - plddt
 created: "2025-02-27T04:19:52"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary

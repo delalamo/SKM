@@ -1,8 +1,8 @@
 ---
 tags:
-  - thermostability
+  - thermostability/mutations
 created: "2024-05-01T02:47:49"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary

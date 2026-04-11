@@ -2,8 +2,9 @@
 tags:
   - inverse-folding/evaluation
   - protein-backbone-design/designability
+  - plddt
 created: "2026-04-05T17:36:43"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary

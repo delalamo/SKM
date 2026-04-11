@@ -3,7 +3,7 @@ title: Protein folding
 tags:
   - protein-folding
 created: "2026-04-10T14:30:55"
-modified: "2026-04-11T06:15:31"
+modified: "2026-04-11T07:27:50"
 ---
 
 *Not to be confused with [[Structure prediction|protein structure prediction]]*
@@ -28,6 +28,19 @@ modified: "2026-04-11T06:15:31"
 - [[Flow matching and diffusion perform comparably for biomolecular structure prediction]]
 - [[Guidance potentials can be added to diffusion-based structure prediction for enhanced sampling of protein conformations]]
 - [[Protein backbone design diffusion models can be repurposed for fitting structures into electron density]]
+
+## Unfolding
+
+- [[Compactness is positively correlated with unfolding cooperativity but negatively correlated with stability]]
+- [[Cooperative unfolding is not correlated with overall protein stability across proteins with the same fold]]
+- [[Differences in thermostability of structurally similar proteins are due to differences in unfolding rates]]
+- [[High-stability substructures fold first]]
+- [[Proline content correlates with high unfolding cooperativity but not overall stability]]
+- [[Protein denaturation cooperativity varies depending on whether it is thermally, chemically, or pressure induced]]
+- [[Proteins with greater folding stability have more intermediate partially unfolded states]]
+- [[Ribosomes penalize the unfolded states of proteins]]
+- [[Small energy barriers separate unfolded and folded states of small fast-folding proteins]]
+- [[Unfolding cooperativity is more difficult to predict than protein stability]]
 
 ## Miscellaneous
 

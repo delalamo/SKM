@@ -1,9 +1,9 @@
 ---
 tags:
-  - conformational-dynamics
   - protein-language-models/representations
+  - conformational-dynamics/allostery
 created: "2024-10-14T12:58:06"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 ## Summary

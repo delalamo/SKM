@@ -1,8 +1,8 @@
 ---
 tags:
-  - thermostability
+  - thermostability/design
 created: "2025-03-15T23:46:30"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 ---

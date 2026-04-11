@@ -2,8 +2,9 @@
 title: pLDDT
 tags:
   - plddt
+  - structure-prediction/metrics
 created: "2026-04-10T14:02:57"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:27:50"
 ---
 
 *(LDDT redirects here)*
@@ -23,3 +24,41 @@ $$E_{pLDDT}=\sum{\left( \frac{d_{i}}{1.5*\exp{\left(4*\left(0.7 - pLDDT_{i} \rig
 	The equation was originally presented by [[10.1038__s41467-021-21511-x|Hiranuma et al 2021]] and was used by [[10.1073__pnas.2206129119|del Alamo et al 2022]] as coordinate constraints in Rosetta when refining [[AlphaFold|AlphaFold2]] models.
 
 <!-- generated -->
+
+## General
+
+- [[AF2 RMSD correlated with RMSD between conformations]]
+- [[AlphaFold2 and RosettaFold sometimes produce different conformations]]
+- [[AlphaFold2 predicts the holo form of proteins in most cases]]
+- [[AlphaFold3 uses cross-distillation from AlphaFold2 to avoid hallucinating secondary structure in low-pLDDT regions]]
+- [[Antibody-antigen modeling by diffusion-based structure prediction is data-limited]]
+- [[Confidence metrics for diffusion-based structure prediction methods can be improved with minimal changes to conditioning representations]]
+- [[Confidence metrics from structure prediction correlate with accuracy even in the absence of coevolutionary data]]
+- [[DiffDock confidence is inversely correlated with RMSD]]
+- [[Fine-tuning AlphaFold for MHC prediction by adding Evoformer layers improves RMSD and pLDDT]]
+- [[Fine-tuning base models on test cases can improve the performance of variant effect and structure prediction]]
+- [[Flow matching and diffusion perform comparably for biomolecular structure prediction]]
+- [[High-pLDDT designs can be insoluble]]
+- [[Including structure prediction confidence while training inverse folding improves sequence diversity but not sequence recovery]]
+- [[Inverse folding methods outperform sequence design by hallucination]]
+- [[LM-based antibody structure prediction methods work equally well with generic and Ab PLMs]]
+- [[Low-pLDDT hallucinated models from AF3-generation protein structure predictors are designable]]
+- [[Most ML quality metrics cannot effectively predict enzyme activity after controlling for similarity to native]]
+- [[Natural sequences have higher pTM but lower pLDDT than de novo sequences]]
+- [[PLM-designed sequences match the distribution of fitness values, lengths, and structure prediction confidence of natural sequences]]
+- [[Protein design using sequence-based models does not benefit from scale]]
+- [[Protein folding neural networks cannot predict protein stability]]
+- [[Protein structure prediction and design confidence metrics do not correlate with binding affinity]]
+- [[Protein structure prediction and design metrics don't correlate with expression probability]]
+- [[RMSD is a partially effective error function]]
+- [[Randomly masking residues prior to running ESMFold allows false positives to be identified more effectively]]
+- [[Reinforcement learning outperforms fine-tuning in property-guided inverse folding]]
+- [[Self-consistency perplexity is correlated with pLDDT]]
+- [[Sequence perplexity]]
+- [[Sequence- and structure-derived ML quality metrics from ML do not correlate with each other]]
+- [[Structure prediction uncertainty metrics as energy functions]]
+- [[pLDDT and PAE in protein folding neural networks are correlated]]
+- [[pLDDT and PAE inversely correlated with protein dynamics in dynamic naturally occurring proteins, but not de novo proteins]]
+- [[pLDDT correlates with number of homologous sequences provided during runtime]]
+- [[pLDDT is inversely correlated with CDRH3 length]]
+- [[pTM is less lenient than pLDDT toward structural novelty when predicting alternate conformations]]

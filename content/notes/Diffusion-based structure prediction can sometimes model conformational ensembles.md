@@ -2,8 +2,9 @@
 tags:
   - diffusion-models/structure-prediction
   - protein-folding/structure-prediction
+  - tm-score
 created: "2026-04-10T15:35:05"
-modified: "2026-04-11T06:15:31"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary
