@@ -3,7 +3,7 @@ title: Markov State Models
 tags:
   - markov-state-models
 created: "2026-04-10T14:02:57"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-13T11:11:20"
 ---
 
 **Markov state models** (MSMs) are a framework for assigning frames of an [[MD simulations|MD simulation]] to a small number of specific states.
@@ -13,6 +13,8 @@ modified: "2026-04-11T07:41:30"
 
 #### Figures
 ![[Pasted-Graphic-15.png]]
-*Figure from [[10.1021__jacs.7b12191|Husic & Pande 2018]]*
+*Figure from [^husic2018]*
 
 <!-- generated -->
+
+[^husic2018]: Husic & Pande (2018) "Markov State Models: From an Art to a Science." *Journal of the American Chemical Society*. https://doi.org/10.1021/jacs.7b12191

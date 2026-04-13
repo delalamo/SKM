@@ -3,7 +3,7 @@ title: Dimensionality reduction
 tags:
   - dimensionality-reduction
 created: "2026-04-10T14:02:57"
-modified: "2026-04-11T07:42:59"
+modified: "2026-04-13T11:11:20"
 ---
 
 **Dimensionality reduction** refers to the process of compressing $N$ input features into $M$ dimensions, where $M<N$.
@@ -12,7 +12,7 @@ modified: "2026-04-11T07:42:59"
 
 * **t-SNE and UMAP distort input values** ([[10.1371__journal.pcbi.1011288|Chari & Pachter 2023]]). There are other examples of this in the single-cell omics field.
 ![[tSNE-UMAP-distortions.png]]
-	*Figure from [[10.1371__journal.pcbi.1011288|Chari & Pachter 2023]]*
+	*Figure from [^chari2023]*
 
 #### Approaches
 ###### Principal component analysis
@@ -45,3 +45,5 @@ These are in practice not used very often.
 See [[Variational autoencoders]]
 
 <!-- generated -->
+
+[^chari2023]: Chari & Pachter (2023) "The specious art of single-cell genomics." *PLOS Computational Biology*. https://doi.org/10.1371/journal.pcbi.1011288

@@ -3,12 +3,12 @@ title: ProteinMPNN
 tags:
   - proteinmpnn
 created: "2026-04-10T14:02:57"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-13T11:11:20"
 ---
 
 **ProteinMPNN** is an [[Inverse folding|inverse folding]] method that uses a message-passing neural network. It has extensive wet-lab validation.
 ![[Pasted-image-20231016154908.png]]
-*Figure from [[10.1126__science.add2187|Dauparas et al 2022]]*
+*Figure from [^dauparas2022]*
 
 #### Notes
 
@@ -31,3 +31,5 @@ modified: "2026-04-11T07:41:30"
 * **SoftAlign**: A retrained encoder used for structure-based alignment ([[10.1101__2025.05.09.653096|Trinquier et al 2025]]).
 
 <!-- generated -->
+
+[^dauparas2022]: Dauparas et al. (2022) "Robust deep learning–based protein sequence design using ProteinMPNN." *Science*. https://doi.org/10.1126/science.add2187

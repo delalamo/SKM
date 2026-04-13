@@ -1,9 +1,7 @@
 ---
 title: Alphafold3
-tags:
-  - alphafold3
 created: "2026-04-11T06:06:39"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-13T11:11:20"
 ---
 
 > [!info] Auto-generated

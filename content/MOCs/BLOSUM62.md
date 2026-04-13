@@ -3,7 +3,7 @@ title: BLOSUM62
 tags:
   - blosum62
 created: "2026-04-10T14:02:57"
-modified: "2026-04-11T07:42:59"
+modified: "2026-04-13T11:11:20"
 ---
 
 The **BLOSUM62** matrix quantifies the similarity of amino acids to one another when computing evolutionary distance sequences ([[10.1073__pnas.89.22.10915|Henikoff and Henikoff 1992]]).
@@ -18,6 +18,8 @@ The **BLOSUM62** matrix quantifies the similarity of amino acids to one another 
 ![[Pasted-image-20260323084753.png]]
 * **The BLOSUM62 matrix is unsuitable for [[T-cell receptors|TCR]] analysis due to overstating the effect of non-cysteine mutations** ([[10.1093__bib__bbae602|Postovskaya et al 2024]]).
 ![[Pasted-image-20241127061303.png]]
-	*Figure from [[10.1093__bib__bbae602|Postovskaya et al 2024]]*
+	*Figure from [^postovskaya2024]*
 
 <!-- generated -->
+
+[^postovskaya2024]: Postovskaya et al. (2024) "tcrBLOSUM: an amino acid substitution matrix for sensitive alignment of distant epitope-specific TCRs." *Briefings in Bioinformatics*. https://doi.org/10.1093/bib/bbae602

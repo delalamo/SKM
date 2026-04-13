@@ -4,12 +4,12 @@ tags:
   - protein-backbone-design/designability
   - plddt
 created: "2026-04-05T17:36:43"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-13T11:11:20"
 ---
 
 #### Summary
 
-Inverse folding methods outperform hallucination at designing proteins that can be refolded in silico ([10.48550__arXiv.2312.00080|Wang et al 2023], [10.1126__science.adq1741|Frank et al 2024]).
+Inverse folding methods outperform hallucination at designing proteins that can be refolded in silico [^wang2023][^frank2024].
 
 #### Figures
 
@@ -25,7 +25,10 @@ Inverse folding methods outperform hallucination at designing proteins that can 
 | **AF-Design** | 0.53 | 61.37 | 0.53 | 72.04 | 0.52 | 75.29 | 15.95 |
 | **ESM-Design** | 0.38 | 59.65 | 0.38 | 62.66 | 0.37 | 60.02 | 17.33 |
 | **Wildtype** | 0.80 | 74.91 | 0.75 | 78.39 | 0.90 | 89.87 | 100 |
-*Table from [10.48550__arXiv.2312.00080|Wang et al 2023]*
+*Table from [^wang2023]*
 
 ![[Pasted-image-20241025093149.png]]
-*Figure from [10.1126__science.adq1741|Frank et al 2024]*
+*Figure from [^frank2024]*
+
+[^frank2024]: Frank et al. (2024) "Scalable protein design using optimization in a relaxed sequence space." *Science*. https://doi.org/10.1126/science.adq1741
+[^wang2023]: Wang et al. (2023) "PDB-Struct: A Comprehensive Benchmark for Structure-based Protein Design." https://doi.org/10.48550/arXiv.2312.00080

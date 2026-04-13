@@ -1,12 +1,12 @@
 ---
 tags: protein-design/misc
 created: "2026-03-29T11:17:38"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-13T11:11:20"
 ---
 
 #### Summary
 
-**Not all sequences with improved activity have plausible evolutionary paths via stepwise introduction of mutations** [^kheronsky2018][^johnston2024][^muir2024]. This suggests that engineered libraries can access mutation combinations that are inaccessible to stepwise methods. Experimental evidence contradicting this claim was found by [^papkou2023] ([[Fitness landscapes are locally smooth but globally rugged]]). [^kirby2025] found [[Mutations obtained by antibodies during affinity maturation show epistasis in biophysical properties but not binding|evidence against this in antibodies]].
+**Not all sequences with improved activity have plausible evolutionary paths via stepwise introduction of mutations** [^kheronsky2018][^johnston2024][^muir2024]. One report found that a protein's ancestry limits the range of high-fitness sequences that can be explored [^isakova2026]. This suggests that engineered libraries can access mutation combinations that are inaccessible to stepwise methods. Experimental evidence contradicting this claim also exists[^papkou2023] ([[Fitness landscapes are locally smooth but globally rugged]]). Kirby et al found [[Mutations obtained by antibodies during affinity maturation show epistasis in biophysical properties but not binding|evidence against this in antibodies]][^kirby2025].
 
 #### Details
 
@@ -18,13 +18,16 @@ In [^johnston2024], where a library of 160,000 sequences saturating four positio
 
 #### Figures
 
-![[Pasted-Graphic-26.png]]
+![[Pasted-Graphic-26.png|400]]
 
 *Figure from [^johnston2024]*
 
-![[Pasted-Graphic-6-1.png]]
+![[Pasted-Graphic-6-1.png|400]]
 
 *Figure from [^muir2024]*
+
+![[Pasted image 20260413104440.png|400]]
+[^isakova2026]
 
 #### See also
 
@@ -40,3 +43,5 @@ In [^johnston2024], where a library of 160,000 sequences saturating four positio
 [^muir2024]: Muir et al. (2024) "Evolutionary-Scale Enzymology Enables Biochemical Constant Prediction Across a Multi-Peaked Catalytic Landscape." https://doi.org/10.1101/2024.10.23.619915
 [^papkou2023]: Papkou et al. (2023) "A rugged yet easily navigable fitness landscape." *Science*. https://doi.org/10.1126/science.adh3860
 [^kirby2025]: Kirby et al. (2025) "Retrospective SARS-CoV-2 human antibody development trajectories are largely sparse and permissive." *Proceedings of the National Academy of Sciences*. https://doi.org/10.1073/pnas.2412787122
+
+[^isakova2026]: Isakova et al. (2026) "Descent from a common ancestor restricts exploration of protein sequence space." *Proceedings of the National Academy of Sciences*. https://doi.org/10.1073/pnas.2532018123

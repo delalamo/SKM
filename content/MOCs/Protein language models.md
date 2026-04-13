@@ -3,7 +3,7 @@ title: Protein language models
 tags:
   - protein-language-models
 created: "2026-04-10T10:46:24"
-modified: "2026-04-11T07:42:59"
+modified: "2026-04-13T11:11:20"
 ---
 
 **Protein language models** (PLMs) are a type of [[Transformer]] model trained on either protein sequences or [[Multiple sequence alignments]].
@@ -13,11 +13,11 @@ modified: "2026-04-11T07:42:59"
 
 * **[[ESM]]**: currently the most widely-used encoder PLM
 * **[[ProGen]]**: probably the most widely-used decoder PLM
-* **ProtBERT** and **DistillProtBERT** ([[10.1093__bioinformatics__btac474|Geffen et al 2022]])
+* **ProtBERT** and **DistillProtBERT** (doi.org/10.1093/bioinformatics/btac474)
 * **[[ProteinNPT]]**
 * **xTrimoPGLM**
 * **CARP**: A [[Convolutional neural networks|CNN]] that performs as well as transformer-based methods on both pretraining and downstream tasks. Anecdotally, these can't indirectly calculate contact maps via the [[Categorical Jacobian method]] as well as transformer-based models.
-* **DASM** (deep amino acid sequence model), which is trained on germline-descendant point mutation pairs to learn relative mutation frequencies, after normalizing for expected mutation frequencies in the codon table ([[10.7554__eLife.109644.3.sa0|Matsen et al 2026]]).
+* **DASM** (deep amino acid sequence model), which is trained on germline-descendant point mutation pairs to learn relative mutation frequencies, after normalizing for expected mutation frequencies in the codon table (doi.org/10.7554/eLife.109644.3.sa0).
 
 #### Antibody-specific
 
@@ -34,7 +34,7 @@ modified: "2026-04-11T07:42:59"
 * **Homolog detection using PLM representations can be improved by compression** ([[10.1073__pnas.2211823120|Kilinc et al 2023]]). Using the full representations worsened detection AUC by 7.4%.
 * **[[Protein language models|PLMs]] with a smoother representation space are better predictors of protein function** ([[10.1101__2023.12.20.572683|Matthews et al 2023]]).
 ![[Pasted-Graphic-2-1.png]]
-	*Figure from [[10.1101__2023.12.20.572683|Matthews et al 2023]]*
+	*Figure from [^matthews2023]*
 
 #### Hybrid PLM-[[Inverse folding|inverse folding]] models
 
