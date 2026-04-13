@@ -1,10 +1,10 @@
 ---
 tags:
   - alphafold2
-  - structure-prediction
-  - thermostability
+  - structure-prediction/sampling
+  - thermostability/prediction
 created: "2025-07-22T11:37:28"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary

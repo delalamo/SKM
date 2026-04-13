@@ -3,16 +3,16 @@ title: AlphaFold
 tags:
   - alphafold
 created: "2026-04-10T14:02:57"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 *(OpenFold redirects here)*
 **AlphaFold** is a series of protein [[Structure prediction|structure prediction]] methods. The most widely used and studied method is AlphaFold2, which was unveiled in late 2020, released in late 2021, and is the first to make extensive use of the [[Transformer]] architecture, consisting of 97 million parameters. [[AlphaMissense]] is a derivative of this method. AlphaFold3 was released in early May 2024.
 
-\![[Pasted-image-20231029184254.png]]
+![[Pasted-image-20231029184254.png]]
 *Architecture of AlphaFold2 from [[10.1038__s41586-021-03819-2|Jumper et al 2021]]*
 
-\![[Pasted-Graphic-4.png]]
+![[Pasted-Graphic-4.png]]
 *Architecture of AlphaFold3 from [[10.1038__s41586-024-07487-w|Abramson et al 2024]]*
 
 #### Architectural and ML contributions

@@ -2,13 +2,13 @@
 tags:
   - antibodies/misc
 created: "2025-09-04T12:48:37"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 #### Summary
 **The [[Complementarity-determining regions|CDR3]] loop of [[Nanobodies|nanobodies]] is far more likely to be part of the paratope than the CDRH3 of traditional heterodimeric [[Antibodies|antibodies]]** ([^gordon2023], De [^de2006]). Additionally, it comprises a larger part of the paratope than CDRH3 in antibodies.
 
 #### Figures
-\![[Pasted-image-20250228091440.png]]
+![[Pasted-image-20250228091440.png]]
 *Figure from De [^de2006]*
 
 [^gordon2023]: Gordon et al. (2023) "A comparison of the binding sites of antibodies and single-domain antibodies." *Frontiers in Immunology*. https://doi.org/10.3389/fimmu.2023.1231623

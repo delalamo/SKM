@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2026-03-16T11:46:02"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -17,13 +17,13 @@ From [^faure2024]
 
 #### Figures
 
-\![[Pasted-image-20231102071503.png]]
+![[Pasted-image-20231102071503.png]]
 
 **Structural determinants of energetic couplings inferred from combinatorial mutagenesis. a**, Relationship between folding coupling energy strength and minimal inter-residue side chain heavy atom distance. Error bars indicate 95% confidence intervals from a Monte Carlo simulation approach (_n_ = 10 experiments). Points are coloured by binned inter-residue distances (see legend in panel b). Spearman's _ρ_ is shown for all couplings as well as those involving pairs of residues separated by more than five residues in the primary sequence (red). Core residues are indicated as triangles. **b**, Relationship between folding coupling energy strength and linear sequence (backbone) distance in number of residues. **c**, Interaction matrix indicating folding coupling strength as well as pairwise structural contacts in GRB2-SH3 (PDB: 2VWF, minimal side chain heavy atom distance < 8 Å, black circles). Gray cells indicate missing values (non-mutated residues) and constitutive single aa substitutions are indicated in x- and y-axis labels. Black diagonal lines demarcate residue pairs that are distal in the primary sequence (backbone distance > 5 residues). Reference secondary structure elements (arrow, β-strand) are shown at top and right. **d**, 3D structure of GRB-SH3 (PDB: 2VWF) indicating the top 10 energetic couplings with black dashed lines. Combinatorially mutated residues are shown in orange. **e**, Bar plot showing ranked features from linear model to predict folding coupling strength. Bar width indicates coefficient significance. Blue, positive coefficient; red, negative coefficient; gray non-significant (nominal _P_ > 0.05). **f**, Correlation between linear model predicted and observed folding coupling strength for training (top) and test data (bottom). Pearson's _r_ is shown.
 
 *Figure and caption from [^faure2024]*
 
-\![[-200-.png]]
+![[-200-.png]]
 
 *Figure from [^tharp2026] showing this effect in antibodies*
 

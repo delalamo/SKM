@@ -1,8 +1,9 @@
 ---
 tags:
   - protein-language-models/representations
+  - tm-score
 created: "2026-04-05T17:54:18"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 ---
@@ -46,21 +47,21 @@ This is also true of post-translational modification prediction ([^peng2024]; ES
 | | ESM-IF1 | 0.422 | 0.730 | 0.331 | 0.748 | 0.223 |
 *Figure from [^notin2023]*
 
-\![[Pasted-image-20231112063046.png]]
+![[Pasted-image-20231112063046.png]]
 *Figure from [^nijkamp2023]*
 
-\![[Pasted-image-20240209164702.png]]
-\![[Pasted-image-20240209164730.png]]
+![[Pasted-image-20240209164702.png]]
+![[Pasted-image-20240209164730.png]]
 *Figures 3-5 from [^li2024]*
 
-\![[Pasted-image-20241125084321.png]]
+![[Pasted-image-20241125084321.png]]
 *Figure from [^vieira2024]*
 
-\![[0.40.png]]
+![[0.40.png]]
 *Figure from [^bhatnagar2025]*
 
-\![[Mean-p-(All-Taxa).png]]
-\![[ProteinGym-(All-Taxa).png]]
+![[Mean-p-(All-Taxa).png]]
+![[ProteinGym-(All-Taxa).png]]
 *Figures from [^gurev2025]*
 
 [^tan2023]: Tan et al. (2023) "Multi-level Protein Representation Learning for Blind Mutational Effect Prediction." https://doi.org/10.48550/arXiv.2306.04899

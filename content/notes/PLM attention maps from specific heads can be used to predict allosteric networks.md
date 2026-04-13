@@ -1,9 +1,9 @@
 ---
 tags:
-  - conformational-dynamics
   - protein-language-models/representations
+  - conformational-dynamics/allostery
 created: "2024-10-14T12:58:06"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 ## Summary
@@ -12,7 +12,7 @@ modified: "2026-04-11T06:06:39"
 
 ## Figures
 
-\![[Pasted-image-20241014185138.png]]
+![[Pasted-image-20241014185138.png]]
 *Figure from [Kannan et al 2024][^kannan2024]*
 
 [^kannan2024]: Kannan et al. (2024) "Single-Sequence, Structure Free Allosteric Residue Prediction with Protein Language Models." https://doi.org/10.1101/2024.10.03.616547

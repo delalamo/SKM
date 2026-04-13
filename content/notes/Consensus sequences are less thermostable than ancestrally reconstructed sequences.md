@@ -1,8 +1,8 @@
 ---
 tags:
-  - thermostability
+  - thermostability/design
 created: "2024-11-14T02:49:32"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -17,7 +17,7 @@ Consensus sequences are generated using "a simple counting method" (most likely 
 
 #### Figures
 
-\![[Pasted-image-20231027092109.png]]
+![[Pasted-image-20231027092109.png]]
 
 *Figure from [^nixon2023]*
 

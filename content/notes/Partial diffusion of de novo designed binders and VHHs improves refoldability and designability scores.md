@@ -3,7 +3,7 @@ tags:
   - antibody-structure-prediction/complex-prediction
   - antibodies/nanobodies
 created: "2026-01-23T17:17:44"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -12,9 +12,9 @@ modified: "2026-04-11T06:06:39"
 
 #### Figures
 
-\![[Pasted-image-20260123171658.png]]
+![[Pasted-image-20260123171658.png]]
 
-\![[Pasted-image-20260123171718.png]]
+![[Pasted-image-20260123171718.png]]
 
 *Figures from [^yu2026]; binders and VHHs on top and bottom*
 

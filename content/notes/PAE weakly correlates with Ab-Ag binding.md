@@ -1,8 +1,9 @@
 ---
 tags:
   - antibody-structure-prediction/complex-prediction
+  - pae
 created: "2026-03-06T09:43:56"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 ## Summary
@@ -11,7 +12,7 @@ modified: "2026-04-11T06:06:39"
 
 ## Figures
 
-\![[Pasted-image-20240624151635.png]]
+![[Pasted-image-20240624151635.png]]
 *Figure 4D from [Jin et al 2023][^jin2023]*
 
 ## See also

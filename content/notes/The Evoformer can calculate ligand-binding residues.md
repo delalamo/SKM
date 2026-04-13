@@ -1,8 +1,8 @@
 ---
 tags:
-  - structure-prediction
+  - structure-prediction/architecture
 created: "2024-05-05T08:54:45"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ modified: "2026-04-11T06:06:39"
 
 #### Figures
 
-\![[Pasted-image-20231129085041.png]]
+![[Pasted-image-20231129085041.png]]
 
 *Figure from [^gazizov2023]*
 

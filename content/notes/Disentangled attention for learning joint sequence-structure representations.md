@@ -6,7 +6,7 @@
 Structure-based embeddings were derived using [[Geometric Vector Perceptrons|GVP]] and quantized into one of several thousand categories. The number strongly affected performance of zero-shot [[Stability and thermostability|stability]] prediction.
 
 #### Figures
-\![[Pasted-image-20240517171742.png]]
+![[Pasted-image-20240517171742.png]]
 
 *Figure 1 from [^li2024]*
 

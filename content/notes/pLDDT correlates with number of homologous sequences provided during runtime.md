@@ -1,8 +1,9 @@
 ---
 tags:
-  - structure-prediction
+  - structure-prediction/metrics
+  - plddt
 created: "2024-08-06T11:30:37"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -11,7 +12,7 @@ modified: "2026-04-11T06:06:39"
 
 #### Figures
 
-\![[Pasted-image-20240806172937.png]]
+![[Pasted-image-20240806172937.png]]
 
 *Figure from [^avasthi2024]*
 

@@ -1,8 +1,10 @@
 ---
 tags:
   - protein-folding/misc
+  - plddt
+  - pae
 created: "2024-11-04T22:55:26"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -11,7 +13,7 @@ modified: "2026-04-10T14:30:55"
 
 #### Figures
 
-\![[0.33-0.41-0.15-0.31-0.16.png]]
+![[0.33-0.41-0.15-0.31-0.16.png]]
 *Figure 2B from [^johnson2024]*
 
 #### See also

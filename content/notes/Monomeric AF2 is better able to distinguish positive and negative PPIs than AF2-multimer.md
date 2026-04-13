@@ -3,7 +3,7 @@ tags:
   - protein-design/misc
   - alphafold2
 created: "2026-03-26T21:43:57"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -12,7 +12,7 @@ modified: "2026-04-10T14:30:55"
 
 #### Figures
 
-\![[Pasted-image-20241002101044.png]]
+![[Pasted-image-20241002101044.png]]
 
 *Figure from [^zhang2024]*
 

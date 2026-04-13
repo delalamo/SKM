@@ -1,8 +1,8 @@
 ---
 tags:
-  - conformational-dynamics
+  - conformational-dynamics/molecular-dynamics
 created: "2024-07-15T08:36:40"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 #### Summary
 The **NVT ensemble** (canonical ensemble) retains number of atoms, volume, and temperature in a [[MD simulations|molecular dynamics simulation]]. It simulates at an external temperature bath at a target temperature. Spontaneous changes in NVT simulations cannot lead to increases in [[Helmholtz free energy]] [^frenkel2002].

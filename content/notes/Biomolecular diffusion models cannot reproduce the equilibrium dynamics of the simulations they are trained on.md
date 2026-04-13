@@ -1,10 +1,10 @@
 ---
 tags:
-  - conformational-dynamics
   - diffusion-models/structure-prediction
   - protein-folding/structure-prediction
+  - conformational-dynamics/modeling
 created: "2025-12-22T11:49:01"
-modified: "2026-04-11T06:15:31"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -13,7 +13,7 @@ modified: "2026-04-11T06:15:31"
 
 #### Figures
 
-\![[Pasted-image-20251114122946.png]]
+![[Pasted-image-20251114122946.png]]
 
 *Figure from [^plainer2025]*
 

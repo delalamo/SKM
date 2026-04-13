@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/antibodies
 created: "2026-02-26T15:14:37"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ modified: "2026-04-11T06:06:39"
 
 #### Figures
 
-\![[Pasted-image-20240116124937.png]]
+![[Pasted-image-20240116124937.png]]
 
 *Figure 5 from [^chungyoun2024]*
 

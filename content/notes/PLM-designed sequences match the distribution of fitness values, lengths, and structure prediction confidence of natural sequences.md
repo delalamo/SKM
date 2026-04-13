@@ -1,7 +1,9 @@
 ---
-tags: protein-design/misc
+tags:
+  - plddt
+  - protein-design/misc
 created: "2024-12-19T01:47:52"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -10,7 +12,7 @@ modified: "2026-04-10T14:30:55"
 
 #### Figures
 
-\![[Pasted-image-20241219074446.png]]
+![[Pasted-image-20241219074446.png]]
 
 *Figure from [^stocco2024]*
 

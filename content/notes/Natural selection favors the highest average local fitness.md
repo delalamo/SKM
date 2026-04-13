@@ -3,7 +3,7 @@ title: Natural selection favors the highest average local fitness
 tags:
   - protein-folding/misc
 created: "2024-06-11T01:58:30"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 #### Summary
  **Natural selection favors the highest average local fitness, rather than the absolute highest fitness** [^wilke2001][^codoer2006].
@@ -16,7 +16,7 @@ Authors mention that quasi-species theory states that "survival of the flattest"
 Experimental evidence supporting this model was obtained in viral samples by [^codoer2006].
 
 #### Figures
-\![[Pasted-image-20231120112637.png]]
+![[Pasted-image-20231120112637.png]]
 *Figure from [^wilke2001]*
 
 #### See also

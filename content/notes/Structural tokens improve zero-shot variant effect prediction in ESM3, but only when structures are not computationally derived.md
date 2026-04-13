@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2024-12-10T01:39:37"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -11,8 +11,8 @@ modified: "2026-04-10T14:30:55"
 
 #### Figures
 
-\![[Pasted-image-20241210073124.png]]
-\![[Pasted-image-20241210073131.png]]
+![[Pasted-image-20241210073124.png]]
+![[Pasted-image-20241210073131.png]]
 *Figures from [^loux2024]*
 
 [^loux2024]: Loux et al. (2024) "More Structure, Less Accuracy: ESM3’s Binding Prediction Paradox." https://doi.org/10.1101/2024.12.09.627585

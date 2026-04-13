@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2026-01-22T12:44:19"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -11,9 +11,9 @@ modified: "2026-04-10T14:30:55"
 
 #### Figures
 
-\![[Portire-slapes.png]]
+![[Portire-slapes.png]]
 
-\![[Non-antigens.png]]
+![[Non-antigens.png]]
 
 *Figures from [^gurev2025]*
 

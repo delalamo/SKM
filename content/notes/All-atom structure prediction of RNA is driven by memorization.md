@@ -1,8 +1,8 @@
 ---
 tags:
-  - structure-prediction
+  - structure-prediction/limitations
 created: "2025-05-05T11:31:20"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ modified: "2026-04-11T06:06:39"
 
 #### Figures
 
-\![[Pasted-image-20250505173050.png]]
+![[Pasted-image-20250505173050.png]]
 
 *Figure from [^ludaic2025]*
 

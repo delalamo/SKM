@@ -1,9 +1,11 @@
 ---
 tags:
-  - structure-prediction
-  - conformational-dynamics
+  - structure-prediction/sampling
+  - conformational-dynamics/modeling
+  - tm-score
+  - plddt
 created: "2025-03-03T00:09:53"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary

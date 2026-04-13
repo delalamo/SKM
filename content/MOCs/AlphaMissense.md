@@ -3,13 +3,13 @@ title: AlphaMissense
 tags:
   - alphamissense
 created: "2026-04-10T14:02:57"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-13T11:11:20"
 ---
 
 **AlphaMissense** is a [[Protein language models|protein language model]] designed for [[Variant effect prediction|variant effect prediction]] that is built on top of [[AlphaFold|AlphaFold2]] and fine-tuned using primate data. Achieves state-of-the-are performance on ClinVar data.
 
-\![[AlphaMissense.png]]
-*Figure from [[10.1126__science.adg7492|Cheng et al 2023]]*
+![[AlphaMissense.png]]
+*Figure from [^cheng2023]*
 
 #### Notes
 
@@ -22,6 +22,8 @@ modified: "2026-04-10T14:30:55"
 * Reduced performance on residues predicted to be disordered
 * **AlphaMissense had a high false-positive rate in CFTR, but had higher correlation with *in vitro* functional data** ([[10.1101__2023.10.05.561147|McDonald et al 2023]]). Authors concluded that it "cannot differentiate mechanistic effects or the nature of pathophysiology."
 * **AlphaMissense has the strongest correlation between performance on DMS datasets and on clinical datasets out of all variant effect predictors tested by [[10.1101__2024.05.12.593741|Livesey & Marsh 2024]].**
-	\![[Figure-S1.-Distribution-of-Spearman's-correlations-of-different-VEPs-across-different-DMS-datasets..png]]
+![[Figure-S1.-Distribution-of-Spearman's-correlations-of-different-VEPs-across-different-DMS-datasets..png]]
 
 <!-- generated -->
+
+[^cheng2023]: Cheng et al. (2023) "Accurate proteome-wide missense variant effect prediction with AlphaMissense." *Science*. https://doi.org/10.1126/science.adg7492

@@ -1,8 +1,8 @@
 ---
 tags:
-  - structure-prediction
+  - structure-prediction/limitations
 created: "2024-06-04T01:01:27"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 ## Summary
@@ -11,7 +11,7 @@ modified: "2026-04-11T06:06:39"
 
 ## Figures
 
-\![[Crystal-Structure.png]]
+![[Crystal-Structure.png]]
 *Figure from [d'Oelsnitz et al 2024][^doelsnitz2024]*
 
 [^doelsnitz2024]: d’Oelsnitz et al. (2024) "Biosensor and machine learning-aided engineering of an amaryllidaceae enzyme." *Nature Communications*. https://doi.org/10.1038/s41467-024-46356-y

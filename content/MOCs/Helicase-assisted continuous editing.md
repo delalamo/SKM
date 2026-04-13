@@ -3,7 +3,7 @@ title: Helicase-assisted continuous editing
 tags:
   - helicase-assisted-continuous-editing
 created: "2026-04-05T23:36:09"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 Helicase-assisted continuous editing (HACE) is a method similar to [[CRISPR-Cas9|CRISPR]] that introduces random mutations at predetermined points in a genome ([[10.1101__2024.02.01.577593|Chen et al 2024]]).
@@ -17,7 +17,7 @@ Helicase-assisted continuous editing (HACE) is a method similar to [[CRISPR-Cas9
 
 #### Figures
 
-\![[Mutation-rate.jpg]]
+![[Mutation-rate.jpg]]
 *Figure 1 from [[10.1101__2024.02.01.577593|Chen et al 2024]]*
 
 <!-- generated -->

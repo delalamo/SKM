@@ -1,9 +1,9 @@
 ---
 tags:
-  - structure-prediction
-  - conformational-dynamics
+  - structure-prediction/sampling
+  - conformational-dynamics/modeling
 created: "2024-05-29T10:29:14"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 ## Summary

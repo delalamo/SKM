@@ -5,13 +5,13 @@ tags:
   - protein-design/design
   - alphafold3
 created: "2025-12-19T11:33:47"
-modified: "2026-04-11T06:15:31"
+modified: "2026-04-11T07:41:30"
 ---
 #### Summary
  **[[Diffusion models|Diffusion]] outperforms [[Inversion of protein folding neural networks|hallucination]] when repurposing [[AlphaFold|AlphaFold3]]-generation methods for [[Protein backbone design|protein backbone design]]** [^ren2025]. This is in contrast with the comparison between BindCraft [^pacesa2025] and RFDiffusion [^watson2023], which showed more equal performance.
 
 #### Figures
-\![[Pasted-image-20251219113143.png]]
+![[Pasted-image-20251219113143.png]]
 *Figure from [^ren2025]*
 
 #### See also

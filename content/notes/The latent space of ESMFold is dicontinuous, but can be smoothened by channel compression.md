@@ -1,8 +1,8 @@
 ---
 tags:
-  - structure-prediction
+  - structure-prediction/architecture
 created: "2024-08-13T05:05:39"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ modified: "2026-04-11T06:06:39"
 
 #### Figures
 
-\![[Original-Latent-Space.png]]
+![[Original-Latent-Space.png]]
 
 *Figure from [^lu2024]*
 

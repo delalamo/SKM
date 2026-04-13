@@ -1,10 +1,10 @@
 ---
 tags:
   - alphafold3
-  - structure-prediction
-  - conformational-dynamics
+  - structure-prediction/sampling
+  - conformational-dynamics/modeling
 created: "2025-11-07T17:32:43"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -13,7 +13,7 @@ modified: "2026-04-11T06:06:39"
 
 #### Figures
 
-\![[Pasted-image-20240826210214.png]]
+![[Pasted-image-20240826210214.png]]
 
 *Figure from [^chakravarty2024]*
 

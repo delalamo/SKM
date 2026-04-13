@@ -1,7 +1,8 @@
 ---
-tags: [antibodies/misc]
+tags: 
+  - antibodies/misc
 created: "2025-10-27T11:57:51"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary

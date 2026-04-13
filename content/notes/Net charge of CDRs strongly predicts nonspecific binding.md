@@ -2,7 +2,7 @@
 tags:
   - antibody-developability/general
 created: "2024-05-05T08:42:39"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 #### Summary
 **Among approved [[Antibodies]] as well as [[Single chain variable fragments|scFvs]], net-positively charged [[Complementarity-determining regions|CDRs]] had higher risk of [[Developability|non-specific binding]]** [^rabia2018] **and binding to cells** [^liu2021]. This finding was independent of isoelectric point of target proteins tested, as well as the charge of the [[Framework region]] or isotype of the antibody. It appeared to be more driven by arginine rather than lysine, and they include several references to previous reports on the inclusion of arginine in antibody CDRs. Finally, it was dependent on all CDRs, not just CDRH3.
@@ -15,13 +15,13 @@ Meanwhile negatively-charged CDRs had a lower risk of poor biophysical propertie
 Relatedly, [^liu2021] found that positively charged antibodies had a higher tissue-to-plasma ratio in most tissues. These accumulate in some well-perfused organs such as liver, spleen, and kidney, but not in fat, muscle, and skin.
 
 #### Figures
-\![[Pasted-image-20231017130022.png]]
+![[Pasted-image-20231017130022.png]]
 *Figure from [^rabia2018]*
 
-\![[Pasted-image-20231017130707.png]]
+![[Pasted-image-20231017130707.png]]
 *Figure from [^rabia2018]*
 
-\![[Pasted-image-20240119162417.png]]
+![[Pasted-image-20240119162417.png]]
 *Figure from [^shehata2019]*
 
 #### See also

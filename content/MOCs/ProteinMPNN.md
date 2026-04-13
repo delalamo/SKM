@@ -3,12 +3,12 @@ title: ProteinMPNN
 tags:
   - proteinmpnn
 created: "2026-04-10T14:02:57"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-13T11:11:20"
 ---
 
 **ProteinMPNN** is an [[Inverse folding|inverse folding]] method that uses a message-passing neural network. It has extensive wet-lab validation.
-\![[Pasted-image-20231016154908.png]]
-*Figure from [[10.1126__science.add2187|Dauparas et al 2022]]*
+![[Pasted-image-20231016154908.png]]
+*Figure from [^dauparas2022]*
 
 #### Notes
 
@@ -24,10 +24,12 @@ modified: "2026-04-10T14:30:55"
 * **AbMPNN**: A retrained version specifically designed for [[Antibodies]] ([[10.48550__arXiv.2310.19513|Dreyer et al 2023]]). Outperforms default ProteinMPNN on several metrics. However it is itself outperformed by AntiFold, trained on [[ESM-IF]] ([[bxZMKHtlL6|Høie et al 2023]]).
 * **MiniMPNN**: A modified version of ProteinMPNN that has $O(1)$ performance; i.e., it predicts the whole sequence in a single pass. Used by ProtPardelle ([[10.1101__2023.05.24.542194|Chu et al 2023]]).
 * **ProteinIPMP**: A version that uses [[Invariant point attention]], leading to accuracy improvements. Co-released with PIPPack.
-\![[ProteinIPMP-vs-ProteinMPNN.png]]
+![[ProteinIPMP-vs-ProteinMPNN.png]]
 * **ThermoMPNN**: A topped-off version for predicting [[Stability and thermostability]]. Trained using a high-quality subset of the [[10.1038__s41586-023-06328-6|Tsuboyama et al 2023]] data ([[10.1073__pnas.2314853121|Dieckhaus et al 2024]]). Was found by [[10.1101__2024.04.26.591310|Beltran et al 2024]] to be the best at [[Variant effect prediction|variant effect prediction]].
 * **LigandMPNN**: A version that can account for non-protein matter ([[10.1101__2023.12.22.573103|Dauparas et al 2023]]).
 * **IgMPNN**: A version pretrained on the PDB and fine-tuned on antibody structures ([[10.1101__2023.12.08.570889|Shanehsazzadeh et al 2023]]).
 * **SoftAlign**: A retrained encoder used for structure-based alignment ([[10.1101__2025.05.09.653096|Trinquier et al 2025]]).
 
 <!-- generated -->
+
+[^dauparas2022]: Dauparas et al. (2022) "Robust deep learning–based protein sequence design using ProteinMPNN." *Science*. https://doi.org/10.1126/science.add2187

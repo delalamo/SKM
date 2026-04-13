@@ -1,9 +1,10 @@
 ---
 tags:
-  - structure-prediction
-  - conformational-dynamics
+  - structure-prediction/sampling
+  - conformational-dynamics/modeling
+  - tm-score
 created: "2025-05-18T00:49:42"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -12,7 +13,7 @@ modified: "2026-04-11T06:06:39"
 
 #### Figures
 
-\![[RMSD-Distribution-Across-Cluster-Representatives---BioEmu-vs-AFSample2.png]]
+![[RMSD-Distribution-Across-Cluster-Representatives---BioEmu-vs-AFSample2.png]]
 
 *Figure from [^kyrylenko2025]*
 

@@ -1,9 +1,11 @@
 ---
 tags:
   - alphafold2
-  - structure-prediction
+  - structure-prediction/sampling
+  - plddt
+  - pae
 created: "2026-02-20T18:08:22"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary

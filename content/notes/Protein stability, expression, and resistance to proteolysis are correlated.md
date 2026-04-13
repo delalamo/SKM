@@ -1,8 +1,8 @@
 ---
 tags:
-  - thermostability
+  - thermostability/determinants
 created: "2024-11-14T02:47:10"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 ## Summary
@@ -11,7 +11,7 @@ modified: "2026-04-11T06:06:39"
 
 ## Figures
 
-\![[Pasted-image-20240420192644.png]]
+![[Pasted-image-20240420192644.png]]
 *Figure from [Tzul et al 2017][^tzul2017]*
 
 ## See also

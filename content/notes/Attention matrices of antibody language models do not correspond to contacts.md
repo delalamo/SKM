@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/antibodies
 created: "2024-07-02T05:08:36"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -15,7 +15,7 @@ This was determined by fine-tuning [[ESM]]2 on paired [[Antibodies|antibody]] se
 
 #### Figures
 
-\![[Pasted-image-20240516152023.png]]
+![[Pasted-image-20240516152023.png]]
 
 *Figure from Burbach and [^burbach2024]*
 

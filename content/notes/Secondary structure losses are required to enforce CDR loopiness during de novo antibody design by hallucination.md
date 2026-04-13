@@ -1,7 +1,8 @@
 ---
-tags: [antibodies/misc]
+tags: 
+  - antibodies/misc
 created: "2025-12-19T11:23:25"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -11,7 +12,7 @@ modified: "2026-04-10T14:30:55"
 The alpha-helical loss penalizes beta carbon atoms in $i, i+3$ pairs from falling in the 2.0 to 6.2 Å range via the distogram, while the beta-sheet loss penalizes $i, i+3$ pairs from falling in the 9.75 to 11.5 Å range.
 
 #### Figures
-\![[Pasted-image-20251027120357.png]]
+![[Pasted-image-20251027120357.png]]
 *Figure from [^millefragoso2025]*
 
 #### See also

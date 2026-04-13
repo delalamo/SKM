@@ -2,7 +2,7 @@
 tags:
   - protein-folding/misc
 created: "2024-07-02T05:23:04"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 ## Summary
@@ -15,8 +15,8 @@ The authors propose normalizing these by generating large quantities ($10^{4}$) 
 
 ## Figures
 
-\![[Effect-of-sequence-distance-on-variant-prediction.png]]
-\![[Debiasing-PLMs.png]]
+![[Effect-of-sequence-distance-on-variant-prediction.png]]
+![[Debiasing-PLMs.png]]
 *Figures from [Shaw et al 2023][^shaw2023]*
 
 [^shaw2023]: Shaw et al. (2023) "Removing bias in sequence models of protein fitness." https://doi.org/10.1101/2023.09.28.560044

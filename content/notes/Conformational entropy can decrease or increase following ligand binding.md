@@ -1,8 +1,8 @@
 ---
 tags:
-  - conformational-dynamics
+  - conformational-dynamics/allostery
 created: "2025-09-11T09:42:59"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary

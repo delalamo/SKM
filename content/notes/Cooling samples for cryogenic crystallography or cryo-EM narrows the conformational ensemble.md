@@ -1,8 +1,8 @@
 ---
 tags:
-  - conformational-dynamics
+  - conformational-dynamics/experimental-ensembles
 created: "2024-05-05T10:33:35"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 ---

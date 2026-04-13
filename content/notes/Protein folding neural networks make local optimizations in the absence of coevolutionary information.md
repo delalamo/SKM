@@ -1,8 +1,8 @@
 ---
 tags:
-  - structure-prediction
+  - structure-prediction/limitations
 created: "2024-12-05T07:28:11"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 ## Summary
@@ -11,7 +11,7 @@ modified: "2026-04-11T06:06:39"
 
 ## Figures
 
-\![[Pasted-image-20241205132400.png]]
+![[Pasted-image-20241205132400.png]]
 *Figure from [Gut et al 2024][^gut2024]*
 
 [^gut2024]: Gut & Lemmin (2024) "Dissecting AlphaFold2’s capabilities with limited sequence information." *Bioinformatics Advances*. https://doi.org/10.1093/bioadv/vbae187

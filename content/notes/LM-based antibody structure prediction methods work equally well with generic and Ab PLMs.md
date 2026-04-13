@@ -2,8 +2,9 @@
 tags:
   - protein-language-models/antibodies
   - antibody-structure-prediction/cdr
+  - plddt
 created: "2026-04-05T17:38:14"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary

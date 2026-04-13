@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/representations
 created: "2026-03-22T10:44:50"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:41:30"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ modified: "2026-04-11T06:06:39"
 
 #### Figures
 
-\![[Fitness-ranking-prediction.png]]
+![[Fitness-ranking-prediction.png]]
 
 *Figure from [^li2024]*
 

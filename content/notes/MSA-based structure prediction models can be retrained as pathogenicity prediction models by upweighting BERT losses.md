@@ -1,9 +1,9 @@
 ---
 tags:
-  - structure-prediction
   - protein-language-models/training
+  - structure-prediction/training
 created: "2024-05-18T07:14:37"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary

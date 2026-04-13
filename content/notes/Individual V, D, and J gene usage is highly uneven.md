@@ -2,13 +2,13 @@
 tags:
   - antibodies/misc
 created: "2025-11-20T16:49:04"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 #### Summary
 **Individual [[Germline|V gene]], [[Germline|D gene]], and [[Germline|J gene]] usage is highly uneven and nonrandom** [^rees2020][^hong2018].
 
 #### Figures
-\![[Pasted-image-20251120164537.png]]
+![[Pasted-image-20251120164537.png]]
 *Figure from [^hong2018]*
 
 [^rees2020]: Rees (2020) "Understanding the human antibody repertoire." *mAbs*. https://doi.org/10.1080/19420862.2020.1729683

@@ -3,7 +3,7 @@ title: Kinases
 tags:
   - kinases
 created: "2026-04-10T14:02:57"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:41:30"
 ---
 
 **Kinases** are proteins that catalyze ATP-consuming Mg-dependent phosphorylation of proteins. These regulate most cellular processes in eukaryotic organisms. Consists of N-terminal sheet domain with C-helix, and a C-terminal helical domain
@@ -24,6 +24,6 @@ These were modeled with [[AlphaFold|AlphaFold2]] ([[10.1101__2023.07.21.550125|F
 * *Regulatory spine:** Consists of histidine from HRD motif, phenylalanine from DFG motif, the AA four positions after conserved glutanmate salt bridge, and a final unspecified hydrophobic amino acid (usually leucine) seven positions after HPN motif.
 * **DFG-in:** A conformation where the Asp side chain of the DFG-motif is in the ATP binding site, while the Phe is either in a pocket or adjacent to C-helix or N-terminal domain. Majority of ATP-bound structures in PDB are DFGin
 * **DFG-out:** A conformation where the Asp side chan of the DFG-motif is not in the active site and the Phe is released from C-terminal pocket.
-\![[Kinase-geometry.png]]
+![[Kinase-geometry.png]]
 
 <!-- generated -->

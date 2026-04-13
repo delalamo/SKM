@@ -1,8 +1,9 @@
 ---
 tags:
   - protein-folding/misc
+  - plddt
 created: "2024-05-05T09:15:16"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary

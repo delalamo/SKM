@@ -1,10 +1,12 @@
 ---
 tags:
   - alphafold2
-  - structure-prediction
-  - conformational-dynamics
+  - structure-prediction/sampling
+  - conformational-dynamics/modeling
+  - plddt
+  - pae
 created: "2024-11-04T22:55:26"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-11T07:27:50"
 ---
 
 #### Summary

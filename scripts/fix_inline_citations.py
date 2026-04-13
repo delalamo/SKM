@@ -17,6 +17,14 @@ After:   *Figure from [^ferrari2025]*
 Before:  (as judged by ProteinGym; Notin et al 2022[^notin2022])
 After:   (as judged by ProteinGym; [^notin2022])
 
+Also warns (step 4) about any un-migrated DOI-based citations that were never
+converted to [^key] footnotes:
+
+  [10.xxxx/yyy|Author Year]    — broken single-bracket (notes)
+  [[10.xxxx/yyy|Author Year]]  — wikilink in a Figure caption (MOCs)
+
+Run scripts/migrate_wikilink_citations.py to fix those automatically.
+
 Usage:
     python3 scripts/fix_inline_citations.py [--dry-run] [file ...]
 """
@@ -85,13 +93,54 @@ def collapse_paren_footnotes(text: str) -> str:
 # ---------------------------------------------------------------------------
 DOUBLE_SPACE_RE = re.compile(r'  +')
 
+# ---------------------------------------------------------------------------
+# Step 4 — detect un-migrated DOI-based citation patterns and warn.
+#
+# These should never appear in a processed vault — if they do, run
+# migrate_wikilink_citations.py first.
+#
+# Patterns detected (both use the encoded DOI form  10.xxxx__yyy):
+#   [10.xxxx__yyy|Author Year]     single-bracket broken markup (notes)
+#   [[10.xxxx__yyy|Author Year]]   wikilink in a Figure caption (MOCs)
+# ---------------------------------------------------------------------------
+UNMIGRATED_SINGLE_RE = re.compile(r'\[10\.[^\]|]+\|[^\]]+\](?!\])')
+UNMIGRATED_DOUBLE_RE = re.compile(r'\[\[10\.[^\]|]+\|[^\]]+\]\]')
+
+
+def find_unmigrated(text: str) -> list[tuple[int, str]]:
+    """Return (line_number, line) pairs for any un-migrated DOI citations.
+
+    Rules:
+    * Single-bracket [10.xxx|Author Year] — always broken, always flag.
+    * Double-bracket [[10.xxx|Author Year]] — flag ONLY in *Figure/Table/Image
+      from …* caption lines, since body-text wikilinks in MOCs are intentional.
+    """
+    hits = []
+    CAPTION_RE = re.compile(r'^\s*\*.*(?:Figure|Table|Image|Panel)\s+from', re.IGNORECASE)
+    for lineno, line in enumerate(text.splitlines(), 1):
+        # Skip footnote-definition lines
+        if re.match(r'^\[\^\w+\]:', line):
+            continue
+        if UNMIGRATED_SINGLE_RE.search(line):
+            hits.append((lineno, line.rstrip()))
+        elif UNMIGRATED_DOUBLE_RE.search(line) and CAPTION_RE.match(line):
+            hits.append((lineno, line.rstrip()))
+    return hits
+
 
 # ---------------------------------------------------------------------------
 # Per-file processing
 # ---------------------------------------------------------------------------
 
-def process(path: Path, dry_run: bool) -> bool:
+def process(path: Path, dry_run: bool) -> tuple[bool, list[tuple[int, str]]]:
+    """
+    Returns (was_modified, unmigrated_hits).
+    unmigrated_hits is a list of (lineno, line) for any un-migrated DOI citations.
+    """
     original = path.read_text('utf-8')
+
+    # Step 4 — warn about un-migrated DOI citations before doing anything else
+    unmigrated = find_unmigrated(original)
 
     # Split into frontmatter + body (footnote definitions are part of body)
     m = FM_RE.match(original)
@@ -122,12 +171,10 @@ def process(path: Path, dry_run: bool) -> bool:
 
     updated = fm + content + ''.join(fn_def_lines)
 
-    if updated == original:
-        return False
-
-    if not dry_run:
+    modified = (updated != original)
+    if modified and not dry_run:
         path.write_text(updated, 'utf-8')
-    return True
+    return modified, unmigrated
 
 
 # ---------------------------------------------------------------------------
@@ -148,13 +195,26 @@ def main() -> None:
         print('DRY RUN — no files will be modified\n')
 
     modified = 0
+    warnings: list[str] = []
+
     for path in targets:
-        changed = process(path, dry_run)
+        changed, unmigrated = process(path, dry_run)
         if changed:
             modified += 1
             print(f'  ✓  {path.name}')
+        if unmigrated:
+            for lineno, line in unmigrated:
+                warnings.append(f'  {path.name}:{lineno}: {line}')
 
     print(f'\n{"Would modify" if dry_run else "Modified"} {modified}/{len(targets)} file(s).')
+
+    if warnings:
+        print(
+            f'\nWARNING: {len(warnings)} un-migrated DOI citation(s) found.\n'
+            'Run  scripts/migrate_wikilink_citations.py  to convert them.\n'
+        )
+        for w in warnings:
+            print(w)
 
 
 if __name__ == '__main__':
