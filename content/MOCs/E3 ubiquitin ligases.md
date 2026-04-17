@@ -1,9 +1,8 @@
 ---
 title: E3 ubiquitin ligases
 tags:
-  - e3-ubiquitin-ligases
-created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-10T14:30:55
+modified: "2026-04-17T06:40:29"
 ---
 
 **E3 ubiquitin ligases** are proteins that transfer [[Ubiquitin]] from an [[E2 ubiquitin-conjugating enzymes|E2 ubiquitin-conjugating enzyme]] to a target destined for degradation. They are one of the binding partners of [[PROTACs]] and [[Molecular glues]].

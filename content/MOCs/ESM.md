@@ -1,9 +1,8 @@
 ---
 title: ESM
 tags:
-  - esm
-created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-10T14:30:55
+modified: "2026-04-17T06:40:29"
 ---
 
 **ESM** is series of a [[Protein language models|protein language models]] that use the [[BERT]] masking training objectives (introduced in [[10.1073__pnas.2016239118|Rives et al 2021]], [[10.1126__science.ade2574|Lin et al 2023]], and [[10.1126__science.ads0018|Hayes et al 2025]]). Embeddings from a 3B ESM2 model (which was sequence-only) were used to train [[ESMFold]] ([[10.1126__science.ade2574|Lin et al 2023]]). ESM3 directly uses input and output structure tokens as training objectives ([[10.1126__science.ads0018|Hayes et al 2025]]).

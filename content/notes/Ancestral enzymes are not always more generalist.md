@@ -1,15 +1,10 @@
 ---
-tags: 
-  - protein-folding/misc
-created: "2024-09-19T05:32:41"
-modified: "2026-04-11T07:27:50"
+tags:
+  - ancestral-sequence-reconstruction
+created: 2024-09-19T05:32:41
+modified: "2026-04-17T06:40:29"
 ---
 
----
-tags:
- - ancestral-sequence-reconstruction/observations
-summary: Ancestral enzymes are not always more generalist
----
 #### Summary
 **[[Ancestral sequence reconstruction|Ancestrally reconstructed]] enzymes are not always more generalist than extant enzymes.** [^busch2016] found that an ancestral tryptophan synthase did not have greater substrate breadth than modern enzymes. This contrasts with prior hypotheses that generalist ancestral enzymes evolved specificity over time, which is corroborated by other reports, such as ancestral L-arginine oxidase from [^nakano2019], and transaminase from [^wilding2017].
 

@@ -1,9 +1,8 @@
 ---
 title: Display methods
 tags:
-  - display-methods
-created: "2026-04-10T14:02:57"
-modified: "2026-04-13T11:11:20"
+created: 2026-04-10T14:02:57
+modified: "2026-04-17T06:40:29"
 ---
 
 **Display methods** are a set of high-throughput methods for protein engineering in which large numbers of recombinant protein variants are synthesized by phages and tested for binding. It's commonly used to design [[Antibodies|antibodies]] or protein [[Protein-protein interactions|binders]]. There are numerous variations of this method.

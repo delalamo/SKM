@@ -1,9 +1,8 @@
 ---
 title: ProGen
 tags:
-  - progen
-created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-10T14:30:55
+modified: "2026-04-17T06:40:29"
 ---
 
 **ProGen** is a family of autoregressive [[Protein language models|protein language models]]. **ProGen2** has been extensively shown to be capable of designing new sequences from scratch if fine-tuned; see [[Proteins designed using PLMs more unique than those designed using Potts models]] ([[10.1016__j.cels.2023.10.002|Nijkamp et al 2023]], [[10.1101__2025.04.15.649055|Bhatnagar et al 2025]]). **ProGen3** adopts a [[Mixture-of-experts]] architecture, is also capable of infilling masked spans, and can design proteins that express *in vitro* even without fine-tuning.

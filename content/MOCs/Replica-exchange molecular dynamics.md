@@ -1,9 +1,8 @@
 ---
 title: Replica-exchange molecular dynamics
 tags:
-  - replica-exchange-molecular-dynamics
-created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-10T14:30:55
+modified: "2026-04-17T06:40:29"
 ---
 
 **Replica-exchange [[MD simulations|MD simulations]]** execute multiple versions of the same molecule in parallel, at different conditions (typically different temperatures). This is motivated by using a "ladder" of simulations to connect a target low-temperature distribution with a high-temperature, easier-to-sample distribution, accelerating sampling of the former ([[10.1021__acs.jpclett.2c03327|Invernizzi et al 2022]]).

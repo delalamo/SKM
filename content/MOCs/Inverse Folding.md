@@ -3,7 +3,7 @@ title: Inverse folding
 tags:
   - inverse-folding
 created: "2026-04-10T14:02:57"
-modified: "2026-04-11T07:42:59"
+modified: "2026-04-17T06:40:29"
 ---
 
 **Inverse folding** describes the problem of designing a sequence for a structure. Typically these are limited to the twenty canonical amino acids.
@@ -39,8 +39,8 @@ modified: "2026-04-11T07:42:59"
 ## Training
 
 - [[Ab-Ag inverse folding methods benefit from pretraining]]
-- [[Adding noise sometimes leads to greater diversity during inverse folding]]
-- [[Adding noise while training non-Ab inverse folding models improves self-consistency while worsenine sequence recovery]]
+- [[Adding noise sometimes leads to greater diversity during inverse folding inference]]
+- [[Adding noise while training non-Ab inverse folding models improves self-consistency while worsening sequence recovery]]
 - [[Adding noise while training non-Ab inverse folding models improves self-consistency while worsening sequence recovery]]
 - [[Including ligands restrains design of catalytically active residues]]
 - [[Including structure prediction confidence while training inverse folding improves sequence diversity but not sequence recovery]]

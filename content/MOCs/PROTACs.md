@@ -1,9 +1,8 @@
 ---
 title: PROTACs
 tags:
-  - protacs
-created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-10T14:30:55
+modified: "2026-04-17T06:40:29"
 ---
 
 **PROTACs** are small molecules that facilitate targeted protein degradation by binding to [[Protein-protein interactions|two proteins simultaneously]], one of them being an [[E3 ubiquitin ligases|E3 ubiquitin ligase]]. In contrast with [[Molecular glues|molecular glues]] like Thalidomide (not all of which facilitate protein degradation), these consist of discrete small molecular binders connected by a linker.

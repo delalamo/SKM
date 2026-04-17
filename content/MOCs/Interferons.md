@@ -1,9 +1,8 @@
 ---
 title: Interferons
 tags:
-  - interferons
-created: "2026-04-10T14:02:57"
-modified: "2026-04-13T11:11:20"
+created: 2026-04-10T14:02:57
+modified: "2026-04-17T06:40:29"
 ---
 
 **Interferons** are a type of [[Cytokines|cytokine]] that interrupt protein production in cells.

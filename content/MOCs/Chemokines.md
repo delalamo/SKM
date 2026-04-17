@@ -1,9 +1,8 @@
 ---
 title: Chemokines
 tags:
-  - chemokines
-created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-10T14:30:55
+modified: "2026-04-17T06:40:29"
 ---
 
 The 47 human **chemokines** regulate cell adhesion and migration of leukocytes. Cells are stimulated to move up the concentration gradient of the chemokine (toward the cell releasing it). They are between 8 and 10 kDa with two disulfides.

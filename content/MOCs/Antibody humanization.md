@@ -1,9 +1,8 @@
 ---
 title: Antibody humanization
 tags:
-  - antibody-humanization
-created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-10T14:30:55
+modified: "2026-04-17T06:40:29"
 ---
 
 **Antibody humanization** refers to the process of making animal [[Antibodies|antibodies]] more acceptable to the human immune system. Approximately one third of approved antibodies are derived from animal mAbs and are humanized during development.

@@ -1,9 +1,8 @@
 ---
 tags:
   - alphafold2
-  - antibody-structure-prediction/cdr
-created: "2024-05-08T17:57:58"
-modified: "2026-04-11T07:41:30"
+created: 2024-05-08T17:57:58
+modified: "2026-04-17T06:40:29"
 ---
 #### Summary
 **[[AlphaFold|AlphaFold2]] models interactions between [[Antibodies|antibodies]] and antigens using motifs found in non-antibody structural complexes in the PDB** [^mccoy2024]. Better antibody-antigen predictions recycle interactions from non-PDB structures.

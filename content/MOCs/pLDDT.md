@@ -4,7 +4,7 @@ tags:
   - plddt
   - structure-prediction/metrics
 created: "2026-04-10T14:02:57"
-modified: "2026-04-13T11:11:20"
+modified: "2026-04-17T06:40:29"
 ---
 
 *(LDDT redirects here)*
@@ -27,7 +27,7 @@ $$E_{pLDDT}=\sum{\left( \frac{d_{i}}{1.5*\exp{\left(4*\left(0.7 - pLDDT_{i} \rig
 
 ## General
 
-- [[AF2 RMSD correlated with RMSD between conformations]]
+- [[AF2 RMSD to ground truth correlated with RMSD between conformations]]
 - [[AlphaFold2 and RosettaFold sometimes produce different conformations]]
 - [[AlphaFold2 predicts the holo form of proteins in most cases]]
 - [[AlphaFold3 uses cross-distillation from AlphaFold2 to avoid hallucinating secondary structure in low-pLDDT regions]]

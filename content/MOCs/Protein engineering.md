@@ -1,9 +1,8 @@
 ---
 title: Protein engineering
 tags:
-  - protein-engineering
-created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-10T14:30:55
+modified: "2026-04-17T06:40:29"
 ---
 
 **Protein engineering** refers to the modification of proteins to have specific properties. This can range in magnitude from the introduction of mutations to entire domains.

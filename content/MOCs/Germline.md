@@ -1,9 +1,8 @@
 ---
 title: Germline
 tags:
-  - germline
-created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-10T14:30:55
+modified: "2026-04-17T06:40:29"
 ---
 
 **Germline** [[Antibodies|antibodies]] are antibodies that have not been subject to [[Somatic hypermutation|somatic hypermutation]].

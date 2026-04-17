@@ -1,9 +1,8 @@
 ---
 title: Kemp eliminase
 tags:
-  - kemp-eliminase
-created: "2026-04-10T14:02:57"
-modified: "2026-04-13T11:11:20"
+created: 2026-04-10T14:02:57
+modified: "2026-04-17T06:40:29"
 ---
 
 **Kemp eliminases** are enzymes commonly used as a benchmark case in enzyme engineering and [[Directed evolution|directed evolution]] campaigns.

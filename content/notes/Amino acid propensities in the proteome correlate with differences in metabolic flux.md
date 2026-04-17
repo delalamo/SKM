@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-folding/misc
-created: "2024-06-18T06:15:04"
-modified: "2026-04-11T07:41:30"
+  - evolution-and-natural-selection
+created: 2024-06-18T06:15:04
+modified: "2026-04-17T06:40:29"
 ---
 
 #### Summary

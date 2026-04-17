@@ -1,9 +1,8 @@
 ---
 title: Bayesian optimization
 tags:
-  - bayesian-optimization
-created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-10T14:30:55
+modified: "2026-04-17T06:40:29"
 ---
 
 **Bayesian optimization** is a sequential design strategy for global optimization of black-box functions (such as fitness functions). Uses [[Gaussian processes]] as a prior.

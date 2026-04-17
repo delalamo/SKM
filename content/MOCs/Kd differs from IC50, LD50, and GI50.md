@@ -1,9 +1,8 @@
 ---
 title: Kd differs from IC50, LD50, and GI50
 tags:
-  - kd-differs-from-ic50-ld50-and-gi50
-created: "2026-04-10T14:02:57"
-modified: "2026-04-11T07:41:30"
+created: 2026-04-10T14:02:57
+modified: "2026-04-17T06:40:29"
 ---
 
 **Dissociation constant ($K_{D}$) differs from half-max lethal dose (LD50), inhibitory concentration (IC50), and growth inhibition (GI50).**

@@ -3,7 +3,7 @@ title: Protein language models
 tags:
   - protein-language-models
 created: "2026-04-10T10:46:24"
-modified: "2026-04-13T11:11:20"
+modified: "2026-04-17T06:40:29"
 ---
 
 **Protein language models** (PLMs) are a type of [[Transformer]] model trained on either protein sequences or [[Multiple sequence alignments]].
@@ -112,7 +112,7 @@ modified: "2026-04-13T11:11:20"
 
 ## Antibodies
 
-- [[Ab embeddings can distinguish engineered from human-derived Abs]]
+- [[PLM-derived antibody representations can distinguish engineered from human-derived Abs]]
 - [[Antibody LMs are worse for expression prediction than generic PLMs]]
 - [[Antibody LMs outperform generic PLMs on intrafamily thermostability prediction]]
 - [[Antibody PLMs match or outperform generic PLMs on specificity prediction]]

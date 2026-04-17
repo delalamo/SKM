@@ -1,9 +1,8 @@
 ---
 title: DiffDock
 tags:
-  - diffdock
-created: "2026-04-10T14:02:57"
-modified: "2026-04-11T07:41:30"
+created: 2026-04-10T14:02:57
+modified: "2026-04-17T06:40:29"
 ---
 
 **DiffDock** is a [[Diffusion models|diffusion]] model for small molecule ligand docking.

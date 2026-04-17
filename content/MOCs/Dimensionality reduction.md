@@ -1,9 +1,8 @@
 ---
 title: Dimensionality reduction
 tags:
-  - dimensionality-reduction
-created: "2026-04-10T14:02:57"
-modified: "2026-04-13T11:11:20"
+created: 2026-04-10T14:02:57
+modified: "2026-04-17T06:40:29"
 ---
 
 **Dimensionality reduction** refers to the process of compressing $N$ input features into $M$ dimensions, where $M<N$.

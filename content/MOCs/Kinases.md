@@ -1,9 +1,8 @@
 ---
 title: Kinases
 tags:
-  - kinases
-created: "2026-04-10T14:02:57"
-modified: "2026-04-11T07:41:30"
+created: 2026-04-10T14:02:57
+modified: "2026-04-17T06:40:29"
 ---
 
 **Kinases** are proteins that catalyze ATP-consuming Mg-dependent phosphorylation of proteins. These regulate most cellular processes in eukaryotic organisms. Consists of N-terminal sheet domain with C-helix, and a C-terminal helical domain

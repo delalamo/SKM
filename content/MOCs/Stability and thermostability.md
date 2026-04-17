@@ -3,7 +3,7 @@ title: Stability and thermostability
 tags:
   - thermostability
 created: "2026-04-05T23:36:09"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-17T06:40:29"
 ---
 
 **Thermostability** refers to a protein's ability to remain folded at high temperatures or under harsh conditions. It is a highly desirable property for engineered proteins.
@@ -38,7 +38,7 @@ modified: "2026-04-11T07:27:50"
 
 ## Prediction
 
-- [[A subset of residues is sufficient to predict protein stability]]
+- [[A subset of residues is sufficient to predict protein dG]]
 - [[About 100k datapoints required to train accurate ddG predictor]]
 - [[Adding structural adaptors to language models leads to improvements in thermostability prediction compared to structure-based NNs alone]]
 - [[Averaging logits from multiple sources can improve fitness prediction]]

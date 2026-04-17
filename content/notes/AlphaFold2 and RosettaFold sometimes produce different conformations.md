@@ -3,10 +3,9 @@ tags:
   - alphafold2
   - structure-prediction/sampling
   - conformational-dynamics/modeling
-  - plddt
-  - pae
-created: "2024-11-04T22:55:26"
-modified: "2026-04-11T07:27:50"
+  - rosettafold
+created: 2024-11-04T22:55:26
+modified: "2026-04-17T06:40:29"
 ---
 
 #### Summary

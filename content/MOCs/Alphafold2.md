@@ -3,7 +3,7 @@ title: Alphafold2
 tags:
   - alphafold2
 created: "2026-04-11T06:06:39"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-17T06:40:29"
 ---
 
 > [!info] Auto-generated
@@ -14,7 +14,7 @@ modified: "2026-04-11T06:06:39"
 
 ## General
 
-- [[AF2 RMSD correlated with RMSD between conformations]]
+- [[AF2 RMSD to ground truth correlated with RMSD between conformations]]
 - [[AlphaFold2 and RosettaFold sometimes produce different conformations]]
 - [[AlphaFold2 generalizes to unseen secondary structures and topologies]]
 - [[AlphaFold2 outperforms ESMFold at distinguishing designable and undesignable protein backbones]]

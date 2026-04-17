@@ -1,9 +1,8 @@
 ---
 title: Inversion of protein folding neural networks
 tags:
-  - inversion-of-protein-folding-neural-networks
-created: "2026-04-10T14:02:57"
-modified: "2026-04-13T11:11:20"
+created: 2026-04-10T14:02:57
+modified: "2026-04-17T06:40:29"
 ---
 
 **Inversion of protein folding neural networks**, such as [[AlphaFold|AlphaFold2]], [[RosettaFold]], [[ESMFold]], and trRosetta, has been used for protein design by hallucination as well as adversarial attacks. It involves inversion of the networks and backpropagation to input sequence using a custom loss.

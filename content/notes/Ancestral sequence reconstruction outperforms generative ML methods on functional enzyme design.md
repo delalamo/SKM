@@ -1,9 +1,8 @@
 ---
-title: Ancestral sequence reconstruction outperforms generative ML methods on functional enzyme design
 tags:
-  - protein-design/misc
-created: "2024-05-02T05:25:59"
-modified: "2026-04-10T14:30:55"
+  - ancestral-sequence-reconstruction
+created: 2024-05-02T05:25:59
+modified: "2026-04-17T06:40:29"
 ---
 #### Summary
  **[[Ancestral sequence reconstruction]] outperforms generative ML methods on functional enzyme design** [^johnson2024]. 

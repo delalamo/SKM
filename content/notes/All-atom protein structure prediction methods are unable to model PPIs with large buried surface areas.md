@@ -1,8 +1,9 @@
 ---
 tags:
   - structure-prediction/limitations
-created: "2025-06-02T06:29:42"
-modified: "2026-04-11T07:41:30"
+  - protein-protein-interactions/structure-prediction
+created: 2025-06-02T06:29:42
+modified: "2026-04-17T06:40:29"
 ---
 
 #### Summary

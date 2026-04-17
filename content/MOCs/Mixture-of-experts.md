@@ -1,9 +1,8 @@
 ---
 title: Mixture-of-experts
 tags:
-  - mixture-of-experts
-created: "2026-04-10T14:02:57"
-modified: "2026-04-11T07:41:30"
+created: 2026-04-10T14:02:57
+modified: "2026-04-17T06:40:29"
 ---
 
 **Mixture of experts** is a machine learning method used especially in [[Transformer]] models that allows multiple small models with distinct specializations to work in tandem. There is a rumor that [[GPT]]-4 is a mixture-of-experts model. [[On fixed compute budgets, mixture-of-experts models outperform dense models|They outperform equivalently sized dense models on fixed compute budgets]].

@@ -1,9 +1,8 @@
 ---
 title: Weight averaging
 tags:
-  - weight-averaging
-created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-10T14:30:55
+modified: "2026-04-17T06:40:29"
 ---
 
 **Weight averaging** refers to the averaging of different checkpoints of a single model during training.

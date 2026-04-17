@@ -1,9 +1,8 @@
 ---
 title: Next-generation sequencing
 tags:
-  - next-generation-sequencing
-created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-10T14:30:55
+modified: "2026-04-17T06:40:29"
 ---
 
 **Next-generation sequencing** (**NGS**) is a technology used to determine the sequence of many DNA molecules in parallel.

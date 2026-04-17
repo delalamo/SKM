@@ -1,9 +1,8 @@
 ---
 title: Contrastive learning
 tags:
-  - contrastive-learning
-created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-10T14:30:55
+modified: "2026-04-17T06:40:29"
 ---
 
 **Contrastive learning** is a supervised method for driving the latent representations of data points towards or away from each other by adding custom losses.

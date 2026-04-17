@@ -1,9 +1,8 @@
 ---
 title: Model merging
 tags:
-  - model-merging
-created: "2026-04-10T14:02:57"
-modified: "2026-04-13T11:11:20"
+created: 2026-04-10T14:02:57
+modified: "2026-04-17T06:40:29"
 ---
 
 **Model merging** refers to the process of combining the weights of two or more neural networks with identical architectures to improve robustness.

@@ -1,8 +1,8 @@
 ---
 tags:
-  - thermostability/determinants
-created: "2025-04-22T00:50:49"
-modified: "2026-04-11T07:27:50"
+  - thermostability/prediction
+created: 2025-04-22T00:50:49
+modified: "2026-04-17T06:40:29"
 ---
 
 #### Summary

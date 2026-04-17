@@ -1,9 +1,8 @@
 ---
 title: Protein dynamics
 tags:
-  - protein-dynamics
-created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-10T14:30:55
+modified: "2026-04-17T06:40:29"
 ---
 
 **Protein dynamics** is a catch-all term referring to the conformational heterogeneity of folded protein structures. Weber described them as "screaming and kicking". As is noted by [[10.1038__nature06522|Henzler-Wildman & Kern 2007]], dynamics are described by 1) timescale, 2) amplitude, and 3) directionality, and they distinguish between fast and slow dynamics based on whether the energy barrier between the two sampled states exceed 1 kT.

@@ -1,9 +1,8 @@
 ---
 title: Interleukins
 tags:
-  - interleukins
-created: "2026-04-10T14:02:57"
-modified: "2026-04-13T11:11:20"
+created: 2026-04-10T14:02:57
+modified: "2026-04-17T06:40:29"
 ---
 
 **Interleukins** are one of the major types of [[Cytokines|cytokine]].

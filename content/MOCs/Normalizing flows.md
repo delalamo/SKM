@@ -1,9 +1,8 @@
 ---
 title: Normalizing flows
 tags:
-  - normalizing-flows
-created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-10T14:30:55
+modified: "2026-04-17T06:40:29"
 ---
 
 **Normalizing flows** ($f$ below) are a type of invertible deep learning framework capable of generating samples from a target distribution. It maps configuration $\textbf{x}$ drawn from a prior distribution $q(\textbf{x})$ to a target distribution $q'(\textbf{x})$.

@@ -1,9 +1,7 @@
 ---
-title: Antibody glycosylation
 tags:
-  - antibody-glycosylation
-created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-10T14:30:55
+modified: "2026-04-17T06:40:29"
 ---
 
 [[Antibodies]] are naturally glycosylated but as therapeutics are sensitive to the addition of more sugar groups.

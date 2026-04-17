@@ -1,9 +1,8 @@
 ---
 title: ProteinNPT
 tags:
-  - proteinnpt
-created: "2026-04-10T14:02:57"
-modified: "2026-04-13T11:11:20"
+created: 2026-04-10T14:02:57
+modified: "2026-04-17T06:40:29"
 ---
 
 **ProteinNPT** is a module that can be appended to [[Multiple sequence alignments|MSA]]-based [[Protein language models|protein language models]] that was first introduced by [[10.1101__2023.12.06.570473|Notin et al 2023b]].

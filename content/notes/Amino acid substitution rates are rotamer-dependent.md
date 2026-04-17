@@ -1,16 +1,10 @@
 ---
-tags: 
-  - protein-folding/misc
-created: "2024-05-02T05:20:50"
-modified: "2026-04-11T07:41:30"
+tags:
+  - evolution-and-natural-selection/structure
+created: 2024-05-02T05:20:50
+modified: "2026-04-17T06:40:29"
 ---
 
----
-summary: Amino acid substitution rates are rotamer-dependent
-tags:
- - structure-prediction/conformation 
- - 
----
 #### Summary
 **Amino acid substitution rates are dependent on the predominant rotamer in the structure** [^perron2019]. This could explain why [[MSA-based structure predictions outperform PLM-based methods]], since the evolutionary information/substitution rates are passed as explicit inputs.
 

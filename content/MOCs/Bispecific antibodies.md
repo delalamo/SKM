@@ -1,9 +1,8 @@
 ---
 title: Bispecific antibodies
 tags:
-  - bispecific-antibodies
-created: "2026-04-10T14:02:57"
-modified: "2026-04-13T11:11:20"
+created: 2026-04-10T14:02:57
+modified: "2026-04-17T06:40:29"
 ---
 
 *Redirects from trispecific antibodies, polyspecific antibodies*

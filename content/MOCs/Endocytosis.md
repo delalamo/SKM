@@ -1,9 +1,8 @@
 ---
 title: Endocytosis
 tags:
-  - endocytosis
-created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-10T14:30:55
+modified: "2026-04-17T06:40:29"
 ---
 
 **Endocytosis** is the process by which cells absorb foreign substances and molecules, including viruses. Viruses such as [[SARS-CoV-2]] use this process to enter human cells.

@@ -1,17 +1,11 @@
 ---
 tags:
-  - protein-folding/misc
   - thermostability/evolution
-created: "2024-04-16T10:20:53"
-modified: "2026-04-11T07:41:30"
+  - ancestral-sequence-reconstruction
+created: 2024-04-16T10:20:53
+modified: "2026-04-17T06:40:29"
 ---
 
----
-tags:
- - thermostability/observations
- - ancestral-sequence-reconstruction/observations, fitness-prediction
-summary: Ancestrally reconstucted sequences are more thermostable and active than extant sequences (though the relevance to evolution more broadly is disputed)
----
 #### Summary
 **Sequences designed by [[Ancestral sequence reconstruction]] have greater [[Stability and thermostability|thermostability]] and [[Fitness prediction|enzymatic activity]] than extant sequences** [^wilding2017]. However, there is some controversy about whether this says anything about how such sequences actually evolved.
 

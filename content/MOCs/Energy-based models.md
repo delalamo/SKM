@@ -1,9 +1,8 @@
 ---
 title: Energy-based models
 tags:
-  - energy-based-models
-created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-10T14:30:55
+modified: "2026-04-17T06:40:29"
 ---
 
 **Energy-based models** are statistical models or neural networks that attempt to learn the energy characterizing a distribution of data, rather than recovery of individual data points themselves. These are typically described as $p(A|B)=\frac{\exp \left(-E_{\theta}(A, B)/\beta \right)}{Z_{\theta,B}}$ where $\beta$ is the inverse temperature and $Z$ is a usually unknown partition function $\int_{\Omega} e^{-\beta E_{\theta}(A, B)}$. In the context of [[Structure prediction|protein structure prediction]], energy-based models are useful for learning the full conformational distribution, e.g., $p(str|seq)$.

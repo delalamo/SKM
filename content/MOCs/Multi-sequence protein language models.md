@@ -1,9 +1,8 @@
 ---
 title: Multi-sequence protein language models
 tags:
-  - multi-sequence-protein-language-models
-created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-10T14:30:55
+modified: "2026-04-17T06:40:29"
 ---
 
 Multi-sequence [[Protein language models|protein language models]] use a context of related sequences, either through [[Multiple sequence alignments|multiple sequence alignments]] or through unaligned sequences pre-pended to the query.

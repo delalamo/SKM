@@ -1,9 +1,8 @@
 ---
 title: Fab
 tags:
-  - fab
-created: "2026-04-05T23:36:09"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-05T23:36:09
+modified: "2026-04-17T06:40:29"
 ---
 
 The **Fab** of an [[Antibodies|antibody]] refers to the [[Variable-regions|variable region]] and the first domain of the [[Constant-regions|constant region]]. Antibodies have two while [[Nanobodies|nanobodies]] have only one. They are sometimes used for biophysical studies and have been explored for therapeutic applications.

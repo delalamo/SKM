@@ -1,9 +1,8 @@
 ---
 title: PyMOL
 tags:
-  - pymol
-created: "2026-04-10T14:30:55"
-modified: "2026-04-10T14:30:55"
+created: 2026-04-10T14:30:55
+modified: "2026-04-17T06:40:29"
 ---
 
 **PyMOL** is a modeling visualization program for proteins.

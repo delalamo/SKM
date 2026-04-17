@@ -3,7 +3,7 @@ title: Conformational dynamics
 tags:
   - conformational-dynamics
 created: "2026-04-11T06:06:39"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-17T06:40:29"
 ---
 
 > [!info] Auto-generated
@@ -14,7 +14,7 @@ modified: "2026-04-11T07:27:50"
 
 ## Modeling
 
-- [[AF2 RMSD correlated with RMSD between conformations]]
+- [[AF2 RMSD to ground truth correlated with RMSD between conformations]]
 - [[AlphaFold2 and RosettaFold sometimes produce different conformations]]
 - [[AlphaFold2 predicts Apo conformations with poorer RMSD than holo conformations]]
 - [[AlphaFold2 predicts ground states more often]]

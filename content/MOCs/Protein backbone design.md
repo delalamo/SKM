@@ -3,7 +3,7 @@ title: Protein backbone design
 tags:
   - protein-backbone-design
 created: "2026-04-10T14:30:55"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-17T06:40:29"
 ---
 
 **Protein backbone design** is the generation of protein backbones in three-dimensional space. This section also covers generation and design of entire protein structures in Cartesian space, but most methods uncouple design of the backbone and design of the sequence given the backbone ([[Inverse folding|inverse folding]]). As of May 2024, the current state of the art uses [[Diffusion models|diffusion]].
@@ -62,7 +62,7 @@ modified: "2026-04-11T06:06:39"
 
 ## Designability
 
-- [[Adding noise while training non-Ab inverse folding models improves self-consistency while worsenine sequence recovery]]
+- [[Adding noise while training non-Ab inverse folding models improves self-consistency while worsening sequence recovery]]
 - [[Affinity maturation of de novo minibinders introduces mutations far from the active site]]
 - [[AlphaFold2 outperforms ESMFold at distinguishing designable and undesignable protein backbones]]
 - [[Buried nonpolar surface area is a major determinant of whether de novo designed proteins are stable]]

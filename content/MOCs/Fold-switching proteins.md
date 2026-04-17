@@ -1,9 +1,8 @@
 ---
 title: Fold-switching proteins
 tags:
-  - fold-switching-proteins
-created: "2026-04-10T14:02:57"
-modified: "2026-04-13T11:11:20"
+created: 2026-04-10T14:02:57
+modified: "2026-04-17T06:40:29"
 ---
 
 **Fold-switching proteins**, also called metamorphic proteins, are proteins that can adopt multiple folds, such as by changing secondary structure or rearranging their substructures.

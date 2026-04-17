@@ -2,10 +2,8 @@
 tags:
   - alphafold2
   - structure-prediction/sampling
-  - plddt
-  - pae
-created: "2026-02-20T18:08:22"
-modified: "2026-04-11T07:27:50"
+created: 2026-02-20T18:08:22
+modified: "2026-04-17T06:40:29"
 ---
 
 #### Summary
@@ -16,7 +14,7 @@ modified: "2026-04-11T07:27:50"
 
 - [[AlphaFold2 and RosettaFold sometimes produce different conformations]]
 - [[pLDDT and PAE in protein folding neural networks are correlated]]
-- [[AF2 RMSD correlated with RMSD between conformations]]
+- [[AF2 RMSD to ground truth correlated with RMSD between conformations]]
 - [[pLDDT and PAE inversely correlated with protein dynamics in dynamic naturally occurring proteins, but not de novo proteins]]
 - [[AlphaFold2 predicts Apo conformations with poorer RMSD than holo conformations]]
 

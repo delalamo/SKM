@@ -3,7 +3,7 @@ tags:
   - protein-language-models/training
   - thermostability/prediction
 created: "2026-04-05T17:40:10"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-17T06:40:29"
 ---
 
 #### Summary
@@ -30,6 +30,6 @@ modified: "2026-04-11T07:27:50"
 
 #### See also
 
-* [[A subset of residues is sufficient to predict protein stability]]
+* [[A subset of residues is sufficient to predict protein dG]]
 
 [^tsishyn2025]: Tsishyn et al. (2025) "Residue conservation and solvent accessibility are (almost) all you need for predicting mutational effects in proteins." https://doi.org/10.1101/2025.02.03.636212

@@ -3,7 +3,7 @@ title: Protein Design
 tags:
   - protein-design
 created: "2026-04-10T14:30:55"
-modified: "2026-04-13T11:11:20"
+modified: "2026-04-17T06:40:29"
 ---
 
 > [!info] Auto-generated
@@ -37,7 +37,7 @@ modified: "2026-04-13T11:11:20"
 
 ## Miscellaneous
 
-- [[Accurate fitness landscapes unnecessary for engineering]]
+- [[Accurate fitness landscapes are unnecessary for productively engineering enzymes or proteins]]
 - [[Ancestral sequence reconstruction outperforms generative ML methods on functional enzyme design]]
 - [[Beneficial mutations of enzymes far from active site improve substrate binding and product release]]
 - [[Conformational sampling can smoothen fitness landscapes]]

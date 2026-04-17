@@ -2,11 +2,11 @@
 title: Epistasis
 tags:
   - epistasis
-created: "2026-04-10T14:02:57"
-modified: "2026-04-13T11:11:20"
+created: 2026-04-10T14:02:57
+modified: "2026-04-17T06:40:29"
 ---
 
-**Epistasis** refers to the non-additivity of fitness effects arising from specific combinations of mutations. [[10.1101__2024.06.23.600144|Johnston et al 2024]] outline three types of epistasis: magnitude epistasis ("same direction as expected but are not perfectly additive"), sign epistasis ("effect of one of the substitutions changes direction in the context of the other"), and reciprocal epistasis ("effects of both substitutions change direction when they are made together").
+**Epistasis** refers to the non-additivity of fitness effects arising from specific combinations of mutations. doi.org/10.1101/2024.06.23.600144 outline three types of epistasis: magnitude epistasis ("same direction as expected but are not perfectly additive"), sign epistasis ("effect of one of the substitutions changes direction in the context of the other"), and reciprocal epistasis ("effects of both substitutions change direction when they are made together").
 
 ![[types_of_epistasis.png]]
 *Figure from [^johnston2024]*
