@@ -2,12 +2,7 @@
 tags:
   - protein-protein-interactions
 created: 2024-05-28T04:25:02
-modified: "2026-04-20T08:32:20"
----
-
----
-summary: 
-tags:
+modified: "2026-04-20T09:16:21"
 ---
 #### Summary
 **The binding affinity between [[Protein-protein interactions|two proteins]] correlates with buried surface area** ([^chen2013]. At least 500 $Å^{2}$ are required for a stable complex to form [^day2012], and the effect levels off at >2000 $Å^{2}$ [^chen2013].
