@@ -3,7 +3,7 @@ tags:
   - structure-prediction/sampling
   - conformational-dynamics/modeling
 created: 2025-12-19T12:44:03
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -28,11 +28,11 @@ Alternate conformations sampled via
 
 ![[Pasted-image-20240423091334.png]]
 
-*Figure from [^riccabona2024]*
+*Ref [^riccabona2024]*
 
 ![[Pasted-image-20241016074333.png]]
 
-*Figure from [^schafer2024]*
+*Ref [^schafer2024]*
 
 [^del2022]: del Alamo et al. (2022) "Sampling alternative conformational states of transporters and receptors with AlphaFold2." *eLife*. https://doi.org/10.7554/eLife.75751
 [^monteiro2024]: Monteiro da Silva et al. (2024) "High-throughput prediction of protein conformational distributions with subsampled AlphaFold2." *Nature Communications*. https://doi.org/10.1038/s41467-024-46715-9

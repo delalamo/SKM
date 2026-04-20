@@ -2,7 +2,7 @@
 tags:
   - variant-effect-prediction
 created: 2026-01-22T11:27:43
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -13,6 +13,6 @@ modified: "2026-04-20T07:16:03"
 
 ![[1.0.png]]
 
-*Figure from [^li2025]*
+*Ref [^li2025]*
 
 [^li2025]: Li & Luo (2025) "Generalizable and scalable protein stability prediction with rewired protein generative models." Nature Communications. https://doi.org/10.1038/s41467-025-67609-4

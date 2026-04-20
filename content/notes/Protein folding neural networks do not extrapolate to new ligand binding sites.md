@@ -2,7 +2,7 @@
 tags:
   - structure-prediction/limitations
 created: "2024-06-04T01:01:27"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:32:20"
 ---
 
 ## Summary
@@ -12,7 +12,7 @@ modified: "2026-04-20T10:13:23"
 ## Figures
 
 ![[Crystal-Structure.png]]
-*Figure from [d'Oelsnitz et al 2024][^doelsnitz2024]*
+*Ref [d'Oelsnitz et al 2024][^doelsnitz2024]*
 
 [^doelsnitz2024]: d’Oelsnitz et al. (2024) "Biosensor and machine learning-aided engineering of an amaryllidaceae enzyme." *Nature Communications*. https://doi.org/10.1038/s41467-024-46356-y
 [^drr2024]: Dürr & Rothlisberger (2024) "Predicting metal-protein interactions using cofolding methods: Status quo." https://doi.org/10.1101/2024.05.28.596236

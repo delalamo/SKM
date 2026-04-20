@@ -3,7 +3,7 @@ tags:
   - protein-language-models/representations
   - alignment/sequence-based
 created: "2026-01-22T12:38:44"
-modified: "2026-04-20T08:24:12"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -14,6 +14,6 @@ modified: "2026-04-20T08:24:12"
 
 ![[b).png]]
 
-*Figure from [^wu2024]*
+*Ref [^wu2024]*
 
 [^wu2024]: Wu et al. (2024) "ProteinCLIP: enhancing protein language models with natural language." https://doi.org/10.1101/2024.05.14.594226

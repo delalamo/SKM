@@ -2,7 +2,7 @@
 tags:
   - structure-prediction/architecture
 created: "2024-05-02T17:54:08"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -12,7 +12,7 @@ The invariant point attention is not mandatory for protein structure prediction 
 #### Figures
 
 ![[Pasted-image-20240418162324.png]]
-*Figure from [^jumper2021]*
+*Ref [^jumper2021]*
 
 [^baek2023]: Baek et al. (2023) "Efficient and accurate prediction of protein structure using RoseTTAFold2." https://doi.org/10.1101/2023.05.24.542179
 [^hu2022]: Hu et al. (2022) "Exploring evolution-aware & -free protein language models as protein function predictors." NeurIPS. http://papers.nips.cc/paper_files/paper/2022/hash/fe066022bab2a6c6a3c57032a1623c70-Abstract-Conference.html

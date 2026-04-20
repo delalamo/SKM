@@ -3,7 +3,7 @@ title: Evolution and natural selection
 aliases:
   - Evolution and natural selection
 created: "2026-04-10T14:02:57"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:16:13"
 ---
 
 Protein **evolution** is the process and result of gradual sequence changes resulting in functional and/or structural changes. See [[Epistasis]] for examples on why evolutionary trajectories are difficult to predict. This note excludes any discussion of [[Somatic hypermutation|somatic hypermutation]].

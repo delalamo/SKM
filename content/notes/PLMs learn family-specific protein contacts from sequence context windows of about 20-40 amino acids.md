@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/representations
 created: "2025-09-01T08:38:43"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T08:32:20"
 ---
 
 ## Summary
@@ -21,7 +21,7 @@ Evidence of family-specific features in ESM2-650M was observed by [Adams et al 2
 *Excerpt from [Zhang et al 2024][^zhang2024]*
 
 ![[Family-specific-feature-beta-lactamase.png]]
-*Figure from [Adams et al 2025][^adams2025]*
+*Ref [Adams et al 2025][^adams2025]*
 
 ## See also
 

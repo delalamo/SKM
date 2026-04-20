@@ -3,7 +3,7 @@ tags:
   - plddt
   - protein-language-models
 created: 2024-12-19T01:47:52
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -14,6 +14,6 @@ modified: "2026-04-20T10:13:23"
 
 ![[Pasted-image-20241219074446.png]]
 
-*Figure from [^stocco2024]*
+*Ref [^stocco2024]*
 
 [^stocco2024]: Stocco et al. (2024) "Guiding Generative Protein Language Models with Reinforcement Learning." https://doi.org/10.48550/ARXIV.2412.12979

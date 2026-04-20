@@ -3,7 +3,7 @@ tags:
   - inverse-folding/training
   - protein-backbone-design/designability
 created: "2026-04-05T17:24:10"
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -39,7 +39,7 @@ modified: "2026-04-17T06:40:29"
 
 ![[Pasted-image-20240918083544.png]]
 
-*Figure from [^ruffolo2024]*
+*Ref [^ruffolo2024]*
 
 #### See also
 

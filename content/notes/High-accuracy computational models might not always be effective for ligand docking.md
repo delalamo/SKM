@@ -2,7 +2,7 @@
 tags:
   - ligand-docking
 created: 2024-12-04T02:49:44
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -22,7 +22,7 @@ They found using cryo-EM that the AlphaFold2 model being used for docking was in
 #### Figures
 
 ![[Pasted-image-20231109162529.png]]
-*Figure from [^karelina2023]*
+*Ref [^karelina2023]*
 
 #### See also
 

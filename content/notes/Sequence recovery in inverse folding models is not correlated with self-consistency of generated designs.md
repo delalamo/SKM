@@ -2,7 +2,7 @@
 tags:
   - inverse-folding/evaluation
 created: "2026-02-09T13:53:30"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -10,6 +10,6 @@ modified: "2026-04-11T07:41:30"
 
 #### Figures
 ![[Pasted-image-20260209135237.png]]
-*Figure from [^birnbaum2026]*
+*Ref [^birnbaum2026]*
 
 [^birnbaum2026]: Birnbaum & Keating (2026) "Beyond native sequence recovery: Improved modeling of the sequence-energy landscape of protein structures." https://doi.org/10.64898/2026.01.14.699067

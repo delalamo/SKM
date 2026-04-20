@@ -2,7 +2,7 @@
 tags:
   - inverse-folding/evaluation
 created: "2025-02-04T02:56:48"
-modified: "2026-04-13T11:11:20"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -10,6 +10,6 @@ modified: "2026-04-13T11:11:20"
 
 #### Figures
 ![[Pasted-image-20241027101215.png]]
-*Figure from DOI [^nikolaev2024]*
+*Ref DOI [^nikolaev2024]*
 
 [^nikolaev2024]: Nikolaev et al. (2024) "Re‐engineering of a carotenoid‐binding protein based on NMR structure." *Protein Science*. https://doi.org/10.1002/pro.5216

@@ -2,7 +2,7 @@
 tags:
   - thermostability/mutations
 created: "2025-03-27T09:08:47"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -10,7 +10,7 @@ modified: "2026-04-11T07:41:30"
 
 #### Figures
 ![[Pasted-image-20240530072029.png]]
-*Figure from [^cagiada2024]*
+*Ref [^cagiada2024]*
 
 [^cagiada2024]: Cagiada et al. (2024) "Decoding molecular mechanisms for loss-of-function variants in the human proteome." https://doi.org/10.1101/2024.05.21.595203
 [^megascale]: Tsuboyama et al. (2023) "Mega-scale experimental analysis of protein folding stability in biology and design." *Nature*. https://doi.org/10.1038/s41586-023-06328-6

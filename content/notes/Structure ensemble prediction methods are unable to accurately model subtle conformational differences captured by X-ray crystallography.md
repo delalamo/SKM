@@ -2,7 +2,7 @@
 tags:
   - conformational-dynamics/experimental-ensembles
 created: "2025-04-24T03:11:21"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -12,7 +12,7 @@ modified: "2026-04-11T07:41:30"
 #### Figures
 
 ![[Pasted-image-20250424090654.png]]
-*Figure from [^rosenberg2024]*
+*Ref [^rosenberg2024]*
 
 #### See also
 

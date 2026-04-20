@@ -5,7 +5,7 @@
 #### Figures
 ![[Fitness-ranking-prediction.png]]
 
-*Figure from [^li2024]*
+*Ref [^li2024]*
 
 #### See also
 * [[Zero-shot performance of PLMs, but not inverse folding models, correlates with number of homologs available for training]]

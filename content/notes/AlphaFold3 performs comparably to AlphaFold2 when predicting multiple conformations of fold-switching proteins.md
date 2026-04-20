@@ -5,7 +5,7 @@ tags:
   - conformational-dynamics/modeling
   - alphafold2
 created: 2025-11-07T17:32:43
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -16,7 +16,7 @@ modified: "2026-04-20T10:13:23"
 
 ![[Pasted-image-20240826210214.png]]
 
-*Figure from [^chakravarty2024]*
+*Ref [^chakravarty2024]*
 
 #### See also
 

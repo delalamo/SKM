@@ -4,7 +4,7 @@ tags:
   - structure-prediction/training
   - plddt
 created: "2024-05-11T20:04:05"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -15,6 +15,6 @@ modified: "2026-04-20T10:13:23"
 
 ![[Pasted-Graphic-3-1.png]]
 
-*Figure from [^abramson2024]*
+*Ref [^abramson2024]*
 
 [^abramson2024]: Abramson et al. (2024) "Accurate structure prediction of biomolecular interactions with AlphaFold 3." *Nature*. https://doi.org/10.1038/s41586-024-07487-w

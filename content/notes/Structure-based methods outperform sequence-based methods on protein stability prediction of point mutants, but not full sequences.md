@@ -2,7 +2,7 @@
 tags:
   - thermostability/prediction
 created: "2026-04-05T17:45:06"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -30,7 +30,7 @@ Data are ambiguous about when [[Rosetta]] or [[ProteinMPNN]] is better ([^reeves
 | TranceptEVE | 0.481 | 0.341 | 0.482 | 0.502 | **0.478** | 0.457 |
 | StructSeq | **0.549** | **0.399** | **0.498** | **0.633** | 0.468 | **0.509** |
 
-*Figure from [[Paul et al 2023]]*
+*Ref [[Paul et al 2023]]*
 
 | Design method | *De Novo* | Natural | All |
 |---|---|---|---|
@@ -42,7 +42,7 @@ Data are ambiguous about when [[Rosetta]] or [[ProteinMPNN]] is better ([^reeves
 | **AF-Design** | 0.354 | 0.292 | 0.318 |
 | **ESM-Design** | 0.127 | 0.0004 | 0.053 |
 
-*Figure from [^wang2023]*
+*Ref [^wang2023]*
 
 | Model | Version | TPR↑ DTm 5% | TPR↑ DTm 25% | TPR↑ DTm 50% | TPR↑ DDG 5% | TPR↑ DDG 25% | TPR↑ DDG 50% |
 |---|---|---|---|---|---|---|---|
@@ -67,11 +67,11 @@ Data are ambiguous about when [[Rosetta]] or [[ProteinMPNN]] is better ([^reeves
 | | t48 | **0.232** | 0.430 | 0.607 | 0.189 | 0.400 | 0.606 |
 | P¹³LG | k20_h1280 | 0.304 | 0.419 | 0.642 | 0.267 | 0.454 | 0.676 |
 
-*Figure from [^tan2023]*
+*Ref [^tan2023]*
 
 ![[Pasted-image-20241231144322.png]]
 
-*Figure from [^cho2024]*
+*Ref [^cho2024]*
 
 #### See also
 

@@ -3,7 +3,7 @@ tags:
   - thermostability/prediction
   - low-rank-adaptation
 created: 2026-01-22T11:23:24
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -16,7 +16,7 @@ modified: "2026-04-20T07:16:03"
 
 ![[Pasted-image-20250220082509.png]]
 
-*Figure from [^li2025]*
+*Ref [^li2025]*
 
 #### See also
 

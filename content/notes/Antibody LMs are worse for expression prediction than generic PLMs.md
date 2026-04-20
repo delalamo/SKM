@@ -3,7 +3,7 @@ tags:
   - protein-language-models/antibodies
   - antibody-developability/expression
 created: "2026-04-05T17:07:03"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
 **[[Antibodies|Antibody]]-specific [[Protein language models|protein language models]] are worse for antibody [[Developability|expression prediction]] than generic [[Protein language models|PLMs]]** [^kenlay2024].
@@ -20,7 +20,7 @@ modified: "2026-04-20T07:16:03"
 | IgT5-unpaired | 0.299 ± 0.119 | *0.245* ± 0.049 | 0.179 ± 0.014 | 0.567 ± 0.025 |
 | IgT5 | 0.274 ± 0.070 | **0.297** ± 0.057 | **0.25** ± 0.019 | *0.548* ± 0.067 |
 
-*Figure from [^kenlay2024]*
+*Ref [^kenlay2024]*
 
 #### See also
 - [[Antibody LMs outperform generic PLMs on intrafamily thermostability prediction]]

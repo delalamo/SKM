@@ -2,7 +2,7 @@
 tags:
   - protein-backbone-design/designability
 created: "2024-09-01T04:29:37"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -10,7 +10,7 @@ modified: "2026-04-11T07:41:30"
 
 #### Figures
 ![[Pasted-image-20240901102855.png]]
-*Figure from [^chang2024]*
+*Ref [^chang2024]*
 
 [^chang2024]: Chang & Perez (2024) "AlphaFold2
                   knows

@@ -3,7 +3,7 @@ tags:
   - structure-prediction/complex-prediction
   - diffusion-models/implementation
 created: 2026-03-11T08:27:32
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -13,6 +13,6 @@ Increasing the number of diffusion samples from all-atom protein structure predi
 #### Figures
 
 ![[Pasted-image-20260311082505.png]]
-*Figure from [^smorodina2026]*
+*Ref [^smorodina2026]*
 
 [^smorodina2026]: Smorodina et al. (2026) "Structural Plausibility Without Binding Specificity: Limits of AI-Based Antibody-Antigen Structure Prediction Confidence Scores." https://doi.org/10.64898/2026.03.02.709004

@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2024-11-14T03:02:24
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -9,6 +9,6 @@ modified: "2026-04-20T07:16:03"
 
 #### Figures
 ![[Phylogenetic-Distance.png]]
-*Figure from [^muir2024]; vertical line of top figure refers to the [[Consensus sequences|consensus sequence]]*
+*Ref [^muir2024]; vertical line of top figure refers to the [[Consensus sequences|consensus sequence]]*
 
 [^muir2024]: Muir et al. (2025) "Evolutionary-scale enzymology enables exploration of a rugged catalytic landscape." Science. https://doi.org/10.1126/science.adu1058

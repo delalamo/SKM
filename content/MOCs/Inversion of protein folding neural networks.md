@@ -2,7 +2,7 @@
 title: Inversion of protein folding neural networks
 tags:
 created: 2026-04-10T14:02:57
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:32:20"
 ---
 
 **Inversion of protein folding neural networks**, such as [[AlphaFold2]], [[RosettaFold]], [[ESMFold]], and trRosetta, has been used for protein design by hallucination as well as adversarial attacks. It involves inversion of the networks and backpropagation to input sequence using a custom loss.
@@ -17,7 +17,7 @@ modified: "2026-04-20T10:13:23"
 
 * **[[10.1021__acssynbio.3c00674|Hansen et al 2024]] designed a [[Stability and thermostability|thermostable]] glycoside hydrolase using [[Inversion of protein folding neural networks|hallucination]].** Although the proteins folded, they were inactive due to misplacement of the active site side chains.
 ![[Pasted-Graphic-2-copy.png]]
-	*Figure from [^hansen2024]*
+	*Ref [^hansen2024]*
 
 <!-- generated -->
 

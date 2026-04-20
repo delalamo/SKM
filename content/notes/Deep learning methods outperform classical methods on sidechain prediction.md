@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2024-05-18T08:35:46
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -32,7 +32,7 @@ modified: "2026-04-20T07:16:03"
 | PyRosetta Packer | 0.87 | 0.43 | 1.12 | 25.84 | 27.57 | 47.95 | 55.32 | 58.0 | 98.5 | **13.5** | **3.1** |
 | SCWRL4 | 0.94 | 0.50 | 1.17 | 27.89 | 29.12 | 49.81 | 57.25 | 55.5 | 168.3 | 36.3 | 7.7 |
 
-*Figure from [^vangaru2025]*
+*Ref [^vangaru2025]*
 
 [^visani2023]: Visani et al. (2023) "H-Packer: Holographic Rotationally Equivariant Convolutional Neural Network for Protein Side-Chain Packing." MLCB. https://proceedings.mlr.press/v240/visani24a.html
 [^heo2023]: Heo & Feig (2023) "One particle per residue is sufficient to describe all-atom protein structures." https://doi.org/10.1101/2023.05.22.541652

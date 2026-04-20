@@ -4,7 +4,7 @@ tags:
   - protein-backbone-design/designability
   - plddt
 created: "2026-04-05T17:36:43"
-modified: "2026-04-13T11:11:20"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -28,7 +28,7 @@ Inverse folding methods outperform hallucination at designing proteins that can 
 *Table from [^wang2023]*
 
 ![[Pasted-image-20241025093149.png]]
-*Figure from [^frank2024]*
+*Ref [^frank2024]*
 
 [^frank2024]: Frank et al. (2024) "Scalable protein design using optimization in a relaxed sequence space." *Science*. https://doi.org/10.1126/science.adq1741
 [^wang2023]: Wang et al. (2023) "PDB-Struct: A Comprehensive Benchmark for Structure-based Protein Design." https://doi.org/10.48550/arXiv.2312.00080

@@ -2,7 +2,7 @@
 tags:
   - contrastive-learning
 created: 2024-07-02T07:59:43
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -10,6 +10,6 @@ modified: "2026-04-20T10:13:23"
 
 #### Figures
 ![[CLEAN-vs-ESM.png]]
-*Figure from [^yu2023]*
+*Ref [^yu2023]*
 
 [^yu2023]: Yu et al. (2023) "Enzyme function prediction using contrastive learning." *Science*. https://doi.org/10.1126/science.adf2465

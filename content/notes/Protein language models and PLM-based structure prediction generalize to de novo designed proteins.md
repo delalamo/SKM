@@ -2,7 +2,7 @@
 tags:
   - protein-backbone-design/designability
 created: "2025-02-17T05:10:10"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -17,7 +17,7 @@ They use Gibbs sampling to generate new protein backbones by jointly considering
 
 ![[Pasted-image-20231102144615.png]]
 
-*Figure from [^verkuil2022]*
+*Ref [^verkuil2022]*
 
 #### See also
 

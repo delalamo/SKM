@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/representations
 created: "2026-03-11T08:10:23"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -10,7 +10,7 @@ modified: "2026-04-11T07:41:30"
 
 #### Figures
 ![[Pasted-image-20260311080631.png]]
-*Figure from [^bixby2026]*
+*Ref [^bixby2026]*
 
 [^bixby2026]: Bixby et al. (2026) "What comes after
                   de novo

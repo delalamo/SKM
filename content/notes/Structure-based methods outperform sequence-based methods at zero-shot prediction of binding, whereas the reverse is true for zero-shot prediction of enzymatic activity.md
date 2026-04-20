@@ -3,7 +3,7 @@ tags:
   - protein-language-models/representations
   - thermostability/prediction
 created: "2026-03-22T10:44:50"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -14,7 +14,7 @@ modified: "2026-04-11T07:41:30"
 
 ![[Hamming.png]]
 
-*Figure from [^li2024]*
+*Ref [^li2024]*
 
 #### See also
 

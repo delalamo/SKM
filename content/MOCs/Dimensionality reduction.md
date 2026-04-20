@@ -3,7 +3,7 @@ title: Dimensionality reduction
 tags:
   - citation-fix
 created: 2026-04-10T14:02:57
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:32:20"
 ---
 
 **Dimensionality reduction** refers to the process of compressing $N$ input features into $M$ dimensions, where $M<N$.
@@ -12,7 +12,7 @@ modified: "2026-04-20T10:13:23"
 
 * **t-SNE and UMAP distort input values** ([[10.1371__journal.pcbi.1011288|Chari & Pachter 2023]]). There are other examples of this in the single-cell omics field.
 ![[tSNE-UMAP-distortions.png]]
-	*Figure from [^chari2023]*
+	*Ref [^chari2023]*
 
 #### Approaches
 ###### Principal component analysis

@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/representations
 created: "2026-01-26T11:07:41"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -13,6 +13,6 @@ modified: "2026-04-11T06:06:39"
 
 ![[](C).png)](/assets/(C).png)
 
-*Figure from [^wells2025]*
+*Ref [^wells2025]*
 
 [^wells2025]: Wells et al. (2025) "ProFam: Open-Source Protein Family Language Modelling for Fitness Prediction and Design." https://doi.org/10.64898/2025.12.19.695431

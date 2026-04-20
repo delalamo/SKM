@@ -2,7 +2,7 @@
 tags:
   - structure-prediction/architecture
 created: "2024-05-05T08:54:45"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -13,7 +13,7 @@ modified: "2026-04-11T07:41:30"
 
 ![[Pasted-image-20231129085041.png]]
 
-*Figure from [^gazizov2023]*
+*Ref [^gazizov2023]*
 
 #### See also
 

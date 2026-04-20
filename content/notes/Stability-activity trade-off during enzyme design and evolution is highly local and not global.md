@@ -2,7 +2,7 @@
 tags:
   - thermostability/design
 created: "2025-03-15T23:46:30"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:32:20"
 ---
 
 ---
@@ -17,7 +17,7 @@ In enzymes, [^hou2023] find that residues in the first shell surrounding the act
 
 #### Figures
 ![[Growth-Temperature-(°C).png]]
-*Figure from [^muir2024]*
+*Ref [^muir2024]*
 
 [^tokuriki2008]: Tokuriki et al. (2008) "How Protein Stability and New Functions Trade Off." *PLoS Computational Biology*. https://doi.org/10.1371/journal.pcbi.1000002
 [^sennett2023]: Sennett et al. (2023) "The most probable ancestral sequence reconstruction yields proteins without systematic bias in thermal stability or activity." https://doi.org/10.1101/2023.02.22.529562

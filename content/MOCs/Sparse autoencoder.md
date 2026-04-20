@@ -2,7 +2,7 @@
 title: Sparse autoencoder
 tags:
 created: 2026-04-05T23:36:09
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T08:32:20"
 ---
 
 **Sparse autoencoders** are a type of deep learning model used in explainability research that attempt to recapitulate the activations of intermediate layers of [[Transformer|transformer]] models. Unlike other autoencoders (such as [[Variational autoencoders|VAEs]]), these usually have a larger embedding dimension than the input and output representations. This is counteracted with a training constraint that enforces sparsity. One famous example of this being used is for the "Golden Gate" version of Claude 3.
@@ -12,7 +12,7 @@ In the context of [[Protein language models|protein language models]], the featu
 
 #### Figures
 ![[Original-Model-Activations.png]]
-*Figure from https://adamkarvonen.github.io/*
+*Ref https://adamkarvonen.github.io/*
 
 #### See also
 - [[Ordered SAEs are more steerable than top-k SAEs]]

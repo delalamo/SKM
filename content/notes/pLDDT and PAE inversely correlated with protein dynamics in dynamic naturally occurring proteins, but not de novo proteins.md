@@ -5,7 +5,7 @@ tags:
   - plddt
   - pae
 created: "2026-02-20T18:11:03"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -16,15 +16,15 @@ modified: "2026-04-20T07:16:03"
 
 ![[Pasted-Graphic-2-2.png]]
 
-*Figure from [^jussupow2023]*
+*Ref [^jussupow2023]*
 
 ![[Pasted-image-20240722081109.png]]
 
-*Figure from [^gavaldagarcia2024]*
+*Ref [^gavaldagarcia2024]*
 
 ![[Pasted-image-20260220181048.png]]
 
-*Figure from [^mntener2026]*
+*Ref [^mntener2026]*
 
 [^saldao2022]: Saldaño et al. (2022) "Impact of protein conformational diversity on AlphaFold predictions." *Bioinformatics*. https://doi.org/10.1093/bioinformatics/btac202
 [^chakravarty2022]: Chakravarty & Porter (2022) "AlphaFold2

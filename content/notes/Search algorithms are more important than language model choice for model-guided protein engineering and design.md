@@ -2,7 +2,7 @@
 tags: 
   - protein-design
 created: "2026-03-20T07:32:50"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -10,7 +10,7 @@ modified: "2026-04-20T10:13:23"
 
 #### Figures
 ![[Pasted-image-20260316152952.png]]
-*Figure from [^mccarter2026]*
+*Ref [^mccarter2026]*
 
 #### See also
 * [[Inference-time scaling of de novo designed proteins is more effective for harder targets]]

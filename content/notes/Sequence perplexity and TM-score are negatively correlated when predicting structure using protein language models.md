@@ -3,7 +3,7 @@ tags:
   - structure-prediction/metrics
   - tm-score
 created: "2024-11-11T23:55:26"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -13,6 +13,6 @@ modified: "2026-04-11T07:41:30"
 #### Figures
 
 ![[Pasted-image-20241112055454.png]]
-*Figure from [^bushuiev2024]*
+*Ref [^bushuiev2024]*
 
 [^bushuiev2024]: Bushuiev et al. (2024) "One protein is all you need." https://doi.org/10.48550/ARXIV.2411.02109

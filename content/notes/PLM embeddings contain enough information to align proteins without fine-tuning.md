@@ -3,7 +3,7 @@ tags:
   - protein-language-models/representations
   - alignment/sequence-based
 created: "2025-02-10T07:37:30"
-modified: "2026-04-20T08:24:12"
+modified: "2026-04-20T08:32:20"
 ---
 
 ## Summary
@@ -19,13 +19,13 @@ To improve alignment quality using "normalization" (per [Pantolini et al 2022][^
 ## Figures
 
 ![[MSA-and-embeddings-with-glycines-in-rec.png]]
-*Figure from [McWhite et al 2023][^mcwhite2023]*
+*Ref [McWhite et al 2023][^mcwhite2023]*
 
 ![[Malidup.png]]
-*Figure from [Hamamsmy et al 2023][^hamamsy2023]*
+*Ref [Hamamsmy et al 2023][^hamamsy2023]*
 
 ![[ProtTuker.png]]
-*Figure from [Pantolini et al 2022][^pantolini2022]; EBA and EBA-plain refer to PLM-based alignment with and without normalization*
+*Ref [Pantolini et al 2022][^pantolini2022]; EBA and EBA-plain refer to PLM-based alignment with and without normalization*
 
 ## See also
 

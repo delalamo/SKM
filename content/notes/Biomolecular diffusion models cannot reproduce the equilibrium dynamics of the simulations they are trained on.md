@@ -4,7 +4,7 @@ tags:
   - protein-folding/structure-prediction
   - conformational-dynamics/modeling
 created: "2025-12-22T11:49:01"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -15,7 +15,7 @@ modified: "2026-04-11T07:41:30"
 
 ![[Pasted-image-20251114122946.png]]
 
-*Figure from [^plainer2025]*
+*Ref [^plainer2025]*
 
 [^plainer2025]: Plainer et al. (2025) "Consistent Sampling and Simulation: Molecular Dynamics with Energy-Based Diffusion Models." https://doi.org/10.48550/ARXIV.2506.17139
 [^sarma2025]: Sarma et al. (2025) "Can We Extract Physics-like Energies from Generative Protein Diffusion Models?." https://doi.org/10.1101/2025.11.28.690021

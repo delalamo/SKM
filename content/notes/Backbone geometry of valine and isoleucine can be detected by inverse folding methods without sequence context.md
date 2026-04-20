@@ -2,7 +2,7 @@
 tags:
   - inverse-folding/evaluation
 created: 2024-06-27T01:45:36
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -10,6 +10,6 @@ modified: "2026-04-20T10:13:23"
 
 #### Figures
 ![[Pasted-image-20240618132444.png]]
-*Figure from [^dutton2024]*
+*Ref [^dutton2024]*
 
 [^dutton2024]: Dutton et al. (2024) "Improving Inverse Folding models at Protein Stability Prediction without additional Training or Data." https://doi.org/10.1101/2024.06.15.599145

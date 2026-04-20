@@ -2,7 +2,7 @@
 tags:
   - protein-structure-tokenization
 created: 2024-12-10T01:40:01
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:32:20"
 ---
 
 ## Summary
@@ -12,7 +12,7 @@ modified: "2026-04-20T07:16:03"
 ## Figures
 
 ![[Codebook-Sizel.png]]
-*Figure from [Lu et al 2024b][^lu2024]*
+*Ref [Lu et al 2024b][^lu2024]*
 
 ## See also
 

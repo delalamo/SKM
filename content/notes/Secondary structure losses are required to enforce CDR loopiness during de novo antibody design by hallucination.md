@@ -2,7 +2,7 @@
 tags:
   - antibodies/engineering-and-design
 created: 2025-12-19T11:23:25
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -13,7 +13,7 @@ The alpha-helical loss penalizes beta carbon atoms in $i, i+3$ pairs from fallin
 
 #### Figures
 ![[Pasted-image-20251027120357.png]]
-*Figure from [^millefragoso2025]*
+*Ref [^millefragoso2025]*
 
 #### See also
 * [[Paratope losses are required to enforce CDR-mediated antigen binding during de novo antibody design by hallucination]]

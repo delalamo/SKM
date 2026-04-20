@@ -3,7 +3,7 @@ Using the minimum logit from an ensemble of models rather than ensemble all logi
 
 #### Figures
 ![[Pasted image 20260410104403.png|400]]
-*Figure from doi.org/10.1038/s41592-026-03050-9*
+*Ref doi.org/10.1038/s41592-026-03050-9*
 
 #### See also
 * [[Averaging logits from multiple sources can improve fitness prediction]]

@@ -4,7 +4,7 @@ tags:
   - structure-prediction/limitations
   - alphafold3
 created: 2025-10-27T12:58:04
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary
@@ -14,10 +14,10 @@ modified: "2026-04-20T10:13:23"
 #### Figures
 
 ![[Pasted-image-20250208161420.png]]
-*Figure from Škrinjar et al 2025[^krinjar2025]*
+*Ref Škrinjar et al 2025[^krinjar2025]*
 
 ![[Pasted-image-20251027125753.png]]
-*Figure from [^masters2025]*
+*Ref [^masters2025]*
 
 #### See also
 
