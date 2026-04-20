@@ -2,8 +2,10 @@
 tags:
   - tm-score
   - protein-language-models/representations
+  - alignment/sequence-based
+  - alignment/structure-based
 created: 2025-05-19T03:43:23
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:24:12"
 ---
 
 ## Summary

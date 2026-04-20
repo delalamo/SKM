@@ -2,8 +2,9 @@
 tags:
   - protein-language-models/representations
   - contrastive-learning
+  - alignment/sequence-based
 created: 2025-03-27T09:03:13
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:24:12"
 ---
 
 #### Summary
