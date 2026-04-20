@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/training
 created: "2024-07-02T05:11:12"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:16:13"
 ---
 #### Summary
 **Fine-tuning PLMs can be detrimental to downstream tasks.** [^detlefsen2022] say that it "should therefore take place only under rigorous cross validation." [^heinzinger2023] found evidence of [[Catastrophic forgetting]] during fine-tuning of their [[Protein language models|PLM]] on [[Foldseek]] structural descriptors. [^kenlay2024] avoided this by maintaining the pretraining objective and data when fine-tuning; in their case keeping unpaired antibody sequences while fine-tuning on paired sequences.
@@ -12,7 +12,7 @@ Beyond protein ML models, RLHF was also found to worsen performance of the large
 
 #### Figures
 ![[Fine-tuning-benchmark.png]]
-*Figure from [^detlefsen2022]*
+*Ref [^detlefsen2022]*
 
 [^detlefsen2022]: Detlefsen et al. (2022) "Learning meaningful representations of protein sequences." *Nature Communications*. https://doi.org/10.1038/s41467-022-29443-w
 [^heinzinger2023]: Heinzinger et al. (2024) "Bilingual language model for protein sequence and structure." NAR Genomics and Bioinformatics. https://doi.org/10.1093/nargab/lqae150

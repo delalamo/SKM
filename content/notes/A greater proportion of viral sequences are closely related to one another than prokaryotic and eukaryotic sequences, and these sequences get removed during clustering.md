@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2026-01-22T12:37:55
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -9,6 +9,6 @@ modified: "2026-04-17T06:40:29"
 
 #### Figures
 ![[Eukaryote.png]]
-*Figure from [^gurev2025]*
+*Ref [^gurev2025]*
 
 [^gurev2025]: Gurev et al. (2025) "Evaluating variant effect prediction across viruses." https://doi.org/10.1101/2025.08.04.668549

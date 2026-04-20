@@ -3,12 +3,12 @@ title: ProteinMPNN
 tags:
   - proteinmpnn
 created: "2026-04-10T14:02:57"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:16:13"
 ---
 
 **ProteinMPNN** is an [[Inverse folding|inverse folding]] method that uses a message-passing neural network. It has extensive wet-lab validation.
 ![[Pasted-image-20231016154908.png]]
-*Figure from [^dauparas2022]*
+*Ref [^dauparas2022]*
 
 #### Notes
 

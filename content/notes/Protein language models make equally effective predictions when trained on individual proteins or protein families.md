@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/training
 created: "2026-03-18T07:59:28"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:16:13"
 ---
 
 ## Summary
@@ -12,7 +12,7 @@ modified: "2026-04-20T07:16:03"
 ## Figures
 
 ![[Pasted-image-20240318155517.png]]
-*Figure from [Gelman et al 2024][^gelman2024]*
+*Ref [Gelman et al 2024][^gelman2024]*
 
 ## See also
 

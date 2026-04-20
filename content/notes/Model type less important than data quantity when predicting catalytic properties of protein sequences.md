@@ -2,7 +2,7 @@
 tags:
   - variant-effect-prediction
 created: 2024-11-14T03:14:19
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -13,6 +13,6 @@ modified: "2026-04-20T07:16:03"
 
 ![[Pasted-Graphic-10-1.png]]
 
-*Figure from [^muir2024]*
+*Ref [^muir2024]*
 
 [^muir2024]: Muir et al. (2025) "Evolutionary-scale enzymology enables exploration of a rugged catalytic landscape." Science. https://doi.org/10.1126/science.adu1058

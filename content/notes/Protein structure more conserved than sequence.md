@@ -3,7 +3,7 @@ tags:
   - evolution-and-natural-selection/structure
   - alignment/structure-based
 created: 2024-07-02T08:01:41
-modified: "2026-04-20T07:58:49"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -17,10 +17,10 @@ A specific example was highlighted by [^huang2023], which used qualitative/anecd
 #### Figures
 
 ![[Structure-more-conserved-than-sequence.png]]
-*Figure from [^chothia1986]*
+*Ref [^chothia1986]*
 
 ![[Structure-based-phylogenies.png]]
-*Figure from [^moi2023]*
+*Ref [^moi2023]*
 
 #### See also
 

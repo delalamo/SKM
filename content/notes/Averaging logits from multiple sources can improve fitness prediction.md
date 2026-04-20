@@ -2,7 +2,7 @@
 tags:
   - thermostability/prediction
 created: "2026-04-05T17:26:46"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -24,7 +24,7 @@ modified: "2026-04-11T07:27:50"
 | TranceptEVE | 0.481 | 0.341 | 0.482 | 0.502 | **0.478** | 0.457 |
 | StructSeq | **0.549** | **0.399** | **0.498** | **0.633** | 0.468 | **0.509** |
 
-*Figure from [[8PbTU4exnV|Paul et al 2023]]*
+*Ref [[8PbTU4exnV|Paul et al 2023]]*
 
 #### See also
 

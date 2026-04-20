@@ -2,7 +2,7 @@
 tags:
   - structure-prediction/architecture
 created: "2026-04-05T17:37:18"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -23,6 +23,6 @@ modified: "2026-04-11T07:27:50"
 | ESMFold | 0.865 | 0.728 | 0.735 | | | |
 | AlphaFold2 | 0.904 | 0.846 | 0.826 | | | |
 
-*Figure from [^hayes2025]*
+*Ref [^hayes2025]*
 
 [^hayes2025]: Hayes et al. (2025) "Simulating 500 million years of evolution with a language model." *Science*. https://doi.org/10.1126/science.ads0018

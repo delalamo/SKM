@@ -3,7 +3,7 @@ title: Protein structure is more evolutionarily conserved than dynamics
 tags:
   - conformational-dynamics/evolution
 created: "2025-04-22T00:44:25"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T08:16:13"
 ---
 #### Summary
  **Protein structures are generally more conserved than [[Protein dynamics|dynamics]]** [^ferrari2025]. An example is the Venus Flytrap fold, which is adopted by bacterial transcription factors and periplasmic binding proteins, but shows different conformational dynamics upon ligand-binding [^wells2025]. Another example is the APC transporter superfamily [^del2022].
@@ -13,7 +13,7 @@ modified: "2026-04-11T07:41:30"
 
 #### Figures
 ![[Pasted-Graphic-3-3.png]]
-*Figure from [^ferrari2025]*
+*Ref [^ferrari2025]*
 
 #### See also
 * [[Cooperative unfolding is not correlated with overall protein stability across proteins with the same fold]]

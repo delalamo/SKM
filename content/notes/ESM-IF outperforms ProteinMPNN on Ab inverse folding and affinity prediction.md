@@ -3,7 +3,7 @@ tags:
   - inverse-folding/evaluation
   - citation-fix
 created: 2024-07-05T07:11:25
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -18,6 +18,6 @@ modified: "2026-04-20T10:13:23"
 
 ![[Pasted-image-20240705131119.png]]
 
-*Figure from [^shanker2024]*
+*Ref [^shanker2024]*
 
 [^shanker2024]: Shanker et al. (2024) "Unsupervised evolution of protein and antibody complexes with a structure-informed language model." *Science*. https://doi.org/10.1126/science.adk8946

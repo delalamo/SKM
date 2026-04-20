@@ -5,7 +5,7 @@ tags:
   - alignment/sequence-based
   - alignment/structure-based
 created: 2025-05-19T03:43:23
-modified: "2026-04-20T07:58:49"
+modified: "2026-04-20T08:16:13"
 ---
 
 ## Summary
@@ -15,6 +15,6 @@ modified: "2026-04-20T07:58:49"
 ## Figures
 
 ![[Pasted-image-20240416133906.png]]
-*Figure from [Liu et al 2024a][^liu2024]*
+*Ref [Liu et al 2024a][^liu2024]*
 
 [^liu2024]: Liu et al. (2024) "PLMSearch: Protein language model powers accurate and fast sequence search for remote homology." *Nature Communications*. https://doi.org/10.1038/s41467-024-46808-5

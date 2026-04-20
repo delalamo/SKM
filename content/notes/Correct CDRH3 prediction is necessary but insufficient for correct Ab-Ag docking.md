@@ -2,20 +2,20 @@
 tags:
   - structure-prediction/complex-prediction
 created: 2025-02-12T10:41:32
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:16:13"
 ---
 #### Summary
 **Correct prediction of [[Complementarity-determining regions|CDRH3]] is necessary but insufficient for correct [[Antibodies|antibody]]-antigen docking** [^yin2024][^hitawala2024]. Improving CDRH3 prediction by providing templates can lead to improved docking prediction [^li2026].
 
 #### Figures
 ![[Pasted-image-20240624164409.png|300]]
-*Figure from [^yin2024]*
+*Ref [^yin2024]*
 
 ![[Pasted-image-20241001064019.png|400]]
-*Figure from [^hitawala2024]*
+*Ref [^hitawala2024]*
 
 ![[Pasted image 20260413103146.png]]
-*Figure from [^li2026]*
+*Ref [^li2026]*
 
 #### See also
 - [[Antibody-antigen binding modes are not necessarily defined by induced fit]]

@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/training
 created: "2024-07-02T05:14:53"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -12,6 +12,6 @@ modified: "2026-04-20T07:16:03"
 #### Figures
 
 ![[Pasted-Graphic-1-1.png]]
-*Figure from [^matthews2023]*
+*Ref [^matthews2023]*
 
 [^matthews2023]: Matthews et al. (2024) "Leveraging ancestral sequence reconstruction for protein representation learning." Nature Machine Intelligence. https://doi.org/10.1038/s42256-024-00935-2

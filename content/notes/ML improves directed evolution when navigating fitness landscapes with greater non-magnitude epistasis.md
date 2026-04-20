@@ -2,7 +2,7 @@
 tags:
   - epistasis
 created: 2026-03-22T10:44:50
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -13,6 +13,6 @@ modified: "2026-04-20T10:13:23"
 
 ![[Pasted-image-20241027090719.png]]
 
-*Figure from [^li2024]*
+*Ref [^li2024]*
 
 [^li2024]: Li et al. (2025) "Evaluation of machine learning-assisted directed evolution across diverse combinatorial landscapes." *Cell Systems*. https://doi.org/10.1016/j.cels.2025.101387

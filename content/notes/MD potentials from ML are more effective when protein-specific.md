@@ -3,7 +3,7 @@ title: MD potentials from ML are more effective when protein-specific
 tags:
   - conformational-dynamics/molecular-dynamics
 created: "2026-04-05T18:00:02"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-20T08:16:13"
 ---
 #### Summary
  **Potentials for [[MD simulations]] that are derived from machine learning are more effective when they are specific to each protein, rather than general-purpose** [^navarro2023]. These force fields were calculated using [[Graph neural networks]].
@@ -23,7 +23,7 @@ modified: "2026-04-11T07:27:50"
 | Protein G | **0.5** | **1.0 ± 0.4** | **1.5 ± 0.1** | **1.7** | **2.8 ± 0.4** | **6.1 ± 0.1** |
 | a3d | 3.4 | 8.5 ± 2.3 | 5.8 ± 0.1 | 4.1 | 7.0 ± 2.3 | 5.7 ± 0.1 |
 | λ-repressor | 4.9 | 6.8 ± 1.5 | 0.4 ± 0.2 | 4.6 | 7.5 ± 1.1 | 4.9 ± 0.1 |
-*Figure from [^navarro2023]*
+*Ref [^navarro2023]*
 
 #### See also
 * [[MD simulations]]

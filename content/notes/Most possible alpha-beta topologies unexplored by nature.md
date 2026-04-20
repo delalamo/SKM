@@ -2,7 +2,7 @@
 tags:
   - protein-backbone-design/designability
 created: "2024-06-11T02:55:34"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -17,6 +17,6 @@ It is unclear if this is due to the "[[Natural selection favors the highest aver
 
 ![[Undiscovered-folds.png]]
 
-*Figure from [^minami2023]*
+*Ref [^minami2023]*
 
 [^minami2023]: Minami et al. (2023) "Exploration of novel αβ-protein folds through de novo design." *Nature Structural &amp; Molecular Biology*. https://doi.org/10.1038/s41594-023-01029-0

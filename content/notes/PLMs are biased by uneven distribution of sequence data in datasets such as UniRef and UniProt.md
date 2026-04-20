@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/training
 created: "2026-04-05T17:52:14"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -32,7 +32,7 @@ Most organisms only have a few proteins assigned to them [^avasthi2024].
 
 ![[Pasted-image-20240806172532.png]]
 
-*Figure from [^avasthi2024]*
+*Ref [^avasthi2024]*
 
 #### See also
 

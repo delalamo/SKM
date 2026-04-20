@@ -3,7 +3,7 @@ tags:
   - protein-language-models/representations
   - tm-score
 created: "2026-04-05T17:54:18"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:16:13"
 ---
 
 ---
@@ -45,20 +45,20 @@ This is also true of post-translational modification prediction ([^peng2024]; ES
 | Inverse Folding | ProteinMPNN | 0.258 | 0.640 | 0.196 | 0.712 | 0.186 |
 | | MIF-ST | 0.401 | 0.718 | 0.310 | 0.766 | 0.227 |
 | | ESM-IF1 | 0.422 | 0.730 | 0.331 | 0.748 | 0.223 |
-*Figure from [^notin2023]*
+*Ref [^notin2023]*
 
 ![[Pasted-image-20231112063046.png]]
-*Figure from [^nijkamp2023]*
+*Ref [^nijkamp2023]*
 
 ![[Pasted-image-20240209164702.png]]
 ![[Pasted-image-20240209164730.png]]
 *Figures 3-5 from [^li2024]*
 
 ![[Pasted-image-20241125084321.png]]
-*Figure from [^vieira2024]*
+*Ref [^vieira2024]*
 
 ![[0.40.png]]
-*Figure from [^bhatnagar2025]*
+*Ref [^bhatnagar2025]*
 
 ![[Mean-p-(All-Taxa).png]]
 ![[ProteinGym-(All-Taxa).png]]

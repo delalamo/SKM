@@ -2,7 +2,7 @@
 tags:
   - evolution-and-natural-selection
 created: 2024-06-18T06:15:04
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -10,6 +10,6 @@ modified: "2026-04-17T06:40:29"
 
 #### Figures
 ![[m_msu228f1p.jpeg]]
-*Figure from [^krick2014]*
+*Ref [^krick2014]*
 
 [^krick2014]: Krick et al. (2014) "Amino Acid Metabolism Conflicts with Protein Diversity." *Molecular Biology and Evolution*. https://doi.org/10.1093/molbev/msu228

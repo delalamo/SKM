@@ -2,7 +2,7 @@
 tags:
   - inverse-folding/evaluation
 created: "2024-04-30T03:21:35"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T08:16:13"
 ---
 
 ---
@@ -14,7 +14,7 @@ tags: inverse-folding/execution
 
 #### Figures
 ![[BLOSUM_v_inverse_folding.png]]
-*Figure from [^hsu2022]*
+*Ref [^hsu2022]*
 
 ![[Predicted.png]]
 *Figure 1B from [^castorina2023]*

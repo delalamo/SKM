@@ -2,7 +2,7 @@
 tags:
   - affinity-maturation/somatic-hypermutation
 created: 2026-04-10T10:46:24
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -10,6 +10,6 @@ DNA substitutions during [[Somatic hypermutation|somatic hypermutation]] are spa
 
 #### Figures
 ![[Pasted-image-20260410102518.png]]
-*Figure from [^matsen2026]*
+*Ref [^matsen2026]*
 
 [^matsen2026]: Matsen et al. (2026) "Separating selection from mutation in antibody language models." *eLife*. https://doi.org/10.7554/eLife.109644.3

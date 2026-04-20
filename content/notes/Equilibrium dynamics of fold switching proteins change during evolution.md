@@ -2,7 +2,7 @@
 tags:
   - conformational-dynamics/evolution
 created: "2024-05-05T01:21:21"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T08:16:13"
 ---
 
 ---
@@ -18,6 +18,6 @@ tags:
 
 #### Figures
 ![[Fold-switching-evolution.png]]
-*Figure from [^dishman2021]*
+*Ref [^dishman2021]*
 
 [^dishman2021]: Dishman et al. (2021) "Evolution of fold switching in a metamorphic protein." *Science*. https://doi.org/10.1126/science.abd8700

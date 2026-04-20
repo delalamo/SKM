@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/representations
 created: 2026-04-05T17:27:14
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -19,7 +19,7 @@ modified: "2026-04-20T10:13:23"
 | - w/ series fusion | **0.883** | 0.890 |
 | - w/ cross fusion | 0.880 | **0.893** |
 
-*Figure from [^zhang2023]*
+*Ref [^zhang2023]*
 
 [^zhang2023]: Zhang et al. (2023) "A Systematic Study of Joint Representation Learning on Protein Sequences and Structures." https://doi.org/10.48550/arXiv.2303.06275
 [^detlefsen2022]: Detlefsen et al. (2022) "Learning meaningful representations of protein sequences." *Nature Communications*. https://doi.org/10.1038/s41467-022-29443-w

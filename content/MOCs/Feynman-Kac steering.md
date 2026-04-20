@@ -3,9 +3,9 @@
 
 #### Figures
 ![[Pasted image 20260413101146.png]]
-*Figure from https://doi.org/10.48550/arXiv.2511.09216*
+*Ref https://doi.org/10.48550/arXiv.2511.09216*
 
 ![[Pasted image 20260413101032.png]]
-*Figure from https://doi.org/10.48550/arXiv.2604.05181*
+*Ref https://doi.org/10.48550/arXiv.2604.05181*
 
 <!-- generated -->

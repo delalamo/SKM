@@ -4,6 +4,8 @@ tags:
   - diffusion-guidance/protein-design
   - protein-design
   - protein-backbone-design
+created: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:16:13"
 ---
 
 
@@ -12,4 +14,4 @@ tags:
 
 #### Figures
 ![[Pasted image 20260413100546.png]]
-*Figure from https://doi.org/10.48550/arXiv.2604.05181*
+*Ref https://doi.org/10.48550/arXiv.2604.05181*

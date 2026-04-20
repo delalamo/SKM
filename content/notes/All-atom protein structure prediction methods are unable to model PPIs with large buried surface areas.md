@@ -3,7 +3,7 @@ tags:
   - structure-prediction/limitations
   - structure-prediction/complex-prediction
 created: 2025-06-02T06:29:42
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -14,6 +14,6 @@ modified: "2026-04-20T10:13:23"
 
 ![[500.png]]
 
-*Figure from [^liao2025]*
+*Ref [^liao2025]*
 
 [^liao2025]: Liao et al. (2025) "Comparative assessment of co-folding methods for molecular glue ternary structure prediction." https://doi.org/10.1101/2025.05.25.655997

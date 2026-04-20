@@ -3,7 +3,7 @@ tags:
   - protein-language-models/antibodies
   - antibody-structure-prediction/cdr
 created: 2026-04-05T17:38:14
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -20,7 +20,7 @@ modified: "2026-04-20T07:16:03"
 | IgFold-variant2 | ESM-2(650M) | Freeze | IGFold | 0.93 | 3.77 | 0.48 | 0.91 | 0.94 | 3.20 | 0.48 | 0.94 | 0.49 | 1.13 |
 | IgFold-variant3 | ESM-2(35M) | Trainable | IGFold | 0.93 | 3.88 | 0.51 | 0.89 | 0.85 | 3.14 | 0.51 | 1.00 | 0.50 | 1.10 |
 
-*Figure from [^lee2023]*
+*Ref [^lee2023]*
 
 [^lee2023]: Lee et al. (2023) "Solvent: A Framework for Protein Folding." https://doi.org/10.48550/arXiv.2307.04603
 [^kenlay2024]: Kenlay et al. (2024) "ABodyBuilder3: improved and scalable antibody structure predictions." Bioinform.. https://doi.org/10.1093/BIOINFORMATICS/BTAE576

@@ -3,7 +3,7 @@ tags:
   - protein-language-models/training
   - thermostability/prediction
 created: "2024-11-29T03:39:16"
-modified: "2026-04-13T11:11:20"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -13,7 +13,7 @@ Including optimal growth temperature as a regression target during pretraining o
 #### Figures
 
 ![[Pasted-image-20241129093856.png]]
-*Figure from [^jiang2024b]*
+*Ref [^jiang2024b]*
 
 #### See also
 
