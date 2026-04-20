@@ -2,12 +2,12 @@
 tags:
   - protein-backbone-design/designability
 created: "2024-06-11T02:55:34"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:46:00"
 ---
 
 #### Summary
 
-**Most alpha/beta topologies enumerated by [^minami2023] are not explored by nature.** These include 12,348 that can be achieved without significant spatial violations, but only 400 combinations are observed in the extant fold space (for example Top7). This is said to correspond to a lower limit.
+**Most alpha/beta topologies enumerated by [@minami2023] are not explored by nature.** These include 12,348 that can be achieved without significant spatial violations, but only 400 combinations are observed in the extant fold space (for example Top7). This is said to correspond to a lower limit.
 
 #### Details
 
@@ -17,6 +17,4 @@ It is unclear if this is due to the "[[Natural selection favors the highest aver
 
 ![[Undiscovered-folds.png]]
 
-*Figure from [^minami2023]*
-
-[^minami2023]: Minami et al. (2023) "Exploration of novel αβ-protein folds through de novo design." *Nature Structural &amp; Molecular Biology*. https://doi.org/10.1038/s41594-023-01029-0
+*Figure from [@minami2023]*

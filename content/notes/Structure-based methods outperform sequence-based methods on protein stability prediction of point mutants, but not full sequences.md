@@ -2,18 +2,18 @@
 tags:
   - thermostability/prediction
 created: "2026-04-05T17:45:06"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T07:46:00"
 ---
 
 #### Summary
 
-**Structure-based methods such as [[Inverse folding]] models outperform sequence-based methods such as [[Protein language models|PLMs]] on protein stability prediction of point mutants, but not full sequences** [^reeves2023]. Among those models, [[ESM-IF]] is the most effective ([^wang2023], [[Paul et al 2023]]). [^tan2023] found that embedding geometry into PLMs can improve stability prediction. In contrast, [^cho2024] found that the PLM [[ESM|ESM-2]] had better Spearman correlations than these inverse folding models to experimental stability measurements when comparing the *de novo* sequences with the same target fold.
+**Structure-based methods such as [[Inverse folding]] models outperform sequence-based methods such as [[Protein language models|PLMs]] on protein stability prediction of point mutants, but not full sequences** [@reeves2023]. Among those models, [[ESM-IF]] is the most effective ([@wang2023], [[Paul et al 2023]]). [@tan2023] found that embedding geometry into PLMs can improve stability prediction. In contrast, [@cho2024] found that the PLM [[ESM|ESM-2]] had better Spearman correlations than these inverse folding models to experimental stability measurements when comparing the *de novo* sequences with the same target fold.
 
 #### Details
 
-Comparisons carried out by [^wang2023] were carried out using data from [^rocklin2017] and [^tsuboyama2023].
+Comparisons carried out by [@wang2023] were carried out using data from [@rocklin2017; @tsuboyama2023].
 
-Data are ambiguous about when [[Rosetta]] or [[ProteinMPNN]] is better ([^reeves2023]; the former was substantially improved by [^dieckhaus2024] following transfer learning on ddG data by [^tsuboyama2023]).
+Data are ambiguous about when [[Rosetta]] or [[ProteinMPNN]] is better ([@reeves2023]; the former was substantially improved by [@dieckhaus2024] following transfer learning on ddG data by [@tsuboyama2023]).
 
 #### Figures
 
@@ -42,7 +42,7 @@ Data are ambiguous about when [[Rosetta]] or [[ProteinMPNN]] is better ([^reeves
 | **AF-Design** | 0.354 | 0.292 | 0.318 |
 | **ESM-Design** | 0.127 | 0.0004 | 0.053 |
 
-*Figure from [^wang2023]*
+*Figure from [@wang2023]*
 
 | Model | Version | TPR↑ DTm 5% | TPR↑ DTm 25% | TPR↑ DTm 50% | TPR↑ DDG 5% | TPR↑ DDG 25% | TPR↑ DDG 50% |
 |---|---|---|---|---|---|---|---|
@@ -67,20 +67,12 @@ Data are ambiguous about when [[Rosetta]] or [[ProteinMPNN]] is better ([^reeves
 | | t48 | **0.232** | 0.430 | 0.607 | 0.189 | 0.400 | 0.606 |
 | P¹³LG | k20_h1280 | 0.304 | 0.419 | 0.642 | 0.267 | 0.454 | 0.676 |
 
-*Figure from [^tan2023]*
+*Figure from [@tan2023]*
 
 ![[Pasted-image-20241231144322.png]]
 
-*Figure from [^cho2024]*
+*Figure from [@cho2024]*
 
 #### See also
 
 - [[MSA-based structure predictions outperform PLM-based methods]]
-
-[^reeves2023]: Reeves & Kalyaanamoorthy (2024) "Zero-shot transfer of protein sequence likelihood models to thermostability prediction." Nature Machine Intelligence. https://doi.org/10.1038/s42256-024-00887-7
-[^wang2023]: Wang et al. (2023) "PDB-Struct: A Comprehensive Benchmark for Structure-based Protein Design." https://doi.org/10.48550/arXiv.2312.00080
-[^tan2023]: Tan et al. (2023) "Multi-level Protein Representation Learning for Blind Mutational Effect Prediction." https://doi.org/10.48550/arXiv.2306.04899
-[^cho2024]: Cho et al. (2024) "Implicit modeling of the conformational landscape and sequence allows scoring and generation of stable proteins." https://doi.org/10.1101/2024.12.20.629706
-[^rocklin2017]: Rocklin et al. (2017) "Global analysis of protein folding using massively parallel design, synthesis, and testing." *Science*. https://doi.org/10.1126/science.aan0693
-[^tsuboyama2023]: Tsuboyama et al. (2023) "Mega-scale experimental analysis of protein folding stability in biology and design." *Nature*. https://doi.org/10.1038/s41586-023-06328-6
-[^dieckhaus2024]: Dieckhaus et al. (2024) "Transfer learning to leverage larger datasets for improved prediction of protein stability changes." *Proceedings of the National Academy of Sciences*. https://doi.org/10.1073/pnas.2314853121

@@ -2,7 +2,7 @@
 tags:
   - conformational-dynamics/evolution
 created: "2024-05-05T01:21:21"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:46:00"
 ---
 
 ---
@@ -14,10 +14,8 @@ tags:
  - fold-switching/observations
 ---
 #### Summary
-**The equilibrium dynamics of [[Fold-switching proteins]] change over time.** [^dishman2021] show used [[Ancestral sequence reconstruction]] on XCL1 and (NMR) that the relative populations of two states change as the sequence changes.
+**The equilibrium dynamics of [[Fold-switching proteins]] change over time.** [@dishman2021] show used [[Ancestral sequence reconstruction]] on XCL1 and (NMR) that the relative populations of two states change as the sequence changes.
 
 #### Figures
 ![[Fold-switching-evolution.png]]
-*Figure from [^dishman2021]*
-
-[^dishman2021]: Dishman et al. (2021) "Evolution of fold switching in a metamorphic protein." *Science*. https://doi.org/10.1126/science.abd8700
+*Figure from [@dishman2021]*

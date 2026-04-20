@@ -2,7 +2,7 @@
 tags:
   - inverse-folding/evaluation
 created: "2024-04-30T03:21:35"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:46:00"
 ---
 
 ---
@@ -10,19 +10,14 @@ summary: Inverse folding substitution matrices closely align with BLOSUM matrix,
 tags: inverse-folding/execution
 ---
 #### Summary
-**Substitution matrices from [[Inverse folding]] closely match the (BLOSUM62) matrix, except proline** [^hsu2022][^castorina2023][^zhou2024]. [^akpinaroglu2023] found that predicted proline residue embeddings distinguish from others earlier in the network than other residues.
+**Substitution matrices from [[Inverse folding]] closely match the (BLOSUM62) matrix, except proline** [@hsu2022; @castorina2023; @zhou2024]. [@akpinaroglu2023] found that predicted proline residue embeddings distinguish from others earlier in the network than other residues.
 
 #### Figures
 ![[BLOSUM_v_inverse_folding.png]]
-*Figure from [^hsu2022]*
+*Figure from [@hsu2022]*
 
 ![[Predicted.png]]
-*Figure 1B from [^castorina2023]*
+*Figure 1B from [@castorina2023]*
 
 ![[Pasted-image-20240105112648.png]]
-*Figure 1H from [^akpinaroglu2023]*
-
-[^hsu2022]: Hsu et al. (2022) "Learning inverse folding from millions of predicted structures." https://doi.org/10.1101/2022.04.10.487779
-[^castorina2023]: Castorina et al. (2023) "PDBench: evaluating computational methods for protein-sequence design." *Bioinformatics*. https://doi.org/10.1093/bioinformatics/btad027
-[^zhou2024]: Zhou et al. (2024) "Protein Engineering with Lightweight Graph Denoising Neural Networks." *Journal of Chemical Information and Modeling*. https://doi.org/10.1021/acs.jcim.4c00036
-[^akpinaroglu2023]: Akpinaroglu et al. (2023) "Structure-conditioned masked language models for protein sequence design generalize beyond the native sequence space." https://doi.org/10.1101/2023.12.15.571823
+*Figure 1H from [@akpinaroglu2023]*

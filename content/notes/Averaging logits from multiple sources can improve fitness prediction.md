@@ -2,12 +2,12 @@
 tags:
   - thermostability/prediction
 created: "2026-04-05T17:26:46"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-20T07:46:00"
 ---
 
 #### Summary
 
-**Averaging logits from multiple DL models can lead to substantial improvements in fitness and stability prediction.** The method TranceptEVE, which combines probabilities from [[EVE]] and [[Tranception]], is the state of the art method for predicting protein [[Fitness prediction|fitness]] and [[Stability and thermostability|thermostability]] (as judged by [[ProteinGym]]; [^notin2022]). Likewise, adding probabilities from [[ESM-IF]] further improves this method ([[8PbTU4exnV|Paul et al 2023]]). [^nijkamp2023] found that ensembles of [[ProGen]] models outperform individual models on a range of tasks.
+**Averaging logits from multiple DL models can lead to substantial improvements in fitness and stability prediction.** The method TranceptEVE, which combines probabilities from [[EVE]] and [[Tranception]], is the state of the art method for predicting protein [[Fitness prediction|fitness]] and [[Stability and thermostability|thermostability]] (as judged by [[ProteinGym]]; [@notin2022]). Likewise, adding probabilities from [[ESM-IF]] further improves this method ([[8PbTU4exnV|Paul et al 2023]]). [@nijkamp2023] found that ensembles of [[ProGen]] models outperform individual models on a range of tasks.
 
 #### Figures
 
@@ -30,6 +30,3 @@ modified: "2026-04-11T07:27:50"
 
 - [[Concatenating sequence and structural features is not effective for sequence recovery]]
 - [[Structure-based methods outperform sequence-based methods on protein stability prediction of point mutants, but not full sequences]]
-
-[^notin2022]: Notin et al. (2022) "TranceptEVE: Combining Family-specific and Family-agnostic Models of Protein Sequences for Improved Fitness Prediction." https://doi.org/10.1101/2022.12.07.519495
-[^nijkamp2023]: Nijkamp et al. (2023) "ProGen2: Exploring the boundaries of protein language models." *Cell Systems*. https://doi.org/10.1016/j.cels.2023.10.002

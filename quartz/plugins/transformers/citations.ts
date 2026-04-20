@@ -17,6 +17,57 @@ const defaultOptions: Options = {
   csl: "apa",
 }
 
+const citationShimAttr = "data-citation-shim"
+const inlineCitationTextPattern = /(^|[\s(;,\-])@[A-Za-z0-9_{]/
+
+function containsCitationText(node: unknown): boolean {
+  if (typeof node !== "object" || node === null) {
+    return false
+  }
+
+  const maybeNode = node as { type?: string; value?: string; children?: unknown[] }
+  if (maybeNode.type === "text" && typeof maybeNode.value === "string") {
+    return maybeNode.value.includes("[@") || inlineCitationTextPattern.test(maybeNode.value)
+  }
+
+  if (!Array.isArray(maybeNode.children)) {
+    return false
+  }
+
+  return maybeNode.children.some((child) => containsCitationText(child))
+}
+
+function extractTextContent(node: unknown): string {
+  if (typeof node !== "object" || node === null) {
+    return ""
+  }
+
+  const maybeNode = node as { type?: string; value?: string; children?: unknown[] }
+  if (maybeNode.type === "text" && typeof maybeNode.value === "string") {
+    return maybeNode.value
+  }
+
+  if (!Array.isArray(maybeNode.children)) {
+    return ""
+  }
+
+  return maybeNode.children.map((child) => extractTextContent(child)).join("")
+}
+
+function appendClass(node: { properties?: Record<string, unknown> }, className: string): void {
+  node.properties = node.properties ?? {}
+  const current = node.properties.className
+  const classNames = Array.isArray(current)
+    ? current.filter((value): value is string => typeof value === "string")
+    : typeof current === "string"
+      ? [current]
+      : []
+
+  if (!classNames.includes(className)) {
+    node.properties.className = [...classNames, className]
+  }
+}
+
 export const Citations: QuartzTransformerPlugin<Partial<Options>> = (userOpts) => {
   const opts = { ...defaultOptions, ...userOpts }
   return {
@@ -33,6 +84,21 @@ export const Citations: QuartzTransformerPlugin<Partial<Options>> = (userOpts) =
       if (ctx.cfg.configuration.locale !== "en-US") {
         lang = `https://raw.githubusercontent.com/citation-stylelanguage/locales/refs/heads/master/locales-${ctx.cfg.configuration.locale}.xml`
       }
+      plugins.push(() => {
+        return (tree, _file) => {
+          visit(tree, "element", (node, _index, _parent) => {
+            if (
+              (node.tagName === "em" || node.tagName === "strong") &&
+              containsCitationText(node)
+            ) {
+              node.properties = node.properties ?? {}
+              node.properties[citationShimAttr] = node.tagName
+              node.tagName = "span"
+            }
+          })
+        }
+      })
+
       // Add rehype-citation to the list of plugins
       plugins.push([
         rehypeCitation,
@@ -49,9 +115,63 @@ export const Citations: QuartzTransformerPlugin<Partial<Options>> = (userOpts) =
       // using https://github.com/syntax-tree/unist-util-visit as they're just anochor links
       plugins.push(() => {
         return (tree, _file) => {
+          const bibliographyNumberByHref = new Map<string, string>()
+
           visit(tree, "element", (node, _index, _parent) => {
+            const bibliographyId = node.properties?.id
+            if (node.tagName !== "div" || typeof bibliographyId !== "string") {
+              return
+            }
+
+            if (!bibliographyId.startsWith("bib-") || !Array.isArray(node.children)) {
+              return
+            }
+
+            const leftMarginNode = node.children.find((child: unknown) => {
+              if (typeof child !== "object" || child === null) {
+                return false
+              }
+
+              const maybeChild = child as { type?: string; tagName?: string; properties?: Record<string, unknown> }
+              if (maybeChild.type !== "element" || maybeChild.tagName !== "div") {
+                return false
+              }
+
+              const className = maybeChild.properties?.className
+              if (Array.isArray(className)) {
+                return className.includes("csl-left-margin")
+              }
+
+              return className === "csl-left-margin"
+            })
+
+            const bibliographyNumber = extractTextContent(leftMarginNode).match(/\d+/)?.[0]
+            if (bibliographyNumber) {
+              bibliographyNumberByHref.set(`#${bibliographyId}`, bibliographyNumber)
+            }
+          })
+
+          visit(tree, "element", (node, _index, _parent) => {
+            const citationShim = node.properties?.[citationShimAttr]
+            if (node.tagName === "span" && typeof citationShim === "string") {
+              node.tagName = citationShim
+              delete node.properties[citationShimAttr]
+            }
+
+            if (node.tagName === "span" && typeof node.properties?.id === "string") {
+              if (node.properties.id.startsWith("citation--")) {
+                appendClass(node, "citation")
+              }
+            }
+
             if (node.tagName === "a" && node.properties?.href?.startsWith("#bib")) {
+              appendClass(node, "citation-link")
               node.properties["data-no-popover"] = true
+
+              const bibliographyNumber = bibliographyNumberByHref.get(node.properties.href)
+              if (bibliographyNumber) {
+                node.children = [{ type: "text", value: bibliographyNumber }]
+              }
             }
           })
         }

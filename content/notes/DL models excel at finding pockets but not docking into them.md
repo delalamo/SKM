@@ -2,17 +2,17 @@
 tags:
   - ligand-docking
 created: 2026-04-05T17:32:01
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T07:46:00"
 ---
 
 #### Summary
 
-**Deep learning models such as DiffDock are SOTA at finding pockets but are outperformed by traditional methods at getting the ligand pose right** [^yu2022]. These results are in ground truth pockets and do not look at ESMFold pockets. This is suspected to be due to their lack of inductive biases for identifying interactions that drive high affinity [^errington2024].
+**Deep learning models such as DiffDock are SOTA at finding pockets but are outperformed by traditional methods at getting the ligand pose right** [@yu2022]. These results are in ground truth pockets and do not look at ESMFold pockets. This is suspected to be due to their lack of inductive biases for identifying interactions that drive high affinity [@errington2024].
 
 #### Figures
 
 ![[Pasted-image-20241105050419.png|500]]
-*Ref [^errington2024]*
+*Ref [@errington2024]*
 
 | | Method | Top-1 RMSD(Å) % < 1Å (↑) | Top-1 RMSD(Å) % < 2Å (↑) | Top-1 RMSD(Å) Med. (↓) | Top-5 RMSD(Å) % < 1Å (↑) | Top-5 RMSD(Å) % < 2Å (↑) | Top-5 RMSD(Å) Med. (↓) |
 |---|---|---|---|---|---|---|---|
@@ -26,13 +26,10 @@ modified: "2026-04-20T07:16:03"
 | | PointSite + Uni-dock | 21.36 ± 1.65 | 32.12 ± 0.93 | 5.54 ± 0.46 | 31.38 ± 0.86 | 46.06 ± 0.69 | 2.52 ± 0.18 |
 | **Better Pocket + Traditional** | DiffDock* + Uni-dock | 25.49 ± 0.6 | 38.93 ± 0.23 | 4.14 ± 0.07 | 36.97 ± 1.05 | 51.07 ± 1.06 | 1.93 ± 0.12 |
 | | GT pocket + Uni-dock | 32.77 ± 0.38 | 51.11 ± 0.6 | 1.89 ± 0.04 | 47.5 ± 0.23 | 67.59 ± 0.94 | 1.11 ± 0.02 |
-*Ref [^yu2022]*
+*Ref [@yu2022]*
 
 #### See also
 
 - [[DL ligand docking methods generate unrealistic poses]]
 - [[The Evoformer can calculate ligand-binding residues]]
 - [[Protein-ligand co-folding methods do not generalize beyond their training set]]
-
-[^yu2022]: Yu et al. (2023) "Do Deep Learning Models Really Outperform Traditional Approaches in Molecular Docking?." https://doi.org/10.48550/arXiv.2302.07134
-[^errington2024]: Errington et al. (2025) "Assessing interaction recovery of predicted protein-ligand poses." J. Cheminformatics. https://doi.org/10.1186/S13321-025-01011-6

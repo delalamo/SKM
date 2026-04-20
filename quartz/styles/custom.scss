@@ -85,20 +85,25 @@ a[data-footnote-ref] {
 //
 // Quartz/rehype-citation generates spans like:
 //   <span id="citation--key--1">(<a href="#bib-key">1</a>)</span>
-// Hide the generated parentheses and style the number as a superscript.
+// Render the entire citation cluster as a compact superscript so grouped
+// citations still keep their punctuation and individual links.
 
+span.citation,
 span[id^="citation--"] {
-  font-size: 0;
-  line-height: 0;
+  font-size: 0.75em;
+  line-height: 1;
   vertical-align: super;
+  white-space: nowrap;
 }
 
-span[id^="citation--"] > a {
+span.citation > a,
+span[id^="citation--"] > a,
+a.citation-link {
   background-color: transparent;
   border-radius: 0;
   padding: 0;
-  line-height: 1;
-  font-size: 0.75rem;
+  line-height: inherit;
+  font-size: inherit;
   font-weight: 600;
   text-decoration: none;
   color: var(--secondary);

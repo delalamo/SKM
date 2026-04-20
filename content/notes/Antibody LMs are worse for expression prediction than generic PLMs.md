@@ -3,10 +3,10 @@ tags:
   - protein-language-models/antibodies
   - antibody-developability/expression
 created: "2026-04-05T17:07:03"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T07:46:00"
 ---
 #### Summary
-**[[Antibodies|Antibody]]-specific [[Protein language models|protein language models]] are worse for antibody [[Developability|expression prediction]] than generic [[Protein language models|PLMs]]** [^kenlay2024].
+**[[Antibodies|Antibody]]-specific [[Protein language models|protein language models]] are worse for antibody [[Developability|expression prediction]] than generic [[Protein language models|PLMs]]** [@kenlay2024large].
 
 #### Figures
 | Model | Binding *N* = 422 (Shanehsazzadeh et al., 2023) | Binding *N* = 2048 (Warszawski et al., 2019) | Binding *N* = 4275 (Koenig et al., 2017) | Expression *N* = 4275 (Koenig et al., 2017) |
@@ -20,9 +20,7 @@ modified: "2026-04-20T07:16:03"
 | IgT5-unpaired | 0.299 ± 0.119 | *0.245* ± 0.049 | 0.179 ± 0.014 | 0.567 ± 0.025 |
 | IgT5 | 0.274 ± 0.070 | **0.297** ± 0.057 | **0.25** ± 0.019 | *0.548* ± 0.067 |
 
-*Figure from [^kenlay2024]*
+*Figure from [@kenlay2024large]*
 
 #### See also
 - [[Antibody LMs outperform generic PLMs on intrafamily thermostability prediction]]
-
-[^kenlay2024]: Kenlay et al. (2024) "Large scale paired antibody language models." PLoS Comput. Biol.. https://doi.org/10.1371/JOURNAL.PCBI.1012646

@@ -7,18 +7,18 @@ tags:
   - tm-score
   - plddt
 created: "2026-03-06T09:43:56"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:46:00"
 ---
 
 #### Summary
 
-**Confidence metrics like ipTM from diffusion-based protein structure prediction can be improved with relatively small changes in the conditioning probabilities** [^maddipatla2026]. This was observed when using this as an objective for diffusion guidance.
+**Confidence metrics like ipTM from diffusion-based protein structure prediction can be improved with relatively small changes in the conditioning probabilities** [@maddipatla2026]. This was observed when using this as an objective for diffusion guidance.
 
 #### Figures
 
 ![[Pasted-image-20260306093812.png]]
 
-*Figure from [^maddipatla2026]*
+*Figure from [@maddipatla2026]*
 
 #### See also
 
@@ -28,5 +28,3 @@ modified: "2026-04-11T07:41:30"
 - [[pLDDT correlates with number of homologous sequences provided during runtime]]
 - [[Protein structure prediction and design confidence metrics do not correlate with binding affinity]]
 - [[Protein folding neural networks cannot predict protein stability]]
-
-[^maddipatla2026]: Maddipatla et al. (2026) "Inference-time optimization for experiment-grounded protein ensemble generation." https://doi.org/10.48550/ARXIV.2602.24007

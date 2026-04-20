@@ -3,9 +3,7 @@ title: Molecular dynamics simulation of an entire cell
 tags:
   - conformational-dynamics/molecular-dynamics
 created: "2024-04-16T08:45:31"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-20T07:46:00"
 ---
 #### Summary
- **The minimal cell JCVI-syn3A, which has 500 genes, has been modeled with [[Coarse-grained]] [[MD simulations]]** [^stevens2023]. The entire system had six billion atoms.
-
-[^stevens2023]: Stevens et al. (2023) "Molecular dynamics simulation of an entire cell." *Frontiers in Chemistry*. https://doi.org/10.3389/fchem.2023.1106495
+ **The minimal cell JCVI-syn3A, which has 500 genes, has been modeled with [[Coarse-grained]] [[MD simulations]]** [@stevens2023]. The entire system had six billion atoms.

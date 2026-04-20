@@ -3,12 +3,10 @@ tags:
   - antibody-developability/polyspecificity
   - cdrh3
 created: 2025-11-20T17:50:57
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:46:00"
 ---
 #### Summary
-**[[Complementarity-determining regions|CDR3]] loops encode specificity while CDRs 1 and 2 encode [[Developability|cross-reactivity]]** [^xu2000].
+**[[Complementarity-determining regions|CDR3]] loops encode specificity while CDRs 1 and 2 encode [[Developability|cross-reactivity]]** [@xu2000].
 
 #### See also
 - [[GRAB motifs]]
-
-[^xu2000]: Xu & Davis (2000) "Diversity in the CDR3 Region of VH Is Sufficient for Most Antibody Specificities." *Immunity*. https://doi.org/10.1016/S1074-7613(00)00006-6

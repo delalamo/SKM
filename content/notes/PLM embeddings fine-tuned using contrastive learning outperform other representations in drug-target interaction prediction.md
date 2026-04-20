@@ -3,16 +3,14 @@ tags:
   - protein-language-models/representations
   - contrastive-learning
 created: 2024-05-02T03:16:24
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:46:00"
 ---
 
 ## Summary
 
-**A [[Contrastive learning]] approach with pretrained ProtBERT embeddings and Morgan fingerprints outperformed state-of-the-art methods on drug-target interaction prediction** ([Singh et al 2023b][^singh2023]).
+**A [[Contrastive learning]] approach with pretrained ProtBERT embeddings and Morgan fingerprints outperformed state-of-the-art methods on drug-target interaction prediction** (Singh et al 2023b [@singh2023]).
 
 ## Figures
 
 ![[Contrastive-Learning-ConPlex.png]]
-*Figure from [Singh et al 2023b][^singh2023]*
-
-[^singh2023]: Singh et al. (2023) "Contrastive learning in protein language space predicts interactions between drugs and protein targets." *Proceedings of the National Academy of Sciences*. https://doi.org/10.1073/pnas.2220778120
+*Figure from Singh et al 2023b [@singh2023]*

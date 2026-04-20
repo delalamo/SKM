@@ -3,12 +3,12 @@ tags:
   - protein-language-models/training
   - thermostability/prediction
 created: "2026-04-05T17:40:10"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T07:46:00"
 ---
 
 #### Summary
 
-**Residue conservation and solvent exposure data perform comparably to [[Protein language models|PLMs]] at some property prediction tasks** [^tsishyn2025]. The former was assessed using position-specific scoring matrices. However, [[Structure-based methods outperform sequence-based methods on protein stability prediction of point mutants, but not full sequences|as with language models]], they perform worse than [[Inverse folding|inverse folding]] on [[Stability and thermostability#Prediction|stability prediction]].
+**Residue conservation and solvent exposure data perform comparably to [[Protein language models|PLMs]] at some property prediction tasks** [@tsishyn2025]. The former was assessed using position-specific scoring matrices. However, [[Structure-based methods outperform sequence-based methods on protein stability prediction of point mutants, but not full sequences|as with language models]], they perform worse than [[Inverse folding|inverse folding]] on [[Stability and thermostability#Prediction|stability prediction]].
 
 #### Figures
 
@@ -26,10 +26,8 @@ modified: "2026-04-20T07:16:03"
 | EVE (ensemble) [23] | ALI | 0.431 | 0.410 | 0.382 | 0.398 | 0.466 | 0.446 |
 | ESM2 (650M) [24] | pLM | 0.428 | 0.496 | 0.382 | 0.409 | 0.431 | 0.381 |
 
-*Table from [^tsishyn2025]*
+*Table from [@tsishyn2025]*
 
 #### See also
 
 * [[A subset of residues is sufficient to predict protein dG]]
-
-[^tsishyn2025]: Tsishyn et al. (2025) "Residue conservation and solvent accessibility are (almost) all you need for predicting mutational effects in proteins." Bioinformatics. https://doi.org/10.1093/bioinformatics/btaf322
