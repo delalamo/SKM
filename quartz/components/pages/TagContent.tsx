@@ -8,6 +8,7 @@ import { htmlToJsx } from "../../util/jsx"
 import { i18n } from "../../i18n"
 import { ComponentChildren } from "preact"
 import { concatenateResources } from "../../util/resources"
+import { groupFilesByDirectChildTag } from "./tagGrouping"
 
 interface TagContentOptions {
   sort?: SortFn
@@ -34,6 +35,14 @@ export default ((opts?: Partial<TagContentOptions>) => {
       allFiles.filter((file) =>
         (file.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes(tag),
       )
+    const contentFromTagPage = (contentPage?: QuartzPluginData): ComponentChildren => {
+      const root = contentPage?.htmlAst as Root | undefined
+      return (
+        !contentPage || !root || root.children.length === 0
+          ? contentPage?.description
+          : htmlToJsx(contentPage.filePath!, root)
+      ) as ComponentChildren
+    }
 
     const content = (
       (tree as Root).children.length === 0
@@ -67,12 +76,7 @@ export default ((opts?: Partial<TagContentOptions>) => {
               }
 
               const contentPage = allFiles.filter((file) => file.slug === `tags/${tag}`).at(0)
-
-              const root = contentPage?.htmlAst
-              const content =
-                !root || root?.children.length === 0
-                  ? contentPage?.description
-                  : htmlToJsx(contentPage.filePath!, root)
+              const content = contentFromTagPage(contentPage)
 
               const tagListingPage = `/tags/${tag}` as FullSlug
               const href = resolveRelative(fileData.slug!, tagListingPage)
@@ -108,6 +112,7 @@ export default ((opts?: Partial<TagContentOptions>) => {
         </div>
       )
     } else {
+      const groupedSections = groupFilesByDirectChildTag(tag, allFiles)
       const pages = allPagesWithTag(tag)
       const listProps = {
         ...props,
@@ -117,12 +122,50 @@ export default ((opts?: Partial<TagContentOptions>) => {
       return (
         <div class="popover-hint">
           <article class={classes}>{content}</article>
-          <div class="page-listing">
-            <p>{i18n(cfg.locale).pages.tagContent.itemsUnderTag({ count: pages.length })}</p>
+          {groupedSections ? (
             <div>
-              <PageList {...listProps} sort={options?.sort} />
+              {groupedSections.map((section) => {
+                const sectionProps = {
+                  ...props,
+                  allFiles: section.pages,
+                }
+                const sectionContent = contentFromTagPage(section.contentPage)
+                const href = section.tag
+                  ? resolveRelative(fileData.slug!, `tags/${section.tag}` as FullSlug)
+                  : null
+
+                return (
+                  <div class="page-listing">
+                    <h2>
+                      {href ? (
+                        <a class="internal tag-link" href={href}>
+                          {section.title}
+                        </a>
+                      ) : (
+                        section.title
+                      )}
+                    </h2>
+                    {sectionContent && <div>{sectionContent}</div>}
+                    <p>
+                      {i18n(cfg.locale).pages.tagContent.itemsUnderTag({
+                        count: section.pages.length,
+                      })}
+                    </p>
+                    <div>
+                      <PageList {...sectionProps} sort={options?.sort} />
+                    </div>
+                  </div>
+                )
+              })}
             </div>
-          </div>
+          ) : (
+            <div class="page-listing">
+              <p>{i18n(cfg.locale).pages.tagContent.itemsUnderTag({ count: pages.length })}</p>
+              <div>
+                <PageList {...listProps} sort={options?.sort} />
+              </div>
+            </div>
+          )}
         </div>
       )
     }

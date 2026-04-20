@@ -2,7 +2,7 @@
 tags:
   - transformers
 created: 2025-11-20T17:30:56
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
 **Poison attacks on [[Language models|language models]] require a constant number of samples regardless of [[Scaling hypothesis|scale]]** [^souly2025].

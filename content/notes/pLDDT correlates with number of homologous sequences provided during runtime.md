@@ -3,7 +3,7 @@ tags:
   - structure-prediction/metrics
   - plddt
 created: "2024-08-06T11:30:37"
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary

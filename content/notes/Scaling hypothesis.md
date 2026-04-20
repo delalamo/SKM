@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2024-05-20T04:02:56
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
 The scaling hypothesis says that [[Transformer]] models (and deep learning models more broadly) learn a richer understanding of the training data as they and their training sets get larger. [^ruan2024] give examples for this in natural language processing (below).

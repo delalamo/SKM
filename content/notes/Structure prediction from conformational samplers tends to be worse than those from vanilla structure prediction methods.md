@@ -4,7 +4,7 @@ tags:
   - conformational-dynamics/modeling
   - tm-score
 created: "2025-05-18T00:49:42"
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary

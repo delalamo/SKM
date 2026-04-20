@@ -4,7 +4,7 @@ tags:
   - thermostability/prediction
   - plddt
 created: "2026-03-06T09:43:56"
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 
 ## Summary

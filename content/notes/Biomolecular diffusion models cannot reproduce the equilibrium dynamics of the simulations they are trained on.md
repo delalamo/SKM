@@ -4,7 +4,7 @@ tags:
   - protein-folding/structure-prediction
   - conformational-dynamics/modeling
 created: "2025-12-22T11:49:01"
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary

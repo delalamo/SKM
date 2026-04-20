@@ -3,7 +3,7 @@ tags:
   - light-chains
   - cdrh3
 created: 2025-01-20T21:12:05
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
 **Light chain coherence refers to the high probability that functional antibodies expressed by memory [[B cells]] with the same [[Complementarity-determining regions|CDRH3]] loop and [[Germline|V-gene]] also share the same [[Light chains|light chain]]** [^jaffe2022]. The finding holds across pairs of B-cells with the same heavy V-gene and CDRH3 length from different donors, and across different datasets collected at different times.

@@ -3,7 +3,7 @@ tags:
   - protein-language-models/antibodies
   - alignment/sequence-based
 created: "2025-02-16T03:31:21"
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
 **[[Antibodies|Antibody]] [[Protein language models|language models]] learn about [[Affinity maturation|affinity maturation]] and how far antibody sequences are from [[Germline]].** This has been observed in AntiBERTy, AbLang, and PALM [^ruffolo2021][^olsen2022][^jing2023]. Progression of sequences in [[Immune repertoires|immune repertoires]] can be observed in [[Dimensionality reduction|dimensionality reduction]] of AntiBERTy embeddings (t-SNE). This was also shown with AntiBERTa but not SAPIENS or ProtBERT.

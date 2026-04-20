@@ -2,7 +2,7 @@
 tags:
   - protein-design/design
 created: 2025-08-03T09:54:48
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary

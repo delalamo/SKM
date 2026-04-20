@@ -4,7 +4,7 @@ tags:
   - protein-backbone-design/designability
   - plddt
 created: "2026-04-05T17:36:43"
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary

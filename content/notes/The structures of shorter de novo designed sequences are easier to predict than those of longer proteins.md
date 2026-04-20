@@ -2,7 +2,7 @@
 tags:
   - protein-backbone-design/designability
 created: "2024-09-01T04:29:37"
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary

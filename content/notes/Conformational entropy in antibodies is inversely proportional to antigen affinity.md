@@ -3,7 +3,7 @@ tags:
   - cdrh3
   - protein-protein-interactions
 created: 2024-10-02T04:07:34
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
 **[[Protein dynamics|Conformational entropy]] of loops of [[Antibodies|antibodies]] is inversely proportional to antigen-binding affinity** [^mikolajek2022][^thorpe2007][^lhr2022].

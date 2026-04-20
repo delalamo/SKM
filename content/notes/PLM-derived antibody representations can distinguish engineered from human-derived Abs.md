@@ -3,7 +3,7 @@ tags:
   - protein-language-models/representations
   - alignment/sequence-based
 created: 2025-02-16T03:39:18
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
 **[[Protein language models|PLM]] embeddings can capture whether [[Antibodies|antibodies]] are engineered from those derived from humans** [^singh2023]. In contrast, [^bashour2024] claims that engineered antibodies occupy a subspace of the broader diversity of natural antibodies when using [[ESM|ESM-1v]].

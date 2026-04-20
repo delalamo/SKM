@@ -3,7 +3,7 @@ tags:
   - protein-language-models/training
   - thermostability/prediction
 created: "2024-11-29T03:39:16"
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary

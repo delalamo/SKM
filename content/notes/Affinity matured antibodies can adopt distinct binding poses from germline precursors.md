@@ -2,7 +2,7 @@
 tags:
   - affinity-maturation
 created: "2025-12-11T09:02:48"
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
 **[[Affinity maturation|Affinity matured]] [[Antibodies|antibodies]] can adopt binding poses that are distinct from the antibodies they evolved from** [^chan2020]. Anecdotally, this is quite rare.

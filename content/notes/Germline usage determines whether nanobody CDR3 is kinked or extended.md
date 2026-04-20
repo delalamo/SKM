@@ -3,7 +3,7 @@ tags:
   - affinity-maturation
   - antibodies/nanobodies
 created: "2026-04-05T23:36:09"
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
 **[[Germline]] usage, specifically the V-gene, determines whether the [[Complementarity-determining regions|CDR3]] of [[Nanobodies|nanobodies]] is [[Kinked CDRH3 loops|kinked]] or extended** (Bahrami [^bahrami2023]). The two most common camelid germlines in the PDB, IGHV3S53 and IGHV3-3, are 75% extended and 82% kinked, respectively. In contrast, J-gene usage had no impact.

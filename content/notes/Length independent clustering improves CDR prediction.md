@@ -2,7 +2,7 @@
 tags:
   - antibody-structure-prediction/cdr
 created: "2024-07-02T08:01:15"
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
 **Loop prediction precision for [[Complementarity-determining regions|CDRs]] can be improved using length-independent structural hierarchical [[Clustering|clustering]]** [^nowak2016]. This allows "a much larger part of the antibody space" to be structurally defined. Sequence similarity within clusters of different sizes is attributed to shared [[Germline|V-genes]].

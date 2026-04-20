@@ -2,7 +2,7 @@
 tags:
   - inverse-folding/evaluation
 created: "2025-02-19T07:12:20"
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
  **[[Inverse folding]] sequence recovery can be improved by simultaneously [[Structure prediction#Sidechain prediction|predicting side chains]]** [^shuai2025].

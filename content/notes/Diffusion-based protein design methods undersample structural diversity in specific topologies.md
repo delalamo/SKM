@@ -4,7 +4,7 @@ tags:
   - diffusion-models/protein-design
   - protein-design/design
 created: "2025-07-29T16:56:26"
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
  **The [[Diffusion models|diffusion]]-based [[Protein backbone design|protein backbone design]] method RFDiffusion undersamples backbone diversity among Rossman folds** [^orr2025].

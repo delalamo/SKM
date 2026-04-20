@@ -3,7 +3,7 @@ title: Sequence-based DL models learn intra-family phylogenetics of protein evol
 tags:
   - evolution-and-natural-selection
 created: 2024-07-02T05:24:12
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
  **DL models for protein sequences (including [[Protein language models|PLMs]]) learn the phylogenetics of protein evolution.** [^detlefsen2022] showed this in the 2D latent space of protein family-specific [[Variational autoencoders]] (below); whereas [^hie2022] showed how repurposing [[Sequence perplexity|perplexity]] as velocities within a manifold of sequence embedding space from [[ESM]]-1b recapitulated evolutionary trajectories of viral and eukaryotic proteins

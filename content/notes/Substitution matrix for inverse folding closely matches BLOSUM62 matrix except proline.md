@@ -2,7 +2,7 @@
 tags:
   - inverse-folding/evaluation
 created: "2024-04-30T03:21:35"
-modified: "2026-04-20T09:22:29"
+modified: "2026-04-20T09:33:09"
 summary: Inverse folding substitution matrices closely align with BLOSUM matrix, except proline
 ---
 #### Summary

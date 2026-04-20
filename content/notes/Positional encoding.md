@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2024-06-04T03:24:54
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
 **Positional encoding** refers to the process of adding information about a token's absolute or relative position in a sequence. This is particularly important for [[Transformer|transformers]] which lack any built-in knowledge of position.

@@ -3,7 +3,7 @@ tags:
   - thermostability/determinants
   - protein-folding/unfolding
 created: "2024-07-01T02:32:06"
-modified: "2026-04-20T09:22:29"
+modified: "2026-04-20T09:33:09"
 summary: Intra-fold differences in thermostability are due to differences in unfolding rates
 ---
 #### Summary

@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2025-07-22T11:37:28
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
 **Synthetic data over-represents mean values of the original data distribution and either underrepresents or exaggerates the presence of outliers** [^shumailov2023]. This can pose a challenge for models trained using [[Distillation]] and can be a cause of [[Catastrophic forgetting]].

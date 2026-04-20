@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2024-07-01T02:28:08
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
 **[[Binary classifiers|ROC curves]] are robust against class imbalances** [^richardson2024].

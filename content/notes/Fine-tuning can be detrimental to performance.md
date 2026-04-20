@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/training
 created: "2024-07-02T05:11:12"
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
 **Fine-tuning PLMs can be detrimental to downstream tasks.** [^detlefsen2022] say that it "should therefore take place only under rigorous cross validation." [^heinzinger2023] found evidence of [[Catastrophic forgetting]] during fine-tuning of their [[Protein language models|PLM]] on [[Foldseek]] structural descriptors. [^kenlay2024] avoided this by maintaining the pretraining objective and data when fine-tuning; in their case keeping unpaired antibody sequences while fine-tuning on paired sequences.

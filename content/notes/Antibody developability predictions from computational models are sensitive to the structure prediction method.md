@@ -2,7 +2,7 @@
 tags:
   - antibody-developability/general
 created: "2024-08-22T05:13:06"
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary

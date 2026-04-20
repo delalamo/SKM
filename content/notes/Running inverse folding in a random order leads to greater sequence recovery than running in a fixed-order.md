@@ -2,7 +2,7 @@
 tags:
   - inverse-folding/evaluation
 created: "2024-04-24T16:12:09"
-modified: "2026-04-20T09:22:29"
+modified: "2026-04-20T09:33:09"
 summary: Running inverse folding in a random order leads to greater sequence recovery than running in a fixed-order
 ---
 #### Summary

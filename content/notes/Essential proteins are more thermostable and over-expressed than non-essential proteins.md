@@ -2,7 +2,7 @@
 tags:
   - thermostability/evolution
 created: "2026-03-24T10:15:32"
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary

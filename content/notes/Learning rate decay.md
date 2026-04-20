@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2024-06-01T00:33:31
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
 When training neural networks, **learning rate decay** is used to gradually lower the learning rate over a fixed training duration. Typically cosine decay is used, though this has the disadvantage of being carried out over a predefined duration that cannot easily be extended. [^hgele2024] found that [[Weight averaging]] can work in tandem with this but cannot replace it.

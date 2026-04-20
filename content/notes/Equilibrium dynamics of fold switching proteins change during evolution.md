@@ -2,7 +2,7 @@
 tags:
   - conformational-dynamics/evolution
 created: "2024-05-05T01:21:21"
-modified: "2026-04-20T09:22:29"
+modified: "2026-04-20T09:33:09"
 summary: Equilibrium dynamics of the fold-switching protein XCL1 differ from those of an ancestral protein
 ---
 #### Summary

@@ -2,7 +2,7 @@
 tags:
   - inverse-folding/evaluation
 created: "2026-04-05T17:58:34"
-modified: "2026-04-20T09:22:29"
+modified: "2026-04-20T09:33:09"
 summary: The effect of including both sequence and structural features can be synergistic
 ---
 #### Summary

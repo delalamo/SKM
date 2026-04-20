@@ -3,7 +3,7 @@ title: Mutation memory half life
 tags:
   - epistasis
 created: 2024-05-02T05:15:27
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
  **Mutation memory half-life refers to the number of mutations required to observe changes in a mutation's effect on fitness.** The term mutation memory half-life was coined by Park et al [^park2022].

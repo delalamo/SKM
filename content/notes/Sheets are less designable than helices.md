@@ -3,7 +3,7 @@ tags:
   - inverse-folding/evaluation
   - protein-backbone-design/designability
 created: "2026-04-05T17:57:34"
-modified: "2026-04-20T09:22:29"
+modified: "2026-04-20T09:33:09"
 summary: Sheets are less designable than helices
 ---
 #### Summary

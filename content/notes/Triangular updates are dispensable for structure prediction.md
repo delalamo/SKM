@@ -2,7 +2,7 @@
 tags:
   - structure-prediction/architecture
 created: "2025-11-07T17:49:25"
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary

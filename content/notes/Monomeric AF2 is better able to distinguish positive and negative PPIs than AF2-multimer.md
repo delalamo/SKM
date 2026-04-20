@@ -3,7 +3,7 @@ tags:
   - alphafold2
   - protein-protein-interactions
 created: 2026-03-26T21:43:57
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary

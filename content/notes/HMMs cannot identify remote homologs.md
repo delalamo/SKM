@@ -3,7 +3,7 @@ tags:
   - protein-language-models/representations
   - alignment/sequence-based
 created: "2024-07-02T05:12:03"
-modified: "2026-04-20T07:58:49"
+modified: "2026-04-20T08:24:12"
 ---
 #### Summary
 **Remote homologs with sequence identity in the 20-25% region cannot be identified using methods for assembling [[Multiple sequence alignments]] centered on hidden Markov models** [^kilinc2023]. This was corroborated by [^liu2024]. [^wu2024] found that [[Protein language models|PLMs]] were better than HMMs at homolog detection at all scales ([[Larger PLMs are better at homolog detection|link]]).

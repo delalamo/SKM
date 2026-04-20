@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2024-05-18T08:33:34
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
 **[[Antibodies]] and [[B-cell receptors]] have different binding kinetics.** This is due to the latter being on a 2D membrane [^garciasanchez2023].

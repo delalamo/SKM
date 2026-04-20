@@ -3,7 +3,7 @@ tags:
   - antibody-developability/hydrophobicity
   - antibodies/nanobodies
 created: "2024-04-16T01:32:16"
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
 **[[Framework region|FR2]] is more [[Developability|hydrophilic]] in [[Nanobodies|nanobodies]] than in [[Antibodies|antibodies]]** [^ketaren2023].

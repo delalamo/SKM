@@ -3,7 +3,7 @@ tags:
   - alphafold3
   - structure-prediction/complex-prediction
 created: 2026-03-23T08:54:03
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 
 #### Summary

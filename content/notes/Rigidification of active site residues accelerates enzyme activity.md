@@ -2,7 +2,7 @@
 tags:
   - protein-design/enzyme-design
 created: "2025-05-16T01:10:41"
-modified: "2026-04-20T09:22:29"
+modified: "2026-04-20T09:33:09"
 summary: Rigidification of active site residues increases enzyme activity
 ---
 #### Summary

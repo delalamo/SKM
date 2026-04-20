@@ -2,7 +2,7 @@
 tags:
   - fine-tuning
 created: 2026-04-05T17:17:55
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
 **Fine-tuning deep learning models leads to small differences in parameter values in L2 space** [^neyshabur2020]. The foundation model and fine-tuned model often occupy the same basin of the loss landscape. Output features of each layer were examined using centered kernel alignment.

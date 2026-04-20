@@ -2,7 +2,7 @@
 tags:
   - antibody-developability/general
 created: "2024-05-05T08:42:39"
-modified: "2026-04-20T08:16:13"
+modified: "2026-04-20T08:32:20"
 ---
 #### Summary
 **Among approved [[Antibodies]] as well as [[Single chain variable fragments|scFvs]], net-positively charged [[Complementarity-determining regions|CDRs]] had higher risk of [[Developability|non-specific binding]]** [^rabia2018] **and binding to cells** [^liu2021]. This finding was independent of isoelectric point of target proteins tested, as well as the charge of the [[Framework region]] or isotype of the antibody. It appeared to be more driven by arginine rather than lysine, and they include several references to previous reports on the inclusion of arginine in antibody CDRs. Finally, it was dependent on all CDRs, not just CDRH3.
