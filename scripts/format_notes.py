@@ -224,8 +224,7 @@ def process_note(path: Path) -> bool:
     tags: list[str] = []
 
     # ── 1. Tags stay in frontmatter — leave them alone ─────────────────────
-    # (generate_mocs.py reads them; they render invisibly in Quartz unless
-    # a Tags component is explicitly added to the layout)
+    # Quartz renders them via the Tags component and native tag pages.
 
     # ── 2. Convert DOI wikilinks to footnotes ──────────────────────────────
     doi_to_display: dict[str, str] = {}
@@ -370,8 +369,7 @@ def process_note(path: Path) -> bool:
         text = (content_part + fn_part).rstrip('\n') + '\n' + '\n'.join(new_ref_lines) + '\n'
 
     # ── 3. Tags stay in frontmatter — no inline hashtags written ──────────
-    # generate_mocs.py reads tags from frontmatter and adds a visible backlink
-    # to the appropriate MOC section, which is cleaner than rendered hashtags.
+    # Native Quartz tag pages handle navigation without rendered hashtags.
 
     # ── Write if changed ──────────────────────────────────────────────────
     if text == original:
