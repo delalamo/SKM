@@ -1,12 +1,11 @@
 ---
 tags:
   - thermostability/design
+  - thermostability/engineering
+  - antibodies/engineering
+  - directed-evolution
 created: "2025-03-15T23:46:30"
-modified: "2026-04-20T08:16:13"
----
-
----
-tags: thermostability/engineering, antibodies/engineering, directed-evolution
+modified: "2026-04-20T09:16:21"
 summary: Stability and function trade off during design in both enzymes and antibodies
 ---
 #### Summary
