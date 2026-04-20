@@ -68,6 +68,12 @@ const config: QuartzConfig = {
       }),
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),
+      Plugin.Citations({
+        bibliographyFile: "./bibliography.bib",
+        csl: "vancouver",
+        linkCitations: true,
+        suppressBibliography: false,
+      }),
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
