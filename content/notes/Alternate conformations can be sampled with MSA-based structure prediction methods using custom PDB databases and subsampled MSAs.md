@@ -3,7 +3,7 @@ tags:
   - structure-prediction/sampling
   - conformational-dynamics/modeling
 created: 2025-12-19T12:44:03
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -38,9 +38,9 @@ Alternate conformations sampled via
 [^monteiro2024]: Monteiro da Silva et al. (2024) "High-throughput prediction of protein conformational distributions with subsampled AlphaFold2." *Nature Communications*. https://doi.org/10.1038/s41467-024-46715-9
 [^waymentsteele2023]: Wayment-Steele et al. (2023) "Predicting multiple conformations via sequence clustering and AlphaFold2." *Nature*. https://doi.org/10.1038/s41586-023-06832-9
 [^stahl2023]: Stahl et al. (2023) "Protein structure prediction with in-cell photo-crosslinking mass spectrometry and deep learning." *Nature Biotechnology*. https://doi.org/10.1038/s41587-023-01704-z
-[^riccabona2024]: Riccabona et al. (2024) "Assessing AF2’s ability to predict structural ensembles of proteins." https://doi.org/10.1101/2024.04.16.589792
+[^riccabona2024]: Riccabona et al. (2024) "Assessing AF2’s ability to predict structural ensembles of proteins." Structure. https://doi.org/10.1016/j.str.2024.09.001
 [^stein2022]: Stein & Mchaourab (2022) "SPEACH_AF: Sampling protein ensembles and conformational heterogeneity with Alphafold2." *PLOS Computational Biology*. https://doi.org/10.1371/journal.pcbi.1010483
-[^kalakoti2024]: Kalakoti & Wallner (2024) "AFsample2: Predicting multiple conformations and ensembles with AlphaFold2." https://doi.org/10.1101/2024.05.28.596195
+[^kalakoti2024]: Kalakoti & Wallner (2025) "AFsample2 predicts multiple conformations and ensembles with AlphaFold2." Communications Biology. https://doi.org/10.1038/s42003-025-07791-9
 [^faezov2023]: Faezov & Dunbrack (2023) "AlphaFold2 models of the active form of all 437 catalytically competent human protein kinase domains." https://doi.org/10.1101/2023.07.21.550125
 [^vani2023]: Vani et al. (2023) "Exploring Kinase Asp-Phe-Gly (DFG) Loop Conformational Stability with AlphaFold2-RAVE." *Journal of Chemical Information and Modeling*. https://doi.org/10.1021/acs.jcim.3c01436
 [^schafer2024]: Schafer & Porter (2024) "AlphaFold2’s training set powers its predictions of fold-switched conformations." https://doi.org/10.1101/2024.10.11.617857

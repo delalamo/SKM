@@ -2,7 +2,7 @@
 tags:
   - thermostability/design
 created: "2024-11-14T02:49:32"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -21,4 +21,4 @@ Consensus sequences are generated using "a simple counting method" (most likely 
 
 *Figure from [^nixon2023]*
 
-[^nixon2023]: Nixon et al. (2023) "The importance of input sequence set to consensus-derived proteins and their relationship to reconstructed ancestral proteins." https://doi.org/10.1101/2023.06.29.547063
+[^nixon2023]: Nixon et al. (2024) "The importance of input sequence set to consensus‐derived proteins and their relationship to reconstructed ancestral proteins." Protein Science. https://doi.org/10.1002/pro.5011

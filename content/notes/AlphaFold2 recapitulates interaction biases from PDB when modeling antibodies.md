@@ -2,7 +2,7 @@
 tags:
   - alphafold2
 created: 2024-05-08T17:57:58
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 #### Summary
 **[[AlphaFold2]] models interactions between [[Antibodies|antibodies]] and antigens using motifs found in non-antibody structural complexes in the PDB** [^mccoy2024]. Better antibody-antigen predictions recycle interactions from non-PDB structures.
@@ -15,4 +15,4 @@ modified: "2026-04-20T10:13:23"
 - [[Protein-protein interaction interfaces are highly degenerate]]
 - [[Protein folding neural networks do not extrapolate to new ligand binding sites]]
 
-[^mccoy2024]: McCoy et al. (2024) "A Comparison of Antibody-Antigen Complex Sequence-to-Structure Prediction Methods and their Systematic Biases." https://doi.org/10.1101/2024.03.15.585121
+[^mccoy2024]: McCoy et al. (2024) "A comparison of antibody–antigen complex sequence‐to‐structure prediction methods and their systematic biases." Protein Science. https://doi.org/10.1002/pro.5127

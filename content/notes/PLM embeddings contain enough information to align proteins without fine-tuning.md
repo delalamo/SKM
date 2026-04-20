@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/representations
 created: "2025-02-10T07:37:30"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:16:03"
 ---
 
 ## Summary
@@ -35,5 +35,5 @@ To improve alignment quality using "normalization" (per [Pantolini et al 2022][^
 [^llinareslpez2022]: Llinares-López et al. (2022) "Deep embedding and alignment of protein sequences." *Nature Methods*. https://doi.org/10.1038/s41592-022-01700-2
 [^hamamsy2023]: Hamamsy et al. (2023) "Protein remote homology detection and structural alignment using deep learning." *Nature Biotechnology*. https://doi.org/10.1038/s41587-023-01917-2
 [^mcwhite2023]: McWhite et al. (2023) "Leveraging protein language models for accurate multiple sequence alignments." *Genome Research*. https://doi.org/10.1101/gr.277675.123
-[^pantolini2022]: Pantolini et al. (2022) "Embedding-based alignment: combining protein language models and alignment approaches to detect structural similarities in the twilight-zone." https://doi.org/10.1101/2022.12.13.520313
-[^ashrafzadeh2023]: Ashrafzadeh et al. (2023) "Scoring alignments by embedding vector similarity." https://doi.org/10.1101/2023.08.30.555602
+[^pantolini2022]: Pantolini et al. (2024) "Embedding-based alignment: combining protein language models with dynamic programming alignment to detect structural similarities in the twilight-zone." Bioinformatics. https://doi.org/10.1093/bioinformatics/btad786
+[^ashrafzadeh2023]: Ashrafzadeh et al. (2024) "Scoring alignments by embedding vector similarity." Briefings in Bioinformatics. https://doi.org/10.1093/bib/bbae178

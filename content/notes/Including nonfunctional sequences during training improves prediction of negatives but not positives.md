@@ -2,7 +2,7 @@
 tags:
   - variant-effect-prediction
 created: 2024-05-05T12:13:38
-modified: 2026-04-10T14:30:55
+modified: "2026-04-20T07:16:03"
 ---
 #### Summary
  **Using several ML models, [^morenopaz2023] show that including nonfunctional sequences during training improves prediction of poor performers but not top performers.**
@@ -10,4 +10,4 @@ modified: 2026-04-10T14:30:55
 #### See also
  * [[Most random mutants are nonfunctional]]
 
-[^morenopaz2023]: Moreno-Paz et al. (2023) "Machine learning-guided optimization of p-coumaric acid production in yeast." https://doi.org/10.1101/2023.11.27.568789
+[^morenopaz2023]: Moreno-Paz et al. (2024) "Machine Learning-Guided Optimization of p -Coumaric Acid Production in Yeast." ACS Synthetic Biology. https://doi.org/10.1021/acssynbio.4c00035

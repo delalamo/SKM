@@ -3,7 +3,7 @@ title: Beneficial mutations of enzymes far from active site improve substrate bi
 tags:
   - protein-design/enzyme-design
 created: 2025-03-15T23:41:32
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 #### Summary
  **[[Evolution and natural selection#Mutations|Mutations]] that are beneficial for enzymes that are far from the active site tune [[Protein dynamics|conformational dynamics]] to improve substrate binding and substrate release** [^zarifi2025]. However, they do not "compensate" for destabilizing active site mutations as was previously hypothesized. This was shown using [[Kemp eliminase]].
@@ -11,4 +11,4 @@ modified: "2026-04-20T10:13:23"
 #### See also
 * [[Rigidification of active site residues accelerates enzyme activity]]
 
-[^zarifi2025]: Zarifi et al. (2025) "Distal mutations enhance catalysis in designed enzymes by facilitating substrate binding and product release." https://doi.org/10.1101/2025.02.21.639315
+[^zarifi2025]: Zarifi et al. (2025) "Distal mutations enhance catalysis in designed enzymes by facilitating substrate binding and product release." Nature Communications. https://doi.org/10.1038/s41467-025-63802-7

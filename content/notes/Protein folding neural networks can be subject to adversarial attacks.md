@@ -3,7 +3,7 @@ tags:
   - structure-prediction/limitations
   - alphafold2
 created: "2024-05-08T18:04:24"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 ## Summary
@@ -16,4 +16,4 @@ modified: "2026-04-20T10:13:23"
 
 [^jha2021]: Jha et al. (2021) "Protein Folding Neural Networks Are Not Robust." https://doi.org/10.48550/arXiv.2109.04460
 [^alkhouri2023]: Alkhouri et al. (2023) "On the Robustness of AlphaFold: A COVID-19 Case Study." https://doi.org/10.48550/arXiv.2301.04093
-[^yuan2023]: Yuan et al. (2023) "AF2-Mutation: Adversarial Sequence Mutations against AlphaFold2 on Protein Tertiary Structure Prediction." *arXiv*. https://doi.org/10.48550/arXiv.2305.08929
+[^yuan2023]: Yuan et al. (2024) "AF2-mutation: adversarial sequence mutations against AlphaFold2 in protein tertiary structure prediction." Acta Materia Medica. https://doi.org/10.15212/amm-2024-0047

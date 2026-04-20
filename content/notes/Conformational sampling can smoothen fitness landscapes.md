@@ -2,7 +2,7 @@
 tags:
   - conformational-dynamics/evolution
 created: 2024-11-26T23:10:09
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -13,4 +13,4 @@ modified: "2026-04-20T10:13:23"
 
 - [[Modifying conformational landscapes of proteins can give rise to new functions]]
 
-[^sandhu2024]: Sandhu et al. (2024) "Computational and Experimental Exploration of Protein Fitness Landscapes: Navigating Smooth and Rugged Terrains." https://doi.org/10.48550/ARXIV.2411.12957
+[^sandhu2024]: Sandhu et al. (2025) "Computational and Experimental Exploration of Protein Fitness Landscapes: Navigating Smooth and Rugged Terrains." Biochemistry. https://doi.org/10.1021/acs.biochem.4c00673

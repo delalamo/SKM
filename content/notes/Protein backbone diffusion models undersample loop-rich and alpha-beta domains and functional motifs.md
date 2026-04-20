@@ -3,7 +3,7 @@ tags:
   - diffusion-models/protein-design
   - protein-design/design
 created: "2025-07-29T17:00:29"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -21,4 +21,4 @@ modified: "2026-04-11T07:41:30"
 * [[Diffusion-based protein design methods undersample structural diversity in specific topologies]]
 * [[Protein structure prediction methods predict idealized secondary structures in de novo proteins]]
 
-[^lu2025]: Lu et al. (2025) "Assessing Generative Model Coverage of Protein Structures with SHAPES." https://doi.org/10.1101/2025.01.09.632260
+[^lu2025]: Lu et al. (2025) "Assessing generative model coverage of protein structures with SHAPES." Cell Systems. https://doi.org/10.1016/j.cels.2025.101347

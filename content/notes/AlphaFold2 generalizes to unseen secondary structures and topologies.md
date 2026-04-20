@@ -3,7 +3,7 @@ tags:
   - alphafold2
   - structure-prediction/sampling
 created: "2025-04-09T10:01:58"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -20,4 +20,4 @@ modified: "2026-04-20T10:13:23"
 
 - [[DL structure prediction methods cannot predict CDR conformations unseen during training]]
 
-[^ahdritz2024]: Ahdritz et al. (2022) "OpenFold: Retraining AlphaFold2 yields new insights into its learning mechanisms and capacity for generalization." https://doi.org/10.1101/2022.11.20.517210
+[^ahdritz2024]: Ahdritz et al. (2024) "OpenFold: retraining AlphaFold2 yields new insights into its learning mechanisms and capacity for generalization." Nature Methods. https://doi.org/10.1038/s41592-024-02272-z

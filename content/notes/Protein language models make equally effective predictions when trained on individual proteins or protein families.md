@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/training
 created: "2026-03-18T07:59:28"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:16:03"
 ---
 
 ## Summary
@@ -20,4 +20,4 @@ modified: "2026-04-11T07:41:30"
 * [[Antibody LMs outperform generic PLMs on intrafamily thermostability prediction]]
 * [[Base PLMs must usually be fine-tuned to generate functionally active sequences]]
 
-[^gelman2024]: Gelman et al. (2024) "Biophysics-based protein language models for protein engineering." https://doi.org/10.1101/2024.03.15.585128
+[^gelman2024]: Gelman et al. (2025) "Biophysics-based protein language models for protein engineering." Nature Methods. https://doi.org/10.1038/s41592-025-02776-2

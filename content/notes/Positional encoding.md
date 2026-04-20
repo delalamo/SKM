@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2024-06-04T03:24:54
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 #### Summary
 **Positional encoding** refers to the process of adding information about a token's absolute or relative position in a sequence. This is particularly important for [[Transformer|transformers]] which lack any built-in knowledge of position.
@@ -24,4 +24,4 @@ modified: "2026-04-20T10:13:23"
 *Figure from [^su2021]*
 
 [^vaswani2017]: Vaswani et al. (2017) "Attention Is All You Need." https://doi.org/10.48550/ARXIV.1706.03762
-[^su2021]: Su et al. (2021) "RoFormer: Enhanced Transformer with Rotary Position Embedding." https://doi.org/10.48550/ARXIV.2104.09864
+[^su2021]: Su et al. (2024) "RoFormer: Enhanced transformer with Rotary Position Embedding." Neurocomputing. https://doi.org/10.1016/J.NEUCOM.2023.127063

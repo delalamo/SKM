@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/representations
 created: "2024-11-27T00:40:37"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:16:03"
 ---
 
 ## Summary
@@ -19,4 +19,4 @@ modified: "2026-04-11T07:41:30"
 
 * [[Mean-pooled embeddings outperform other zero-shot approaches for transfer learning of PLMs using the full sequence]]
 
-[^naderializadeh2024]: NaderiAlizadeh & Singh (2024) "Aggregating Residue-Level Protein Language Model Embeddings with Optimal Transport." https://doi.org/10.1101/2024.01.29.577794
+[^naderializadeh2024]: NaderiAlizadeh & Singh (2024) "Aggregating residue-level protein language model embeddings with optimal transport." Bioinformatics Advances. https://doi.org/10.1093/bioadv/vbaf060

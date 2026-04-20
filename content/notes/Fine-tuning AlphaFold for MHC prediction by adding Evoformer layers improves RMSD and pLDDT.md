@@ -4,7 +4,7 @@ tags:
   - structure-prediction/training
   - plddt
 created: "2024-05-18T08:26:00"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -16,4 +16,4 @@ modified: "2026-04-20T10:13:23"
 
 *Figure from [^glukhov2023]*
 
-[^glukhov2023]: Glukhov et al. (2023) "MHC-Fine: Fine-tuned AlphaFold for Precise MHC-Peptide Complex Prediction." https://doi.org/10.1101/2023.11.29.569310
+[^glukhov2023]: Glukhov et al. (2024) "MHC-Fine: Fine-tuned AlphaFold for precise MHC-peptide complex prediction." Biophysical Journal. https://doi.org/10.1016/j.bpj.2024.05.011

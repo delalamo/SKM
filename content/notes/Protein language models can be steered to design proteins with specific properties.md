@@ -2,7 +2,7 @@
 tags:
   - protein-design/design
 created: 2026-04-05T17:53:07
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -22,4 +22,4 @@ modified: "2026-04-20T10:13:23"
 
 *Figure from [^huang2025]*
 
-[^huang2025]: Huang et al. (2025) "Steering Protein Language Models." https://doi.org/10.48550/ARXIV.2509.07983
+[^huang2025]: Huang et al. (2025) "Steering Protein Language Models." ICML. https://proceedings.mlr.press/v267/huang25ba.html

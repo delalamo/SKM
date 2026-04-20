@@ -2,7 +2,7 @@
 tags:
   - variant-effect-prediction
 created: 2024-11-14T03:14:19
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -15,4 +15,4 @@ modified: "2026-04-20T10:13:23"
 
 *Figure from [^muir2024]*
 
-[^muir2024]: Muir et al. (2024) "Evolutionary-Scale Enzymology Enables Biochemical Constant Prediction Across a Multi-Peaked Catalytic Landscape." https://doi.org/10.1101/2024.10.23.619915
+[^muir2024]: Muir et al. (2025) "Evolutionary-scale enzymology enables exploration of a rugged catalytic landscape." Science. https://doi.org/10.1126/science.adu1058

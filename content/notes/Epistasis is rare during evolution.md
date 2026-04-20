@@ -3,7 +3,7 @@ title: Epistasis is rare during evolution
 tags:
   - epistasis
 created: 2026-03-16T11:36:47
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 #### Summary
  **[[Epistasis]], in which protein fitness changes in a non-additive way, is rare in natural evolution and laboratory evolution.** Simple statistical models with only additive effects can explain most (80-95%) of changes in activity between variants [^ding2024][^faure2024][^beltran2024][^alcantar2025]. This has been suggested by multiple studies, which found that the effect of mutations that improve [[Stability and thermostability]] was basically entirely additive (see figure below).[^peleg2021][^escobedo2024][^alcantar2025] Park et al. were able to model 92-96% of variance in genome fitness by accounting exclusively for single-point and pairwise interactions plus a sigmoid nonlinearity; e.g., less than <5% of genomes in their test set showed third-order interactions.[^park2023] That said, there are examples where linear models are unable to accurately model fitness ([^faure2024], [^ding2024], [^tonner2022] with [[Spike protein]]/[[ACE2]]), so the type of statistical model still matters. 
@@ -37,6 +37,6 @@ Alcantar et al. carried out a "combinatorially complete" analysis of mutations i
 [^alcantar2025]: Alcantar et al. (2025) "Mapping the evolution of computationally designed protein binders." https://doi.org/10.1101/2025.10.04.680454
 [^peleg2021]: Peleg et al. (2021) "Community-Wide Experimental Evaluation of the PROSS Stability-Design Method." *Journal of Molecular Biology*. https://doi.org/10.1016/j.jmb.2021.166964
 [^escobedo2024]: Escobedo et al. (2024) "Genetics, energetics and allostery during a billion years of hydrophobic protein core evolution." https://doi.org/10.1101/2024.05.11.593672
-[^park2023]: Park et al. (2023) "The simplicity of protein sequence-function relationships." https://doi.org/10.1101/2023.09.02.556057
+[^park2023]: Park et al. (2024) "The simplicity of protein sequence-function relationships." Nature Communications. https://doi.org/10.1038/s41467-024-51895-5
 [^tonner2022]: Tonner et al. (2022) "Interpretable modeling of genotype–phenotype landscapes with state-of-the-art predictive power." *Proceedings of the National Academy of Sciences*. https://doi.org/10.1073/pnas.2114021119
 [^sarkisyan2016]: Sarkisyan et al. (2016) "Local fitness landscape of the green fluorescent protein." *Nature*. https://doi.org/10.1038/nature17995

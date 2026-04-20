@@ -3,7 +3,7 @@ tags:
   - epistasis
   - evolution-and-natural-selection
 created: 2026-03-29T11:17:38
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -42,7 +42,7 @@ In [^johnston2024], where a library of 160,000 sequences saturating four positio
 
 [^kheronsky2018]: Khersonsky et al. (2018) "Automated Design of Efficient and Functionally Diverse Enzyme Repertoires." *Molecular Cell*. https://doi.org/10.1016/j.molcel.2018.08.033
 [^johnston2024]: Johnston et al. (2024) "A combinatorially complete epistatic fitness landscape in an enzyme active site." *Proceedings of the National Academy of Sciences*. https://doi.org/10.1073/pnas.2400439121
-[^muir2024]: Muir et al. (2024) "Evolutionary-Scale Enzymology Enables Biochemical Constant Prediction Across a Multi-Peaked Catalytic Landscape." https://doi.org/10.1101/2024.10.23.619915
+[^muir2024]: Muir et al. (2025) "Evolutionary-scale enzymology enables exploration of a rugged catalytic landscape." Science. https://doi.org/10.1126/science.adu1058
 [^papkou2023]: Papkou et al. (2023) "A rugged yet easily navigable fitness landscape." *Science*. https://doi.org/10.1126/science.adh3860
 [^kirby2025]: Kirby et al. (2025) "Retrospective SARS-CoV-2 human antibody development trajectories are largely sparse and permissive." *Proceedings of the National Academy of Sciences*. https://doi.org/10.1073/pnas.2412787122
 

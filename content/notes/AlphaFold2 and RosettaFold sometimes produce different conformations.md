@@ -5,7 +5,7 @@ tags:
   - conformational-dynamics/modeling
   - rosettafold
 created: 2024-11-04T22:55:26
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -17,4 +17,4 @@ modified: "2026-04-20T10:13:23"
 - [[pLDDT and PAE in protein folding neural networks are correlated]]
 - [[Deep learning methods produce different CDRH3 conformers]]
 
-[^hou2023]: Hou et al. (2023) "Protein multiple conformations prediction using multi-objective evolution algorithm." https://doi.org/10.1101/2023.04.21.537776
+[^hou2023]: Hou et al. (2024) "Protein Multiple Conformation Prediction Using Multi-Objective Evolution Algorithm." Interdisciplinary Sciences: Computational Life Sciences. https://doi.org/10.1007/s12539-023-00597-5

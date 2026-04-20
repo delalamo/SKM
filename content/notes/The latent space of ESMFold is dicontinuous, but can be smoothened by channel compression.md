@@ -2,7 +2,7 @@
 tags:
   - structure-prediction/architecture
 created: "2024-08-13T05:05:39"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -20,4 +20,4 @@ modified: "2026-04-11T07:41:30"
 - [[Masking ESMFold can sometimes sample alternate conformations]]
 
 [^del2023]: del Alamo et al. (2023) "Conformational sampling and interpolation using language-based protein folding neural networks." https://doi.org/10.1101/2023.12.16.571997
-[^lu2024]: Lu et al. (2024) "Tokenized and Continuous Embedding Compressions of Protein Sequence and Structure." https://doi.org/10.1101/2024.08.06.606920
+[^lu2024]: Lu et al. (2025) "Tokenized and continuous embedding compressions of protein sequence and structure." Patterns. https://doi.org/10.1016/j.patter.2025.101289

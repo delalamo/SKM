@@ -3,11 +3,11 @@ tags:
   - protein-language-models/representations
   - contrastive-learning
 created: 2024-07-02T07:59:58
-modified: 2026-04-11T07:27:50
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
 
 **Contrastive learning on structures of antibody Fvs leads to an ability to distinguish specific structural clusters of CDRs** [^singh2023]. Authors attempted to get cosine similarity to match TM-score between antibody structures. See [[Template CDR retrieval using embeddings]].
 
-[^singh2023]: Singh et al. (2023) "Learning the Language of Antibody Hypervariability." https://doi.org/10.1101/2023.04.26.538476
+[^singh2023]: Singh et al. (2025) "Learning the language of antibody hypervariability." Proceedings of the National Academy of Sciences. https://doi.org/10.1073/pnas.2418918121

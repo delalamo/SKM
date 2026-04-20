@@ -2,7 +2,7 @@
 tags:
   - inverse-folding/evaluation
 created: "2026-04-05T17:58:34"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-20T07:16:03"
 ---
 
 ---
@@ -24,4 +24,4 @@ tags:
 | Recovery (%) | 44.60 | 48.81 | 58.76 | 67.05 |
 *Table 3 from [^wang2023]*
 
-[^wang2023]: Wang et al. (2023) "SPDesign: protein sequence designer based on structural sequence profile using ultrafast shape recognition." https://doi.org/10.1101/2023.12.14.571651
+[^wang2023]: Wang et al. (2024) "SPDesign: protein sequence designer based on structural sequence profile using ultrafast shape recognition." Briefings in Bioinformatics. https://doi.org/10.1093/bib/bbae146

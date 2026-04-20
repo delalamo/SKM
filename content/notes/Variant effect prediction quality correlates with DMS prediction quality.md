@@ -2,7 +2,7 @@
 tags:
   - variant-effect-prediction
 created: 2025-03-27T09:00:20
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -15,4 +15,4 @@ modified: "2026-04-20T10:13:23"
 
 *Figure from [^livesey2024]*
 
-[^livesey2024]: Livesey & Marsh (2024) "Variant effect predictor correlation with functional assays is reflective of clinical classification performance." https://doi.org/10.1101/2024.05.12.593741
+[^livesey2024]: Livesey & Marsh (2025) "Variant effect predictor correlation with functional assays is reflective of clinical classification performance." Genome Biology. https://doi.org/10.1186/s13059-025-03575-w

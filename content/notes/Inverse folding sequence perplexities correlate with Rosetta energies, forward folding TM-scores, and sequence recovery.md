@@ -3,7 +3,7 @@ tags:
   - inverse-folding/evaluation
   - tm-score
 created: "2024-05-20T04:08:54"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:16:03"
 ---
 #### Summary
  **[[Inverse folding]] perplexities/log-likelihood values correlate with energies calculated with [[Rosetta]], [[TM-score]] of forward-folded decoys using [[OmegaFold]]** [^liu2024]**, and sequence recovery** [^akpinaroglu2023].
@@ -18,5 +18,5 @@ modified: "2026-04-11T07:41:30"
 #### See also
 * [[Sequence recovery of inverse folding lower for smaller proteins]]
 
-[^liu2024]: Liu et al. (2024) "All-atom protein sequence design based on geometric deep learning." https://doi.org/10.1101/2024.03.18.585651
+[^liu2024]: Liu et al. (2024) "All‐Atom Protein Sequence Design Based on Geometric Deep Learning." Angewandte Chemie International Edition. https://doi.org/10.1002/anie.202411461
 [^akpinaroglu2023]: Akpinaroglu et al. (2023) "Structure-conditioned masked language models for protein sequence design generalize beyond the native sequence space." https://doi.org/10.1101/2023.12.15.571823

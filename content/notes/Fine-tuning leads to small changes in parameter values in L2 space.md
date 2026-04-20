@@ -2,7 +2,7 @@
 tags:
   - fine-tuning
 created: 2026-04-05T17:17:55
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 #### Summary
 **Fine-tuning deep learning models leads to small differences in parameter values in L2 space** [^neyshabur2020]. The foundation model and fine-tuned model often occupy the same basin of the loss landscape. Output features of each layer were examined using centered kernel alignment.
@@ -21,4 +21,4 @@ modified: "2026-04-20T10:13:23"
 - [[Low-rank adaptation causes models to learn less and forget less]]
 - [[Low-rank adaptation changes the magnitude, but not directionality, of matrix operations relative to fine-tuning]]
 
-[^neyshabur2020]: Neyshabur et al. (2020) "What is being transferred in transfer learning?." *arXiv*. https://doi.org/10.48550/ARXIV.2008.11687
+[^neyshabur2020]: Neyshabur et al. (2020) "What is being transferred in transfer learning?." NeurIPS. https://proceedings.neurips.cc/paper/2020/hash/0607f4c705595b911a4f3e7a127b44e0-Abstract.html

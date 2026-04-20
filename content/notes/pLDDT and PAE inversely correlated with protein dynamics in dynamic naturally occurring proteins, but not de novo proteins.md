@@ -5,7 +5,7 @@ tags:
   - plddt
   - pae
 created: "2026-02-20T18:11:03"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -30,5 +30,5 @@ modified: "2026-04-20T10:13:23"
 [^chakravarty2022]: Chakravarty & Porter (2022) "AlphaFold2
                     fails to predict protein fold switching." *Protein Science*. https://doi.org/10.1002/pro.4353
 [^jussupow2023]: Jussupow & Kaila (2023) "Effective Molecular Dynamics from Neural Network-Based Structure Prediction Models." *Journal of Chemical Theory and Computation*. https://doi.org/10.1021/acs.jctc.2c01027
-[^gavaldagarcia2024]: Gavalda-Garcia et al. (2024) "Gradations in protein dynamics captured by experimental NMR are not well represented by AlphaFold2 models and other computational metrics." https://doi.org/10.1101/2024.07.17.603933
+[^gavaldagarcia2024]: Gavalda-Garcia et al. (2025) "Gradations in protein dynamics captured by experimental NMR are not well represented by AlphaFold2 models and other computational metrics." Journal of Molecular Biology. https://doi.org/10.1016/j.jmb.2024.168900
 [^mntener2026]: Müntener et al. (2026) "Large-scale exploration of protein space by automated NMR." https://doi.org/10.64898/2026.02.16.706194
