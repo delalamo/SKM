@@ -3,15 +3,8 @@ tags:
   - protein-language-models/representations
   - tm-score
 created: "2026-04-05T17:54:18"
-modified: "2026-04-20T08:32:20"
----
-
----
+modified: "2026-04-20T09:33:09"
 summary: Smaller PLMs models are more effective at variant effect prediction
-tags: 
- - protein-language-models/applications
- - mutations/prediction
- - esm/observations
 ---
 #### Summary
 **Protein property prediction using [[Protein language models|PLMs]] does not benefit from [[Scaling hypothesis|scale]] beyond ~650M parameters, except when predicting A) structural features or B) features of sparsely populated protein families such as those from viruses.** This is particularly the case with zero-shot prediction [^tan2023][^nijkamp2023][^notin2023]. Some authors have reported it is also true of fine-tuning [^detlefsen2022][^li2024][^vieira2024], although aligning PLMs using [[Reinforcement learning|reinforcement learning]] using data does seem to restore the trend in some cases [^bhatnagar2025]. The exception of structure when transfer learning was shown by [^li2024], and corroborated by attempts to use (ESM) embeddings as starting points for [[Structure prediction|structure prediction]] ([^lin2023] and [^lee2023]). Related to this, larger PLMs are better at [[Larger PLMs are better at homolog detection|homolog detection]] and [[Larger PLMs are better at thermostability prediction|thermostability prediction]], and do not improve as much as smaller models at fitness prediction when [[Language models can be infused with structure via low-rank adapter layers|infused with structural information via low-rank adaptors]] [^ruffolo2024]. Likewise, the exception for viral proteins was observed by [^gurev2025]. [^zhang2024] surmise that both exceptions are due to large PLMs having a greater capacity to [[PLMs learn family-specific protein contacts from sequence context windows of about 20-40 amino acids|memorize domain-specific contacts]].

@@ -2,12 +2,8 @@
 tags:
   - inverse-folding/evaluation
 created: "2024-04-30T03:21:35"
-modified: "2026-04-20T08:32:20"
----
-
----
+modified: "2026-04-20T09:33:09"
 summary: Inverse folding substitution matrices closely align with BLOSUM matrix, except proline
-tags: inverse-folding/execution
 ---
 #### Summary
 **Substitution matrices from [[Inverse folding]] closely match the (BLOSUM62) matrix, except proline** [^hsu2022][^castorina2023][^zhou2024]. [^akpinaroglu2023] found that predicted proline residue embeddings distinguish from others earlier in the network than other residues.
