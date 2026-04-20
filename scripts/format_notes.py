@@ -11,12 +11,13 @@ format_notes.py — Prepares Obsidian notes for Quartz publishing. Two jobs:
      and replaces them with full citations. Use this when notes were previously
      processed without network access (e.g. in a sandbox).
 
-Run manually when porting or adding notes. Idempotent: re-running a fully processed
-note produces no changes.
+Run manually when porting or adding notes/MOCs. Idempotent: re-running a fully
+processed file produces no changes.
 
 Usage:
-    python3 format_notes.py                            # convert DOI wikilinks in all notes
+    python3 format_notes.py                            # convert DOI wikilinks in all notes/MOCs
     python3 format_notes.py content/notes/foo.md       # single file
+    python3 format_notes.py content/MOCs/bar.md        # single file
     python3 format_notes.py --refresh-citations        # upgrade bare fallback citations
     python3 format_notes.py --refresh-citations content/notes/foo.md
 """
@@ -34,6 +35,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from utils import REPO_ROOT
 
 NOTES_DIR = REPO_ROOT / "content" / "notes"
+MOCS_DIR = REPO_ROOT / "content" / "MOCs"
 
 # DOI citation wikilinks: [[10.1038__s41467-024-45621-4|Ding et al 2024]]
 CITE_RE = re.compile(r'\[\[(10\.[^|\]]+)\|([^\]]+)\]\]')
@@ -440,10 +442,10 @@ def main() -> None:
     if file_args:
         targets = [Path(p) for p in file_args]
     else:
-        targets = sorted(NOTES_DIR.glob('*.md'))
+        targets = sorted(NOTES_DIR.glob('*.md')) + sorted(MOCS_DIR.glob('*.md'))
 
     action = refresh_citations if refresh_mode else process_note
-    mode_label = "Refreshing citations" if refresh_mode else "Processing notes"
+    mode_label = "Refreshing citations" if refresh_mode else "Processing files"
     print(f"{mode_label} ({len(targets)} file(s))…\n")
 
     modified = 0
