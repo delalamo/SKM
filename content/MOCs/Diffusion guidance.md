@@ -6,19 +6,19 @@ tags:
 aliases:
   - Guidance sampling of all-atom diffusion
 created: 2026-04-10T14:30:55
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:30:52"
 ---
 
 **Diffusion guidance** refers to inference-time methods that steer a [[Diffusion models|diffusion]] process toward desired properties, constraints, or observations. It is a general concept that applies to both [[Protein backbone design|protein design]], [[Structure prediction|structure prediction]], and sequence-based protein design, of which all-atom diffusion is just one application.
 
 #### Details
 
-Xie et al (doi.org/10.48550/ARXIV.2602.16634) outline three broad types of guidance used by diffusion models:
+Xie et al. [@xie2026] outline three broad types of guidance used by diffusion models:
 1. Score guidance, in which gradients from classifiers, constraints, or rewards are used to nudge the diffusion path.
 2. Path-integral reweighting, such as [[Feynman-Kac steering|Feynman-Kac]] potentials, which use importance weights to update trajectories.
 3. Invariant correctors, such as Metropolis-adjusted Langevin methods, which mix within a biased marginal without changing the trajectory weights.
 
-However, other search algorithms such as [[Beam search]] and [[Monte Carlo Tree Search]] have been used in conjunction with diffusion models (https://doi.org/10.48550/arXiv.2603.27950).
+However, other search algorithms such as [[Beam search]] and [[Monte Carlo Tree Search]] have been used in conjunction with diffusion models [@didi2026a].
 
 <!-- generated -->
 

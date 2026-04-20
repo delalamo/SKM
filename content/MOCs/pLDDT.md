@@ -4,14 +4,14 @@ tags:
   - plddt
   - structure-prediction/metrics
 created: "2026-04-10T14:02:57"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:30:52"
 ---
 
 *(LDDT redirects here)*
 **pLDDT** (predicted local distance difference test) is a [[Uncertainty quantification|confidence metric]] used by neural networks for [[Structure prediction|protein structure prediction]]. It captures the per-residue accuracy, both in terms of neighborhood and side chain rotamer. It was first directly integrated into structure prediction by [[AlphaFold2]] at the per-residue level and has been widely adopted since. AlphaFold3 adopted per-atom pLDDT.
 
 ![[Pasted-image-20240607140515.png]]
-*Figure from [^terwilliger2023]*
+*Figure from [@terwilliger2023]*
 
 #### Notes
 

@@ -68,6 +68,23 @@ function appendClass(node: { properties?: Record<string, unknown> }, className: 
   }
 }
 
+function hasClass(node: { properties?: Record<string, unknown> }, className: string): boolean {
+  const current = node.properties?.className
+  if (Array.isArray(current)) {
+    return current.includes(className)
+  }
+
+  return current === className
+}
+
+function stripInternetLabel(value: string): string {
+  return value
+    .replace(/\s+\[Internet\]\./g, ".")
+    .replace(/\s+\[Internet\]/g, "")
+    .replace(/\.\./g, ".")
+    .replace(/\s{2,}/g, " ")
+}
+
 export const Citations: QuartzTransformerPlugin<Partial<Options>> = (userOpts) => {
   const opts = { ...defaultOptions, ...userOpts }
   return {
@@ -173,6 +190,23 @@ export const Citations: QuartzTransformerPlugin<Partial<Options>> = (userOpts) =
                 node.children = [{ type: "text", value: bibliographyNumber }]
               }
             }
+          })
+
+          visit(tree, "text", (node, _index, parent) => {
+            if (typeof node.value !== "string") {
+              return
+            }
+
+            if (typeof parent !== "object" || parent === null) {
+              return
+            }
+
+            const maybeParent = parent as { type?: string; properties?: Record<string, unknown> }
+            if (maybeParent.type !== "element" || !hasClass(maybeParent, "csl-right-inline")) {
+              return
+            }
+
+            node.value = stripInternetLabel(node.value)
           })
         }
       })
