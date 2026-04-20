@@ -3,7 +3,7 @@ tags:
   - thermostability/prediction
   - low-rank-adaptation
 created: 2026-01-22T11:23:24
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -22,5 +22,5 @@ modified: "2026-04-20T10:13:23"
 
 - [[Language models can be infused with structure via low-rank adapter layers]]
 
-[^li2025]: Li & Luo (2025) "Generalizable and scalable protein stability prediction with rewired protein generative models." https://doi.org/10.1101/2025.02.13.638154
+[^li2025]: Li & Luo (2025) "Generalizable and scalable protein stability prediction with rewired protein generative models." Nature Communications. https://doi.org/10.1038/s41467-025-67609-4
 [^megascale]: Tsuboyama et al. (2023) "Mega-scale experimental analysis of protein folding stability in biology and design." *Nature*. https://doi.org/10.1038/s41586-023-06328-6

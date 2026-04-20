@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/representations
 created: 2025-02-16T03:39:18
-modified: 2026-04-11T07:41:30
+modified: "2026-04-20T07:16:03"
 ---
 #### Summary
 **[[Protein language models|PLM]] embeddings can capture whether [[Antibodies|antibodies]] are engineered from those derived from humans** [^singh2023]. In contrast, [^bashour2024] claims that engineered antibodies occupy a subspace of the broader diversity of natural antibodies when using [[ESM|ESM-1v]].
@@ -15,5 +15,5 @@ modified: 2026-04-11T07:41:30
 - [[PLMs can separate Abs by origin]]
 - [[CDR representations segregate into distinct clusters]]
 
-[^singh2023]: Singh et al. (2023) "Learning the Language of Antibody Hypervariability." https://doi.org/10.1101/2023.04.26.538476
+[^singh2023]: Singh et al. (2025) "Learning the language of antibody hypervariability." Proceedings of the National Academy of Sciences. https://doi.org/10.1073/pnas.2418918121
 [^bashour2024]: Bashour et al. (2024) "Biophysical cartography of the native and human-engineered antibody landscapes quantifies the plasticity of antibody developability." *Communications Biology*. https://doi.org/10.1038/s42003-024-06561-3

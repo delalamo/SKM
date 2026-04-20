@@ -3,10 +3,10 @@ title: Epistasis
 tags:
   - epistasis
 created: 2026-04-10T14:02:57
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
-**Epistasis** refers to the non-additivity of fitness effects arising from specific combinations of mutations. doi.org/10.1101/2024.06.23.600144 outline three types of epistasis: magnitude epistasis ("same direction as expected but are not perfectly additive"), sign epistasis ("effect of one of the substitutions changes direction in the context of the other"), and reciprocal epistasis ("effects of both substitutions change direction when they are made together").
+**Epistasis** refers to the non-additivity of fitness effects arising from specific combinations of mutations. https://doi.org/10.1073/pnas.2400439121 outline three types of epistasis: magnitude epistasis ("same direction as expected but are not perfectly additive"), sign epistasis ("effect of one of the substitutions changes direction in the context of the other"), and reciprocal epistasis ("effects of both substitutions change direction when they are made together").
 
 ![[types_of_epistasis.png]]
 *Figure from [^johnston2024]*
@@ -17,7 +17,7 @@ modified: "2026-04-20T10:13:23"
 #### Notes
 
 * **Negative epistasis is approximately 100x more common than positive epistasis** ([[10.1038__nature17995|Sarkisyan et al 2016]]).
-* **Rates of magnitude, sign, and reciprocal epistasis are constant across positions** ([[10.1101__2024.06.23.600144|Johnston et al 2024]]). These differed from a null additive-only model with noise, which had 74% magnitude, 22% sign, and 4% reciprocal sign epistasis.
+* **Rates of magnitude, sign, and reciprocal epistasis are constant across positions** ([[10.1073__pnas.2400439121|Johnston et al 2024]]). These differed from a null additive-only model with noise, which had 74% magnitude, 22% sign, and 4% reciprocal sign epistasis.
 ![[Pasted-Graphic-25.png]]
 	*Figure from [^johnston2024]*
 

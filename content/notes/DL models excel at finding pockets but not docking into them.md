@@ -2,7 +2,7 @@
 tags:
   - ligand-docking
 created: 2026-04-05T17:32:01
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -35,4 +35,4 @@ modified: "2026-04-20T10:13:23"
 - [[Protein-ligand co-folding methods do not generalize beyond their training set]]
 
 [^yu2022]: Yu et al. (2023) "Do Deep Learning Models Really Outperform Traditional Approaches in Molecular Docking?." https://doi.org/10.48550/arXiv.2302.07134
-[^errington2024]: Errington et al. (2024) "Assessing interaction recovery of predicted protein-ligand poses." https://doi.org/10.48550/ARXIV.2409.20227
+[^errington2024]: Errington et al. (2025) "Assessing interaction recovery of predicted protein-ligand poses." J. Cheminformatics. https://doi.org/10.1186/S13321-025-01011-6

@@ -2,7 +2,7 @@
 tags:
   - inverse-folding/evaluation
 created: "2024-04-24T16:23:56"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:16:03"
 ---
 
 ---
@@ -17,4 +17,4 @@ tags:
 ![[sequence_recovery_small_protein.png]]
 *Figure 2A from [^wang2023]*
 
-[^wang2023]: Wang et al. (2023) "SPDesign: protein sequence designer based on structural sequence profile using ultrafast shape recognition." https://doi.org/10.1101/2023.12.14.571651
+[^wang2023]: Wang et al. (2024) "SPDesign: protein sequence designer based on structural sequence profile using ultrafast shape recognition." Briefings in Bioinformatics. https://doi.org/10.1093/bib/bbae146

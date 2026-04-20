@@ -3,7 +3,7 @@ title: Structure prediction
 tags:
   - structure-prediction
 created: "2026-04-10T14:02:57"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 **Structure prediction** refers to the problem of predicting the 3D shape of a protein or nucleotide sequence without any experimental information. Common metrics used for evaluating the quality of predicted structures include [[LDDT]] (residue-level, [[TM-score]] (whole-structure level), and [[DockQ]] (complex level).
@@ -39,8 +39,8 @@ modified: "2026-04-20T10:13:23"
 
 #### Sidechain prediction
 
-* **Formulating the sidechain prediction problem as a classification problem by binning chi angles, rather than a regression problem, let to improved performance** ([[10.1101__2023.08.03.551328|Randolph and Kuhlman 2023]]).
-* **Sidechain prediction methods not sensitive to B-factor cutoffs.** The outcome of sidechain prediction model PIPPack was not strongly affected by B-factor values of protein structures in the training set ([[10.1101__2023.08.03.551328|Randolph and Kuhlman 2023]]).
+* **Formulating the sidechain prediction problem as a classification problem by binning chi angles, rather than a regression problem, let to improved performance** ([[10.1002__prot.26705|Randolph and Kuhlman 2024]]).
+* **Sidechain prediction methods not sensitive to B-factor cutoffs.** The outcome of sidechain prediction model PIPPack was not strongly affected by B-factor values of protein structures in the training set ([[10.1002__prot.26705|Randolph and Kuhlman 2024]]).
 
 <!-- generated -->
 

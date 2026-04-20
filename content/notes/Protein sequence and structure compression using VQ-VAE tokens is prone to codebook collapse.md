@@ -2,7 +2,7 @@
 tags:
   - protein-structure-tokenization
 created: 2024-12-10T01:40:01
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 ## Summary
@@ -18,4 +18,4 @@ modified: "2026-04-20T10:13:23"
 
 * [[Protein structure tokenization]]
 
-[^lu2024]: Lu et al. (2024) "Tokenized and Continuous Embedding Compressions of Protein Sequence and Structure." https://doi.org/10.1101/2024.08.06.606920
+[^lu2024]: Lu et al. (2025) "Tokenized and continuous embedding compressions of protein sequence and structure." Patterns. https://doi.org/10.1016/j.patter.2025.101289

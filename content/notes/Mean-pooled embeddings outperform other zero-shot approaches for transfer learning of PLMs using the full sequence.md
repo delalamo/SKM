@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/representations
 created: "2024-11-27T00:56:30"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -15,4 +15,4 @@ modified: "2026-04-11T07:41:30"
 
 *Figure from [^vieira2024]*
 
-[^vieira2024]: Vieira et al. (2024) "Medium-sized protein language models perform well at transfer learning on realistic datasets." https://doi.org/10.1101/2024.11.22.624936
+[^vieira2024]: Vieira et al. (2025) "Medium-sized protein language models perform well at transfer learning on realistic datasets." Scientific Reports. https://doi.org/10.1038/s41598-025-05674-x

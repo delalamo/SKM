@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/antibodies
 created: "2026-04-05T17:10:58"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 #### Summary
 **[[Antibodies|Antibody]] [[Protein language models|language models]] trained on paired [[Heavy chains|heavy]] and [[Light chains|light]] chains outperform equivalent models trained only on unpaired data** [^kenlay2024]. They also outperform generic PLMs.
@@ -33,4 +33,4 @@ modified: "2026-04-20T10:13:23"
 
 *Figure from [^kenlay2024]*
 
-[^kenlay2024]: Kenlay et al. (2024) "Large scale paired antibody language models." https://doi.org/10.48550/ARXIV.2403.17889
+[^kenlay2024]: Kenlay et al. (2024) "Large scale paired antibody language models." PLoS Comput. Biol.. https://doi.org/10.1371/JOURNAL.PCBI.1012646

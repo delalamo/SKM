@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2024-05-18T08:35:46
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -34,6 +34,6 @@ modified: "2026-04-17T06:40:29"
 
 *Figure from [^vangaru2025]*
 
-[^visani2023]: Visani et al. (2023) "H-Packer: Holographic Rotationally Equivariant Convolutional Neural Network for Protein Side-Chain Packing." https://doi.org/10.48550/arXiv.2311.09312
+[^visani2023]: Visani et al. (2023) "H-Packer: Holographic Rotationally Equivariant Convolutional Neural Network for Protein Side-Chain Packing." MLCB. https://proceedings.mlr.press/v240/visani24a.html
 [^heo2023]: Heo & Feig (2023) "One particle per residue is sufficient to describe all-atom protein structures." https://doi.org/10.1101/2023.05.22.541652
-[^vangaru2025]: Vangaru & Bhattacharya (2025) "To pack or not to pack: revisiting protein side-chain packing in the post‐AlphaFold era." https://doi.org/10.1101/2025.02.22.639681
+[^vangaru2025]: Vangaru & Bhattacharya (2025) "To pack or not to pack: revisiting protein side-chain packing in the post-AlphaFold era." Briefings in Bioinformatics. https://doi.org/10.1093/bib/bbaf297

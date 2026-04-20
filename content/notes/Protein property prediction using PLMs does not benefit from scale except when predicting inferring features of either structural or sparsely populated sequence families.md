@@ -3,7 +3,7 @@ tags:
   - protein-language-models/representations
   - tm-score
 created: "2026-04-05T17:54:18"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:16:03"
 ---
 
 ---
@@ -69,7 +69,7 @@ This is also true of post-translational modification prediction ([^peng2024]; ES
 [^notin2023]: Notin et al. (2023) "ProteinGym: Large-Scale Benchmarks for Protein Design and Fitness Prediction." https://doi.org/10.1101/2023.12.07.570727
 [^detlefsen2022]: Detlefsen et al. (2022) "Learning meaningful representations of protein sequences." *Nature Communications*. https://doi.org/10.1038/s41467-022-29443-w
 [^li2024]: Li et al. (2024) "Feature Reuse and Scaling: Understanding Transfer Learning with Protein Language Models." https://doi.org/10.1101/2024.02.05.578959
-[^vieira2024]: Vieira et al. (2024) "Medium-sized protein language models perform well at transfer learning on realistic datasets." https://doi.org/10.1101/2024.11.22.624936
+[^vieira2024]: Vieira et al. (2025) "Medium-sized protein language models perform well at transfer learning on realistic datasets." Scientific Reports. https://doi.org/10.1038/s41598-025-05674-x
 [^bhatnagar2025]: Bhatnagar et al. (2025) "Scaling Unlocks Broader Generation and Deeper Functional Understanding of Proteins." https://doi.org/10.1101/2025.04.15.649055
 [^lin2023]: Lin et al. (2023) "Evolutionary-scale prediction of atomic-level protein structure with a language model." *Science*. https://doi.org/10.1126/science.ade2574
 [^lee2023]: Lee et al. (2023) "Solvent: A Framework for Protein Folding." https://doi.org/10.48550/arXiv.2307.04603
@@ -77,4 +77,4 @@ This is also true of post-translational modification prediction ([^peng2024]; ES
 [^gurev2025]: Gurev et al. (2025) "Evaluating variant effect prediction across viruses." https://doi.org/10.1101/2025.08.04.668549
 [^zhang2024]: Zhang et al. (2024) "Protein language models learn evolutionary statistics of interacting sequence motifs." *Proceedings of the National Academy of Sciences*. https://doi.org/10.1073/pnas.2406285121
 [^ruffolo2025]: Ruffolo et al. (2025) "Design of highly functional genome editors by modelling CRISPR–Cas sequences." *Nature*. https://doi.org/10.1038/s41586-025-09298-z
-[^peng2024]: Peng et al. (2024) "PTM-Mamba: A PTM-Aware Protein Language Model with Bidirectional Gated Mamba Blocks." https://doi.org/10.1101/2024.02.28.581983
+[^peng2024]: Peng et al. (2025) "PTM-Mamba: a PTM-aware protein language model with bidirectional gated Mamba blocks." Nature Methods. https://doi.org/10.1038/s41592-025-02656-9

@@ -3,7 +3,7 @@ tags:
   - structure-prediction/limitations
   - ligand-docking
 created: 2024-05-05T08:54:15
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -20,4 +20,4 @@ modified: "2026-04-20T10:13:23"
 - [[DL models excel at finding pockets but not docking into them]]
 - [[DL structure tools introduce chiral errors such as swapped chiral centers, D-amino acids, and cis-amide bonds]]
 
-[^buttenschoen2023]: Buttenschoen et al. (2023) "PoseBusters: AI-based docking methods fail to generate physically valid poses or generalise to novel sequences." *arXiv*. https://doi.org/10.48550/arXiv.2308.05777
+[^buttenschoen2023]: Buttenschoen et al. (2024) "PoseBusters: AI-based docking methods fail to generate physically valid poses or generalise to novel sequences." Chemical Science. https://doi.org/10.1039/d3sc04185a

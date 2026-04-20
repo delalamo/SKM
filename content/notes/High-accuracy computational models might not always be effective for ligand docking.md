@@ -2,7 +2,7 @@
 tags:
   - ligand-docking
 created: 2024-12-04T02:49:44
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -28,7 +28,7 @@ They found using cryo-EM that the AlphaFold2 model being used for docking was in
 
 * [[AlphaFold2 predicts the holo form of proteins in most cases]]
 
-[^corso2023]: Corso et al. (2022) "DiffDock: Diffusion Steps, Twists, and Turns for Molecular Docking." https://doi.org/10.48550/arXiv.2210.01776
+[^corso2023]: Corso et al. (2023) "DiffDock: Diffusion Steps, Twists, and Turns for Molecular Docking." ICLR. https://openreview.net/forum?id=kKF8_K-mBbS
 [^gu2024]: Gu et al. (2024) "Evaluation of AlphaFold2 Structures for Hit Identification across Multiple Scenarios." *Journal of Chemical Information and Modeling*. https://doi.org/10.1021/acs.jcim.3c01976
 [^karelina2023]: Karelina et al. (2023) "How accurately can one predict drug binding modes using AlphaFold models?" *eLife*. https://doi.org/10.7554/elife.89386.1
 [^lyu2024]: Lyu et al. (2024) "AlphaFold2 structures guide prospective ligand discovery." *Science*. https://doi.org/10.1126/science.adn6354
