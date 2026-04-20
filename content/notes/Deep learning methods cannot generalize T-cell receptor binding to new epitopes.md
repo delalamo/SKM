@@ -1,13 +1,13 @@
 ---
 tags:
-  - protein-folding/misc
-created: "2024-05-18T08:35:46"
-modified: "2026-04-10T14:30:55"
+  - epitope-prediction
+created: 2024-05-18T08:35:46
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
 
-**Deep learning methods fail to identify new epitopes for [[T-cell receptors]].** They only generalize to very similar epitopes found in the training set [^groce2023]. This could be applicable to [[B-cell receptors]] and [[Antibodies]] as well.
+**Deep learning methods fail to identify new epitopes for [[T-cell receptors]].** They only generalize to very similar epitopes found in the training set [^groce2023]. This could be applicable to [[B-cell receptors]] and [[Antibodies|antibodies]] as well.
 
 #### See also
 * [[DL models excel at finding pockets but not docking into them]]

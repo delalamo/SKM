@@ -1,8 +1,7 @@
 ---
 tags:
-  - antibodies/misc
-created: "2024-07-02T05:20:55"
-modified: "2026-04-11T07:41:30"
+created: 2024-07-02T05:20:55
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
 **[[Single chain variable fragments|scFvs]] generated using [[BERT]] [[Protein language models|PLMs]] tend to have more mutations, and tend to be tighter binders, compared to those generated using PSSMs.** In turn, [[PSSMs for Ab engineering outperforms random]].

@@ -1,10 +1,10 @@
 ---
 tags:
-  - protein-folding/misc
   - plddt
   - pae
-created: "2024-11-04T22:55:26"
-modified: "2026-04-11T07:41:30"
+  - confidence-metrics
+created: 2024-11-04T22:55:26
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

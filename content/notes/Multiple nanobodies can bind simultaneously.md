@@ -1,8 +1,8 @@
 ---
 tags:
-  - antibodies/misc
-created: "2025-02-28T03:00:33"
-modified: "2026-04-11T07:41:30"
+  - antibodies/nanobodies
+created: 2025-02-28T03:00:33
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
 **Multiple [[Nanobodies|nanobodies]] can bind their targets simultaneously and can bind in a synergistic manner.** [^mast2021] demonstrated this with the SARS-CoV-2 [[Spike protein|Spike protein]].

@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-folding/misc
-created: "2026-01-22T12:38:44"
-modified: "2026-04-10T14:30:55"
+  - transformers
+created: 2026-01-22T12:38:44
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
 **Pretraining performance does not capture effectiveness on downstream tasks** [^neyshabur2020][^li2024]. Neyshabur et al found that using different post-plateau checkpoints as starting points for fine-tuning had drastically different performance on downstream tasks, with more heavily trained models showing better performance.

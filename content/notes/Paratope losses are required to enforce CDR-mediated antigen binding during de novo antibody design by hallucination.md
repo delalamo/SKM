@@ -1,7 +1,8 @@
 ---
-tags: antibodies/misc
-created: "2025-12-19T11:25:57"
-modified: "2026-04-11T07:41:30"
+tags:
+  - antibodies/engineering-and-design
+created: 2025-12-19T11:25:57
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
@@ -21,7 +22,7 @@ where $\mathcal{L}_{\text{CDR}}$ and $\mathcal{L}_{\text{framework}}$ decrease a
 
 #### Figures
 
-![[Pasted-image-20251027120017.png]]
+![[Pasted-image-20251027120017.png|400]]
 
 *Figure from [^millefragoso2025]*
 
@@ -29,6 +30,4 @@ where $\mathcal{L}_{\text{CDR}}$ and $\mathcal{L}_{\text{framework}}$ decrease a
 
 * [[Secondary structure losses are required to enforce CDR loopiness during de novo antibody design by hallucination]]
 
-[^millefragoso2025]: Mille-Fragoso et al. (2025) "Efficient generation of epitope-targeted
-                  de novo
-                  antibodies with Germinal." https://doi.org/10.1101/2025.09.19.677421
+[^millefragoso2025]: Mille-Fragoso et al. (2025) "Efficient generation of epitope-targeted de novo antibodies with Germinal." https://doi.org/10.1101/2025.09.19.677421

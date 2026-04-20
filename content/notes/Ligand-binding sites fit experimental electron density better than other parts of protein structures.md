@@ -1,8 +1,8 @@
 ---
-tags: 
-  - protein-folding/misc
-created: "2024-12-17T02:52:28"
-modified: "2026-04-11T07:41:30"
+tags:
+  - structure-prediction/experimental-data
+created: 2024-12-17T02:52:28
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

@@ -4,12 +4,12 @@ tags:
   - structure-prediction/sampling
   - thermostability/prediction
 created: "2025-07-22T11:37:28"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
 
-**ddG predictions calculated from [[AlphaFold]] structures are equally accurate as those derived from experimental structures** [^diaz2023].
+**ddG predictions calculated from [[AlphaFold2]] structures using [[Variant effect prediction|variant effect prediction]] methods are equally accurate as those derived from experimental structures** [^diaz2023].
 
 #### See also
 

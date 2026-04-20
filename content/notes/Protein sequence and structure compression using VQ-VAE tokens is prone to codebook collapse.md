@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-folding/misc
-created: "2024-12-10T01:40:01"
-modified: "2026-04-11T07:41:30"
+  - protein-structure-tokenization
+created: 2024-12-10T01:40:01
+modified: "2026-04-20T10:13:23"
 ---
 
 ## Summary

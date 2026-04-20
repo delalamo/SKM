@@ -1,8 +1,9 @@
 ---
 tags:
-  - protein-folding/misc
-created: "2024-04-30T03:19:19"
-modified: "2026-04-13T11:11:20"
+  - inverse-folding/evaluation
+  - variant-effect-prediction
+created: 2024-04-30T03:19:19
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

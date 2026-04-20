@@ -3,12 +3,12 @@ tags:
   - structure-prediction/sampling
   - conformational-dynamics/modeling
 created: 2025-12-19T12:44:03
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
 
-**Alternate conformations can be sampled with MSA-based methods [[AlphaFold|AlphaFold2]] and [[AlphaFold3|Boltz]] by using either custom templates** [^del2022] **or custom sequences databases**[^monteiro2024] **or [[Multiple sequence alignments|MSAs]]** [^waymentsteele2023][^del2022]. For the last case, MSAs are modified either by [[Clustering|clustering]] using HDBSCAN or randomly subsampling, respectively. However, [[Protein structure prediction methods are unable to predict the energetics of a conformational landscape unless explicitly trained for that purpose|these ensembles do not correspond to the energetics of those proteins]]. MSA-based tricks were recently shown to work with Boltz [^richman2025]. These hacks circumvent the broader tendency of structure prediction methods to [[Structure prediction methods undersample the conformational space they find to be high-confidence|undersample conformations they find to be high-confidence]].
+**Alternate conformations can be sampled with MSA-based methods [[AlphaFold2]] and [[AlphaFold3|Boltz]] by using either custom templates** [^del2022] **or custom sequences databases**[^monteiro2024] **or [[Multiple sequence alignments|MSAs]]** [^waymentsteele2023][^del2022]. For the last case, MSAs are modified either by [[Clustering|clustering]] using HDBSCAN or randomly subsampling, respectively. However, [[Protein structure prediction methods are unable to predict the energetics of a conformational landscape unless explicitly trained for that purpose|these ensembles do not correspond to the energetics of those proteins]]. MSA-based tricks were recently shown to work with Boltz [^richman2025]. These hacks circumvent the broader tendency of structure prediction methods to [[Structure prediction methods undersample the conformational space they find to be high-confidence|undersample conformations they find to be high-confidence]].
 
 #### Details
 

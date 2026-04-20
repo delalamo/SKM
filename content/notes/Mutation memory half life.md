@@ -1,12 +1,12 @@
 ---
 title: Mutation memory half life
 tags:
-  - protein-folding/misc
-created: "2024-05-02T05:15:27"
-modified: "2026-04-11T07:41:30"
+  - epistasis
+created: 2024-05-02T05:15:27
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
- **Mutation memory half-life refers to the number of mutations required to observe changes in a mutation's effect on fitness ((epistatic) drift).** The term mutation memory half-life was coined by [^park2022].
+ **Mutation memory half-life refers to the number of mutations required to observe changes in a mutation's effect on fitness.** The term mutation memory half-life was coined by Park et al [^park2022].
 
 #### Details
 Mutations that have a fitness effect in a sequence may not have the same effect if a sufficient number of additional mutations are allowed to accumulate in the background [^hie2022]. Put another way, mutations with an effect on an ancestral sequence would, after some evolution, fail to have the same effect. The mutation-memory half-life captures the amount of background evolution that needs to happen before this has a 50% chance of happening. 

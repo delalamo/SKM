@@ -1,13 +1,14 @@
 ---
 tags:
   - protein-language-models/representations
+  - citation-fix
 created: "2025-09-01T08:38:43"
-modified: "2026-04-11T06:06:39"
+modified: "2026-04-20T10:13:23"
 ---
 
 ## Summary
 
-**[[Attention (machine learning)|Attention]] matrices of [[Protein language models|PLMs]] correspond to 3D contacts** ([Lin et al 2023][^lin2023], [Rao et al 2020][^rao2020], [Bhattacharya et al 2022][^ref]), **and they can be fine-tuned for contact prediction** ([Verkuil et al 2022][^verkuil2022]). The [[Categorical Jacobian method|categorical Jacobian method]] described by [Zhang et al 2024][^zhang2024] is another way to predict these contacts without fine-tuning. Note that this is not true of [[Antibody language models]] ([Burbach and Briney 2024][^burbach2024]).
+**[[Attention (machine learning)|Attention]] matrices of [[Protein language models|PLMs]] correspond to 3D contacts** [^lin2023][^rao2020], **and they can be fine-tuned for contact prediction**[^verkuil2022]. The [[Categorical Jacobian method|categorical Jacobian method]][^zhang2024] is another way to predict these contacts without fine-tuning. Note that this is not true of [[Attention matrices of antibody language models do not correspond to contacts|antibodies]][^burbach2024].
 
 ## See also
 

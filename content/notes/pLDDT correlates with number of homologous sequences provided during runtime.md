@@ -3,12 +3,12 @@ tags:
   - structure-prediction/metrics
   - plddt
 created: "2024-08-06T11:30:37"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
 
-**[[pLDDT]] of structures predicted by [[AlphaFold|AlphaFold2]] correlate with the number of sequences provided for inference during runtime** [^avasthi2024].
+**[[pLDDT]] of structures predicted by [[AlphaFold2]] correlate with the number of sequences provided for inference during runtime** [^avasthi2024].
 
 #### Figures
 

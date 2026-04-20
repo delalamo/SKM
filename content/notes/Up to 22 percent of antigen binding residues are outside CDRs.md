@@ -1,8 +1,7 @@
 ---
 tags:
-  - antibodies/misc
-created: "2025-02-28T03:16:15"
-modified: "2026-04-10T14:30:55"
+created: 2025-02-28T03:16:15
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
 **Up to 22% of residues in [[Antibodies|antibodies]] that bind to antigens are not in the [[Complementarity-determining regions|CDRs]]** [^fernandezquintero2022].

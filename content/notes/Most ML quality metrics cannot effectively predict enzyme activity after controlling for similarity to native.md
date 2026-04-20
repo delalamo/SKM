@@ -1,9 +1,9 @@
 ---
 tags:
-  - protein-design/misc
   - plddt
-created: "2025-02-27T04:21:03"
-modified: "2026-04-11T07:41:30"
+  - variant-effect-prediction
+created: 2025-02-27T04:21:03
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

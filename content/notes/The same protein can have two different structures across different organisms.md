@@ -1,8 +1,9 @@
 ---
 tags:
-  - protein-folding/misc
-created: "2024-05-01T07:11:29"
-modified: "2026-04-11T07:41:30"
+  - conformational-dynamics/evolution
+  - evolution-and-natural-selection
+created: 2024-05-01T07:11:29
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

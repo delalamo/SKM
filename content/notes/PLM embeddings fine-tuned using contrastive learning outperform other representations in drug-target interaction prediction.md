@@ -1,8 +1,9 @@
 ---
 tags:
   - protein-language-models/representations
-created: "2024-05-02T03:16:24"
-modified: "2026-04-11T07:41:30"
+  - contrastive-learning
+created: 2024-05-02T03:16:24
+modified: "2026-04-20T10:13:23"
 ---
 
 ## Summary

@@ -1,9 +1,8 @@
 ---
 title: Most assignments of genetic novelty due to homolog detection failure
 tags:
-  - protein-folding/misc
-created: "2024-05-01T01:39:09"
-modified: "2026-04-17T06:40:29"
+created: 2024-05-01T01:39:09
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
  **Most assignments of genetic novelty are due to failure to detect homologs.** This is from a study by Weisman et al; see ref[^kilinc2023].

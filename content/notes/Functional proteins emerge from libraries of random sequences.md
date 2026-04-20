@@ -1,9 +1,9 @@
 ---
 title: Functional proteins emerge from libraries of random sequences
 tags:
-  - protein-design/misc
-created: "2024-05-01T07:05:26"
-modified: "2026-04-10T14:30:55"
+  - evolution-and-natural-selection
+created: 2024-05-01T07:05:26
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
  **Functional proteins can emerge from large libraries of random sequences** [^keefe2001]. From a library of $6*10^{12}$ 80-residue sequences, four bind ATP. One binding at 100 nM to 10 µM affinity using a zinc ion coordinated by a CXXC motif. The exact experiment is described in 10.1038/35070613 and allows these random sequences to evolve.

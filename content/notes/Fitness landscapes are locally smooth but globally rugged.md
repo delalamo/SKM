@@ -1,9 +1,9 @@
 ---
 title: Fitness landscapes are locally smooth but globally rugged
 tags:
-  - protein-design/misc
-created: "2024-05-05T09:49:33"
-modified: "2026-04-11T07:41:30"
+  - epistasis
+created: 2024-05-05T09:49:33
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
  **Fitness landscapes are locally smooth but globally rugged** [^papkou2023]. In other words, effects of mutations on fitness are locally additive but become defined by non-additive interactions as mutations accumulate [^beltran2024]. However some contradictory evidence exists (see [[Not all sequences with improved activity have plausible evolutionary paths via stepwise introduction of mutations]]).

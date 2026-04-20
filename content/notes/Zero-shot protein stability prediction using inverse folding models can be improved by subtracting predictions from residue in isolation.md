@@ -1,9 +1,9 @@
 ---
 title: Zero-shot protein stability prediction using inverse folding models can be improved by subtracting predictions from residue in isolation
 tags:
-  - antibodies/misc
-created: "2025-02-04T03:01:22"
-modified: "2026-04-10T14:30:55"
+  - inverse-folding/evaluation
+created: 2025-02-04T03:01:22
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
  **Zero-shot protein [[Stability and thermostability#Prediction|stability prediction]] using [[Inverse folding|inverse folding]] models can be improved by subtracting predictions from residue in isolation** [^dutton2024]. This corrects for the contribution of unique backbone geometries (particularly for glycine, [[Substitution matrix for inverse folding closely matches BLOSUM62 matrix except proline|proline]], valine, and isoleucine) on predictions. It is equivalent to corrections made by [[Free energy perturbation|FEP]].

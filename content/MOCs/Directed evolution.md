@@ -1,8 +1,9 @@
 ---
 title: Directed evolution
 tags:
+  - citation-fix
 created: 2026-04-10T14:30:55
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T10:13:23"
 ---
 
 **Directed evolution** is an approach to evolving enzymes and proteins more generally with novel functions or properties in the laboratory. It typically combines *in silico* modeling with *in vitro* data. Related to [[Evolution and natural selection|evolution]].

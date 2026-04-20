@@ -1,8 +1,8 @@
 ---
 tags:
-  - antibodies/misc
-created: "2025-02-17T05:12:32"
-modified: "2026-04-11T07:41:30"
+  - cdrh3
+created: 2025-02-17T05:12:32
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
 **[[Complementarity-determining regions|CDRH3]] is shorter in mice than human [[Antibodies|antibodies]].** It is also shorter in therapeutic antibodies, even those of human origin [^raybould2019].

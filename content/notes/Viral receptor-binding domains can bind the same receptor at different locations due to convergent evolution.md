@@ -1,9 +1,8 @@
 ---
-title: Viral receptor-binding domains can bind the same receptor at different locations due to convergent evolution
 tags:
-  - protein-folding/misc
-created: "2024-05-18T07:33:46"
-modified: "2026-04-11T07:41:30"
+  - evolution-and-natural-selection/structure
+created: 2024-05-18T07:33:46
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
  **Receptor binding domains or viruses can bind to the same target in different ways as a result of convergent [[Evolution and natural selection|evolution]].** In the example below, ACE2 is bound by the RBDs of HCov-NL63, SARS-CoV-1, and NeoCoV in different ways. This is almost certainly due to convergent evolution:

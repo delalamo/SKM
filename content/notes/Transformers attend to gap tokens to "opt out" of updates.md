@@ -1,8 +1,7 @@
 ---
 tags:
-  - protein-folding/misc
-created: "2024-06-04T03:22:01"
-modified: "2024-06-04T03:22:01"
+created: 2024-06-04T03:22:01
+modified: 2024-06-04T03:22:01
 ---
 #### Summary
 **[[Transformer]] models will attend to gap tokens, such as \<bos\>, \<eos\>, etc., to avoid updates when calculating [[Attention (machine learning)|attention]]** [^bondarenko2023].

@@ -1,13 +1,13 @@
 ---
 tags:
-  - protein-design/misc
+  - ligand-docking
+  - citation-fix
 created: "2024-05-02T18:09:03"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
-
-Small molecule docking accuracy can by improved by including confidence during training of small molecule docking via DiffDock and propagating that information to the early frames (Corso et al 2023b).
+Small molecule docking accuracy can by improved by including confidence during training of small molecule docking via DiffDock and propagating that information to the early frames (Corso et al 2023b). This is a form of [[Diffusion guidance|guidance]]-involved training and has been done in other studies.
 
 #### See also
 

@@ -1,8 +1,8 @@
 ---
-tags: 
-  - antibodies/misc
-created: "2025-12-19T11:23:25"
-modified: "2026-04-11T07:41:30"
+tags:
+  - antibodies/engineering-and-design
+created: 2025-12-19T11:23:25
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
@@ -18,23 +18,5 @@ The alpha-helical loss penalizes beta carbon atoms in $i, i+3$ pairs from fallin
 #### See also
 * [[Paratope losses are required to enforce CDR-mediated antigen binding during de novo antibody design by hallucination]]
 
-```base
-filters:
- and:
- - this.file.hasLink(file.file)
- - file.infolder("Sorted_notes/Raw_data/Paper_notes/")
-views:
- - type: list
- name: List
- order:
- - Title
- - Year
- - file.name
- sort: []
-
-```
-
-[^millefragoso2025]: Mille-Fragoso et al. (2025) "Efficient generation of epitope-targeted
-                  de novo
-                  antibodies with Germinal." https://doi.org/10.1101/2025.09.19.677421
+[^millefragoso2025]: Mille-Fragoso et al. (2025) "Efficient generation of epitope-targeted de novo antibodies with Germinal." https://doi.org/10.1101/2025.09.19.677421
 [^pacesa2025]: Pacesa et al. (2025) "One-shot design of functional protein binders with BindCraft." *Nature*. https://doi.org/10.1038/s41586-025-09429-6

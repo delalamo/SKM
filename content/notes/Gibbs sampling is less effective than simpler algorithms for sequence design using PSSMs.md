@@ -1,9 +1,8 @@
 ---
 title: Gibbs sampling is less effective than simpler algorithms for sequence design using PSSMs
 tags:
-  - protein-design/misc
-created: "2024-05-18T07:14:07"
-modified: "2026-04-10T14:30:55"
+created: 2024-05-18T07:14:07
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
  **When designing [[Single chain variable fragments]], Gibbs sampling was found to be less effective than either genetic algorithms or simple greedy hill-climbing** (fitness functions were either PSSMs, [[BERT]] language models, or [[Gaussian processes]]; [^li2023]).

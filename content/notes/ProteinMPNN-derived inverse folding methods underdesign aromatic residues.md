@@ -2,9 +2,8 @@
 tags:
   - inverse-folding/evaluation
   - protein-backbone-design/designability
-  - protein-design/misc
-created: "2026-03-27T09:08:38"
-modified: "2026-04-11T07:41:30"
+created: 2026-03-27T09:08:38
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
@@ -16,7 +15,7 @@ Chow et al. also note overdesign of alanines by RFD-MPNN pipelines:[^chow2025]
 
 #### Figures
 ![[Pasted-image-20251027123228.png]]
-*Figure from BoltzGen paper*
+*Figure from [^staerk2025]*
 
 ![[Pasted-image-20251027123248.png]]
 *Figure from [^pacesa2025]*
@@ -24,25 +23,6 @@ Chow et al. also note overdesign of alanines by RFD-MPNN pipelines:[^chow2025]
 ![[Pasted-image-20260327090832.png]]
 *Figure from [^chow2025]*
 
-#### References
-```base
-filters:
- and:
- - this.file.hasLink(file.file)
- - file.infolder("Sorted_notes/Raw_data/Paper_notes/")
-views:
- - type: list
- name: List
- order:
- - Title
- - Year
- - file.name
- sort: []
-
-```
-
 [^staerk2025]: Stark et al. (2025) "BoltzGen: Toward Universal Binder Design." https://doi.org/10.1101/2025.11.20.689494
 [^pacesa2025]: Pacesa et al. (2025) "One-shot design of functional protein binders with BindCraft." *Nature*. https://doi.org/10.1038/s41586-025-09429-6
-[^chow2025]: Chow et al. (2025) "Sequence and structural determinants of efficacious
-                  de novo
-                  chimeric antigen receptors." https://doi.org/10.64898/2025.12.12.694033
+[^chow2025]: Chow et al. (2025) "Sequence and structural determinants of efficacious de novo chimeric antigen receptors." https://doi.org/10.64898/2025.12.12.694033

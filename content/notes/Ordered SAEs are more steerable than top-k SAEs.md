@@ -1,8 +1,7 @@
 ---
 tags:
-  - protein-folding/misc
-created: "2025-12-11T08:52:21"
-modified: "2026-04-10T14:30:55"
+created: 2025-12-11T08:52:21
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
 **Ordered [[Sparse autoencoder|SAEs]] are more steerable than top-$k$ SAEs** [^haque2025]. This was tested on [[Antibodies|antibody]] [[Germline#J-genes|J genes]].

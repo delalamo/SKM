@@ -1,8 +1,7 @@
 ---
 tags:
-  - protein-folding/misc
-created: "2025-07-22T11:37:28"
-modified: "2026-04-11T07:41:30"
+created: 2025-07-22T11:37:28
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
 **Synthetic data over-represents mean values of the original data distribution and either underrepresents or exaggerates the presence of outliers** [^shumailov2023]. This can pose a challenge for models trained using [[Distillation]] and can be a cause of [[Catastrophic forgetting]].

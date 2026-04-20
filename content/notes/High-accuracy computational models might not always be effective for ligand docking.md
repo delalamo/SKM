@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-design/misc
-created: "2024-12-04T02:49:44"
-modified: "2026-04-13T11:11:20"
+  - ligand-docking
+created: 2024-12-04T02:49:44
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

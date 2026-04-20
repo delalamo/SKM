@@ -2,10 +2,11 @@
 title: Diffusion guidance
 tags:
   - diffusion-guidance
+  - citation-fix
 aliases:
   - Guidance sampling of all-atom diffusion
-created: "2026-04-10T14:30:55"
-modified: "2026-04-13T11:11:20"
+created: 2026-04-10T14:30:55
+modified: "2026-04-20T10:13:23"
 ---
 
 **Diffusion guidance** refers to inference-time methods that steer a [[Diffusion models|diffusion]] process toward desired properties, constraints, or observations. It is a general concept that applies to both [[Protein backbone design|protein design]], [[Structure prediction|structure prediction]], and sequence-based protein design, of which all-atom diffusion is just one application.
@@ -25,11 +26,13 @@ However, other search algorithms such as [[Beam search]] and [[Monte Carlo Tree 
 
 - [[Guided sequence-only diffusion outperforms autoregressive fine-tuned PLMs on designing high-fitness sequences]]
 - [[Inference-time scaling of de novo designed proteins is more effective for harder targets]]
+- [[Multimodal sequence-structure guidance outperforms unimodal guidance in cases where both need to be designed]]
 - [[Stronger diffusion guidance reduces diversity of generated outputs]]
 
 ## Structure Prediction
 
 - [[Confidence metrics for diffusion-based structure prediction methods can be improved with minimal changes to conditioning representations]]
+- [[DL structure tools introduce chiral errors such as swapped chiral centers, D-amino acids, and cis-amide bonds]]
 - [[Diffusion-based structure prediction can be steered by modifying the conditioning embeddings rather than the latent space, and such embeddings can be used for subsequent iterations]]
 - [[Enhanced diffusion with metadynamics-like potentials can sometimes convergence slower than unbiased diffusion]]
 - [[Ensembles can be modeled by structure prediction NNs using experimental data via guidance sampling]]

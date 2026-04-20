@@ -1,7 +1,9 @@
 ---
-tags: protein-design/misc
-created: "2026-03-29T11:17:38"
-modified: "2026-04-13T11:11:20"
+tags:
+  - epistasis
+  - evolution-and-natural-selection
+created: 2026-03-29T11:17:38
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

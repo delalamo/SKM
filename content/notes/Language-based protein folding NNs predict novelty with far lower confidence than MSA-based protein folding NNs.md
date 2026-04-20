@@ -2,12 +2,12 @@
 tags:
   - structure-prediction/sampling
 created: "2025-05-01T06:05:41"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
 
-**[[Protein language models|PLM]]-based [[Structure prediction|protein folding NNs]] predict structural novelty with far lower accuracy than [[Multiple sequence alignments|MSA]]-based protein folding NNs** [^yeo2025]. This was shown with [[ESMFold]] and [[AlphaFold|AlphaFold2]] using low-confidence predictions from the ESM Metagenomic atlas, which were re-predicted with AF2.
+**[[Protein language models|PLM]]-based [[Structure prediction|protein folding NNs]] predict structural novelty with far lower accuracy than [[Multiple sequence alignments|MSA]]-based protein folding NNs** [^yeo2025]. This was shown with [[ESMFold]] and [[AlphaFold2]] using low-confidence predictions from the ESM Metagenomic atlas, which were re-predicted with AF2.
 
 #### Figures
 

@@ -1,8 +1,7 @@
 ---
 tags:
-  - protein-folding/misc
-created: "2024-07-15T07:53:51"
-modified: "2026-04-10T14:30:55"
+created: 2024-07-15T07:53:51
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
 In [[MD simulations]], the **Helmholtz free energy** ($F$) describes "the useful work obtainable from a closed thermodynamic system at a constant temperature." It is a property of a macrostate of a system, and is proportional to the logarithm of its partition function. Frenkel & Smit[^frenkel] define it as a system's total energy minus the contribution of entropy ($F=E-TS$).

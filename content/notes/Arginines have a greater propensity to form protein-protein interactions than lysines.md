@@ -1,8 +1,8 @@
 ---
-tags: 
-  - protein-folding/misc
-created: "2024-06-14T02:13:41"
-modified: "2026-04-11T07:27:50"
+tags:
+  - protein-protein-interactions
+created: 2024-06-14T02:13:41
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

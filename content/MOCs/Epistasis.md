@@ -3,7 +3,7 @@ title: Epistasis
 tags:
   - epistasis
 created: 2026-04-10T14:02:57
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T10:13:23"
 ---
 
 **Epistasis** refers to the non-additivity of fitness effects arising from specific combinations of mutations. doi.org/10.1101/2024.06.23.600144 outline three types of epistasis: magnitude epistasis ("same direction as expected but are not perfectly additive"), sign epistasis ("effect of one of the substitutions changes direction in the context of the other"), and reciprocal epistasis ("effects of both substitutions change direction when they are made together").
@@ -40,7 +40,17 @@ modified: "2026-04-17T06:40:29"
 
 <!-- generated -->
 
-[^sandhu2024]: Sandhu et al. (2024) "Computational and Experimental Exploration of Protein Fitness Landscapes: Navigating Smooth and Rugged Terrains." https://doi.org/10.48550/ARXIV.2411.12957
+## General
 
-[^johnston2024]: Johnston et al. (2024) "A combinatorially complete epistatic fitness landscape in an enzyme active site." https://doi.org/10.1101/2024.06.23.600144
-[^tsuboyama2023]: Tsuboyama et al. (2023) "Mega-scale experimental analysis of protein folding stability in biology and design." *Nature*. https://doi.org/10.1038/s41586-023-06328-6
+- [[Coupling strength of two substitutions is correlated with backbone distance]]
+- [[Epistasis in antibodies during affinity maturation can be driven by CDR rearrangements]]
+- [[Epistasis in enzymes can arise from changes in the rate-limiting step of the catalytic cycle]]
+- [[Epistasis is rare during evolution]]
+- [[Epistasis more likely to occur in buried residues than surface residues]]
+- [[Fitness landscapes are locally smooth but globally rugged]]
+- [[ML improves directed evolution when navigating fitness landscapes with greater non-magnitude epistasis]]
+- [[Mutation memory half life]]
+- [[Mutations obtained by antibodies during affinity maturation show epistasis in biophysical properties but not binding]]
+- [[Not all sequences with improved activity have plausible evolutionary paths via stepwise introduction of mutations]]
+- [[Protein language models are able to predict epistasis in a zero-shot setting following a nonlinear transform]]
+- [[Second-shell mutations can yield positive epistasis]]

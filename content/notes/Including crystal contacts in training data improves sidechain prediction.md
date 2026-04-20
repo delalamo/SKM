@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-design/misc
-created: "2024-05-08T18:01:59"
-modified: "2026-04-13T11:11:20"
+  - structure-prediction/training
+created: 2024-05-08T18:01:59
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

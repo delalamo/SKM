@@ -1,7 +1,8 @@
 ---
-tags: protein-design/misc
-created: "2026-01-22T11:27:43"
-modified: "2026-04-11T07:41:30"
+tags:
+  - variant-effect-prediction
+created: 2026-01-22T11:27:43
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

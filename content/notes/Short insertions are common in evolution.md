@@ -1,9 +1,10 @@
 ---
 title: Short insertions are common in evolution
 tags:
-  - protein-folding/misc
-created: "2024-05-01T02:49:05"
-modified: "2026-04-10T14:30:55"
+  - evolution-and-natural-selection
+  - variant-effect-prediction
+created: 2024-05-01T02:49:05
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
  **Short [[Variant effect prediction#Indels|insertions]] are more common in natural genomes** [^montgomery2021].

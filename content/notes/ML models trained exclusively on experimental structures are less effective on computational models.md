@@ -1,13 +1,14 @@
 ---
 tags:
-  - protein-folding/misc
-created: "2025-07-22T11:37:28"
-modified: "2026-04-10T14:30:55"
+  - inverse-folding/training
+  - protein-language-models/training
+created: 2025-07-22T11:37:28
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
 
-**ML models trained exclusively on experimental structures are less effective on computational models** [^huang2023][^su2023]. [^huang2023] attributed this to "structure embedding bias", hypothesize that improvements in structure prediction are not predicted to remove this bias, and address it using [[Contrastive learning|contrastive learning]]. [^su2023] observe this in a version of SaProt which is trained on [[Foldseek]] tokens derived from PDB structures rather than [[AlphaFold]] models.
+**ML models trained exclusively on experimental structures are less effective on computational models** [^huang2023][^su2023]. [^huang2023] attributed this to "structure embedding bias", hypothesize that improvements in structure prediction are not predicted to remove this bias, and address it using [[Contrastive learning|contrastive learning]]. [^su2023] observe this in a version of SaProt which is trained on [[Foldseek]] tokens derived from PDB structures rather than [[AlphaFold2]] models.
 
 #### See also
 

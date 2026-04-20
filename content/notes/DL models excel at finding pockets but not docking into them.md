@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-folding/misc
-created: "2026-04-05T17:32:01"
-modified: "2026-04-11T07:41:30"
+  - ligand-docking
+created: 2026-04-05T17:32:01
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
@@ -11,9 +11,8 @@ modified: "2026-04-11T07:41:30"
 
 #### Figures
 
-![[Pasted-image-20241105050419.png]]
-
-*Figure from [^errington2024]*
+![[Pasted-image-20241105050419.png|500]]
+*Ref [^errington2024]*
 
 | | Method | Top-1 RMSD(Å) % < 1Å (↑) | Top-1 RMSD(Å) % < 2Å (↑) | Top-1 RMSD(Å) Med. (↓) | Top-5 RMSD(Å) % < 1Å (↑) | Top-5 RMSD(Å) % < 2Å (↑) | Top-5 RMSD(Å) Med. (↓) |
 |---|---|---|---|---|---|---|---|
@@ -27,8 +26,7 @@ modified: "2026-04-11T07:41:30"
 | | PointSite + Uni-dock | 21.36 ± 1.65 | 32.12 ± 0.93 | 5.54 ± 0.46 | 31.38 ± 0.86 | 46.06 ± 0.69 | 2.52 ± 0.18 |
 | **Better Pocket + Traditional** | DiffDock* + Uni-dock | 25.49 ± 0.6 | 38.93 ± 0.23 | 4.14 ± 0.07 | 36.97 ± 1.05 | 51.07 ± 1.06 | 1.93 ± 0.12 |
 | | GT pocket + Uni-dock | 32.77 ± 0.38 | 51.11 ± 0.6 | 1.89 ± 0.04 | 47.5 ± 0.23 | 67.59 ± 0.94 | 1.11 ± 0.02 |
-
-*Figure from [^yu2022]*
+*Ref [^yu2022]*
 
 #### See also
 

@@ -1,8 +1,9 @@
 ---
 tags:
-  - antibodies/misc
-created: "2024-10-02T04:07:34"
-modified: "2026-04-11T07:41:30"
+  - cdrh3
+  - protein-protein-interactions
+created: 2024-10-02T04:07:34
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
 **[[Protein dynamics|Conformational entropy]] of loops of [[Antibodies|antibodies]] is inversely proportional to antigen-binding affinity** [^mikolajek2022][^thorpe2007][^lhr2022].

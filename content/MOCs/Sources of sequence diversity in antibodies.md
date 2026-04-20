@@ -1,8 +1,9 @@
 ---
 title: Sources of sequence diversity in antibodies
 tags:
+  - citation-fix
 created: 2026-04-10T14:30:55
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T10:13:23"
 ---
 
 [[10.1080__19420862.2020.1729683|Rees 2020]] outlines several sources of sequence diversity in [[Antibodies|antibodies]]:

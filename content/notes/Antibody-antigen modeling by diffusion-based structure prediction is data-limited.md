@@ -1,12 +1,11 @@
 ---
 tags:
   - alphafold3
-  - antibody-structure-prediction/complex-prediction
+  - structure-prediction/complex-prediction
   - diffusion-models/structure-prediction
-  - antibodies/structure-prediction
   - plddt
-created: "2026-04-05T17:25:38"
-modified: "2026-04-11T07:27:50"
+created: 2026-04-05T17:25:38
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

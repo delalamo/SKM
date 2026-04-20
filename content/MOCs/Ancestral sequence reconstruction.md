@@ -1,19 +1,20 @@
 ---
 title: Ancestral sequence reconstruction
 tags:
-  - ancestral-sequence-reconstruction
-created: "2026-04-10T14:02:57"
-modified: "2026-04-13T11:11:20"
+created: 2026-04-10T14:02:57
+modified: "2026-04-20T10:13:23"
 ---
 
 **Ancestral sequence reconstruction** refers to the process of inferring ancestral sequences using extant sequences.
 ![[Fold-switching-evolution.png]]
 *Figure from [^dishman2021]*
 
-#### Notes
-
-* **[[Including sequences from multiplexed ancestral sequence reconstruction improves PLM training|Including sequences from multiplexed ancestral sequence reconstruction improves PLM training]].**
-
 <!-- generated -->
 
-[^dishman2021]: Dishman et al. (2021) "Evolution of fold switching in a metamorphic protein." *Science*. https://doi.org/10.1126/science.abd8700
+## General
+
+- [[Ancestral enzymes are not always more generalist]]
+- [[Ancestral sequence reconstruction outperforms generative ML methods on functional enzyme design]]
+- [[Ancestrally reconstructed enzymes show greater expression than extant enzymes]]
+- [[Ancestrally reconstructed sequences are more thermostable than extant sequences]]
+- [[The activity profiles of ancestrally reconstructed enzymes are more difficult to predict than extant or ML-generated enzymes]]

@@ -1,8 +1,9 @@
 ---
 tags:
-  - protein-folding/misc
-created: "2026-03-06T11:08:59"
-modified: "2026-04-11T07:41:30"
+  - fine-tuning
+  - low-rank-adaptation
+created: 2026-03-06T11:08:59
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
 **[[Low-rank Adaptation|Low-rank adaptation]] can work with even fewer parameters than traditional LoRA, but only with [[Reinforcement learning|reinforcement learning]]** [^balazy2024][^morris2026]. Additionally, initialization of the adaptor matrices with values from SVD matrices outperforms those of random matrices.

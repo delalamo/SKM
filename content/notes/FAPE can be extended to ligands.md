@@ -2,12 +2,12 @@
 tags:
   - structure-prediction/architecture
 created: "2024-05-05T08:55:15"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
 
-**[^qiao2022] extend the loss function [[Frame aligned point error|FAPE]], used by [[AlphaFold]] and [[RosettaFold]]2 to ligands.**
+**The loss function [[Frame aligned point error|FAPE]], used by [[AlphaFold2]] and [[RosettaFold]]2, can be extended to ligands**[^qiao2022].
 
 #### Figures
 ![[Protein-ligand-design-method.png]]

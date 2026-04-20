@@ -1,13 +1,13 @@
 ---
 tags:
-  - protein-folding/misc
-created: "2026-04-05T17:47:00"
-modified: "2026-04-11T07:41:30"
+  - inverse-folding/training
+created: 2026-04-05T17:47:00
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
 
-**Using evolutionary information for label smoothing when training [[Inverse folding|inverse folding]] models improves [[Fitness prediction]].** Zhou et al. used the [[BLOSUM62]] matrix, whereas [[Gong et al 2024]] used PSSMs. By contrast, Dauparas et al. used uniform smoothing.[^zhou2024][^dauparas2022]
+**Using evolutionary information for label smoothing when training [[Inverse folding|inverse folding]] models improves [[Variant effect prediction|variant effect prediction]].** Zhou et al. used the [[BLOSUM62]] matrix, whereas [[Gong et al 2024]] used PSSMs. By contrast, Dauparas et al. used uniform smoothing.[^zhou2024][^dauparas2022]
 
 #### Details
 

@@ -3,7 +3,7 @@ title: Structure prediction
 tags:
   - structure-prediction
 created: "2026-04-10T14:02:57"
-modified: "2026-04-13T11:11:20"
+modified: "2026-04-20T10:13:23"
 ---
 
 **Structure prediction** refers to the problem of predicting the 3D shape of a protein or nucleotide sequence without any experimental information. Common metrics used for evaluating the quality of predicted structures include [[LDDT]] (residue-level, [[TM-score]] (whole-structure level), and [[DockQ]] (complex level).
@@ -11,7 +11,7 @@ modified: "2026-04-13T11:11:20"
 ## Methods
 #### [[Multiple sequence alignments|MSA]]-based
 
-* **[[AlphaFold]]**: currently viewed as the highest-accuracy method
+* **[[AlphaFold2]]**: currently viewed as the highest-accuracy method
 * **[[RosettaFold]]**
 * **Diffold**: A fine-tuned version of AlphaFold2
 
@@ -31,10 +31,6 @@ modified: "2026-04-13T11:11:20"
 *See [[Antibody structure prediction]]*
 
 ## Notes
-#### Conformational sampling methods
-
-*From [[AlphaFold#Conformational modeling]]*
-*Others*
 
 #### Training
 
@@ -65,6 +61,7 @@ modified: "2026-04-13T11:11:20"
 - [[Language-based protein folding NNs predict novelty with far lower confidence than MSA-based protein folding NNs]]
 - [[MSA-based structure predictions outperform PLM-based methods]]
 - [[Masking ESMFold can sometimes sample alternate conformations]]
+- [[Protein ensemble prediction methods do not generate conformations that are amenable to PPI docking]]
 - [[Protein folding neural networks can be combined with VAEs for conformational modeling]]
 - [[Structure prediction and design tools trained on monomers generalize to oligomers]]
 - [[Structure prediction from conformational samplers tends to be worse than those from vanilla structure prediction methods]]
@@ -93,6 +90,8 @@ modified: "2026-04-13T11:11:20"
 - [[Diverse MSAs are better for training structure prediction neural networks than random MSAs]]
 - [[Fine-tuning AlphaFold for MHC prediction by adding Evoformer layers improves RMSD and pLDDT]]
 - [[Fine-tuning base models on test cases can improve the performance of variant effect and structure prediction]]
+- [[Including crystal contacts in training data improves sidechain prediction]]
+- [[Increasing RosettaFold embedding dimension improves structure prediction]]
 - [[MSA-based structure prediction models can be retrained as pathogenicity prediction models by upweighting BERT losses]]
 - [[Protein models designed using inverse folding can be used to supplement training DBs for PLMs and structure prediction models]]
 - [[RMSD is a poor training objective for structure prediction]]
@@ -115,6 +114,12 @@ modified: "2026-04-13T11:11:20"
 
 - [[All-atom protein structure prediction methods are unable to model PPIs with large buried surface areas]]
 - [[All-atom structure prediction of RNA is driven by memorization]]
+- [[Coevolutionary patterns in multiple sequence alignments do not contribute to protein-protein complex prediction]]
+- [[Correct protomer structure prediction is necessary but insufficient for accurate protein-protein docking]]
+- [[Crystal structures can have nonphysiological salt bridges]]
+- [[DL ligand docking methods generate unrealistic poses]]
+- [[DL structure prediction methods cannot predict CDR conformations unseen during training]]
+- [[DL structure tools introduce chiral errors such as swapped chiral centers, D-amino acids, and cis-amide bonds]]
 - [[Memorization in protein structure prediction]]
 - [[Protein folding neural networks can be subject to adversarial attacks]]
 - [[Protein folding neural networks cannot predict protein stability]]
@@ -122,12 +127,26 @@ modified: "2026-04-13T11:11:20"
 - [[Protein folding neural networks do not learn the physics of protein folding for most proteins]]
 - [[Protein folding neural networks make local optimizations in the absence of coevolutionary information]]
 - [[Protein structure prediction methods are unable to predict the energetics of a conformational landscape unless explicitly trained for that purpose]]
+- [[Protein-ligand co-folding methods do not generalize beyond their training set]]
 - [[Randomly masking residues prior to running ESMFold allows false positives to be identified more effectively]]
 - [[Unfolded and nonfunctional isoforms of folded proteins are incorrectly predicted as folded by protein folding neural networks]]
+- [[Variable regions can adopt multiple interchain orientations, and these are difficult to predict]]
 
-## Comparisons
+## Complex Prediction
 
-- [[Deep learning methods outperform classical methods on sidechain prediction]]
+- [[All-atom protein structure prediction methods are unable to model PPIs with large buried surface areas]]
+- [[AlphaFold3 ipTM can distinguish between antibody binders and nonbinders]]
+- [[Antibody-antigen modeling by diffusion-based structure prediction is data-limited]]
+- [[Antigen context improves CDRH3 structure prediction]]
+- [[Correct CDRH3 prediction is necessary but insufficient for correct Ab-Ag docking]]
+- [[Correct antibody-antigen prediction in AF3 and related models is partially determined by training set similarity]]
+- [[Correct protomer structure prediction is necessary but insufficient for accurate protein-protein docking]]
+- [[Increasing diffusion samples is sufficient to yield correctly predicted antibody-antigen complexes]]
+
+## Experimental Data
+
+- [[Computational models of proteins fit NMR data better than models designed using classical approaches]]
+- [[Ligand-binding sites fit experimental electron density better than other parts of protein structures]]
 
 ## General
 

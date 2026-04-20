@@ -1,12 +1,12 @@
 ---
 title: Natural selection favors the highest average local fitness
 tags:
-  - protein-folding/misc
-created: "2024-06-11T01:58:30"
-modified: "2026-04-11T07:41:30"
+  - evolution-and-natural-selection
+created: 2024-06-11T01:58:30
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
- **Natural selection favors the highest average local fitness, rather than the absolute highest fitness** [^wilke2001][^codoer2006].
+ **Natural selection favors the highest average local fitness, rather than the absolute highest fitness** [^wilke2001][^codoer2006]. An example of this is dihydrofolate reductase[^papkou2023].
 
 #### Details
 Authors mention that quasi-species theory states that "survival of the flattest" rewards occupancy of flatter minima rather than high mutation or replication rates:
@@ -16,12 +16,13 @@ Authors mention that quasi-species theory states that "survival of the flattest"
 Experimental evidence supporting this model was obtained in viral samples by [^codoer2006].
 
 #### Figures
-![[Pasted-image-20231120112637.png]]
+![[Pasted-image-20231120112637.png|400]]
 *Figure from [^wilke2001]*
 
 #### See also
 * [[Natural sequences deviate from highest stability variants]]
-* [[High-fitness protein variants belong to broad fitness minima]]
+* [[Natural selection favors the highest average local fitness]]
 
 [^wilke2001]: Wilke et al. (2001) "Evolution of digital organisms at high mutation rates leads to survival of the flattest." *Nature*. https://doi.org/10.1038/35085569
 [^codoer2006]: Codoñer et al. (2006) "The Fittest versus the Flattest: Experimental Confirmation of the Quasispecies Effect with Subviral Pathogens." *PLoS Pathogens*. https://doi.org/10.1371/journal.ppat.0020136
+[^papkou2023]: Papkou et al. (2023) "A rugged yet easily navigable fitness landscape." *Science*. https://doi.org/10.1126/science.adh3860

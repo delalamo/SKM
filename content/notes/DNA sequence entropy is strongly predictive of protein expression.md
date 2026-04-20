@@ -1,9 +1,8 @@
 ---
 title: DNA sequence entropy is strongly predictive of protein expression
 tags:
-  - protein-design/misc
-created: "2026-03-06T09:32:32"
-modified: "2026-04-10T14:30:55"
+created: 2026-03-06T09:32:32
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
  **DNA sequence entropy is broadly predictive of protein expression** [^kosonocky2026]. Poor expressors tended to have highly unusual DNA sequences.

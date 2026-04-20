@@ -1,14 +1,14 @@
 ---
 tags:
   - plddt
-  - protein-design/misc
-created: "2024-12-19T01:47:52"
-modified: "2026-04-11T07:41:30"
+  - protein-language-models
+created: 2024-12-19T01:47:52
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
 
-**Sequences designed by [[Protein language models|protein language models]] have the same distribution of [[pLDDT]] values, sequence lengths, and *in vitro* activity as naturally occurring sequences** [^stocco2024]. This was measured in amylases and can be overcome with fine-tuning using [[Direct preference optimization|direct preference optimization]].
+**Sequences designed by [[Protein language models|protein language models]] have the same distribution of [[pLDDT]] values, sequence lengths, and *in vitro* activity as naturally occurring sequences** [^stocco2024]. This was measured in amylases and can be overcome with fine-tuning using [[Reinforcement learning|direct preference optimization]].
 
 #### Figures
 

@@ -4,7 +4,7 @@ tags:
   - tm-score
   - structure-prediction/metrics
 created: "2024-06-26T13:44:46"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
 **TM-score** is an alignment-dependent protein structure similarity term introduced by [^zhang2004] that is widely used for assessing [[Structure prediction|protein structure prediction]] methods. It is defined as:
@@ -25,19 +25,16 @@ $d_{0}(L_{target}) = 1.24*\sqrt[3]{L_{target}-15}-1.8$: Distance scaling factor
 - [[AlphaFold3 ipTM can distinguish between antibody binders and nonbinders]]
 - [[Confidence metrics for diffusion-based structure prediction methods can be improved with minimal changes to conditioning representations]]
 - [[Confidence metrics from structure prediction correlate with accuracy even in the absence of coevolutionary data]]
-- [[Contrastive learning on whole structures leads to learning of substructures]]
 - [[Diffusion-based structure prediction can sometimes model conformational ensembles]]
 - [[Heavy and light chains of de novo designed antibodies with the same framework and binding mode can be exchanged]]
 - [[Including structure prediction confidence while training inverse folding improves sequence diversity but not sequence recovery]]
 - [[Inverse folding sequence perplexities correlate with Rosetta energies, forward folding TM-scores, and sequence recovery]]
-- [[MSA transformer generates more realistic and diverse sequences than Potts models]]
 - [[Natural sequences have higher pTM but lower pLDDT than de novo sequences]]
 - [[PLM-based sequence searches outperform sequence- and matches structure-based search methods]]
 - [[Protein backbones designed using diffusion, but not sequence-based models, have fewer beta sheets]]
 - [[Protein property prediction using PLMs does not benefit from scale except when predicting inferring features of either structural or sparsely populated sequence families]]
 - [[Protein structure prediction and design confidence metrics do not correlate with binding affinity]]
 - [[Reinforcement learning outperforms fine-tuning in property-guided inverse folding]]
-- [[Sequence perplexity]]
 - [[Sequence perplexity and TM-score are negatively correlated when predicting structure using protein language models]]
 - [[Structure prediction from conformational samplers tends to be worse than those from vanilla structure prediction methods]]
 - [[Structure prediction metrics can be used to predict oligomer stoichiometry]]

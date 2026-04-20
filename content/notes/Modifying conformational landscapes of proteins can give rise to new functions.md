@@ -1,7 +1,9 @@
 ---
-tags: protein-design/misc
-created: "2025-02-27T03:56:22"
-modified: "2026-04-10T14:30:55"
+tags:
+  - evolution-and-natural-selection
+  - conformational-dynamics/evolution
+created: 2025-02-27T03:56:22
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

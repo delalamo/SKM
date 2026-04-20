@@ -4,12 +4,12 @@ tags:
   - structure-prediction/training
   - plddt
 created: "2024-05-11T20:04:05"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
 
-**[[AlphaFold|AlphaFold3]] uses [[Distillation|cross-distillation]] from AlphaFold2 to avoid modeling low-[[pLDDT]] regions that are likely disordered as helices** [^abramson2024]. The authors claim that earlier versions of the method without this check done tended to hallucinate disordered regions as helices, despite low pLDDT.
+**[[AlphaFold3]] uses [[Distillation|cross-distillation]] from AlphaFold2 to avoid modeling low-[[pLDDT]] regions that are likely disordered as helices** [^abramson2024]. The authors claim that earlier versions of the method without this check done tended to hallucinate disordered regions as helices, despite low pLDDT.
 
 #### Figures
 

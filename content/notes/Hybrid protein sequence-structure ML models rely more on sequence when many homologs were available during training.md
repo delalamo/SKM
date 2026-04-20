@@ -1,8 +1,9 @@
 ---
 tags:
-  - protein-design/misc
-created: "2024-07-02T05:13:15"
-modified: "2026-04-13T11:11:20"
+  - protein-language-models/training
+  - inverse-folding/training
+created: 2024-07-02T05:13:15
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

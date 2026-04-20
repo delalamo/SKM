@@ -1,9 +1,9 @@
 ---
 tags:
-  - protein-folding/misc
   - tm-score
-created: "2025-05-19T03:43:23"
-modified: "2026-04-11T07:41:30"
+  - protein-language-models/representations
+created: 2025-05-19T03:43:23
+modified: "2026-04-20T10:13:23"
 ---
 
 ## Summary

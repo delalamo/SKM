@@ -1,13 +1,13 @@
 ---
 tags:
-  - protein-folding/misc
-created: "2024-07-02T08:01:41"
-modified: "2026-04-11T07:41:30"
+  - evolution-and-natural-selection/structure
+created: 2024-07-02T08:01:41
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
 
-**Protein structure is more conserved than sequence.** Many proteins have similar structures but barely any sequence overlap [^kilinc2023][^illergrd2009][^chothia1986][^del2022]. As a result, [[Clustering|clustering]] proteins using their structures is more effective than clustering by using their sequence [^moi2023]. Likewise, calculating phylogenies is more accurate using structure than sequence - [^moi2023] used [[AlphaFold|AlphaFold2]] models alongside [[Foldseek]] to do so.
+**Protein structure is more conserved than sequence.** Many proteins have similar structures but barely any sequence overlap [^kilinc2023][^illergrd2009][^chothia1986][^del2022]. As a result, [[Clustering|clustering]] proteins using their structures is more effective than clustering by using their sequence [^moi2023]. Likewise, calculating phylogenies is more accurate using structure than sequence - [^moi2023] used [[AlphaFold2]] models alongside [[Foldseek]] to do so.
 
 #### Details
 

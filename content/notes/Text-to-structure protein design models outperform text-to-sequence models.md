@@ -1,8 +1,7 @@
 ---
 tags: 
-  - protein-design/misc
 created: "2024-08-06T04:31:10"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
@@ -12,6 +11,4 @@ modified: "2026-04-11T07:41:30"
 ![[Pasted-image-20240806103024.png]]
 *Figure from [^dai2024]*
 
-[^dai2024]: Dai et al. (2024) "Toward
-                  De Novo
-                  Protein Design from Natural Language." https://doi.org/10.1101/2024.08.01.606258
+[^dai2024]: Dai et al. (2024) "Toward De Novo Protein Design from Natural Language." https://doi.org/10.1101/2024.08.01.606258

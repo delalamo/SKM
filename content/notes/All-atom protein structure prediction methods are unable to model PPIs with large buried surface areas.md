@@ -1,9 +1,9 @@
 ---
 tags:
   - structure-prediction/limitations
-  - protein-protein-interactions/structure-prediction
+  - structure-prediction/complex-prediction
 created: 2025-06-02T06:29:42
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

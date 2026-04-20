@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-folding/misc
-created: "2026-04-05T17:41:51"
-modified: "2026-04-10T14:30:55"
+  - variant-effect-prediction
+created: 2026-04-05T17:41:51
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

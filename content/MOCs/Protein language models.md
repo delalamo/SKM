@@ -3,7 +3,7 @@ title: Protein language models
 tags:
   - protein-language-models
 created: "2026-04-10T10:46:24"
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T10:13:23"
 ---
 
 **Protein language models** (PLMs) are a type of [[Transformer]] model trained on either protein sequences or [[Multiple sequence alignments]].
@@ -18,10 +18,6 @@ modified: "2026-04-17T06:40:29"
 * **xTrimoPGLM**
 * **CARP**: A [[Convolutional neural networks|CNN]] that performs as well as transformer-based methods on both pretraining and downstream tasks. Anecdotally, these can't indirectly calculate contact maps via the [[Categorical Jacobian method]] as well as transformer-based models.
 * **DASM** (deep amino acid sequence model), which is trained on germline-descendant point mutation pairs to learn relative mutation frequencies, after normalizing for expected mutation frequencies in the codon table (doi.org/10.7554/eLife.109644.3.sa0).
-
-#### Antibody-specific
-
-*From [[Antibody language models#Models]]*
 
 ## Notes
 #### General observations
@@ -48,7 +44,6 @@ modified: "2026-04-17T06:40:29"
 
 ## Training
 
-- [[Alternate conformations can be sampled with MSA-based structure prediction methods using custom PDB databases and subsampled MSAs]]
 - [[Alternate sequence clustering schemes outperform uniform sampling when training protein language models]]
 - [[Alternative noise schedules improve training of multimodal PLMs]]
 - [[BERT models trained on sequence clusters outperform those trained on all data]]
@@ -57,10 +52,13 @@ modified: "2026-04-17T06:40:29"
 - [[Fine-tuning almost always improves property prediction]]
 - [[Fine-tuning base models on test cases can improve the performance of variant effect and structure prediction]]
 - [[Fine-tuning can be detrimental to performance]]
+- [[Hybrid protein sequence-structure ML models rely more on sequence when many homologs were available during training]]
 - [[Including optimal growth temperature during pre-training of PLMs improves prediction and design of thermostability]]
 - [[Including sequences from multiplexed ancestral sequence reconstruction improves PLM training]]
 - [[Incorporating ancestral sequences during PLM training improves performance in downstream tasks]]
+- [[Larger PLMs generate more novel sequences from more sparsely populated protein families]]
 - [[Logistic regression outperforms fine-tuned LMs on finding point mutations from NGS data]]
+- [[ML models trained exclusively on experimental structures are less effective on computational models]]
 - [[MSA-based structure prediction models can be retrained as pathogenicity prediction models by upweighting BERT losses]]
 - [[Masked LMs can be fine-tuned starting from autoregressive LMs, but not vice-versa]]
 - [[Masked PLMs are more sensitive to training imbalances than autoregressive PLMs]]
@@ -80,19 +78,25 @@ modified: "2026-04-17T06:40:29"
 
 ## Representations
 
+- [[Concatenating sequence and structural features is not effective for sequence recovery]]
 - [[Contrastive learning of PLM embeddings on functional annotation improves variant effect prediction and homolog detection]]
+- [[Contrastive learning on whole structures leads to learning of distinct substructures]]
 - [[Correlation between sequence log-likelihood and variant effect prediction performance breaks down as PLMs get larger]]
 - [[Distance between PLM representations of two proteins correlates with functional dissimilarity]]
 - [[Distance between averaged PLM embeddings does not correlate with structural difference]]
 - [[Enzymes can be miniaturized with Monte Carlo sampling and embedding similarity of catalytic residues]]
 - [[HMMs cannot identify remote homologs]]
+- [[High-confidence predictions from protein language models co-cluster together in embedding space and correlate with performance on variant effect prediction tasks]]
 - [[Larger PLMs are better at homolog detection]]
 - [[Mean-pooled embeddings outperform other zero-shot approaches for transfer learning of PLMs using the full sequence]]
+- [[Membrane proteins are predicted by PLMs via solvent-exposed hydrophobic residues]]
 - [[Optimal transport outperforms mean-pooling on property prediction tasks]]
 - [[PLM attention maps from specific heads can be used to predict allosteric networks]]
 - [[PLM attention matrices correspond to 3D contacts]]
 - [[PLM embeddings contain enough information to align proteins without fine-tuning]]
 - [[PLM embeddings fine-tuned using contrastive learning outperform other representations in drug-target interaction prediction]]
+- [[PLM-based sequence searches outperform sequence- and matches structure-based search methods]]
+- [[PLM-derived antibody representations can distinguish engineered from human-derived Abs]]
 - [[PLMs learn family-specific protein contacts from sequence context windows of about 20-40 amino acids]]
 - [[Protein language model embeddings are more predictive of homology than catalytic efficiency]]
 - [[Protein language models are able to predict epistasis in a zero-shot setting following a nonlinear transform]]
@@ -112,7 +116,6 @@ modified: "2026-04-17T06:40:29"
 
 ## Antibodies
 
-- [[PLM-derived antibody representations can distinguish engineered from human-derived Abs]]
 - [[Antibody LMs are worse for expression prediction than generic PLMs]]
 - [[Antibody LMs outperform generic PLMs on intrafamily thermostability prediction]]
 - [[Antibody PLMs match or outperform generic PLMs on specificity prediction]]
@@ -137,4 +140,6 @@ modified: "2026-04-17T06:40:29"
 
 ## General
 
+- [[Categorical Jacobian method]]
+- [[PLM-designed sequences match the distribution of fitness values, lengths, and structure prediction confidence of natural sequences]]
 - [[Subnetworks within protein language models encode specific protein families]]

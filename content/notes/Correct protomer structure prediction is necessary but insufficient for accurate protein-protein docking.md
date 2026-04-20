@@ -1,7 +1,7 @@
 ---
 tags:
   - structure-prediction/limitations
-  - protein-protein-interactions
+  - structure-prediction/complex-prediction
 ---
 
 #### Summary

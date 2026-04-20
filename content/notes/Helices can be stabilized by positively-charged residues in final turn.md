@@ -1,8 +1,7 @@
 ---
-tags: 
-  - protein-folding/misc
-created: "2025-04-22T00:52:36"
-modified: "2026-04-11T07:41:30"
+tags:
+created: 2025-04-22T00:52:36
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

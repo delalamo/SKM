@@ -3,12 +3,12 @@ tags:
   - antibody-structure-prediction/complex-prediction
   - pae
 created: "2026-03-06T09:43:56"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T10:13:23"
 ---
 
 ## Summary
 
-**The [[Predicted aligned error|PAE]] of [[AlphaFold]] weakly correlates with the binding affinity of [[Antibodies]] to their antigens** ([Jin et al 2023][^jin2023]). It is more effective at discriminating between positive and negative [[Trastuzumab]] binders.
+**The [[Predicted aligned error|PAE]] of [[AlphaFold2]] weakly correlates with the binding affinity of [[Antibodies]] to their antigens** ([Jin et al 2023][^jin2023]). It is more effective at discriminating between positive and negative [[Trastuzumab]] binders.
 
 ## Figures
 

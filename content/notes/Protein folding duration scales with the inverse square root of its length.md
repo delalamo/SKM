@@ -1,9 +1,9 @@
 ---
 title: Protein folding duration scales with the inverse square root of its length
 tags:
-  - protein-folding/misc
-created: "2025-06-02T11:17:19"
-modified: "2026-04-10T14:30:55"
+  - protein-folding/unfolding
+created: 2025-06-02T11:17:19
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
  **[[Protein folding]] duration scales with the inverse square root of protein length** [^naganathan2005].

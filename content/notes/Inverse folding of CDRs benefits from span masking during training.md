@@ -1,8 +1,9 @@
 ---
 tags:
-  - antibodies/misc
+  - inverse-folding/evaluation
+  - citation-fix
 created: "2026-04-05T17:48:59"
-modified: "2026-04-10T14:30:55"
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
  **[[Inverse folding]] of [[Complementarity-determining regions|CDRs]] benefits from masking contiguous stretches of residues during training** ([[bxZMKHtlL6|Høie et al 2023]]). This is in contrast to inverse folding of [[Framework region|framework residues]], which like generic proteins benefit from random masking (AKA "shotgun masking"; [^hsu2022]).

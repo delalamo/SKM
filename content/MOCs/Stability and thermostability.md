@@ -3,7 +3,7 @@ title: Stability and thermostability
 tags:
   - thermostability
 created: "2026-04-05T23:36:09"
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T10:13:23"
 ---
 
 **Thermostability** refers to a protein's ability to remain folded at high temperatures or under harsh conditions. It is a highly desirable property for engineered proteins.
@@ -30,7 +30,6 @@ modified: "2026-04-17T06:40:29"
 ## Evolution
 
 - [[Ancestrally reconstructed sequences are more thermostable than extant sequences]]
-- [[Epistasis is rare during evolution]]
 - [[Essential proteins are more thermostable and over-expressed than non-essential proteins]]
 - [[Natural sequences deviate from highest stability variants]]
 - [[Neutrality correlates with fold-level thermostability]]
@@ -41,10 +40,12 @@ modified: "2026-04-17T06:40:29"
 - [[A subset of residues is sufficient to predict protein dG]]
 - [[About 100k datapoints required to train accurate ddG predictor]]
 - [[Adding structural adaptors to language models leads to improvements in thermostability prediction compared to structure-based NNs alone]]
+- [[All-atom scoring functions, but not backbone-only scoring functions, correlate with protein stability]]
 - [[Averaging logits from multiple sources can improve fitness prediction]]
 - [[Biophysical models outperform linear models for stability prediction]]
 - [[Biophysical models trained on single and double point mutations can predict effects of three or more mutations on stability]]
 - [[Fine-tuning almost always improves property prediction]]
+- [[Generic PLMs outperform antibody-specific PLMs on zero-shot predictions of affinity changes]]
 - [[Including optimal growth temperature during pre-training of PLMs improves prediction and design of thermostability]]
 - [[Larger PLMs are better at thermostability prediction]]
 - [[MD trajectories reproduce experimental dG values to within 1 kcal per mol]]
@@ -59,7 +60,6 @@ modified: "2026-04-17T06:40:29"
 
 ## Determinants
 
-- [[All-atom scoring functions, but not backbone-only scoring functions, correlate with protein stability]]
 - [[Catalytic residues are usually destabilizing]]
 - [[Differences in thermostability of structurally similar proteins are due to differences in unfolding rates]]
 - [[Protein stability, expression, and resistance to proteolysis are correlated]]
@@ -68,6 +68,7 @@ modified: "2026-04-17T06:40:29"
 
 ## Mutations
 
+- [[Alpha-helices are more tolerant of mutations than beta-sheets]]
 - [[Half of all disease-causing missense variants due to disruption of protein stability]]
 - [[Insertions and deletions are more detrimental to stability than substitutions]]
 - [[Most mutations with no effect on stability are found near the surface of proteins]]

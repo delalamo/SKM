@@ -1,10 +1,9 @@
 ---
 tags:
-  - antibody-structure-prediction/complex-prediction
+  - structure-prediction/complex-prediction
   - diffusion-models/implementation
-  - antibodies/structure-prediction
-created: "2026-03-11T08:27:32"
-modified: "2026-04-13T11:11:20"
+created: 2026-03-11T08:27:32
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

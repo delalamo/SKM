@@ -1,8 +1,9 @@
 ---
 title: Contrastive learning
 tags:
+  - citation-fix
 created: 2026-04-10T14:30:55
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T10:13:23"
 ---
 
 **Contrastive learning** is a supervised method for driving the latent representations of data points towards or away from each other by adding custom losses.
@@ -29,3 +30,11 @@ Variant 2 ranks a single positive pair over $K$ negative pairs
 	 $$L_{R}= \log \frac{\exp (\bar{s} * (x_{I}, a^{+}_{i,0}; \theta_))}{\exp (\bar{s} * (x_{I}, a^{+}_{i,0}; \theta_)) + \sum^{K}_{k=1} \exp (\bar{s} * (x_{I}, a^{-}_{i,k}; \theta))}$$
 
 <!-- generated -->
+
+## General
+
+- [[Contrastive fine-tuning PLMs on inverse folding embeddings of experimental structures but not computational models improves downstream tasks]]
+- [[Contrastive learning improves segregation of functional clusters]]
+- [[Contrastive learning of PLM embeddings on functional annotation improves variant effect prediction and homolog detection]]
+- [[Contrastive learning on whole structures leads to learning of distinct substructures]]
+- [[PLM embeddings fine-tuned using contrastive learning outperform other representations in drug-target interaction prediction]]

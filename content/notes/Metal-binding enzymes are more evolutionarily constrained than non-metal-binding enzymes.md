@@ -1,9 +1,9 @@
 ---
 title: Metal-binding enzymes are more evolutionarily constrained than non-metal-binding enzymes
 tags:
-  - protein-folding/misc
-created: "2026-03-15T10:48:08"
-modified: "2026-04-11T07:41:30"
+  - evolution-and-natural-selection
+created: 2026-03-15T10:48:08
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
  **Metal-binding enzymes are more [[Evolution and natural selection|evolutionarily]] constrained than non-metal-binding enzymes** [^lemke2025].

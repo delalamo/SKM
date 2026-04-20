@@ -1,8 +1,9 @@
 ---
 tags:
   - protein-language-models/antibodies
-created: "2025-07-22T11:37:28"
-modified: "2026-04-11T07:41:30"
+  - contrastive-learning
+created: 2025-07-22T11:37:28
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

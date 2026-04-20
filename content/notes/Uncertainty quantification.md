@@ -1,8 +1,7 @@
 ---
 tags:
-  - protein-folding/misc
-created: "2025-12-22T13:15:00"
-modified: "2026-04-10T14:30:55"
+created: 2025-12-22T13:15:00
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
 **Uncertainty quantification** refers to the estimation of confidence in a prediction by ML models.

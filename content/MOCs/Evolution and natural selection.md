@@ -3,7 +3,7 @@ title: Evolution and natural selection
 tags:
   - evolution-and-natural-selection
 created: "2026-04-10T14:02:57"
-modified: "2026-04-13T11:11:20"
+modified: "2026-04-20T10:13:23"
 ---
 
 Protein **evolution** is the process and result of gradual sequence changes resulting in functional and/or structural changes. See [[Epistasis]] for examples on why evolutionary trajectories are difficult to predict. This note excludes any discussion of [[Somatic hypermutation|somatic hypermutation]].
@@ -30,5 +30,29 @@ Protein **evolution** is the process and result of gradual sequence changes resu
 
 <!-- generated -->
 
-[^ohta1973]: Ohta (1973) "Slightly Deleterious Mutant Substitutions in Evolution." *Nature*. https://doi.org/10.1038/246096a0
-[^tian2017]: Tian & Best (2017) "How Many Protein Sequences Fold to a Given Structure? A Coevolutionary Analysis." *Biophysical Journal*. https://doi.org/10.1016/j.bpj.2017.08.039
+## Structure
+
+- [[Amino acid substitution patterns are dependent on solvent exposure]]
+- [[Amino acid substitution rates are rotamer-dependent]]
+- [[Homooligomeric proteins can undergo many stoichiometric changes in the course of evolution]]
+- [[Protein structure more conserved than sequence]]
+- [[Viral receptor-binding domains can bind the same receptor at different locations due to convergent evolution]]
+
+## General
+
+- [[Amino acid propensities in the proteome correlate with differences in metabolic flux]]
+- [[Functional proteins emerge from libraries of random sequences]]
+- [[Indels allows proteins to access phenotypes inaccessible to missense mutations]]
+- [[Indels better tolerated at termini]]
+- [[Insertion mutations are associated with gain-of-function]]
+- [[Insertions more tolerated than deletions]]
+- [[Metal-binding enzymes are more evolutionarily constrained than non-metal-binding enzymes]]
+- [[Modifying conformational landscapes of proteins can give rise to new functions]]
+- [[Natural selection favors the highest average local fitness]]
+- [[Neutral mutation frequency is similar across distance fitness peaks]]
+- [[Not all sequences with improved activity have plausible evolutionary paths via stepwise introduction of mutations]]
+- [[Protein abundance is inversely correlated with its propensity to form nonfunctional interactions]]
+- [[Sequence-based DL models learn intra-family phylogenetics of protein evolution]]
+- [[Short insertions are common in evolution]]
+- [[Single deletion mutations are better tolerated than larger (2-3 residue) deletions]]
+- [[The same protein can have two different structures across different organisms]]

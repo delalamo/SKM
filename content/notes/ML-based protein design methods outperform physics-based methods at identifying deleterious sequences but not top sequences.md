@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-design/misc
-created: "2024-07-03T12:15:47"
-modified: "2026-04-10T14:30:55"
+  - variant-effect-prediction
+created: 2024-07-03T12:15:47
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
  **ML-based protein design methods outperform physics-based methods on identifying deleterious sequences but not top sequences** [^ertfelt2024]. This compared [[ProteinMPNN]], [[Hybrid sequence-structure models|MIF-ST]], [[ESM]]2, and [[Rosetta]].

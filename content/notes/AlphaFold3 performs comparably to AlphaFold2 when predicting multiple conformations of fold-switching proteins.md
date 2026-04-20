@@ -5,12 +5,12 @@ tags:
   - conformational-dynamics/modeling
   - alphafold2
 created: 2025-11-07T17:32:43
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
 
-**[[AlphaFold|AlphaFold3]] performs comparably to AlphaFold2 (specifically [[Alternate conformations can be sampled with MSA-based structure prediction methods using custom PDB databases and subsampled MSAs|MSA clustering and sequence masking]]) when [[Structure prediction|predicting the structures]] of [[Fold-switching proteins|fold-switching proteins]]** [^chakravarty2024].
+**[[AlphaFold3]] performs comparably to AlphaFold2 (specifically [[Alternate conformations can be sampled with MSA-based structure prediction methods using custom PDB databases and subsampled MSAs|MSA clustering and sequence masking]]) when [[Structure prediction|predicting the structures]] of [[Fold-switching proteins|fold-switching proteins]]** [^chakravarty2024].
 
 #### Figures
 

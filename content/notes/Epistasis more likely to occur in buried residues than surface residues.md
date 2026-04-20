@@ -1,14 +1,10 @@
 ---
-tags: 
-  - protein-folding/misc
-created: "2024-07-02T05:10:23"
-modified: "2026-04-11T07:27:50"
+tags:
+  - epistasis
+created: 2024-07-02T05:10:23
+modified: "2026-04-20T10:13:23"
 ---
 
----
-summary: Epistasis more likely to occur in buried residues than surface residues
-tags: thermostability/prediction, epistasis/observations, fitness-prediction
----
 #### Summary
 **(Epistasis) more likely to occur in buried residues than surface residues** [^beltran2024]. In general, the effects of combinations of mutations in buried or unstructured residues are more difficult to predict, compared to exposed residues or residues on helices/sheets (van der [^van2023]). The identity of the amino acids being mutated didn't seem to matter in such cases. The use of [[Protein language models]] did not appear to help in those cases. [^escobedo2024] found that the effect of mutating hydrophobic cores could still be explained quite well using single and pairwise effect predictors.
 

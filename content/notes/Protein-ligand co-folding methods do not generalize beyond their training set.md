@@ -1,8 +1,10 @@
 ---
 tags:
-  - protein-design/misc
-created: "2025-10-27T12:58:04"
-modified: "2026-04-11T07:41:30"
+  - ligand-docking
+  - structure-prediction/limitations
+  - alphafold3
+created: 2025-10-27T12:58:04
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

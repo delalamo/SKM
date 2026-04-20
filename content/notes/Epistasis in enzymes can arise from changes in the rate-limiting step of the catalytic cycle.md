@@ -1,9 +1,10 @@
 ---
 title: Epistasis in enzymes can arise from changes in the rate-limiting step of the catalytic cycle
 tags:
-  - protein-design/misc
-created: "2024-04-22T12:24:10"
-modified: "2026-04-10T14:30:55"
+  - epistasis
+  - protein-design/enzyme-design
+created: 2024-04-22T12:24:10
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
  **[[Epistasis]] can arise from changes in which step in the catalytic cycle is rate limiting** [^frohlich2023] 

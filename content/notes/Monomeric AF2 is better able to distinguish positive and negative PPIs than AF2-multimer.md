@@ -1,14 +1,14 @@
 ---
 tags:
-  - protein-design/misc
   - alphafold2
-created: "2026-03-26T21:43:57"
-modified: "2026-04-11T07:41:30"
+  - protein-protein-interactions
+created: 2026-03-26T21:43:57
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
 
-**Monomeric [[AlphaFold|AlphaFold2]] is better able to distinguish positive and negative [[Protein-protein interactions|PPIs]] than AF2-multimer** [^zhang2024]. [^pacesa2025] found that this made it effective at filtering *de novo* binder designs made by [[Inversion of protein folding neural networks|hallucination]].
+**Monomeric [[AlphaFold2]] is better able to distinguish positive and negative [[Protein-protein interactions|PPIs]] than AF2-multimer** [^zhang2024]. [^pacesa2025] found that this made it effective at filtering *de novo* binder designs made by [[Inversion of protein folding neural networks|hallucination]].
 
 #### Figures
 

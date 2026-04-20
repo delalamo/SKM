@@ -2,13 +2,26 @@
 title: Alphafold2
 tags:
   - alphafold2
+aliases:
+  - openfold
 created: "2026-04-11T06:06:39"
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T10:13:23"
 ---
+*(OpenFold redirects here)*
 
-> [!info] Auto-generated
-> This page is generated automatically from notes tagged `alphafold2/*`.
-> Add prose above the generated marker to preserve it across regenerations.
+**AlphaFold2** is a protein [[Structure prediction|structure prediction]] method from 2020, and is the first to make extensive use of the [[Transformer]] architecture, consisting of 97 million parameters. [[AlphaMissense]] is a derivative of this method.
+
+![[Pasted-image-20231029184254.png]]
+*Architecture of AlphaFold2 from [[10.1038__s41586-021-03819-2|Jumper et al 2021]]*
+
+#### Architectural and ML contributions
+
+* [[Evoformer]]
+* [[Invariant point attention]]
+* [[Frame aligned point error]]
+* [[Distillation|Self-distillation]] for protein structures
+* [[Predicted aligned error]]
+* [[Triangular update]]
 
 <!-- generated -->
 
@@ -22,6 +35,7 @@ modified: "2026-04-17T06:40:29"
 - [[AlphaFold2 predicts ground states more often]]
 - [[AlphaFold2 predicts the holo form of proteins in most cases]]
 - [[AlphaFold2 recapitulates interaction biases from PDB when modeling antibodies]]
+- [[AlphaFold3 performs comparably to AlphaFold2 when predicting multiple conformations of fold-switching proteins]]
 - [[Alternate conformations can be sampled by inverting AlphaFold2 and backpropagating along specific user-picked collective variables]]
 - [[Antibodies can be humanized using AlphaFold2 models]]
 - [[Antibody structure prediction improved with AlphaFold2 features]]

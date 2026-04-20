@@ -1,8 +1,10 @@
 ---
 tags:
-  - antibodies/misc
-created: "2024-04-26T04:28:02"
-modified: "2026-04-11T07:41:30"
+  - antibody-developability/general
+  - variant-effect-prediction
+  - citation-fix
+created: 2024-04-26T04:28:02
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

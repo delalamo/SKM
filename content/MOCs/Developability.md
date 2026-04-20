@@ -2,8 +2,9 @@
 title: Developability
 tags:
   - antibody-developability
-created: "2026-04-05T23:36:09"
-modified: "2026-04-11T06:06:39"
+  - citation-fix
+created: 2026-04-05T23:36:09
+modified: "2026-04-20T10:13:23"
 ---
 
 [[Antibodies|Antibody]] developability refers to a series of properties linked to the development of antibodies as therapeutics. These arise because natural antibodies do not possess them to begin with, or because they arise during optimization as a consequence of affinity maturation via techniques such as [[Display methods|Yeast display]].
@@ -47,11 +48,14 @@ modified: "2026-04-11T06:06:39"
 - [[Antibodies from naive B cells are more polyreactive]]
 - [[Arginine residues in CDRH3 increases promiscuity]]
 - [[Broadly neutralizing antibodies are more evolutionarily distant from germline sequences than less polyspecific antibodies]]
+- [[CDR3 loops encode specificity while CDR1 and CDR2 encode cross-reactivity]]
+- [[CDRH3 conformational rigidity reduces cross reactivity]]
 - [[Somatic hypermutation correlates with lower polyreactivity]]
 
 ## Self-association
 
 - [[Affinity maturation also selects for lower self-association]]
+- [[Light chain determines autospecificity]]
 
 ## Solubility
 
@@ -77,4 +81,5 @@ modified: "2026-04-11T06:06:39"
 - [[Longer CDRH3 correlates with higher polyspecificity and hydrophobicity]]
 - [[Most commercially available tool antibodies are nonspecific]]
 - [[Net charge of CDRs strongly predicts nonspecific binding]]
+- [[No one-size-fits-all approach to scoring antibody structures]]
 - [[PLMs are better at reproducing sequence-based developability predictions than structure-based predictions]]

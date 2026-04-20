@@ -1,11 +1,11 @@
 ---
 tags:
-  - antibodies/misc
-created: "2024-04-26T11:38:01"
-modified: "2026-04-11T07:41:30"
+  - light-chains
+created: 2024-04-26T11:38:01
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
- **Lambda [[Light chains]] have lower [[Stability and thermostability|thermostability]] than kappa light chains** [^shehata2019].
+ **Lambda [[Light chains|light chains]] have lower [[Stability and thermostability|thermostability]] than kappa light chains** [^shehata2019].
 
 #### Figures
 ![[Pasted-image-20240119164756.png]]

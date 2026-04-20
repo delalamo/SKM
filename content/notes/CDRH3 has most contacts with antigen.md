@@ -1,8 +1,9 @@
 ---
 tags:
-  - antibodies/misc
-created: "2025-02-17T05:13:04"
-modified: "2026-04-11T07:41:30"
+  - cdrh3
+  - protein-protein-interactions
+created: 2025-02-17T05:13:04
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
 **[[Complementarity-determining regions|CDRH3]] has the most antigen contacts of any CDR.** This is consistent with its hypervariability due to [[Somatic hypermutation|somatic hypermutation]] (Kunik and [^kunik2013], [^fernandezquintero2020]).

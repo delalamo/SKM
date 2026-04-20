@@ -1,14 +1,8 @@
 ---
 title: Conformational dynamics
-tags:
-  - conformational-dynamics
 created: "2026-04-11T06:06:39"
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T10:13:23"
 ---
-
-> [!info] Auto-generated
-> This page is generated automatically from notes tagged `conformational-dynamics/*`.
-> Add prose above the generated marker to preserve it across regenerations.
 
 <!-- generated -->
 
@@ -24,8 +18,10 @@ modified: "2026-04-17T06:40:29"
 - [[Alternate conformations can be sampled with MSA-based structure prediction methods using custom PDB databases and subsampled MSAs]]
 - [[Biomolecular diffusion models cannot reproduce the equilibrium dynamics of the simulations they are trained on]]
 - [[Conformational sampling by AlphaFold3-generation methods can be achieved by scaling the pair representation]]
+- [[Conformationally stabilizing mutations can be identified from sequence clusters that are predicted to fold into that conformation when passed to AlphaFold2]]
 - [[Guidance potentials can be added to diffusion-based structure prediction for enhanced sampling of protein conformations]]
 - [[Masking ESMFold can sometimes sample alternate conformations]]
+- [[Mutation of allosteric residues can influence the equilibrium dynamics of designed proteins]]
 - [[Protein folding neural networks can be combined with VAEs for conformational modeling]]
 - [[Protein structure prediction methods are unable to predict the energetics of a conformational landscape unless explicitly trained for that purpose]]
 - [[Structure prediction from conformational samplers tends to be worse than those from vanilla structure prediction methods]]
@@ -54,11 +50,15 @@ modified: "2026-04-17T06:40:29"
 
 ## Evolution
 
+- [[Affinity-specificity tradeoff in antibodies is partially mediated by varying the magnitude of rigidification]]
+- [[Conformational sampling can smoothen fitness landscapes]]
 - [[Equilibrium dynamics of fold switching proteins change during evolution]]
 - [[Fitness landscape navigability is correlated with its kurtosis and the centeredness of its maximum]]
+- [[Modifying conformational landscapes of proteins can give rise to new functions]]
 - [[Potts models and PSSMs can model fitness landscapes]]
 - [[Protein structure is more evolutionarily conserved than dynamics]]
 - [[Smooth protein folding landscapes are the result of natural selection]]
+- [[The same protein can have two different structures across different organisms]]
 
 ## Kinetics and Barriers
 
@@ -71,6 +71,7 @@ modified: "2026-04-17T06:40:29"
 
 ## Molecular Dynamics
 
+- [[Abs modeled using MD are better for featurization than those modeled using homology modeling]]
 - [[Likelihood of predicted contacts by MSA transformer weakly correlate with dwell time in molecular dynamics simulations]]
 - [[Linear MD encoders outperform nonlinear encoders when extrapolating to unseen regions of protein conformational space]]
 - [[MD force fields can be screened for agreement with experimental data]]
@@ -85,5 +86,4 @@ modified: "2026-04-17T06:40:29"
 
 ## General
 
-- [[Alternate sequence clustering schemes outperform uniform sampling when training protein language models]]
 - [[Residual connections smoothen the loss landscape of neural networks]]

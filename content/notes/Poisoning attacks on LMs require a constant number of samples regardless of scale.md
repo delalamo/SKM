@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-folding/misc
-created: "2025-11-20T17:30:56"
-modified: "2026-04-11T07:41:30"
+  - transformers
+created: 2025-11-20T17:30:56
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
 **Poison attacks on [[Language models|language models]] require a constant number of samples regardless of [[Scaling hypothesis|scale]]** [^souly2025].

@@ -3,12 +3,12 @@ tags:
   - alphafold2
   - structure-prediction/training
 created: "2024-05-08T18:04:59"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
 
-**Scrambled [[Multiple sequence alignments|MSAs]] outperform single sequence predictions when [[Structure prediction|predicting protein structures]] with [[AlphaFold|AlphaFold2]]**. They perform comparably to PSSMs and much worse than intact MSAs.
+**Scrambled [[Multiple sequence alignments|MSAs]] outperform single sequence predictions when [[Structure prediction|predicting protein structures]] with [[AlphaFold2]]**. They perform comparably to PSSMs and much worse than intact MSAs.
 
 #### Figures
 

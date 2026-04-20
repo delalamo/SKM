@@ -2,7 +2,9 @@
 title: Bispecific antibodies
 tags:
 created: 2026-04-10T14:02:57
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T10:13:23"
+aliases:
+  - trispecific antibodies, multispecific antibodies
 ---
 
 *Redirects from trispecific antibodies, polyspecific antibodies*

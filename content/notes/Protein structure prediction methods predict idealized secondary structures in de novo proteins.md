@@ -2,12 +2,12 @@
 tags:
   - protein-backbone-design/designability
 created: "2025-07-29T17:00:40"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
 
-**[[Structure prediction|Protein structure prediction]] methods predicted idealized secondary structure arrangements in *de novo*-designed proteins** [^orr2025]. This was shown with [[AlphaFold|AlphaFold2]], [[OmegaFold]], [[RosettaFold]], and others.
+**[[Structure prediction|Protein structure prediction]] methods predicted idealized secondary structure arrangements in *de novo*-designed proteins** [^orr2025]. This was shown with [[AlphaFold2]], [[OmegaFold]], [[RosettaFold]], and others.
 
 #### Figures
 

@@ -1,7 +1,8 @@
 ---
-tags: protein-design/misc
-created: "2024-10-14T12:57:29"
-modified: "2026-04-11T07:41:30"
+tags:
+  - conformational-dynamics/modeling
+created: 2024-10-14T12:57:29
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

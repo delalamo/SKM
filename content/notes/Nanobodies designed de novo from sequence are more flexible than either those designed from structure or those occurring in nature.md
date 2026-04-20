@@ -1,7 +1,8 @@
 ---
-tags: antibodies/misc
-created: "2025-12-19T12:05:01"
-modified: "2026-04-10T14:30:55"
+tags:
+  - antibodies/nanobodies
+created: 2025-12-19T12:05:01
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

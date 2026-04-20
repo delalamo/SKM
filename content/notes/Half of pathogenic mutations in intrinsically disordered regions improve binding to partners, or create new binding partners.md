@@ -1,8 +1,7 @@
 ---
 tags:
-  - protein-design/misc
-created: "2024-05-05T01:27:04"
-modified: "2026-04-13T11:11:20"
+created: 2024-05-05T01:27:04
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

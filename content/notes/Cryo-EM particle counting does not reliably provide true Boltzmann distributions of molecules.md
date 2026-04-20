@@ -1,13 +1,12 @@
 ---
 tags:
-  - protein-folding/misc
-created: "2025-04-07T12:22:36"
-modified: "2026-04-10T14:30:55"
+created: 2025-04-07T12:22:36
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
 
-**Counting particles collected with cryo-EM does not reliably provide the true Boltzmann distributions of protein structures** [^evans2025]. In contrast, directly solving the inverse problem provides a more accurate estimate. This was shown using synthetic datasets of the SARS-CoV-2 spike protein and an IgG1 antibody.
+**Counting particles collected with [[Cryo-EM|cryo-EM]] does not reliably provide the true Boltzmann distributions of protein structures** [^evans2025]. In contrast, directly solving the inverse problem provides a more accurate estimate. This was shown using synthetic datasets of the SARS-CoV-2 spike protein and an IgG1 antibody.
 
 #### See also
 

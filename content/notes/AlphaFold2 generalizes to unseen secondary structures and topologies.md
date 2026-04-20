@@ -3,12 +3,12 @@ tags:
   - alphafold2
   - structure-prediction/sampling
 created: "2025-04-09T10:01:58"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
 
-**In training [[AlphaFold|OpenFold]], [^ahdritz2024] found that excluding all sheet proteins or all helical proteins from the training set did not prevent it from learning to sample those topologies correctly.** Additionally, it could predict the structures of CATH domains removed from training, although that had a more dramatic effect on predictive performance than random subsampling of the training set.
+**In training [[AlphaFold2|OpenFold]], [^ahdritz2024] found that excluding all sheet proteins or all helical proteins from the training set did not prevent it from learning to sample those topologies correctly.** Additionally, it could predict the structures of CATH domains removed from training, although that had a more dramatic effect on predictive performance than random subsampling of the training set.
 
 #### Figures
 

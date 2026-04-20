@@ -1,9 +1,9 @@
 ---
 tags:
   - plddt
-  - protein-design/misc
+  - confidence-metrics
 created: "2024-11-04T23:16:23"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary

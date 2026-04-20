@@ -1,8 +1,8 @@
 ---
 tags:
-  - protein-folding/misc
-created: "2026-04-05T17:19:25"
-modified: "2026-04-10T14:30:55"
+  - transformers
+created: 2026-04-05T17:19:25
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
 **On fixed compute budgets, sparse models (e.g., [[Mixture-of-experts|mixture-of-experts]] models) outperform dense models** [^bhatnagar2025].

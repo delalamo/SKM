@@ -3,12 +3,12 @@ tags:
   - alphafold2
   - structure-prediction/sampling
 created: 2026-02-20T18:08:22
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T10:13:23"
 ---
 
 #### Summary
 
-**[[AlphaFold|AlphaFold2]] prefers to model proteins in the holo form for 67% of cases** [^saldao2022].
+**[[AlphaFold2]] prefers to model proteins in the holo form for 67% of cases** [^saldao2022].
 
 #### See also
 

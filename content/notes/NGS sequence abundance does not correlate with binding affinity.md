@@ -1,8 +1,7 @@
 ---
 tags:
-  - antibodies/misc
-created: "2026-01-22T12:49:48"
-modified: "2026-04-10T14:30:55"
+created: 2026-01-22T12:49:48
+modified: "2026-04-20T10:13:23"
 ---
 #### Summary
 **Sequence abundance from [[Next-generation sequencing|NGS]] does not correlate with binding affinity** [^paul2026][^makowski2022].
