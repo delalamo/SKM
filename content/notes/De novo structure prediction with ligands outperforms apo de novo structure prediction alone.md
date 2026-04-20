@@ -2,7 +2,7 @@
 tags:
   - protein-backbone-design/designability
 created: "2024-05-08T18:00:00"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -21,5 +21,5 @@ modified: "2026-04-11T07:41:30"
 - [[AlphaFold2 predicts Apo conformations with poorer RMSD than holo conformations]]
 - [[Including ligands restrains design of catalytically active residues]]
 
-[^qiao2022]: Qiao et al. (2022) "State-specific protein-ligand complex structure prediction with a multi-scale deep generative model." https://doi.org/10.48550/arXiv.2209.15171
+[^qiao2022]: Qiao et al. (2024) "State-specific protein–ligand complex structure prediction with a multiscale deep generative model." Nature Machine Intelligence. https://doi.org/10.1038/s42256-024-00792-z
 [^krishna2024]: Krishna et al. (2024) "Generalized biomolecular modeling and design with RoseTTAFold All-Atom." *Science*. https://doi.org/10.1126/science.adl2528

@@ -2,7 +2,7 @@
 tags:
   - inverse-folding/evaluation
 created: "2026-01-22T11:24:28"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -24,5 +24,5 @@ modified: "2026-04-11T07:41:30"
 * [[Adding structural adaptors to language models leads to improvements in thermostability prediction compared to structure-based NNs alone]]
 
 [^ruffolo2024]: Ruffolo et al. (2024) "Adapting protein language models for structure-conditioned design." https://doi.org/10.1101/2024.08.03.606485
-[^li2025]: Li & Luo (2025) "Generalizable and scalable protein stability prediction with rewired protein generative models." https://doi.org/10.1101/2025.02.13.638154
+[^li2025]: Li & Luo (2025) "Generalizable and scalable protein stability prediction with rewired protein generative models." Nature Communications. https://doi.org/10.1038/s41467-025-67609-4
 [^li2025b]: Li & Luo (2025) "Generalizable and scalable protein stability prediction with rewired protein generative models." *Nature Communications*. https://doi.org/10.1038/s41467-025-67609-4

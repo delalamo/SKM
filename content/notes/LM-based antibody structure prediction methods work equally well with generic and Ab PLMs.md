@@ -3,7 +3,7 @@ tags:
   - protein-language-models/antibodies
   - antibody-structure-prediction/cdr
 created: 2026-04-05T17:38:14
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -23,4 +23,4 @@ modified: "2026-04-20T10:13:23"
 *Figure from [^lee2023]*
 
 [^lee2023]: Lee et al. (2023) "Solvent: A Framework for Protein Folding." https://doi.org/10.48550/arXiv.2307.04603
-[^kenlay2024]: Kenlay et al. (2024) "ABodyBuilder3: Improved and scalable antibody structure predictions." https://doi.org/10.48550/ARXIV.2405.20863
+[^kenlay2024]: Kenlay et al. (2024) "ABodyBuilder3: improved and scalable antibody structure predictions." Bioinform.. https://doi.org/10.1093/BIOINFORMATICS/BTAE576

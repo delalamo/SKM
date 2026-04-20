@@ -3,7 +3,7 @@ tags:
   - protein-language-models/antibodies
   - contrastive-learning
 created: 2025-07-22T11:37:28
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -22,4 +22,4 @@ modified: "2026-04-20T10:13:23"
 
 [^barton2023]: Barton et al. (2024) "Enhancing Antibody Language Models with Structural Information." https://doi.org/10.1101/2023.12.12.569610
 [^liu2024]: Liu et al. (2024) "Interpretable antibody-antigen interaction prediction by introducing route and priors guidance." https://doi.org/10.1101/2024.03.09.584264
-[^wang2023]: Wang et al. (2023) "S-PLM: Structure-aware Protein Language Model via Contrastive Learning between Sequence and Structure." https://doi.org/10.1101/2023.08.06.552203
+[^wang2023]: Wang et al. (2025) "S‐PLM: Structure‐Aware Protein Language Model via Contrastive Learning Between Sequence and Structure." Advanced Science. https://doi.org/10.1002/advs.202404212

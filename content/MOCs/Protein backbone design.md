@@ -3,7 +3,7 @@ title: Protein backbone design
 tags:
   - protein-backbone-design
 created: "2026-04-10T14:30:55"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 **Protein backbone design** is the generation of protein backbones in three-dimensional space. This section also covers generation and design of entire protein structures in Cartesian space, but most methods uncouple design of the backbone and design of the sequence given the backbone ([[Inverse folding|inverse folding]]). As of May 2024, the current state of the art uses [[Diffusion models|diffusion]].
@@ -11,7 +11,7 @@ modified: "2026-04-20T10:13:23"
 #### Methods
 
 * **[[Chroma]]** ([[10.1038__s41586-023-06728-8|Ingraham et al 2023]])
-* **RF-diffusion** ([[10.1038__s41586-023-06415-8|Watson et al 2023]]) and **RFam** ([[10.1101__2024.11.13.623507|Kim et al 2024]])
+* **RF-diffusion** ([[10.1038__s41586-023-06415-8|Watson et al 2023]]) and **RFam** ([[10.1038__s41586-025-09746-w|Kim et al 2026]])
 * [[Inversion of protein folding neural networks|Hallucination]] using [[AlphaFold2]] and [[RosettaFold]]
 * Inpainting using [[RosettaFold]] ([[10.1126__science.abn2100|Wang et al 2022]])
 

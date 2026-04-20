@@ -3,7 +3,7 @@ tags:
   - diffusion-models/protein-design
   - protein-design/design
 created: "2025-01-20T09:45:59"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -22,4 +22,4 @@ modified: "2026-04-11T07:41:30"
 * [[Sheets are less designable than helices]]
 * [[Protein backbones designed using diffusion, but not sequence-based models, have fewer beta sheets]]
 
-[^lu2025]: Lu et al. (2025) "Assessing Generative Model Coverage of Protein Structures with SHAPES." https://doi.org/10.1101/2025.01.09.632260
+[^lu2025]: Lu et al. (2025) "Assessing generative model coverage of protein structures with SHAPES." Cell Systems. https://doi.org/10.1016/j.cels.2025.101347

@@ -4,7 +4,7 @@ tags:
   - protein-design/design
   - tm-score
 created: "2024-11-04T23:45:40"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -42,7 +42,7 @@ modified: "2026-04-11T07:41:30"
 * [[Protein backbones designed by diffusion, but not by language models, have more secondary structure]]
 * [[De novo designed proteins with alpha helices are easier to predict than those with other secondary structures]]
 
-[^lin2023]: Lin & AlQuraishi (2023) "Generating Novel, Designable, and Diverse Protein Structures by Equivariantly Diffusing Oriented Residue Clouds." https://doi.org/10.48550/arXiv.2301.12485
+[^lin2023]: Lin & AlQuraishi (2023) "Generating Novel, Designable, and Diverse Protein Structures by Equivariantly Diffusing Oriented Residue Clouds." ICML. https://proceedings.mlr.press/v202/lin23a.html
 [^ingraham2023]: Ingraham et al. (2023) "Illuminating protein space with a programmable generative model." *Nature*. https://doi.org/10.1038/s41586-023-06728-8
 [^lee2023]: Lee et al. (2023) "Score-based generative modeling for de novo protein design." *Nature Computational Science*. https://doi.org/10.1038/s43588-023-00440-3
 [^huguet2024]: Huguet et al. (2024) "Sequence-Augmented SE(3)-Flow Matching For Conditional Protein Backbone Generation." https://doi.org/10.48550/ARXIV.2405.20313

@@ -4,7 +4,7 @@ tags:
   - conformational-dynamics/modeling
   - tm-score
 created: "2025-05-18T00:49:42"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -17,4 +17,4 @@ modified: "2026-04-11T07:41:30"
 
 *Figure from [^kyrylenko2025]*
 
-[^kyrylenko2025]: Kyrylenko et al. (2025) "Sampling and ranking of protein conformations using machine learning techniques do not improve the quality of rigid protein-protein docking." https://doi.org/10.1101/2025.05.13.652389
+[^kyrylenko2025]: Stratiichuk et al. (2025) "Sampling and Ranking of Protein Conformations Using Machine Learning Techniques Do Not Improve the Quality of Rigid Protein–Protein Docking." Journal of Chemical Information and Modeling. https://doi.org/10.1021/acs.jcim.5c01765

@@ -1,11 +1,11 @@
 ---
 tags:
 created: "2024-04-19T11:39:06"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
 
 **[^corso2023] aligned models for benchmarking ligand binding by [[DiffDock]] using a weighted exponential with a distance to the ligand.**
 
-[^corso2023]: Corso et al. (2022) "DiffDock: Diffusion Steps, Twists, and Turns for Molecular Docking." https://doi.org/10.48550/arXiv.2210.01776
+[^corso2023]: Corso et al. (2023) "DiffDock: Diffusion Steps, Twists, and Turns for Molecular Docking." ICLR. https://openreview.net/forum?id=kKF8_K-mBbS

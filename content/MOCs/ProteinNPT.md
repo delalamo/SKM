@@ -2,7 +2,7 @@
 title: ProteinNPT
 tags:
 created: 2026-04-10T14:02:57
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T07:16:03"
 ---
 
 **ProteinNPT** is a module that can be appended to [[Multiple sequence alignments|MSA]]-based [[Protein language models|protein language models]] that was first introduced by [[10.1101__2023.12.06.570473|Notin et al 2023b]].
@@ -21,4 +21,4 @@ modified: "2026-04-17T06:40:29"
 
 <!-- generated -->
 
-[^muir2024]: Muir et al. (2024) "Evolutionary-Scale Enzymology Enables Biochemical Constant Prediction Across a Multi-Peaked Catalytic Landscape." https://doi.org/10.1101/2024.10.23.619915
+[^muir2024]: Muir et al. (2025) "Evolutionary-scale enzymology enables exploration of a rugged catalytic landscape." Science. https://doi.org/10.1126/science.adu1058

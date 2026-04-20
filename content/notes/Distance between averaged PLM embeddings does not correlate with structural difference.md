@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/representations
 created: "2024-11-14T03:05:00"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -19,6 +19,6 @@ modified: "2026-04-11T07:41:30"
 * [[PLM embeddings contain enough information to align proteins without fine-tuning]]
 * [[Protein language model embeddings are more predictive of homology than catalytic efficiency]]
 
-[^pantolini2022]: Pantolini et al. (2022) "Embedding-based alignment: combining protein language models and alignment approaches to detect structural similarities in the twilight-zone." https://doi.org/10.1101/2022.12.13.520313
+[^pantolini2022]: Pantolini et al. (2024) "Embedding-based alignment: combining protein language models with dynamic programming alignment to detect structural similarities in the twilight-zone." Bioinformatics. https://doi.org/10.1093/bioinformatics/btad786
 [^kilinc2023]: Kilinc et al. (2023) "Improved global protein homolog detection with major gains in function identification." *Proceedings of the National Academy of Sciences*. https://doi.org/10.1073/pnas.2211823120
 [^rives2021]: Rives et al. (2021) "Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences." *Proceedings of the National Academy of Sciences*. https://doi.org/10.1073/pnas.2016239118

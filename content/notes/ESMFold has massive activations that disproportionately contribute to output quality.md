@@ -7,4 +7,4 @@
 
 *Figure from [^lu2024]*
 
-[^lu2024]: Lu et al. (2024) "Tokenized and Continuous Embedding Compressions of Protein Sequence and Structure." https://doi.org/10.1101/2024.08.06.606920
+[^lu2024]: Lu et al. (2025) "Tokenized and continuous embedding compressions of protein sequence and structure." Patterns. https://doi.org/10.1016/j.patter.2025.101289

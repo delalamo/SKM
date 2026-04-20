@@ -2,7 +2,7 @@
 title: Tranception
 tags:
 created: 2026-04-10T14:02:57
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T07:16:03"
 ---
 
 **Tranception** is an autoregressive [[Protein language models|protein language model]] that pulls information from [[Multiple sequence alignments]] at runtime. 
@@ -11,4 +11,4 @@ modified: "2026-04-17T06:40:29"
 
 <!-- generated -->
 
-[^notin2022b]: Notin et al. (2022) "Tranception: Protein Fitness Prediction with Autoregressive Transformers and Inference-Time Retrieval." https://doi.org/10.48550/arXiv.2205.13760
+[^notin2022b]: Notin et al. (2022) "Tranception: Protein Fitness Prediction with Autoregressive Transformers and Inference-time Retrieval." ICML. https://proceedings.mlr.press/v162/notin22a.html

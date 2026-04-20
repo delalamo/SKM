@@ -4,7 +4,7 @@ tags:
   - plddt
   - pae
 created: "2026-02-20T18:08:22"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -14,4 +14,4 @@ modified: "2026-04-11T07:27:50"
 #### See also
 * [[pLDDT and PAE inversely correlated with protein dynamics in dynamic naturally occurring proteins, but not de novo proteins]]
 
-[^corso2023]: Corso et al. (2022) "DiffDock: Diffusion Steps, Twists, and Turns for Molecular Docking." https://doi.org/10.48550/arXiv.2210.01776
+[^corso2023]: Corso et al. (2023) "DiffDock: Diffusion Steps, Twists, and Turns for Molecular Docking." ICLR. https://openreview.net/forum?id=kKF8_K-mBbS

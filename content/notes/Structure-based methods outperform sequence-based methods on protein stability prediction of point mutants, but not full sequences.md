@@ -2,7 +2,7 @@
 tags:
   - thermostability/prediction
 created: "2026-04-05T17:45:06"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -77,7 +77,7 @@ Data are ambiguous about when [[Rosetta]] or [[ProteinMPNN]] is better ([^reeves
 
 - [[MSA-based structure predictions outperform PLM-based methods]]
 
-[^reeves2023]: Reeves & Kalyaanamoorthy (2023) "Zero-Shot Transfer of Protein Sequence Likelihood Models to Thermostability Prediction." https://doi.org/10.1101/2023.07.17.549396
+[^reeves2023]: Reeves & Kalyaanamoorthy (2024) "Zero-shot transfer of protein sequence likelihood models to thermostability prediction." Nature Machine Intelligence. https://doi.org/10.1038/s42256-024-00887-7
 [^wang2023]: Wang et al. (2023) "PDB-Struct: A Comprehensive Benchmark for Structure-based Protein Design." https://doi.org/10.48550/arXiv.2312.00080
 [^tan2023]: Tan et al. (2023) "Multi-level Protein Representation Learning for Blind Mutational Effect Prediction." https://doi.org/10.48550/arXiv.2306.04899
 [^cho2024]: Cho et al. (2024) "Implicit modeling of the conformational landscape and sequence allows scoring and generation of stable proteins." https://doi.org/10.1101/2024.12.20.629706

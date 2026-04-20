@@ -2,7 +2,7 @@
 tags:
   - variant-effect-prediction
 created: 2024-05-01T03:10:05
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -17,5 +17,5 @@ Similar conclusions were reached by [^tsuboyama2023]:
 
 Combining with secondary structure information, this was more effective than solvent accessibility in predicting mutation effect.
 
-[^topolska2023]: Topolska et al. (2023) "Deep indel mutagenesis reveals the impact of amino acid insertions and deletions on protein stability and function." https://doi.org/10.1101/2023.10.06.561180
+[^topolska2023]: Topolska et al. (2025) "Deep indel mutagenesis reveals the impact of amino acid insertions and deletions on protein stability and function." Nature Communications. https://doi.org/10.1038/s41467-025-57510-5
 [^tsuboyama2023]: Tsuboyama et al. (2023) "Mega-scale experimental analysis of protein folding stability in biology and design." *Nature*. https://doi.org/10.1038/s41586-023-06328-6

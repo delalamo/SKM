@@ -3,7 +3,7 @@ tags:
   - structure-prediction/sampling
   - conformational-dynamics/modeling
 created: "2024-05-29T10:29:14"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-20T07:16:03"
 ---
 
 ## Summary
@@ -15,4 +15,4 @@ modified: "2026-04-11T07:27:50"
 * Used RMSD loss ([[RMSD is a poor training objective for structure prediction]])
 * Resulting models were more amenable to ligand docking ([[High-accuracy computational models might not always be effective for ligand docking]])
 
-[^mansoor2023]: Mansoor et al. (2023) "Protein Ensemble Generation through Variational Autoencoder Latent Space Sampling." https://doi.org/10.1101/2023.08.01.551540
+[^mansoor2023]: Mansoor et al. (2024) "Protein Ensemble Generation Through Variational Autoencoder Latent Space Sampling." Journal of Chemical Theory and Computation. https://doi.org/10.1021/acs.jctc.3c01057

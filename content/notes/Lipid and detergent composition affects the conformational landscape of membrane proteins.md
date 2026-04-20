@@ -2,7 +2,7 @@
 tags:
   - conformational-dynamics/kinetics
 created: "2024-06-23T04:57:44"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -13,4 +13,4 @@ modified: "2026-04-11T07:41:30"
 ![[Pasted-image-20240623102055.png]]
 *Figures from [^hoffmann2024]*
 
-[^hoffmann2024]: Hoffmann et al. (2024) "The ABC transporter MsbA in a dozen environments." https://doi.org/10.1101/2024.06.20.599867
+[^hoffmann2024]: Hoffmann et al. (2025) "The ABC transporter MsbA in a dozen environments." Structure. https://doi.org/10.1016/j.str.2025.02.002

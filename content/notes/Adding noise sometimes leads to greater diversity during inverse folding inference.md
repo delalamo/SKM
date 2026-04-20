@@ -2,7 +2,7 @@
 tags:
   - inverse-folding/evaluation
 created: 2025-02-19T02:27:19
-modified: 2026-04-11T07:41:30
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -19,4 +19,4 @@ modified: 2026-04-11T07:41:30
 
 - [[Adding noise while training non-Ab inverse folding models improves self-consistency while worsening sequence recovery]]
 
-[^liu2024]: Liu et al. (2024) "All-atom protein sequence design based on geometric deep learning." https://doi.org/10.1101/2024.03.18.585651
+[^liu2024]: Liu et al. (2024) "All‐Atom Protein Sequence Design Based on Geometric Deep Learning." Angewandte Chemie International Edition. https://doi.org/10.1002/anie.202411461

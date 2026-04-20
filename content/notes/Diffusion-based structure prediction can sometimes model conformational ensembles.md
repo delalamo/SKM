@@ -4,7 +4,7 @@ tags:
   - protein-folding/structure-prediction
   - tm-score
 created: "2026-04-10T15:35:05"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T07:16:03"
 ---
 
 #### Summary
@@ -14,6 +14,6 @@ modified: "2026-04-20T10:13:23"
 #### See also
 * [[Biomolecular diffusion models cannot reproduce the equilibrium dynamics of the simulations they are trained on]]
 
-[^fan2024]: Fan et al. (2024) "Accurate Conformation Sampling via Protein Structural Diffusion." https://doi.org/10.1101/2024.05.20.594916
+[^fan2024]: Fan et al. (2024) "Accurate Conformation Sampling via Protein Structural Diffusion." Journal of Chemical Information and Modeling. https://doi.org/10.1021/acs.jcim.4c00928
 [^jing2023]: Jing et al. (2023) "EigenFold: Generative Protein Structure Prediction with Diffusion Models." https://doi.org/10.48550/arxiv.2304.02198
 [^abramson2024]: Abramson et al. (2024) "Accurate structure prediction of biomolecular interactions with AlphaFold 3." *Nature*. https://doi.org/10.1038/s41586-024-07487-w

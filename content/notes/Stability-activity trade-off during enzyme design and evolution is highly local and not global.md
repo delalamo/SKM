@@ -2,7 +2,7 @@
 tags:
   - thermostability/design
 created: "2025-03-15T23:46:30"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:16:03"
 ---
 
 ---
@@ -21,6 +21,6 @@ In enzymes, [^hou2023] find that residues in the first shell surrounding the act
 
 [^tokuriki2008]: Tokuriki et al. (2008) "How Protein Stability and New Functions Trade Off." *PLoS Computational Biology*. https://doi.org/10.1371/journal.pcbi.1000002
 [^sennett2023]: Sennett et al. (2023) "The most probable ancestral sequence reconstruction yields proteins without systematic bias in thermal stability or activity." https://doi.org/10.1101/2023.02.22.529562
-[^muir2024]: Muir et al. (2024) "Evolutionary-Scale Enzymology Enables Biochemical Constant Prediction Across a Multi-Peaked Catalytic Landscape." https://doi.org/10.1101/2024.10.23.619915
+[^muir2024]: Muir et al. (2025) "Evolutionary-scale enzymology enables exploration of a rugged catalytic landscape." Science. https://doi.org/10.1126/science.adu1058
 [^hou2023]: Hou et al. (2023) "Enzyme Stability-Activity Trade-Off: New Insights from Protein Stability Weaknesses and Evolutionary Conservation." *Journal of Chemical Theory and Computation*. https://doi.org/10.1021/acs.jctc.3c00036
-[^zarifi2025]: Zarifi et al. (2025) "Distal mutations enhance catalysis in designed enzymes by facilitating substrate binding and product release." https://doi.org/10.1101/2025.02.21.639315
+[^zarifi2025]: Zarifi et al. (2025) "Distal mutations enhance catalysis in designed enzymes by facilitating substrate binding and product release." Nature Communications. https://doi.org/10.1038/s41467-025-63802-7
