@@ -2,9 +2,8 @@
 tags:
   - protein-language-models/training
   - ancestral-sequence-reconstruction
-  - ancestral-sequence-reconstruction/observations
 created: "2026-03-18T07:59:23"
-modified: "2026-04-20T09:16:21"
+modified: "2026-04-20T09:22:29"
 summary: Multiplexed ancestral sequence reconstruction
 ---
 #### Summary

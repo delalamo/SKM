@@ -1,10 +1,8 @@
 ---
 tags:
   - inverse-folding/evaluation
-  - inverse-folding/observations
-  - protein-language-models/applications
 created: "2026-04-05T17:58:34"
-modified: "2026-04-20T09:16:21"
+modified: "2026-04-20T09:22:29"
 summary: The effect of including both sequence and structural features can be synergistic
 ---
 #### Summary

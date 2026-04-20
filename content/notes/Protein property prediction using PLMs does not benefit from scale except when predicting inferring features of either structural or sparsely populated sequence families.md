@@ -2,11 +2,8 @@
 tags:
   - protein-language-models/representations
   - tm-score
-  - protein-language-models/applications
-  - mutations/prediction
-  - esm/observations
 created: "2026-04-05T17:54:18"
-modified: "2026-04-20T09:16:21"
+modified: "2026-04-20T09:22:29"
 summary: Smaller PLMs models are more effective at variant effect prediction
 ---
 #### Summary

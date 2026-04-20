@@ -1,10 +1,8 @@
 ---
 tags:
   - thermostability/mutations
-  - thermostability/observations
-  - mutations/missense
 created: "2024-05-03T04:40:15"
-modified: "2026-04-20T09:16:21"
+modified: "2026-04-20T09:22:29"
 summary: Most missense mutations are destabilizing
 ---
 #### Summary

@@ -1,10 +1,8 @@
 ---
 tags:
   - structure-prediction
-  - ancestral-sequence-reconstruction/examples
-  - alphafold2
 created: "2024-05-08T18:00:53"
-modified: "2026-04-20T09:16:21"
+modified: "2026-04-20T09:22:29"
 summary: Evolutionary pathway between different folds identified with ancestral sequence reconstruction and AlphaFold2
 ---
 #### Summary

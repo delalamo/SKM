@@ -1,9 +1,8 @@
 ---
 tags:
   - inverse-folding/evaluation
-  - inverse-folding/observations
 created: "2024-04-24T16:23:56"
-modified: "2026-04-20T09:16:21"
+modified: "2026-04-20T09:22:29"
 summary: Inverse folding has lower sequence recovery with smaller proteins
 ---
 #### Summary
