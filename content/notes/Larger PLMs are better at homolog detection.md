@@ -1,8 +1,9 @@
 ---
 tags:
   - protein-language-models/representations
+  - alignment/sequence-based
 created: "2026-01-22T12:38:44"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T07:58:49"
 ---
 
 #### Summary

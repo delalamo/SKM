@@ -22,6 +22,7 @@ const MOC_SLUGS: Record<string, string> = {
   "pae": "MOCs/Predicted-aligned-error",
   "diffusion-models": "MOCs/Diffusion-models",
   "diffusion-guidance": "MOCs/Diffusion-guidance",
+  "alignment": "MOCs/Alignment",
 }
 
 // Maps subtag slugs to the rendered MOC section title.
@@ -33,6 +34,8 @@ const SUBTAG_TITLES: Record<string, string> = {
   "architecture": "Architecture",
   "limitations": "Limitations",
   "representations": "Representations",
+  "sequence-based": "Sequence-based",
+  "structure-based": "Structure-based",
   "design":     "Design",
   "implementation": "Implementation",
   "protein-design": "Protein Design",

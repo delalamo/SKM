@@ -37,6 +37,8 @@ SUBTAG_TITLES = {
     "architecture":        "Architecture",
     "limitations":         "Limitations",
     "representations":     "Representations",
+    "sequence-based":      "Sequence-based",
+    "structure-based":     "Structure-based",
     "design":              "Design",
     "implementation":      "Implementation",
     "protein-design":      "Protein Design",
@@ -87,6 +89,7 @@ MOC_TITLES = {
     "pae":                          "Predicted aligned error",
     "diffusion-models": "Diffusion models",
     "diffusion-guidance":"Diffusion guidance",
+    "alignment":                    "Alignment",
 }
 
 
