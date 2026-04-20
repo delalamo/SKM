@@ -5,10 +5,12 @@ on:
     branches: [main]
     paths:
       - "content/notes/**.md"
+      - "content/tags/**.md"
       - "scripts/format_notes.py"
   pull_request:
     paths:
       - "content/notes/**.md"
+      - "content/tags/**.md"
       - "scripts/format_notes.py"
   workflow_dispatch:
 
@@ -24,10 +26,10 @@ jobs:
           # Bare fallbacks match: [^key]: Some Text. https://doi.org/...
           # Full citations always contain a quoted title (") or italicised journal (*)
           PATTERN='^\[\^[a-z0-9]+\]: [^"*]+https://doi\.org/'
-          MATCHES=$(grep -rn --include="*.md" -E "$PATTERN" content/notes/ || true)
+          MATCHES=$(grep -rn --include="*.md" -E "$PATTERN" content/notes/ content/tags/ || true)
 
           if [ -n "$MATCHES" ]; then
-            echo "❌ Found bare fallback citations that were never fully fetched:"
+            echo "❌ Found bare fallback citations in authored content that were never fully fetched:"
             echo ""
             echo "$MATCHES"
             echo ""

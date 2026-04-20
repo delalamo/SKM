@@ -21,7 +21,7 @@ Also warns (step 4) about any un-migrated DOI-based citations that were never
 converted to [^key] footnotes:
 
   [10.xxxx/yyy|Author Year]    — broken single-bracket (notes)
-  [[10.xxxx/yyy|Author Year]]  — wikilink in a Figure caption (MOCs)
+  [[10.xxxx/yyy|Author Year]]  — wikilink in a Figure caption (tag pages)
 
 Run scripts/migrate_wikilink_citations.py to fix those automatically.
 
@@ -37,7 +37,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from utils import REPO_ROOT
 
 NOTES_DIR = REPO_ROOT / "content" / "notes"
-MOCS_DIR  = REPO_ROOT / "content" / "MOCs"
+TAGS_DIR  = REPO_ROOT / "content" / "tags"
 
 FM_RE = re.compile(r'\A---\n.*?\n---\n', re.DOTALL)
 
@@ -101,7 +101,7 @@ DOUBLE_SPACE_RE = re.compile(r'  +')
 #
 # Patterns detected (both use the encoded DOI form  10.xxxx__yyy):
 #   [10.xxxx__yyy|Author Year]     single-bracket broken markup (notes)
-#   [[10.xxxx__yyy|Author Year]]   wikilink in a Figure caption (MOCs)
+#   [[10.xxxx__yyy|Author Year]]   wikilink in a Figure caption (tag pages)
 # ---------------------------------------------------------------------------
 UNMIGRATED_SINGLE_RE = re.compile(r'\[10\.[^\]|]+\|[^\]]+\](?!\])')
 UNMIGRATED_DOUBLE_RE = re.compile(r'\[\[10\.[^\]|]+\|[^\]]+\]\]')
@@ -113,7 +113,7 @@ def find_unmigrated(text: str) -> list[tuple[int, str]]:
     Rules:
     * Single-bracket [10.xxx|Author Year] — always broken, always flag.
     * Double-bracket [[10.xxx|Author Year]] — flag ONLY in *Figure/Table/Image
-      from …* caption lines, since body-text wikilinks in MOCs are intentional.
+      from …* caption lines, since body-text wikilinks in tag pages are intentional.
     """
     hits = []
     CAPTION_RE = re.compile(r'^\s*\*.*(?:Figure|Table|Image|Panel)\s+from', re.IGNORECASE)
@@ -189,7 +189,7 @@ def main() -> None:
     if file_args:
         targets = [Path(p) for p in file_args]
     else:
-        targets = sorted(NOTES_DIR.glob('*.md')) + sorted(MOCS_DIR.glob('*.md'))
+        targets = sorted(NOTES_DIR.glob('*.md')) + sorted(TAGS_DIR.glob('*.md'))
 
     if dry_run:
         print('DRY RUN — no files will be modified\n')

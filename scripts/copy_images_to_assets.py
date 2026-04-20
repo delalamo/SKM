@@ -2,7 +2,7 @@
 """
 copy_images_to_assets.py
 
-Scans all markdown files under content/notes/ and content/MOCs/ for
+Scans all markdown files under content/notes/ and content/tags/ for
 already-converted image references like:
     ![](/assets/image-name.png)
 
@@ -107,8 +107,8 @@ def main():
     image_index = build_image_index(IMAGES_DIR)
     print(f"Found {len(image_index)} images in {IMAGES_DIR}")
 
-    # Scan both notes and MOCs
-    scan_dirs = [CONTENT_DIR / "notes", CONTENT_DIR / "MOCs"]
+    # Scan notes and tag pages
+    scan_dirs = [CONTENT_DIR / "notes", CONTENT_DIR / "tags"]
     md_files  = []
     for d in scan_dirs:
         if d.is_dir():

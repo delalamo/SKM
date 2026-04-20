@@ -196,8 +196,6 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
     const isCurrent = d.id === slug
     if (isCurrent) {
       return computedStyleMap["--secondary"]
-    } else if (d.id.startsWith("MOCs/")) {
-      return "#14b8a6"  // bright teal for MOC nodes
     } else {
       return computedStyleMap["--gray"]
     }
