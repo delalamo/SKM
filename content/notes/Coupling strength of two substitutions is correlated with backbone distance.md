@@ -3,7 +3,7 @@ tags:
   - variant-effect-prediction
   - epistasis
 created: 2026-03-16T11:46:02
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -26,7 +26,7 @@ From [^faure2024]
 
 ![[-200-.png]]
 
-*Figure from [^tharp2026] showing this effect in antibodies*
+*Ref [^tharp2026] showing this effect in antibodies*
 
 [^tharp2026]: Tharp et al. (2026) "Biophysical trade-offs in antibody evolution are resolved by conformation-mediated epistasis." https://doi.org/10.64898/2026.03.12.711465
 [^faure2024]: Faure et al. (2024) "The genetic architecture of protein stability." *Nature*. https://doi.org/10.1038/s41586-024-07966-0

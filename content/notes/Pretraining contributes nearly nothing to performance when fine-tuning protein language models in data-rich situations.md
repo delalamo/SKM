@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/training
 created: "2026-02-26T15:30:30"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T08:16:13"
 ---
 
 ## Summary
@@ -12,6 +12,6 @@ modified: "2026-04-11T07:41:30"
 ## Figures
 
 ![[Pasted-image-20260226153026.png]]
-*Figure from [Didi et al 2026][^didi2026]*
+*Ref [Didi et al 2026][^didi2026]*
 
 [^didi2026]: Didi et al. (2026) "FLIP2: Expanding Protein Fitness Landscape Benchmarks for Real-World Machine Learning Applications." https://doi.org/10.64898/2026.02.23.707496

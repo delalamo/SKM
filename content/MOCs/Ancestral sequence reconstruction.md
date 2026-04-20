@@ -2,12 +2,12 @@
 title: Ancestral sequence reconstruction
 tags:
 created: 2026-04-10T14:02:57
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:16:13"
 ---
 
 **Ancestral sequence reconstruction** refers to the process of inferring ancestral sequences using extant sequences.
 ![[Fold-switching-evolution.png]]
-*Figure from [^dishman2021]*
+*Ref [^dishman2021]*
 
 <!-- generated -->
 

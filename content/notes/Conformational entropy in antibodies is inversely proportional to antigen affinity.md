@@ -3,14 +3,14 @@ tags:
   - cdrh3
   - protein-protein-interactions
 created: 2024-10-02T04:07:34
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:16:13"
 ---
 #### Summary
 **[[Protein dynamics|Conformational entropy]] of loops of [[Antibodies|antibodies]] is inversely proportional to antigen-binding affinity** [^mikolajek2022][^thorpe2007][^lhr2022].
 
 #### Figures
 ![[Pasted-image-20240423093012.png]]
-*Figure from [^mikolajek2022]*
+*Ref [^mikolajek2022]*
 
 [^mikolajek2022]: Mikolajek et al. (2022) "Correlation between the binding affinity and the conformational entropy of nanobody SARS-CoV-2 spike protein complexes." *Proceedings of the National Academy of Sciences*. https://doi.org/10.1073/pnas.2205412119
 [^thorpe2007]: Thorpe & Brooks (2007) "Molecular evolution of affinity and flexibility in the immune system." *Proceedings of the National Academy of Sciences*. https://doi.org/10.1073/pnas.0610064104

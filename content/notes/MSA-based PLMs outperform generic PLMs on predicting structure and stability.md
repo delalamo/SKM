@@ -2,7 +2,7 @@
 tags:
   - thermostability/prediction
 created: "2026-04-05T17:51:40"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:16:13"
 ---
 #### Summary
  **MSA-based [[Protein language models|PLMs]] such as [[MSA Transformer]] and the [[Evoformer]] are more effective than generic PLMs at predicting [[Structure prediction|structure]]** [^hu2022]** and [[Stability and thermostability|stability]]** [^tan2023]. [^notin2023] found that [[MSA Transformer]] outperformed [[Protein language models|PLMs]] like [[ESM]]2-15B on almost all benchmarks in [[ProteinGym]].
@@ -46,7 +46,7 @@ Conclusions from [^hu2022] about the representations from [[Evoformer]] as a sta
 | | | t36 | 3,000 | 0.384 | 0.261 | 0.383 | 0.495 | 0.419 | 0.429 | 0.195 |
 | | | t48 | 15,000 | 0.394 | 0.313 | 0.391 | 0.457 | 0.402 | 0.442 | 0.251 |
 | | P¹³LG | k20_h512 | 148 | `0.424` | **0.395** | `0.426` | `0.516` | 0.425 | `0.480` | 0.297 |
-*Figure from [^tan2023]*
+*Ref [^tan2023]*
 
 [^hu2022]: Hu et al. (2022) "Exploring evolution-aware & -free protein language models as protein function predictors." NeurIPS. http://papers.nips.cc/paper_files/paper/2022/hash/fe066022bab2a6c6a3c57032a1623c70-Abstract-Conference.html
 [^tan2023]: Tan et al. (2023) "Multi-level Protein Representation Learning for Blind Mutational Effect Prediction." https://doi.org/10.48550/arXiv.2306.04899

@@ -2,7 +2,7 @@
 tags:
   - conformational-dynamics/molecular-dynamics
 created: "2025-05-23T04:55:28"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -10,6 +10,6 @@ modified: "2026-04-11T07:41:30"
 
 #### Figures
 ![[Pasted-image-20250523102840.png]]
-*Figure from [^fung2022]*
+*Ref [^fung2022]*
 
 [^fung2022]: Fung et al. (2022) "The Impact of Protein Dynamics on Residue-Residue Coevolution and Contact Prediction." https://doi.org/10.1101/2022.10.16.512436

@@ -2,7 +2,7 @@
 tags:
   - evolution-and-natural-selection
 created: 2024-05-05T01:24:43
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -12,7 +12,7 @@ A large number of insertion mutations in one protein of the study were associate
 #### Figures
 
 ![[Fitness-effect-indels.png]]
-*Figure from [^topolska2023]*
+*Ref [^topolska2023]*
 
 #### See also
 

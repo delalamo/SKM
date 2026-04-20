@@ -4,14 +4,14 @@ tags:
   - plddt
   - pae
 created: "2026-02-20T18:08:22"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T08:16:13"
 ---
 #### Summary
 **[[pLDDT]] is inversely correlated with [[Complementarity-determining regions#CDRH3|CDRH3]] length** [^chen2024].
 
 #### Figures
 ![[Confidence.png]]
-*Figure from [^chen2024]*
+*Ref [^chen2024]*
 
 #### See also
 - [[pLDDT and PAE inversely correlated with protein dynamics in dynamic naturally occurring proteins, but not de novo proteins]]

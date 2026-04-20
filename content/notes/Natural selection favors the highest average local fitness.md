@@ -3,7 +3,7 @@ title: Natural selection favors the highest average local fitness
 tags:
   - evolution-and-natural-selection
 created: 2024-06-11T01:58:30
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:16:13"
 ---
 #### Summary
  **Natural selection favors the highest average local fitness, rather than the absolute highest fitness** [^wilke2001][^codoer2006]. An example of this is dihydrofolate reductase[^papkou2023].
@@ -17,7 +17,7 @@ Experimental evidence supporting this model was obtained in viral samples by [^c
 
 #### Figures
 ![[Pasted-image-20231120112637.png|400]]
-*Figure from [^wilke2001]*
+*Ref [^wilke2001]*
 
 #### See also
 * [[Natural sequences deviate from highest stability variants]]

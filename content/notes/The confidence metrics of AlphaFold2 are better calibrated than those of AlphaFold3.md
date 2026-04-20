@@ -4,7 +4,7 @@ tags:
   - alphafold2
   - structure-prediction/metrics
 created: "2025-12-19T12:46:41"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -15,6 +15,6 @@ modified: "2026-04-20T10:13:23"
 
 ![[Bootsrap-Cl-for-AF2-metrics-under-subsamping.png]]
 
-*Figure from [^roney2025]*
+*Ref [^roney2025]*
 
 [^roney2025]: Roney et al. (2025) "Protein Diffusion Models as Statistical Potentials." https://doi.org/10.64898/2025.12.09.693073

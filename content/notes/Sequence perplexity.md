@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2026-04-05T17:41:51
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:16:13"
 ---
 #### Summary
 Sequence perplexity is a metric used by [[Protein language models|protein language models]] and [[Inverse folding|inverse folding]] to quantify sequence recovery. Self-consistency perplexity is a derived metric where the perplexity is calculated using a [[Structure prediction|forward-folded model]] rather than the original model/structure.
@@ -22,7 +22,7 @@ Meier et al. introduced ways of calculating probabilities or "energies" of seque
 - **Pseudo-likelihood:** [^devkota2024] found that [[ESM]]2 pseudo-log likelihood values scaled linearly with the length of the sequence. They introduced a length-invariant correction ($pLL_{invar}$): $pLL(S)=\sum{\log{p(x_{i}=x_{i}^{mnt}|x_{i-1}^{mnt}) - \log{p(x_{i}=x_{i}^{wt}|x_{i-1}^{wt})}}}$, $pLL_{invar}(S)=\frac{pLL(S)}{|-0.406*len(S)+1.363|}$
 
 ![[Pasted-image-20240820153913.png]]
-*Figure from [^devkota2024]*
+*Ref [^devkota2024]*
 
 The Spearman correlations against [[ProteinGym]] were: masked marginal 0.582, mutant marginal 0.578, wildtype marginal 0.572, pseudolikelihood 0.552.
 

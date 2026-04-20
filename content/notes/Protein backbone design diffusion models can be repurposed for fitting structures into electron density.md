@@ -4,7 +4,7 @@ tags:
   - diffusion-guidance/structure-prediction
   - protein-folding/structure-prediction
 created: "2024-12-31T07:33:08"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -15,6 +15,6 @@ modified: "2026-04-11T07:41:30"
 
 ![[Pasted-image-20241231133007.png]]
 
-*Figure from [^maddipatla2024]*
+*Ref [^maddipatla2024]*
 
 [^maddipatla2024]: Maddipatla et al. (2024) "Generative modeling of protein ensembles guided by crystallographic electron densities." https://doi.org/10.48550/ARXIV.2412.13223

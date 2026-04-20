@@ -5,7 +5,7 @@ tags:
   - diffusion-models/structure-prediction
   - plddt
 created: 2026-04-05T17:25:38
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -23,7 +23,7 @@ modified: "2026-04-20T10:13:23"
 | Protenix-v1 | 24.11 | 0.2488 |
 | Protenix-v1-20250630 | **39.49** | **0.3574** |
 
-*Figure from [^zhang2026]*
+*Ref [^zhang2026]*
 
 #### Publication history
 

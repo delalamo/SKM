@@ -4,7 +4,7 @@ tags:
   - conformational-dynamics/modeling
   - tm-score
 created: "2025-05-18T00:49:42"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -15,6 +15,6 @@ modified: "2026-04-20T07:16:03"
 
 ![[RMSD-Distribution-Across-Cluster-Representatives---BioEmu-vs-AFSample2.png]]
 
-*Figure from [^kyrylenko2025]*
+*Ref [^kyrylenko2025]*
 
 [^kyrylenko2025]: Stratiichuk et al. (2025) "Sampling and Ranking of Protein Conformations Using Machine Learning Techniques Do Not Improve the Quality of Rigid Protein–Protein Docking." Journal of Chemical Information and Modeling. https://doi.org/10.1021/acs.jcim.5c01765

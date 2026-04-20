@@ -38,7 +38,7 @@ To add to the confusion, [[HDX-MS]] data suggest that [[Complementarity-determin
 
 ![[PCA-affinity-maturation-dynamics.png|600]]
 
-*Figure from [[10.3389__fimmu.2018.03065|Fernandez-Quintero et al 2018]]*
+*Ref [[10.3389__fimmu.2018.03065|Fernandez-Quintero et al 2018]]*
 
   
 

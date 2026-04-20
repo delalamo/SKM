@@ -3,7 +3,7 @@ title: Inverse folding
 tags:
   - inverse-folding
 created: "2026-04-10T14:02:57"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:16:13"
 ---
 
 **Inverse folding** describes the problem of designing a sequence for a structure. Typically these are limited to the twenty canonical amino acids.
@@ -22,7 +22,7 @@ modified: "2026-04-20T10:13:23"
 
 * **Training inverse folding models with backbone dihedral angles as features usually improved sequence recovery** ([[sTYuRVrdK3|Jamasb et al 2023]]).
 ![[Pasted-image-20240117115655.png]]
-	*Figure from [[sTYuRVrdK3|Jamasb et al 2023]]*
+	*Ref [[sTYuRVrdK3|Jamasb et al 2023]]*
 
 #### Execution
 

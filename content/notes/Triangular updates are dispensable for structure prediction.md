@@ -2,7 +2,7 @@
 tags:
   - structure-prediction/architecture
 created: "2025-11-07T17:49:25"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -13,7 +13,7 @@ modified: "2026-04-20T10:13:23"
 
 ![[Pasted-image-20251107172115.png]]
 
-*Figure from [^ouyangzhang2025]*
+*Ref [^ouyangzhang2025]*
 
 [^baek2023]: Baek et al. (2023) "Efficient and accurate prediction of protein structure using RoseTTAFold2." https://doi.org/10.1101/2023.05.24.542179
 [^ouyangzhang2025]: Ouyang-Zhang et al. (2025) "Triangle Multiplication Is All You Need For Biomolecular Structure Representations." https://doi.org/10.48550/ARXIV.2510.18870

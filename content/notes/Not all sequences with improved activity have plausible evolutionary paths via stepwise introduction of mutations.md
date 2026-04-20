@@ -3,7 +3,7 @@ tags:
   - epistasis
   - evolution-and-natural-selection
 created: 2026-03-29T11:17:38
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -22,11 +22,11 @@ In [^johnston2024], where a library of 160,000 sequences saturating four positio
 
 ![[Pasted-Graphic-26.png|400]]
 
-*Figure from [^johnston2024]*
+*Ref [^johnston2024]*
 
 ![[Pasted-Graphic-6-1.png|400]]
 
-*Figure from [^muir2024]*
+*Ref [^muir2024]*
 
 ![[Pasted image 20260413104440.png|400]]
 [^isakova2026]

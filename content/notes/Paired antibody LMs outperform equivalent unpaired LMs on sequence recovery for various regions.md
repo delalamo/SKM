@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/antibodies
 created: "2026-04-05T17:10:58"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:16:13"
 ---
 #### Summary
 **[[Antibodies|Antibody]] [[Protein language models|language models]] trained on paired [[Heavy chains|heavy]] and [[Light chains|light]] chains outperform equivalent models trained only on unpaired data** [^kenlay2024]. They also outperform generic PLMs.
@@ -31,6 +31,6 @@ modified: "2026-04-20T07:16:03"
 | IgT5-unpaired | *0.9809* | 0.9675 | *0.9752* | 0.9171 | 0.9076 | *0.9093* | 0.8423 | 0.9515 |
 | IgT5 | 0.9878 | 0.9735 | **0.9815** | **0.9784** | 0.9222 | **0.9163** | **0.8693** | **0.9656** |
 
-*Figure from [^kenlay2024]*
+*Ref [^kenlay2024]*
 
 [^kenlay2024]: Kenlay et al. (2024) "Large scale paired antibody language models." PLoS Comput. Biol.. https://doi.org/10.1371/JOURNAL.PCBI.1012646

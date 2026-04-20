@@ -3,7 +3,7 @@ title: Protein language models
 tags:
   - protein-language-models
 created: "2026-04-10T10:46:24"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:16:13"
 ---
 
 **Protein language models** (PLMs) are a type of [[Transformer]] model trained on either protein sequences or [[Multiple sequence alignments]].
@@ -30,7 +30,7 @@ modified: "2026-04-20T07:16:03"
 * **Homolog detection using PLM representations can be improved by compression** ([[10.1073__pnas.2211823120|Kilinc et al 2023]]). Using the full representations worsened detection AUC by 7.4%.
 * **[[Protein language models|PLMs]] with a smoother representation space are better predictors of protein function** ([[10.1038__s42256-024-00935-2|Matthews et al 2024]]).
 ![[Pasted-Graphic-2-1.png]]
-	*Figure from [^matthews2023]*
+	*Ref [^matthews2023]*
 
 #### Hybrid PLM-[[Inverse folding|inverse folding]] models
 

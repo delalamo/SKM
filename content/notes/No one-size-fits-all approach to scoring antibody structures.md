@@ -4,7 +4,7 @@ tags:
   - variant-effect-prediction
   - citation-fix
 created: 2024-04-26T04:28:02
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -15,4 +15,4 @@ modified: "2026-04-20T10:13:23"
 
 ![[Pasted-image-20231212084758.png]]
 
-*Figure from [[YTrlu38mM4|Nori et al 2023]]*
+*Ref [[YTrlu38mM4|Nori et al 2023]]*

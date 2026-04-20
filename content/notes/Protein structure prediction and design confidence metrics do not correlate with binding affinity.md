@@ -4,7 +4,7 @@ tags:
   - plddt
   - protein-protein-interactions
 created: 2026-03-06T11:07:36
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -14,7 +14,7 @@ modified: "2026-04-20T10:13:23"
 #### Figures
 
 ![[Pasted-image-20240624103326.png]]
-*Figure from [^li2024]*
+*Ref [^li2024]*
 
 #### See also
 

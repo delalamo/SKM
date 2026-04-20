@@ -5,6 +5,6 @@
 #### Figures
 ![[TMScore-to-Original-Structure.png]]
 
-*Figure from [^lu2024]*
+*Ref [^lu2024]*
 
 [^lu2024]: Lu et al. (2025) "Tokenized and continuous embedding compressions of protein sequence and structure." Patterns. https://doi.org/10.1016/j.patter.2025.101289

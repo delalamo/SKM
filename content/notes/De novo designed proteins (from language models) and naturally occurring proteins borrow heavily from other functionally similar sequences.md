@@ -2,7 +2,7 @@
 tags:
   - protein-design/design
 created: 2025-08-03T09:54:48
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -10,9 +10,9 @@ modified: "2026-04-20T10:13:23"
 
 #### Figures
 ![[Pasted-image-20250803095055.png]]
-*Figure from [^ruffolo2025]*
+*Ref [^ruffolo2025]*
 
 ![[Pasted-image-20240626064620.png|400]]
-*Figure from Brian Naughton's Twitter; red regions have two or more consecutive novel residues; the long loop in the top right is not conserved*
+*Ref Brian Naughton's Twitter; red regions have two or more consecutive novel residues; the long loop in the top right is not conserved*
 
 [^ruffolo2025]: Ruffolo et al. (2025) "Design of highly functional genome editors by modelling CRISPR–Cas sequences." *Nature*. https://doi.org/10.1038/s41586-025-09298-z

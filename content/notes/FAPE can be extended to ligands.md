@@ -2,7 +2,7 @@
 tags:
   - structure-prediction/architecture
 created: "2024-05-05T08:55:15"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -12,7 +12,7 @@ modified: "2026-04-20T07:16:03"
 #### Figures
 ![[Protein-ligand-design-method.png]]
 
-*Figure from [^qiao2022]*
+*Ref [^qiao2022]*
 
 #### See also
 * [[De novo structure prediction with ligands outperforms apo de novo structure prediction alone]]

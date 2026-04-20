@@ -4,7 +4,7 @@ tags:
   - protein-design/design
   - tm-score
 created: "2024-11-04T23:45:40"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-20T08:16:13"
 ---
 
 #### Summary
@@ -35,7 +35,7 @@ modified: "2026-04-20T07:16:03"
 
 ![[Pasted-image-20241105054451.png]]
 
-*Figure from [^alamdari2023]*
+*Ref [^alamdari2023]*
 
 #### See also
 
