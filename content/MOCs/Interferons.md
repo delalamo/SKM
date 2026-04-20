@@ -2,12 +2,12 @@
 title: Interferons
 tags:
 created: 2026-04-10T14:02:57
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T08:00:05"
 ---
 
 **Interferons** are a type of [[Cytokines|cytokine]] that interrupt protein production in cells.
 ![[Interferon-fig.png]]
-*Figure from [^aung2023]*
+*Figure from [@aung2023]*
 
 ## Type I IFN
 
@@ -54,5 +54,3 @@ These signal through the same pathway as type I interferons, but their receptor 
 An engineered version called H11 improved affinity to receptor complex by 150-fold (Mendoza et al *Immunity* 2017), leading to increased antiproliferative abilities relative to WT.
 
 <!-- generated -->
-
-[^aung2023]: Aung et al. (2023) "Recent and Future Perspectives on Engineering Interferons and other Cytokines as Therapeutics." *Trends in Biochemical Sciences*. https://doi.org/10.1016/j.tibs.2022.09.005

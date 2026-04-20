@@ -2,13 +2,13 @@
 title: EVE
 tags:
 created: 2026-04-10T14:02:57
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T08:00:05"
 ---
 
 EVE is a [[Variational autoencoders|VAE]]-based generative method for [[Variant effect prediction]] prediction that is trained on [[Multiple sequence alignments|MSAs]] ([[10.1038__s41586-021-04043-8|Frazer et al 2021]]).
 
 ![[Pasted-image-20240502090757.png]]
-*Figure from [^frazer2021]*
+*Figure from [@frazer2021]*
 
 #### Variations
 
@@ -16,5 +16,3 @@ EVE is a [[Variational autoencoders|VAE]]-based generative method for [[Variant 
 * 
 
 <!-- generated -->
-
-[^frazer2021]: Frazer et al. (2021) "Disease variant prediction with deep generative models of evolutionary data." *Nature*. https://doi.org/10.1038/s41586-021-04043-8

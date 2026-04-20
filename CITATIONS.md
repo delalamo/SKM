@@ -5,7 +5,7 @@ This site uses Quartz citations backed by `rehype-citation`.
 ## Adding a citation
 
 1. Add a BibTeX entry to `bibliography.bib`.
-2. Cite it in a note with Pandoc citation syntax such as `[@gurev2025]`.
+2. Cite it in a content page with Pandoc citation syntax such as `[@gurev2025]`.
 
 Example:
 
@@ -30,7 +30,7 @@ Example:
 }
 ```
 
-The citekey must match the key used in notes.
+The citekey must match the key used in content Markdown files.
 
 ## Citation style
 
@@ -39,10 +39,10 @@ Quartz is configured with the built-in `vancouver` CSL style, so citations rende
 ## Notes
 
 - Use `[@key]` for normal citations.
-- Reusing the same key in a note should reuse the same reference number.
+- Reusing the same key in a page should reuse the same reference number.
 - Do not create paper citations as manual Markdown footnotes like `[^key]`.
 - Ordinary explanatory footnotes can still use standard Markdown footnotes.
 
 ## Future automation
 
-This PR keeps bibliography entry creation manual for reliability. The repo already has migration scripts for the older footnote-based citation flow under `scripts/`, and a follow-up can add DOI-to-BibTeX generation once that path is verified in this environment.
+This PR keeps bibliography entry creation manual for reliability. The repo includes `scripts/migrate_note_citations_to_bibliography.py` to convert older footnote-based paper citations across `content/**/*.md`, and a follow-up can add DOI-to-BibTeX generation once that path is verified in this environment.

@@ -2,7 +2,7 @@
 """
 migrate_note_citations_to_bibliography.py
 
-Bulk-convert paper-style Markdown footnote citations in `content/notes/*.md`
+Bulk-convert paper-style Markdown footnote citations in `content/**/*.md`
 into Pandoc citations backed by a central `bibliography.bib`.
 
 Rules:
@@ -30,7 +30,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from utils import REPO_ROOT
 
-NOTES_DIR = REPO_ROOT / "content" / "notes"
+CONTENT_DIR = REPO_ROOT / "content"
 BIB_PATH = REPO_ROOT / "bibliography.bib"
 
 FM_RE = re.compile(r"\A---\n.*?\n---\n", re.DOTALL)
@@ -295,10 +295,65 @@ def record_quality(record: CitationRecord) -> tuple[int, int, int]:
 
 
 def read_existing_bib_keys() -> set[str]:
+  return set(read_existing_bib_entries())
+
+
+def read_existing_bib_entries() -> dict[str, str]:
   if not BIB_PATH.exists():
-    return set()
-  text = BIB_PATH.read_text("utf-8")
-  return set(re.findall(r"@\w+\{([^,]+),", text))
+    return {}
+
+  entries: dict[str, str] = {}
+  current_lines: list[str] = []
+  depth = 0
+
+  for line in BIB_PATH.read_text("utf-8").splitlines():
+    if not current_lines:
+      if re.match(r"^@\w+\{[^,]+,", line):
+        current_lines = [line]
+        depth = line.count("{") - line.count("}")
+      continue
+
+    current_lines.append(line)
+    depth += line.count("{") - line.count("}")
+    if depth <= 0:
+      entry = "\n".join(current_lines).strip()
+      match = re.match(r"^@\w+\{([^,]+),", current_lines[0])
+      if match:
+        entries[match.group(1)] = entry
+      current_lines = []
+      depth = 0
+
+  return entries
+
+
+def extract_bib_field(entry: str, field_name: str) -> str:
+  match = re.search(rf"^\s*{re.escape(field_name)}\s*=\s*\{{(.*)\}},?$", entry, re.MULTILINE)
+  if not match:
+    return ""
+  return normalize_whitespace(html.unescape(match.group(1).strip()))
+
+
+def existing_entry_matches_record(entry: str, record: CitationRecord) -> bool:
+  existing_title = extract_bib_field(entry, "title").lower()
+  existing_doi = extract_bib_field(entry, "doi").lower()
+  existing_url = extract_bib_field(entry, "url").lower()
+
+  if record.doi and existing_doi and record.doi.lower() == existing_doi:
+    return True
+  if record.url and existing_url and record.url.lower() == existing_url:
+    return True
+  if record.title_norm and existing_title and record.title_norm == existing_title:
+    return True
+  return False
+
+
+def find_matching_existing_key(
+  existing_entries: dict[str, str], records: list[CitationRecord]
+) -> str | None:
+  for key, entry in existing_entries.items():
+    if any(existing_entry_matches_record(entry, record) for record in records):
+      return key
+  return None
 
 
 def build_record_index() -> tuple[
@@ -309,7 +364,7 @@ def build_record_index() -> tuple[
   file_defs: dict[Path, list[FootnoteDef]] = {}
   groups: dict[str, list[CitationRecord]] = defaultdict(list)
 
-  for path in sorted(NOTES_DIR.glob("*.md")):
+  for path in sorted(CONTENT_DIR.rglob("*.md")):
     _, body = split_frontmatter_and_body(path.read_text("utf-8"))
     _, defs = split_content_and_defs(body)
     file_defs[path] = defs
@@ -318,7 +373,8 @@ def build_record_index() -> tuple[
         record = to_record(path, definition)
         groups[citation_identity(record)].append(record)
 
-  existing_keys = read_existing_bib_keys()
+  existing_entries = read_existing_bib_entries()
+  existing_keys = set(existing_entries)
   key_to_groups: dict[str, set[str]] = defaultdict(set)
   group_key_counts: dict[str, Counter[str]] = {}
 
@@ -329,15 +385,24 @@ def build_record_index() -> tuple[
       key_to_groups[key].add(identity)
 
   conflicted_keys = {key for key, ids in key_to_groups.items() if len(ids) > 1}
-  used_keys: set[str] = set()
+  used_keys: set[str] = set(existing_keys)
   canonical_keys: dict[str, str] = {}
 
   for identity, records in sorted(groups.items()):
     counter = group_key_counts[identity]
     candidate_keys = list(counter.keys())
 
+    matching_existing_key = find_matching_existing_key(existing_entries, records)
+    if matching_existing_key is not None:
+      canonical_keys[identity] = matching_existing_key
+      continue
+
     existing_candidates = [
-      key for key in candidate_keys if key in existing_keys and key not in conflicted_keys
+      key
+      for key in candidate_keys
+      if key in existing_keys
+      and key not in conflicted_keys
+      and existing_entry_matches_record(existing_entries[key], records[0])
     ]
     if existing_candidates:
       chosen = sorted(
@@ -348,7 +413,9 @@ def build_record_index() -> tuple[
       used_keys.add(chosen)
       continue
 
-    unique_candidates = [key for key in candidate_keys if key not in conflicted_keys]
+    unique_candidates = [
+      key for key in candidate_keys if key not in conflicted_keys and key not in existing_keys
+    ]
     if unique_candidates:
       chosen = sorted(
         unique_candidates,
@@ -565,10 +632,11 @@ def write_bibliography(
   canonical_keys: dict[str, str],
   dry_run: bool,
 ) -> int:
-  entries: dict[str, str] = {}
+  entries = read_existing_bib_entries()
   for identity, records in groups.items():
     key = canonical_keys[identity]
-    entries[key] = build_bib_entry(key, records)
+    if key not in entries:
+      entries[key] = build_bib_entry(key, records)
 
   bibliography = "\n\n".join(entries[key] for key in sorted(entries)) + "\n"
   if not dry_run:
@@ -594,7 +662,7 @@ def main() -> None:
 
   mode = "Would update" if dry_run else "Updated"
   print(
-    f"\n{mode} {changed_files} note file(s), removed {removed_defs} citation footnote "
+    f"\n{mode} {changed_files} content file(s), removed {removed_defs} citation footnote "
     f"definition(s), and wrote {bib_entries} bibliography entr{'y' if bib_entries == 1 else 'ies'}."
   )
 

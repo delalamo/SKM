@@ -2,15 +2,15 @@
 title: Kinked CDRH3 loops
 tags:
 created: 2026-04-10T14:02:57
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T08:00:05"
 ---
 
 **Kinked [[Complementarity-determining regions#CDRH3|CDRH3]]** are a conformational feature found in 80-90% of human [[Antibodies|antibodies]] and nearly 60% of camelid [[Nanobodies|nanobodies]] ([[10.1016__j.str.2014.11.010|Weitzner et al 2015]], [[10.1038__s42003-023-05241-y|Bahrami Dizicheh et al 2023]]). This occurs at the C-terminus of the loop and is [[Germline usage determines whether nanobody CDR3 is kinked of extended|dictated by germline use]]. Similar bends are found in other proteins, such as PDZ domains and peptidase C1 domains, that are involved in [[Protein-protein interactions|protein-protein interactions]] ([[10.1016__j.str.2014.11.010|Weitzner et al 2015]]).
 
 ![[Pasted-Graphic-5-1.png]]
-*Figure from [^weitzner2015]*
+*Figure from [@weitzner2015]*
 ![[42003_2023_5241_Fig1_HTML.png]]
-*Figure from [^bahrami2023]*
+*Figure from [@bahrami2023]*
 
 #### Details
 
@@ -25,6 +25,3 @@ Then, a two-parameter model is fit over these that includes a Gaussian component
 * [[Axe-like CDRH3 loops]]
 
 <!-- generated -->
-
-[^bahrami2023]: Bahrami Dizicheh et al. (2023) "VHH CDR-H3 conformation is determined by VH germline usage." *Communications Biology*. https://doi.org/10.1038/s42003-023-05241-y
-[^weitzner2015]: Weitzner et al. (2015) "The Origin of CDR H3 Structural Diversity." *Structure*. https://doi.org/10.1016/j.str.2014.11.010

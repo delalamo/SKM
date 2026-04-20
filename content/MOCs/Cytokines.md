@@ -2,13 +2,13 @@
 title: Cytokines
 tags:
 created: 2026-04-10T14:02:57
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-20T08:00:05"
 ---
 
 **Cytokines** are signaling molecules involved in inflammation. They include [[Interferons]], [[Interleukins]], [[Chemokines]], colony-stimulating factors, [[Tumor necrosis factors]], and Transforming growth factors. At baseline their concentration in the blood is low. Overrelease can cause a cytokine storm, triggering massive inflammation.
 
 ![[Cytokines-fig.png]]
-*Figure from [^pires2021]*
+*Figure from [@pires2021]*
 
 #### Functional categorizations
 
@@ -60,5 +60,3 @@ Also done with IL-12, IL-2, IFN-beta
 This note cites liberally from [[10.1016__j.tibs.2022.09.005|Aung et al 2023]]
 
 <!-- generated -->
-
-[^pires2021]: Pires et al. (2021) "Engineering Strategies for Immunomodulatory Cytokine Therapies: Challenges and Clinical Progress." *Advanced Therapeutics*. https://doi.org/10.1002/adtp.202100035
