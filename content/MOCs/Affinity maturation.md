@@ -3,7 +3,7 @@ title: Affinity maturation
 tags:
   - affinity-maturation
 created: "2026-04-10T14:30:55"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:03:48"
 ---
 
 **Affinity maturation** is a process by which [[Antibodies|antibodies]] are iteratively improved *in vivo*. Described as "hyper-darwinian".
@@ -18,6 +18,7 @@ modified: "2026-04-20T10:13:23"
 ## General
 
 - [[Affinity maturation also selects for lower self-association]]
+- [[Affinity maturation causes antibody-antigen interfaces to be more similar to generic PPI interfaces]]
 - [[Affinity maturation of de novo minibinders introduces mutations far from the active site]]
 - [[Affinity matured antibodies can adopt distinct binding poses from germline precursors]]
 - [[Affinity matured antibodies have lower thermostability than germline antibodies, up to a threshold]]

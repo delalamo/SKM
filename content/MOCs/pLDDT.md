@@ -4,7 +4,7 @@ tags:
   - plddt
   - structure-prediction/metrics
 created: "2026-04-10T14:02:57"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:03:48"
 ---
 
 *(LDDT redirects here)*
@@ -38,7 +38,6 @@ $$E_{pLDDT}=\sum{\left( \frac{d_{i}}{1.5*\exp{\left(4*\left(0.7 - pLDDT_{i} \rig
 - [[High-pLDDT designs can be insoluble]]
 - [[Including structure prediction confidence while training inverse folding improves sequence diversity but not sequence recovery]]
 - [[Inverse folding methods outperform sequence design by hallucination]]
-- [[LM-based antibody structure prediction methods work equally well with generic and Ab PLMs]]
 - [[Low-pLDDT hallucinated models from AF3-generation protein structure predictors are designable]]
 - [[Most ML quality metrics cannot effectively predict enzyme activity after controlling for similarity to native]]
 - [[Natural sequences have higher pTM but lower pLDDT than de novo sequences]]

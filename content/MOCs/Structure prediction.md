@@ -3,7 +3,7 @@ title: Structure prediction
 tags:
   - structure-prediction
 created: "2026-04-10T14:02:57"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:03:48"
 ---
 
 **Structure prediction** refers to the problem of predicting the 3D shape of a protein or nucleotide sequence without any experimental information. Common metrics used for evaluating the quality of predicted structures include [[LDDT]] (residue-level, [[TM-score]] (whole-structure level), and [[DockQ]] (complex level).
@@ -66,6 +66,8 @@ modified: "2026-04-20T10:13:23"
 - [[Structure prediction and design tools trained on monomers generalize to oligomers]]
 - [[Structure prediction from conformational samplers tends to be worse than those from vanilla structure prediction methods]]
 - [[Structure prediction methods undersample the conformational space they find to be high-confidence]]
+- [[Structure prediction neural networks predict different conformations of a given sequence depending on if a single chain is predicted versus multiple chains]]
+- [[Structure prediction neural networks trained on the same structural dataset are likely to predict the same conformation]]
 - [[Structure prediction with AlphaFold improved when starting from an initial guess, rather than default initialization]]
 - [[The AlphaFold and ESMFold databases can be mined for alternate conformations]]
 - [[ddG predictions calculated from AlphaFold structures are equally accurate as those derived from experimental structures]]

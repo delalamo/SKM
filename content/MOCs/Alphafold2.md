@@ -5,7 +5,7 @@ tags:
 aliases:
   - openfold
 created: "2026-04-11T06:06:39"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:03:48"
 ---
 *(OpenFold redirects here)*
 
@@ -43,8 +43,11 @@ modified: "2026-04-20T10:13:23"
 - [[Dropout improves AF2 multimer prediction, including for antibody-antigen complexes]]
 - [[Fine-tuning AlphaFold for MHC prediction by adding Evoformer layers improves RMSD and pLDDT]]
 - [[Monomeric AF2 is better able to distinguish positive and negative PPIs than AF2-multimer]]
+- [[Protein folding neural networks can be subject to adversarial attacks]]
+- [[Protein folding neural networks make local optimizations in the absence of coevolutionary information]]
 - [[ProteinMPNN and AlphaFold structure update module can be combined into a VAE]]
 - [[Scrambled MSAs outperform single-sequence-prediction with AlphaFold]]
+- [[Structure prediction neural networks trained on the same structural dataset are likely to predict the same conformation]]
 - [[Structure prediction with AlphaFold improved when starting from an initial guess, rather than default initialization]]
 - [[The AlphaFold and ESMFold databases can be mined for alternate conformations]]
 - [[The confidence metrics of AlphaFold2 are better calibrated than those of AlphaFold3]]

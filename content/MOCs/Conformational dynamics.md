@@ -1,7 +1,7 @@
 ---
 title: Conformational dynamics
 created: "2026-04-11T06:06:39"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-20T08:03:48"
 ---
 
 <!-- generated -->
@@ -26,6 +26,7 @@ modified: "2026-04-20T10:13:23"
 - [[Protein structure prediction methods are unable to predict the energetics of a conformational landscape unless explicitly trained for that purpose]]
 - [[Structure prediction from conformational samplers tends to be worse than those from vanilla structure prediction methods]]
 - [[Structure prediction methods undersample the conformational space they find to be high-confidence]]
+- [[Structure prediction neural networks trained on the same structural dataset are likely to predict the same conformation]]
 - [[The AlphaFold and ESMFold databases can be mined for alternate conformations]]
 - [[The latent space of VAEs can encode the conformational landscape of dynamic proteins]]
 - [[pLDDT and PAE inversely correlated with protein dynamics in dynamic naturally occurring proteins, but not de novo proteins]]
