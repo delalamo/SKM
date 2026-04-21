@@ -6,7 +6,7 @@ created: "2026-04-10T14:30:55"
 modified: "2026-04-20T10:13:23"
 ---
 
-**Variant effect prediction** are small changes in an amino acid or protein sequence. They can sometimes have profound effects on protein [[tags/thermostability|thermostability]] and fitness that is difficult to predict.
+**Variant effect prediction** are small changes in an amino acid or protein sequence. They can sometimes have profound effects on protein [[thermostability|thermostability]] and fitness that is difficult to predict.
 
 #### Methods
 
@@ -17,7 +17,7 @@ modified: "2026-04-20T10:13:23"
 
 #### Thermostability prediction
 
-_From [[tags/thermostability#Prediction|Stability and thermostability]]_
+_From [[thermostability#Prediction|Stability and thermostability]]_
 
 #### Fitness prediction
 

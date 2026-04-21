@@ -3,12 +3,12 @@ tags:
   - antibody-structure-prediction/complex-prediction
   - pae
 created: "2026-03-06T09:43:56"
-modified: "2026-04-21T07:03:26"
+modified: "2026-04-21T07:28:09"
 ---
 
 ## Summary
 
-**The [[tags/pae|PAE]] of [[tags/alphafold2|AlphaFold2]] weakly correlates with the binding affinity of [[tags/antibodies|Antibodies]] to their antigens** [@jin2023]. It is more effective at discriminating between positive and negative [[Trastuzumab]] binders.
+**The [[pae|PAE]] of [[alphafold2|AlphaFold2]] weakly correlates with the binding affinity of [[antibodies|Antibodies]] to their antigens** [@jin2023]. It is more effective at discriminating between positive and negative [[Trastuzumab]] binders.
 
 ## Figures
 

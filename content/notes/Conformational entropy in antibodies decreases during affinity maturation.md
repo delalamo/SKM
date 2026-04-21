@@ -6,11 +6,11 @@ tags:
 aliases:
   - Conformational entropy in antibodies decreases during affinity maturation
 created: "2026-04-21T05:01:15"
-modified: "2026-04-21T07:20:46"
+modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-[[Conformational entropy in antibodies decreases during affinity maturation|🔗]] **[[Protein dynamics|Conformational entropy]] in [[tags/antibodies|antibodies]] decreases during [[tags/affinity-maturation|affinity maturation]]** [@guloglu2023; @fernandezquintero2020local]. The claim is corroborated by anecdotal [[MD simulations]] [@zimmermann2006; @fernandezquintero2020; @chong1999] and various spectroscopy measurements ([[_Articles that need citations|citation needed]]). Some studies found that only [[Complementarity-determining regions#CDRH3|CDRH3]] rigidified to a statistically significant degree [@haidar2014], while other regions like the light chain CDRs either did not or became more flexible [@li2015].
+[[Conformational entropy in antibodies decreases during affinity maturation|🔗]] **[[Protein dynamics|Conformational entropy]] in [[antibodies|antibodies]] decreases during [[affinity-maturation|affinity maturation]]** [@guloglu2023; @fernandezquintero2020local]. The claim is corroborated by anecdotal [[MD simulations]] [@zimmermann2006; @fernandezquintero2020; @chong1999] and various spectroscopy measurements ([[_Articles that need citations|citation needed]]). Some studies found that only [[Complementarity-determining regions#CDRH3|CDRH3]] rigidified to a statistically significant degree [@haidar2014], while other regions like the light chain CDRs either did not or became more flexible [@li2015].
 
 #### Details
 

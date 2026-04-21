@@ -5,12 +5,12 @@ tags:
   - conformational-dynamics/modeling
   - rosettafold
 created: 2024-11-04T22:55:26
-modified: "2026-04-21T07:03:26"
+modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**For conformationally heterogeneous proteins, [[tags/alphafold2|AlphaFold2]] and [[tags/rosettafold|RosettaFold]] sometimes produce different conformations** [@hou2024].
+**For conformationally heterogeneous proteins, [[alphafold2|AlphaFold2]] and [[rosettafold|RosettaFold]] sometimes produce different conformations** [@hou2024].
 
 #### See also
 

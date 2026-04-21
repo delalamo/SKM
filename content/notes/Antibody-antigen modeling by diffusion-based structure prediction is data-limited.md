@@ -5,12 +5,12 @@ tags:
   - diffusion-models/structure-prediction
   - plddt
 created: 2026-04-05T17:25:38
-modified: "2026-04-21T07:03:26"
+modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**[[Antibody-antigen interactions|Antibody-antigen]] [[tags/structure-prediction|complex prediction]] by [[tags/diffusion-models|diffusion]]-based [[tags/structure-prediction|structure prediction]] methods is data-limited** [@zhang2026]. This is not true of other poor-performing tasks, such as small molecule docking. This was observed using a version of Protenix trained on four additional years of public data.
+**[[Antibody-antigen interactions|Antibody-antigen]] [[structure-prediction|complex prediction]] by [[diffusion-models|diffusion]]-based [[structure-prediction|structure prediction]] methods is data-limited** [@zhang2026]. This is not true of other poor-performing tasks, such as small molecule docking. This was observed using a version of Protenix trained on four additional years of public data.
 
 #### Figures
 

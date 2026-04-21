@@ -2,10 +2,10 @@
 tags:
   - protein-language-models
 created: 2025-09-01T08:38:43
-modified: "2026-04-21T07:03:26"
+modified: "2026-04-21T07:28:09"
 ---
 #### Summary
-The **categorical Jacobian method** was developed by [@zhang2024] to predict protein contacts using [[tags/protein-language-models|Protein language models]]. Unlike [[ESMFold]] and the [[ESM]] contact prediction head, it is entirely unsupervised and requires no training. It works for [[Transformer|transformers]] but not CNNs.
+The **categorical Jacobian method** was developed by [@zhang2024] to predict protein contacts using [[protein-language-models|Protein language models]]. Unlike [[ESMFold]] and the [[ESM]] contact prediction head, it is entirely unsupervised and requires no training. It works for [[Transformer|transformers]] but not CNNs.
 
 #### Details
 For a sequence of length $L$ with $A$ possible tokens, the categorical Jacobian $J$ has shape $L \times A \times L \times A$. Each residue is mutated to all $A$ possible tokens, and the perturbation to output logits across all positions is recorded. From the authors:

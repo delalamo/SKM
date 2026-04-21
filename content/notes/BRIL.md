@@ -3,10 +3,10 @@ title: BRIL
 tags:
   - citation-fix
 created: 2026-04-10T14:02:57
-modified: "2026-04-21T07:03:26"
+modified: "2026-04-21T07:28:09"
 ---
 
-**BRIL** is a protein that is frequently inserted into membrane proteins to [[Membrane proteins can be bulked up for cryo-EM by inserting designed domains, including those with predefined epitopes for antibodies|bulk them up for structure determination]]. Modifications introduced by Guo et al. [@guo2023] have been shown to make it more useful for studying [[G protein-coupled receptors|GPCRs]]. It also has many [[tags/antibodies|antibodies]] and [[Nanobodies|nanobodies]] that have been released that bind with high affinity [@mukherjee2020; @miyagi2020].
+**BRIL** is a protein that is frequently inserted into membrane proteins to [[Membrane proteins can be bulked up for cryo-EM by inserting designed domains, including those with predefined epitopes for antibodies|bulk them up for structure determination]]. Modifications introduced by Guo et al. [@guo2023] have been shown to make it more useful for studying [[G protein-coupled receptors|GPCRs]]. It also has many [[antibodies|antibodies]] and [[Nanobodies|nanobodies]] that have been released that bind with high affinity [@mukherjee2020; @miyagi2020].
 
 #### Figures
 

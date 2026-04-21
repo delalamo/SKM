@@ -1,10 +1,10 @@
 ---
 tags:
 created: 2024-07-01T02:24:33
-modified: "2026-04-21T07:03:26"
+modified: "2026-04-21T07:28:09"
 ---
 #### Summary
-**[[Binary classifiers]] such as linear discriminant analysis can be used to predict continuous properties such as [[Fitness prediction|affinity]] and specificity of [[tags/antibodies|antibodies]]** [@makowski2022; @ursu2024].
+**[[Binary classifiers]] such as linear discriminant analysis can be used to predict continuous properties such as [[Fitness prediction|affinity]] and specificity of [[antibodies|antibodies]]** [@makowski2022; @ursu2024].
 
 #### Details
 In text analysis this was also demonstrated by [@wankmuller2021].

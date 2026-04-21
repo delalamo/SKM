@@ -2,10 +2,10 @@
 tags:
   - ancestral-sequence-reconstruction
 created: 2024-05-02T05:25:59
-modified: "2026-04-21T07:03:26"
+modified: "2026-04-21T07:28:09"
 ---
 #### Summary
- **[[tags/ancestral-sequence-reconstruction|Ancestral sequence reconstruction]] outperforms generative ML methods on functional enzyme design** [@johnson2024].
+ **[[ancestral-sequence-reconstruction|Ancestral sequence reconstruction]] outperforms generative ML methods on functional enzyme design** [@johnson2024].
 
 #### Details
 This was evaluated using either [[MSA Transformer]] or a generative adversarial network trained on natural sequences:

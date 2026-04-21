@@ -10,4 +10,4 @@ modified: "2026-04-20T10:13:23"
 
 #### Notes
 
-- **Structural tokenization circumvents the inability of [[tags/inverse-folding|inverse folding]] models to be [[ML models trained exclusively on experimental structures are less effective on computational models|effectively trained on exclusively computational models]].**
+- **Structural tokenization circumvents the inability of [[inverse-folding|inverse folding]] models to be [[ML models trained exclusively on experimental structures are less effective on computational models|effectively trained on exclusively computational models]].**

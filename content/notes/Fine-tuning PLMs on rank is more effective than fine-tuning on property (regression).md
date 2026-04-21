@@ -1,6 +1,6 @@
 #### Summary
 
-**Fine-tuning [[tags/protein-language-models|Protein language models]] using rank information is more effective than fine-tuning using absolute property measurements (regression;** [@hawkinshooker2024]). It also converts a dataset of $N$ sequences to $N^{2}$ pairwise comparisons, while generalizing better to unseen positions.
+**Fine-tuning [[protein-language-models|Protein language models]] using rank information is more effective than fine-tuning using absolute property measurements (regression;** [@hawkinshooker2024]). It also converts a dataset of $N$ sequences to $N^{2}$ pairwise comparisons, while generalizing better to unseen positions.
 
 #### Figures
 | Model Name | Scoring Function | Loss | single n=32 | single n=128 | single n=512 | multi n=32 | multi n=128 | multi n=512 |

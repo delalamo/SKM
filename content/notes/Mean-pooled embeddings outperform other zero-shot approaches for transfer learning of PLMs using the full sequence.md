@@ -2,12 +2,12 @@
 tags:
   - protein-language-models/representations
 created: "2024-11-27T00:56:30"
-modified: "2026-04-21T07:03:26"
+modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**Mean-pooled embeddings outperform other zero-shot approaches when transfer learning on [[tags/protein-language-models|protein language models]]** [@vieira2024]. Moreover, the outperformance was more noticeably in variable-length datasets (PISCES) than fixed-lengths datasets (DMS). This was done using the ESM2-150M model with Lasso regression and cross-validation. However, [[Optimal transport outperforms mean-pooling on property prediction tasks|it was found to perform worse than optimal transport]], especially when using embeddings from small neural networks when a small amount of training data was available.
+**Mean-pooled embeddings outperform other zero-shot approaches when transfer learning on [[protein-language-models|protein language models]]** [@vieira2024]. Moreover, the outperformance was more noticeably in variable-length datasets (PISCES) than fixed-lengths datasets (DMS). This was done using the ESM2-150M model with Lasso regression and cross-validation. However, [[Optimal transport outperforms mean-pooling on property prediction tasks|it was found to perform worse than optimal transport]], especially when using embeddings from small neural networks when a small amount of training data was available.
 
 #### Figures
 

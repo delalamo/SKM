@@ -1,10 +1,10 @@
 ---
 tags:
 created: 2025-07-14T12:54:40
-modified: "2026-04-21T07:03:26"
+modified: "2026-04-21T07:28:09"
 ---
 #### Summary
-Renumber [[tags/antibodies|antibody]] structures using [[Rosetta|PyRosetta]].
+Renumber [[antibodies|antibody]] structures using [[Rosetta|PyRosetta]].
 
 #### Code
 ```python

@@ -1,6 +1,6 @@
 #### Summary
 
-**[[ESMFold]] has massive activations (3000x the median) that disproportionately contribute to [[tags/structure-prediction|structure prediction]] quality** [@lu2025tokenized]. Authors describe it as "pathologically disorganized".
+**[[ESMFold]] has massive activations (3000x the median) that disproportionately contribute to [[structure-prediction|structure prediction]] quality** [@lu2025tokenized]. Authors describe it as "pathologically disorganized".
 
 #### Figures
 ![[TMScore-to-Original-Structure.png]]

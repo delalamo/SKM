@@ -1,10 +1,10 @@
 ---
 tags:
 created: 2025-02-28T03:16:15
-modified: "2026-04-21T07:03:26"
+modified: "2026-04-21T07:28:09"
 ---
 #### Summary
-**Up to 22% of residues in [[tags/antibodies|antibodies]] that bind to antigens are not in the [[Complementarity-determining regions|CDRs]]** [@fernandezquintero2022].
+**Up to 22% of residues in [[antibodies|antibodies]] that bind to antigens are not in the [[Complementarity-determining regions|CDRs]]** [@fernandezquintero2022].
 
 #### See also
 - [[CDRH3 conformation is affected by interdomain orientation]]

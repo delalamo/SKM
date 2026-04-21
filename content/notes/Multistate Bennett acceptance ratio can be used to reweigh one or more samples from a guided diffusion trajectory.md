@@ -3,12 +3,12 @@ tags:
   - diffusion-models/structure-prediction
   - diffusion-guidance/structure-prediction
 created: "2026-03-11T09:23:58"
-modified: "2026-04-21T07:03:26"
+modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**Multistate Bennett acceptance ratio can be used to reweight one or more weighted samples from a [[tags/diffusion-guidance|guided]] [[tags/diffusion-models|diffusion]] trajectory** [@xie2026]. It does not work unless the samples are pre-weighted; [@xie2026] use the steering importance weights from Feynman-Kac guidance.
+**Multistate Bennett acceptance ratio can be used to reweight one or more weighted samples from a [[diffusion-guidance|guided]] [[diffusion-models|diffusion]] trajectory** [@xie2026]. It does not work unless the samples are pre-weighted; [@xie2026] use the steering importance weights from Feynman-Kac guidance.
 
 #### Details
 

@@ -3,12 +3,12 @@ tags:
   - protein-language-models/training
   - thermostability/prediction
 created: "2026-04-05T17:40:10"
-modified: "2026-04-21T07:03:26"
+modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**Residue conservation and solvent exposure data perform comparably to [[tags/protein-language-models|PLMs]] at some property prediction tasks** [@tsishyn2025]. The former was assessed using position-specific scoring matrices. However, [[Structure-based methods outperform sequence-based methods on protein stability prediction of point mutants, but not full sequences|as with language models]], they perform worse than [[tags/inverse-folding|inverse folding]] on [[tags/thermostability#Prediction|stability prediction]].
+**Residue conservation and solvent exposure data perform comparably to [[protein-language-models|PLMs]] at some property prediction tasks** [@tsishyn2025]. The former was assessed using position-specific scoring matrices. However, [[Structure-based methods outperform sequence-based methods on protein stability prediction of point mutants, but not full sequences|as with language models]], they perform worse than [[inverse-folding|inverse folding]] on [[thermostability#Prediction|stability prediction]].
 
 #### Figures
 

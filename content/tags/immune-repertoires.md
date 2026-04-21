@@ -10,5 +10,5 @@ modified: "2026-04-20T10:13:23"
 
 Related:
 
-- [[tags/affinity-maturation|Affinity maturation]]
-- [[tags/antibodies|Antibodies]]
+- [[affinity-maturation|Affinity maturation]]
+- [[antibodies|Antibodies]]

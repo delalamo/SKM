@@ -2,12 +2,12 @@
 tags:
   - thermostability/prediction
 created: "2026-04-05T17:45:06"
-modified: "2026-04-21T07:03:26"
+modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**Structure-based methods such as [[tags/inverse-folding|Inverse folding]] models outperform sequence-based methods such as [[tags/protein-language-models|PLMs]] on protein stability prediction of point mutants, but not full sequences** [@reeves2023]. Among those models, [[ESM-IF]] is the most effective [@wang2023; @paul2023]. [@tan2023] found that embedding geometry into PLMs can improve stability prediction. In contrast, [@cho2024] found that the PLM [[ESM|ESM-2]] had better Spearman correlations than these inverse folding models to experimental stability measurements when comparing the *de novo* sequences with the same target fold.
+**Structure-based methods such as [[inverse-folding|Inverse folding]] models outperform sequence-based methods such as [[protein-language-models|PLMs]] on protein stability prediction of point mutants, but not full sequences** [@reeves2023]. Among those models, [[ESM-IF]] is the most effective [@wang2023; @paul2023]. [@tan2023] found that embedding geometry into PLMs can improve stability prediction. In contrast, [@cho2024] found that the PLM [[ESM|ESM-2]] had better Spearman correlations than these inverse folding models to experimental stability measurements when comparing the *de novo* sequences with the same target fold.
 
 #### Details
 

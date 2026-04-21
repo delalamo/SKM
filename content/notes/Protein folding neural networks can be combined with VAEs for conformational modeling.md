@@ -3,12 +3,12 @@ tags:
   - structure-prediction/sampling
   - conformational-dynamics/modeling
 created: "2024-05-29T10:29:14"
-modified: "2026-04-21T07:03:26"
+modified: "2026-04-21T07:28:09"
 ---
 
 ## Summary
 
-**[[tags/structure-prediction|Protein folding]] neural networks can be combined with [[Variational autoencoders|VAEs]] for conformational modeling** [@mansoor2023]. Authors used [[tags/rosettafold|RosettaFold]] in conjunction with the VAE to sample cryptic pockets in K-Ras.
+**[[structure-prediction|Protein folding]] neural networks can be combined with [[Variational autoencoders|VAEs]] for conformational modeling** [@mansoor2023]. Authors used [[rosettafold|RosettaFold]] in conjunction with the VAE to sample cryptic pockets in K-Ras.
 
 ## Details
 

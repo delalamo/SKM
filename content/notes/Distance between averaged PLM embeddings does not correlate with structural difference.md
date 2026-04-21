@@ -3,12 +3,12 @@ tags:
   - protein-language-models/representations
   - alignment/sequence-based
 created: "2024-11-14T03:05:00"
-modified: "2026-04-21T07:03:26"
+modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**Distance between mean-pooled [[tags/protein-language-models|PLM]] embeddings does not correlate with structural difference** [@pantolini2022]. That said, PLMs do learn structural homology that is non-obvious from sequence on some level [@kilinc2023; @rives2021].
+**Distance between mean-pooled [[protein-language-models|PLM]] embeddings does not correlate with structural difference** [@pantolini2022]. That said, PLMs do learn structural homology that is non-obvious from sequence on some level [@kilinc2023; @rives2021].
 
 #### Figures
 ![[Pasted-Graphic-6.png]]

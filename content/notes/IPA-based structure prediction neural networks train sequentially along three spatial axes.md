@@ -5,7 +5,7 @@ tags:
 aliases:
   - IPA-based structure prediction neural networks train sequentially along three spatial axes
 created: "2026-04-21T05:01:15"
-modified: "2026-04-21T07:03:26"
+modified: "2026-04-21T07:28:09"
 ---
 #### Summary
-**[[tags/alphafold2|OpenFold]] training proceeds sequentially along XYZ principal components** [@ahdritz2022].
+**[[alphafold2|OpenFold]] training proceeds sequentially along XYZ principal components** [@ahdritz2022].
