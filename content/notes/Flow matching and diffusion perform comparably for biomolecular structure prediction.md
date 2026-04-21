@@ -6,12 +6,12 @@ tags:
   - structure-prediction/architecture
   - plddt
 created: "2026-04-05T17:34:36"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:02:30"
 ---
 
 #### Summary
 
-Flow matching and diffusion perform comparably for biomolecular structure prediction [@gong2025].
+[[Flow matching]] and [[diffusion-models|diffusion]] perform comparably for biomolecular [[structure-prediction|structure prediction]] [@gong2025].
 
 #### Figures
 
