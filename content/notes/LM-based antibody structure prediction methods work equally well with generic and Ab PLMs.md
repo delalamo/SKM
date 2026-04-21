@@ -2,8 +2,9 @@
 tags:
   - protein-language-models/antibodies
   - antibody-structure-prediction/cdr
+  - antibody-antigen-interactions/complex-prediction
 created: 2026-04-05T17:38:14
-modified: "2026-04-21T07:28:09"
+modified: "2026-04-21T10:30:31"
 ---
 
 #### Summary

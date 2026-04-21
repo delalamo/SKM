@@ -2,8 +2,9 @@
 tags:
   - cdrh3
   - antibody-developability/polyspecificity
+  - antibody-antigen-interactions/misc
 created: 2024-09-19T05:32:41
-modified: "2026-04-21T07:28:09"
+modified: "2026-04-21T10:30:31"
 ---
 #### Summary
 **Conformational rigidity in [[Complementarity-determining regions|CDRH3]] reduces [[antibody-developability|polyreactivity]]** [@fernandezquintero2020local].
