@@ -3,12 +3,12 @@ tags:
   - protein-language-models/representations
   - epistasis
 created: 2026-01-22T12:38:44
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:28:09"
 ---
 
 ## Summary
 
-**[[Protein language models]] are able to predict [[Epistasis|epistasis]] in a zero-shot setting, but must be nonlinearly transformed to achieve meaningful accuracy** [@nambiar2025]. This was studied using [[ESM]]2 model and showed the same [[Scaling hypothesis|scaling]] dependency observed with [[Protein property prediction using PLMs does not benefit from scale except when predicting inferring features of either structural or sparsely populated sequence families|prediction of other properties]].
+**[[protein-language-models|Protein language models]] are able to predict [[epistasis|epistasis]] in a zero-shot setting, but must be nonlinearly transformed to achieve meaningful accuracy** [@nambiar2025]. This was studied using [[ESM]]2 model and showed the same [[Scaling hypothesis|scaling]] dependency observed with [[Protein property prediction using PLMs does not benefit from scale except when predicting inferring features of either structural or sparsely populated sequence families|prediction of other properties]].
 
 ## Details
 

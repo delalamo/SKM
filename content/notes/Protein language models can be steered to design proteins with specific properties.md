@@ -2,12 +2,12 @@
 tags:
   - protein-design/design
 created: 2026-04-05T17:53:07
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**[[Protein language models]] can be steered to design proteins with specific properties with greater success than traditional fine-tuning** [@huang2025]. The procedure involves training linear [[Binary classifiers|binary classifier]] heads on top of the activations of each layer and selecting the head with the highest validation score. Larger language models are more steerable, which contrasts with evidence against the [[Scaling hypothesis|scaling hypothesis]] of sequence-only language-only models in other domains. This was done with the [[ESM]]2-650M and ESM2-3B models.
+**[[protein-language-models|Protein language models]] can be steered to design proteins with specific properties with greater success than traditional fine-tuning** [@huang2025]. The procedure involves training linear [[Binary classifiers|binary classifier]] heads on top of the activations of each layer and selecting the head with the highest validation score. Larger language models are more steerable, which contrasts with evidence against the [[Scaling hypothesis|scaling hypothesis]] of sequence-only language-only models in other domains. This was done with the [[ESM]]2-650M and ESM2-3B models.
 
 #### Figures
 

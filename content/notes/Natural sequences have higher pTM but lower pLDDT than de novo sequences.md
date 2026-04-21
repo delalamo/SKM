@@ -4,12 +4,12 @@ tags:
   - tm-score
   - plddt
 created: "2025-01-18T00:01:18"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**Natural sequences have higher [[TM-score|pTM]] but lower [[pLDDT]] than *de novo* designed sequences** [@hayes2025].
+**Natural sequences have higher [[tm-score|pTM]] but lower [[plddt|pLDDT]] than *de novo* designed sequences** [@hayes2025].
 
 #### Figures
 

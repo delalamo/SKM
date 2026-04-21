@@ -3,12 +3,12 @@ tags:
   - protein-language-models/antibodies
   - antibody-structure-prediction/complex-prediction
 created: "2024-12-31T08:49:28"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**Structure-based methods such as [[Inverse folding|inverse folding]] methods outperform sequence-based methods such as [[Protein language models|PLMs]] on the design of high-affinity [[Antibodies|antibodies]]** [@shanker2024]. This is irrespective of whether the language model was trained on [[Antibodies|antibodies]] (AbLang) or [[Protein language models|generic proteins]] ([[ESM]]-1v).
+**Structure-based methods such as [[inverse-folding|inverse folding]] methods outperform sequence-based methods such as [[protein-language-models|PLMs]] on the design of high-affinity [[antibodies|antibodies]]** [@shanker2024]. This is irrespective of whether the language model was trained on [[antibodies|antibodies]] (AbLang) or [[protein-language-models|generic proteins]] ([[ESM]]-1v).
 
 #### Figures
 

@@ -2,7 +2,7 @@
 tags:
   - antibody-developability/polyspecificity
 created: "2024-09-19T05:32:41"
-modified: "2026-04-21T07:02:30"
+modified: "2026-04-21T07:20:46"
 ---
 #### Summary
 **Introducing many arginine residues into [[Complementarity-determining regions|CDRH3]] has been suggested to increase polyreactivity, presumably by increasing CDRH3 flexibility.** [[MD simulations]] show in one case that nearby arginines are repulsed by one another and increase flexibility [@fernandezquintero2018].

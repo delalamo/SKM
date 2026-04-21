@@ -30,14 +30,14 @@ modified: "2026-04-20T07:16:03"
 
 - **Multiple instance learning using PLM embeddings of all genes in a viral genome identifies which sequences are responsible for host tropism** [@liu2024d]. For example, this ranked the [[Spike protein]] as the key contributor of host tropism.
 - **Homolog detection using PLM representations can be improved by compression** [@kilinc2023]. Using the full representations worsened detection AUC by 7.4%.
-- **[[Protein language models|PLMs]] with a smoother representation space are better predictors of protein function** [@matthews2023].
+- **[[protein-language-models|PLMs]] with a smoother representation space are better predictors of protein function** [@matthews2023].
  ![[Pasted-Graphic-2-1.png]]
  _Figure from [@matthews2023]_
 
-#### Hybrid PLM-[[Inverse folding|inverse folding]] models
+#### Hybrid PLM-[[inverse-folding|inverse folding]] models
 
 _From [[Hybrid sequence-structure models]]_
 
 #### Training
 
-- **Matthews et al. [@matthews2023] found that masking 0.5% of residues when training [[Protein language models|PLMs]] improved predictive performance (greater $R^{2}$) relative to 15% used by [[ESM]].**
+- **Matthews et al. [@matthews2023] found that masking 0.5% of residues when training [[protein-language-models|PLMs]] improved predictive performance (greater $R^{2}$) relative to 15% used by [[ESM]].**

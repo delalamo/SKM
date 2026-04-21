@@ -3,11 +3,11 @@ tags:
   - thermostability/evolution
   - ancestral-sequence-reconstruction
 created: 2024-04-16T10:20:53
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-**Sequences designed by [[Ancestral sequence reconstruction]] have greater [[Stability and thermostability|thermostability]] and [[Fitness prediction|enzymatic activity]] than extant sequences** [@wilding2017]. However, there is some controversy about whether this says anything about how such sequences actually evolved.
+**Sequences designed by [[ancestral-sequence-reconstruction|Ancestral sequence reconstruction]] have greater [[thermostability|thermostability]] and [[Fitness prediction|enzymatic activity]] than extant sequences** [@wilding2017]. However, there is some controversy about whether this says anything about how such sequences actually evolved.
 
 #### Details
 Williams et al. found using simulations that the probability-maximizing methods used to reconstruct these sequences are biased in favor of increasing both thermostability, even when that was not explicitly the case. [@williams2006] Additionally, in one study by [@trudeau2016], a reconstructed mammalian sequence was so unusually stable at high temperatures, the authors found to be suspicious that mammals regulate their internal body temperature.

@@ -4,12 +4,12 @@ tags:
   - structure-prediction/sampling
   - conformational-dynamics/modeling
 created: "2025-04-10T02:51:51"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**[[AlphaFold3]] universally predicts the active state of [[G protein-coupled receptors|GPCRs]], even when the ligand is an antagonist that stabilizes the inactive state** [@zheng2025].
+**[[alphafold3|AlphaFold3]] universally predicts the active state of [[G protein-coupled receptors|GPCRs]], even when the ligand is an antagonist that stabilizes the inactive state** [@zheng2025].
 
 #### Figures
 

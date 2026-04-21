@@ -3,12 +3,12 @@ tags:
   - protein-language-models/representations
   - thermostability/prediction
 created: "2026-03-22T10:44:50"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**Structure-based methods, such as [[Inverse folding|inverse folding models]], outperform sequence-based methods such as [[Protein language models|protein language models]] and [[Potts models]] at zero-shot [[Stability and thermostability#Prediction|binding prediction]], whereas the reverse is true for zero-shot [[Fitness prediction|prediction of enzymatic activity]]** [@li2024c].
+**Structure-based methods, such as [[inverse-folding|inverse folding models]], outperform sequence-based methods such as [[protein-language-models|protein language models]] and [[Potts models]] at zero-shot [[thermostability#Prediction|binding prediction]], whereas the reverse is true for zero-shot [[Fitness prediction|prediction of enzymatic activity]]** [@li2024c].
 
 #### Figures
 

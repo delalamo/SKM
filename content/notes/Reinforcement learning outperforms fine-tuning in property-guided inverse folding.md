@@ -4,11 +4,11 @@ tags:
   - tm-score
   - plddt
 created: "2026-04-05T17:56:56"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-**[[Reinforcement learning]] (here, DPO) outperforms fine-tuning on property-guided [[Inverse folding|inverse folding]]** [@hou2026]. This was shown using (ProteinMPNN) as a base model, and even in situations with multiple constraints. As shown below, this does not lead to sacrificed refoldability metrics.
+**[[Reinforcement learning]] (here, DPO) outperforms fine-tuning on property-guided [[inverse-folding|inverse folding]]** [@hou2026]. This was shown using (ProteinMPNN) as a base model, and even in situations with multiple constraints. As shown below, this does not lead to sacrificed refoldability metrics.
 
 #### Figures
 | Method | RMSD ↓ | TM score ↑ | PLDDT ↑ | EP ↓ | Sol ↑ | Thermo ↑ | AAR ↑ |

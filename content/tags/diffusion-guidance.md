@@ -7,7 +7,7 @@ created: 2026-04-10T14:30:55
 modified: "2026-04-20T10:13:23"
 ---
 
-**Diffusion guidance** refers to inference-time methods that steer a [[Diffusion models|diffusion]] process toward desired properties, constraints, or observations. It is a general concept that applies to both [[Protein backbone design|protein design]], [[Structure prediction|structure prediction]], and sequence-based protein design, of which all-atom diffusion is just one application.
+**Diffusion guidance** refers to inference-time methods that steer a [[diffusion-models|diffusion]] process toward desired properties, constraints, or observations. It is a general concept that applies to both [[protein-backbone-design|protein design]], [[structure-prediction|structure prediction]], and sequence-based protein design, of which all-atom diffusion is just one application.
 
 #### Details
 

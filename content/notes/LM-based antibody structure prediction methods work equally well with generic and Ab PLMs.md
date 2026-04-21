@@ -3,12 +3,12 @@ tags:
   - protein-language-models/antibodies
   - antibody-structure-prediction/cdr
 created: 2026-04-05T17:38:14
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**[[Antibody structure prediction|Predicting the structure of antibodies]] using embeddings from [[Antibodies|antibody]] [[Protein language models|language models]] leads to equal or worse performance compared to using embeddings from generic protein language models** [@lee2023solvent; @kenlay2024]. The former found that training [[IgFold]] with with [[ESM]]2-35M embeddings gave comparable performance to using the AntiBERTy embeddings used by default, while the latter obtained better performance on ABodyBuilder3 ProtT5 embeddings compared to IgBERT and IgT5.
+**[[antibody-structure-prediction|Predicting the structure of antibodies]] using embeddings from [[antibodies|antibody]] [[protein-language-models|language models]] leads to equal or worse performance compared to using embeddings from generic protein language models** [@lee2023solvent; @kenlay2024]. The former found that training [[IgFold]] with with [[ESM]]2-35M embeddings gave comparable performance to using the AntiBERTy embeddings used by default, while the latter obtained better performance on ABodyBuilder3 ProtT5 embeddings compared to IgBERT and IgT5.
 
 #### Figures
 

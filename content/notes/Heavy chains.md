@@ -1,10 +1,10 @@
 ---
 title: Heavy chains
 created: 2026-04-10T14:30:55
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-21T07:28:09"
 ---
 
-The **heavy chains** of [[Antibodies]] contain both the [[Complementarity-determining regions#CDRH3|CDRH3]] loop mediating a disproportionate number of contacts with antigens, as well as larger [[Constant-regions|constant regions]]. They are also similar to [[Nanobodies]] (albeit larger).
+The **heavy chains** of [[antibodies|Antibodies]] contain both the [[Complementarity-determining regions#CDRH3|CDRH3]] loop mediating a disproportionate number of contacts with antigens, as well as larger [[Constant-regions|constant regions]]. They are also similar to [[Nanobodies]] (albeit larger).
 
 #### Diversity
 

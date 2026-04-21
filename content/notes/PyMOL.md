@@ -1,13 +1,13 @@
 ---
 title: PyMOL
 created: 2026-04-10T14:30:55
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-21T07:28:09"
 ---
 
 **PyMOL** is a modeling visualization program for proteins.
 
 #### Shortcuts
-###### Color a protein by b-factor (or [[pLDDT]])
+###### Color a protein by b-factor (or [[plddt|pLDDT]])
 
 ```
 spectrum b, minimum=0, maximum=100, selection=obj01

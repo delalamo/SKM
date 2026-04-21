@@ -1,11 +1,11 @@
 ---
 title: DockQ
 created: 2026-04-10T14:02:57
-modified: "2026-04-20T08:32:20"
+modified: "2026-04-21T07:28:09"
 ---
 
 *(pDockQ redirects here)*
-**DockQ** is a metric ranging from zero to one that is used to evaluate [[Structure prediction|predicted structures]] of [[Protein-protein interactions|protein complexes]] [@basu2016]:
+**DockQ** is a metric ranging from zero to one that is used to evaluate [[structure-prediction|predicted structures]] of [[protein-protein-interactions|protein complexes]] [@basu2016]:
 
 $$
 DockQ=\frac{1}{3}\left( f_{nat} +\frac{1}{1+\left( \frac{iRMSD}{1.5}\right)^{2}} +\frac{1}{1+\left( \frac{LRMSD}{8.5}\right)^{2}} \right)

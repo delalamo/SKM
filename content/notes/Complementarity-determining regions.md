@@ -3,10 +3,10 @@ title: Complementarity-determining regions
 tags:
   - citation-fix
 created: 2026-04-10T14:02:57
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-21T07:28:09"
 ---
 
-The **complementarity-determining regions** of [[Antibodies|antibodies]], abbreviated **CDRs** and sometimes collectively called **hypervariable regions**, are loops that mediate binding to antigens. They are the most difficult part of the protein to predict and get fine-tuned by [[Affinity maturation|affinity maturation]] and [[Somatic hypermutation|somatic hypermutation]].
+The **complementarity-determining regions** of [[antibodies|antibodies]], abbreviated **CDRs** and sometimes collectively called **hypervariable regions**, are loops that mediate binding to antigens. They are the most difficult part of the protein to predict and get fine-tuned by [[affinity-maturation|affinity maturation]] and [[Somatic hypermutation|somatic hypermutation]].
 
 ### General observations
 #### Confomational clustering
@@ -21,7 +21,7 @@ The **complementarity-determining regions** of [[Antibodies|antibodies]], abbrev
 
 * **The residue identity at heavy chain residue 71 (Chothia numbering) influences the conformation of CDRH2** ([[_Articles that need citations|citation needed]]).
 * **In Kabat numbering CDRH2 is slightly too short (reason unclear).**
-* **[[HDX-MS]] data suggest that CDRH2 has decreased dynamics following [[Affinity maturation]]** ([[_Articles that need citations|citation needed]]).
+* **[[HDX-MS]] data suggest that CDRH2 has decreased dynamics following [[affinity-maturation|Affinity maturation]]** ([[_Articles that need citations|citation needed]]).
 
 ### CDRH3
 ##### Conformation and dynamics
@@ -34,7 +34,7 @@ The **complementarity-determining regions** of [[Antibodies|antibodies]], abbrev
 
 ### CDRL2
 
-* **[[HDX-MS]] data suggest that CDRH2 has decreased dynamics following [[Affinity maturation|affinity maturation]]** ([[_Articles that need citations|citation needed]]).
+* **[[HDX-MS]] data suggest that CDRH2 has decreased dynamics following [[affinity-maturation|affinity maturation]]** ([[_Articles that need citations|citation needed]]).
 * **In Kabat numbering this is slightly too short** (reason unclear; [[_Articles that need citations|citation needed]]).
 
 ### CDRL3
@@ -47,8 +47,8 @@ The **complementarity-determining regions** of [[Antibodies|antibodies]], abbrev
 *Also known as the DE loop*
 * Sequence variation in the DE loop exceeds that of the framework
 * Length variation found in [[Broadly neutralizing antibodies|broadly neutralizing antibodies]]
-* **Also known as the DE motif, since it connects the D and E strands of [[Antibodies]]; the name CDR4 is less common.**
-* **PyIgClassify2 found four distinct clusters for length-6 light chain.** Two of these with exclusively [[Light chains#Kappa subtype|kappa subtype]], one exclusively with [[Light chains#Lambda subtype|lambda subtype]], and one mixed with both; almost all heavy chain structures have length-8 CDR4 and co-cluster [@kelow2020; @kelow2022].
+* **Also known as the DE motif, since it connects the D and E strands of [[antibodies|Antibodies]]; the name CDR4 is less common.**
+* **PyIgClassify2 found four distinct clusters for length-6 light chain.** Two of these with exclusively [[light-chains#Kappa subtype|kappa subtype]], one exclusively with [[light-chains#Lambda subtype|lambda subtype]], and one mixed with both; almost all heavy chain structures have length-8 CDR4 and co-cluster [@kelow2020; @kelow2022].
 * **Also used in [[Nanobodies]] and can be engineered to improve binding** [@ketaren2023]
 * **Fernandez-Quintero et al. [@fernandezquintero2020] and Kelow et al. [@kelow2020] found that this can modulate the conformation of other CDRs, particularly CDRL1**
 ![[a-ferviously-noted.jpg]]

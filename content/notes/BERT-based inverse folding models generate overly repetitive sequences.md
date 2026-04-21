@@ -3,10 +3,10 @@ title: BERT-based inverse folding models generate overly repetitive sequences
 tags:
   - inverse-folding/evaluation
 created: "2025-01-23T05:03:29"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:28:09"
 ---
 #### Summary
- **[[BERT]]-based [[Inverse folding|inverse folding]] models generate overly repetitive sequences** [@kim2024]. This can be avoided by retraining the models with custom losses that look at overall sequence composition.
+ **[[BERT]]-based [[inverse-folding|inverse folding]] models generate overly repetitive sequences** [@kim2024]. This can be avoided by retraining the models with custom losses that look at overall sequence composition.
 
 #### Details
 The loss function used to improve repetitive sequences is as follows:

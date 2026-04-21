@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2024-05-03T04:28:07
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
@@ -11,4 +11,4 @@ modified: "2026-04-21T05:01:15"
 #### See also
 
 * [[The majority of missense mutations are destabilizing]]
-* [[Evolution and natural selection]]
+* [[evolution-and-natural-selection|Evolution and natural selection]]

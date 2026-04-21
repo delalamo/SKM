@@ -5,7 +5,7 @@ tags:
   - structure-prediction/sampling
   - conformational-dynamics/modeling
 created: "2024-05-30T01:36:56"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:28:09"
 ---
 #### Summary
- **The [[AlphaFold2]] and [[ESMFold]] databases can be mined for alternate conformations** [@waymentsteele2023; @herrington2023]. This is because different sub-families of sequences yield different conformational states.
+ **The [[alphafold2|AlphaFold2]] and [[ESMFold]] databases can be mined for alternate conformations** [@waymentsteele2023; @herrington2023]. This is because different sub-families of sequences yield different conformational states.

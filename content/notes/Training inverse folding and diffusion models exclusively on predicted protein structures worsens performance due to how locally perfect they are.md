@@ -3,15 +3,15 @@ tags:
   - diffusion-models/training
   - protein-design/training
 created: "2026-03-21T17:43:50"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:28:09"
 ---
 #### Summary
-**Training machine learning models for either [[Inverse folding|inverse folding]] or [[Protein backbone design|protein backbone design]] via [[Diffusion models|diffusion]] exclusively on predicted models worsens performance** [@hsu2022; @su2023]. This was observed when training [[ESM-IF]] and [[Geometric Vector Perceptrons|GVP]] as well as when training using the (Evoformer) or the [[Hybrid sequence-structure models|hybrid sequence-structure method]] MIF-ST, but not (SaProt) (which uses tokens from the (Foldseek) alphabet). The latter study also looked at downstream performance and saw worse results. This was shown to be because predicted models are "too perfect" at a local level [@tan2025].
+**Training machine learning models for either [[inverse-folding|inverse folding]] or [[protein-backbone-design|protein backbone design]] via [[diffusion-models|diffusion]] exclusively on predicted models worsens performance** [@hsu2022; @su2023]. This was observed when training [[ESM-IF]] and [[Geometric Vector Perceptrons|GVP]] as well as when training using the (Evoformer) or the [[Hybrid sequence-structure models|hybrid sequence-structure method]] MIF-ST, but not (SaProt) (which uses tokens from the (Foldseek) alphabet). The latter study also looked at downstream performance and saw worse results. This was shown to be because predicted models are "too perfect" at a local level [@tan2025].
 
 #### Details
 [@huguet2024] found that training their diffusion model on both predicted models and experimental structures worsened designability and novelty relative to a model trained on experimental structures only.
 
-[@lin2023generating] trained a version of the [[Protein backbone design|backbone]] [[Diffusion models|diffusion model]] GENIE on (AlphaFold2) models from SwissProt and found that although designability increased was greater than a model trained on the PDB, diversity was lower.
+[@lin2023generating] trained a version of the [[protein-backbone-design|backbone]] [[diffusion-models|diffusion model]] GENIE on (AlphaFold2) models from SwissProt and found that although designability increased was greater than a model trained on the PDB, diversity was lower.
 
 #### Figures
 

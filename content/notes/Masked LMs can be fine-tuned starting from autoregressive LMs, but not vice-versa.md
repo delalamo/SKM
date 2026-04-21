@@ -2,10 +2,10 @@
 tags:
   - protein-language-models/training
 created: "2024-07-02T05:18:59"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:28:09"
 ---
 #### Summary
-**Masked language models (such as [[BERT]]) can be fine-tuned starting from autoregressive models (such as [[GPT]]) in ways that benefit from scale, but not vice-versa** [@cheng2024]. This was demonstrated using [[Protein language models|protein language models]].
+**Masked language models (such as [[BERT]]) can be fine-tuned starting from autoregressive models (such as [[GPT]]) in ways that benefit from scale, but not vice-versa** [@cheng2024]. This was demonstrated using [[protein-language-models|protein language models]].
 
 #### Figures
 ![[Pasted-Graphic-4-2.png]]

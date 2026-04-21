@@ -1,10 +1,10 @@
 ---
 title: CRISPR-Cas9
 created: 2026-04-10T14:30:55
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-21T07:03:26"
 ---
 
-The **CRISPR/Cas9** system is widely used for targeted gene editing. It is engineered from the prokaryotic immune system. 
+The **CRISPR/Cas9** system is widely used for targeted gene editing. It is engineered from the prokaryotic immune system.
 
 #### Details
 

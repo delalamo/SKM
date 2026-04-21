@@ -6,7 +6,7 @@ tags:
   - structure-prediction/architecture
   - plddt
 created: "2026-04-05T17:34:36"
-modified: "2026-04-21T07:02:30"
+modified: "2026-04-21T07:20:46"
 ---
 
 #### Summary

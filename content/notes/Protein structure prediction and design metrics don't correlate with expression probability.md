@@ -2,12 +2,12 @@
 tags:
   - plddt
 created: 2026-03-06T09:43:56
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**Protein [[Structure prediction|structure prediction]] and design metrics ([[pLDDT]], perplexity, sequence homology) do not correlate with probability of expression** [@yang2025dayhoff].
+**Protein [[structure-prediction|structure prediction]] and design metrics ([[plddt|pLDDT]], perplexity, sequence homology) do not correlate with probability of expression** [@yang2025dayhoff].
 
 #### Figures
 

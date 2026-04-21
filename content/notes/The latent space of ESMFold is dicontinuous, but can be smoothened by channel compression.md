@@ -2,12 +2,12 @@
 tags:
   - structure-prediction/architecture
 created: "2024-08-13T05:05:39"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**The [[Protein language models#Representations|latent space]] of [[ESMFold]] is discontinuous** [@del2023; @lu2025tokenized]. However, it can be smoothened by compression using a [[Variational autoencoders|VAE]].
+**The [[protein-language-models#Representations|latent space]] of [[ESMFold]] is discontinuous** [@del2023; @lu2025tokenized]. However, it can be smoothened by compression using a [[Variational autoencoders|VAE]].
 
 #### Figures
 

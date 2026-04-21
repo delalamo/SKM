@@ -1,7 +1,7 @@
 ---
 title: Cytokines
 created: 2026-04-10T14:02:57
-modified: "2026-04-20T08:32:20"
+modified: "2026-04-21T07:03:26"
 ---
 
 **Cytokines** are signaling molecules involved in inflammation. They include [[Interferons]], [[Interleukins]], [[Chemokines]], colony-stimulating factors, [[Tumor necrosis factors]], and Transforming growth factors. At baseline their concentration in the blood is low. Overrelease can cause a cytokine storm, triggering massive inflammation.
@@ -15,7 +15,7 @@ modified: "2026-04-20T08:32:20"
 * Type II cytokines, mediate development of humoral response: [[Interleukins#Interleukin-4|IL-4]], [[Interleukins#Interleukin-5|IL-5]], [[Interleukins#Interleukin-10|IL-10]], [[Interleukins#Interleukin-13|IL-13]]
 * Regulatory cytokines, which moderate inflammation and maintain homeostasis: [[Interleukins#Interleukin-10|IL-10]], TGF-b
 
-## 
+##
 
 #### Barriers to therapeutic application
 
@@ -42,7 +42,7 @@ Synthetic cytokines that dimerize novel receptor pairs. This has been achieved u
 * Fusion of [[Interferons#Interferon gamma|IFN-g]] to Human serum albumin increased half-life from 4-8 hours to 144 hours
 * This may cause more distribution in lymph nodes and spleen
 * Can introduce steric hindrance due to 67 kDa size of HSA, reducing activity (this has been attributed to [[Interferons#Interferon alpha|IFN-a]] conjugated to albumin, which retained 1.4% of in vitro activity)
-* Fusing to Albumin-binding domains (which are much smaller) can counteract this 
+* Fusing to Albumin-binding domains (which are much smaller) can counteract this
 
 #### Masked cytokines
 

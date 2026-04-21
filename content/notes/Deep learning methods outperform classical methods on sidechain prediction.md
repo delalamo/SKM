@@ -1,12 +1,12 @@
 ---
 tags:
 created: 2024-05-18T08:35:46
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**Deep learning [[Structure prediction#Sidechain prediction|sidechain prediction]] methods outperform classical energy function-based methods** ([@visani2023], Heo and [@heo2023; @vangaru2025]). SCWRL4, which is a classical method that uses force fields, did not sample outlier rotamers as often as alternative DL-based method (Heo and [@heo2023]).
+**Deep learning [[structure-prediction#Sidechain prediction|sidechain prediction]] methods outperform classical energy function-based methods** ([@visani2023], Heo and [@heo2023; @vangaru2025]). SCWRL4, which is a classical method that uses force fields, did not sample outlier rotamers as often as alternative DL-based method (Heo and [@heo2023]).
 
 #### Figures
 | | RMSD (Å) ↓ | | | χ-MAE (°) ↓ | | | | RR (%) ↑ | Steric Clashes (#) ↓ | | |
