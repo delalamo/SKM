@@ -2,7 +2,9 @@
 tags:
   - inverse-folding/training
 created: 2026-04-05T17:47:00
-modified: "2026-04-21T07:28:09"
+modified: "2026-04-21T09:59:52"
+publicationHistory:
+  "2026-03-22": "https://biomlzk.ghost.io/training-inverse-folding-models-with-evolutionary-information-improves-fitness-prediction-performance/"
 ---
 
 #### Summary
@@ -37,7 +39,3 @@ In contrast, Gong et al. [@gong2024] calculated propensities from [[Multiple seq
 | Supervised Fine-Tuning Gap ↓ | 14% | 4% | 23% | 9% | 14% | 3% | 0% | -4% | 16% | 3% | 13% | 3% | 14% | 4% |
 
 *Table 3 from [@gong2024]*
-
-#### Publication history
-
-22 March 2026: https://biomlzk.ghost.io/training-inverse-folding-models-with-evolutionary-information-improves-fitness-prediction-performance/

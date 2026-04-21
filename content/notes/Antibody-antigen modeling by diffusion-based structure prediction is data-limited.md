@@ -5,7 +5,9 @@ tags:
   - diffusion-models/structure-prediction
   - plddt
 created: 2026-04-05T17:25:38
-modified: "2026-04-21T07:28:09"
+modified: "2026-04-21T09:59:52"
+publicationHistory:
+  "2026-03-16": "https://biomlzk.ghost.io/antibody-antigen-complex-prediction-by-af3-generation-methods-is-data-limited/"
 ---
 
 #### Summary
@@ -24,7 +26,3 @@ modified: "2026-04-21T07:28:09"
 | Protenix-v1-20250630 | **39.49** | **0.3574** |
 
 *Ref [@zhang2026]*
-
-#### Publication history
-
-- 16 March 2026: https://biomlzk.ghost.io/antibody-antigen-complex-prediction-by-af3-generation-methods-is-data-limited/
