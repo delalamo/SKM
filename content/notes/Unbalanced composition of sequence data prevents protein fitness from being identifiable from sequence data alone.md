@@ -2,12 +2,12 @@
 tags:
   - protein-language-models/training
 created: "2026-01-22T12:38:44"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 
 #### Summary
 
-**Unbalanced composition of protein sequence databases prevents prediction of [[Fitness prediction|fitness]] from sequence data alone, or from models derived from such data such as [[Protein language models|PLMs]]** [@weinstein2022]. Those authors argue that bigger models and datasets do not guarantee improvements in fitness prediction.
+**Unbalanced composition of protein sequence databases prevents prediction of [[Fitness prediction|fitness]] from sequence data alone, or from models derived from such data such as [[tags/protein-language-models|PLMs]]** [@weinstein2022]. Those authors argue that bigger models and datasets do not guarantee improvements in fitness prediction.
 
 #### Details
 

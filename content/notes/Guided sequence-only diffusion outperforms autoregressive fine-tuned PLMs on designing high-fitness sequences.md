@@ -4,11 +4,11 @@ tags:
   - diffusion-guidance/protein-design
   - protein-design/design
 created: "2026-04-10T15:35:05"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 
 #### Summary
-[[Diffusion guidance|Guided]] sequence-only [[Diffusion models|diffusion]] outperforms fine-tuned autoregressive [[Protein language models|PLMs]] on designing high-[[Fitness prediction|fitness]] enzymes [@yang2025].
+[[tags/diffusion-guidance|Guided]] sequence-only [[tags/diffusion-models|diffusion]] outperforms fine-tuned autoregressive [[tags/protein-language-models|PLMs]] on designing high-[[Fitness prediction|fitness]] enzymes [@yang2025].
 
 #### Figures
 ![[Pasted image 20260410113715.png]]

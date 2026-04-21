@@ -3,13 +3,13 @@ title: Fitness landscapes are locally smooth but globally rugged
 tags:
   - epistasis
 created: 2024-05-05T09:49:33
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 #### Summary
  **Fitness landscapes are locally smooth but globally rugged** [@papkou2023]. In other words, effects of mutations on fitness are locally additive but become defined by non-additive interactions as mutations accumulate [@beltran2024]. However some contradictory evidence exists (see [[Not all sequences with improved activity have plausible evolutionary paths via stepwise introduction of mutations]]).
 
 #### Details
- Mutants of dihydrofolate reductase were found to be distributed across many fitness peaks. However, for variants similar (<6 mutations from local maxima), the number of steps required to reach the local fitness maxima while maintaining a monotonically improving evolutionary trajectory generally matched the total number of substitutions anyway; in other words, there was a way to reach the local maxima without extra steps. 
+ Mutants of dihydrofolate reductase were found to be distributed across many fitness peaks. However, for variants similar (<6 mutations from local maxima), the number of steps required to reach the local fitness maxima while maintaining a monotonically improving evolutionary trajectory generally matched the total number of substitutions anyway; in other words, there was a way to reach the local maxima without extra steps.
 
 [@beltran2024] say the following (figure numbers and statistics edited out for clarity):
 

@@ -2,7 +2,7 @@
 tags:
   - protein-backbone-design/designability
 created: "2024-06-11T02:55:34"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 
 #### Summary
@@ -11,7 +11,7 @@ modified: "2026-04-21T05:01:15"
 
 #### Details
 
-It is unclear if this is due to the "[[Natural selection favors the highest average local fitness|Survival of the flattest]]" effect (e.g., these proteins are not evolvable), or if it is because [[De novo designed proteins have multiphasic folding pathways|they have trouble folding]]. These were then generated using [[Rosetta]]. [[AlphaFold2]] was unable to fold some of them accurately.
+It is unclear if this is due to the "[[Natural selection favors the highest average local fitness|Survival of the flattest]]" effect (e.g., these proteins are not evolvable), or if it is because [[De novo designed proteins have multiphasic folding pathways|they have trouble folding]]. These were then generated using [[Rosetta]]. [[tags/alphafold2|AlphaFold2]] was unable to fold some of them accurately.
 
 #### Figures
 

@@ -2,12 +2,12 @@
 tags:
   - structure-prediction/sampling
 created: "2024-07-02T05:21:45"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 
 #### Summary
 
-**Protein [[Structure prediction|structure prediction]] methods reliant on [[Multiple sequence alignments|MSAs]] outperform those that use [[Protein language models|PLMs]]**. This was observed in [[CASP15]] and documented by [@hu2022; @barrett2022].
+**Protein [[tags/structure-prediction|structure prediction]] methods reliant on [[Multiple sequence alignments|MSAs]] outperform those that use [[tags/protein-language-models|PLMs]]**. This was observed in [[CASP15]] and documented by [@hu2022; @barrett2022].
 
 #### Details
 

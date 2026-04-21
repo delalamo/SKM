@@ -2,12 +2,12 @@
 tags:
   - inverse-folding/evaluation
 created: 2025-02-19T02:27:19
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 
 #### Summary
 
-**For [[Inverse folding]] models, adding noise during inference sometimes leads to greater diversity** [@liu2024]. Perturbations in this case were carried using [[Rosetta]].
+**For [[tags/inverse-folding|Inverse folding]] models, adding noise during inference sometimes leads to greater diversity** [@liu2024]. Perturbations in this case were carried using [[Rosetta]].
 
 #### Figures
 

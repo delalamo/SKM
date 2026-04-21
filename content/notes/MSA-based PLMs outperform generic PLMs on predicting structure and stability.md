@@ -2,10 +2,10 @@
 tags:
   - thermostability/prediction
 created: "2026-04-05T17:51:40"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 #### Summary
- **MSA-based [[Protein language models|PLMs]] such as [[MSA Transformer]] and the [[Evoformer]] are more effective than generic PLMs at predicting [[Structure prediction|structure]]** [@hu2022]** and [[Stability and thermostability|stability]]** [@tan2023]. [@notin2023] found that [[MSA Transformer]] outperformed [[Protein language models|PLMs]] like [[ESM]]2-15B on almost all benchmarks in [[ProteinGym]].
+ **MSA-based [[tags/protein-language-models|PLMs]] such as [[MSA Transformer]] and the [[Evoformer]] are more effective than generic PLMs at predicting [[tags/structure-prediction|structure]]** [@hu2022]** and [[tags/thermostability|stability]]** [@tan2023]. [@notin2023] found that [[MSA Transformer]] outperformed [[tags/protein-language-models|PLMs]] like [[ESM]]2-15B on almost all benchmarks in [[ProteinGym]].
 
 #### Details
 Conclusions from [@hu2022] about the representations from [[Evoformer]] as a standalone ML model:

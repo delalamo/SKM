@@ -3,8 +3,8 @@ tags:
   - citation-fix
   - structure-prediction/sampling
 created: "2026-04-20T10:13:23"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 
 #### Summary
-**[[Structure prediction]] neural networks predict different conformations of a given sequence depending on if a single chain is predicted vs. multiple chains** [@jendrusch2025b; @cummins2022].
+**[[tags/structure-prediction|Structure prediction]] neural networks predict different conformations of a given sequence depending on if a single chain is predicted vs. multiple chains** [@jendrusch2025b; @cummins2022].

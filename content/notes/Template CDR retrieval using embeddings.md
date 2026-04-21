@@ -5,10 +5,10 @@ tags:
   - tm-score
   - alignment/sequence-based
 created: "2026-04-05T17:15:06"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 #### Summary
-**[[Complementarity-determining regions|CDR]] templates with high structural similarity can be fetched by comparing the embeddings to those of templates in the PDB, fetching the top ten, and taking the medoid by Euclidean distance** [@singh2025]. This strategy was found to be more accurate than either DeepAb and [[AlphaFold2]]. On [[Complementarity-determining regions#CDRH3|CDRH3]] it was more accurate than [[OmegaFold]], while on other CDRs it was about the same (results only show the LSTM model after fine-tuning, not the other two).
+**[[Complementarity-determining regions|CDR]] templates with high structural similarity can be fetched by comparing the embeddings to those of templates in the PDB, fetching the top ten, and taking the medoid by Euclidean distance** [@singh2025]. This strategy was found to be more accurate than either DeepAb and [[tags/alphafold2|AlphaFold2]]. On [[Complementarity-determining regions#CDRH3|CDRH3]] it was more accurate than [[OmegaFold]], while on other CDRs it was about the same (results only show the LSTM model after fine-tuning, not the other two).
 
 #### Figures
 | Model | Metric | Chain | CDR 1 | CDR 2 | CDR 3 | Whole Fv |

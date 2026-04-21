@@ -2,10 +2,10 @@
 tags:
   - antibody-developability/general
 created: "2024-08-22T05:08:48"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 #### Summary
-**[[Antibodies|Antibody]] [[Developability|developability]] predictions are stable to single point mutations** [@bashour2024]. Mutations to [[Framework region|framework regions]] were found to have the greatest variance in potential impact, whereas mutations to [[Complementarity-determining regions|CDRs]] were not.
+**[[tags/antibodies|Antibody]] [[tags/antibody-developability|developability]] predictions are stable to single point mutations** [@bashour2024]. Mutations to [[Framework region|framework regions]] were found to have the greatest variance in potential impact, whereas mutations to [[Complementarity-determining regions|CDRs]] were not.
 
 #### Figures
 ![[Sequence-DP-sensitivity-by-antibody-region.png]]

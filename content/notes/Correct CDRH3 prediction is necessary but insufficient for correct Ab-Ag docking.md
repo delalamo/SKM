@@ -2,10 +2,10 @@
 tags:
   - structure-prediction/complex-prediction
 created: 2025-02-12T10:41:32
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 #### Summary
-**Correct prediction of [[Complementarity-determining regions|CDRH3]] is necessary but insufficient for correct [[Antibodies|antibody]]-antigen docking** [@yin2024; @hitawala2024]. Improving CDRH3 prediction by providing templates can lead to improved docking prediction [@li2026].
+**Correct prediction of [[Complementarity-determining regions|CDRH3]] is necessary but insufficient for correct [[tags/antibodies|antibody]]-antigen docking** [@yin2024; @hitawala2024]. Improving CDRH3 prediction by providing templates can lead to improved docking prediction [@li2026].
 
 #### Figures
 ![[Pasted-image-20240624164409.png|300]]

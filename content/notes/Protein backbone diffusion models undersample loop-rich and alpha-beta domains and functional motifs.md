@@ -3,12 +3,12 @@ tags:
   - diffusion-models/protein-design
   - protein-design/design
 created: "2025-07-29T17:00:29"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 
 #### Summary
 
-**[[Protein backbone design]] models that use [[Diffusion models|diffusion]] undersample alpha/beta topologies and loop regions, particular those found in functional motifs found in enzymes, and oversample helical domains not found in CATH** [@lu2025]. This includes designable sheet-rich domains like immunoglobulins and is consistent across all diffusion models tested.
+**[[tags/protein-backbone-design|Protein backbone design]] models that use [[tags/diffusion-models|diffusion]] undersample alpha/beta topologies and loop regions, particular those found in functional motifs found in enzymes, and oversample helical domains not found in CATH** [@lu2025]. This includes designable sheet-rich domains like immunoglobulins and is consistent across all diffusion models tested.
 
 #### Figures
 

@@ -3,10 +3,10 @@ tags:
   - inverse-folding/evaluation
   - citation-fix
 created: "2026-04-05T17:48:59"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 #### Summary
- **[[Inverse folding]] of [[Complementarity-determining regions|CDRs]] benefits from masking contiguous stretches of residues during training** [@hoie2023]. This is in contrast to inverse folding of [[Framework region|framework residues]], which like generic proteins benefit from random masking (AKA "shotgun masking"; [@hsu2022]).
+ **[[tags/inverse-folding|Inverse folding]] of [[Complementarity-determining regions|CDRs]] benefits from masking contiguous stretches of residues during training** [@hoie2023]. This is in contrast to inverse folding of [[Framework region|framework residues]], which like generic proteins benefit from random masking (AKA "shotgun masking"; [@hsu2022]).
 
 #### Figures
 | Exp/Pred | Layer Decay | OAS Gaussian Noise | Test Masking | FR Avg. | CDR1H | CDR2H | CDR3H | CDR1L | CDR2L | CDR3L |

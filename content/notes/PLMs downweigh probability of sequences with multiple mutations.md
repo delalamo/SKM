@@ -2,12 +2,12 @@
 tags:
   - variant-effect-prediction
 created: 2024-07-02T05:23:04
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 
 ## Summary
 
-**[[Protein language models|PLMs]] are biased against sequences with multiple mutations** [@shaw2023].
+**[[tags/protein-language-models|PLMs]] are biased against sequences with multiple mutations** [@shaw2023].
 
 ## Details
 

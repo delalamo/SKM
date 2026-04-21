@@ -1,17 +1,17 @@
 ---
 title: Germline
 created: 2026-04-10T14:30:55
-modified: "2026-04-17T06:40:29"
+modified: "2026-04-21T07:03:26"
 ---
 
-**Germline** [[Antibodies|antibodies]] are antibodies that have not been subject to [[Somatic hypermutation|somatic hypermutation]].
+**Germline** [[tags/antibodies|antibodies]] are antibodies that have not been subject to [[Somatic hypermutation|somatic hypermutation]].
 
 #### Details
 ###### V-genes
 
 * [[Heavy chains]]:
-	* There are 7 human VH families containing 51 sequences. 
-* [[Light chains]]: 
+	* There are 7 human VH families containing 51 sequences.
+* [[tags/light-chains|Light chains]]:
 	* There are 16 human VL families containing 100 sequences (50 kappa and 50 lambda).
 	* Mice only have three functional lambda V-gene segments [@shrock2023].
 
@@ -19,7 +19,7 @@ modified: "2026-04-17T06:40:29"
 
 * [[Heavy chains]]:
 	* There are six JH segments
-* [[Light chains]]:
+* [[tags/light-chains|Light chains]]:
 	* There are 5 J-kappa and 7 J-lambda segments
 
 ###### D-genes

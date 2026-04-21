@@ -1,10 +1,10 @@
 ---
 tags:
 created: 2026-04-05T17:41:51
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 #### Summary
-Sequence perplexity is a metric used by [[Protein language models|protein language models]] and [[Inverse folding|inverse folding]] to quantify sequence recovery. Self-consistency perplexity is a derived metric where the perplexity is calculated using a [[Structure prediction|forward-folded model]] rather than the original model/structure.
+Sequence perplexity is a metric used by [[tags/protein-language-models|protein language models]] and [[tags/inverse-folding|inverse folding]] to quantify sequence recovery. Self-consistency perplexity is a derived metric where the perplexity is calculated using a [[tags/structure-prediction|forward-folded model]] rather than the original model/structure.
 
 #### Details
 The perplexity values of null models was calculated below by [@ingraham2019]:
@@ -14,7 +14,7 @@ The perplexity values of null models was calculated below by [@ingraham2019]:
 
 Hie et al. found that sequence length does not consistently correlate with perplexity values within protein families. [@hie2022]
 
-Meier et al. introduced ways of calculating probabilities or "energies" of sequences using masked [[Protein language models|LMs]] (e.g., how favored or disfavored they are given evolution). The authors of [[ESM]]-1v propose four approaches for this: [@meier2022]
+Meier et al. introduced ways of calculating probabilities or "energies" of sequences using masked [[tags/protein-language-models|LMs]] (e.g., how favored or disfavored they are given evolution). The authors of [[ESM]]-1v propose four approaches for this: [@meier2022]
 
 - **Masked marginal probability:** Masks are introduced at all mutation residues and probabilities relative to the wildtype residue are calculated: $\sum{\log{p(x_{i}=x_{i}^{mnt}|x_{-M}) - \log{p(x_{i}=x_{i}^{wt}|x_{-M})}}}$
 - **Mutant marginal probability:** Requires a single forward pass for each mutation: $\sum{\log{p(x_{i}=x_{i}^{mnt}|x^{mnt}) - \log{p(x_{i}=x_{i}^{wt}|x^{mnt})}}}$. The entire sequence is kept fixed except for one mutation and the preference for the mutation of interest, normalized to the WT residue, is calculated. This was used for structure-based [[Fitness prediction|fitness prediction]] in [@ding2024] with Spearman $R$ values ranging from 0.39–0.71.

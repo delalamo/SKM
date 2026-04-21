@@ -3,12 +3,12 @@ tags:
   - protein-structure-tokenization
   - variant-effect-prediction
 created: 2024-12-10T01:39:37
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 
 #### Summary
 
-**[[Protein structure tokenization|Structural tokens]] improve zero-shot [[Variant effect prediction|variant effect prediction]] in [[ESM|ESM3]], but only when using the experimental structure of the WT** [@loux2024]. The use of computational models obtained using [[Rosetta]] or short [[MD simulations]] substantially lowers the Spearman correlation, despite the resulting embeddings being almost identical.
+**[[tags/protein-structure-tokenization|Structural tokens]] improve zero-shot [[tags/variant-effect-prediction|variant effect prediction]] in [[ESM|ESM3]], but only when using the experimental structure of the WT** [@loux2024]. The use of computational models obtained using [[Rosetta]] or short [[MD simulations]] substantially lowers the Spearman correlation, despite the resulting embeddings being almost identical.
 
 #### Figures
 

@@ -3,12 +3,12 @@ tags:
   - alphafold2
   - antibody-structure-prediction/cdr
 created: "2024-05-08T17:59:40"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 
 #### Summary
 
-**The linear representations and distograms from [[AlphaFold2]] Multimer can be used to improve the [[Antibody structure prediction|structure prediction]] of [[Antibodies|antibodies]]** [@peng2023].
+**The linear representations and distograms from [[tags/alphafold2|AlphaFold2]] Multimer can be used to improve the [[tags/antibody-structure-prediction|structure prediction]] of [[tags/antibodies|antibodies]]** [@peng2023].
 
 #### See also
 

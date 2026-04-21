@@ -2,12 +2,12 @@
 tags:
   - protein-language-models/training
 created: "2026-04-05T17:52:14"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 
 #### Summary
 
-**[[Protein language models|PLMs]] are biased by the fact that sequence databases used for training are unevenly distributed toward prokaryotes** [@ding2024protein; @avasthi2024]. This bias is stronger for larger models and stronger for [[ProGen]] than [[ESM]], with the former being trained on UniRef90 and the latter on UniRef50. Augmenting these datasets with metagenomic data can improve generalization (but it is unclear if it would fix this problem specifically; [@cheng2024]).
+**[[tags/protein-language-models|PLMs]] are biased by the fact that sequence databases used for training are unevenly distributed toward prokaryotes** [@ding2024protein; @avasthi2024]. This bias is stronger for larger models and stronger for [[ProGen]] than [[ESM]], with the former being trained on UniRef90 and the latter on UniRef50. Augmenting these datasets with metagenomic data can improve generalization (but it is unclear if it would fix this problem specifically; [@cheng2024]).
 
 #### Details
 

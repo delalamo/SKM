@@ -3,12 +3,12 @@ tags:
   - protein-language-models/representations
   - alignment/sequence-based
 created: "2024-07-02T05:24:23"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 
 #### Summary
 
-**Learning to predict TM-scores from sequence alone (by learning cosine similarity from whole-sequence representations), allows [[Protein language models|PLMs]] to learn structural classifications** [@hamamsy2023].
+**Learning to predict TM-scores from sequence alone (by learning cosine similarity from whole-sequence representations), allows [[tags/protein-language-models|PLMs]] to learn structural classifications** [@hamamsy2023].
 
 #### Figures
 

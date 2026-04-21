@@ -4,12 +4,12 @@ tags:
   - protein-design/design
   - tm-score
 created: "2024-11-04T23:45:40"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 
 #### Summary
 
-**Protein [[Protein backbone design#Diffusion|structure diffusion]] produces fewer β-sheets than helices** [@lin2023generating], **and design success rates are generally lower** [@ingraham2023]. [@lee2023] nonetheless confirmed by circular dichroism that sheet designs express and fold correctly. This tendency against sheets can be ameliorated by fine-tuning [@huguet2024]. In contrast, [[Protein language models|language-model]]-designed proteins do not have this bias [@alamdari2023].
+**Protein [[tags/protein-backbone-design#Diffusion|structure diffusion]] produces fewer β-sheets than helices** [@lin2023generating], **and design success rates are generally lower** [@ingraham2023]. [@lee2023] nonetheless confirmed by circular dichroism that sheet designs express and fold correctly. This tendency against sheets can be ameliorated by fine-tuning [@huguet2024]. In contrast, [[tags/protein-language-models|language-model]]-designed proteins do not have this bias [@alamdari2023].
 
 #### Details
 

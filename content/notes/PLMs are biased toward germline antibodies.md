@@ -3,13 +3,13 @@ tags:
   - protein-language-models/antibodies
   - affinity-maturation
 created: "2026-04-05T17:12:20"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 #### Summary
-**[[Protein language models]] are biased toward residues found in [[Germline|germline]] sequences** [@olsen2022; @nijkamp2023; @olsen2024]. Reasons include the fact that blood samples that are sequenced contain mostly naive [[B cells]], and fewer memory B cells and plasma cells. [@olsen2024] found that [[Focal loss]] improves prediction of non-germline. Paired antibody language models are less sensitive to this bias (Burbach and [@burbach2024]).
+**[[tags/protein-language-models|Protein language models]] are biased toward residues found in [[Germline|germline]] sequences** [@olsen2022; @nijkamp2023; @olsen2024]. Reasons include the fact that blood samples that are sequenced contain mostly naive [[tags/b-cells|B cells]], and fewer memory B cells and plasma cells. [@olsen2024] found that [[Focal loss]] improves prediction of non-germline. Paired antibody language models are less sensitive to this bias (Burbach and [@burbach2024]).
 
 #### Details
-Relatedly, non-antibody [[Protein language models|PLMs]] are also biased towards [[PLMs are biased by uneven distribution of sequence data in datasets such as UniRef and UniProt|sequences from model organisms]], which arises from the same sensitivity to training data.
+Relatedly, non-antibody [[tags/protein-language-models|PLMs]] are also biased towards [[PLMs are biased by uneven distribution of sequence data in datasets such as UniRef and UniProt|sequences from model organisms]], which arises from the same sensitivity to training data.
 
 #### Figures
 | | Germline residues | | | | Non-germline residues | | | | | |

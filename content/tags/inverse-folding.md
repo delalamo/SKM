@@ -10,7 +10,7 @@ modified: "2026-04-20T10:13:23"
 
 ## Methods
 
-_See [[Hybrid sequence-structure models]] for a list of methods that incorporate [[Protein language models|PLMs]]_
+_See [[Hybrid sequence-structure models]] for a list of methods that incorporate [[tags/protein-language-models|PLMs]]_
 
 - **[[ProteinMPNN]]** and its derivatives
 - **[[ESM-IF]]**
@@ -32,6 +32,6 @@ _See [[Hybrid sequence-structure models]] for a list of methods that incorporate
 
 #### Datasets
 
-- **PDBench** is a dataset of 595 protein structures with diverse, evenly divided topologies for benchmarking of [[Inverse folding]] methods [@castorina2023].
+- **PDBench** is a dataset of 595 protein structures with diverse, evenly divided topologies for benchmarking of [[tags/inverse-folding|Inverse folding]] methods [@castorina2023].
  ![[Alpha-Beta-Barre.png]]
  _Figure 2 from Castorina et al. [@castorina2023]_

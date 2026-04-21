@@ -4,12 +4,12 @@ tags:
   - diffusion-guidance/structure-prediction
   - protein-folding/structure-prediction
 created: "2026-04-10T15:35:05"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 
 #### Summary
 
-**Enhanced sampling of protein structure [[Diffusion guidance|diffusion]] with [[Metadynamics|metadynamics]]-like potentials can sometimes converge slower than unbiased diffusion** [@xie2026].
+**Enhanced sampling of protein structure [[tags/diffusion-guidance|diffusion]] with [[Metadynamics|metadynamics]]-like potentials can sometimes converge slower than unbiased diffusion** [@xie2026].
 
 #### Figures
 ![[Pasted-image-20260311083919.png]]

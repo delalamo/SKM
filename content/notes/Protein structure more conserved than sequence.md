@@ -3,12 +3,12 @@ tags:
   - evolution-and-natural-selection/structure
   - alignment/structure-based
 created: 2024-07-02T08:01:41
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 
 #### Summary
 
-**Protein structure is more conserved than sequence.** Many proteins have similar structures but barely any sequence overlap [@kilinc2023; @illergrd2009; @chothia1986; @delalamo2022]. As a result, [[Clustering|clustering]] proteins using their structures is more effective than clustering by using their sequence [@moi2023]. Likewise, calculating phylogenies is more accurate using structure than sequence - [@moi2023] used [[AlphaFold2]] models alongside [[Foldseek]] to do so.
+**Protein structure is more conserved than sequence.** Many proteins have similar structures but barely any sequence overlap [@kilinc2023; @illergrd2009; @chothia1986; @delalamo2022]. As a result, [[Clustering|clustering]] proteins using their structures is more effective than clustering by using their sequence [@moi2023]. Likewise, calculating phylogenies is more accurate using structure than sequence - [@moi2023] used [[tags/alphafold2|AlphaFold2]] models alongside [[Foldseek]] to do so.
 
 #### Details
 

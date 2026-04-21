@@ -2,10 +2,10 @@
 tags:
   - protein-protein-interactions
 created: 2024-09-19T05:32:41
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 #### Summary
-**Antibody-antigen binding modes are not all defined by induced fit.** Most [[Antibodies|antibodies]] do not change conformation upon binding, with 70% or so of [[Complementarity-determining regions|CDRH3]] loops moving less than 1 Å [@liu2024antibody]. Additionally, the conformational space of unbound antibodies sampled from [[MD simulations]] is a superset of all bound conformations [@fernandezquintero2022], and conformational flexibility is inversely proportional to binding affinity ([@mikolajek2022]; see [[Conformational entropy in antibodies is inversely proportional to antigen affinity]]).
+**Antibody-antigen binding modes are not all defined by induced fit.** Most [[tags/antibodies|antibodies]] do not change conformation upon binding, with 70% or so of [[Complementarity-determining regions|CDRH3]] loops moving less than 1 Å [@liu2024antibody]. Additionally, the conformational space of unbound antibodies sampled from [[MD simulations]] is a superset of all bound conformations [@fernandezquintero2022], and conformational flexibility is inversely proportional to binding affinity ([@mikolajek2022]; see [[Conformational entropy in antibodies is inversely proportional to antigen affinity]]).
 
 #### Figures
 ![[Pasted-image-20240320092244.png]]

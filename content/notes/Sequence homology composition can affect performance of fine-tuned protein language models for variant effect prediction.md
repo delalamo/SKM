@@ -2,11 +2,11 @@
 tags:
   - protein-language-models/representations
 created: "2026-03-11T08:10:23"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 
 #### Summary
-**[[Multiple sequence alignments|Sequence homology]] composition can affect how well a fine-tuned [[Protein language models|protein language model]] performs for [[Variant effect prediction|variant effect prediction]]** [@bixby2026]. Here, it was used to rank possible designs given several design constraints.
+**[[Multiple sequence alignments|Sequence homology]] composition can affect how well a fine-tuned [[tags/protein-language-models|protein language model]] performs for [[tags/variant-effect-prediction|variant effect prediction]]** [@bixby2026]. Here, it was used to rank possible designs given several design constraints.
 
 #### Figures
 ![[Pasted-image-20260311080631.png]]

@@ -3,12 +3,12 @@ tags:
   - protein-language-models/training
   - thermostability/prediction
 created: "2026-01-22T12:38:44"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:03:26"
 ---
 
 #### Summary
 
-**Fine-tuning [[Protein language models|PLMs]] [[ESM]]2, ProtT5, and Ankh virtually always improved property prediction** ([[Variant effect prediction|variant effect prediction]], [[Stability and thermostability|stability]] prediction, [[Function prediction|function prediction]], others) **compared to zero-shot** [@schmirler2023]. [@jiang2024] found that active learning for [[Directed evolution|directed evolution]] benefited from fine-tuning over zero-shot prediction after two to four rounds (fine-tuning carried out using a [[Random forest|random forest]] model trained on mean-pooled embeddings).
+**Fine-tuning [[tags/protein-language-models|PLMs]] [[ESM]]2, ProtT5, and Ankh virtually always improved property prediction** ([[tags/variant-effect-prediction|variant effect prediction]], [[tags/thermostability|stability]] prediction, [[Function prediction|function prediction]], others) **compared to zero-shot** [@schmirler2023]. [@jiang2024] found that active learning for [[Directed evolution|directed evolution]] benefited from fine-tuning over zero-shot prediction after two to four rounds (fine-tuning carried out using a [[Random forest|random forest]] model trained on mean-pooled embeddings).
 
 #### Figures
 ![[Pasted-image-20240102175550.png]]
