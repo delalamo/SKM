@@ -1,10 +1,10 @@
 ---
 title: Hybrid sequence-structure models
 created: 2026-04-10T14:30:55
-modified: "2026-04-21T07:03:26"
+modified: "2026-04-21T07:20:46"
 ---
 
-**Hybrid sequence-structure models** combine [[tags/protein-language-models|PLMs]] with [[tags/inverse-folding|Inverse folding]] models to draw from both massive sequence databases and highly detailed structural data.
+**Hybrid sequence-structure models** combine [[tags/protein-language-models|protein language models]] with [[tags/inverse-folding|inverse folding]] models to draw from both massive sequence databases and highly detailed structural data.
 
 #### Methods
 

@@ -2,7 +2,7 @@
 tags:
   - evolution-and-natural-selection/structure
 created: 2024-05-02T05:20:50
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:20:46"
 ---
 
 #### Summary
@@ -10,4 +10,7 @@ modified: "2026-04-21T05:01:15"
 
 #### Figures
 ![[Pasted-image-20240116170835.png]]
-*Figure 2 from [@perron2019]*
+*Ref [@perron2019]*
+
+#### See also
+* [[Amino acid substitution patterns are dependent on solvent exposure]]

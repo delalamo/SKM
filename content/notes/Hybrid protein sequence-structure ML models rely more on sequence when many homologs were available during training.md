@@ -3,12 +3,12 @@ tags:
   - protein-language-models/training
   - inverse-folding/training
 created: 2024-07-02T05:13:15
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:20:46"
 ---
 
 #### Summary
 
-Structure is not used by hybrid sequence-structure models when many homologs are available [@gamouh2023].
+Structure is not used by [[Hybrid sequence-structure models|hybrid sequence-structure models]] when many homologs are available [@gamouh2023].
 
 #### Details
 
