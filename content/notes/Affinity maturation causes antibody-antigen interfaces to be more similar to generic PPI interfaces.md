@@ -2,8 +2,9 @@
 tags:
   - affinity-maturation
   - protein-protein-interactions
+  - antibody-antigen-interactions/misc
 created: "2026-04-20T10:13:23"
-modified: "2026-04-21T07:28:09"
+modified: "2026-04-21T10:30:31"
 ---
 
 #### Summary

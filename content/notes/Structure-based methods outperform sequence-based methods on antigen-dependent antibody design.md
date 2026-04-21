@@ -2,8 +2,9 @@
 tags:
   - protein-language-models/antibodies
   - antibody-structure-prediction/complex-prediction
+  - antibody-antigen-interactions/complex-prediction
 created: "2024-12-31T08:49:28"
-modified: "2026-04-21T07:28:09"
+modified: "2026-04-21T10:30:31"
 ---
 
 #### Summary
