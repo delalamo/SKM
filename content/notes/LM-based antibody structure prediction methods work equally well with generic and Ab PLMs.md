@@ -3,12 +3,12 @@ tags:
   - protein-language-models/antibodies
   - antibody-structure-prediction/cdr
 created: 2026-04-05T17:38:14
-modified: "2026-04-20T08:32:20"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
 
-**[[Antibody structure prediction|Predicting the structure of antibodies]] using embeddings from [[Antibodies|antibody]] [[Protein language models|language models]] leads to equal or worse performance compared to using embeddings from generic protein language models** [^lee2023][^kenlay2024]. The former found that training [[IgFold]] with with [[ESM]]2-35M embeddings gave comparable performance to using the AntiBERTy embeddings used by default, while the latter obtained better performance on ABodyBuilder3 ProtT5 embeddings compared to IgBERT and IgT5.
+**[[Antibody structure prediction|Predicting the structure of antibodies]] using embeddings from [[Antibodies|antibody]] [[Protein language models|language models]] leads to equal or worse performance compared to using embeddings from generic protein language models** [@lee2023solvent; @kenlay2024]. The former found that training [[IgFold]] with with [[ESM]]2-35M embeddings gave comparable performance to using the AntiBERTy embeddings used by default, while the latter obtained better performance on ABodyBuilder3 ProtT5 embeddings compared to IgBERT and IgT5.
 
 #### Figures
 
@@ -20,7 +20,4 @@ modified: "2026-04-20T08:32:20"
 | IgFold-variant2 | ESM-2(650M) | Freeze | IGFold | 0.93 | 3.77 | 0.48 | 0.91 | 0.94 | 3.20 | 0.48 | 0.94 | 0.49 | 1.13 |
 | IgFold-variant3 | ESM-2(35M) | Trainable | IGFold | 0.93 | 3.88 | 0.51 | 0.89 | 0.85 | 3.14 | 0.51 | 1.00 | 0.50 | 1.10 |
 
-*Ref [^lee2023]*
-
-[^lee2023]: Lee et al. (2023) "Solvent: A Framework for Protein Folding." https://doi.org/10.48550/arXiv.2307.04603
-[^kenlay2024]: Kenlay et al. (2024) "ABodyBuilder3: improved and scalable antibody structure predictions." Bioinform.. https://doi.org/10.1093/BIOINFORMATICS/BTAE576
+*Ref [@lee2023solvent]*

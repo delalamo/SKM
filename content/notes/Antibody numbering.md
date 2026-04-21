@@ -10,7 +10,4 @@ Several schemes for **[[Antibodies|antibody]] numbering** exist to standardize t
 **Chothia:**
 
 ![[Pasted-image-20240618135831.png]]
-*Ref [^chiu2019]*
-
-
-[^chiu2019]: Chiu et al. (2019) "Antibody structure and function: The basis for engineering therapeutics." *Antibodies*. https://doi.org/10.3390/antib8040055
+*Ref [@chiu2019]*

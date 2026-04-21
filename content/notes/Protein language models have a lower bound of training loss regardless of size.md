@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/training
 created: "2026-01-22T12:38:44"
-modified: "2026-04-20T08:32:20"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -10,6 +10,4 @@ modified: "2026-04-20T08:32:20"
 
 #### Figures
 ![[Pasted-Graphic-18.png]]
-*Ref [^serrano2024]*
-
-[^serrano2024]: Serrano et al. (2024) "Are Protein Language Models Compute Optimal?." https://doi.org/10.48550/ARXIV.2406.07249
+*Ref [@serrano2024]*

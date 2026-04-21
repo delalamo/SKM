@@ -4,7 +4,7 @@ created: 2026-04-10T14:30:55
 modified: "2026-04-20T10:13:23"
 ---
 
-**IgFold** is an [[Antibodies|antibody]] [[Antibody structure prediction|structure prediction]] method that uses embeddings from the AntiBERTy ([[10.48550__arXiv.2112.07782|Ruffolo et al 2021]]) and extensively uses [[Invariant point attention|invariant point attention]] ([[10.1038__s41467-023-38063-x|Ruffolo et al 2023]]). 
+**IgFold** is an [[Antibodies|antibody]] [[Antibody structure prediction|structure prediction]] method that uses embeddings from the AntiBERTy [@ruffolo2021] and extensively uses [[Invariant point attention|invariant point attention]] [@ruffolo2023]. 
 
 #### Details
 
@@ -16,5 +16,3 @@ modified: "2026-04-20T10:13:23"
 * Error estimation also uses [[Invariant point attention]]
 * A study found it to generate [[DL structure tools introduce chiral errors such as swapped chiral centers, D-amino acids, and cis-amide bonds|unrealistic bond lengths and angles]], particularly in [[Complementarity-determining regions#CDRH3|CDRH3]]
 * Results are competitive with AlphaFold Multimer
-
-

@@ -2,10 +2,10 @@
 tags:
   - low-rank-adaptation
 created: 2024-05-20T04:20:58
-modified: "2026-04-20T08:32:20"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
-**Weight-decomposed low-rank adaptation** (abbreviated DoRA) is a modification of [[Low-rank Adaptation]] introduced by [^liu2024] that first decomposes the modified weights into a directional matrix and a magnitude vector. For a constant rank, this adds slightly more parameters, but the authors found that rank can be halved relative to DoRA without any issue and that it made the method more robust in general.
+**Weight-decomposed low-rank adaptation** (abbreviated DoRA) is a modification of [[Low-rank Adaptation]] introduced by [@liu2024dora] that first decomposes the modified weights into a directional matrix and a magnitude vector. For a constant rank, this adds slightly more parameters, but the authors found that rank can be halved relative to DoRA without any issue and that it made the method more robust in general.
 
 #### Code
 ```python
@@ -37,5 +37,3 @@ class LinearWithDoRAMerged(nn.Module):
 #### Figures
 ![[Pasted-image-20240520090643.png]]
 *Ref https://magazine.sebastianraschka.com/p/lora-and-dora-from-scratch*
-
-[^liu2024]: Liu et al. (2024) "DoRA: Weight-Decomposed Low-Rank Adaptation." ICML. https://proceedings.mlr.press/v235/liu24bn.html

@@ -10,9 +10,7 @@ modified: "2026-04-20T07:16:03"
 
 * **GEARnet-ESM**
 * **MIF-ST**
-* **ProstT5** ([[10.1093__nargab__lqae150|Heinzinger et al 2024]])
+* **ProstT5** [@heinzinger2023]
 * **[[SaProt]]**
 * **InstructPLM**
-* **CarbonDesign** ([[10.1038__s42256-024-00838-2|Ren et al 2024]])
-
-
+* **CarbonDesign** [@ren2024]

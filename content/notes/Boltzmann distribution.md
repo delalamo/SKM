@@ -23,6 +23,4 @@ $$
 - $Z$: configurational partition function, $Z=\int e^{- \beta U(\boldsymbol{x})} d \boldsymbol{x}$
 - $Q$: partition function, $Q=\int e^{- \beta (U(\boldsymbol{x})+K(\boldsymbol{p}))} d \boldsymbol{x} d \boldsymbol{p}$
 
-*See [[Mathematical terms in MD]] for notation. Extensively cites [^hnin2022]*
-
-[^hnin2022]: Hénin et al. (2022) "Enhanced Sampling Methods for Molecular Dynamics Simulations [Article v1.0]." *Living Journal of Computational Molecular Science*. https://doi.org/10.33011/livecoms.4.1.1583
+*See [[Mathematical terms in MD]] for notation. Extensively cites [@hnin2022]*

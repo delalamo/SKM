@@ -9,5 +9,3 @@ modified: "2026-04-20T10:13:23"
 #### Details
 
 * Structural tokens for residues with [[pLDDT]] values less than 70 are masked.
-
-

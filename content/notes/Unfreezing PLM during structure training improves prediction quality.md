@@ -3,7 +3,7 @@ tags:
   - protein-language-models/training
   - tm-score
 created: "2026-04-05T17:45:40"
-modified: "2026-04-20T08:32:20"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -19,6 +19,4 @@ modified: "2026-04-20T08:32:20"
 | variant3 | Freeze | 1 Evoformer | 0.63 |
 | variant4 | Trainable | 1 Evoformer | 0.61 |
 
-*Ref [^lee2023]*
-
-[^lee2023]: Lee et al. (2023) "Solvent: A Framework for Protein Folding." https://doi.org/10.48550/arXiv.2307.04603
+*Ref [@lee2023solvent]*

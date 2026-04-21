@@ -3,10 +3,10 @@ tags:
   - protein-language-models/antibodies
   - affinity-maturation
 created: "2026-04-05T17:12:20"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
-**[[Protein language models]] are biased toward residues found in [[Germline|germline]] sequences** [^olsen2022][^nijkamp2023][^olsen2024]. Reasons include the fact that blood samples that are sequenced contain mostly naive [[B cells]], and fewer memory B cells and plasma cells. [^olsen2024] found that [[Focal loss]] improves prediction of non-germline. Paired antibody language models are less sensitive to this bias (Burbach and [^burbach2024]).
+**[[Protein language models]] are biased toward residues found in [[Germline|germline]] sequences** [@olsen2022; @nijkamp2023; @olsen2024]. Reasons include the fact that blood samples that are sequenced contain mostly naive [[B cells]], and fewer memory B cells and plasma cells. [@olsen2024] found that [[Focal loss]] improves prediction of non-germline. Paired antibody language models are less sensitive to this bias (Burbach and [@burbach2024]).
 
 #### Details
 Relatedly, non-antibody [[Protein language models|PLMs]] are also biased towards [[PLMs are biased by uneven distribution of sequence data in datasets such as UniRef and UniProt|sequences from model organisms]], which arises from the same sensitivity to training data.
@@ -26,16 +26,11 @@ Relatedly, non-antibody [[Protein language models|PLMs]] are also biased towards
 | Ab-ModMask | 1.11 | 1.18 | 1.09 | 1.17 | 10.26 | **11.13** | 13.18 | 10.78 | 10.19 | 11.42 |
 | Ab-FT | 1.11 | 1.18 | 1.10 | 1.18 | 10.88 | 11.91 | 13.67 | 11.25 | 10.63 | 12.29 |
 | AbLang-2 | 1.10 | 1.17 | 1.09 | 1.16 | **9.92** | **11.13** | **12.47** | **10.09** | **9.54** | **10.77** |
-*Table 3 from [^olsen2024]*
+*Table 3 from [@olsen2024]*
 
 ![[Pasted-image-20240516151725.png]]
-*Figure 3 from Burbach and [^burbach2024]*
+*Figure 3 from Burbach and [@burbach2024]*
 
 #### See also
 - [[Generic PLMs outperform antibody-specific PLMs on zero-shot predictions of affinity changes]]
 - [[ML models must trade off bias and variance]]
-
-[^olsen2022]: Olsen et al. (2022) "AbLang: an antibody language model for completing antibody sequences." *Bioinformatics Advances*. https://doi.org/10.1093/bioadv/vbac046
-[^nijkamp2023]: Nijkamp et al. (2023) "ProGen2: Exploring the boundaries of protein language models." *Cell Systems*. https://doi.org/10.1016/j.cels.2023.10.002
-[^olsen2024]: Olsen et al. (2024) "Addressing the antibody germline bias and its effect on language models for improved antibody design." Bioinformatics. https://doi.org/10.1093/bioinformatics/btae618
-[^burbach2024]: Burbach & Briney (2024) "Improving antibody language models with native pairing." *Patterns*. https://doi.org/10.1016/j.patter.2024.100967

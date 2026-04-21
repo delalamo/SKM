@@ -4,7 +4,7 @@ created: 2026-04-10T14:30:55
 modified: "2026-04-20T10:13:23"
 ---
 
-**ImmuneBuilder** is an [[Antibody structure prediction]] method consisting of ABodyBuilder2 for [[Antibodies|antibodies]], NanoBodyBuilder2 for [[Nanobodies|nanobodies]], and TCRBuilder2 for [[T-cell receptors|TCRs]] ([[10.1038__s42003-023-04927-7|Abandades et al 2023]]).
+**ImmuneBuilder** is an [[Antibody structure prediction]] method consisting of ABodyBuilder2 for [[Antibodies|antibodies]], NanoBodyBuilder2 for [[Nanobodies|nanobodies]], and TCRBuilder2 for [[T-cell receptors|TCRs]] [@abanades2023].
 
 #### Details
 
@@ -15,5 +15,3 @@ modified: "2026-04-20T10:13:23"
 #### See also
 
 * [[Deep learning methods produce different CDRH3 conformers]]
-
-

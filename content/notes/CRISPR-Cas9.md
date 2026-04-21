@@ -19,5 +19,3 @@ The **CRISPR/Cas9** system is widely used for targeted gene editing. It is engin
 * Engineered versions of this mechanism combine the tracRNA and crRNA into a single guide RNA ([[sgRNA]])
 
 The therapeutic Casgevy which uses this technology was approved in 2023 to treat [[Sickle-cell anemia]].
-
-

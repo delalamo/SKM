@@ -2,16 +2,16 @@
 tags:
   - protein-language-models/training
 created: "2026-04-05T17:52:14"
-modified: "2026-04-20T08:32:20"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
 
-**[[Protein language models|PLMs]] are biased by the fact that sequence databases used for training are unevenly distributed toward prokaryotes** [^ding2024][^avasthi2024]. This bias is stronger for larger models and stronger for [[ProGen]] than [[ESM]], with the former being trained on UniRef90 and the latter on UniRef50. Augmenting these datasets with metagenomic data can improve generalization (but it is unclear if it would fix this problem specifically; [^cheng2024]).
+**[[Protein language models|PLMs]] are biased by the fact that sequence databases used for training are unevenly distributed toward prokaryotes** [@ding2024protein; @avasthi2024]. This bias is stronger for larger models and stronger for [[ProGen]] than [[ESM]], with the former being trained on UniRef90 and the latter on UniRef50. Augmenting these datasets with metagenomic data can improve generalization (but it is unclear if it would fix this problem specifically; [@cheng2024]).
 
 #### Details
 
-Most organisms only have a few proteins assigned to them [^avasthi2024].
+Most organisms only have a few proteins assigned to them [@avasthi2024].
 
 #### Figures
 
@@ -28,18 +28,14 @@ Most organisms only have a few proteins assigned to them [^avasthi2024].
 
 ![[Pasted-image-20240318153609.png]]
 
-*Figures from [^ding2024]*
+*Figures from [@ding2024protein]*
 
 ![[Pasted-image-20240806172532.png]]
 
-*Ref [^avasthi2024]*
+*Ref [@avasthi2024]*
 
 #### See also
 
 * [[Unbalanced composition of sequence data prevents protein fitness from being identifiable from sequence data alone]]
 * [[Protein property prediction using PLMs does not benefit from scale except when predicting inferring features of either structural or sparsely populated sequence families]]
 * [[ML models must trade off bias and variance]]
-
-[^ding2024]: Ding & Steinhardt (2024) "Protein language models are biased by unequal sequence sampling across the tree of life." https://doi.org/10.1101/2024.03.07.584001
-[^avasthi2024]: Avasthi & York (2024) "The known protein universe is phylogenetically biased." https://doi.org/10.57844/ARCADIA-570F-5CFB
-[^cheng2024]: Cheng et al. (2024) "Training Compute-Optimal Protein Language Models." https://doi.org/10.1101/2024.06.06.597716

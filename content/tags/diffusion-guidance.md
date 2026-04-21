@@ -11,10 +11,10 @@ modified: "2026-04-20T10:13:23"
 
 #### Details
 
-Xie et al (doi.org/10.48550/ARXIV.2602.16634) outline three broad types of guidance used by diffusion models:
+Xie et al [@xie2026] outline three broad types of guidance used by diffusion models:
 
 1. Score guidance, in which gradients from classifiers, constraints, or rewards are used to nudge the diffusion path.
 2. Path-integral reweighting, such as [[Feynman-Kac steering|Feynman-Kac]] potentials, which use importance weights to update trajectories.
 3. Invariant correctors, such as Metropolis-adjusted Langevin methods, which mix within a biased marginal without changing the trajectory weights.
 
-However, other search algorithms such as [[Beam search]] and [[Monte Carlo Tree Search]] have been used in conjunction with diffusion models (https://doi.org/10.48550/arXiv.2603.27950).
+However, other search algorithms such as [[Beam search]] and [[Monte Carlo Tree Search]] have been used in conjunction with diffusion models [@didi2026a].

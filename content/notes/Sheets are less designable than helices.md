@@ -3,11 +3,11 @@ tags:
   - inverse-folding/evaluation
   - protein-backbone-design/designability
 created: "2026-04-05T17:57:34"
-modified: "2026-04-20T09:33:09"
+modified: "2026-04-21T05:01:15"
 summary: Sheets are less designable than helices
 ---
 #### Summary
-Beta-sheets are less designable than alpha helices using [[Inverse folding]] models [^wang2023]. This was true for a range of models.
+Beta-sheets are less designable than alpha helices using [[Inverse folding]] models [@wang2023]. This was true for a range of models.
 
 #### Figures
 | Design method | EHEE_3 | EHEE_4 | EHEE_5 | EHEE_6 | HHH_54 | HHH_82 | HHH_84 | HHH_86 | mean |
@@ -19,6 +19,4 @@ Beta-sheets are less designable than alpha helices using [[Inverse folding]] mod
 | **ByProt** | 0.191 | 0.297 | 0.296 | 0.270 | 0.688 | 0.631 | 0.571 | 0.626 | 0.446 |
 | **AF-Design** | **0.252** | **0.366** | **0.402** | **0.353** | **0.699** | **0.672** | **0.661** | **0.723** | **0.516** |
 | **ESM-Design** | 0.153 | 0.259 | 0.291 | 0.189 | 0.622 | 0.369 | 0.303 | 0.362 | 0.319 |
-*Figure by [^wang2023]*
-
-[^wang2023]: Wang et al. (2023) "PDB-Struct: A Comprehensive Benchmark for Structure-based Protein Design." https://doi.org/10.48550/arXiv.2312.00080
+*Figure by [@wang2023]*

@@ -8,5 +8,3 @@ modified: "2026-04-20T10:13:23"
 
 #### Details
 * Most broadly neutralizing antibodies against hepatitis C have been isolated from chronically ill patients
-
-

@@ -2,14 +2,12 @@
 tags:
   - inverse-folding/evaluation
 created: "2024-04-24T16:23:56"
-modified: "2026-04-20T09:33:09"
+modified: "2026-04-21T05:01:15"
 summary: Inverse folding has lower sequence recovery with smaller proteins
 ---
 #### Summary
-**[[Inverse folding]] methods have lower sequence recovery on smaller proteins** [^wang2023].
+**[[Inverse folding]] methods have lower sequence recovery on smaller proteins** [@wang2024spdesign].
 
 #### Figures
 ![[sequence_recovery_small_protein.png]]
-*Figure 2A from [^wang2023]*
-
-[^wang2023]: Wang et al. (2024) "SPDesign: protein sequence designer based on structural sequence profile using ultrafast shape recognition." Briefings in Bioinformatics. https://doi.org/10.1093/bib/bbae146
+*Figure 2A from [@wang2024spdesign]*

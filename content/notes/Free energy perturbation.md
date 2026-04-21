@@ -4,10 +4,10 @@ created: 2026-04-10T14:02:57
 modified: "2026-04-20T08:32:20"
 ---
 
-**Free energy perturbation** (FEP) is a method for calculating changes in either binding free energy (of a small molecule or protein binder) or protein [[Stability and thermostability|stability]]. [[10.1021__acsomega.4c11413|Furui & Ohue 2025]] showed that models from [[Structure prediction|all-atom protein-structure predictors]] are as accurate as crystal structures for FEP calculations.
+**Free energy perturbation** (FEP) is a method for calculating changes in either binding free energy (of a small molecule or protein binder) or protein [[Stability and thermostability|stability]]. Furui & Ohue [@furui2024] showed that models from [[Structure prediction|all-atom protein-structure predictors]] are as accurate as crystal structures for FEP calculations.
 
 ![[Pasted-image-20241118062341.png]]
-*Ref [^furui2024]*
+*Ref [@furui2024]*
 
 #### Preparing a model for FEP
 
@@ -23,6 +23,3 @@ modified: "2026-04-20T08:32:20"
 #### Summary PPT
 
 *All suggestions here were provided courtesy of Dan Cannon and Katalin Phimister at Schrödinger and are relevant to the 2023-3 release of Maestro*
-
-
-[^furui2024]: Furui & Ohue (2025) "Benchmarking HelixFold3-Predicted Holo Structures for Relative Free Energy Perturbation Calculations." ACS Omega. https://doi.org/10.1021/acsomega.4c11413

@@ -10,7 +10,7 @@ modified: "2026-04-20T10:13:23"
 
 #### Implementations
 
-- The **triplet margin loss** used by [[10.1126__science.adf2465|Yu et al 2023a]]:
+- The **triplet margin loss** used by Yu et al. [@yu2023]:
   $$
   L^{TM}=||z_{a}-z_{p}||^{2} - ||z_{a}-z_{n}||^{2}+\alpha
   $$
@@ -18,7 +18,7 @@ modified: "2026-04-20T10:13:23"
   $z_{p}$: Positive case
   $z_{n}$: Negative case, selected to have EC numbers close in Euclidean space to the positive case
   $\alpha$: Margin; set to 1
-- The **supercon hard loss** used by [[10.1126__science.adf2465|Yu et al 2023a]]:
+- The **supercon hard loss** used by Yu et al. [@yu2023]:
   $$
   L^{sup} = \sum_{e \in E}{\frac{-1}{|P(E)|}} \sum_{z_{p} \in P(e)}{log \frac{ \exp (z_{e}z_{p}/\tau)}{\sum_{z_{a} \in A(e)} \exp (z_{i} z_{a} / \tau)}}
   $$
@@ -36,3 +36,4 @@ modified: "2026-04-20T10:13:23"
   $$
   L_{R}= \log \frac{\exp (\bar{s} * (x_{I}, a^{+}_{i,0}; \theta_))}{\exp (\bar{s} * (x_{I}, a^{+}_{i,0}; \theta_)) + \sum^{K}_{k=1} \exp (\bar{s} * (x_{I}, a^{-}_{i,k}; \theta))}
   $$
+

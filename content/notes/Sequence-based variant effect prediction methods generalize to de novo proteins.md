@@ -2,11 +2,8 @@
 tags:
   - protein-backbone-design/designability
 created: "2024-07-02T05:24:18"
-modified: "2026-04-20T07:16:03"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
-**Sequence-based ML models for [[Variant effect prediction|variant effect prediction]] generalize to *[[Protein backbone design|de novo]]* designed proteins** [^marquet2024]. A [[Protein language models|PLM]] with a top-off layer that was fine-tuned on bulk GEMME predictions achieved a Spearman correlation of 0.386 on *de novo* proteins in the mega-scale dataset[^megascale].
-
-[^marquet2024]: Marquet et al. (2024) "Expert-guided protein language models enable accurate and blazingly fast fitness prediction." Bioinformatics. https://doi.org/10.1093/bioinformatics/btae621
-[^megascale]: Tsuboyama et al. (2023) "Mega-scale experimental analysis of protein folding stability in biology and design." *Nature*. https://doi.org/10.1038/s41586-023-06328-6
+**Sequence-based ML models for [[Variant effect prediction|variant effect prediction]] generalize to *[[Protein backbone design|de novo]]* designed proteins** [@marquet2024]. A [[Protein language models|PLM]] with a top-off layer that was fine-tuned on bulk GEMME predictions achieved a Spearman correlation of 0.386 on *de novo* proteins in the mega-scale dataset [@tsuboyama2023].

@@ -12,5 +12,3 @@ Experts are chosen via top-$k$ method, top-$p$ method, hash routing, BASE routin
 #### Figures
 ![[Pasted-image-20240216111954.png]]
 *From https://arxiv.org/abs/2209.01667*
-
-

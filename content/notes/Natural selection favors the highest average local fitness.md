@@ -3,26 +3,22 @@ title: Natural selection favors the highest average local fitness
 tags:
   - evolution-and-natural-selection
 created: 2024-06-11T01:58:30
-modified: "2026-04-20T08:32:20"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
- **Natural selection favors the highest average local fitness, rather than the absolute highest fitness** [^wilke2001][^codoer2006]. An example of this is dihydrofolate reductase[^papkou2023].
+ **Natural selection favors the highest average local fitness, rather than the absolute highest fitness** [@wilke2001; @codoer2006]. An example of this is dihydrofolate reductase [@papkou2023].
 
 #### Details
 Authors mention that quasi-species theory states that "survival of the flattest" rewards occupancy of flatter minima rather than high mutation or replication rates:
 
 > "Faster replicating organisms can easily be out-competed at high mutation rates by organisms that replicate more slowly, if the latter obtain sufficient support from their mutational neighbourhood. Even a 12-fold difference in replication rate could be overcome by greater mutational robustness of the slower replicator."
 
-Experimental evidence supporting this model was obtained in viral samples by [^codoer2006].
+Experimental evidence supporting this model was obtained in viral samples by [@codoer2006].
 
 #### Figures
 ![[Pasted-image-20231120112637.png|400]]
-*Ref [^wilke2001]*
+*Ref [@wilke2001]*
 
 #### See also
 * [[Natural sequences deviate from highest stability variants]]
 * [[Natural selection favors the highest average local fitness]]
-
-[^wilke2001]: Wilke et al. (2001) "Evolution of digital organisms at high mutation rates leads to survival of the flattest." *Nature*. https://doi.org/10.1038/35085569
-[^codoer2006]: Codoñer et al. (2006) "The Fittest versus the Flattest: Experimental Confirmation of the Quasispecies Effect with Subviral Pathogens." *PLoS Pathogens*. https://doi.org/10.1371/journal.ppat.0020136
-[^papkou2023]: Papkou et al. (2023) "A rugged yet easily navigable fitness landscape." *Science*. https://doi.org/10.1126/science.adh3860

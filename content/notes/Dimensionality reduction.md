@@ -10,14 +10,14 @@ modified: "2026-04-20T08:32:20"
 
 #### Notes
 
-* **t-SNE and UMAP distort input values** ([[10.1371__journal.pcbi.1011288|Chari & Pachter 2023]]). There are other examples of this in the single-cell omics field.
+* **t-SNE and UMAP distort input values** [@chari2023]. There are other examples of this in the single-cell omics field.
 ![[tSNE-UMAP-distortions.png]]
-	*Ref [^chari2023]*
+	*Ref [@chari2023]*
 
 #### Approaches
 ###### Principal component analysis
 
-**Principal component analysis** (PCA) is a standard dimensionality reduction tool widely used in data science. Per [[10.1073__pnas.2311420120|Shinn 2023]], its interpretation requires the following assumptions:
+**Principal component analysis** (PCA) is a standard dimensionality reduction tool widely used in data science. Per [@shinn2023], its interpretation requires the following assumptions:
 * The underlying patterns exist
 * The patterns exhibited in the data are independent of one another
 * The patterns combine linearly to form the data
@@ -25,7 +25,7 @@ modified: "2026-04-20T08:32:20"
 * The observations are independent
 
 ![[Image-05.12.23-at-12.13.jpg]]
-*Figure 1 from [[10.1073__pnas.2311420120|Shinn 2023]]*
+*Figure 1 from Shinn [@shinn2023]*
 
 ###### t-Stochastic Neighbor Embedding
 
@@ -43,6 +43,3 @@ These are in practice not used very often.
 ###### Variational autoencoders
 
 See [[Variational autoencoders]]
-
-
-[^chari2023]: Chari & Pachter (2023) "The specious art of single-cell genomics." *PLOS Computational Biology*. https://doi.org/10.1371/journal.pcbi.1011288

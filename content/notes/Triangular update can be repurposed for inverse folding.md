@@ -2,14 +2,12 @@
 tags:
   - inverse-folding/evaluation
 created: "2024-05-28T00:59:15"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
-**The [[Triangular update|triangular update]] can be repurposed for [[Inverse folding|inverse folding]]** [^ren2024].
+**The [[Triangular update|triangular update]] can be repurposed for [[Inverse folding|inverse folding]]** [@ren2024].
 
 #### Figures
 ![[Pasted-image-20240528065907.png]]
-*Figure 1 from [^ren2024]*
-
-[^ren2024]: Ren et al. (2024) "Accurate and robust protein sequence design with CarbonDesign." *Nature Machine Intelligence*. https://doi.org/10.1038/s42256-024-00838-2
+*Figure 1 from [@ren2024]*

@@ -11,5 +11,3 @@ The **Fab** of an [[Antibodies|antibody]] refers to the [[Variable-regions|varia
 * **[[Antibodies|Antibody]] fragments such as [[Fab]] regions are cleared more easily than full-lengths Abs** ([[_Articles that need citations|citation needed]]).
 * **[[Antibodies|Antibody]] fragments such as [[Fab]] regions can, when not [[Glycosylation|glycosylated]], be expressed in prokaryotes** ([[_Articles that need citations|citation needed]]).
 * **Fragments of [[Antibodies]] with only the [[Fab]] region can bypass the [[Lymphatic-system]] and penetrate deeper into tissues** ([[_Articles that need citations|citation needed]]).
-
-

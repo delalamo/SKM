@@ -15,5 +15,3 @@ modified: "2026-04-17T06:40:29"
 * [[NPT ensemble]]: [[Gibbs free energy]] is at a minimum
 * [[NVT ensemble]]: [[Helmholtz free energy]] is at a minimum
 * [[NVE ensemble]]: Entropy is maximal
-
-

@@ -3,7 +3,7 @@ tags:
   - diffusion-models/protein-design
   - protein-design/design
 created: "2024-10-27T05:20:23"
-modified: "2026-04-20T08:32:20"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -12,4 +12,4 @@ modified: "2026-04-20T08:32:20"
 
 #### Figures
 ![[Pasted-image-20241027101755.png]]
-*Ref [Christopher Frank](https://x.com/chrisfrank662/status/1849795366465552731)* 
+*Ref [Christopher Frank](https://x.com/chrisfrank662/status/1849795366465552731)*

@@ -21,5 +21,3 @@ Multi-sequence [[Protein language models|protein language models]] use a context
 #### Notes
 
 * [[Variant effect prediction with homology-aware PLMs improves with ensembling of multiple prompts]]
-
-

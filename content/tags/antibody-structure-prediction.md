@@ -10,6 +10,6 @@ The **[[Antibodies|antibody]] [[Structure prediction|structure prediction]]** pr
 
 #### Models
 
-- **AbFold**: a method that concatenates information from [[IgFold]] and [[AlphaFold2]] Multimer when modeling antibodies, which usually predict different conformations, leading to [[Antibody structure prediction improved with AlphaFold2 features|improved prediction quality]] ([[10.1101__2023.04.20.537598|Peng et al 2023]])
+- **AbFold**: a method that concatenates information from [[IgFold]] and [[AlphaFold2]] Multimer when modeling antibodies, which usually predict different conformations, leading to [[Antibody structure prediction improved with AlphaFold2 features|improved prediction quality]] [@peng2023]
 - **[[IgFold]]**: a method that uses embeddings from the antibody-specific [[Protein language models|PLM]] AntiBERTy
 - **[[ImmuneBuilder]]**: Consists of ABodyBuilder2 (for [[Antibodies]]), NanoBodyBuilder2 (for [[Nanobodies]]), and TCRBuilder2 (for [[T-cell receptors]]).

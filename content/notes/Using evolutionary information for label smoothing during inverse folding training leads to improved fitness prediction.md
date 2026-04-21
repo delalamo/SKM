@@ -2,24 +2,24 @@
 tags:
   - inverse-folding/training
 created: 2026-04-05T17:47:00
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
 
-**Using evolutionary information for label smoothing when training [[Inverse folding|inverse folding]] models improves [[Variant effect prediction|variant effect prediction]].** Zhou et al. used the [[BLOSUM62]] matrix, whereas [[Gong et al 2024]] used PSSMs. By contrast, Dauparas et al. used uniform smoothing.[^zhou2024][^dauparas2022]
+**Using evolutionary information for label smoothing when training [[Inverse folding|inverse folding]] models improves [[Variant effect prediction|variant effect prediction]].** Zhou et al. used the [[BLOSUM62]] matrix, whereas Gong et al. [@gong2024] used PSSMs. By contrast, Dauparas et al. used uniform smoothing [@zhou2024; @dauparas2022].
 
 #### Details
 
-Zhou et al. use a temperature value $t$ to balance the contribution of the WT amino acid and the BLOSUM62 matrix - the figure below defines this as $\mathbf{B}' = \sigma (\mathbf{B})^{t}$ where $\mathbf{B}'$ and $\mathbf{B}$ are the target matrices and BLOSUM matrices, respectively, and $\sigma$ is a nonlinear operator.[^zhou2024]
+Zhou et al. use a temperature value $t$ to balance the contribution of the WT amino acid and the BLOSUM62 matrix - the figure below defines this as $\mathbf{B}' = \sigma (\mathbf{B})^{t}$ where $\mathbf{B}'$ and $\mathbf{B}$ are the target matrices and BLOSUM matrices, respectively, and $\sigma$ is a nonlinear operator. [@zhou2024]
 
-In contrast, [[Gong et al 2024]] calculated propensities from [[Multiple sequence alignments|MSAs]].
+In contrast, Gong et al. [@gong2024] calculated propensities from [[Multiple sequence alignments|MSAs]].
 
 #### Figures
 
 ![[Pasted-image-20240430090828.png]]
 
-*Figure S7 from [^zhou2024]*
+*Figure S7 from [@zhou2024]*
 
 | Method | T2837 ρ↑ | T2837 AUC↑ | S669 ρ↑ | S669 AUC↑ | S-Sym ρ↑ | S-Sym AUC↑ | Myolobin ρ↑ | Myolobin AUC↑ | FireProtDB ρ↑ | FireProtDB AUC↑ | Gβ1 ρ↑ | Gβ1 AUC↑ | T2837 Reverse ρ↑ | T2837 Reverse AUC↑ |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -36,11 +36,8 @@ In contrast, [[Gong et al 2024]] calculated propensities from [[Multiple sequenc
 | SSL Improvement ↑ | 42% | 11% | 48% | 14% | 63% | 17% | 83% | 17% | 65% | 10% | 77% | 15% | 42% | 11% |
 | Supervised Fine-Tuning Gap ↓ | 14% | 4% | 23% | 9% | 14% | 3% | 0% | -4% | 16% | 3% | 13% | 3% | 14% | 4% |
 
-*Table 3 from [[Gong et al 2024]]*
+*Table 3 from [@gong2024]*
 
 #### Publication history
 
 22 March 2026: https://biomlzk.ghost.io/training-inverse-folding-models-with-evolutionary-information-improves-fitness-prediction-performance/
-
-[^zhou2024]: Zhou et al. (2024) "Protein Engineering with Lightweight Graph Denoising Neural Networks." *Journal of Chemical Information and Modeling*. https://doi.org/10.1021/acs.jcim.4c00036
-[^dauparas2022]: Dauparas et al. (2022) "Robust deep learning–based protein sequence design using ProteinMPNN." *Science*. https://doi.org/10.1126/science.add2187

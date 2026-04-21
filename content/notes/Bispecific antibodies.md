@@ -10,7 +10,7 @@ aliases:
 **Bispecific antibodies** are [[Antibodies|antibodies]] that can bind to two targets. These are designed to either be combinatorial (where the antibodies can bind to either target alone, and thus have double the breadth of equivalent mAbs) or obligate (where the antibodies are too low-affinity to bind to either target unless the other is also present). In general, each arm can function either by receptor inhibition, receptor activation, payload delivery, [[Checkpoint inhibition|checkpoint inhibition]] (for targeting cancer), [[T cell]] engagement, or T cell stimulation.
 
 ![[Pasted-image-20251201142413.png]]
-*Ref [^klein2024]*
+*Ref [@klein2024]*
 
 #### Mechanisms
 
@@ -26,8 +26,8 @@ aliases:
 	* Examples include biparatopic HER2, biparatopic MET
 * Dual checkpoint inhibitor
 	* Advantages compared to single target inhibition:
-		* Improved safety by avoiding autoimmune-related events, or undesired activation of immune cells. Bispecifics have greater selectivity compared to normal mAbs
-		* Improved efficacy due to lower likelihood of tumors developing resistance
+ * Improved safety by avoiding autoimmune-related events, or undesired activation of immune cells. Bispecifics have greater selectivity compared to normal mAbs
+ * Improved efficacy due to lower likelihood of tumors developing resistance
 	* Majority of anti-solid tumor treatments involve checkpoint inhibition
 	* Can be targeted by [[CTLA4]], PD1, PDL1, LAG3, TGF-beta
 	* PD1 can be inhibited by phosphatase recruitement (via CD45, which is a phosphatase)
@@ -36,15 +36,15 @@ aliases:
 	* Eciskafusp fuses an [[IL-2]] mutein to an anti-PD antibody.
 * T cell engagers
 	* Targets:
-		* [[CD3]]-epsilon, albeit with lower affinity to uncouple from [[Cytokines|cytokine]] secretion
-		* [[T-cell receptors|TCRs]]
-		* MHC complexes (using widely recognized antigens such as those from [[Cytomegalovirus]]).
+ * [[CD3]]-epsilon, albeit with lower affinity to uncouple from [[Cytokines|cytokine]] secretion
+ * [[T-cell receptors|TCRs]]
+ * MHC complexes (using widely recognized antigens such as those from [[Cytomegalovirus]]).
 	* Avoid [[Fc-gamma-receptors|FcgR]]-binding capabilities, and sometimes longer half-life is restored by introducing a [[Human serum albumin]]-binding region
 	* Similar to [[Antibody-drug conjugates|antibody-drug conjugates]] in that they have high killing potency
-		* Lineage-specific antigens are preferred
+ * Lineage-specific antigens are preferred
 	* Less "bystander killing" of antigen-lacking tumor cells than ADCs, leading to fewer feasible targets
 	* Less effective in solid tumors due to tumor antigens being more common in normal tissues
-		* Overcome by using two or three targets with detuning, and also to avoid escape by antigen loss
+ * Overcome by using two or three targets with detuning, and also to avoid escape by antigen loss
 * [[Natural killer cells|Natural killer cell]] engagers
 	* Use CD16, NKG2D, NKp46, NKp30
 	* Fc effector functions desired
@@ -52,6 +52,3 @@ aliases:
 	* Can be stopped by inhibiting either CD47 (achieved in bispecifics that also target CD19 or mesothelin; these bind CD47 with low affinity to avoid off-target effects) or with SIRP-alpha fusions
 * Co-stimulatory bispecifics
 	* One arm binds tumor, the other binds the immune cell (via [[4-1BB]], [[CD40]], or [[CD28]])
-
-
-[^klein2024]: Klein et al. (2024) "The present and future of bispecific antibodies for cancer therapy." *Nature Reviews Drug Discovery*. https://doi.org/10.1038/s41573-024-00896-6

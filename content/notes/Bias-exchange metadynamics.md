@@ -13,4 +13,3 @@ $$
 $$
 
 where $x^{a}$ and $x^{b}$ are coordinates of replicas $a$ and $b$, $V_{G}^{a(b)}(x, t)$ is the metadynamics potential acting on replica $a(b)$, and $\beta$ is the inverse temperature. If the swap would decrease the biasing potential, it is accepted; otherwise, it is accepted under the Metropolis criterion.
-

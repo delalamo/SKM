@@ -16,5 +16,3 @@ modified: "2026-04-17T06:40:29"
 	* Identify and humanize predicted immunogenic regions
 	* Graft animal [[Complementarity-determining regions|CDRs]] onto human [[Framework region|frameworks]].
 * **Humanized mice circumvent the need to do this.** It is worth noting that some humans can still produce blocking antibodies against antibodies designed by humanization, for reasons that are not well understood.
-
-

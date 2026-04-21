@@ -20,5 +20,3 @@ Heavy chains differ across different types of antibodies:
 	* IgG3: $\gamma 3$
 	* IgG4: $\gamma 4$
 * IgM antibodies: $\mu$-type heavy chain with four immunoglobulin domains
-
-

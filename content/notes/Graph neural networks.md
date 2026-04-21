@@ -5,5 +5,3 @@ modified: "2026-04-17T06:40:29"
 ---
 
 **Graph neural networks** are machine learning methods that operate on graphs.
-
-

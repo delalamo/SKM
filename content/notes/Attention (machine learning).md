@@ -10,5 +10,3 @@ modified: "2026-04-17T06:40:29"
 
 * [[Disentangled attention]]
 * [[Invariant point attention]]
-
-
