@@ -36,5 +36,7 @@ _Figure from [^sandhu2024]_
 
 - **Graph Fourier Transform:** A decomposition that breaks down the signal (here, fitness) into distinct "epistatic orders"
 - **Dirichlet energy:** quantifies how variable (i.e., rugged) the landscape is, with high energy corresponding to high ruggedness
-  $$DE=\mathbf{f^{T}Lf}=\frac{1}{2}\sum_{u \sim v}{(f_{u}-f{v})^{2}}$$
+  $$
+  DE=\mathbf{f^{T}Lf}=\frac{1}{2}\sum_{u \sim v}{(f_{u}-f{v})^{2}}
+  $$
 - **NK model:** A linear model where $N$ is the number of sites and $K$ is the number of interacting sites; when $K=0$, effect of all mutations is linear, whereas larger $K$ indicates more interactions and therefore more epistasis

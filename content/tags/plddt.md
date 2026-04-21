@@ -19,5 +19,7 @@ _Figure from [^terwilliger2023]_
 - **_De novo_ sequences designed by [[Inversion of protein folding neural networks|inversion]] with high [[pLDDT]] were found by [[ESM]] to have high [[Sequence perplexity|perplexity]]** ([[10.1101__2022.12.21.521521|Verkuil et al 2022]]).
 - **While the default pLDDT is not continuously differentiable and thus unsuitable for training, [[10.1101__2025.05.09.653096|Trinquier et al 2025]] use a modified version that can be used as a loss function.**
 - **pLDDT can be used as spatial restraints in biomolecular simulations**:
-  $$E_{pLDDT}=\sum{\left( \frac{d_{i}}{1.5*\exp{\left(4*\left(0.7 - pLDDT_{i} \right) \right)}}\right)^{2}} $$
+  $$
+  E_{pLDDT}=\sum{\left( \frac{d_{i}}{1.5*\exp{\left(4*\left(0.7 - pLDDT_{i} \right) \right)}}\right)^{2}}
+  $$
   The equation was originally presented by [[10.1038__s41467-021-21511-x|Hiranuma et al 2021]] and was used by [[10.1073__pnas.2206129119|del Alamo et al 2022]] as coordinate constraints in Rosetta when refining [[AlphaFold2]] models.
