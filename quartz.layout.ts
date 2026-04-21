@@ -24,26 +24,6 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
-    Component.ConditionalRender({
-      component: Component.RecentNotes({
-        title: "Recently Added",
-        limit: 10,
-        showTags: false,
-        dateType: "created",
-        filter: (f) => f.slug?.startsWith("notes/") ?? false,
-      }),
-      condition: (page) => page.fileData.slug === "index",
-    }),
-    Component.ConditionalRender({
-      component: Component.RecentNotes({
-        title: "Recently Updated",
-        limit: 10,
-        showTags: false,
-        dateType: "modified",
-        filter: (f) => f.slug?.startsWith("notes/") ?? false,
-      }),
-      condition: (page) => page.fileData.slug === "index",
-    }),
   ],
   left: [
     Component.PageTitle(),
@@ -67,6 +47,28 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
+  ],
+  afterBody: [
+    Component.ConditionalRender({
+      component: Component.RecentNotes({
+        title: "Recently Added",
+        limit: 10,
+        showTags: false,
+        dateType: "created",
+        filter: (f) => f.slug?.startsWith("notes/") ?? false,
+      }),
+      condition: (page) => page.fileData.slug === "index",
+    }),
+    Component.ConditionalRender({
+      component: Component.RecentNotes({
+        title: "Recently Updated",
+        limit: 10,
+        showTags: false,
+        dateType: "modified",
+        filter: (f) => f.slug?.startsWith("notes/") ?? false,
+      }),
+      condition: (page) => page.fileData.slug === "index",
+    }),
   ],
 }
 
