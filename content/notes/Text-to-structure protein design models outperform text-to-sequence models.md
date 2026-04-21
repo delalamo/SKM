@@ -1,14 +1,12 @@
 ---
 tags: 
 created: "2024-08-06T04:31:10"
-modified: "2026-04-20T08:32:20"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
-**Deep learning models for protein design using natural language as input are more effective when predicting protein structure rather than sequence** [^dai2024]. Their model uses either amino acids or (SaProt) tokens to represent structure.
+**Deep learning models for protein design using natural language as input are more effective when predicting protein structure rather than sequence** [@dai2024]. Their model uses either amino acids or (SaProt) tokens to represent structure.
 
 #### Figures
 ![[Pasted-image-20240806103024.png]]
-*Ref [^dai2024]*
-
-[^dai2024]: Dai et al. (2024) "Toward De Novo Protein Design from Natural Language." https://doi.org/10.1101/2024.08.01.606258
+*Ref [@dai2024]*

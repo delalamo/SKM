@@ -9,7 +9,7 @@ modified: "2026-04-20T10:13:23"
 **AlphaFold3** is a [[Diffusion models|diffusion]]-based all-atom [[Structure prediction|structure prediction]] method that is widely seen as state-of-the-art.
 
 ![[Pasted-Graphic-4.png]]
-_Architecture of AlphaFold3 from [[10.1038__s41586-024-07487-w|Abramson et al 2024]]_
+_Architecture of AlphaFold3 from Abramson et al. [@abramson2024]_
 
 #### Architectural and ML contributions
 

@@ -36,9 +36,9 @@ _See [[Antibody structure prediction]]_
 #### Training
 
 ![[Pasted-image-20231211070606.png]]
-_Figure from [^ahdritz2024]_
+_Figure from [@ahdritz2024]_
 
 #### Sidechain prediction
 
-- **Formulating the sidechain prediction problem as a classification problem by binning chi angles, rather than a regression problem, let to improved performance** ([[10.1002__prot.26705|Randolph and Kuhlman 2024]]).
-- **Sidechain prediction methods not sensitive to B-factor cutoffs.** The outcome of sidechain prediction model PIPPack was not strongly affected by B-factor values of protein structures in the training set ([[10.1002__prot.26705|Randolph and Kuhlman 2024]]).
+- **Formulating the sidechain prediction problem as a classification problem by binning chi angles, rather than a regression problem, let to improved performance** [@randolph2024].
+- **Sidechain prediction methods not sensitive to B-factor cutoffs.** The outcome of sidechain prediction model PIPPack was not strongly affected by B-factor values of protein structures in the training set [@randolph2024].

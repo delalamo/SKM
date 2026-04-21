@@ -2,12 +2,12 @@
 tags:
   - protein-design/design
 created: 2026-04-05T17:53:07
-modified: "2026-04-20T08:32:20"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
 
-**[[Protein language models]] can be steered to design proteins with specific properties with greater success than traditional fine-tuning** [^huang2025]. The procedure involves training linear [[Binary classifiers|binary classifier]] heads on top of the activations of each layer and selecting the head with the highest validation score. Larger language models are more steerable, which contrasts with evidence against the [[Scaling hypothesis|scaling hypothesis]] of sequence-only language-only models in other domains. This was done with the [[ESM]]2-650M and ESM2-3B models.
+**[[Protein language models]] can be steered to design proteins with specific properties with greater success than traditional fine-tuning** [@huang2025]. The procedure involves training linear [[Binary classifiers|binary classifier]] heads on top of the activations of each layer and selecting the head with the highest validation score. Larger language models are more steerable, which contrasts with evidence against the [[Scaling hypothesis|scaling hypothesis]] of sequence-only language-only models in other domains. This was done with the [[ESM]]2-650M and ESM2-3B models.
 
 #### Figures
 
@@ -20,6 +20,4 @@ modified: "2026-04-20T08:32:20"
 | | Fine-tuning | 64.22 (14.49) | 0.965 (0.022) | 0.629 (0.143) | 0.385 (0.236) | 0.966 (0.022) | 0.610 (0.165) |
 | | Activation Steering | **83.33 (9.47)** | **0.990 (0.006)** | **0.915 (0.105)** | **0.631 (0.228)** | **0.996 (0.003)** | **0.951 (0.077)** |
 
-*Ref [^huang2025]*
-
-[^huang2025]: Huang et al. (2025) "Steering Protein Language Models." ICML. https://proceedings.mlr.press/v267/huang25ba.html
+*Ref [@huang2025]*

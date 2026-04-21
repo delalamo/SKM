@@ -2,10 +2,10 @@
 tags:
   - conformational-dynamics/molecular-dynamics
 created: "2024-04-16T22:58:57"
-modified: "2026-04-11T07:27:50"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
-Notation follows the convention of [^hnin2022].
+Notation follows the convention of [@hnin2022].
 
 - $\boldsymbol{x}$: positions of 3D coordinates, $\boldsymbol{x} \in \mathbb{R}^{3N}$ ($N$: number of particles)
 - $\boldsymbol{p}$: momenta, $\boldsymbol{p} \in \mathbb{R}^{3N}$
@@ -24,5 +24,3 @@ Notation follows the convention of [^hnin2022].
 - $S$: entropy, $S= k_{B} \ln \Omega$
 - $\Omega (E)$: density of states with specific total energy $E$, $\int \delta (E - H(\boldsymbol{x}, \boldsymbol{p})) d \boldsymbol{x} d \boldsymbol{p}$
 - $\Omega (U)$: configurational density with specific potential energy $U$, $\int \delta (U-U(\boldsymbol{x}))d \boldsymbol{x}$
-
-[^hnin2022]: Hénin et al. (2022) "Enhanced Sampling Methods for Molecular Dynamics Simulations [Article v1.0]." *Living Journal of Computational Molecular Science*. https://doi.org/10.33011/livecoms.4.1.1583

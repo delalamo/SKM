@@ -2,12 +2,12 @@
 tags:
   - protein-language-models/antibodies
 created: "2026-02-26T15:14:37"
-modified: "2026-04-20T10:13:23"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
 
-**[[Antibodies|Antibody]]-specific [[Protein language models|protein language models]] outperform generic PLMs on intrafamily but not general [[Stability and thermostability|thermostability]] prediction** [^chungyoun2024]. A version of [[ProGen]] specifically trained on [[Antibodies|antibody]] sequences outperform generic ProGen models on intra-family [[Stability and thermostability|thermostability]] prediction. On inter-family prediction, they are bested by [[ESM-IF]] (see [[Structure-based methods outperform sequence-based methods on protein stability prediction of point mutants, but not full sequences]]). 
+**[[Antibodies|Antibody]]-specific [[Protein language models|protein language models]] outperform generic PLMs on intrafamily but not general [[Stability and thermostability|thermostability]] prediction** [@chungyoun2024]. A version of [[ProGen]] specifically trained on [[Antibodies|antibody]] sequences outperform generic ProGen models on intra-family [[Stability and thermostability|thermostability]] prediction. On inter-family prediction, they are bested by [[ESM-IF]] (see [[Structure-based methods outperform sequence-based methods on protein stability prediction of point mutants, but not full sequences]]). 
 
 #### Details
 One related observation (unpublished as of 19 April 2026) is that the mean-pooled CDRH3 embeddings learned by generic LMs, but not antibody LMs, are basically meaningless insofar as they match those of scrambled CDRH3 sequences with the same framework. A separate theory is that this could be because antibodies are separated [[PLMs can separate Abs by origin|by V-gene]] by antibody LMs. 
@@ -16,11 +16,9 @@ One related observation (unpublished as of 19 April 2026) is that the mean-poole
 
 ![[Pasted-image-20240116124937.png]]
 
-*Figure 5 from [^chungyoun2024]*
+*Figure 5 from [@chungyoun2024]*
 
 #### See also
 
 - [[Generic PLMs outperform antibody-specific PLMs on zero-shot predictions of affinity changes]]
 - [[Protein language models are better zero-shot predictors for ranking closely related sequences than distantly related sequences]]
-
-[^chungyoun2024]: Chungyoun et al. (2024) "FLAb: Benchmarking deep learning methods for antibody fitness prediction." https://doi.org/10.1101/2024.01.13.575504

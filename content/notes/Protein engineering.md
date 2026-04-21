@@ -12,5 +12,3 @@ modified: "2026-04-17T06:40:29"
 * [[ALFA-tag]] (used to bulk of proteins for [[cryo-EM]])
 * [[Heterodimerization domains]] (used to stabilize transient dimers)
 * [[Engineered trimerization domains]] (used to stabilize transient trimers, particularly for trimeric viral fusion proteins)
-
-

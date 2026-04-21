@@ -15,5 +15,3 @@ modified: "2026-04-17T06:40:29"
 #### See also
 - [[Fitness prediction using inverse folding can be improved with auxiliary B-factor and SASA losses]]
 - [[Fine-tuning PLMs on rank is more effective than fine-tuning on property (regression)]]
-
-

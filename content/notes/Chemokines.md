@@ -22,5 +22,3 @@ The 47 human **chemokines** regulate cell adhesion and migration of leukocytes. 
 
 * Specificity of binding to glycosaminoglycans on surface of endothelial cells depends on number of repeats; these then display them to chemokine receptors or migrating cells.
 * Production stimulated by [[Tumor necrosis factors#TNF|TNF]], [[Interleukins#Interleukin-17|IL-17]], [[Interleukins#Interleukin-1|IL-1]].
-
-

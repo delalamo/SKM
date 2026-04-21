@@ -2,16 +2,14 @@
 tags:
   - inverse-folding/training
 created: "2024-05-05T08:26:18"
-modified: "2026-04-20T08:32:20"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
- **Including ligands during [[Inverse folding|inverse folding]] allows amino acids in the binding pocket to be recovered at higher rates** [^dauparas2023]. For one test case, two of the three residues in a catalytic triad were not correctly predicted without ligand. However, inclusion of the ligand caused all three to be designed correctly.
+ **Including ligands during [[Inverse folding|inverse folding]] allows amino acids in the binding pocket to be recovered at higher rates** [@dauparas2023]. For one test case, two of the three residues in a catalytic triad were not correctly predicted without ligand. However, inclusion of the ligand caused all three to be designed correctly.
 
 #### Figures
 ![[Pasted-image-20240423110833.png]]
-*Ref [^dauparas2023]*
+*Ref [@dauparas2023]*
 
 #### See also
 * [[De novo structure prediction with ligands outperforms apo de novo structure prediction alone]]
-
-[^dauparas2023]: Dauparas et al. (2025) "Atomic context-conditioned protein sequence design using LigandMPNN." Nature Methods. https://doi.org/10.1038/s41592-025-02626-1

@@ -11,5 +11,3 @@ modified: "2026-04-17T06:40:29"
 * **Clathrin-mediated endocytosis**: Vesicles formed this way are about 100 nm in diameter and coated in the protein clathrin. These can be mediated by receptor binding and can also contain [[Antibodies]].
 * **Caveolin-mediated endocytosis**: Vesicles formed this way are smaller, about 50 nm in diameter. The resulting bilayer is enriched in cholesterol and glycolipids.
 * **Phagocytosis**: Absorption of larger molecules with vesicles up to 750 nm in diameter.
-
-

@@ -11,11 +11,11 @@ The **complementarity-determining regions** of [[Antibodies|antibodies]], abbrev
 ### General observations
 #### Confomational clustering
 
-*Conformational clusters of CDRs were first described by [[10.1016__0022-2836(87)90412-8|Chothia & Lesk 1987]]*
+*Conformational clusters of CDRs were first described by Chothia & Lesk [@chothia1987]*
 
 ### CDRH1
 
-* **Camelid [[Nanobodies|nanobodies]] account for most of the diversity in CDRH1 lengths, which in humans and mice are almost all length 7** ([[10.1080__19420862.2016.1158370|Nowak et al 2016]]).
+* **Camelid [[Nanobodies|nanobodies]] account for most of the diversity in CDRH1 lengths, which in humans and mice are almost all length 7** [@nowak2016].
 
 ### CDRH2
 
@@ -30,7 +30,7 @@ The **complementarity-determining regions** of [[Antibodies|antibodies]], abbrev
 
 ### CDRL1
 
-* **Longer CDRL1 loops correlate with restricted CDRH3 dynamics** ([[10.3389__fimmu.2023.1223802|Guloglu and Deane 2023]]).
+* **Longer CDRL1 loops correlate with restricted CDRH3 dynamics** [@guloglu2023].
 
 ### CDRL2
 
@@ -39,8 +39,8 @@ The **complementarity-determining regions** of [[Antibodies|antibodies]], abbrev
 
 ### CDRL3
 
-* **Shorter CDRL3 loops correlate with restricted CDRH3 dynamics** ([[10.3389__fimmu.2023.1223802|Guloglu and Deane 2023]]).
-* **More variable than CDRL1 or CDRL2 due to [[Somatic hypermutation|VJ recombination]]** ([[10.1080__19420862.2016.1158370|Nowak et al 2016]]).
+* **Shorter CDRL3 loops correlate with restricted CDRH3 dynamics** [@guloglu2023].
+* **More variable than CDRL1 or CDRL2 due to [[Somatic hypermutation|VJ recombination]]** [@nowak2016].
 
 ### CDR4
 
@@ -48,9 +48,7 @@ The **complementarity-determining regions** of [[Antibodies|antibodies]], abbrev
 * Sequence variation in the DE loop exceeds that of the framework
 * Length variation found in [[Broadly neutralizing antibodies|broadly neutralizing antibodies]]
 * **Also known as the DE motif, since it connects the D and E strands of [[Antibodies]]; the name CDR4 is less common.**
-* **PyIgClassify2 found four distinct clusters for length-6 light chain.** Two of these with exclusively [[Light chains#Kappa subtype|kappa subtype]], one exclusively with [[Light chains#Lambda subtype|lambda subtype]], and one mixed with both; almost all heavy chain structures have length-8 CDR4 and co-cluster ([[10.1080__19420862.2020.1840005|Kelow et al 2020]], [[10.1101__2022.10.12.511988|Kelow et al 2022]]).
-* **Also used in [[Nanobodies]] and can be engineered to improve binding** ([[10.1101__2023.10.22.563475|Ketaren et al 2023]])
-* **[[10.1038__s42003-020-01319-z|Fernandez-Quintero et al 2020b]] and [[10.1080__19420862.2020.1840005|Kelow et al 2020]] found that this can modulate the conformation of other CDRs, particularly CDRL1**
+* **PyIgClassify2 found four distinct clusters for length-6 light chain.** Two of these with exclusively [[Light chains#Kappa subtype|kappa subtype]], one exclusively with [[Light chains#Lambda subtype|lambda subtype]], and one mixed with both; almost all heavy chain structures have length-8 CDR4 and co-cluster [@kelow2020; @kelow2022].
+* **Also used in [[Nanobodies]] and can be engineered to improve binding** [@ketaren2023]
+* **Fernandez-Quintero et al. [@fernandezquintero2020] and Kelow et al. [@kelow2020] found that this can modulate the conformation of other CDRs, particularly CDRL1**
 ![[a-ferviously-noted.jpg]]
-
-

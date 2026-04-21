@@ -3,16 +3,14 @@ tags:
   - structure-prediction/complex-prediction
   - diffusion-models/implementation
 created: 2026-03-11T08:27:32
-modified: "2026-04-20T08:32:20"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
 
-Increasing the number of diffusion samples from all-atom protein structure prediction methods is sufficient to increase the fraction of correctly docked poses [^smorodina2026]. This is in contrast with conformational sampling, where several cases have been shown of biomolecular diffusion models being unable to reproduce equilibrium dynamics of biological systems.
+Increasing the number of diffusion samples from all-atom protein structure prediction methods is sufficient to increase the fraction of correctly docked poses [@smorodina2026]. This is in contrast with conformational sampling, where several cases have been shown of biomolecular diffusion models being unable to reproduce equilibrium dynamics of biological systems.
 
 #### Figures
 
 ![[Pasted-image-20260311082505.png]]
-*Ref [^smorodina2026]*
-
-[^smorodina2026]: Smorodina et al. (2026) "Structural Plausibility Without Binding Specificity: Limits of AI-Based Antibody-Antigen Structure Prediction Confidence Scores." https://doi.org/10.64898/2026.03.02.709004
+*Ref [@smorodina2026]*

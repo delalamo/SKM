@@ -2,16 +2,12 @@
 tags:
   - protein-backbone-design/designability
 created: "2024-09-01T04:29:37"
-modified: "2026-04-20T08:32:20"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
-**The structures of short [[Protein backbone design|de novo designed proteins]] are easier to [[Structure prediction|predict]] than those of longer proteins** [^chang2024].
+**The structures of short [[Protein backbone design|de novo designed proteins]] are easier to [[Structure prediction|predict]] than those of longer proteins** [@chang2024].
 
 #### Figures
 ![[Pasted-image-20240901102855.png]]
-*Ref [^chang2024]*
-
-[^chang2024]: Chang & Perez (2024) "AlphaFold2
-                  knows
-                  some protein folding principles." https://doi.org/10.1101/2024.08.25.609581
+*Ref [@chang2024]*

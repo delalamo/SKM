@@ -11,10 +11,8 @@ Since $f$ is invertible, the output probability distribution can be mapped as:
 $$q'(\textbf{x}') = q(\textbf{x})|\det J_{f}(\textbf{x})|^{-1}$$
 where $\det J_{f}$ is the determinant of the Jacobian of $f$ and $|\det J_{f}(\textbf{x})|^{-1} = |\det J_{f^{-1}}(\textbf{x'})|$
 
-The entirety of this note liberally cites from [[10.1021__acs.jpclett.2c03327|Invernizzi et al 2022]].
+The entirety of this note liberally cites from [@invernizzi2022].
 
 #### Applications
-- They have been used in conjunction with [[Replica-exchange molecular dynamics]] ([[10.1021__acs.jpclett.2c03327|Invernizzi et al 2022]])
-- They have been used for [[Structure prediction#Conformational sampling methods|conformational sampling]] via fine-tuned [[AlphaFold2]] and [[ESMFold]] ([[10.1093__BIB__BBAE245|Jing et al 2024]])
-
-
+- They have been used in conjunction with [[Replica-exchange molecular dynamics]] [@invernizzi2022]
+- They have been used for [[Structure prediction#Conformational sampling methods|conformational sampling]] via fine-tuned [[AlphaFold2]] and [[ESMFold]] [@jing2024]

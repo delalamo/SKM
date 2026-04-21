@@ -22,16 +22,16 @@ _See [[Hybrid sequence-structure models]] for a list of methods that incorporate
 
 #### Training
 
-- **Training inverse folding models with backbone dihedral angles as features usually improved sequence recovery** ([[sTYuRVrdK3|Jamasb et al 2023]]).
-  ![[Pasted-image-20240117115655.png]]
-  _Figure from [[sTYuRVrdK3|Jamasb et al 2023]]_
+- **Training inverse folding models with backbone dihedral angles as features usually improved sequence recovery** [@jamasb2024].
+ ![[Pasted-image-20240117115655.png]]
+ _Figure from [@jamasb2024]_
 
 #### Execution
 
-- **Forward-folding is a stronger predictor of inverse folding success than sequence recovery** ([[10.48550__arXiv.2312.02447|Yang et al 2023b]], citing [[10.1038__s41586-023-06415-8|Watson et al 2023]] and [[10.1126__science.add2187|Dauparas et al 2022]]).
+- **Forward-folding is a stronger predictor of inverse folding success than sequence recovery** ([@yang2023b], citing Watson et al. [@watson2023; @dauparas2022]).
 
 #### Datasets
 
-- **PDBench** is a dataset of 595 protein structures with diverse, evenly divided topologies for benchmarking of [[Inverse folding]] methods ([[10.1093__bioinformatics__btad027|Castorina et al 2023]]).
-  ![[Alpha-Beta-Barre.png]]
-  _Figure 2 from [[10.1093__bioinformatics__btad027|Castorina et al 2023]]_
+- **PDBench** is a dataset of 595 protein structures with diverse, evenly divided topologies for benchmarking of [[Inverse folding]] methods [@castorina2023].
+ ![[Alpha-Beta-Barre.png]]
+ _Figure 2 from Castorina et al. [@castorina2023]_

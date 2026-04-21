@@ -9,7 +9,4 @@ modified: "2026-04-20T08:32:20"
 #### Figures
 
 ![[Pasted-image-20240718085104.png]]
-*Ref [^otten2020]*
-
-
-[^otten2020]: Otten et al. (2020) "How directed evolution reshapes the energy landscape in an enzyme to boost catalysis." *Science*. https://doi.org/10.1126/science.abd3623
+*Ref [@otten2020]*

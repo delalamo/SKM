@@ -3,7 +3,7 @@ tags:
   - diffusion-models/protein-design
   - protein-design/design
 created: "2024-05-30T05:30:22"
-modified: "2026-04-20T08:32:20"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary

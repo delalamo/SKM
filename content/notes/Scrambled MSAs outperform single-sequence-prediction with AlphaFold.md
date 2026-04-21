@@ -3,7 +3,7 @@ tags:
   - alphafold2
   - structure-prediction/training
 created: "2024-05-08T18:04:59"
-modified: "2026-04-20T08:32:20"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary

@@ -27,7 +27,7 @@ section[data-footnotes] {
 
     &::before {
       content: "References";
-      font-size: 1.25rem;        // matches Quartz h2 sizing
+      font-size: 1.25rem; // matches Quartz h2 sizing
       font-weight: 700;
       color: var(--dark);
       display: block;
@@ -52,7 +52,9 @@ section[data-footnotes] {
         opacity: 0.6;
         text-decoration: none;
 
-        &:hover { opacity: 1; }
+        &:hover {
+          opacity: 1;
+        }
       }
     }
   }
@@ -74,5 +76,109 @@ a[data-footnote-ref] {
   font-weight: 600;
   color: var(--secondary);
 
-  &:hover { color: var(--tertiary); }
+  &:hover {
+    color: var(--tertiary);
+  }
+}
+
+// ── Academic citations ───────────────────────────────────────────────────────
+//
+// Quartz/rehype-citation generates spans like:
+//   <span id="citation--key--1">(<a href="#bib-key">1</a>)</span>
+// Render the entire citation cluster as a compact superscript so grouped
+// citations still keep their punctuation and individual links.
+
+span.citation,
+span[id^="citation--"] {
+  font-size: 0.75em;
+  line-height: 1;
+  vertical-align: super;
+  white-space: nowrap;
+}
+
+span.citation > a,
+span[id^="citation--"] > a,
+a.citation-link {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+  line-height: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--secondary);
+
+  &:hover {
+    color: var(--tertiary);
+  }
+}
+
+#refs,
+.references,
+.bibliography,
+.csl-bib-body {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--lightgray);
+  font-size: 0.9rem;
+  color: var(--darkgray);
+  line-height: 1.6;
+}
+
+#refs::before,
+.references::before,
+.bibliography::before,
+.csl-bib-body::before {
+  content: "References";
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.csl-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.csl-left-margin {
+  flex: 0 0 auto;
+}
+
+.csl-right-inline {
+  min-width: 0;
+}
+
+.csl-entry a {
+  overflow-wrap: anywhere;
+}
+
+section[data-footnotes],
+section[data-footnotes] *,
+#refs,
+#refs *,
+.references,
+.references *,
+.bibliography,
+.bibliography *,
+.csl-bib-body,
+.csl-bib-body * {
+  hyphens: none;
+  word-break: normal;
+}
+
+section[data-footnotes] li,
+.csl-entry {
+  overflow-wrap: normal;
+}
+
+section[data-footnotes] a,
+.csl-entry a {
+  overflow-wrap: anywhere;
 }

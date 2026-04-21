@@ -16,6 +16,4 @@ modified: "2026-04-17T06:40:29"
 * LYTACs: lysosome-targeting chimeras, binds membrane-bound protein and extracellular domain of lysosome-shuttling receptor
 * AbTACs: [[Antibodies|Antibody]]-based PROTACs, bispecific antibodies that also use lysosomal degradation pathway
 
-*This extensively cites [[10.1038__s41573-021-00371-6|Békés et al 2022]]*
-
-
+*This extensively cites Békés et al. [@bekes2022]*

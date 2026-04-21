@@ -1,20 +1,17 @@
 ---
 tags:
 created: 2024-07-01T02:24:33
-modified: "2026-04-20T08:32:20"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
-**[[Binary classifiers]] such as linear discriminant analysis can be used to predict continuous properties such as [[Fitness prediction|affinity]] and specificity of [[Antibodies|antibodies]]** [^makowski2022][^ursu2024].
+**[[Binary classifiers]] such as linear discriminant analysis can be used to predict continuous properties such as [[Fitness prediction|affinity]] and specificity of [[Antibodies|antibodies]]** [@makowski2022; @ursu2024].
 
 #### Details
-In text analysis this was also demonstrated by [[2021.konvens-1.16|Wankmüller and Heumann 2021]].
+In text analysis this was also demonstrated by [@wankmuller2021].
 
 #### Figures
 ![[Specificity-projection.png]]
-*Ref [^makowski2022]*
+*Ref [@makowski2022]*
 
 ![[Experimental-dataset-binding-strength-and-logit-correlation.png]]
-*Ref [^ursu2024]*
-
-[^makowski2022]: Makowski et al. (2022) "Co-optimization of therapeutic antibody affinity and specificity using machine learning models that generalize to novel mutational space." *Nature Communications*. https://doi.org/10.1038/s41467-022-31457-3
-[^ursu2024]: Ursu et al. (2025) "Training data composition determines machine learning generalization and biological rule discovery." Nature Machine Intelligence. https://doi.org/10.1038/s42256-025-01089-5
+*Ref [@ursu2024]*

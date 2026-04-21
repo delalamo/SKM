@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2024-10-18T07:05:52
-modified: "2026-04-20T08:32:20"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
 **Monte Carlo Tree Search** is an iterative [[Reinforcement learning]] algorithm that finds optimal solutions in a highly multidimensional search space. It is a heuristic in that it does not require any knowledge beyond the "rules of the game".

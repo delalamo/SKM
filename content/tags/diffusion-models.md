@@ -40,13 +40,13 @@ $$
 
 The scoring function is approximated by a neural network, $s_{\theta}(x, t)$.
 
-**Diffusion models can also be zero-shot [[Binary classifiers|classifiers]]** ([[10.1109__ICCV51070.2023.00210|Li et al 2023a]]).
+**Diffusion models can also be zero-shot [[Binary classifiers|classifiers]]** [@li2023a].
 
-**Diffusion models have been combined with [[Replica-exchange molecular dynamics]]** ([[10.1073__pnas.2203656119|Wange et al 2022b]]).
+**Diffusion models have been combined with [[Replica-exchange molecular dynamics]]** [@wang2022b].
 
 #### Types of sequence-based diffusion
 
-For protein sequences, which are fundamentally discrete, Yang et al (https://doi.org/10.48550/arXiv.2505.15093) describe three approaches to generation using diffusion models:
+For protein sequences, which are fundamentally discrete, Yang et al [@yang2025] describe three approaches to generation using diffusion models:
 
 - Diffusion in pre-trained latent space (e.g., continuous diffusion)
 - Diffusion in discrete space with uniform noise matrices

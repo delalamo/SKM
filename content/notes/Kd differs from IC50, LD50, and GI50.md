@@ -15,5 +15,3 @@ IC50: Where you have half as many cells as a controlling medium in a different w
 LD50: Where you have half as many cells as what you started with
 GI50: Where cells grow half as fast as they would without the drug
 Kd: Where the drug is half-bound and half-unbound
-
-

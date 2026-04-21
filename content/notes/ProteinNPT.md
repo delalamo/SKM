@@ -4,9 +4,9 @@ created: 2026-04-10T14:02:57
 modified: "2026-04-20T08:32:20"
 ---
 
-**ProteinNPT** is a module that can be appended to [[Multiple sequence alignments|MSA]]-based [[Protein language models|protein language models]] that was first introduced by [[10.1101__2023.12.06.570473|Notin et al 2023b]].
+**ProteinNPT** is a module that can be appended to [[Multiple sequence alignments|MSA]]-based [[Protein language models|protein language models]] that was first introduced by [@notin2023b].
 ![[Pasted-image-20240126170230.png]]
-*Figure 1 from [[10.1101__2023.12.06.570473|Notin et al 2023b]]*
+*Figure 1 from Notin et al. [@notin2023b]*
 
 ## Notes:
 
@@ -16,7 +16,4 @@ modified: "2026-04-20T08:32:20"
 * As with MSA-Transformer, it uses tied row attention to reduce memory footprint under the assumption that the fold is conserved among aligned sequences
 * ProteinNPT with [[Tranception]] embeddings had the best performance on prediction of catalytic efficiency ($K_M$):
 ![[Pasted-Graphic-10.png]]
-	*Ref [^muir2024]*
-
-
-[^muir2024]: Muir et al. (2025) "Evolutionary-scale enzymology enables exploration of a rugged catalytic landscape." Science. https://doi.org/10.1126/science.adu1058
+	*Ref [@muir2024]*

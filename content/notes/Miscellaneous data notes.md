@@ -5,5 +5,3 @@ modified: "2026-04-17T06:40:29"
 ---
 
 This is just a set of notes about data that don't belong anywhere else.
-
-

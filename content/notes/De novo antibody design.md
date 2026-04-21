@@ -11,17 +11,15 @@ modified: "2026-04-20T07:16:03"
 #### Summary of methods
 
 * [[Inversion of protein folding neural networks|Backpropagation]]-based 
-	* Germinal ([[10.1101__2025.09.19.677421|Mille-Fragoso et al 2025]])
-	* BoltzDesign ([[10.1101__2025.04.06.647261|Cho et al 2025b]])
+	* Germinal [@millefragoso2025]
+	* BoltzDesign [@cho2025b]
 * [[Diffusion models|Diffusion]]-based
-	* RF-antibody ([[10.1038__s41586-025-09721-5|Bennett et al 2026]])
+	* RF-antibody [@bennett2024]
 	* DiffAb
 	* IgGM
 * Hallucination-based
 	* BoltzGen
-	* Boltz (but requires [[Inverse folding|structure-based sequence design]]; [[10.1101__2024.11.19.624167|Wohlwend et al 2024]])
+	* Boltz (but requires [[Inverse folding|structure-based sequence design]]; [@wohlwend2024])
 * Unknown due to proprietary methods
 	* Chai-2
 	* JAM-2 (Nabla)
-
-

@@ -12,7 +12,7 @@ _(OpenFold redirects here)_
 **AlphaFold2** is a protein [[Structure prediction|structure prediction]] method from 2020, and is the first to make extensive use of the [[Transformer]] architecture, consisting of 97 million parameters. [[AlphaMissense]] is a derivative of this method.
 
 ![[Pasted-image-20231029184254.png]]
-_Architecture of AlphaFold2 from [[10.1038__s41586-021-03819-2|Jumper et al 2021]]_
+_Architecture of AlphaFold2 from Jumper et al. [@jumper2021]_
 
 #### Architectural and ML contributions
 

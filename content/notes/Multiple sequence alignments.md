@@ -11,9 +11,6 @@ modified: "2026-04-20T08:32:20"
 
 #### Notes
 
-* **The inclusion of MSAs improves zero-shot prediction using [[Protein language models|PLMs]]** ([[10.1101__2023.10.01.560349|Su et al 2023]])
+* **The inclusion of MSAs improves zero-shot prediction using [[Protein language models|PLMs]]** [@su2023]
 ![[MSA-effect-on-variant-effect-prediction.png]]
-	*Ref [^su2023]*
-
-
-[^su2023]: Su et al. (2023) "SaProt: Protein Language Modeling with Structure-aware Vocabulary." https://doi.org/10.1101/2023.10.01.560349
+	*Ref [@su2023]*

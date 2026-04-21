@@ -7,6 +7,4 @@ modified: "2026-04-20T08:32:20"
 
 #### Figures
 ![[Pasted-image-20240604071449.png]]
-*Ref [^richardson2024]*
-
-[^richardson2024]: Richardson et al. (2024) "The receiver operating characteristic curve accurately assesses imbalanced datasets." *Patterns*. https://doi.org/10.1016/j.patter.2024.100994
+*Ref [@richardson2024]*

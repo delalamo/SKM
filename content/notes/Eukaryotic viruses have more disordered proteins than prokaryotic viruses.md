@@ -1,14 +1,12 @@
 ---
 tags:
 created: 2024-11-08T00:58:28
-modified: "2026-04-20T08:32:20"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
-**Viruses that infect eukaryotes have more [[Intrinsically disordered regions|disordered proteins]] than viruses that infect prokaryotes** [^lotthammer2024].
+**Viruses that infect eukaryotes have more [[Intrinsically disordered regions|disordered proteins]] than viruses that infect prokaryotes** [@lotthammer2024].
 
 #### Figures
 ![[Pasted-image-20241108065732.png]]
-*Ref [^lotthammer2024]*
-
-[^lotthammer2024]: Lotthammer et al. (2024) "Metapredict enables accurate disorder prediction across the Tree of Life." https://doi.org/10.1101/2024.11.05.622168
+*Ref [@lotthammer2024]*

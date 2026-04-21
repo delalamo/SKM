@@ -7,7 +7,7 @@ modified: "2026-04-20T08:32:20"
 **Interleukins** are one of the major types of [[Cytokines|cytokine]].
 
 ![[Interleukin-fig.png]]
-*Ref [^aung2023]*
+*Ref [@aung2023]*
 
 #### Interleukin-1
 
@@ -38,6 +38,3 @@ Promotes cytokine production in [[T cells]], but which types depend on the prese
 # Synthetic interleukins
 
 A mimic of IL-2/IL-15 was made with [[Rosetta]] by Silva et al (Nature, 2019) that binds all three receptor chains. A second-generation version did not need to contact the alpha chain, and had greater [[Stability and thermostability|thermostability]].
-
-
-[^aung2023]: Aung et al. (2023) "Recent and Future Perspectives on Engineering Interferons and other Cytokines as Therapeutics." *Trends in Biochemical Sciences*. https://doi.org/10.1016/j.tibs.2022.09.005
