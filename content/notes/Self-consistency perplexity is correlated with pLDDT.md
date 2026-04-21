@@ -3,7 +3,7 @@ tags:
   - plddt
   - confidence-metrics
 created: "2024-11-04T23:16:23"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -11,4 +11,4 @@ modified: "2026-04-20T07:46:00"
 
 #### Figures
 ![[Pasted-image-20241105051614.png]]
-*Figure from [@alamdari2023]*
+*Ref [@alamdari2023]*

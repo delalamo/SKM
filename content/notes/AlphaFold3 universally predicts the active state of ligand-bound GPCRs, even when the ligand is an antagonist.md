@@ -4,7 +4,7 @@ tags:
   - structure-prediction/sampling
   - conformational-dynamics/modeling
 created: "2025-04-10T02:51:51"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -15,7 +15,7 @@ modified: "2026-04-20T07:46:00"
 
 ![[Pasted-image-20250410085053.png]]
 
-*Figure from [@zheng2025]*
+*Ref [@zheng2025]*
 
 #### See also
 

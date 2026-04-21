@@ -3,7 +3,7 @@ title: The PDB already contains implicit information about conformational dynami
 tags:
   - conformational-dynamics/experimental-ensembles
 created: "2026-02-09T13:46:21"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
  **Experimental structural DBs already contain some implicit information about protein dynamics based on subtle differences between closely related proteins** [@cui2026]. This may explain why [[Structure prediction|structure prediction]] methods learn some information about [[Protein dynamics|protein dynamics]].

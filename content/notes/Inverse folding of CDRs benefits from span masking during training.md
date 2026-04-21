@@ -3,10 +3,10 @@ tags:
   - inverse-folding/evaluation
   - citation-fix
 created: "2026-04-05T17:48:59"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
- **[[Inverse folding]] of [[Complementarity-determining regions|CDRs]] benefits from masking contiguous stretches of residues during training** ([[bxZMKHtlL6|Høie et al 2023]]). This is in contrast to inverse folding of [[Framework region|framework residues]], which like generic proteins benefit from random masking (AKA "shotgun masking"; [@hsu2022]).
+ **[[Inverse folding]] of [[Complementarity-determining regions|CDRs]] benefits from masking contiguous stretches of residues during training** [@hoie2023]. This is in contrast to inverse folding of [[Framework region|framework residues]], which like generic proteins benefit from random masking (AKA "shotgun masking"; [@hsu2022]).
 
 #### Figures
 | Exp/Pred | Layer Decay | OAS Gaussian Noise | Test Masking | FR Avg. | CDR1H | CDR2H | CDR3H | CDR1L | CDR2L | CDR3L |
@@ -27,4 +27,4 @@ modified: "2026-04-20T07:46:00"
 | Pred | - | ✓ | CDRs | 0.901 | **0.709** | 0.657 | *0.435* | **0.701** | **0.690** | 0.658 |
 | Pred | ✓ | - | CDRs | 0.903 | 0.695 | 0.654 | *0.435* | 0.675 | 0.675 | 0.654 |
 | Pred | ✓ | ✓ | CDRs | 0.898 | 0.699 | 0.647 | 0.433 | 0.682 | 0.682 | *0.658* |
-*Table from [[bxZMKHtlL6|Høie et al 2023]]*
+*Table from [@hoie2023]*

@@ -5,56 +5,31 @@ on:
     branches: [main]
     paths:
       - "content/notes/**.md"
-      - "content/MOCs/**.md"
-      - "scripts/generate_mocs.py"
+      - "content/tags/**.md"
       - "scripts/format_notes.py"
   pull_request:
     paths:
       - "content/notes/**.md"
-      - "content/MOCs/**.md"
-      - "scripts/generate_mocs.py"
+      - "content/tags/**.md"
       - "scripts/format_notes.py"
   workflow_dispatch:
 
 jobs:
-  check-mocs:
-    name: MOCs are up to date
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Regenerate MOCs
-        run: python3 scripts/generate_mocs.py
-
-      - name: Fail if MOCs differ from committed versions
-        run: |
-          if ! git diff --exit-code content/MOCs/; then
-            echo ""
-            echo "❌ MOC files are out of date."
-            echo "   Run 'python3 scripts/generate_mocs.py' locally and commit the result."
-            exit 1
-          fi
-          echo "✅ MOCs are up to date."
-
   check-citations:
     name: No bare fallback citations
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Check for bare fallback citations
         run: |
           # Bare fallbacks match: [^key]: Some Text. https://doi.org/...
           # Full citations always contain a quoted title (") or italicised journal (*)
           PATTERN='^\[\^[a-z0-9]+\]: [^"*]+https://doi\.org/'
-          MATCHES=$(grep -rn --include="*.md" -E "$PATTERN" content/notes/ || true)
+          MATCHES=$(grep -rn --include="*.md" -E "$PATTERN" content/notes/ content/tags/ || true)
 
           if [ -n "$MATCHES" ]; then
-            echo "❌ Found bare fallback citations that were never fully fetched:"
+            echo "❌ Found bare fallback citations in authored content that were never fully fetched:"
             echo ""
             echo "$MATCHES"
             echo ""

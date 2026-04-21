@@ -3,7 +3,7 @@ tags:
   - conformational-dynamics/molecular-dynamics
   - thermostability/prediction
 created: "2024-12-31T07:53:22"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary

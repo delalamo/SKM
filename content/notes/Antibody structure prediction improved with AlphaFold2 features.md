@@ -3,7 +3,7 @@ tags:
   - alphafold2
   - antibody-structure-prediction/cdr
 created: "2024-05-08T17:59:40"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary

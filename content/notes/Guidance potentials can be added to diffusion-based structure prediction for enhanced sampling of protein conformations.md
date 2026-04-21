@@ -6,7 +6,7 @@ tags:
   - structure-prediction/sampling
   - conformational-dynamics/modeling
 created: "2026-02-20T18:23:36"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -16,7 +16,7 @@ Guidance potentials can be added to diffusion-based structure prediction methods
 #### Details
 
 ![[Pasted-image-20260220182258.png]]
-*Figure from [@ohnuki2025]*
+*Ref [@ohnuki2025]*
 
 ![[Pasted-image-20260220182329.png]]
-*Figure from [@lam2026]*
+*Ref [@lam2026]*

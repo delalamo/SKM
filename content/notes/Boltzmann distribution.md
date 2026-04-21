@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2024-04-29T14:55:51
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
 In the context of [[MD simulations]], the **Boltzmann distribution** in configurational space ($\nu$) and in phase space ($\mu$) is defined as:

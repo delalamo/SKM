@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2024-07-01T02:29:10
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
 **In [[Binary classifiers|binary classification]] tasks, the composition of the negative data being used affects what is being learned** [@ursu2024]. Moreover, whether the correct things are being learned cannot be gleaned directly from absolute losses on either in-distribution or out-of-distribution data. This was evaluated on [[Antibodies|antibody]]-antigen binding prediction.

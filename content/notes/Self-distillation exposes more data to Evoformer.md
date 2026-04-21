@@ -2,7 +2,7 @@
 tags:
   - structure-prediction/training
 created: "2024-05-10T00:57:20"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -12,4 +12,4 @@ modified: "2026-04-20T07:46:00"
 #### Figures
 
 ![[Pasted-image-20240418162324.png]]
-*Figure from [@jumper2021]*
+*Ref [@jumper2021]*

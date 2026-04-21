@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2026-02-26T15:37:43
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
 **Low-rank adaptation** (LoRA) is an approach to speed up fine-tuning of neural networks, typically [[Transformer|transformers]] such as language models, originally proposed by [@hu2021]. In contrast with standard fine-tuning that updates all weights, LoRa updates only a few via: $W' = W + AB$ where $A$ and $B$ are two small weight matrices.

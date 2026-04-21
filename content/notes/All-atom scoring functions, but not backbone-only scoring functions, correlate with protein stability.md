@@ -2,7 +2,7 @@
 tags:
   - thermostability/prediction
 created: 2025-04-22T00:50:49
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary

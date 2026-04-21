@@ -2,7 +2,7 @@
 tags:
   - ancestral-sequence-reconstruction
 created: 2024-05-02T05:25:59
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
  **[[Ancestral sequence reconstruction]] outperforms generative ML methods on functional enzyme design** [@johnson2024]. 

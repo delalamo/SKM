@@ -8,7 +8,7 @@ Converts remaining mis-formatted citations to [^key] footnote format:
        [10.xxxx__yyy|Author Year]  →  [^key]
        plus appends  [^key]: Full citation  at bottom of file
 
-  2. [[DOI|Author Year]] wikilinks in MOC *Figure from* lines:
+  2. [[DOI|Author Year]] wikilinks in tag-page *Figure from* lines:
        *Figure from [[10.xxxx__yyy|Author Year]]*  →  *Figure from [^key]*
        plus appends footnote definition
 
@@ -29,7 +29,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from utils import REPO_ROOT
 
 NOTES_DIR = REPO_ROOT / "content" / "notes"
-MOCS_DIR  = REPO_ROOT / "content" / "MOCs"
+TAGS_DIR  = REPO_ROOT / "content" / "tags"
 
 FM_RE = re.compile(r'\A---\n.*?\n---\n', re.DOTALL)
 
@@ -80,7 +80,7 @@ _DEFS_RAW = {
     '10.64898/2026.02.10.704873':   ('lam2026',          'Lam et al. (2026) "Metadiffusion: inference-time meta-energy biasing of biomolecular diffusion models." https://doi.org/10.64898/2026.02.10.704873'),
     '10.64898/2026.03.02.709004':   ('smorodina2026',    'Smorodina et al. (2026) "Structural Plausibility Without Binding Specificity: Limits of AI-Based Antibody-Antigen Structure Prediction Confidence Scores." https://doi.org/10.64898/2026.03.02.709004'),
     '10.48550/arxiv.2603.27950':    ('didi2026a',        'Didi et al. (2026) "Proteina-Complexa: Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute." https://doi.org/10.48550/arXiv.2603.27950'),
-    # MOC Figure-caption entries (from second pass)
+    # Tag-page figure-caption entries (from second pass)
     '10.1038/nature17995':          ('sarkisyan2016',    'Sarkisyan et al. (2016) "Local fitness landscape of the green fluorescent protein." *Nature*. https://doi.org/10.1038/nature17995'),
     '10.1038/s41551-023-01079-1':   ('tennenhouse2023',  'Tennenhouse et al. (2023) "Computational optimization of antibody humanness and stability by systematic energy-based ranking." *Nature Biomedical Engineering*. https://doi.org/10.1038/s41551-023-01079-1'),
     '10.1038/s41586-023-06328-6':   ('tsuboyama2023',    'Tsuboyama et al. (2023) "Mega-scale experimental analysis of protein folding stability in biology and design." *Nature*. https://doi.org/10.1038/s41586-023-06328-6'),
@@ -150,7 +150,7 @@ SINGLE_RE = re.compile(
     r'(?!\])'   # not followed by ] (would be [[...]])
 )
 
-# Matches [[10.xxx__yyy|Author Year]] (Obsidian wikilink in MOCs)
+# Matches [[10.xxx__yyy|Author Year]] (Obsidian wikilink in tag pages)
 DOUBLE_RE = re.compile(
     r'\[\[('
     r'10\.[^\]|]+'
@@ -257,8 +257,8 @@ def process_notes_file(path: Path, dry_run: bool) -> bool:
     return True
 
 
-def process_moc_file(path: Path, dry_run: bool) -> bool:
-    """Fix [[DOI|Author Year]] wikilinks in MOC *Figure from* lines only."""
+def process_tag_file(path: Path, dry_run: bool) -> bool:
+    """Fix [[DOI|Author Year]] wikilinks in tag-page *Figure from* lines only."""
     original = path.read_text('utf-8')
 
     m = FM_RE.match(original)
@@ -327,7 +327,7 @@ def main() -> None:
     else:
         targets = (
             sorted(NOTES_DIR.glob('*.md'))
-            + sorted(MOCS_DIR.glob('*.md'))
+            + sorted(TAGS_DIR.glob('*.md'))
         )
 
     if dry_run:
@@ -337,8 +337,8 @@ def main() -> None:
     for path in targets:
         if path.parent.name == 'notes':
             changed = process_notes_file(path, dry_run)
-        elif path.parent.name == 'MOCs':
-            changed = process_moc_file(path, dry_run)
+        elif path.parent.name == 'tags':
+            changed = process_tag_file(path, dry_run)
         else:
             changed = process_notes_file(path, dry_run)
 

@@ -5,11 +5,11 @@ tags:
   - conformational-dynamics/kinetics
   - protein-folding/unfolding
 created: "2024-08-08T03:22:53"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
  **[[Ribosomes]] penalize the unfolded states of proteins during [[Protein folding|protein folding]] in a sequence-independent manner** [@streit2024]. This is achieved by physically expanding the conformational ensemble such that it is less spherical, reducing the entropic penalty to protein folding by 2 kcal/mol at 298 K and the SASA penalty by 11±4 kcal/mol.
 
 #### Figures
 ![[conformations.png]]
-*Figure from [@streit2024]*
+*Ref [@streit2024]*

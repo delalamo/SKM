@@ -2,18 +2,18 @@
 tags:
   - inverse-folding/training
 created: 2026-04-05T17:47:00
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
 
-**Using evolutionary information for label smoothing when training [[Inverse folding|inverse folding]] models improves [[Variant effect prediction|variant effect prediction]].** Zhou et al. used the [[BLOSUM62]] matrix, whereas [[Gong et al 2024]] used PSSMs. By contrast, Dauparas et al. used uniform smoothing.[@zhou2024; @dauparas2022]
+**Using evolutionary information for label smoothing when training [[Inverse folding|inverse folding]] models improves [[Variant effect prediction|variant effect prediction]].** Zhou et al. used the [[BLOSUM62]] matrix, whereas Gong et al. [@gong2024] used PSSMs. By contrast, Dauparas et al. used uniform smoothing [@zhou2024; @dauparas2022].
 
 #### Details
 
-Zhou et al. use a temperature value $t$ to balance the contribution of the WT amino acid and the BLOSUM62 matrix - the figure below defines this as $\mathbf{B}' = \sigma (\mathbf{B})^{t}$ where $\mathbf{B}'$ and $\mathbf{B}$ are the target matrices and BLOSUM matrices, respectively, and $\sigma$ is a nonlinear operator.[@zhou2024]
+Zhou et al. use a temperature value $t$ to balance the contribution of the WT amino acid and the BLOSUM62 matrix - the figure below defines this as $\mathbf{B}' = \sigma (\mathbf{B})^{t}$ where $\mathbf{B}'$ and $\mathbf{B}$ are the target matrices and BLOSUM matrices, respectively, and $\sigma$ is a nonlinear operator. [@zhou2024]
 
-In contrast, [[Gong et al 2024]] calculated propensities from [[Multiple sequence alignments|MSAs]].
+In contrast, Gong et al. [@gong2024] calculated propensities from [[Multiple sequence alignments|MSAs]].
 
 #### Figures
 
@@ -36,7 +36,7 @@ In contrast, [[Gong et al 2024]] calculated propensities from [[Multiple sequenc
 | SSL Improvement ↑ | 42% | 11% | 48% | 14% | 63% | 17% | 83% | 17% | 65% | 10% | 77% | 15% | 42% | 11% |
 | Supervised Fine-Tuning Gap ↓ | 14% | 4% | 23% | 9% | 14% | 3% | 0% | -4% | 16% | 3% | 13% | 3% | 14% | 4% |
 
-*Table 3 from [[Gong et al 2024]]*
+*Table 3 from [@gong2024]*
 
 #### Publication history
 

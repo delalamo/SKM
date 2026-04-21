@@ -2,14 +2,8 @@
 tags:
   - inverse-folding/evaluation
 created: "2026-04-05T17:58:34"
-modified: "2026-04-20T07:46:00"
----
-
----
+modified: "2026-04-21T05:01:15"
 summary: The effect of including both sequence and structural features can be synergistic
-tags:
- - inverse-folding/observations 
- - protein-language-models/applications 
 ---
 #### Summary
 **The benefit of including both sequence- and structure-based features during [[Inverse folding]] is greater than the sum of each feature's benefit in isolation** [@wang2024spdesign].

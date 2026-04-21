@@ -3,7 +3,7 @@ tags:
   - alphafold2
   - structure-prediction/sampling
 created: "2024-10-25T03:26:40"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -14,4 +14,4 @@ modified: "2026-04-20T07:46:00"
 
 ![[Pasted-image-20241025092618.png]]
 
-*Figure from [@frank2024]; AA_IG refers to AlphaFold2 with initial guess; ESM refers to [[ESMFold]]*
+*Ref [@frank2024]; AA_IG refers to AlphaFold2 with initial guess; ESM refers to [[ESMFold]]*

@@ -2,7 +2,7 @@
 tags:
   - thermostability/design
 created: "2024-11-14T03:09:22"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -13,7 +13,7 @@ modified: "2026-04-20T07:46:00"
 
 ![[Inter-vs-Intrapeak-Consensus.png]]
 
-Figure from [@muir2024]
+Ref [@muir2024]
 
 #### See also
 

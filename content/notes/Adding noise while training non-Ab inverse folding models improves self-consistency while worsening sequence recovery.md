@@ -3,7 +3,7 @@ tags:
   - inverse-folding/training
   - protein-backbone-design/designability
 created: "2026-04-05T17:24:10"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -31,7 +31,7 @@ modified: "2026-04-20T07:46:00"
 | Pred | ✓ | - | CDRs | 0.903 | 0.695 | 0.654 | *0.435* | 0.675 | 0.675 | 0.654 |
 | Pred | ✓ | ✓ | CDRs | 0.898 | 0.699 | 0.647 | 0.433 | 0.682 | 0.682 | *0.658* |
 
-*Table from [[bxZMKHtlL6|Høie et al 2023]]*
+*Table from [@hoie2023]*
 
 ![[Pasted-image-20240528070613.png]]
 
@@ -39,7 +39,7 @@ modified: "2026-04-20T07:46:00"
 
 ![[Pasted-image-20240918083544.png]]
 
-*Figure from [@ruffolo2024]*
+*Ref [@ruffolo2024]*
 
 #### See also
 

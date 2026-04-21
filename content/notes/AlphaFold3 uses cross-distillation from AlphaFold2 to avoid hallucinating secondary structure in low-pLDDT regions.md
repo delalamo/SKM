@@ -4,7 +4,7 @@ tags:
   - structure-prediction/training
   - plddt
 created: "2024-05-11T20:04:05"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -15,4 +15,4 @@ modified: "2026-04-20T07:46:00"
 
 ![[Pasted-Graphic-3-1.png]]
 
-*Figure from [@abramson2024]*
+*Ref [@abramson2024]*

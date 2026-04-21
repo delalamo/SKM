@@ -2,7 +2,7 @@
 tags:
   - affinity-maturation
 created: "2025-02-14T05:30:47"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
 **[[Germline]] precursors to high-affinity [[Antibodies|antibodies]] bind to their targets with 800 nM affinity on average** [@kirby2025]. This was observed across twelve anti-[[SARS-CoV-2]] public antibodies.

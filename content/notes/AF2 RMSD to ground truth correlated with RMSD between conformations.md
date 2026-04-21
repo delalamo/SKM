@@ -3,7 +3,7 @@ tags:
   - alphafold2
   - conformational-dynamics/modeling
 created: 2024-11-04T22:55:26
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
 **The RMSD of [[AlphaFold2]] models to ground truth structures is correlated with the RMSD between ground truth apo/holo conformations** [@saldao2022].

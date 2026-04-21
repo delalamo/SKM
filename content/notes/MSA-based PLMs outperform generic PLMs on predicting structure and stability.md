@@ -2,10 +2,10 @@
 tags:
   - thermostability/prediction
 created: "2026-04-05T17:51:40"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
- **MSA-based [[Protein language models|PLMs]] such as [[MSA Transformer]] and the [[Evoformer]] are more effective than generic PLMs at predicting [[Structure prediction|structure]]** [@hu2022] **and [[Stability and thermostability|stability]]** [@tan2023]. [@notin2023] found that [[MSA Transformer]] outperformed [[Protein language models|PLMs]] like [[ESM]]2-15B on almost all benchmarks in [[ProteinGym]].
+ **MSA-based [[Protein language models|PLMs]] such as [[MSA Transformer]] and the [[Evoformer]] are more effective than generic PLMs at predicting [[Structure prediction|structure]]** [@hu2022]** and [[Stability and thermostability|stability]]** [@tan2023]. [@notin2023] found that [[MSA Transformer]] outperformed [[Protein language models|PLMs]] like [[ESM]]2-15B on almost all benchmarks in [[ProteinGym]].
 
 #### Details
 Conclusions from [@hu2022] about the representations from [[Evoformer]] as a standalone ML model:
@@ -46,4 +46,4 @@ Conclusions from [@hu2022] about the representations from [[Evoformer]] as a sta
 | | | t36 | 3,000 | 0.384 | 0.261 | 0.383 | 0.495 | 0.419 | 0.429 | 0.195 |
 | | | t48 | 15,000 | 0.394 | 0.313 | 0.391 | 0.457 | 0.402 | 0.442 | 0.251 |
 | | P¹³LG | k20_h512 | 148 | `0.424` | **0.395** | `0.426` | `0.516` | 0.425 | `0.480` | 0.297 |
-*Figure from [@tan2023]*
+*Ref [@tan2023]*

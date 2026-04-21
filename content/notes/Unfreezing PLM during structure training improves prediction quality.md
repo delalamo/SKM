@@ -3,7 +3,7 @@ tags:
   - protein-language-models/training
   - tm-score
 created: "2026-04-05T17:45:40"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -19,4 +19,4 @@ modified: "2026-04-20T07:46:00"
 | variant3 | Freeze | 1 Evoformer | 0.63 |
 | variant4 | Trainable | 1 Evoformer | 0.61 |
 
-*Figure from [@lee2023solvent]*
+*Ref [@lee2023solvent]*

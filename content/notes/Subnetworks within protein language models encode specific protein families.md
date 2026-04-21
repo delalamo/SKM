@@ -2,7 +2,7 @@
 tags:
   - protein-language-models
 created: "2026-04-10T10:46:24"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -10,4 +10,4 @@ Subnetworks within [[Protein language models|protein language models]] encode sp
 
 #### Figures
 ![[Pasted image 20260410103621.png]]
-*Figure from [@vinod2026]*
+*Ref [@vinod2026]*

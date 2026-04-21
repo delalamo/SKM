@@ -5,8 +5,8 @@
 #### Figures
 ![[Pasted-image-20250803095752.png]]
 
-*Figure from [@garcia2025]*
+*Ref [@garcia2025]*
 
 ![[Pasted-image-20250422064037.png]]
 
-*Figure from [@ferrari2025]*
+*Ref [@ferrari2025]*

@@ -2,18 +2,18 @@
 tags:
   - conformational-dynamics/modeling
 created: 2024-10-14T12:57:29
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
 
-**The conformational dynamics of *de novo* designed proteins are easily influenced by mutations to nearby residues that don't move** [@praetorius2023] and Kortemme lab [[NeurIPS_2023]], unpublished as of 19 December 2023).
+**The conformational dynamics of *de novo* designed proteins are easily influenced by mutations to nearby residues that don't move** [@praetorius2023] and by unpublished Kortemme lab results presented at NeurIPS 2023, as of 19 December 2023.
 
 #### Figures
 
 ![[Pasted-image-20231219140850.png]]
 
-*Slide from [[NeurIPS_2023]] Kortemme talk*
+*Slide from the Kortemme lab NeurIPS 2023 talk*
 
 #### See also
 

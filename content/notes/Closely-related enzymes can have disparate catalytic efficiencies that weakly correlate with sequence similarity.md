@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2024-11-14T03:02:24
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -9,4 +9,4 @@ modified: "2026-04-20T07:46:00"
 
 #### Figures
 ![[Phylogenetic-Distance.png]]
-*Figure from [@muir2024]; vertical line of top figure refers to the [[Consensus sequences|consensus sequence]]*
+*Ref [@muir2024]; vertical line of top figure refers to the [[Consensus sequences|consensus sequence]]*

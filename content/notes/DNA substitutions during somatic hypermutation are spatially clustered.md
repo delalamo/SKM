@@ -2,7 +2,7 @@
 tags:
   - affinity-maturation/somatic-hypermutation
 created: 2026-04-10T10:46:24
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -10,4 +10,4 @@ DNA substitutions during [[Somatic hypermutation|somatic hypermutation]] are spa
 
 #### Figures
 ![[Pasted-image-20260410102518.png]]
-*Figure from [@matsen2026]*
+*Ref [@matsen2026]*

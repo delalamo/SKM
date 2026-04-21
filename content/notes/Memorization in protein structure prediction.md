@@ -2,7 +2,7 @@
 tags:
   - structure-prediction/limitations
 created: "2025-07-22T11:26:16"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
 Training set memorization seems to occur more frequently in [[Protein-ligand co-folding|all-atom protein structure prediction]].

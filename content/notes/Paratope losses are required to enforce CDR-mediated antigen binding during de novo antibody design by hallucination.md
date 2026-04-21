@@ -2,7 +2,7 @@
 tags:
   - antibodies/engineering-and-design
 created: 2025-12-19T11:25:57
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -24,7 +24,7 @@ where $\mathcal{L}_{\text{CDR}}$ and $\mathcal{L}_{\text{framework}}$ decrease a
 
 ![[Pasted-image-20251027120017.png|400]]
 
-*Figure from [@millefragoso2025]*
+*Ref [@millefragoso2025]*
 
 #### See also
 

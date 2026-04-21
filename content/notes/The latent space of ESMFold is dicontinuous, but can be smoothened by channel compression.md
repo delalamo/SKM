@@ -2,7 +2,7 @@
 tags:
   - structure-prediction/architecture
 created: "2024-08-13T05:05:39"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -13,7 +13,7 @@ modified: "2026-04-20T07:46:00"
 
 ![[Original-Latent-Space.png]]
 
-*Figure from [@lu2025tokenized]*
+*Ref [@lu2025tokenized]*
 
 #### See also
 

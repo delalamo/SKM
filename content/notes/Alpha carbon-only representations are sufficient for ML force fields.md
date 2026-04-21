@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2024-07-08T02:37:17
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -12,7 +12,7 @@ modified: "2026-04-20T07:46:00"
 
 ![[Pasted-image-20240708082007.png]]
 
-*Figure from [@doerr2021]*
+*Ref [@doerr2021]*
 
 #### See also
 

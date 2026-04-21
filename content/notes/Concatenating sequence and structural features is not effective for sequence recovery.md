@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/representations
 created: 2026-04-05T17:27:14
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -19,4 +19,4 @@ modified: "2026-04-20T07:46:00"
 | - w/ series fusion | **0.883** | 0.890 |
 | - w/ cross fusion | 0.880 | **0.893** |
 
-*Figure from [@zhang2023]*
+*Ref [@zhang2023]*

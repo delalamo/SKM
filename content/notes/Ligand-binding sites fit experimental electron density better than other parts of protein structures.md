@@ -2,7 +2,7 @@
 tags:
   - structure-prediction/experimental-data
 created: 2024-12-17T02:52:28
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -10,4 +10,4 @@ modified: "2026-04-20T07:46:00"
 
 #### Figures
 ![[Pasted-image-20241217084918.png]]
-*Figure from [@wankowicz2024]*
+*Ref [@wankowicz2024]*

@@ -3,7 +3,7 @@ title: Mutation memory half life
 tags:
   - epistasis
 created: 2024-05-02T05:15:27
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
  **Mutation memory half-life refers to the number of mutations required to observe changes in a mutation's effect on fitness.** The term mutation memory half-life was coined by Park et al [@park2022].
@@ -23,7 +23,7 @@ An earlier study in $beta$-lactamase found that not all mutational paths to an c
 
 #### Figures
 ![[darwinian_evolution.png]]
-*Figure from [@weinreich2006]*
+*Ref [@weinreich2006]*
 
 #### See also
 * [[Ancestral sequence reconstruction]]

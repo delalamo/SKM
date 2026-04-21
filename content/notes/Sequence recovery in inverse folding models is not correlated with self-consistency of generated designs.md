@@ -2,7 +2,7 @@
 tags:
   - inverse-folding/evaluation
 created: "2026-02-09T13:53:30"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -10,4 +10,4 @@ modified: "2026-04-20T07:46:00"
 
 #### Figures
 ![[Pasted-image-20260209135237.png]]
-*Figure from [@birnbaum2026]*
+*Ref [@birnbaum2026]*

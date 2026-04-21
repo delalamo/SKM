@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2025-07-22T11:20:54
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -9,4 +9,4 @@ modified: "2026-04-20T07:46:00"
 
 #### Figures
 ![[Pasted-image-20250722111721.png]]
-*Figure from [@lemke2025]*
+*Ref [@lemke2025]*

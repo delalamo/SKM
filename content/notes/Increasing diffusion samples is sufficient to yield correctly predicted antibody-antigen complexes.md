@@ -3,7 +3,7 @@ tags:
   - structure-prediction/complex-prediction
   - diffusion-models/implementation
 created: 2026-03-11T08:27:32
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -13,4 +13,4 @@ Increasing the number of diffusion samples from all-atom protein structure predi
 #### Figures
 
 ![[Pasted-image-20260311082505.png]]
-*Figure from [@smorodina2026]*
+*Ref [@smorodina2026]*

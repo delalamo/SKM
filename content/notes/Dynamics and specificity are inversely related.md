@@ -2,13 +2,8 @@
 tags:
   - conformational-dynamics/allostery
 created: "2024-09-19T05:32:41"
-modified: "2026-04-20T07:46:00"
----
-
----
+modified: "2026-04-21T05:01:15"
 summary: Protein dynamics and substrate specificity are inversely correlated
-tags:
- - directed-evolution
 ---
 #### Summary
 **Protein dynamics are inversely related to specificity** [@tokuriki2009].

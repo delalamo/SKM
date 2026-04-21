@@ -4,7 +4,7 @@ tags:
   - diffusion-guidance/protein-design
   - protein-design/design
 created: "2026-04-10T15:35:05"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -12,4 +12,4 @@ modified: "2026-04-20T07:46:00"
 
 #### Figures
 ![[Pasted image 20260410113715.png]]
-*Figure from [@yang2025]*
+*Ref [@yang2025]*

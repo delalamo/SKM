@@ -2,7 +2,7 @@
 tags:
   - transformers
 created: 2026-04-05T17:19:25
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
 **On fixed compute budgets, sparse models (e.g., [[Mixture-of-experts|mixture-of-experts]] models) outperform dense models** [@bhatnagar2025].

@@ -2,7 +2,7 @@
 tags:
   - transformers
 created: 2026-01-22T12:38:44
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
 **Pretraining performance does not capture effectiveness on downstream tasks** [@neyshabur2020; @li2024feature]. Neyshabur et al found that using different post-plateau checkpoints as starting points for fine-tuning had drastically different performance on downstream tasks, with more heavily trained models showing better performance.

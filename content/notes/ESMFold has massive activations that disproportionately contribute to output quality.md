@@ -5,4 +5,4 @@
 #### Figures
 ![[TMScore-to-Original-Structure.png]]
 
-*Figure from [@lu2025tokenized]*
+*Ref [@lu2025tokenized]*

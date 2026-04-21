@@ -2,7 +2,7 @@
 tags:
   - evolution-and-natural-selection
 created: 2024-06-18T06:15:04
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -10,4 +10,4 @@ modified: "2026-04-20T07:46:00"
 
 #### Figures
 ![[m_msu228f1p.jpeg]]
-*Figure from [@krick2014]*
+*Ref [@krick2014]*

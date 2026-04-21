@@ -3,7 +3,7 @@ tags:
   - diffusion-models/training
   - protein-design/training
 created: "2025-02-07T00:45:33"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -11,4 +11,4 @@ modified: "2026-04-20T07:46:00"
 
 #### Figure
 ![[Pasted-image-20250207064156.png]]
-*Figure from [@jendrusch2025]*
+*Ref [@jendrusch2025]*

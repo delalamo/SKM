@@ -4,7 +4,7 @@ tags:
   - protein-backbone-design/designability
   - plddt
 created: "2026-04-05T17:36:43"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -28,4 +28,4 @@ Inverse folding methods outperform hallucination at designing proteins that can 
 *Table from [@wang2023]*
 
 ![[Pasted-image-20241025093149.png]]
-*Figure from [@frank2024]*
+*Ref [@frank2024]*

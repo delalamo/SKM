@@ -2,7 +2,7 @@
 tags:
   - conformational-dynamics/molecular-dynamics
 created: "2025-05-23T04:55:28"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -10,4 +10,4 @@ modified: "2026-04-20T07:46:00"
 
 #### Figures
 ![[Pasted-image-20250523102840.png]]
-*Figure from [@fung2022]*
+*Ref [@fung2022]*

@@ -2,7 +2,7 @@
 tags:
   - variant-effect-prediction
 created: 2025-03-27T09:00:20
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -13,4 +13,4 @@ modified: "2026-04-20T07:46:00"
 
 ![[Pasted-Graphic-8.png]]
 
-*Figure from [@livesey2024]*
+*Ref [@livesey2024]*

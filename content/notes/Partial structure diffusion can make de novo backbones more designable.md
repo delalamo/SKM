@@ -3,7 +3,7 @@ tags:
   - diffusion-models/protein-design
   - protein-design/design
 created: "2024-05-30T05:30:22"
-modified: "2026-04-11T07:41:30"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -18,7 +18,7 @@ Partial RF-diffusion was applied to [[Chroma]] designs, followed by sequence des
 
 ![[Pasted-image-20231119134803.png]]
 
-*Figure from https://bsky.app/profile/sokrypton.org/post/3keibpabwtd24*
+*Ref https://bsky.app/profile/sokrypton.org/post/3keibpabwtd24*
 
 #### See also
 

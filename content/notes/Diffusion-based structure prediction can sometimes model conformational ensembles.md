@@ -4,7 +4,7 @@ tags:
   - protein-folding/structure-prediction
   - tm-score
 created: "2026-04-10T15:35:05"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary

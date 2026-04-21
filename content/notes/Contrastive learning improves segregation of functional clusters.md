@@ -2,7 +2,7 @@
 tags:
   - contrastive-learning
 created: 2024-07-02T07:59:43
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -10,4 +10,4 @@ modified: "2026-04-20T07:46:00"
 
 #### Figures
 ![[CLEAN-vs-ESM.png]]
-*Figure from [@yu2023]*
+*Ref [@yu2023]*

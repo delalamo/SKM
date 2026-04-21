@@ -3,7 +3,7 @@ tags:
   - variant-effect-prediction
   - epistasis
 created: 2026-03-16T11:46:02
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -26,4 +26,4 @@ From [@faure2024]
 
 ![[-200-.png]]
 
-*Figure from [@tharp2026] showing this effect in antibodies*
+*Ref [@tharp2026] showing this effect in antibodies*

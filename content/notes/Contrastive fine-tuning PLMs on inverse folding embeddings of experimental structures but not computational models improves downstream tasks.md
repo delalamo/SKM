@@ -3,7 +3,7 @@ tags:
   - protein-language-models/antibodies
   - contrastive-learning
 created: 2025-07-22T11:37:28
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -14,7 +14,7 @@ modified: "2026-04-20T07:46:00"
 
 ![[including-ab-models-doesnt-improve-property-prediction.png]]
 
-*Figure from [@barton2023]*
+*Ref [@barton2023]*
 
 #### See also
 

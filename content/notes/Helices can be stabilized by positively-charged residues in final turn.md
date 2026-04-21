@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2025-04-22T00:52:36
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -9,4 +9,4 @@ modified: "2026-04-20T07:46:00"
 
 #### Figure
 ![[155.png]]
-*Figure from [@ferrari2025]*
+*Ref [@ferrari2025]*

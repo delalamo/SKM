@@ -2,7 +2,7 @@
 tags:
   - protein-protein-interactions
 created: 2024-06-14T02:13:41
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary

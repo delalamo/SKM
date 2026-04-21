@@ -3,7 +3,7 @@ tags:
   - structure-prediction/limitations
   - structure-prediction/complex-prediction
 created: 2025-06-02T06:29:42
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -14,4 +14,4 @@ modified: "2026-04-20T07:46:00"
 
 ![[500.png]]
 
-*Figure from [@liao2025]*
+*Ref [@liao2025]*

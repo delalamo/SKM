@@ -3,7 +3,7 @@ tags:
   - plddt
   - protein-language-models
 created: 2024-12-19T01:47:52
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -14,4 +14,4 @@ modified: "2026-04-20T07:46:00"
 
 ![[Pasted-image-20241219074446.png]]
 
-*Figure from [@stocco2024]*
+*Ref [@stocco2024]*

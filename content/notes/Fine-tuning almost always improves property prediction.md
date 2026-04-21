@@ -3,7 +3,7 @@ tags:
   - protein-language-models/training
   - thermostability/prediction
 created: "2026-01-22T12:38:44"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -17,7 +17,7 @@ modified: "2026-04-20T07:46:00"
 
 ![[Pasted-image-20240722093551.png]]
 
-*Figure from [@jiang2024]*
+*Ref [@jiang2024]*
 
 #### See also
 * [[Protein property prediction using PLMs does not benefit from scale except when predicting inferring features of either structural or sparsely populated sequence families]]

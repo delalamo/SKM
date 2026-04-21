@@ -2,7 +2,7 @@
 tags:
   - structure-prediction/architecture
 created: "2024-05-02T17:54:08"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -12,4 +12,4 @@ The invariant point attention is not mandatory for protein structure prediction 
 #### Figures
 
 ![[Pasted-image-20240418162324.png]]
-*Figure from [@jumper2021]*
+*Ref [@jumper2021]*

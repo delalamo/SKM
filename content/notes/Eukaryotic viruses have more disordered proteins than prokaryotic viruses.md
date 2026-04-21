@@ -1,7 +1,7 @@
 ---
 tags:
 created: 2024-11-08T00:58:28
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -9,4 +9,4 @@ modified: "2026-04-20T07:46:00"
 
 #### Figures
 ![[Pasted-image-20241108065732.png]]
-*Figure from [@lotthammer2024]*
+*Ref [@lotthammer2024]*

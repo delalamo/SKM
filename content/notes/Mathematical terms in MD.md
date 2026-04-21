@@ -2,7 +2,7 @@
 tags:
   - conformational-dynamics/molecular-dynamics
 created: "2024-04-16T22:58:57"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
 Notation follows the convention of [@hnin2022].

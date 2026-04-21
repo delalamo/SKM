@@ -3,7 +3,7 @@ tags:
   - protein-language-models/antibodies
   - antibody-structure-prediction/cdr
 created: "2025-09-19T06:48:01"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -14,4 +14,4 @@ modified: "2026-04-20T07:46:00"
 
 ![[Pasted-image-20250919064616.png]]
 
-*Figure from [@neyestanak2025]*
+*Ref [@neyestanak2025]*

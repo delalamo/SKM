@@ -5,4 +5,4 @@
 #### Figures
 ![[Pasted-image-20260226153311.png]]
 
-*Figure from [@didi2026]; blue dots show position-based split*
+*Ref [@didi2026]; blue dots show position-based split*

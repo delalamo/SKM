@@ -7,7 +7,7 @@ tags:
   - tm-score
   - plddt
 created: "2026-03-06T09:43:56"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -18,7 +18,7 @@ modified: "2026-04-20T07:46:00"
 
 ![[Pasted-image-20260306093812.png]]
 
-*Figure from [@maddipatla2026]*
+*Ref [@maddipatla2026]*
 
 #### See also
 

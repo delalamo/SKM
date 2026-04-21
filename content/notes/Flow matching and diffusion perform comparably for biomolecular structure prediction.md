@@ -6,7 +6,7 @@ tags:
   - structure-prediction/architecture
   - plddt
 created: "2026-04-05T17:34:36"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -24,4 +24,4 @@ Flow matching and diffusion perform comparably for biomolecular structure predic
 | PTX-Mini-ESM-Flow | 0.405 | 0.577 | 0.585 | 0.297 | 0.787 | 0.772 |
 | Protenix-Tiny | 0.428 | 0.594 | 0.567 | 0.338 | 0.798 | 0.783 |
 | PTX-Tiny-Flow | 0.422 | 0.594 | 0.569 | 0.338 | 0.806 | 0.780 |
-*Figure from [@gong2025]*
+*Ref [@gong2025]*

@@ -2,12 +2,12 @@
 tags:
   - thermostability/prediction
 created: "2026-04-05T17:26:46"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
 
-**Averaging logits from multiple DL models can lead to substantial improvements in fitness and stability prediction.** The method TranceptEVE, which combines probabilities from [[EVE]] and [[Tranception]], is the state of the art method for predicting protein [[Fitness prediction|fitness]] and [[Stability and thermostability|thermostability]] (as judged by [[ProteinGym]]; [@notin2022]). Likewise, adding probabilities from [[ESM-IF]] further improves this method ([[8PbTU4exnV|Paul et al 2023]]). [@nijkamp2023] found that ensembles of [[ProGen]] models outperform individual models on a range of tasks.
+**Averaging logits from multiple DL models can lead to substantial improvements in fitness and stability prediction.** The method TranceptEVE, which combines probabilities from [[EVE]] and [[Tranception]], is the state of the art method for predicting protein [[Fitness prediction|fitness]] and [[Stability and thermostability|thermostability]] (as judged by [[ProteinGym]]; [@notin2022]). Likewise, adding probabilities from [[ESM-IF]] further improves this method [@paul2023]. [@nijkamp2023] found that ensembles of [[ProGen]] models outperform individual models on a range of tasks.
 
 #### Figures
 
@@ -24,7 +24,7 @@ modified: "2026-04-20T07:46:00"
 | TranceptEVE | 0.481 | 0.341 | 0.482 | 0.502 | **0.478** | 0.457 |
 | StructSeq | **0.549** | **0.399** | **0.498** | **0.633** | 0.468 | **0.509** |
 
-*Figure from [[8PbTU4exnV|Paul et al 2023]]*
+*Ref [@paul2023]*
 
 #### See also
 

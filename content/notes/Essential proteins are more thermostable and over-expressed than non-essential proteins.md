@@ -2,7 +2,7 @@
 tags:
   - thermostability/evolution
 created: "2026-03-24T10:15:32"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -10,10 +10,10 @@ modified: "2026-04-20T07:46:00"
 
 #### Figures
 ![[Pasted-image-20260324085157.png]]
-*Figure from [@leuenberger2017]*
+*Ref [@leuenberger2017]*
 
 ![[Pasted-image-20260324085338.png]]
-*Figure from [@choi2026]*
+*Ref [@choi2026]*
 
 #### Publication history:
 24 March 2026: https://biomlzk.ghost.io/essential-proteins-are-more-thermostable-and-over-expressed-than-non-essential-proteins/

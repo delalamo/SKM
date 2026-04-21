@@ -4,7 +4,7 @@ tags:
   - evolution-and-natural-selection
   - variant-effect-prediction
 created: 2024-05-01T02:49:05
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
  **Short [[Variant effect prediction#Indels|insertions]] are more common in natural genomes** [@montgomery2021].

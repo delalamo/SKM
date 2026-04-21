@@ -2,7 +2,7 @@
 tags:
   - evolution-and-natural-selection
 created: 2024-05-01T02:47:10
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -12,4 +12,4 @@ Insertion mutations and deletion mutations are better tolerated at protein termi
 #### Figures
 
 ![[Indels.png]]
-*Figure from [@topolska2023]*
+*Ref [@topolska2023]*

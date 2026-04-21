@@ -3,7 +3,7 @@ tags:
   - conformational-dynamics/evolution
   - evolution-and-natural-selection
 created: 2024-05-01T07:11:29
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -14,7 +14,7 @@ modified: "2026-04-20T07:46:00"
 
 ![[Multiple-structures-same-protein-different-species.png]]
 
-*Figure from [@schierholz2023]*
+*Ref [@schierholz2023]*
 
 #### See also
 

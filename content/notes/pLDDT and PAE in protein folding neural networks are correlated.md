@@ -4,7 +4,7 @@ tags:
   - plddt
   - pae
 created: "2024-11-04T22:57:17"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -19,4 +19,4 @@ modified: "2026-04-20T07:46:00"
 
 ![[Pasted-image-20241105045655.png]]
 
-*Figure from [@strashnov2024] showing pLDDT values from different NNs*
+*Ref [@strashnov2024] showing pLDDT values from different NNs*

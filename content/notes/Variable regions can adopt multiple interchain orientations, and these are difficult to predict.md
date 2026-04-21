@@ -2,7 +2,7 @@
 tags:
   - structure-prediction/limitations
 created: 2026-03-16T11:51:30
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
 **[[MD simulations]] suggest that tilt angle in the variable region of [[Antibodies|antibodies]] are coupled to [[Complementarity-determining regions|CDR]] conformations.** They are particularly affected by [[Complementarity-determining regions#CDRL2|CDRL2]], [[Complementarity-determining regions#CDRH1|CDRH1]], and [[Complementarity-determining regions#CDRH3|CDRH3]] [@fernandezquintero2020]. Anecdotally, these are very difficult to predict using programs such as [[Rosetta]].

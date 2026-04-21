@@ -3,7 +3,7 @@ tags:
   - affinity-maturation
   - antibody-developability/polyspecificity
 created: "2024-05-01T03:22:05"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
 **[[Somatic hypermutation]] is associated with lower [[Developability|polyreactivity]]** [@shehata2019].

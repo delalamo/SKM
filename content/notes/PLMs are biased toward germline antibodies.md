@@ -3,7 +3,7 @@ tags:
   - protein-language-models/antibodies
   - affinity-maturation
 created: "2026-04-05T17:12:20"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 #### Summary
 **[[Protein language models]] are biased toward residues found in [[Germline|germline]] sequences** [@olsen2022; @nijkamp2023; @olsen2024]. Reasons include the fact that blood samples that are sequenced contain mostly naive [[B cells]], and fewer memory B cells and plasma cells. [@olsen2024] found that [[Focal loss]] improves prediction of non-germline. Paired antibody language models are less sensitive to this bias (Burbach and [@burbach2024]).

@@ -3,7 +3,7 @@ tags:
   - alphafold2
   - structure-prediction/sampling
 created: "2025-04-09T10:01:58"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -14,7 +14,7 @@ modified: "2026-04-20T07:46:00"
 
 ![[Pasted-image-20231211070606.png]]
 
-*Figure from [@ahdritz2024]*
+*Ref [@ahdritz2024]*
 
 #### See also
 

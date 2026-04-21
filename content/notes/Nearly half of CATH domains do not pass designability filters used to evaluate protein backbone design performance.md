@@ -3,7 +3,7 @@ tags:
   - inverse-folding/evaluation
   - protein-backbone-design/designability
 created: "2025-01-20T06:38:07"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary

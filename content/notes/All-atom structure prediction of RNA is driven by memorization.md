@@ -2,7 +2,7 @@
 tags:
   - structure-prediction/limitations
 created: "2025-05-05T11:31:20"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -13,7 +13,7 @@ modified: "2026-04-20T07:46:00"
 
 ![[Pasted-image-20250505173050.png|400]]
 
-*Figure from [@ludaic2025]*
+*Ref [@ludaic2025]*
 
 #### See also
 

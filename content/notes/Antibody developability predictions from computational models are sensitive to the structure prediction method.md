@@ -2,7 +2,7 @@
 tags:
   - antibody-developability/general
 created: "2024-08-22T05:13:06"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -13,11 +13,11 @@ modified: "2026-04-20T07:46:00"
 
 ![[Correlation-of-structure-DPs-accross-structure-prediction-tools.png]]
 
-*Figure from [@bashour2024]*
+*Ref [@bashour2024]*
 
 ![[Pasted-Graphic-43.png]]
 
-*Figure from [@bashour2024]*
+*Ref [@bashour2024]*
 
 #### See also
 

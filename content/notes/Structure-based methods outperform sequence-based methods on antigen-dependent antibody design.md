@@ -3,7 +3,7 @@ tags:
   - protein-language-models/antibodies
   - antibody-structure-prediction/complex-prediction
 created: "2024-12-31T08:49:28"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -14,7 +14,7 @@ modified: "2026-04-20T07:46:00"
 
 ![[Pasted-image-20240705080737.png]]
 
-*Figure from [@shanker2024]*
+*Ref [@shanker2024]*
 
 #### See also
 

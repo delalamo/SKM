@@ -3,12 +3,12 @@ tags:
   - structure-prediction/sampling
   - conformational-dynamics/modeling
 created: 2025-12-19T12:44:03
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
 
-**Alternate conformations can be sampled with MSA-based methods [[AlphaFold2]] and [[AlphaFold3|Boltz]] by using either custom templates** [@delalamo2022sampling] **or custom sequences databases**[@monteiro2024] **or [[Multiple sequence alignments|MSAs]]** [@delalamo2022sampling; @waymentsteele2023]. For the last case, MSAs are modified either by [[Clustering|clustering]] using HDBSCAN or randomly subsampling, respectively. However, [[Protein structure prediction methods are unable to predict the energetics of a conformational landscape unless explicitly trained for that purpose|these ensembles do not correspond to the energetics of those proteins]]. MSA-based tricks were recently shown to work with Boltz [@richman2025]. These hacks circumvent the broader tendency of structure prediction methods to [[Structure prediction methods undersample the conformational space they find to be high-confidence|undersample conformations they find to be high-confidence]].
+**Alternate conformations can be sampled with MSA-based methods [[AlphaFold2]] and [[AlphaFold3|Boltz]] by using either custom templates** [@delalamo2022sampling] **or custom sequences databases** [@monteiro2024] **or [[Multiple sequence alignments|MSAs]]** [@waymentsteele2023; @delalamo2022sampling]. For the last case, MSAs are modified either by [[Clustering|clustering]] using HDBSCAN or randomly subsampling, respectively. However, [[Protein structure prediction methods are unable to predict the energetics of a conformational landscape unless explicitly trained for that purpose|these ensembles do not correspond to the energetics of those proteins]]. MSA-based tricks were recently shown to work with Boltz [@richman2025]. These hacks circumvent the broader tendency of structure prediction methods to [[Structure prediction methods undersample the conformational space they find to be high-confidence|undersample conformations they find to be high-confidence]].
 
 #### Details
 
@@ -28,8 +28,8 @@ Alternate conformations sampled via
 
 ![[Pasted-image-20240423091334.png]]
 
-*Figure from [@riccabona2024]*
+*Ref [@riccabona2024]*
 
 ![[Pasted-image-20241016074333.png]]
 
-*Figure from [@schafer2024]*
+*Ref [@schafer2024]*

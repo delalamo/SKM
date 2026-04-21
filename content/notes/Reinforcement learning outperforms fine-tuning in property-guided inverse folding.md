@@ -4,7 +4,7 @@ tags:
   - tm-score
   - plddt
 created: "2026-04-05T17:56:56"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -32,4 +32,4 @@ modified: "2026-04-20T07:46:00"
 | MoMPNN [Thermo+IG] | 4.38 | 0.734 | 78.2 | **5.85** | 0.694 | **0.963** ★ | 0.382 |
 | MoMPNN [Thermo+IG+EP] | 4.37 | 0.737 | 78.5 | 5.97 | 0.723 | 0.947 ★ | 0.385 |
 ![[Pasted-image-20260316153544.png]]
-*Figure from [@hou2026]*
+*Ref [@hou2026]*

@@ -3,7 +3,7 @@ tags:
   - plddt
   - variant-effect-prediction
 created: 2025-02-27T04:21:03
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary

@@ -2,7 +2,7 @@
 tags:
   - structure-prediction/architecture
 created: "2026-04-05T17:37:18"
-modified: "2026-04-20T07:46:00"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
@@ -23,4 +23,4 @@ modified: "2026-04-20T07:46:00"
 | ESMFold | 0.865 | 0.728 | 0.735 | | | |
 | AlphaFold2 | 0.904 | 0.846 | 0.826 | | | |
 
-*Figure from [@hayes2025]*
+*Ref [@hayes2025]*

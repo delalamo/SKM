@@ -2,8 +2,8 @@
 tags:
   - structure-prediction/limitations
   - protein-protein-interactions
-created: "2026-04-20T08:30:52"
-modified: "2026-04-20T08:30:52"
+created: "2026-04-21T05:01:15"
+modified: "2026-04-21T05:01:15"
 ---
 
 #### Summary
