@@ -1,15 +1,19 @@
 ---
 tags:
 created: 2024-04-29T14:55:51
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T05:19:34"
 ---
 #### Summary
 In the context of [[MD simulations]], the **Boltzmann distribution** in configurational space ($\nu$) and in phase space ($\mu$) is defined as:
-$$\nu (\boldsymbol{x}) = \int \mu(\boldsymbol{x}, \boldsymbol{p}) d \boldsymbol{p} = \frac{1}{Z} e^{-\beta U(\boldsymbol{x})} \tag{1}$$
+$$
+\nu (\boldsymbol{x}) = \int \mu(\boldsymbol{x}, \boldsymbol{p}) d \boldsymbol{p} = \frac{1}{Z} e^{-\beta U(\boldsymbol{x})} \tag{1}
+$$
 
 #### Details
 In phase space, which considers both positions and momenta of atoms:
-$$\mu (\boldsymbol{x}, \boldsymbol{p}) = \frac{1}{Q} e^{ - \beta (U(\boldsymbol{x})+K(\boldsymbol{p}))} \tag{2}$$
+$$
+\mu (\boldsymbol{x}, \boldsymbol{p}) = \frac{1}{Q} e^{ - \beta (U(\boldsymbol{x})+K(\boldsymbol{p}))} \tag{2}
+$$
 
 - $\boldsymbol{x}$: positions of 3D coordinates, $\boldsymbol{x} \in \mathbb{R}^{3N}$ ($N$: number of particles)
 - $\boldsymbol{p}$: momenta, $\boldsymbol{p} \in \mathbb{R}^{3N}$
