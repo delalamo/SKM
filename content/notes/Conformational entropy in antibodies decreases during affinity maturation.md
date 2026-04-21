@@ -6,7 +6,7 @@ tags:
 aliases:
   - Conformational entropy in antibodies decreases during affinity maturation
 created: "2026-04-21T05:01:15"
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T07:02:30"
 ---
 
 #### Summary
@@ -48,7 +48,7 @@ To add to the confusion, [[HDX-MS]] data suggest that [[Complementarity-determin
 
 #### See also
 
-* [[Antibody thermostability decreases during affinity maturation]]
+* [[Antibody thermostability decreases during affinity maturation, up to a threshold]]
 
 * [[Conformational entropy in antibodies is inversely proportional to antigen affinity]]
 
