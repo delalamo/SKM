@@ -3,11 +3,11 @@ tags:
   - structure-prediction/limitations
   - protein-protein-interactions
 created: "2026-04-21T05:01:15"
-modified: "2026-04-21T07:28:09"
+modified: "2026-04-28T09:20:09"
 ---
 
 #### Summary
-**[[evolution-and-natural-selection|Coevolutionary patterns]] in [[Multiple sequence alignments|multiple sequence alignments]] do not contribute to accurate modeling of [[protein-protein-interactions|protein-protein interactions]]** [@li2026]. Instead, correct docking appears to be driven by interactions (unlike for [[Protein folding neural networks cannot predict protein stability|protomers]]), which are more susceptible to disruption by mutations. This contrasts with [[Protein-ligand co-folding methods do not generalize beyond their training set|observations made for small molecules]].
+**[[evolution-and-natural-selection|Coevolutionary patterns]] in [[Multiple sequence alignments|multiple sequence alignments]] do not contribute to accurate modeling of [[protein-protein-interactions|protein-protein interactions]]** [@li2026; @luo2026]. Instead, correct docking appears to be driven by interactions (unlike for [[Protein folding neural networks cannot predict protein stability|protomers]]), which are more susceptible to disruption by mutations. One study found that the best way to improve PPI structure prediction is to make the [[Multiple sequence alignments|MSAs]] of each individual protomer deeper[@luo2026]. This contrasts with [[Protein-ligand co-folding methods do not generalize beyond their training set|observations made for small molecules]].
 
 #### Figures
 ![[Pasted image 20260413102824.png]]
