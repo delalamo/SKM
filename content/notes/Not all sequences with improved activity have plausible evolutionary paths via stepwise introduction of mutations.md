@@ -3,7 +3,9 @@ tags:
   - epistasis
   - evolution-and-natural-selection
 created: 2026-03-29T11:17:38
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T09:59:52"
+publicationHistory:
+  "2026-03-29": "https://biomlzk.ghost.io/not-all-high-fitness-sequences-have-plausible-evolutionary-paths-from-lower-fitness-starting-points-via-sequential-introduction-of-mutations/"
 ---
 
 #### Summary
@@ -35,7 +37,3 @@ In [@johnston2024], where a library of 160,000 sequences saturating four positio
 
 * [[Directed evolution]]
 * [[Mutation memory half life]]
-
-#### Publication history
-
-29 March 2026: https://biomlzk.ghost.io/not-all-high-fitness-sequences-have-plausible-evolutionary-paths-from-lower-fitness-starting-points-via-sequential-introduction-of-mutations/

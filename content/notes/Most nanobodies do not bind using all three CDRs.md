@@ -1,8 +1,9 @@
 ---
 tags:
   - antibodies/nanobodies
+  - antibody-antigen-interactions/misc
 created: 2024-04-15T01:48:17
-modified: "2026-04-21T05:01:15"
+modified: "2026-04-21T10:30:31"
 ---
 #### Summary
 **[[Nanobodies]] bind their antigen in one of three ways, and the majority do not engage with all three [[Complementarity-determining regions|CDRs]].** [@ketaren2023] classified these as: 1) side-on with mostly CDR3 (48%), 2) side-on with both CDRs and framework (31%), and 3) head-on with all three CDRs contributing to binding (18%).

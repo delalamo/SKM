@@ -1,8 +1,9 @@
 ---
 tags:
   - alphafold2
+  - antibody-antigen-interactions/complex-prediction
 created: 2024-05-08T18:00:15
-modified: "2026-04-21T07:28:09"
+modified: "2026-04-21T10:30:31"
 ---
 
 #### Summary

@@ -4,7 +4,9 @@ tags:
   - plddt
   - protein-protein-interactions
 created: 2026-03-06T11:07:36
-modified: "2026-04-21T07:28:09"
+modified: "2026-04-21T09:59:52"
+publicationHistory:
+  "2026-03-06": "https://delalamo.xyz/post/2026-03-06-conf-affinity"
 ---
 
 #### Summary
@@ -21,7 +23,3 @@ modified: "2026-04-21T07:28:09"
 * [[Protein folding neural networks cannot predict protein stability]]
 * [[Protein structure prediction and design metrics don't correlate with expression probability]]
 * [[Sequence- and structure-derived ML quality metrics from ML do not correlate with each other]]
-
-#### Publication history
-
-* 6 March 2026: https://delalamo.xyz/post/2026-03-06-conf-affinity

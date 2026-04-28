@@ -1,6 +1,7 @@
 ---
 tags:
   - affinity-maturation
+  - antibody-antigen-interactions/binding-affinity
 created: 2025-02-14T05:28:53
 modified: "2026-04-28T09:20:09"
 ---

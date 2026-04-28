@@ -1,8 +1,9 @@
 ---
 tags:
   - antibodies/nanobodies
+  - antibody-antigen-interactions/misc
 created: 2025-02-28T03:09:43
-modified: "2026-04-21T07:28:09"
+modified: "2026-04-21T10:30:31"
 ---
 #### Summary
 **[[Nanobodies]] and normal [[antibodies|antibodies]] target epitopes with similar solvent accessibility, hydrogen bonds, and contacts** [@gordon2023; @de2006]. However, nanobodies are able to adopt more convex paratopes, allowing binding to hard-to-reach areas such as ligand-binding sites.

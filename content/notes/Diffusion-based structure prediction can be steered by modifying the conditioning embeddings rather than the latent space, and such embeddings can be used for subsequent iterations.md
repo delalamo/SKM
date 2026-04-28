@@ -4,7 +4,9 @@ tags:
   - diffusion-guidance/structure-prediction
   - protein-folding/structure-prediction
 created: "2026-04-10T15:35:05"
-modified: "2026-04-21T07:28:09"
+modified: "2026-04-21T09:59:52"
+publicationHistory:
+  "2026-03-18": "https://biomlzk.ghost.io/diffusion-based-structure-prediction-can-be-guided-by-backpropagating-the-conditioning-embeddings-rather-than-the-atomic-coordinates-directly-and-such-embeddings-can-be-used-for-subsequ/"
 ---
 
 #### Summary
@@ -20,6 +22,3 @@ modified: "2026-04-21T07:28:09"
 ![[Pasted-image-20260220170148.png]]
 
 *Ref [@li2026robust]*
-
-#### Publication history
-* 18 March 2026: https://biomlzk.ghost.io/diffusion-based-structure-prediction-can-be-guided-by-backpropagating-the-conditioning-embeddings-rather-than-the-atomic-coordinates-directly-and-such-embeddings-can-be-used-for-subsequ/

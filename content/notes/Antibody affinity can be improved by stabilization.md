@@ -1,8 +1,9 @@
 ---
 tags:
   - affinity-maturation
+  - antibody-antigen-interactions/binding-affinity
 created: 2024-11-14T02:47:10
-modified: "2026-04-21T07:28:09"
+modified: "2026-04-21T10:30:31"
 ---
 #### Summary
 **The [[Antibody-antigen binding affinity prediction|affinity]] of [[antibodies|antibodies]] and [[Nanobodies|nanobodies]] can be improved by [[thermostability|stabilization]].** For antibodies, [@hie2023; @shanker2024] achieved this using [[protein-language-models|Protein language models]] and [[inverse-folding|inverse folding models]], respectively, as evidenced by targeting of [[Framework region|framework]] residues. For nanobodies, [@ketaren2023] specifically target residues in [[Framework region|FR3]] which they call a "stabilization code".
