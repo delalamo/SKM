@@ -51,20 +51,20 @@ export const defaultContentPageLayout: PageLayout = {
   afterBody: [
     Component.ConditionalRender({
       component: Component.RecentNotes({
-        title: "Recently Added",
+        title: "Recently Updated",
         limit: 10,
         showTags: false,
-        dateType: "created",
+        dateType: "modified",
         filter: (f) => f.slug?.startsWith("notes/") ?? false,
       }),
       condition: (page) => page.fileData.slug === "index",
     }),
     Component.ConditionalRender({
       component: Component.RecentNotes({
-        title: "Recently Updated",
+        title: "Recently Added",
         limit: 10,
         showTags: false,
-        dateType: "modified",
+        dateType: "created",
         filter: (f) => f.slug?.startsWith("notes/") ?? false,
       }),
       condition: (page) => page.fileData.slug === "index",
