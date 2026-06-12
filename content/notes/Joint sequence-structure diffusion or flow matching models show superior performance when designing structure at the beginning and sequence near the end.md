@@ -5,7 +5,7 @@ tags:
   - protein-design/design
   - inverse-folding/evaluation
 created: "2026-06-12T09:32:33"
-modified: "2026-06-12T09:56:17"
+modified: "2026-06-12T10:15:30"
 ---
 
 #### Summary
@@ -18,4 +18,3 @@ modified: "2026-06-12T09:56:17"
 #### See also
 * [[Coupling sidechain and main chain prediction or design does not always lead to improvements]]
 
-#### References
