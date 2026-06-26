@@ -1,6 +1,5 @@
 ---
 tags:
-  - sparse-autoencoders
   - structure-prediction
   - property-prediction
 created: "2026-06-23"
