@@ -1,7 +1,6 @@
 ---
 tags:
   - protein-design
-  - loss-functions
   - conformational-dynamics/allostery
 created: "2026-06-23"
 modified: "2026-06-23T13:44:24"
