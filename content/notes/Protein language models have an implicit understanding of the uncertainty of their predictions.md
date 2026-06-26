@@ -1,7 +1,6 @@
 ---
 tags:
   - protein-language-models
-  - uncertainty-quantification
 created: "2026-06-23"
 modified: "2026-06-23T13:44:24"
 ---
