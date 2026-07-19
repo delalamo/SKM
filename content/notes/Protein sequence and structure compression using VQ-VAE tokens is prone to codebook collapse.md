@@ -2,7 +2,7 @@
 tags:
   - protein-structure-tokenization
 created: 2024-12-10T01:40:01
-modified: "2026-04-21T07:28:09"
+modified: "2026-07-19T10:07:27"
 ---
 
 ## Summary
@@ -17,3 +17,4 @@ modified: "2026-04-21T07:28:09"
 ## See also
 
 * [[protein-structure-tokenization|Protein structure tokenization]]
+* [[Straight-through estimator]]
