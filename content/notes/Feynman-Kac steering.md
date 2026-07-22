@@ -7,13 +7,9 @@ $$
 p_{\mathrm{FK}}(x_0\mid c) \propto p_\theta(x_0\mid c)\exp\!\left[\lambda r(x_0,c)\right],
 $$
 
-where $\lambda$ acts like an inverse temperature: large values concentrate particles around high-reward modes, while small values approach the unguided prior [@singhal2025]. The effective sample size,
+where $\lambda$ acts like an inverse temperature: large values concentrate particles around high-reward modes, while small values approach the unguided prior [@singhal2025].
 
-$$
-\mathrm{ESS}=\frac{\left(\sum_i w_i\right)^2}{\sum_i w_i^2},
-$$
-
-measures weight concentration from $1$ to the number of particles $k$. Resampling rules use ESS to balance reward exploitation against particle diversity. Useful gains have been reported with only a few particles [@singhal2025; @hartman2025].
+At scheduled intermediate steps, particles are sampled with replacement from a multinomial distribution parameterized by their normalized potential scores, duplicating high-potential trajectories before the next propagation step. The released implementation supports adaptive resampling: at candidate steps it resamples only when the [[Effective sample size|ESS]] is below $k/2$, otherwise leaving the particle population unchanged [@singhal2025]. Hartman et al. instead resample every $\Delta t$ steps beginning at a chosen $t_{\mathrm{start}}$; resampling less frequently preserves exploration, while delaying guidance until after the high-noise regime improves rewards because early reward estimates are unreliable [@hartman2025]. Useful gains have been reported with only a few particles [@singhal2025; @hartman2025].
 
 #### Figures
 ![[Pasted image 20260413101146.png]]
