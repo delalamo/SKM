@@ -7,7 +7,7 @@ tags:
 aliases:
   - Conformational entropy in antibodies decreases during affinity maturation
 created: "2026-04-21T05:01:15"
-modified: "2026-06-23T13:44:24"
+modified: "2026-07-17T10:38:09"
 ---
 
 #### Summary

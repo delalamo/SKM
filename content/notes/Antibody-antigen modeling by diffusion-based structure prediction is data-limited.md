@@ -3,7 +3,7 @@ tags:
   - alphafold3
   - structure-prediction/complex-prediction
 created: 2026-04-05T17:25:38
-modified: "2026-06-26T07:47:20"
+modified: "2026-07-17T10:38:09"
 publicationHistory:
   "2026-03-16": "https://biomlzk.ghost.io/antibody-antigen-complex-prediction-by-af3-generation-methods-is-data-limited/"
 ---
