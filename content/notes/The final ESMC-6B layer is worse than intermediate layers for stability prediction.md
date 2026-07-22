@@ -3,12 +3,14 @@ tags:
   - protein-language-models/representations
   - thermostability/prediction
 created: "2026-07-19"
-modified: "2026-07-22T09:15:30"
+modified: "2026-07-22T09:29:55"
 ---
 
 #### Summary
 
-**Intermediate ESMC-6B representations are more predictive of folding stability than the model's final layer.** This was measured by fitting linear probes to [[Sparse autoencoder|sparse-autoencoder]] features extracted across layers. Performance rises through much of the network and then drops at the output layer, consistent with final representations becoming specialized for the language-modeling objective [@candido2026].
+**In ESMC-6B, the penultimate transformer representation—layer 79 of 80—is substantially more predictive of thermodynamic folding stability than the final layer.** Candido et al. fitted ridge regressions to mean-pooled representations from every layer. Performance rises through layer 79 and then drops sharply at layer 80, which is projected to the final sequence logits [@candido2026].
+
+This is inconsistent with Adams et al., whose [[Sparse autoencoder|sparse-autoencoder]] and raw-embedding probes of the 33-layer ESM-2 650M model found thermostability prediction weakest in the middle layers and strongest again in the last layers [@adams2025]. One possible explanation is model scale and depth: ESMC-6B is much larger and deeper, with 6 billion parameters and 80 layers, so its final representation may be more specialized for masked-token prediction. The studies also differ in their targets and evaluation data—Candido et al. predict thermodynamic folding stability (ΔG) on Megascale, whereas Adams et al. predict melting temperature on the Meltome Atlas—and in their use of raw representations versus sparse-autoencoder features, so model size is not the only possible explanation.
 
 #### See also
 
