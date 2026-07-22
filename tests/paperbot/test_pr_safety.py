@@ -140,8 +140,29 @@ def test_workflow_routes_push_and_validation_through_trusted_policy() -> None:
   assert "scripts.paperbot.pr_safety classify" in workflow
   assert "scripts.paperbot.pr_safety validate-generated" in workflow
   assert "case \"$path\"" not in workflow
-  assert "if: steps.safety.outputs.auto_refresh == 'true'" in workflow
-  assert "if: steps.safety.outputs.auto_refresh != 'true'" in workflow
+  assert "steps.safety.outputs.auto_refresh == 'true'" in workflow
+  assert "steps.safety.outputs.auto_refresh != 'true'" in workflow
   assert "cache: pip" not in workflow
   assert 'PAPERBOT_DISABLE_ARBITRARY_HTML: "1"' in workflow
   assert "-L \"$GITHUB_WORKSPACE/candidate/bibliography.bib\"" in workflow
+
+
+def test_workflow_bootstrap_is_credential_free_and_read_only() -> None:
+  workflow = Path(".github/workflows/paper-model-refresh.yml").read_text(
+    encoding="utf-8"
+  )
+
+  tests_job, refresh_job = workflow.split("  refresh-or-verify:", maxsplit=1)
+  assert "permissions:\n      contents: read" in tests_job
+  assert "candidate/requirements-paperbot.lock" in tests_job
+  assert "steps.dependencies.outputs.bootstrap == 'true'" in tests_job
+  assert "tests/paperbot/test_no_remote_summarization.py" in tests_job
+  assert "check-model" in tests_job
+  assert "secrets." not in tests_job
+  assert "git push" not in tests_job
+
+  assert "id: trusted" in refresh_job
+  assert "if: steps.trusted.outputs.available == 'true'" in refresh_job
+  assert "Initial paperbot bootstrap is validated by the credential-free test job" in (
+    refresh_job
+  )
