@@ -3,13 +3,15 @@ tags:
   - protein-language-models/representations
   - tm-score
 created: "2026-04-05T17:54:18"
-modified: "2026-04-21T07:28:09"
+modified: "2026-07-22T09:15:30"
 summary: Smaller PLMs models are more effective at variant effect prediction
 ---
 #### Summary
 **Protein property prediction using [[protein-language-models|PLMs]] does not benefit from [[Scaling hypothesis|scale]] beyond ~650M parameters, except when predicting A) structural features or B) features of sparsely populated protein families such as those from viruses.** This is particularly the case with zero-shot prediction [@tan2023; @nijkamp2023; @notin2023]. Some authors have reported it is also true of fine-tuning [@detlefsen2022; @li2024feature; @vieira2024], although aligning PLMs using [[Reinforcement learning|reinforcement learning]] using data does seem to restore the trend in some cases [@bhatnagar2025]. The exception of structure when transfer learning was shown by [@li2024feature], and corroborated by attempts to use (ESM) embeddings as starting points for [[structure-prediction|structure prediction]] [@lin2023; @lee2023solvent]. Related to this, larger PLMs are better at [[Larger PLMs are better at homolog detection|homolog detection]] and [[Larger PLMs are better at thermostability prediction|thermostability prediction]], and do not improve as much as smaller models at fitness prediction when [[Language models can be infused with structure via low-rank adapter layers|infused with structural information via low-rank adaptors]] [@ruffolo2024]. Likewise, the exception for viral proteins was observed by [@gurev2025]. [@zhang2024] surmise that both exceptions are due to large PLMs having a greater capacity to [[PLMs learn family-specific protein contacts from sequence context windows of about 20-40 amino acids|memorize domain-specific contacts]].
 
 #### Details
+A counterpoint is ESMC: expanding training from roughly 50 million curated sequences for ESM2 to 2.8 billion metagenomic sequences restored approximately log-linear scaling of learned structural signal and avoided some of the diminishing returns seen in earlier PLMs [@candido2026]. This changes both the scale and distribution of the training data and concerns structural signal rather than zero-shot fitness prediction, so it qualifies rather than directly contradicts the result above.
+
 Larger (ProGen) models were better able to predict fitness of distant sequences ("wide mutational scale"; [@nijkamp2023]). Likewise, engineered [[CRISPR-Cas9|CRISPR]] variants were said to be better predicted with larger models ([@ruffolo2025]; mentioned at PEGS Boston 2024). Augmenting ProGen models with structural information only led to improvements in fitness prediction in smaller models, suggesting that the larger models had already learned most of that information.
 
 This is also true of post-translational modification prediction ([@peng2025]; ESM2-650M vs ESM2-3B).
