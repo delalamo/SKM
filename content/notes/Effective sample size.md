@@ -14,8 +14,4 @@ $$
 \mathrm{ESS}=\frac{\left(\sum_i w_i\right)^2}{\sum_i w_i^2}=\frac{1}{\sum_i \widetilde{w}_i^2},
 $$
 
-where $w_i$ are unnormalized weights and $\widetilde{w}_i=w_i/\sum_j w_j$ are normalized weights. For $k$ particles, $1\leq\mathrm{ESS}\leq k$: values near $1$ indicate that a few particles dominate, whereas $k$ indicates uniform weights. Low ESS therefore diagnoses weight degeneracy and can trigger adaptive resampling [@singhal2025].
-
-#### See also
-
-- [[Feynman-Kac steering]]
+where $w_i$ are unnormalized weights and $\widetilde{w}_i=w_i/\sum_j w_j$ are normalized weights. For $k$ particles, $1\leq\mathrm{ESS}\leq k$: values near $1$ indicate that a few particles dominate, whereas $k$ indicates uniform weights. Low ESS therefore diagnoses weight degeneracy and can trigger adaptive resampling [@singhal2025]. This is used in [[Feynman-Kac steering]] to decide when to resample.
