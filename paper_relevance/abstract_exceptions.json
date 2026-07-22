@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "dieleman2023": "Author essay/blog post; the source publishes no formal abstract.",
+    "frenkel2002": "Scholarly monograph; the publisher supplies descriptive book copy but no author abstract.",
+    "kimura1985": "Scholarly monograph published in 1985; no author abstract exists.",
+    "michaud2026": "Author essay/blog post; the source publishes no formal abstract.",
+    "monod1965": "1965 journal article predating routine abstract indexing; PubMed and the publisher expose no author abstract.",
+    "pl2001": "Letter to the editor; PubMed Central and the journal record expose full text but no abstract.",
+    "styczynski2008": "Letter to the editor; the Nature Biotechnology record begins with the letter text and supplies no abstract."
+  }
+}

@@ -57,6 +57,7 @@ class Metadata:
   title: str
   authors: list[str]
   year: str
+  abstract: str = ""
   journal: str = ""
   booktitle: str = ""
   publisher: str = ""
@@ -367,6 +368,20 @@ def cleaned_lines(text: str) -> list[str]:
   return lines
 
 
+def clean_abstract(text: str) -> str:
+  """Normalize provider HTML/JATS without inventing or summarizing content."""
+  value = " ".join(cleaned_lines(text))
+  value = unicodedata.normalize("NFKC", value).replace("\xa0", " ")
+  value = re.sub(r"\s+", " ", value).strip()
+  value = re.sub(
+    r"\s+(?:competing interests?|conflicts? of interests?|author disclosures?)\s*[:.]\s*.*$",
+    "",
+    value,
+    flags=re.IGNORECASE | re.DOTALL,
+  )
+  return value.strip()
+
+
 def load_cache() -> dict[str, dict]:
   if CACHE_PATH.exists():
     return json.loads(CACHE_PATH.read_text())
@@ -479,6 +494,7 @@ def metadata_from_csl(record: dict, fallback_url: str) -> Metadata:
     title=csl_title(record),
     authors=csl_authors(record),
     year=csl_year(record),
+    abstract=clean_abstract(str(record.get("abstract", ""))),
     journal=journal,
     booktitle=booktitle,
     publisher=str(record.get("publisher", "")).strip(),
@@ -518,6 +534,10 @@ def metadata_from_meta_tags(url: str, parser: MetaTagParser) -> Metadata | None:
   )
   year_match = re.search(r"(19|20)\d{2}", publication_date)
   year = year_match.group(0) if year_match else ""
+  abstract = next(
+    iter(meta_values(parser, "citation_abstract", "dc.description", "article:description", "og:description")),
+    "",
+  )
 
   if not title and not parser.title:
     return None
@@ -533,6 +553,7 @@ def metadata_from_meta_tags(url: str, parser: MetaTagParser) -> Metadata | None:
     title=(title or parser.title).split(" | ")[0].rstrip(".").strip(),
     authors=authors,
     year=year,
+    abstract=clean_abstract(abstract),
     journal=journal,
     booktitle=booktitle,
     publisher=publisher,
@@ -637,7 +658,10 @@ def fetch_url_metadata(url: str, cache: dict[str, dict]) -> Metadata:
 
   meta_record = metadata_from_meta_tags(url, parser)
   if meta_record and meta_record.doi:
-    return metadata_from_csl(fetch_csl_metadata(meta_record.doi, cache), meta_record.url or url)
+    csl_record = metadata_from_csl(fetch_csl_metadata(meta_record.doi, cache), meta_record.url or url)
+    if not csl_record.abstract:
+      csl_record.abstract = meta_record.abstract
+    return csl_record
   if meta_record and meta_record.authors and meta_record.year:
     return meta_record
 
@@ -663,7 +687,41 @@ def metadata_for_identity(identity: str, cache: dict[str, dict]) -> Metadata:
 
 
 def escape_bibtex(value: str) -> str:
-  return value.replace("\\", "\\\\").replace("{", "\\{").replace("}", "\\}")
+  # Parse-render cycles should retain exactly one effective TeX escape before
+  # percent signs, while preserving the reconciler's existing escaping rules.
+  semantic_value = unescape_bibtex_percent(value)
+  escaped = semantic_value.replace("\\", "\\\\").replace("{", "\\{").replace("}", "\\}")
+  return escape_bibtex_percent(escaped)
+
+
+def escape_bibtex_percent(value: str) -> str:
+  output: list[str] = []
+  for char in value:
+    if char == "%":
+      backslashes = 0
+      for previous in reversed(output):
+        if previous != "\\":
+          break
+        backslashes += 1
+      if backslashes % 2 == 0:
+        output.append("\\")
+    output.append(char)
+  return "".join(output)
+
+
+def unescape_bibtex_percent(value: str) -> str:
+  output: list[str] = []
+  for char in value:
+    if char == "%":
+      backslashes = 0
+      for previous in reversed(output):
+        if previous != "\\":
+          break
+        backslashes += 1
+      if backslashes % 2 == 1:
+        output.pop()
+    output.append(char)
+  return "".join(output)
 
 
 def format_bibtex_value(value: str) -> str:
@@ -671,7 +729,7 @@ def format_bibtex_value(value: str) -> str:
 
 
 def render_entry(entry: BibEntry) -> str:
-  order = ["title", "author", "year", "journal", "booktitle", "publisher", "volume", "number", "pages", "doi", "url"]
+  order = ["title", "author", "year", "journal", "booktitle", "publisher", "volume", "number", "pages", "abstract", "doi", "url"]
   lines = [f"@{entry.entry_type}{{{entry.key},"]
   for field_name in order:
     value = entry.fields.get(field_name, "").strip()
@@ -897,6 +955,7 @@ def entry_from_metadata(key: str, metadata: Metadata) -> BibEntry:
     "title": metadata.title,
     "author": " and ".join(metadata.authors),
     "year": metadata.year,
+    "abstract": metadata.abstract,
     "journal": metadata.journal,
     "booktitle": metadata.booktitle,
     "publisher": metadata.publisher,
@@ -950,6 +1009,14 @@ def main() -> None:
         if entry.key != canonical_key:
           key_aliases[entry.key] = canonical_key
       identity_to_key[identity] = canonical_key
+      if not metadata.abstract:
+        existing_abstracts = [
+          clean_abstract(entry.fields.get("abstract", ""))
+          for entry in existing_for_identity
+          if entry.fields.get("abstract", "").strip()
+        ]
+        if existing_abstracts:
+          metadata.abstract = max(existing_abstracts, key=len)
     else:
       target = legacy_targets.get(identity, LegacyTarget())
       canonical_key = choose_new_key(metadata, citekey_usage, target.footnote_keys, target.aliases, taken_keys)
