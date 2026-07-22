@@ -8,7 +8,7 @@ modified: "2026-07-22T09:35:52"
 
 #### Summary
 
-**Thermostability prediction using [[Sparse autoencoder|sparse-autoencoder]] features performs best with features from the final layers of a protein language model.** Adams et al. showed this in ESM-2 650M, but sampled SAE features at four-layer intervals rather than layer by layer [@adams2025]. A more granular layer-by-layer analysis of raw ESMC-6B representations found that stability prediction instead peaks at the penultimate layer, layer 79 of 80, before dropping sharply in the final layer [@candido2026].
+**Thermostability prediction using [[Sparse autoencoder|sparse-autoencoder]] features performs best with features from the final layers of a protein language model** [@candido2026; @adams2025]. This was shown in ESM-C-6B, where layer 79 out of 80 was substantially better, and [[ESM-2]]-650M, where the last layer was best (albeit probing every four layers).
 
 #### See also
 
