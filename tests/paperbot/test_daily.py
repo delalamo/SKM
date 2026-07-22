@@ -14,6 +14,7 @@ from scripts.paperbot.config import PaperbotConfig
 from scripts.paperbot.cli import main as paperbot_main
 from scripts.paperbot.daily import (
   BibliographyIndex,
+  _managed_pubmed_ids,
   _prepare_candidates,
   run_daily,
   sync_project_queue,
@@ -214,6 +215,49 @@ def test_unchanged_candidate_is_not_embedded(tmp_path: Path) -> None:
 
   assert result.candidates[0].action == "unchanged"
   assert scorer.call_args.args[0] == []
+
+
+def test_daily_limits_pubmed_revision_checks_to_managed_issue_pmids(
+  tmp_path: Path,
+) -> None:
+  config = make_config(
+    tmp_path,
+    "@article{other2025, title={Other}, author={Other, A}, year={2025}, "
+    "abstract={Other abstract.}, doi={10.1000/other}}\n",
+  )
+  client = MemoryIssueClient()
+  current = record()
+  bibliography = BibliographyIndex.load(config.bibliography_path)
+  prepared = _prepare_candidates(
+    [current], bibliography, load_managed_issues(client), "model"
+  )[0]
+  upsert_paper_issue(
+    client,  # type: ignore[arg-type]
+    current,
+    0.9,
+    prepared.bibtex,
+    prepared.bibkey,
+    model_hash="model",
+  )
+  window = FetchWindow.ending_at(datetime(2026, 7, 22, tzinfo=UTC))
+  empty = FetchReport(window, (), (), {"pubmed": 0})
+
+  with (
+    patch("scripts.paperbot.daily.check_model", return_value={"model_hash": "model"}),
+    patch("scripts.paperbot.daily.load_model", return_value=LoadedModel(None, 0, "model")),
+    patch("scripts.paperbot.daily.fetch_all_sources", return_value=empty) as fetcher,
+    patch("scripts.paperbot.daily._score", return_value=[]),
+  ):
+    run_daily(
+      config,
+      window,
+      dry_run=True,
+      github_token="token",
+      github_client=client,  # type: ignore[arg-type]
+    )
+
+  assert _managed_pubmed_ids(load_managed_issues(client)) == ("12345",)
+  assert fetcher.call_args.kwargs["known_pubmed_ids"] == ("12345",)
 
 
 def test_daily_publishes_issues_without_project_configuration_or_token(

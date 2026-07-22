@@ -187,6 +187,12 @@ class Specter2Encoder:
       return np.empty((0, EMBEDDING_DIMENSION), dtype=np.float32)
     outputs = []
     separator = self.tokenizer.sep_token or "[SEP]"
+    total = len(documents)
+    print(
+      f"paperbot: embedding {total} documents with SPECTER2 "
+      f"in batches of {self.batch_size}",
+      flush=True,
+    )
     with self._torch.inference_mode():
       for start in range(0, len(documents), self.batch_size):
         batch = documents[start : start + self.batch_size]
@@ -202,6 +208,10 @@ class Specter2Encoder:
         hidden = self.model(**tokens).last_hidden_state[:, 0, :]
         hidden = hidden / hidden.norm(p=2, dim=1, keepdim=True).clamp_min(1e-12)
         outputs.append(hidden.detach().cpu().to(self._torch.float32).numpy())
+        completed = min(start + len(batch), total)
+        batch_number = start // self.batch_size + 1
+        if completed == total or batch_number % 100 == 0:
+          print(f"paperbot: embedded {completed}/{total} documents", flush=True)
     matrix = np.concatenate(outputs, axis=0).astype(np.float32, copy=False)
     _validate_matrix(matrix, len(documents), "SPECTER2 output")
     return matrix

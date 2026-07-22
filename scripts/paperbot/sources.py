@@ -105,6 +105,12 @@ class FetchWindow:
     timestamp = ensure_utc(value)
     return timestamp is not None and self.query_since <= timestamp < self.until
 
+  def includes_logical_timestamp(self, value: datetime | date | str | None) -> bool:
+    """Return whether ``value`` belongs to the run's exact logical tranche."""
+
+    timestamp = ensure_utc(value)
+    return timestamp is not None and self.logical_since <= timestamp < self.until
+
   @property
   def query_end_date(self) -> date:
     """Last provider date included by the half-open ``[since, until)`` window."""
@@ -398,9 +404,46 @@ def _pubmed_date(node: ET.Element | None) -> datetime | None:
     day = int(_xml_text(node.find("Day")) or "1")
     hour = int(_xml_text(node.find("Hour")) or "0")
     minute = int(_xml_text(node.find("Minute")) or "0")
-    return datetime(year, month, day, hour, minute, tzinfo=UTC)
+    second = int(_xml_text(node.find("Second")) or "0")
+    return datetime(year, month, day, hour, minute, second, tzinfo=UTC)
   except ValueError:
     return datetime(year, 1, 1, tzinfo=UTC)
+
+
+def _pubmed_date_precision(node: ET.Element | None) -> str:
+  """Describe the finest timestamp component supplied by PubMed."""
+
+  if node is None:
+    return "day"
+  for field, precision in (
+    ("Second", "second"),
+    ("Minute", "minute"),
+    ("Hour", "hour"),
+    ("Day", "day"),
+    ("Month", "month"),
+    ("Year", "year"),
+  ):
+    if _xml_text(node.find(field)):
+      return precision
+  return "day"
+
+
+def _pubmed_entrez_date_node(item: ET.Element, *, is_book: bool) -> ET.Element | None:
+  """Find PubMed's precise timestamp for first addition to the database."""
+
+  history_path = (
+    "./PubmedBookData/History/PubMedPubDate"
+    if is_book
+    else "./PubmedData/History/PubMedPubDate"
+  )
+  return next(
+    (
+      node
+      for node in item.findall(history_path)
+      if node.attrib.get("PubStatus", "").casefold() == "entrez"
+    ),
+    None,
+  )
 
 
 def _pubmed_date_text(node: ET.Element | None) -> str:
@@ -518,6 +561,8 @@ def parse_pubmed_xml(payload: bytes) -> list[PaperRecord]:
           doi = normalize_doi(_xml_text(identifier))
           if doi:
             break
+    entrez_date_node = _pubmed_entrez_date_node(item, is_book=is_book)
+    entrez_date = _pubmed_date(entrez_date_node)
     if is_book:
       history_dates = item.findall("./PubmedBookData/History/PubMedPubDate")
       history_by_status = {
@@ -525,7 +570,7 @@ def parse_pubmed_xml(payload: bytes) -> list[PaperRecord]:
         for node in history_dates
       }
       created = (
-        history_by_status.get("entrez")
+        entrez_date
         or history_by_status.get("pubmed")
         or history_by_status.get("medline")
       )
@@ -535,7 +580,7 @@ def parse_pubmed_xml(payload: bytes) -> list[PaperRecord]:
       publication_date = _pubmed_date_text(publication_node)
       venue = _xml_text(item.find("./BookDocument/Book/BookTitle"))
     else:
-      created = _pubmed_date(item.find("./MedlineCitation/DateCreated"))
+      created = entrez_date or _pubmed_date(item.find("./MedlineCitation/DateCreated"))
       updated = _pubmed_date(item.find("./MedlineCitation/DateRevised")) or created
       published = _pubmed_publication_date(item)
       publication_date = _pubmed_publication_date_text(item)
@@ -555,7 +600,9 @@ def parse_pubmed_xml(payload: bytes) -> list[PaperRecord]:
         pmid=pmid,
         related_ids=tuple(related),
         metadata={
-          "timestamp_precision": "day",
+          "timestamp_precision": (
+            _pubmed_date_precision(entrez_date_node) if entrez_date else "day"
+          ),
           **({"publication_year": published.year} if published else {}),
           **({"publication_date": publication_date} if publication_date else {}),
         },
@@ -709,38 +756,41 @@ def fetch_pubmed(
   *,
   contact_email: str = "",
   api_key: str = "",
+  known_pubmed_ids: Iterable[str] = (),
   search_page_size: int = 5_000,
   fetch_batch_size: int = 200,
 ) -> SourceResult:
   result = SourceResult("pubmed")
-  ids: set[str] = set()
+  managed_ids = {
+    value
+    for raw_value in known_pubmed_ids
+    if (value := str(raw_value).strip()).isdigit()
+  }
+  ids = set(managed_ids)
   interval = 0.11 if api_key else 0.34
   common: dict[str, Any] = {"db": "pubmed", "tool": "SKM-paperbot"}
   if contact_email:
     common["email"] = contact_email
   if api_key:
     common["api_key"] = api_key
-  for day in _calendar_days(window.query_since.date(), window.query_end_date):
+  for day in _calendar_days(window.logical_since.date(), window.query_end_date):
     stamp = day.strftime("%Y/%m/%d")
-    # Query the two date fields separately. Besides making provenance explicit,
-    # this avoids needlessly combining two large daily sets before UID-range
-    # partitioning around PubMed's hard 9,999-result retrieval ceiling.
-    for date_field in ("CRDT", "LR"):
-      term = f'"{stamp}"[{date_field}] AND hasabstract'
-      try:
-        ids.update(
-          _pubmed_collect_term_ids(
-            client,
-            common,
-            base_term=term,
-            page_size=search_page_size,
-            interval=interval,
-          )
+    # CRDT represents first addition to PubMed. Global LR queries also include
+    # routine indexing edits to older records and make a daily discovery run
+    # unnecessarily enormous. Revisions are checked through ``managed_ids``.
+    term = f'"{stamp}"[CRDT] AND hasabstract'
+    try:
+      ids.update(
+        _pubmed_collect_term_ids(
+          client,
+          common,
+          base_term=term,
+          page_size=search_page_size,
+          interval=interval,
         )
-      except Exception as error:
-        result.errors.append(
-          _failure("pubmed", f"search {date_field} {day.isoformat()}", error)
-        )
+      )
+    except Exception as error:
+      result.errors.append(_failure("pubmed", f"search CRDT {day.isoformat()}", error))
   ordered_ids = sorted(ids, key=int)
   for start in range(0, len(ordered_ids), fetch_batch_size):
     batch = ordered_ids[start : start + fetch_batch_size]
@@ -778,7 +828,7 @@ def fetch_pubmed(
       if record.pmid not in batch:
         result.skipped += 1
         continue
-      if window.includes_query_date(record.updated_at or record.created_at):
+      if record.pmid in managed_ids or window.includes_logical_timestamp(record.created_at):
         result.records.append(record)
       else:
         result.skipped += 1
@@ -1507,6 +1557,7 @@ def fetch_all_sources(
   client: HttpClientProtocol | None = None,
   contact_email: str = "",
   ncbi_api_key: str = "",
+  known_pubmed_ids: Iterable[str] = (),
   fetchers: Mapping[str, Fetcher] | None = None,
 ) -> FetchReport:
   """Fetch every feed independently and retain successes when peers fail."""
@@ -1520,6 +1571,7 @@ def fetch_all_sources(
       fetch_client,
       contact_email=contact_email,
       api_key=ncbi_api_key,
+      known_pubmed_ids=known_pubmed_ids,
     ),
     "arxiv": fetch_arxiv,
     "biorxiv": lambda fetch_window, fetch_client: fetch_rxiv(
@@ -1532,10 +1584,16 @@ def fetch_all_sources(
   }
   results: list[SourceResult] = []
   for name, fetcher in providers.items():
+    print(f"paperbot: fetching {name}", flush=True)
     try:
       source_result = fetcher(window, http)
     except Exception as error:
       source_result = SourceResult(name, errors=[_failure(name, "fetch", error)])
+    print(
+      f"paperbot: completed {name}: {len(source_result.records)} records, "
+      f"{len(source_result.errors)} errors",
+      flush=True,
+    )
     results.append(source_result)
   records = deduplicate_records(
     record for source_result in results for record in source_result.records

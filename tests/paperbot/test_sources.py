@@ -59,6 +59,12 @@ PUBMED_XML = b"""<?xml version="1.0"?>
       </Article>
     </MedlineCitation>
     <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>2026</Year><Month>07</Month><Day>21</Day>
+          <Hour>12</Hour><Minute>34</Minute><Second>56</Second>
+        </PubMedPubDate>
+      </History>
       <ArticleIdList>
         <ArticleId IdType="pubmed">123456</ArticleId>
         <ArticleId IdType="doi">10.1000/FIXTURE</ArticleId>
@@ -93,6 +99,7 @@ PUBMED_BOOK_XML = b"""<?xml version="1.0"?>
       <History>
         <PubMedPubDate PubStatus="entrez">
           <Year>2026</Year><Month>07</Month><Day>20</Day>
+          <Hour>03</Hour><Minute>04</Minute><Second>05</Second>
         </PubMedPubDate>
       </History>
       <ArticleIdList><ArticleId IdType="pubmed">654321</ArticleId></ArticleIdList>
@@ -122,6 +129,42 @@ def arxiv_xml(
       <arxiv:doi>10.1000/{identifier}</arxiv:doi>
     </entry>
   </feed>""".encode()
+
+
+def pubmed_xml_at(pmid: str, entered_at: datetime) -> bytes:
+  """Return one minimal PubMed article with an exact Entrez timestamp."""
+
+  entered_at = entered_at.astimezone(UTC)
+  return f"""<?xml version="1.0"?>
+  <PubmedArticleSet>
+    <PubmedArticle>
+      <MedlineCitation>
+        <PMID>{pmid}</PMID>
+        <DateCreated>
+          <Year>{entered_at.year}</Year><Month>{entered_at.month:02d}</Month>
+          <Day>{entered_at.day:02d}</Day>
+        </DateCreated>
+        <Article>
+          <ArticleTitle>Boundary fixture {pmid}</ArticleTitle>
+          <Abstract><AbstractText>A complete boundary abstract.</AbstractText></Abstract>
+          <Journal>
+            <JournalIssue><PubDate><Year>2026</Year></PubDate></JournalIssue>
+            <Title>Journal of Boundaries</Title>
+          </Journal>
+        </Article>
+      </MedlineCitation>
+      <PubmedData>
+        <History>
+          <PubMedPubDate PubStatus="entrez">
+            <Year>{entered_at.year}</Year><Month>{entered_at.month:02d}</Month>
+            <Day>{entered_at.day:02d}</Day><Hour>{entered_at.hour:02d}</Hour>
+            <Minute>{entered_at.minute:02d}</Minute><Second>{entered_at.second:02d}</Second>
+          </PubMedPubDate>
+        </History>
+        <ArticleIdList><ArticleId IdType="pubmed">{pmid}</ArticleId></ArticleIdList>
+      </PubmedData>
+    </PubmedArticle>
+  </PubmedArticleSet>""".encode()
 
 
 def window() -> FetchWindow:
@@ -172,6 +215,9 @@ def test_fetch_window_has_24_hour_tranche_and_72_hour_overlap() -> None:
   assert value.until == datetime(2026, 7, 22, tzinfo=UTC)
   assert value.query_end_date.isoformat() == "2026-07-21"
   assert value.includes_query_timestamp("2026-07-20T12:00:00Z")
+  assert value.includes_logical_timestamp("2026-07-21T00:00:00Z")
+  assert not value.includes_logical_timestamp("2026-07-20T23:59:59Z")
+  assert not value.includes_logical_timestamp("2026-07-22T00:00:00Z")
   assert not value.includes_query_timestamp("2026-07-22T00:00:00Z")
   assert not value.includes_query_date("2026-07-22")
   assert not value.includes_query_timestamp("2026-07-18T23:59:59Z")
@@ -195,7 +241,8 @@ def test_parse_pubmed_xml_preserves_sections_identifiers_and_revision_date() -> 
   assert record.updated_at == datetime(2026, 7, 21, tzinfo=UTC)
   assert record.year == 2024
   assert record.metadata["publication_date"] == "2024-07-20"
-  assert record.created_at == datetime(2026, 7, 21, tzinfo=UTC)
+  assert record.created_at == datetime(2026, 7, 21, 12, 34, 56, tzinfo=UTC)
+  assert record.metadata["timestamp_precision"] == "second"
   assert "pmc:pmc999" in record.related_ids
 
 
@@ -211,14 +258,17 @@ def test_parse_pubmed_book_article_with_abstract() -> None:
   assert record.authors == ("Grace Hopper",)
   assert record.venue == "Fixture Methods"
   assert record.year == 2022
+  assert record.created_at == datetime(2026, 7, 20, 3, 4, 5, tzinfo=UTC)
+  assert record.metadata["timestamp_precision"] == "second"
   assert record.metadata["publication_date"] == "2022"
 
 
-def test_fetch_pubmed_queries_crdt_and_lr_and_deduplicates_search_ids() -> None:
+def test_fetch_pubmed_queries_only_crdt_for_the_logical_window() -> None:
   def get_json(url: str, params: Mapping[str, Any]) -> Any:
     assert url == PUBMED_ESEARCH
     term = str(params["term"])
-    assert ("[CRDT]" in term) != ("[LR]" in term)
+    assert "[CRDT]" in term
+    assert "[LR]" not in term
     if "2026/07/21" in str(params["term"]):
       return {"esearchresult": {"count": "1", "idlist": ["123456"]}}
     return {"esearchresult": {"count": "0", "idlist": []}}
@@ -232,9 +282,67 @@ def test_fetch_pubmed_queries_crdt_and_lr_and_deduplicates_search_ids() -> None:
 
   assert result.ok
   assert len(result.records) == 1
-  assert len([call for call in client.calls if call[1] == PUBMED_ESEARCH]) == 6
+  assert len([call for call in client.calls if call[1] == PUBMED_ESEARCH]) == 1
   assert len([call for call in client.calls if call[1] == PUBMED_EFETCH]) == 1
   assert all(call[3] == 0.34 for call in client.calls)
+
+
+@pytest.mark.parametrize(
+  ("entered_at", "included"),
+  [
+    (datetime(2026, 7, 21, 18, 0, 0, tzinfo=UTC), True),
+    (datetime(2026, 7, 22, 17, 59, 59, tzinfo=UTC), True),
+    (datetime(2026, 7, 21, 17, 59, 59, tzinfo=UTC), False),
+    (datetime(2026, 7, 22, 18, 0, 0, tzinfo=UTC), False),
+  ],
+)
+def test_fetch_pubmed_filters_new_records_by_exact_half_open_window(
+  entered_at: datetime, included: bool
+) -> None:
+  exact_window = FetchWindow.between(
+    datetime(2026, 7, 21, 18, tzinfo=UTC),
+    datetime(2026, 7, 22, 18, tzinfo=UTC),
+  )
+
+  def get_json(_url: str, _params: Mapping[str, Any]) -> Any:
+    return {"esearchresult": {"count": "1", "idlist": ["700001"]}}
+
+  client = RoutingClient(
+    json_route=get_json,
+    bytes_route=lambda _url, _params: pubmed_xml_at("700001", entered_at),
+  )
+  result = fetch_pubmed(exact_window, client)
+
+  assert result.ok
+  assert bool(result.records) is included
+  assert result.skipped == (0 if included else 1)
+  search_terms = [
+    str(call[2]["term"]) for call in client.calls if call[1] == PUBMED_ESEARCH
+  ]
+  assert search_terms == [
+    '"2026/07/21"[CRDT] AND hasabstract',
+    '"2026/07/22"[CRDT] AND hasabstract',
+  ]
+
+
+def test_fetch_pubmed_refetches_known_pmids_outside_discovery_window() -> None:
+  def get_json(_url: str, _params: Mapping[str, Any]) -> Any:
+    return {"esearchresult": {"count": "0", "idlist": []}}
+
+  client = RoutingClient(
+    json_route=get_json,
+    bytes_route=lambda _url, _params: pubmed_xml_at(
+      "700002", datetime(2020, 1, 2, 3, 4, 5, tzinfo=UTC)
+    ),
+  )
+  result = fetch_pubmed(
+    window(), client, known_pubmed_ids={"700002", "not-a-pmid"}
+  )
+
+  assert result.ok
+  assert [record.pmid for record in result.records] == ["700002"]
+  fetch_call = next(call for call in client.calls if call[1] == PUBMED_EFETCH)
+  assert fetch_call[2]["id"] == "700002"
 
 
 def test_pubmed_partitions_uid_space_beyond_the_9999_result_cap() -> None:
@@ -259,7 +367,7 @@ def test_pubmed_partitions_uid_space_beyond_the_9999_result_cap() -> None:
   identifiers = _pubmed_collect_term_ids(
     client,
     {"db": "pubmed"},
-    base_term='"2026/07/20"[LR] AND hasabstract',
+    base_term='"2026/07/20"[CRDT] AND hasabstract',
     page_size=9_999,
     interval=0.34,
   )
@@ -597,7 +705,7 @@ def test_http_error_redacts_common_query_credential_names() -> None:
   assert "page=2" in message
 
 
-def test_fetch_all_sources_isolates_failure_and_deduplicates_successes() -> None:
+def test_fetch_all_sources_isolates_failure_and_reports_progress(capsys: Any) -> None:
   record = PaperRecord(
     source="arxiv",
     source_id="2401.12345",
@@ -624,6 +732,47 @@ def test_fetch_all_sources_isolates_failure_and_deduplicates_successes() -> None
   assert len(report.errors) == 1
   assert report.errors[0].source == "bad"
   assert "provider unavailable" in report.errors[0].message
+  assert capsys.readouterr().out.splitlines() == [
+    "paperbot: fetching good",
+    "paperbot: completed good: 2 records, 0 errors",
+    "paperbot: fetching bad",
+    "paperbot: completed bad: 0 records, 1 errors",
+  ]
+
+
+def test_fetch_all_sources_passes_known_pubmed_ids(monkeypatch: Any) -> None:
+  captured: dict[str, Any] = {}
+
+  def fake_pubmed(
+    _window: FetchWindow,
+    _client: Any,
+    **kwargs: Any,
+  ) -> SourceResult:
+    captured.update(kwargs)
+    return SourceResult("pubmed")
+
+  def fake_rxiv(
+    _window: FetchWindow, _client: Any, *, server: str
+  ) -> SourceResult:
+    return SourceResult(server)
+
+  monkeypatch.setattr("scripts.paperbot.sources.fetch_pubmed", fake_pubmed)
+  monkeypatch.setattr(
+    "scripts.paperbot.sources.fetch_arxiv",
+    lambda _window, _client: SourceResult("arxiv"),
+  )
+  monkeypatch.setattr("scripts.paperbot.sources.fetch_rxiv", fake_rxiv)
+  monkeypatch.setattr(
+    "scripts.paperbot.sources.fetch_chemrxiv",
+    lambda _window, _client: SourceResult("chemrxiv"),
+  )
+
+  report = fetch_all_sources(
+    window(), client=object(), known_pubmed_ids=("123456", "654321")  # type: ignore[arg-type]
+  )
+
+  assert report.ok
+  assert tuple(captured["known_pubmed_ids"]) == ("123456", "654321")
 
 
 def test_invalid_fetch_window_is_rejected() -> None:

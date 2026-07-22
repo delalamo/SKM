@@ -198,13 +198,14 @@ def run_daily(
   if model.model_hash != model_manifest.get("model_hash"):
     raise ValueError("loaded classifier does not match the verified model manifest")
 
+  client = github_client or GitHubClient(config.repository, github_token)
+  issue_index = load_managed_issues(client)
   report = fetch_report or fetch_all_sources(
     window,
     contact_email=config.contact_email,
     ncbi_api_key=ncbi_api_key,
+    known_pubmed_ids=_managed_pubmed_ids(issue_index),
   )
-  client = github_client or GitHubClient(config.repository, github_token)
-  issue_index = load_managed_issues(client)
   bibliography = BibliographyIndex.load(config.bibliography_path)
   candidates = _prepare_candidates(report.records, bibliography, issue_index, model.model_hash)
 
@@ -328,6 +329,20 @@ def run_daily(
     feed_errors=tuple(_failure_dict(error) for error in report.errors),
     publish_errors=tuple(publish_errors),
   )
+
+
+def _managed_pubmed_ids(issues: ManagedIssueIndex) -> tuple[str, ...]:
+  """Return PMIDs whose managed issues should be checked for revisions."""
+
+  pmids = {
+    alias.removeprefix("pmid:")
+    for issue in issues.issues
+    for alias in issue.meta.get("aliases", [])
+    if isinstance(alias, str)
+    and alias.startswith("pmid:")
+    and alias.removeprefix("pmid:").isdigit()
+  }
+  return tuple(sorted(pmids, key=int))
 
 
 def write_project_queue(
