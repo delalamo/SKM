@@ -1,0 +1,175 @@
+{
+  "abstract_rights": "Source rights retained; see the originating publication.",
+  "academic_graph": {
+    "accepted": 2611,
+    "api": "https://api.semanticscholar.org/graph/v1/paper/batch",
+    "coverage": {
+      "negative": {
+        "reference_fraction": 0.48173352435530087,
+        "resolution_fraction": 0.9940902578796562,
+        "works_resolved": 5551,
+        "works_total": 5584,
+        "works_with_references": 2690
+      },
+      "positive": {
+        "paper_ids_resolved": 568,
+        "paper_ids_with_references": 427,
+        "reference_fraction": 0.6367713004484304,
+        "resolution_fraction": 0.8475336322869955,
+        "works_resolved": 567,
+        "works_total": 669,
+        "works_with_references": 426
+      }
+    },
+    "minimum_positive_reference_coverage": 0.6,
+    "provider": "Semantic Scholar Academic Graph",
+    "rejected": 2973,
+    "rejection_counts": {
+      "direct_citation": 23,
+      "references_unavailable": 2861,
+      "shared_reference": 56,
+      "unresolved": 33
+    },
+    "rule": "reject unresolved or reference-unavailable negatives, direct citation identity with a positive, edges in either direction, and candidates sharing at least 3 cited papers with one positive work"
+  },
+  "audited_bibliography_identity_hash": "516e5d795cf8703bba09d073745a83acbce6f60bd825145bc5efc86718996ea3",
+  "bibliography_identifier_count": 688,
+  "bibliography_title_count": 669,
+  "candidate_pool_multiplier": 10,
+  "common_query": "medline[sb] AND english[la] AND hasabstract AND Journal Article[pt]",
+  "count": 669,
+  "created_at": "2026-07-22T20:47:24.085442+00:00",
+  "dataset": "pubmed-negatives-v1",
+  "eligible_candidates": {
+    "animal_behavior": 905,
+    "biomaterials_drug_delivery": 159,
+    "biosensors": 206,
+    "clinical_genetics": 165,
+    "developmental_biology": 781,
+    "ecology": 952,
+    "environmental_microbiology": 1018,
+    "genomics_transcriptomics": 201,
+    "microfluidics": 177,
+    "plant_biology": 861,
+    "signaling_proteomics": 165
+  },
+  "fetched_candidates": {
+    "animal_behavior": 1070,
+    "biomaterials_drug_delivery": 220,
+    "biosensors": 230,
+    "clinical_genetics": 220,
+    "developmental_biology": 1070,
+    "ecology": 1070,
+    "environmental_microbiology": 1070,
+    "genomics_transcriptomics": 230,
+    "microfluidics": 220,
+    "plant_biology": 1070,
+    "signaling_proteomics": 220
+  },
+  "graph_filter_applied": true,
+  "groups": {
+    "animal_behavior": 107,
+    "biomaterials_drug_delivery": 22,
+    "biosensors": 23,
+    "clinical_genetics": 22,
+    "developmental_biology": 107,
+    "ecology": 107,
+    "environmental_microbiology": 107,
+    "genomics_transcriptomics": 23,
+    "microfluidics": 22,
+    "plant_biology": 107,
+    "signaling_proteomics": 22
+  },
+  "manually_excluded_pmids": [
+    "31071601",
+    "34199271",
+    "39352000",
+    "40727582"
+  ],
+  "mesh_major_topics": {
+    "animal_behavior": [
+      "Behavior, Animal"
+    ],
+    "biomaterials_drug_delivery": [
+      "Biocompatible Materials",
+      "Drug Delivery Systems"
+    ],
+    "biosensors": [
+      "Biosensing Techniques"
+    ],
+    "clinical_genetics": [
+      "Genetic Diseases, Inborn",
+      "Genetic Predisposition to Disease"
+    ],
+    "developmental_biology": [
+      "Embryonic Development"
+    ],
+    "ecology": [
+      "Ecology"
+    ],
+    "environmental_microbiology": [
+      "Environmental Microbiology"
+    ],
+    "genomics_transcriptomics": [
+      "Genomics",
+      "Transcriptome"
+    ],
+    "microfluidics": [
+      "Microfluidic Analytical Techniques"
+    ],
+    "plant_biology": [
+      "Plant Physiological Phenomena"
+    ],
+    "signaling_proteomics": [
+      "Signal Transduction",
+      "Proteomics"
+    ]
+  },
+  "queries": {
+    "animal_behavior": "medline[sb] AND english[la] AND hasabstract AND \"Journal Article\"[pt] AND (\"Behavior, Animal\"[majr]) AND (\"2018/01/01\"[dp] : \"2025/12/31\"[dp]) NOT (\"Allosteric Regulation\"[mh] OR \"Antibodies\"[mh] OR \"Directed Molecular Evolution\"[mh] OR \"Protein Conformation\"[mh] OR \"Protein Engineering\"[mh] OR \"Protein Folding\"[mh] OR \"Protein Structure, Tertiary\"[mh] OR \"antibody engineering\"[tiab] OR \"antibody design\"[tiab] OR \"binder design\"[tiab] OR \"de novo protein design\"[tiab] OR \"directed evolution\"[tiab] OR \"inverse folding\"[tiab] OR \"protein design\"[tiab] OR \"protein engineering\"[tiab] OR \"protein language model\"[tiab] OR \"protein structure prediction\"[tiab] OR \"affinity maturation\"[tiab] OR \"AlphaFold\"[tiab] OR \"RoseTTAFold\"[tiab] OR \"RFdiffusion\"[tiab] OR \"ProteinMPNN\"[tiab])",
+    "biomaterials_drug_delivery": "medline[sb] AND english[la] AND hasabstract AND \"Journal Article\"[pt] AND (\"Biocompatible Materials\"[majr] OR \"Drug Delivery Systems\"[majr]) AND (\"2018/01/01\"[dp] : \"2025/12/31\"[dp]) NOT (\"Allosteric Regulation\"[mh] OR \"Antibodies\"[mh] OR \"Directed Molecular Evolution\"[mh] OR \"Protein Conformation\"[mh] OR \"Protein Engineering\"[mh] OR \"Protein Folding\"[mh] OR \"Protein Structure, Tertiary\"[mh] OR \"antibody engineering\"[tiab] OR \"antibody design\"[tiab] OR \"binder design\"[tiab] OR \"de novo protein design\"[tiab] OR \"directed evolution\"[tiab] OR \"inverse folding\"[tiab] OR \"protein design\"[tiab] OR \"protein engineering\"[tiab] OR \"protein language model\"[tiab] OR \"protein structure prediction\"[tiab] OR \"affinity maturation\"[tiab] OR \"AlphaFold\"[tiab] OR \"RoseTTAFold\"[tiab] OR \"RFdiffusion\"[tiab] OR \"ProteinMPNN\"[tiab])",
+    "biosensors": "medline[sb] AND english[la] AND hasabstract AND \"Journal Article\"[pt] AND (\"Biosensing Techniques\"[majr]) AND (\"2018/01/01\"[dp] : \"2025/12/31\"[dp]) NOT (\"Allosteric Regulation\"[mh] OR \"Antibodies\"[mh] OR \"Directed Molecular Evolution\"[mh] OR \"Protein Conformation\"[mh] OR \"Protein Engineering\"[mh] OR \"Protein Folding\"[mh] OR \"Protein Structure, Tertiary\"[mh] OR \"antibody engineering\"[tiab] OR \"antibody design\"[tiab] OR \"binder design\"[tiab] OR \"de novo protein design\"[tiab] OR \"directed evolution\"[tiab] OR \"inverse folding\"[tiab] OR \"protein design\"[tiab] OR \"protein engineering\"[tiab] OR \"protein language model\"[tiab] OR \"protein structure prediction\"[tiab] OR \"affinity maturation\"[tiab] OR \"AlphaFold\"[tiab] OR \"RoseTTAFold\"[tiab] OR \"RFdiffusion\"[tiab] OR \"ProteinMPNN\"[tiab])",
+    "clinical_genetics": "medline[sb] AND english[la] AND hasabstract AND \"Journal Article\"[pt] AND (\"Genetic Diseases, Inborn\"[majr] OR \"Genetic Predisposition to Disease\"[majr]) AND (\"2018/01/01\"[dp] : \"2025/12/31\"[dp]) NOT (\"Allosteric Regulation\"[mh] OR \"Antibodies\"[mh] OR \"Directed Molecular Evolution\"[mh] OR \"Protein Conformation\"[mh] OR \"Protein Engineering\"[mh] OR \"Protein Folding\"[mh] OR \"Protein Structure, Tertiary\"[mh] OR \"antibody engineering\"[tiab] OR \"antibody design\"[tiab] OR \"binder design\"[tiab] OR \"de novo protein design\"[tiab] OR \"directed evolution\"[tiab] OR \"inverse folding\"[tiab] OR \"protein design\"[tiab] OR \"protein engineering\"[tiab] OR \"protein language model\"[tiab] OR \"protein structure prediction\"[tiab] OR \"affinity maturation\"[tiab] OR \"AlphaFold\"[tiab] OR \"RoseTTAFold\"[tiab] OR \"RFdiffusion\"[tiab] OR \"ProteinMPNN\"[tiab])",
+    "developmental_biology": "medline[sb] AND english[la] AND hasabstract AND \"Journal Article\"[pt] AND (\"Embryonic Development\"[majr]) AND (\"2018/01/01\"[dp] : \"2025/12/31\"[dp]) NOT (\"Allosteric Regulation\"[mh] OR \"Antibodies\"[mh] OR \"Directed Molecular Evolution\"[mh] OR \"Protein Conformation\"[mh] OR \"Protein Engineering\"[mh] OR \"Protein Folding\"[mh] OR \"Protein Structure, Tertiary\"[mh] OR \"antibody engineering\"[tiab] OR \"antibody design\"[tiab] OR \"binder design\"[tiab] OR \"de novo protein design\"[tiab] OR \"directed evolution\"[tiab] OR \"inverse folding\"[tiab] OR \"protein design\"[tiab] OR \"protein engineering\"[tiab] OR \"protein language model\"[tiab] OR \"protein structure prediction\"[tiab] OR \"affinity maturation\"[tiab] OR \"AlphaFold\"[tiab] OR \"RoseTTAFold\"[tiab] OR \"RFdiffusion\"[tiab] OR \"ProteinMPNN\"[tiab])",
+    "ecology": "medline[sb] AND english[la] AND hasabstract AND \"Journal Article\"[pt] AND (\"Ecology\"[majr]) AND (\"2018/01/01\"[dp] : \"2025/12/31\"[dp]) NOT (\"Allosteric Regulation\"[mh] OR \"Antibodies\"[mh] OR \"Directed Molecular Evolution\"[mh] OR \"Protein Conformation\"[mh] OR \"Protein Engineering\"[mh] OR \"Protein Folding\"[mh] OR \"Protein Structure, Tertiary\"[mh] OR \"antibody engineering\"[tiab] OR \"antibody design\"[tiab] OR \"binder design\"[tiab] OR \"de novo protein design\"[tiab] OR \"directed evolution\"[tiab] OR \"inverse folding\"[tiab] OR \"protein design\"[tiab] OR \"protein engineering\"[tiab] OR \"protein language model\"[tiab] OR \"protein structure prediction\"[tiab] OR \"affinity maturation\"[tiab] OR \"AlphaFold\"[tiab] OR \"RoseTTAFold\"[tiab] OR \"RFdiffusion\"[tiab] OR \"ProteinMPNN\"[tiab])",
+    "environmental_microbiology": "medline[sb] AND english[la] AND hasabstract AND \"Journal Article\"[pt] AND (\"Environmental Microbiology\"[majr]) AND (\"2018/01/01\"[dp] : \"2025/12/31\"[dp]) NOT (\"Allosteric Regulation\"[mh] OR \"Antibodies\"[mh] OR \"Directed Molecular Evolution\"[mh] OR \"Protein Conformation\"[mh] OR \"Protein Engineering\"[mh] OR \"Protein Folding\"[mh] OR \"Protein Structure, Tertiary\"[mh] OR \"antibody engineering\"[tiab] OR \"antibody design\"[tiab] OR \"binder design\"[tiab] OR \"de novo protein design\"[tiab] OR \"directed evolution\"[tiab] OR \"inverse folding\"[tiab] OR \"protein design\"[tiab] OR \"protein engineering\"[tiab] OR \"protein language model\"[tiab] OR \"protein structure prediction\"[tiab] OR \"affinity maturation\"[tiab] OR \"AlphaFold\"[tiab] OR \"RoseTTAFold\"[tiab] OR \"RFdiffusion\"[tiab] OR \"ProteinMPNN\"[tiab])",
+    "genomics_transcriptomics": "medline[sb] AND english[la] AND hasabstract AND \"Journal Article\"[pt] AND (\"Genomics\"[majr] OR \"Transcriptome\"[majr]) AND (\"2018/01/01\"[dp] : \"2025/12/31\"[dp]) NOT (\"Allosteric Regulation\"[mh] OR \"Antibodies\"[mh] OR \"Directed Molecular Evolution\"[mh] OR \"Protein Conformation\"[mh] OR \"Protein Engineering\"[mh] OR \"Protein Folding\"[mh] OR \"Protein Structure, Tertiary\"[mh] OR \"antibody engineering\"[tiab] OR \"antibody design\"[tiab] OR \"binder design\"[tiab] OR \"de novo protein design\"[tiab] OR \"directed evolution\"[tiab] OR \"inverse folding\"[tiab] OR \"protein design\"[tiab] OR \"protein engineering\"[tiab] OR \"protein language model\"[tiab] OR \"protein structure prediction\"[tiab] OR \"affinity maturation\"[tiab] OR \"AlphaFold\"[tiab] OR \"RoseTTAFold\"[tiab] OR \"RFdiffusion\"[tiab] OR \"ProteinMPNN\"[tiab])",
+    "microfluidics": "medline[sb] AND english[la] AND hasabstract AND \"Journal Article\"[pt] AND (\"Microfluidic Analytical Techniques\"[majr]) AND (\"2018/01/01\"[dp] : \"2025/12/31\"[dp]) NOT (\"Allosteric Regulation\"[mh] OR \"Antibodies\"[mh] OR \"Directed Molecular Evolution\"[mh] OR \"Protein Conformation\"[mh] OR \"Protein Engineering\"[mh] OR \"Protein Folding\"[mh] OR \"Protein Structure, Tertiary\"[mh] OR \"antibody engineering\"[tiab] OR \"antibody design\"[tiab] OR \"binder design\"[tiab] OR \"de novo protein design\"[tiab] OR \"directed evolution\"[tiab] OR \"inverse folding\"[tiab] OR \"protein design\"[tiab] OR \"protein engineering\"[tiab] OR \"protein language model\"[tiab] OR \"protein structure prediction\"[tiab] OR \"affinity maturation\"[tiab] OR \"AlphaFold\"[tiab] OR \"RoseTTAFold\"[tiab] OR \"RFdiffusion\"[tiab] OR \"ProteinMPNN\"[tiab])",
+    "plant_biology": "medline[sb] AND english[la] AND hasabstract AND \"Journal Article\"[pt] AND (\"Plant Physiological Phenomena\"[majr]) AND (\"2018/01/01\"[dp] : \"2025/12/31\"[dp]) NOT (\"Allosteric Regulation\"[mh] OR \"Antibodies\"[mh] OR \"Directed Molecular Evolution\"[mh] OR \"Protein Conformation\"[mh] OR \"Protein Engineering\"[mh] OR \"Protein Folding\"[mh] OR \"Protein Structure, Tertiary\"[mh] OR \"antibody engineering\"[tiab] OR \"antibody design\"[tiab] OR \"binder design\"[tiab] OR \"de novo protein design\"[tiab] OR \"directed evolution\"[tiab] OR \"inverse folding\"[tiab] OR \"protein design\"[tiab] OR \"protein engineering\"[tiab] OR \"protein language model\"[tiab] OR \"protein structure prediction\"[tiab] OR \"affinity maturation\"[tiab] OR \"AlphaFold\"[tiab] OR \"RoseTTAFold\"[tiab] OR \"RFdiffusion\"[tiab] OR \"ProteinMPNN\"[tiab])",
+    "signaling_proteomics": "medline[sb] AND english[la] AND hasabstract AND \"Journal Article\"[pt] AND (\"Signal Transduction\"[majr] OR \"Proteomics\"[majr]) AND (\"2018/01/01\"[dp] : \"2025/12/31\"[dp]) NOT (\"Allosteric Regulation\"[mh] OR \"Antibodies\"[mh] OR \"Directed Molecular Evolution\"[mh] OR \"Protein Conformation\"[mh] OR \"Protein Engineering\"[mh] OR \"Protein Folding\"[mh] OR \"Protein Structure, Tertiary\"[mh] OR \"antibody engineering\"[tiab] OR \"antibody design\"[tiab] OR \"binder design\"[tiab] OR \"de novo protein design\"[tiab] OR \"directed evolution\"[tiab] OR \"inverse folding\"[tiab] OR \"protein design\"[tiab] OR \"protein engineering\"[tiab] OR \"protein language model\"[tiab] OR \"protein structure prediction\"[tiab] OR \"affinity maturation\"[tiab] OR \"AlphaFold\"[tiab] OR \"RoseTTAFold\"[tiab] OR \"RFdiffusion\"[tiab] OR \"ProteinMPNN\"[tiab])"
+  },
+  "schema_version": 2,
+  "seed": "skm-pubmed-negatives-v1",
+  "selection": "SHA256(seed + group + PMID)",
+  "source": "PubMed/MEDLINE via NCBI E-utilities",
+  "source_window": [
+    "2018-01-01",
+    "2025-12-31"
+  ],
+  "target_mesh_exclusions": [
+    "Allosteric Regulation",
+    "Antibodies",
+    "Directed Molecular Evolution",
+    "Protein Conformation",
+    "Protein Engineering",
+    "Protein Folding",
+    "Protein Structure, Tertiary"
+  ],
+  "target_text_exclusions": [
+    "antibody engineering",
+    "antibody design",
+    "binder design",
+    "de novo protein design",
+    "directed evolution",
+    "inverse folding",
+    "protein design",
+    "protein engineering",
+    "protein language model",
+    "protein structure prediction",
+    "affinity maturation",
+    "AlphaFold",
+    "RoseTTAFold",
+    "RFdiffusion",
+    "ProteinMPNN"
+  ]
+}

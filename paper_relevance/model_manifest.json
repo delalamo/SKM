@@ -1,0 +1,61 @@
+{
+  "bibliography_hash": "fddf409f0991fb4537ca1a53f9641777a267f612d0df2bce5e1798bd3b0746bc",
+  "classifier": {
+    "C": 1.0,
+    "class_weight": "balanced",
+    "fit_intercept": true,
+    "kind": "logistic_regression",
+    "l1_ratio": 0.0,
+    "max_iter": 10000,
+    "penalty": "l2",
+    "random_state": 0,
+    "solver": "lbfgs"
+  },
+  "dependencies": {
+    "adapters": "1.3.0",
+    "huggingface-hub": "0.36.2",
+    "joblib": "1.5.3",
+    "numpy": "2.5.1",
+    "python": "3.12",
+    "safetensors": "0.8.0",
+    "scikit-learn": "1.9.0",
+    "scipy": "1.18.0",
+    "threadpoolctl": "3.6.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.13.0",
+    "transformers": "4.57.6"
+  },
+  "embedding": {
+    "adapter": "allenai/specter2_classification",
+    "adapter_revision": "d843816b414a856d9a5268d5865f188bb589e6e1",
+    "base_model": "allenai/specter2_base",
+    "base_revision": "3447645e1def9117997203454fa4495937bfbd83",
+    "dimension": 768,
+    "dtype": "float32",
+    "input": "title [SEP] abstract",
+    "max_tokens": 512,
+    "pooling": "first_token_l2_normalized"
+  },
+  "model_hash": "6b34a393890b72e05ad16c023dcb22b267a36e1ba3e2b287952c7a1bcb3819e8",
+  "negative_corpus": "pubmed_negatives_v1.jsonl",
+  "negative_corpus_file_hash": "0c6a385cf3c85479163037e9393f404fe63feba3d7a4a7817adc844efdd7ed8c",
+  "negative_corpus_hash": "60f1ed1a1a3fd15206eb0ca35ea366d688a03871002540e977b94fa5b8428764",
+  "negative_count": 669,
+  "negative_dataset": "pubmed-negatives-v1",
+  "negative_graph_provider": "Semantic Scholar Academic Graph",
+  "negative_manifest_hash": "e5661e5f4e8abeeb5c552ca7033fcd54d84b37a495c85a1028d6311f33700a2c",
+  "negative_matrix_hash": "b0d3dcf2086967455bbeb6f49abd0b3f1b302019416a0126bdd64ff63b744c48",
+  "negative_metadata": "pubmed_negatives_v1_metadata.json",
+  "negative_metadata_file_hash": "21d864c0a28feb5a4748306e0da82e54e10bb2ff91ca614b2e478b1d23fc44ed",
+  "negative_source": "pubmed",
+  "positive_count": 669,
+  "positive_manifest_hash": "40dfa27ba8930edb11b15d9ba11012eab6e7d570ea508c9bd351d1e8d5a08f1f",
+  "positive_matrix_hash": "0f952637c506f52be4136fabdf2ba1fcfad404beebb3dbeead764230b0cb7c9f",
+  "positive_rows": 669,
+  "schema": 1,
+  "training": {
+    "converged": true,
+    "iterations": 10,
+    "training_accuracy": 0.9872944693572496
+  }
+}

@@ -1,0 +1,212 @@
+name: Refresh paper relevance model
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - bibliography.bib
+      - paper_relevance/**
+      - paperbot.toml
+      - requirements-paperbot.lock
+      - scripts/paperbot/**
+      - .github/workflows/paper-discovery.yml
+      - .github/workflows/paper-model-refresh.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: paper-model-refresh-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  paperbot-tests:
+    name: Test paperbot without credentials
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out trusted dependencies
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          path: trusted
+          persist-credentials: false
+
+      - name: Check out candidate code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: candidate
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+
+      - name: Install CPU-only PyTorch
+        run: >-
+          python -m pip install
+          --index-url https://download.pytorch.org/whl/cpu
+          "torch==2.13.0"
+
+      - name: Install trusted pinned dependencies
+        run: python -m pip install --requirement trusted/requirements-paperbot.lock
+
+      - name: Run candidate paperbot tests
+        working-directory: candidate
+        run: python -m pytest tests/paperbot
+
+  refresh-or-verify:
+    name: Refresh trusted PRs or verify artifacts
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    env:
+      HF_HUB_DISABLE_TELEMETRY: "1"
+      PIP_DISABLE_PIP_VERSION_CHECK: "1"
+      TOKENIZERS_PARALLELISM: "false"
+      PAPERBOT_CONTACT_EMAIL: ${{ vars.PAPERBOT_CONTACT_EMAIL }}
+      BASE_SHA: ${{ github.event.pull_request.base.sha || github.sha }}
+      HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+      HEAD_REF: ${{ github.event.pull_request.head.ref || github.ref_name }}
+      HEAD_REPOSITORY: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+    steps:
+      # Generator code and dependency pins always come from the trusted base.
+      - name: Check out trusted generator
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          path: trusted
+          persist-credentials: false
+
+      # The pull request checkout is data. No executable file from it is run.
+      - name: Check out candidate bibliography
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: candidate
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+
+      - name: Cache SPECTER2 weights
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        with:
+          path: ~/.cache/huggingface
+          key: >-
+            ${{ runner.os }}-specter2-
+            ${{ hashFiles('trusted/requirements-paperbot.lock', 'trusted/paperbot.toml') }}
+
+      - name: Install CPU-only PyTorch
+        run: >-
+          python -m pip install
+          --index-url https://download.pytorch.org/whl/cpu
+          "torch==2.13.0"
+
+      - name: Install trusted pinned dependencies
+        run: python -m pip install --requirement trusted/requirements-paperbot.lock
+
+      - name: Enforce the no-remote-summarization policy with trusted code
+        env:
+          PAPERBOT_POLICY_ROOT: ${{ github.workspace }}/candidate
+        run: >-
+          python -m pytest
+          trusted/tests/paperbot/test_no_remote_summarization.py
+
+      - name: Classify the pull request
+        id: safety
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          SAME_REPOSITORY: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$EVENT_NAME" == "pull_request" ]]; then
+            git -C candidate fetch --no-tags --depth=1 \
+              "https://github.com/$GITHUB_REPOSITORY.git" "$BASE_SHA"
+          fi
+          PYTHONPATH="$GITHUB_WORKSPACE/trusted" \
+            python -m scripts.paperbot.pr_safety classify \
+              --repo "$GITHUB_WORKSPACE/candidate" \
+              --base "$BASE_SHA" \
+              --head "$HEAD_SHA" \
+              --event-name "$EVENT_NAME" \
+              --same-repository "$SAME_REPOSITORY" \
+              --github-output "$GITHUB_OUTPUT"
+
+      - name: Backfill abstracts and refresh model
+        if: steps.safety.outputs.auto_refresh == 'true'
+        env:
+          PYTHONPATH: ${{ github.workspace }}/trusted
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+          PAPERBOT_DISABLE_ARBITRARY_HTML: "1"
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -L "$GITHUB_WORKSPACE/candidate/bibliography.bib" || \
+                ! -f "$GITHUB_WORKSPACE/candidate/bibliography.bib" ]]; then
+            echo "::error::Candidate bibliography must be a regular, non-symlink file"
+            exit 1
+          fi
+          python -m scripts.paperbot --repo-root "$GITHUB_WORKSPACE/candidate" backfill-bibliography
+          python -m scripts.paperbot --repo-root "$GITHUB_WORKSPACE/candidate" refresh-model
+          python -m scripts.paperbot --repo-root "$GITHUB_WORKSPACE/candidate" check-model
+
+      - name: Reject unexpected generated paths
+        if: steps.safety.outputs.auto_refresh == 'true'
+        env:
+          PYTHONPATH: ${{ github.workspace }}/trusted
+        run: >-
+          python -m scripts.paperbot.pr_safety validate-generated
+          --repo "$GITHUB_WORKSPACE/candidate"
+
+      - name: Commit refreshed artifacts to trusted PR branch
+        if: steps.safety.outputs.auto_refresh == 'true'
+        env:
+          MODEL_UPDATE_TOKEN: ${{ secrets.MODEL_UPDATE_TOKEN }}
+          GH_TOKEN: ${{ secrets.MODEL_UPDATE_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -z "$MODEL_UPDATE_TOKEN" ]]; then
+            echo "::error::MODEL_UPDATE_TOKEN is required for same-repository model refreshes"
+            exit 1
+          fi
+          git -C candidate add -- \
+            bibliography.bib \
+            paper_relevance/abstract_provenance.jsonl \
+            paper_relevance/positive_embeddings.npy \
+            paper_relevance/positive_manifest.jsonl \
+            paper_relevance/negative_embeddings.npy \
+            paper_relevance/negative_manifest.jsonl \
+            paper_relevance/classifier.npz \
+            paper_relevance/model_manifest.json
+          if git -C candidate diff --cached --quiet; then
+            echo "Model artifacts are already current."
+            exit 0
+          fi
+          git -C candidate config user.name "github-actions[bot]"
+          git -C candidate config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C candidate commit -m "chore: refresh paper relevance model"
+          gh auth setup-git
+          git -C candidate push "https://github.com/$HEAD_REPOSITORY.git" "HEAD:$HEAD_REF"
+
+      - name: Verify only (fork, manual, or sensitive change)
+        if: steps.safety.outputs.auto_refresh != 'true'
+        env:
+          PYTHONPATH: ${{ github.workspace }}/trusted
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! python -m scripts.paperbot --repo-root "$GITHUB_WORKSPACE/candidate" check-model; then
+            echo "::error::Model artifacts are stale. Run: python -m scripts.paperbot backfill-bibliography && python -m scripts.paperbot refresh-model"
+            exit 1
+          fi
