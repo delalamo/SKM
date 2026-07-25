@@ -65,6 +65,7 @@ def managed_issue(
   login: str = "github-actions[bot]",
   prefix: str = "",
   suffix: str = "",
+  known_bib_key: str | None = None,
 ) -> dict[str, Any]:
   bibtex = (
     "@article{lovelace2026,\n"
@@ -73,10 +74,20 @@ def managed_issue(
     "}"
   )
   meta = build_managed_meta(
-    paper, 0.9, bibtex, "lovelace2026", model_hash="model"
+    paper,
+    0.9,
+    bibtex,
+    "lovelace2026",
+    model_hash="model",
+    known_bib_key=known_bib_key,
   )
   body = render_managed_body(
-    paper, 0.9, bibtex, "lovelace2026", meta=meta
+    paper,
+    0.9,
+    bibtex,
+    "lovelace2026",
+    known_bib_key=known_bib_key,
+    meta=meta,
   )
   return {
     "number": number,
@@ -550,6 +561,106 @@ def test_exact_title_match_is_conservatively_omitted_from_bibliography(
   assert row.bibliography_keys == ("positive2026",)
 
 
+def test_known_bibliography_alias_survives_metadata_drift_and_is_omitted(
+  tmp_path: Path,
+) -> None:
+  paper = record(
+    doi="10.9999/drifted",
+    pmid="",
+    source_id="drifted",
+    title="A completely drifted title",
+    abstract="Neither current text nor identifiers match the bibliography.",
+    authors=("Different Author",),
+    updated_at="2025-06-01",
+  )
+  configuration = config(tmp_path)
+  configuration.bibliography_path.write_text(
+    "@article{positive2026,\n"
+    "  title = {A useful paper},\n"
+    "  author = {Hopper, Grace},\n"
+    "  year = {2026},\n"
+    "  abstract = {A useful abstract about the target field.},\n"
+    "  doi = {10.1000/positive},\n"
+    "}\n\n"
+    "@article{positiveAlias2026,\n"
+    "  title = {A useful paper},\n"
+    "  author = {Hopper, Grace},\n"
+    "  year = {2026},\n"
+    "  abstract = {A useful abstract about the target field.},\n"
+    "  doi = {10.1000/positive},\n"
+    "}\n",
+    encoding="utf-8",
+  )
+
+  result = sync_issue_negatives(
+    configuration,
+    client=MemoryClient([
+      managed_issue(paper, known_bib_key="positiveAlias2026")
+    ]),
+  )
+  [row] = load_issue_negative_snapshot(
+    configuration.artifact_dir / "issue_negatives.jsonl"
+  )
+
+  assert result["active_count"] == 0
+  assert row.known_bib_keys == ("positiveAlias2026",)
+  assert row.bibliography_keys == ("positiveAlias2026",)
+  assert row.omission_reasons == (OMITTED_BIBLIOGRAPHY,)
+
+
+def test_nonrepresentative_bibliography_alias_title_is_omitted(
+  tmp_path: Path,
+) -> None:
+  paper = record(
+    doi="10.7777/unrelated",
+    pmid="",
+    source_id="unrelated",
+    title="Older preprint title",
+    abstract="A revised issue abstract.",
+    authors=("Different Author",),
+  )
+  configuration = config(tmp_path)
+  configuration.bibliography_path.write_text(
+    "@misc{preprint,\n"
+    "  title = {Older preprint title},\n"
+    "  author = {Hopper, Grace},\n"
+    "  year = {2024},\n"
+    "  abstract = {The original preprint abstract.},\n"
+    "  doi = {10.21203/rs.3.rs-123/v1},\n"
+    "  relateddoi = {10.9999/published},\n"
+    "}\n"
+    "@article{published,\n"
+    "  title = {New publication title},\n"
+    "  author = {Hopper, Grace},\n"
+    "  year = {2026},\n"
+    "  abstract = {The final publication abstract is longer.},\n"
+    "  doi = {10.9999/published},\n"
+    "}\n",
+    encoding="utf-8",
+  )
+
+  result = sync_issue_negatives(
+    configuration, client=MemoryClient([managed_issue(paper)])
+  )
+  [row] = load_issue_negative_snapshot(
+    configuration.artifact_dir / "issue_negatives.jsonl"
+  )
+
+  assert result["active_count"] == 0
+  assert row.omission_reasons == (OMITTED_BIBLIOGRAPHY,)
+  assert row.bibliography_keys
+
+
+@pytest.mark.parametrize("known_bib_key", ["", " positive2026 "])
+def test_known_bibliography_key_must_be_canonical_nonempty_text(
+  tmp_path: Path, known_bib_key: str
+) -> None:
+  issue = managed_issue(record(), known_bib_key=known_bib_key)
+
+  with pytest.raises(GitHubError, match="invalid known bibliography key"):
+    sync_issue_negatives(config(tmp_path), client=MemoryClient([issue]))
+
+
 def test_exact_title_match_is_conservatively_omitted_from_fixed_negatives(
   tmp_path: Path,
 ) -> None:
@@ -836,6 +947,18 @@ def test_snapshot_rejects_issue_number_reused_across_works(
         issue_urls=["https://github.test/issues/999"]
       ),
       "issue URLs are not unique and sorted",
+    ),
+    (
+      lambda row: row.update(title=123),
+      "title and abstract must be canonical strings",
+    ),
+    (
+      lambda row: row.update(abstract=123),
+      "title and abstract must be canonical strings",
+    ),
+    (
+      lambda row: row.update(known_bib_keys=[123]),
+      "known bibliography keys must be a list",
     ),
   ],
 )

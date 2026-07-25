@@ -12,6 +12,7 @@ import tempfile
 from typing import Any, Iterable, Mapping, Sequence
 
 from .bibliography import (
+  BibliographyEntry,
   CanonicalWork,
   canonicalize_entries,
   embedding_input_hash,
@@ -88,6 +89,9 @@ class IssueNegativeRecord:
   omission_reasons: tuple[str, ...] = ()
   bibliography_keys: tuple[str, ...] = ()
   fixed_negative_ids: tuple[str, ...] = ()
+  known_bib_keys: tuple[str, ...] = ()
+  component_titles: tuple[str, ...] = ()
+  component_input_hashes: tuple[str, ...] = ()
 
   def to_dict(self) -> dict[str, Any]:
     return {
@@ -105,6 +109,9 @@ class IssueNegativeRecord:
       "omission_reasons": list(self.omission_reasons),
       "bibliography_keys": list(self.bibliography_keys),
       "fixed_negative_ids": list(self.fixed_negative_ids),
+      "known_bib_keys": list(self.known_bib_keys),
+      "component_titles": list(self.component_titles),
+      "component_input_hashes": list(self.component_input_hashes),
     }
 
   @classmethod
@@ -126,15 +133,36 @@ class IssueNegativeRecord:
     aliases_value = value.get("aliases")
     numbers_value = value.get("issue_numbers")
     urls_value = value.get("issue_urls")
-    title = str(value.get("title") or "").strip()
-    abstract = str(value.get("abstract") or "").strip()
-    input_hash = str(value.get("input_hash") or "").strip().casefold()
-    metadata_hash = str(value.get("metadata_hash") or "").strip().casefold()
+    title_value = value.get("title")
+    abstract_value = value.get("abstract")
+    input_hash_value = value.get("input_hash")
+    metadata_hash_value = value.get("metadata_hash")
+    if (
+      not isinstance(title_value, str)
+      or not isinstance(abstract_value, str)
+      or title_value != title_value.strip()
+      or abstract_value != abstract_value.strip()
+    ):
+      raise ValueError(f"{context} title and abstract must be canonical strings")
+    if (
+      not isinstance(input_hash_value, str)
+      or not isinstance(metadata_hash_value, str)
+      or input_hash_value != input_hash_value.strip().casefold()
+      or metadata_hash_value != metadata_hash_value.strip().casefold()
+    ):
+      raise ValueError(f"{context} hashes must be canonical strings")
+    title = title_value
+    abstract = abstract_value
+    input_hash = input_hash_value
+    metadata_hash = metadata_hash_value
     selected_issue_number = value.get("selected_issue_number")
     active = value.get("active")
     omission_reasons_value = value.get("omission_reasons")
     bibliography_keys_value = value.get("bibliography_keys")
     fixed_negative_ids_value = value.get("fixed_negative_ids")
+    known_bib_keys_value = value.get("known_bib_keys")
+    component_titles_value = value.get("component_titles")
+    component_input_hashes_value = value.get("component_input_hashes")
     if (
       not work_id
       or work_id != work_id_text
@@ -178,10 +206,13 @@ class IssueNegativeRecord:
     if (
       not isinstance(urls_value, list)
       or not urls_value
-      or any(not isinstance(url, str) or not url.strip() for url in urls_value)
+      or any(
+        not isinstance(url, str) or not url or url != url.strip()
+        for url in urls_value
+      )
     ):
       raise ValueError(f"{context} issue URLs are invalid")
-    issue_urls = tuple(str(url).strip() for url in urls_value)
+    issue_urls = tuple(urls_value)
     url_numbers = {
       int(match.group(1))
       for url in issue_urls
@@ -202,9 +233,12 @@ class IssueNegativeRecord:
       raise ValueError(f"{context} SPECTER2 input hash is invalid")
     if active is not True and active is not False:
       raise ValueError(f"{context} active flag is invalid")
-    if not isinstance(omission_reasons_value, list):
+    if (
+      not isinstance(omission_reasons_value, list)
+      or any(not isinstance(reason, str) for reason in omission_reasons_value)
+    ):
       raise ValueError(f"{context} omission reasons must be a list")
-    omission_reasons = tuple(str(reason) for reason in omission_reasons_value)
+    omission_reasons = tuple(omission_reasons_value)
     if (
       omission_reasons != tuple(sorted(set(omission_reasons)))
       or any(reason not in _OMISSION_REASONS for reason in omission_reasons)
@@ -217,6 +251,25 @@ class IssueNegativeRecord:
     fixed_negative_ids = _canonical_string_list(
       fixed_negative_ids_value, f"{context} fixed-negative IDs"
     )
+    known_bib_keys = _canonical_string_list(
+      known_bib_keys_value, f"{context} known bibliography keys"
+    )
+    component_titles = _canonical_string_list(
+      component_titles_value, f"{context} component titles"
+    )
+    component_input_hashes = _canonical_string_list(
+      component_input_hashes_value, f"{context} component input hashes"
+    )
+    if (
+      any(title_value != normalize_title(title_value) for title_value in component_titles)
+      or normalize_title(title) not in component_titles
+    ):
+      raise ValueError(f"{context} component titles are invalid")
+    if (
+      any(_SHA256_RE.fullmatch(value) is None for value in component_input_hashes)
+      or input_hash not in component_input_hashes
+    ):
+      raise ValueError(f"{context} component input hashes are invalid")
     if bool(bibliography_keys) != (OMITTED_BIBLIOGRAPHY in omission_reasons):
       raise ValueError(f"{context} bibliography overlap provenance is invalid")
     if bool(fixed_negative_ids) != (OMITTED_FIXED in omission_reasons):
@@ -236,14 +289,23 @@ class IssueNegativeRecord:
       omission_reasons=omission_reasons,
       bibliography_keys=bibliography_keys,
       fixed_negative_ids=fixed_negative_ids,
+      known_bib_keys=known_bib_keys,
+      component_titles=component_titles,
+      component_input_hashes=component_input_hashes,
     )
 
 
 def _canonical_string_list(value: Any, context: str) -> tuple[str, ...]:
-  if not isinstance(value, list):
+  if (
+    not isinstance(value, list)
+    or any(not isinstance(item, str) for item in value)
+  ):
     raise ValueError(f"{context} must be a list")
-  result = tuple(str(item).strip() for item in value)
-  if any(not item for item in result) or result != tuple(sorted(set(result))):
+  result = tuple(value)
+  if (
+    any(not item or item != item.strip() for item in result)
+    or result != tuple(sorted(set(result)))
+  ):
     raise ValueError(f"{context} must contain unique sorted strings")
   return result
 
@@ -261,6 +323,7 @@ class _Candidate:
   metadata_hash: str
   version: str
   managed_updated: str
+  known_bib_key: str
 
 
 class _UnionFind:
@@ -339,12 +402,16 @@ def sync_issue_negatives(
   ):
     raise ValueError(
       "Configured paper repository does not match GITHUB_REPOSITORY"
-    )
-  github = client or GitHubClient(configured_repository, github_token)
-  works = canonicalize_entries(load_bibliography(config.bibliography_path))
-  positive_aliases, positive_inputs, positive_titles = _bibliography_identity(
-    works
   )
+  github = client or GitHubClient(configured_repository, github_token)
+  bibliography_entries = load_bibliography(config.bibliography_path)
+  works = canonicalize_entries(bibliography_entries)
+  (
+    positive_aliases,
+    positive_inputs,
+    positive_titles,
+    bibliography_entry_keys,
+  ) = _bibliography_identity(works, bibliography_entries)
   fixed_aliases, fixed_inputs, fixed_titles = _fixed_negative_identity(
     Path(config.negative_corpus_path)
   )
@@ -354,6 +421,7 @@ def sync_issue_negatives(
     positive_aliases=positive_aliases,
     positive_inputs=positive_inputs,
     positive_titles=positive_titles,
+    bibliography_entry_keys=bibliography_entry_keys,
     fixed_aliases=fixed_aliases,
     fixed_inputs=fixed_inputs,
     fixed_titles=fixed_titles,
@@ -545,6 +613,19 @@ def _candidate_from_issue(raw: Mapping[str, Any]) -> _Candidate:
     raise GitHubError(
       f"Managed negative issue #{number} has no GitHub issue URL"
     )
+  known_bib_key_value = meta.get("known_bib_key")
+  if known_bib_key_value is None:
+    known_bib_key = ""
+  elif (
+    not isinstance(known_bib_key_value, str)
+    or not known_bib_key_value
+    or known_bib_key_value != known_bib_key_value.strip()
+  ):
+    raise GitHubError(
+      f"Managed negative issue #{number} has an invalid known bibliography key"
+    )
+  else:
+    known_bib_key = known_bib_key_value
   return _Candidate(
     number=number,
     node_id=node_id,
@@ -557,6 +638,7 @@ def _candidate_from_issue(raw: Mapping[str, Any]) -> _Candidate:
     metadata_hash=metadata_hash,
     version=str(meta.get("version") or ""),
     managed_updated=str(meta.get("updated") or ""),
+    known_bib_key=known_bib_key,
   )
 
 
@@ -566,6 +648,7 @@ def _canonical_records(
   positive_aliases: Mapping[str, set[str]],
   positive_inputs: Mapping[str, set[str]],
   positive_titles: Mapping[str, set[str]],
+  bibliography_entry_keys: set[str],
   fixed_aliases: Mapping[str, set[str]],
   fixed_inputs: Mapping[str, set[str]],
   fixed_titles: Mapping[str, set[str]],
@@ -648,10 +731,17 @@ def _canonical_records(
       for member in members
       if (normalized := normalize_title(member.title))
     }
+    component_input_hashes = {
+      member.input_hash for member in members
+    }
+    known_bib_keys = {
+      member.known_bib_key for member in members if member.known_bib_key
+    }
     bibliography_keys = set().union(
       *(positive_aliases.get(alias, set()) for alias in aliases),
       *(positive_inputs.get(member.input_hash, set()) for member in members),
       *(positive_titles.get(title, set()) for title in member_titles),
+      known_bib_keys & bibliography_entry_keys,
     )
     fixed_negative_ids = set().union(
       *(fixed_aliases.get(alias, set()) for alias in aliases),
@@ -682,6 +772,9 @@ def _canonical_records(
         omission_reasons=omission_reasons,
         bibliography_keys=tuple(sorted(bibliography_keys)),
         fixed_negative_ids=tuple(sorted(fixed_negative_ids)),
+        known_bib_keys=tuple(sorted(known_bib_keys)),
+        component_titles=tuple(sorted(member_titles)),
+        component_input_hashes=tuple(sorted(component_input_hashes)),
       )
     )
   records.sort(key=lambda record: (record.work_id, record.issue_numbers))
@@ -804,14 +897,21 @@ def _candidate_revision_key(
 
 def _bibliography_identity(
   works: Sequence[CanonicalWork],
+  entries: Sequence[BibliographyEntry],
 ) -> tuple[
   dict[str, set[str]],
   dict[str, set[str]],
   dict[str, set[str]],
+  set[str],
 ]:
   aliases: dict[str, set[str]] = {}
   inputs: dict[str, set[str]] = {}
   titles: dict[str, set[str]] = {}
+  entry_keys = {
+    alias
+    for work in works
+    for alias in work.aliases
+  }
   for work in works:
     work_aliases = {
       alias
@@ -830,7 +930,27 @@ def _bibliography_identity(
     ).add(work.citekey)
     if normalized_title := normalize_title(work.title):
       titles.setdefault(normalized_title, set()).add(work.citekey)
-  return aliases, inputs, titles
+  owner_by_key = {
+    alias: work.citekey
+    for work in works
+    for alias in work.aliases
+  }
+  for entry in entries:
+    owner = owner_by_key.get(entry.key, entry.key)
+    if normalized_title := normalize_title(entry.title):
+      titles.setdefault(normalized_title, set()).add(owner)
+    if entry.abstract:
+      inputs.setdefault(
+        embedding_input_hash(entry.title, entry.abstract), set()
+      ).add(owner)
+    title_alias = strict_title_alias(
+      entry.title,
+      str(entry.fields.get("author") or ""),
+      str(entry.fields.get("year") or ""),
+    )
+    if title_alias:
+      aliases.setdefault(title_alias, set()).add(owner)
+  return aliases, inputs, titles, entry_keys
 
 
 def _fixed_negative_identity(

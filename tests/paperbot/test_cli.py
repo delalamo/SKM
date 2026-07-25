@@ -48,3 +48,11 @@ def test_sync_issue_negatives_requires_a_token(
     main(["--repo-root", str(Path.cwd()), "sync-issue-negatives"])
 
   assert caught.value.code == 2
+
+
+def test_repo_root_requires_its_own_config(
+  tmp_path: Path,
+  capsys: pytest.CaptureFixture[str],
+) -> None:
+  assert main(["--repo-root", str(tmp_path), "check-model"]) == 1
+  assert "regular, non-symlink file" in capsys.readouterr().err

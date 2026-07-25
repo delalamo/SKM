@@ -125,6 +125,41 @@ def test_deduplicate_revisions_uses_latest_version_metadata() -> None:
   assert merged[0].created_at == first.created_at
 
 
+def test_deduplicate_full_ties_are_independent_of_provider_order() -> None:
+  common = {
+    "source_id": "shared",
+    "abstract": "Same-length abstract.",
+    "authors": ("Smith, Ada",),
+    "created_at": datetime(2026, 1, 1, tzinfo=UTC),
+    "updated_at": datetime(2026, 1, 1, tzinfo=UTC),
+    "doi": "10.1234/shared",
+    "version": "1",
+  }
+  pubmed = PaperRecord(
+    source="pubmed",
+    title="Alpha title",
+    venue="Journal A",
+    url="https://example.test/a",
+    license="Licence A",
+    metadata={"provider_value": "alpha"},
+    **common,
+  )
+  crossref = PaperRecord(
+    source="crossref",
+    title="Bravo title",
+    venue="Journal B",
+    url="https://example.test/b",
+    license="Licence B",
+    metadata={"provider_value": "bravo"},
+    **common,
+  )
+
+  forward = deduplicate_records([pubmed, crossref])[0].to_dict()
+  reverse = deduplicate_records([crossref, pubmed])[0].to_dict()
+
+  assert forward == reverse
+
+
 def test_preprint_publication_relationship_merges_transitively() -> None:
   preprint = paper(related_ids=("doi:10.1000/final",))
   pubmed = PaperRecord(

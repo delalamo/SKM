@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -74,6 +75,7 @@ def test_manual_dispatch_is_verify_only_even_for_bibliography() -> None:
     "paperbot.toml",
     "requirements-paperbot.lock",
     ".github/workflows/paper-model-refresh.yml",
+    ".github/CODEOWNERS",
     ".gitattributes",
     "paper_relevance/.gitattributes",
     ".lfsconfig",
@@ -193,6 +195,28 @@ def test_workflow_routes_push_and_validation_through_trusted_policy() -> None:
     assert path in workflow
 
 
+def test_sensitive_paperbot_paths_require_maintainer_code_ownership() -> None:
+  codeowners = Path(".github/CODEOWNERS").read_text(encoding="utf-8")
+  expected = {
+    "/.github/CODEOWNERS",
+    "/.github/workflows/paper-*.yml",
+    "/paperbot.toml",
+    "/requirements-paperbot.lock",
+    "/scripts/paperbot/",
+    "/paper_relevance/",
+    "/tests/paperbot/",
+  }
+  rules = {
+    line.split()[0]: tuple(line.split()[1:])
+    for line in codeowners.splitlines()
+    if line.strip() and not line.lstrip().startswith("#")
+  }
+
+  assert expected.issubset(rules)
+  for path in expected:
+    assert rules[path] == ("@delalamo",)
+
+
 def test_workflow_bootstrap_is_credential_free_and_read_only() -> None:
   workflow = Path(".github/workflows/paper-model-refresh.yml").read_text(
     encoding="utf-8"
@@ -204,7 +228,9 @@ def test_workflow_bootstrap_is_credential_free_and_read_only() -> None:
   assert "steps.dependencies.outputs.bootstrap == 'true'" in tests_job
   assert "tests/paperbot/test_no_remote_summarization.py" in tests_job
   assert "working-directory: candidate" in tests_job
-  assert "run: python -m pytest tests/paperbot" in tests_job
+  assert "env -u PYTHONPATH python -P -c" in tests_job
+  assert "import pytest,sys; sys.path.insert(0, \".\")" in tests_job
+  assert "pytest.main([\"tests/paperbot\"])" in tests_job
   assert "check-model" in tests_job
   assert "secrets." not in tests_job
   assert "git push" not in tests_job
@@ -223,13 +249,587 @@ def test_workflow_triggers_for_paperbot_test_changes() -> None:
 
   trigger = workflow.split("  workflow_dispatch:", maxsplit=1)[0]
   assert "    paths:" not in trigger
+  assert "  merge_group:" in trigger
   assert "Detect paperbot-relevant changes" in workflow
-  assert ":(glob)tests/paperbot/**" in workflow
+  for relevant_path in (
+    ":(glob)tests/paperbot/**",
+    ":(glob)**/.gitignore",
+    ":(glob)**/.pytest.ini",
+    ":(glob)**/.pytest.toml",
+    ":(glob)**/conftest.py",
+    ":(glob)**/pyproject.toml",
+    ":(glob)**/pytest.ini",
+    ":(glob)**/pytest.toml",
+    ":(glob)**/setup.cfg",
+    ":(glob)**/tox.ini",
+    ":(glob)*.py",
+    ":(glob)**/*.py",
+    ":(glob)*.py[cod]",
+    ":(glob)**/*.py[cod]",
+    ":(glob)*.so",
+    ":(glob)**/*.so",
+    ":(glob)*.pyd",
+    ":(glob)**/*.pyd",
+    ":(glob)*.dylib",
+    ":(glob)**/*.dylib",
+    ".github/CODEOWNERS",
+    "sitecustomize.py",
+    "usercustomize.py",
+  ):
+    assert relevant_path in workflow
+  assert 'case "$lock_status" in' in workflow
+  assert 'case "$relevant_status" in' in workflow
   assert "name: Test paperbot without credentials" in workflow
   assert "if: always()" in workflow
 
 
-def test_required_paperbot_gate_cannot_pass_after_detection_or_test_failure() -> None:
+def test_workflow_wires_detection_and_required_gate_outputs_exactly() -> None:
+  workflow = yaml.safe_load(
+    Path(".github/workflows/paper-model-refresh.yml").read_text(
+      encoding="utf-8"
+    )
+  )
+  detect = workflow["jobs"]["detect_paperbot_changes"]
+  assert detect["outputs"] == {
+    "relevant": "${{ steps.changes.outputs.relevant }}",
+    "lock_changed": "${{ steps.changes.outputs.lock_changed }}",
+  }
+  assert detect["env"] == {
+    "BASE_SHA": (
+      "${{ github.event.pull_request.base.sha || "
+      "github.event.merge_group.base_sha || github.sha }}"
+    ),
+    "HEAD_SHA": (
+      "${{ github.event.pull_request.head.sha || "
+      "github.event.merge_group.head_sha || github.sha }}"
+    ),
+  }
+  detect_checkout = next(
+    step
+    for step in detect["steps"]
+    if step["name"] == "Check out candidate history"
+  )
+  expected_candidate_checkout = {
+    "repository": (
+      "${{ github.event.pull_request.head.repo.full_name || "
+      "github.repository }}"
+    ),
+    "ref": "${{ github.event.pull_request.head.sha || github.sha }}",
+    "path": "candidate",
+    "persist-credentials": False,
+  }
+  for key, expected in expected_candidate_checkout.items():
+    assert detect_checkout["with"][key] == expected
+  assert detect_checkout["with"]["fetch-depth"] == 0
+
+  selector = next(
+    step
+    for step in workflow["jobs"]["paperbot_tests"]["steps"]
+    if step["name"] == "Select dependency source"
+  )
+  assert selector["env"]["LOCK_CHANGED"] == (
+    "${{ needs.detect_paperbot_changes.outputs.lock_changed }}"
+  )
+  install = next(
+    step
+    for step in workflow["jobs"]["paperbot_tests"]["steps"]
+    if step["name"] == "Install pinned dependencies"
+  )
+  assert install["run"] == (
+    'python -m pip install --requirement '
+    '"${{ steps.dependencies.outputs.lock }}"'
+  )
+  test_steps = workflow["jobs"]["paperbot_tests"]["steps"]
+  assert test_steps.index(install) < next(
+    index
+    for index, step in enumerate(test_steps)
+    if step["name"] == "Verify model with trusted code under selected dependencies"
+  )
+  test_checkout = next(
+    step
+    for step in test_steps
+    if step["name"] == "Check out candidate code"
+  )
+  assert test_checkout["with"] == expected_candidate_checkout
+
+  gate = workflow["jobs"]["paperbot_test_gate"]
+  assert gate["if"] == "always()"
+  assert gate["needs"] == [
+    "detect_paperbot_changes",
+    "paperbot_tests",
+    "refresh-or-verify",
+  ]
+  assert gate["steps"][0]["env"] == {
+    "DETECT_RESULT": "${{ needs.detect_paperbot_changes.result }}",
+    "RELEVANT": "${{ needs.detect_paperbot_changes.outputs.relevant }}",
+    "TEST_RESULT": "${{ needs.paperbot_tests.result }}",
+    "REFRESH_RESULT": "${{ needs.refresh-or-verify.result }}",
+  }
+
+  refresh_checkout = next(
+    step
+    for step in workflow["jobs"]["refresh-or-verify"]["steps"]
+    if step["name"] == "Check out candidate bibliography"
+  )
+  for key, expected in expected_candidate_checkout.items():
+    assert refresh_checkout["with"][key] == expected
+  assert refresh_checkout["with"]["fetch-depth"] == 0
+
+
+@pytest.mark.parametrize(
+  ("event_name", "expected_lock_changed"),
+  [
+    ("workflow_dispatch", "true"),
+    ("merge_group", "true"),
+  ],
+)
+def test_non_pr_event_detection_is_fail_closed(
+  tmp_path: Path,
+  event_name: str,
+  expected_lock_changed: str,
+) -> None:
+  workflow = yaml.safe_load(
+    Path(".github/workflows/paper-model-refresh.yml").read_text(
+      encoding="utf-8"
+    )
+  )
+  step = next(
+    step
+    for step in workflow["jobs"]["detect_paperbot_changes"]["steps"]
+    if step["name"] == "Detect relevant paths"
+  )
+  output = tmp_path / "github-output"
+  completed = subprocess.run(
+    ["bash", "-c", step["run"]],
+    check=False,
+    capture_output=True,
+    text=True,
+    env={
+      **os.environ,
+      "GITHUB_EVENT_NAME": event_name,
+      "GITHUB_OUTPUT": str(output),
+    },
+  )
+
+  assert completed.returncode == 0, completed.stderr
+  values = output.read_text(encoding="utf-8")
+  assert "relevant=true" in values
+  assert f"lock_changed={expected_lock_changed}" in values
+
+
+def test_pr_change_detection_propagates_git_failures(tmp_path: Path) -> None:
+  workflow = yaml.safe_load(
+    Path(".github/workflows/paper-model-refresh.yml").read_text(
+      encoding="utf-8"
+    )
+  )
+  step = next(
+    step
+    for step in workflow["jobs"]["detect_paperbot_changes"]["steps"]
+    if step["name"] == "Detect relevant paths"
+  )
+  executable_dir = tmp_path / "bin"
+  executable_dir.mkdir()
+  fake_git = executable_dir / "git"
+  fake_git.write_text(
+    "#!/usr/bin/env bash\n"
+    '[[ "$*" == *" fetch "* ]] && exit 0\n'
+    "exit 128\n",
+    encoding="utf-8",
+  )
+  fake_git.chmod(0o755)
+  output = tmp_path / "github-output"
+  completed = subprocess.run(
+    ["bash", "-c", step["run"]],
+    check=False,
+    capture_output=True,
+    text=True,
+    env={
+      **os.environ,
+      "BASE_SHA": "a" * 40,
+      "GITHUB_EVENT_NAME": "pull_request",
+      "GITHUB_OUTPUT": str(output),
+      "GITHUB_REPOSITORY": "delalamo/SKM",
+      "HEAD_SHA": "b" * 40,
+      "PATH": f"{executable_dir}{os.pathsep}{os.environ['PATH']}",
+    },
+  )
+
+  assert completed.returncode == 128
+  assert "Could not inspect changed Git object modes" in (
+    completed.stdout + completed.stderr
+  )
+
+
+@pytest.mark.parametrize(
+  ("changed_path", "symlink_target"),
+  [
+    ("numpy", "scripts/paperbot"),
+    ("scripts.pyc", None),
+    ("scripts.cpython-312-x86_64-linux-gnu.so", None),
+  ],
+)
+def test_pr_change_detection_treats_import_shadows_as_relevant(
+  tmp_path: Path,
+  changed_path: str,
+  symlink_target: str | None,
+) -> None:
+  candidate = tmp_path / "candidate"
+  candidate.mkdir()
+  _git(candidate, "init")
+  _git(candidate, "config", "user.name", "Paperbot Test")
+  _git(candidate, "config", "user.email", "paperbot@example.invalid")
+  (candidate / "README.md").write_text("base\n", encoding="utf-8")
+  _git(candidate, "add", ".")
+  _git(candidate, "commit", "-m", "base")
+  base = _git(candidate, "rev-parse", "HEAD")
+  changed = candidate / changed_path
+  if symlink_target is None:
+    changed.write_bytes(b"importable shadow fixture\n")
+  else:
+    changed.symlink_to(symlink_target)
+  _git(candidate, "add", "-f", changed_path)
+  _git(candidate, "commit", "-m", "importable package symlink")
+  head = _git(candidate, "rev-parse", "HEAD")
+
+  workflow = yaml.safe_load(
+    Path(".github/workflows/paper-model-refresh.yml").read_text(
+      encoding="utf-8"
+    )
+  )
+  step = next(
+    step
+    for step in workflow["jobs"]["detect_paperbot_changes"]["steps"]
+    if step["name"] == "Detect relevant paths"
+  )
+  executable_dir = tmp_path / "bin"
+  executable_dir.mkdir()
+  fake_git = executable_dir / "git"
+  real_git = shutil.which("git")
+  assert real_git is not None
+  fake_git.write_text(
+    "#!/usr/bin/env bash\n"
+    'if [[ "$1" == "-C" && "$3" == "fetch" ]]; then exit 0; fi\n'
+    f'exec "{real_git}" "$@"\n',
+    encoding="utf-8",
+  )
+  fake_git.chmod(0o755)
+  output = tmp_path / "github-output"
+  completed = subprocess.run(
+    ["bash", "-c", step["run"]],
+    cwd=tmp_path,
+    check=False,
+    capture_output=True,
+    text=True,
+    env={
+      **os.environ,
+      "BASE_SHA": base,
+      "GITHUB_EVENT_NAME": "pull_request",
+      "GITHUB_OUTPUT": str(output),
+      "GITHUB_REPOSITORY": "delalamo/SKM",
+      "HEAD_SHA": head,
+      "PATH": f"{executable_dir}{os.pathsep}{os.environ['PATH']}",
+    },
+  )
+
+  assert completed.returncode == 0, completed.stderr
+  values = output.read_text(encoding="utf-8")
+  assert "lock_changed=false" in values
+  assert "relevant=true" in values
+
+
+def test_symlink_detection_cannot_mask_a_later_git_failure(
+  tmp_path: Path,
+) -> None:
+  workflow = yaml.safe_load(
+    Path(".github/workflows/paper-model-refresh.yml").read_text(
+      encoding="utf-8"
+    )
+  )
+  step = next(
+    step
+    for step in workflow["jobs"]["detect_paperbot_changes"]["steps"]
+    if step["name"] == "Detect relevant paths"
+  )
+  executable_dir = tmp_path / "bin"
+  executable_dir.mkdir()
+  fake_git = executable_dir / "git"
+  fake_git.write_text(
+    "#!/usr/bin/env bash\n"
+    '[[ "$*" == *" fetch "* ]] && exit 0\n'
+    'if [[ "$*" == *" --raw "* ]]; then\n'
+    "  printf ':000000 120000 0000000 1111111 A\\tnumpy\\n'\n"
+    "  exit 0\n"
+    "fi\n"
+    '[[ "$*" == *"bibliography.bib"* ]] && exit 128\n'
+    '[[ "$*" == *"requirements-paperbot.lock"* ]] && exit 0\n'
+    "exit 128\n",
+    encoding="utf-8",
+  )
+  fake_git.chmod(0o755)
+  completed = subprocess.run(
+    ["bash", "-c", step["run"]],
+    check=False,
+    capture_output=True,
+    text=True,
+    env={
+      **os.environ,
+      "BASE_SHA": "a" * 40,
+      "GITHUB_EVENT_NAME": "pull_request",
+      "GITHUB_OUTPUT": str(tmp_path / "github-output"),
+      "GITHUB_REPOSITORY": "delalamo/SKM",
+      "HEAD_SHA": "b" * 40,
+      "PATH": f"{executable_dir}{os.pathsep}{os.environ['PATH']}",
+    },
+  )
+
+  assert completed.returncode == 128
+  assert "Could not determine whether paperbot-relevant paths changed" in (
+    completed.stdout + completed.stderr
+  )
+
+
+def test_changed_dependency_lock_is_tested_in_the_candidate_environment(
+  tmp_path: Path,
+) -> None:
+  workspace = tmp_path / "workspace"
+  trusted = workspace / "trusted"
+  candidate = workspace / "candidate"
+  (trusted / "scripts" / "paperbot").mkdir(parents=True)
+  candidate.mkdir(parents=True)
+  (trusted / "requirements-paperbot.lock").write_text(
+    "trusted==1\n", encoding="utf-8"
+  )
+  (trusted / "scripts" / "paperbot" / "pr_safety.py").write_text(
+    "# trusted\n", encoding="utf-8"
+  )
+  (candidate / "requirements-paperbot.lock").write_text(
+    "candidate==2\n", encoding="utf-8"
+  )
+  workflow = yaml.safe_load(
+    Path(".github/workflows/paper-model-refresh.yml").read_text(
+      encoding="utf-8"
+    )
+  )
+  step = next(
+    step
+    for step in workflow["jobs"]["paperbot_tests"]["steps"]
+    if step["name"] == "Select dependency source"
+  )
+
+  for changed, expected_lock in (
+    ("false", "trusted/requirements-paperbot.lock"),
+    ("true", "candidate/requirements-paperbot.lock"),
+  ):
+    output = tmp_path / f"github-output-{changed}"
+    completed = subprocess.run(
+      ["bash", "-c", step["run"]],
+      check=False,
+      capture_output=True,
+      text=True,
+      env={
+        **os.environ,
+        "GITHUB_OUTPUT": str(output),
+        "GITHUB_WORKSPACE": str(workspace),
+        "LOCK_CHANGED": changed,
+      },
+    )
+    assert completed.returncode == 0, completed.stderr
+    values = output.read_text(encoding="utf-8")
+    assert f"lock={expected_lock}" in values
+    assert "bootstrap=false" in values
+
+
+def test_candidate_dependencies_never_enter_the_credentialed_refresh_job() -> None:
+  workflow = Path(".github/workflows/paper-model-refresh.yml").read_text(
+    encoding="utf-8"
+  )
+  tests_job, refresh_job = workflow.split("  refresh-or-verify:", maxsplit=1)
+
+  assert (
+    "Verify model with trusted code under selected dependencies"
+    in tests_job
+  )
+  assert 'working-directory: trusted' in tests_job
+  assert '--repo-root "$GITHUB_WORKSPACE/candidate"' in tests_job
+  assert "candidate/requirements-paperbot.lock" in tests_job
+
+  assert "--requirement trusted/requirements-paperbot.lock" in refresh_job
+  assert "--requirement candidate/requirements-paperbot.lock" not in refresh_job
+  assert "steps.refresh_dependencies" not in refresh_job
+
+
+def test_safe_path_prevents_candidate_pytest_module_shadowing(
+  tmp_path: Path,
+) -> None:
+  candidate = tmp_path / "candidate"
+  tests = candidate / "tests" / "paperbot"
+  tests.mkdir(parents=True)
+  scripts = candidate / "scripts"
+  scripts.mkdir()
+  (scripts / "__init__.py").write_text("", encoding="utf-8")
+  (scripts / "sentinel.py").write_text("VALUE = 42\n", encoding="utf-8")
+  (candidate / "pytest.py").write_text(
+    "raise SystemExit(0)\n", encoding="utf-8"
+  )
+  (tests / "test_must_run.py").write_text(
+    "from scripts.sentinel import VALUE\n\n"
+    "def test_must_run():\n"
+    "  assert VALUE == 42\n"
+    "  assert False, 'the real pytest runner collected this test'\n",
+    encoding="utf-8",
+  )
+
+  unsafe = subprocess.run(
+    [os.sys.executable, "-m", "pytest", "tests/paperbot"],
+    cwd=candidate,
+    check=False,
+    capture_output=True,
+    text=True,
+    env={**os.environ, "PYTHONPATH": str(candidate)},
+  )
+  safe = subprocess.run(
+    [
+      "env",
+      "-u",
+      "PYTHONPATH",
+      os.sys.executable,
+      "-P",
+      "-c",
+      (
+        'import pytest,sys; sys.path.insert(0, "."); '
+        'raise SystemExit(pytest.main(["tests/paperbot"]))'
+      ),
+    ],
+    cwd=candidate,
+    check=False,
+    capture_output=True,
+    text=True,
+    env={**os.environ, "PYTHONPATH": str(candidate)},
+  )
+
+  assert unsafe.returncode == 0
+  assert safe.returncode == 1
+  assert "the real pytest runner collected this test" in (
+    safe.stdout + safe.stderr
+  )
+
+
+def test_full_base_history_is_used_for_triple_dot_diffs() -> None:
+  workflow = yaml.safe_load(
+    Path(".github/workflows/paper-model-refresh.yml").read_text(
+      encoding="utf-8"
+    )
+  )
+  detect_script = next(
+    step["run"]
+    for step in workflow["jobs"]["detect_paperbot_changes"]["steps"]
+    if step["name"] == "Detect relevant paths"
+  )
+  classify_script = next(
+    step["run"]
+    for step in workflow["jobs"]["refresh-or-verify"]["steps"]
+    if step["name"] == "Classify the pull request"
+  )
+  for script in (detect_script, classify_script):
+    assert "fetch --no-tags" in script
+    assert "--depth" not in script
+  assert '"$BASE_SHA...$HEAD_SHA"' in detect_script
+
+
+def test_full_base_fetch_supports_a_diverged_pull_request(
+  tmp_path: Path,
+) -> None:
+  upstream = tmp_path / "upstream.git"
+  _git(tmp_path, "init", "--bare", str(upstream))
+
+  maintainer = tmp_path / "maintainer"
+  maintainer.mkdir()
+  _git(maintainer, "init")
+  _git(maintainer, "config", "user.name", "Paperbot Test")
+  _git(maintainer, "config", "user.email", "paperbot@example.invalid")
+  (maintainer / "README.md").write_text("base\n", encoding="utf-8")
+  _git(maintainer, "add", ".")
+  _git(maintainer, "commit", "-m", "base")
+  _git(maintainer, "branch", "-M", "main")
+  _git(maintainer, "remote", "add", "origin", str(upstream))
+  _git(maintainer, "push", "-u", "origin", "main")
+
+  candidate = tmp_path / "candidate"
+  _git(
+    tmp_path,
+    "clone",
+    "--branch",
+    "main",
+    str(upstream),
+    str(candidate),
+  )
+  _git(candidate, "config", "user.name", "Paperbot Test")
+  _git(candidate, "config", "user.email", "paperbot@example.invalid")
+  _git(candidate, "checkout", "-b", "feature")
+  (candidate / "scripts" / "paperbot").mkdir(parents=True)
+  (candidate / "scripts" / "paperbot" / "model.py").write_text(
+    "feature = True\n", encoding="utf-8"
+  )
+  _git(candidate, "add", ".")
+  _git(candidate, "commit", "-m", "feature")
+  head = _git(candidate, "rev-parse", "HEAD")
+
+  (maintainer / "README.md").write_text("base advanced\n", encoding="utf-8")
+  _git(maintainer, "commit", "-am", "advance main")
+  base = _git(maintainer, "rev-parse", "HEAD")
+  _git(maintainer, "push", "origin", "main")
+
+  _git(candidate, "fetch", "--no-tags", str(upstream), base)
+  completed = subprocess.run(
+    [
+      "git",
+      "-C",
+      str(candidate),
+      "diff",
+      "--quiet",
+      "--no-renames",
+      f"{base}...{head}",
+      "--",
+      "scripts/paperbot/model.py",
+    ],
+    check=False,
+    capture_output=True,
+    text=True,
+  )
+
+  assert completed.returncode == 1, completed.stderr
+
+
+def test_dependency_source_rejects_invalid_change_detection(
+  tmp_path: Path,
+) -> None:
+  workflow = yaml.safe_load(
+    Path(".github/workflows/paper-model-refresh.yml").read_text(
+      encoding="utf-8"
+    )
+  )
+  step = next(
+    step
+    for step in workflow["jobs"]["paperbot_tests"]["steps"]
+    if step["name"] == "Select dependency source"
+  )
+  completed = subprocess.run(
+    ["bash", "-c", step["run"]],
+    check=False,
+    capture_output=True,
+    text=True,
+    env={
+      **os.environ,
+      "GITHUB_OUTPUT": str(tmp_path / "github-output"),
+      "GITHUB_WORKSPACE": str(tmp_path),
+      "LOCK_CHANGED": "",
+    },
+  )
+  assert completed.returncode == 1
+
+
+def test_required_paperbot_gate_cannot_pass_after_required_job_failure() -> None:
   workflow = Path(".github/workflows/paper-model-refresh.yml").read_text(
     encoding="utf-8"
   )
@@ -237,10 +837,14 @@ def test_required_paperbot_gate_cannot_pass_after_detection_or_test_failure() ->
     "  refresh-or-verify:", maxsplit=1
   )[0]
 
-  assert "needs: [detect_paperbot_changes, paperbot_tests]" in gate
+  assert (
+    "needs: [detect_paperbot_changes, paperbot_tests, refresh-or-verify]"
+    in gate
+  )
   assert "DETECT_RESULT" in gate
   assert '"$DETECT_RESULT" != "success"' in gate
   assert '"$RELEVANT" == "true" && "$TEST_RESULT" != "success"' in gate
+  assert '"$RELEVANT" == "true" && "$REFRESH_RESULT" != "success"' in gate
   assert '"$RELEVANT" != "true" && "$RELEVANT" != "false"' in gate
 
 
@@ -252,6 +856,7 @@ def test_required_paperbot_gate_cannot_pass_after_detection_or_test_failure() ->
         "DETECT_RESULT": "success",
         "RELEVANT": "false",
         "TEST_RESULT": "skipped",
+        "REFRESH_RESULT": "skipped",
       },
       0,
     ),
@@ -260,6 +865,7 @@ def test_required_paperbot_gate_cannot_pass_after_detection_or_test_failure() ->
         "DETECT_RESULT": "success",
         "RELEVANT": "true",
         "TEST_RESULT": "success",
+        "REFRESH_RESULT": "success",
       },
       0,
     ),
@@ -268,6 +874,16 @@ def test_required_paperbot_gate_cannot_pass_after_detection_or_test_failure() ->
         "DETECT_RESULT": "success",
         "RELEVANT": "true",
         "TEST_RESULT": "failure",
+        "REFRESH_RESULT": "success",
+      },
+      1,
+    ),
+    (
+      {
+        "DETECT_RESULT": "success",
+        "RELEVANT": "true",
+        "TEST_RESULT": "success",
+        "REFRESH_RESULT": "failure",
       },
       1,
     ),
@@ -276,6 +892,7 @@ def test_required_paperbot_gate_cannot_pass_after_detection_or_test_failure() ->
         "DETECT_RESULT": "failure",
         "RELEVANT": "",
         "TEST_RESULT": "skipped",
+        "REFRESH_RESULT": "skipped",
       },
       1,
     ),
@@ -329,6 +946,54 @@ def test_workflow_scopes_tokens_to_their_required_steps() -> None:
   assert "MODEL_UPDATE_TOKEN: ${{ secrets.MODEL_UPDATE_TOKEN }}" in commit_and_after
   assert '--force-with-lease="refs/heads/$HEAD_REF:$HEAD_SHA"' in commit_and_after
   assert '"HEAD:refs/heads/$HEAD_REF"' in commit_and_after
+  assert (
+    commit_and_after.index("git -C candidate diff --cached --quiet")
+    < commit_and_after.index('[[ -z "$MODEL_UPDATE_TOKEN" ]]')
+  )
+
+
+def test_noop_refresh_does_not_require_model_update_token(
+  tmp_path: Path,
+) -> None:
+  candidate = tmp_path / "candidate"
+  candidate.mkdir()
+  _git(candidate, "init")
+  _git(candidate, "config", "user.name", "Paperbot Test")
+  _git(candidate, "config", "user.email", "paperbot@example.invalid")
+  for relative in GENERATED_PATHS:
+    path = candidate / relative
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(b"fixture\n")
+  _git(candidate, "add", ".")
+  _git(candidate, "commit", "-m", "current artifacts")
+
+  workflow = yaml.safe_load(
+    Path(".github/workflows/paper-model-refresh.yml").read_text(
+      encoding="utf-8"
+    )
+  )
+  step = next(
+    step
+    for step in workflow["jobs"]["refresh-or-verify"]["steps"]
+    if step["name"] == "Commit refreshed artifacts to trusted PR branch"
+  )
+  completed = subprocess.run(
+    ["bash", "-c", step["run"]],
+    cwd=tmp_path,
+    check=False,
+    capture_output=True,
+    text=True,
+    env={
+      **os.environ,
+      "HEAD_REF": "feature",
+      "HEAD_REPOSITORY": "delalamo/SKM",
+      "HEAD_SHA": _git(candidate, "rev-parse", "HEAD"),
+      "MODEL_UPDATE_TOKEN": "",
+    },
+  )
+
+  assert completed.returncode == 0, completed.stderr
+  assert "already current" in completed.stdout
 
 
 def test_workflow_stages_exactly_the_generated_allowlist() -> None:

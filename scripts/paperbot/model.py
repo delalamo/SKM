@@ -19,6 +19,7 @@ from pathlib import Path
 from typing import Any, Iterable, Mapping, Protocol, Sequence
 
 from .bibliography import (
+  BibliographyEntry,
   CanonicalWork,
   canonicalize_entries,
   embedding_input_hash,
@@ -53,6 +54,7 @@ from .issue_negatives import (
   load_issue_negative_snapshot,
   strict_title_alias,
 )
+from .records import normalize_title as normalize_record_title
 
 
 BASE_MODEL = "allenai/specter2_base"
@@ -617,8 +619,14 @@ def refresh_model(
   negative_path = Path(negatives_path) if negatives_path else artifacts / NEGATIVE_CORPUS
   negative_metadata_path = negative_path.with_name(NEGATIVE_METADATA)
   issue_negative_path = artifacts / ISSUE_NEGATIVE_CORPUS
+  if not issue_negative_path.exists():
+    raise ValueError(
+      "The synchronized issue-negative snapshot is missing; "
+      "run sync-issue-negatives before refreshing the model"
+    )
   exceptions = load_title_only_exceptions(title_only_exceptions_path)
-  works = canonicalize_entries(load_bibliography(bibliography_path))
+  bibliography_entries = load_bibliography(bibliography_path)
+  works = canonicalize_entries(bibliography_entries)
   require_abstracts(works, exceptions)
   negatives = load_negative_corpus(negative_path)
   issue_negative_snapshot = load_issue_negative_snapshot(issue_negative_path)
@@ -626,6 +634,7 @@ def refresh_model(
     issue_negative_snapshot,
     works,
     negatives,
+    bibliography_entries,
   )
   issue_negative_training_hash = _issue_negative_training_hash(
     issue_negative_items
@@ -823,8 +832,6 @@ def refresh_model(
   _atomic_write_jsonl(artifacts / POSITIVE_MANIFEST, positive_manifest)
   _atomic_save_npy(artifacts / NEGATIVE_MATRIX, negative_matrix)
   _atomic_write_jsonl(artifacts / NEGATIVE_MANIFEST, negative_manifest)
-  if not issue_negative_path.exists():
-    _atomic_write_jsonl(issue_negative_path, issue_negative_snapshot_records)
   _atomic_save_npy(artifacts / ISSUE_NEGATIVE_MATRIX, issue_negative_matrix)
   _atomic_write_jsonl(
     artifacts / ISSUE_NEGATIVE_MANIFEST, issue_negative_manifest
@@ -936,10 +943,70 @@ def _fixed_negative_identities(paper: NegativePaper) -> set[str]:
   return identities
 
 
+def _issue_overlap_provenance(
+  record: IssueNegativeRecord,
+  works: Sequence[CanonicalWork],
+  fixed_negatives: Sequence[NegativePaper],
+  bibliography_entries: Sequence[BibliographyEntry],
+) -> tuple[tuple[str, ...], tuple[str, ...]]:
+  """Recompute exact current overlap provenance from carried component data."""
+
+  row_ids = _identity_aliases(record.work_id)
+  for alias in record.aliases:
+    row_ids.update(_identity_aliases(alias))
+  component_titles = set(record.component_titles) or {
+    normalize_record_title(record.title)
+  }
+  component_inputs = set(record.component_input_hashes) or {
+    record.input_hash
+  }
+  known_bib_keys = set(record.known_bib_keys)
+
+  bibliography_keys: set[str] = set()
+  for work in works:
+    identity_match = bool(row_ids & _work_identities(work))
+    title_match = normalize_record_title(work.title) in component_titles
+    input_match = (
+      embedding_input_hash(work.title, work.abstract) in component_inputs
+    )
+    if identity_match or title_match or input_match:
+      bibliography_keys.add(work.citekey)
+    bibliography_keys.update(known_bib_keys & set(work.aliases))
+  owner_by_key = {
+    alias: work.citekey
+    for work in works
+    for alias in work.aliases
+  }
+  for entry in bibliography_entries:
+    if (
+      normalize_record_title(entry.title) in component_titles
+      or (
+        bool(entry.abstract)
+        and embedding_input_hash(entry.title, entry.abstract)
+        in component_inputs
+      )
+    ):
+      bibliography_keys.add(owner_by_key.get(entry.key, entry.key))
+
+  fixed_negative_ids: set[str] = set()
+  for paper in fixed_negatives:
+    fixed_id = str(
+      paper.metadata.get("work_id") or paper.paper_id
+    ).strip()
+    if (
+      row_ids & _fixed_negative_identities(paper)
+      or normalize_record_title(paper.title) in component_titles
+      or embedding_input_hash(paper.title, paper.abstract) in component_inputs
+    ):
+      fixed_negative_ids.add(fixed_id)
+  return tuple(sorted(bibliography_keys)), tuple(sorted(fixed_negative_ids))
+
+
 def _issue_negative_items(
   snapshot: Sequence[IssueNegativeRecord],
   works: Sequence[CanonicalWork],
   fixed_negatives: Sequence[NegativePaper],
+  bibliography_entries: Sequence[BibliographyEntry],
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
   """Build the effective issue-negative corpus and fail closed on duplicates.
 
@@ -948,32 +1015,6 @@ def _issue_negative_items(
   or one already represented by the frozen corpus, must never receive negative
   training weight even if an old snapshot still marks it as included.
   """
-
-  positive_ids = set().union(*(_work_identities(work) for work in works)) if works else set()
-  # Stable identifiers and title/author/year aliases are the preferred match,
-  # but old issues can lack either one. An exact normalized title is a
-  # deliberately conservative final guard against teaching the classifier
-  # that a bibliography paper is negative after its abstract was revised.
-  positive_titles = {
-    normalized
-    for work in works
-    if (normalized := normalize_title(work.title))
-  }
-  positive_inputs = {
-    embedding_input_hash(work.title, work.abstract) for work in works
-  }
-  fixed_ids = (
-    set().union(*(_fixed_negative_identities(paper) for paper in fixed_negatives))
-    if fixed_negatives else set()
-  )
-  fixed_inputs = {
-    embedding_input_hash(paper.title, paper.abstract) for paper in fixed_negatives
-  }
-  fixed_titles = {
-    normalized
-    for paper in fixed_negatives
-    if (normalized := normalize_title(paper.title))
-  }
 
   seen_work_ids: set[str] = set()
   seen_aliases: dict[str, str] = {}
@@ -1011,24 +1052,31 @@ def _issue_negative_items(
         )
       seen_issue_numbers[issue_number] = work_id
 
-    effective_included = record.active
-    effective_reasons = set(record.omission_reasons)
-    if effective_included:
+    bibliography_keys, fixed_negative_ids = _issue_overlap_provenance(
+      record, works, fixed_negatives, bibliography_entries
+    )
+    computed_reasons = tuple(
+      reason
+      for reason, applies in (
+        ("bibliography_overlap", bool(bibliography_keys)),
+        ("fixed_negative_overlap", bool(fixed_negative_ids)),
+      )
+      if applies
+    )
+    if not record.active and (
+      record.omission_reasons != computed_reasons
+      or record.bibliography_keys != bibliography_keys
+      or record.fixed_negative_ids != fixed_negative_ids
+    ):
+      raise ValueError(
+        f"Inactive issue-negative overlap provenance is stale or invalid for "
+        f"{work_id}"
+      )
+
+    effective_included = not computed_reasons
+    effective_reasons = set(computed_reasons)
+    if record.active:
       collector_included_count += 1
-      if (
-        row_ids & positive_ids
-        or normalize_title(title) in positive_titles
-        or input_hash in positive_inputs
-      ):
-        effective_included = False
-        effective_reasons.add("bibliography_overlap")
-      elif (
-        row_ids & fixed_ids
-        or normalize_title(title) in fixed_titles
-        or input_hash in fixed_inputs
-      ):
-        effective_included = False
-        effective_reasons.add("fixed_negative_overlap")
 
     if not effective_included:
       for reason in sorted(effective_reasons):
@@ -1046,6 +1094,9 @@ def _issue_negative_items(
       "issue_numbers": list(record.issue_numbers),
       "issue_urls": list(record.issue_urls),
       "selected_issue_number": record.selected_issue_number,
+      "known_bib_keys": list(record.known_bib_keys),
+      "component_titles": list(record.component_titles),
+      "component_input_hashes": list(record.component_input_hashes),
       "title": title,
       "abstract_hash": hashlib.sha256(abstract.encode("utf-8")).hexdigest(),
       "input_hash": input_hash,
@@ -1163,7 +1214,15 @@ def _refresh_embedding_matrix(
         row_index = len(rows)
         rows.append(old_matrix[int(previous["row"])].astype(np.float32, copy=True))
         manifest.append({**public_item, "row": row_index, "active": True})
-      if previous.get("input_hash") != item.get("input_hash"):
+      # ``input_hash`` intentionally uses a punctuation-insensitive title for
+      # identity matching. SPECTER2 receives the exact stripped title, so title
+      # formatting changes must independently invalidate a reusable vector.
+      previous_title = str(previous.get("title") or "").strip()
+      current_title = str(item.get("title") or "").strip()
+      if (
+        previous.get("input_hash") != item.get("input_hash")
+        or previous_title != current_title
+      ):
         pending.append(item)
         pending_rows.append(row_index)
     else:
@@ -1407,7 +1466,8 @@ def model_errors(
     errors.append(f"could not independently refit classifier: {error}")
 
   exceptions = load_title_only_exceptions(title_only_exceptions_path)
-  works = canonicalize_entries(load_bibliography(bibliography_path))
+  bibliography_entries = load_bibliography(bibliography_path)
+  works = canonicalize_entries(bibliography_entries)
   try:
     require_abstracts(works, exceptions)
   except ValueError as error:
@@ -1536,6 +1596,7 @@ def model_errors(
         issue_negative_snapshot,
         works,
         negatives,
+        bibliography_entries,
       )
       issue_negative_corpus_hash = _records_hash(issue_negative_items)
       issue_negative_training_hash = _issue_negative_training_hash(
@@ -1564,6 +1625,9 @@ def model_errors(
           "issue_numbers",
           "issue_urls",
           "selected_issue_number",
+          "known_bib_keys",
+          "component_titles",
+          "component_input_hashes",
           "title",
           "abstract_hash",
           "input_hash",
@@ -1902,14 +1966,14 @@ def _verify_reusable_embedding_artifacts(
       _validate_embedding_artifact(matrix, rows, f"{label} matrix")
       matrix_hash = _array_hash(matrix)
       manifest_hash = _records_hash(rows)
-    except Exception as error:
-      raise ValueError(
-        f"Refusing to reuse corrupt {label} embedding artifacts: {error}"
-      ) from error
+    except Exception:
+      # A prior refresh may have stopped between atomic per-file replacements.
+      # Rebuild all rows rather than making that partially written state
+      # permanently unrecoverable. ``check_model`` still rejects it until an
+      # explicit trusted refresh completes.
+      return False
     if matrix_hash != expected_matrix_hash or manifest_hash != expected_manifest_hash:
-      raise ValueError(
-        f"Refusing to reuse corrupt {label} embedding artifacts; restore or rebuild them explicitly"
-      )
+      return False
   return True
 
 
@@ -1944,18 +2008,13 @@ def _verify_reusable_issue_embedding_artifacts(
     _validate_embedding_artifact(matrix, rows, "issue-negative matrix")
     matrix_hash = _array_hash(matrix)
     manifest_hash = _records_hash(rows)
-  except Exception as error:
-    raise ValueError(
-      f"Refusing to reuse corrupt issue-negative embedding artifacts: {error}"
-    ) from error
+  except Exception:
+    return False
   if (
     matrix_hash != expected_matrix_hash
     or manifest_hash != expected_manifest_hash
   ):
-    raise ValueError(
-      "Refusing to reuse corrupt issue-negative embedding artifacts; "
-      "restore or rebuild them explicitly"
-    )
+    return False
   return True
 
 

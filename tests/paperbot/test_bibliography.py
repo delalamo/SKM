@@ -76,6 +76,47 @@ class BibtexTests(unittest.TestCase):
     self.assertEqual([entry.key for entry in entries], ["quoted", "later"])
     self.assertIn('"surprising result', entries[0].abstract)
 
+  def test_malformed_entries_and_fields_fail_closed(self) -> None:
+    for source, message in (
+      ("@article{missing-separator}", "citation-key separator"),
+      ("@article{, title={Empty key}}", "empty citation key"),
+      (
+        "@article{bad key, title={Invalid key}}",
+        "invalid citation key",
+      ),
+      (
+        "@article{bad, title={Visible}, ???, abstract={Hidden}}",
+        "Malformed BibTeX field",
+      ),
+      (
+        "@article{duplicate, title={One}, title={Two}}",
+        "Duplicate BibTeX field",
+      ),
+      (
+        "@article{missing-value, title=, abstract={Hidden}}",
+        "missing value",
+      ),
+      (
+        "@article{missing-field-comma, title={Visible} abstract={Hidden}}",
+        "missing comma separator",
+      ),
+    ):
+      with self.subTest(source=source):
+        with self.assertRaisesRegex(ValueError, message):
+          parse_bibtex(source)
+
+  def test_bare_field_atom_stops_before_a_percent_comment(self) -> None:
+    [entry] = parse_bibtex(
+      "@article{commented-atom,\n"
+      "  title = {Visible},\n"
+      "  year = 2024 % keep this source comment\n"
+      "  , abstract = {Still parsed},\n"
+      "}\n"
+    )
+
+    self.assertEqual(entry.fields["year"], "2024")
+    self.assertEqual(entry.abstract, "Still parsed")
+
   def test_render_escapes_percent_without_changing_semantic_abstract(self) -> None:
     entry = BibliographyEntry(
       "article",
@@ -210,7 +251,7 @@ class BibtexTests(unittest.TestCase):
               "title": "Exact shared title",
               "author": "Smith, A and Jones, B",
               "year": "2024",
-              "doi": "10.1038/example",
+              "doi": "10.9999/example",
               "abstract": "Publication abstract.",
             },
           ),
@@ -219,6 +260,7 @@ class BibtexTests(unittest.TestCase):
           works = canonicalize_entries(ordering)
           self.assertEqual(len(works), 1)
           self.assertEqual(works[0].aliases, ("preprint", "published"))
+          self.assertEqual(works[0].work_id, "doi:10.9999/example")
 
   def test_identifierless_fallback_never_bridges_conflicting_dois(self) -> None:
     entries = [

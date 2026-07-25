@@ -66,6 +66,7 @@ def is_sensitive_path(value: str) -> bool:
     or path == ".gitattributes"
     or path.endswith("/.gitattributes")
     or path == ".lfsconfig"
+    or path == ".github/CODEOWNERS"
     or path in {"paperbot.toml", "requirements-paperbot.lock"}
     or path.startswith(".github/workflows/")
     or path.startswith("paper_relevance/pubmed_negatives_v1")

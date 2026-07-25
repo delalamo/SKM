@@ -114,7 +114,7 @@ def main(argv: Sequence[str] | None = None) -> int:
   elif not config_path.is_absolute():
     config_path = root / config_path
   try:
-    config = load_config(config_path)
+    config = load_config(config_path, repository_root=root)
     _validate_pins(config)
     if args.command == "backfill-bibliography":
       result = backfill_bibliography(config, dry_run=args.dry_run)

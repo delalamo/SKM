@@ -12,13 +12,13 @@ from pathlib import Path
 from typing import Any, Mapping
 
 from .bibliography import (
-  BibliographyEntry,
+  add_missing_abstracts,
   canonicalize_entries,
   load_bibliography,
   load_title_only_exceptions,
   missing_abstracts,
   normalize_abstract,
-  render_bibtex,
+  parse_bibtex,
 )
 from .config import PaperbotConfig
 from .enrichment import AbstractResolver, ResolvedAbstract
@@ -83,6 +83,7 @@ def backfill_bibliography(
   """
 
   entries = load_bibliography(config.bibliography_path)
+  _require_unique_citation_keys(entries)
   works = canonicalize_entries(entries)
   resolver = resolver or AbstractResolver(contact_email=config.contact_email)
   exceptions = load_title_only_exceptions(config.abstract_exceptions_path)
@@ -96,6 +97,7 @@ def backfill_bibliography(
   aliases_filled = 0
   for work in works:
     resolved: ResolvedAbstract | None
+    fetched = False
     reported_license = (
       work.fields.get("license", "").strip()
       or work.fields.get("copyright", "").strip()
@@ -118,12 +120,15 @@ def backfill_bibliography(
       resolved = None
     else:
       resolved = resolver.resolve(work.fields)
-      if resolved:
-        fetched_count += 1
+      fetched = resolved is not None
     if not resolved or not resolved.text:
       continue
 
     abstract = normalize_abstract(resolved.text)
+    if not abstract:
+      continue
+    if fetched:
+      fetched_count += 1
     for alias in work.aliases:
       abstracts[alias] = abstract
     aliases_filled += sum(
@@ -131,7 +136,18 @@ def backfill_bibliography(
       for entry in entries
       if entry.key in work.aliases and not normalize_abstract(entry.fields.get("abstract", ""))
     )
-    previous = old_provenance.get(work.work_id, {})
+    previous = (
+      old_provenance.get(work.work_id)
+      or old_provenance.get(work.citekey)
+      or next(
+        (
+          old_provenance[alias]
+          for alias in work.aliases
+          if alias in old_provenance
+        ),
+        {},
+      )
+    )
     source = resolved.source
     source_url = resolved.source_url
     license_value = resolved.license
@@ -155,20 +171,18 @@ def backfill_bibliography(
       }
     )
 
-  updated_entries = [
-    BibliographyEntry(
-      entry.entry_type,
-      entry.key,
-      {
-        **entry.fields,
-        **({"abstract": abstracts[entry.key]} if entry.key in abstracts else {}),
-      },
-    )
+  additions = {
+    entry.key: abstracts[entry.key]
     for entry in entries
-  ]
+    if entry.key in abstracts
+    and not normalize_abstract(entry.fields.get("abstract", ""))
+  }
+  new_text = add_missing_abstracts(old_text, additions)
+  updated_entries = parse_bibtex(new_text)
+  if [entry.key for entry in updated_entries] != [entry.key for entry in entries]:
+    raise ValueError("Abstract insertion changed the parsed BibTeX entry sequence")
   updated_works = canonicalize_entries(updated_entries)
   unresolved = tuple(work.citekey for work in missing_abstracts(updated_works, exceptions))
-  new_text = render_bibtex(updated_entries)
   changed = new_text != old_text
 
   if not dry_run:
@@ -184,6 +198,21 @@ def backfill_bibliography(
     unresolved=unresolved,
     changed=changed,
   )
+
+
+def _require_unique_citation_keys(entries: list[Any]) -> None:
+  owners: dict[str, str] = {}
+  duplicates: set[str] = set()
+  for entry in entries:
+    normalized = entry.key.casefold()
+    previous = owners.get(normalized)
+    if previous is None:
+      owners[normalized] = entry.key
+    else:
+      duplicates.update((previous, entry.key))
+  if duplicates:
+    labels = ", ".join(sorted(duplicates, key=str.casefold))
+    raise ValueError(f"Duplicate BibTeX citation keys are not allowed: {labels}")
 
 
 def _sha256(value: str) -> str:
