@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from itertools import permutations
 import json
 import sys
 import tempfile
@@ -98,6 +99,57 @@ class BibtexTests(unittest.TestCase):
   def test_normalize_doi_strips_biorxiv_version(self) -> None:
     self.assertEqual(normalize_doi("https://doi.org/10.1101/2024.01.02.123456v3"), "10.1101/2024.01.02.123456")
 
+  def test_normalize_doi_strips_both_chemrxiv_version_styles(self) -> None:
+    self.assertEqual(
+      normalize_doi("https://doi.org/10.26434/chemrxiv-2026-example-v3"),
+      "10.26434/chemrxiv-2026-example",
+    )
+    self.assertEqual(
+      normalize_doi("https://doi.org/10.26434/chemrxiv.15006393/v4"),
+      "10.26434/chemrxiv.15006393",
+    )
+
+  def test_chemrxiv_versions_receive_one_positive_training_weight(self) -> None:
+    for doi_v1, doi_v2 in (
+      (
+        "10.26434/chemrxiv-2026-example-v1",
+        "10.26434/chemrxiv-2026-example-v2",
+      ),
+      (
+        "10.26434/chemrxiv.15006393/v1",
+        "10.26434/chemrxiv.15006393/v2",
+      ),
+    ):
+      with self.subTest(doi_v1=doi_v1):
+        entries = [
+          BibliographyEntry(
+            "misc",
+            "version-one",
+            {
+              "title": "ChemRxiv work",
+              "author": "Smith, A",
+              "year": "2025",
+              "doi": doi_v1,
+              "abstract": "First version.",
+            },
+          ),
+          BibliographyEntry(
+            "misc",
+            "version-two",
+            {
+              "title": "ChemRxiv work revised",
+              "author": "Smith, A",
+              "year": "2026",
+              "doi": doi_v2,
+              "abstract": "Second version.",
+            },
+          ),
+        ]
+        for ordering in permutations(entries):
+          works = canonicalize_entries(ordering)
+          self.assertEqual(len(works), 1)
+          self.assertEqual(works[0].aliases, ("version-one", "version-two"))
+
   def test_canonicalize_merges_shared_identifier_once(self) -> None:
     works = canonicalize_entries(parse_bibtex(SAMPLE))
     self.assertEqual(len(works), 1)
@@ -129,6 +181,246 @@ class BibtexTests(unittest.TestCase):
     works = canonicalize_entries(entries)
     self.assertEqual(len(works), 1)
     self.assertEqual(works[0].work_id, "doi:10.1038/example")
+
+  def test_all_supported_preprint_doi_families_bridge_to_publications(self) -> None:
+    for preprint_doi in (
+      "10.1101/2022.01.01.123456",
+      "10.21203/rs.3.rs-123/v1",
+      "10.26434/chemrxiv-2022-example-v1",
+      "10.48550/arxiv.2201.00001",
+      "10.64898/2022.01.01.123456",
+    ):
+      with self.subTest(preprint_doi=preprint_doi):
+        entries = [
+          BibliographyEntry(
+            "misc",
+            "preprint",
+            {
+              "title": "Exact shared title",
+              "author": "Smith, A",
+              "year": "2022",
+              "doi": preprint_doi,
+              "abstract": "Preprint abstract.",
+            },
+          ),
+          BibliographyEntry(
+            "article",
+            "published",
+            {
+              "title": "Exact shared title",
+              "author": "Smith, A and Jones, B",
+              "year": "2024",
+              "doi": "10.1038/example",
+              "abstract": "Publication abstract.",
+            },
+          ),
+        ]
+        for ordering in permutations(entries):
+          works = canonicalize_entries(ordering)
+          self.assertEqual(len(works), 1)
+          self.assertEqual(works[0].aliases, ("preprint", "published"))
+
+  def test_identifierless_fallback_never_bridges_conflicting_dois(self) -> None:
+    entries = [
+      BibliographyEntry(
+        "article",
+        "identifierless",
+        {
+          "title": "Ambiguous shared title",
+          "author": "Smith, A",
+          "year": "2024",
+          "abstract": "No stable identifier.",
+        },
+      ),
+      BibliographyEntry(
+        "article",
+        "doi-a",
+        {
+          "title": "Ambiguous shared title",
+          "author": "Smith, A",
+          "year": "2024",
+          "doi": "10.1000/a",
+          "abstract": "First identified work.",
+        },
+      ),
+      BibliographyEntry(
+        "article",
+        "doi-b",
+        {
+          "title": "Ambiguous shared title",
+          "author": "Smith, A",
+          "year": "2024",
+          "doi": "10.1000/b",
+          "abstract": "Second identified work.",
+        },
+      ),
+    ]
+    expected = {
+      (("doi-a",), ("doi:10.1000/a",)),
+      (("doi-b",), ("doi:10.1000/b",)),
+      (("identifierless",), ()),
+    }
+
+    for ordering in permutations(entries):
+      with self.subTest(ordering=tuple(entry.key for entry in ordering)):
+        works = canonicalize_entries(ordering)
+        actual = {(work.aliases, work.identifiers) for work in works}
+        self.assertEqual(actual, expected)
+
+  def test_ambiguous_preprint_publication_fallback_is_order_independent(self) -> None:
+    entries = [
+      BibliographyEntry(
+        "misc",
+        "preprint",
+        {
+          "title": "Ambiguous publication title",
+          "author": "Smith, A",
+          "year": "2022",
+          "doi": "10.1101/2022.01.01.123456",
+          "abstract": "Preprint abstract.",
+        },
+      ),
+      BibliographyEntry(
+        "article",
+        "journal-a",
+        {
+          "title": "Ambiguous publication title",
+          "author": "Smith, A",
+          "year": "2023",
+          "doi": "10.1000/a",
+          "abstract": "First publication.",
+        },
+      ),
+      BibliographyEntry(
+        "article",
+        "journal-b",
+        {
+          "title": "Ambiguous publication title",
+          "author": "Smith, A",
+          "year": "2024",
+          "doi": "10.1000/b",
+          "abstract": "Second publication.",
+        },
+      ),
+    ]
+    expected_aliases = {
+      ("journal-a",),
+      ("journal-b",),
+      ("preprint",),
+    }
+
+    for ordering in permutations(entries):
+      with self.subTest(ordering=tuple(entry.key for entry in ordering)):
+        works = canonicalize_entries(ordering)
+        self.assertEqual({work.aliases for work in works}, expected_aliases)
+        self.assertEqual(len(works), 3)
+
+  def test_mixed_identity_component_does_not_absorb_another_publication(self) -> None:
+    entries = [
+      BibliographyEntry(
+        "misc",
+        "preprint-title",
+        {
+          "title": "Shared target title",
+          "author": "Smith, A",
+          "year": "2022",
+          "doi": "10.1101/2022.01.01.123456",
+          "abstract": "Preprint abstract.",
+        },
+      ),
+      BibliographyEntry(
+        "article",
+        "explicitly-linked",
+        {
+          "title": "Earlier title",
+          "author": "Smith, A",
+          "year": "2023",
+          "doi": "10.1000/a",
+          "preprint_doi": "10.1101/2022.01.01.123456",
+          "abstract": "The explicitly linked publication.",
+        },
+      ),
+      BibliographyEntry(
+        "article",
+        "other-publication",
+        {
+          "title": "Shared target title",
+          "author": "Smith, A",
+          "year": "2024",
+          "doi": "10.1000/b",
+          "abstract": "A distinct publication with ambiguous metadata.",
+        },
+      ),
+    ]
+    expected_aliases = {
+      ("explicitly-linked", "preprint-title"),
+      ("other-publication",),
+    }
+
+    for ordering in permutations(entries):
+      with self.subTest(ordering=tuple(entry.key for entry in ordering)):
+        works = canonicalize_entries(ordering)
+        self.assertEqual({work.aliases for work in works}, expected_aliases)
+
+  def test_revised_preprint_titles_do_not_choose_a_publication_by_order(
+    self,
+  ) -> None:
+    entries = [
+      BibliographyEntry(
+        "misc",
+        "preprint-old-title",
+        {
+          "title": "Original preprint title",
+          "author": "Smith, A",
+          "year": "2022",
+          "doi": "10.1101/2022.01.01.123456",
+          "abstract": "Original preprint abstract.",
+        },
+      ),
+      BibliographyEntry(
+        "misc",
+        "preprint-new-title",
+        {
+          "title": "Revised preprint title",
+          "author": "Smith, A",
+          "year": "2022",
+          "doi": "10.1101/2022.01.01.123456",
+          "abstract": "Revised preprint abstract.",
+        },
+      ),
+      BibliographyEntry(
+        "article",
+        "publication-for-old-title",
+        {
+          "title": "Original preprint title",
+          "author": "Smith, A",
+          "year": "2023",
+          "doi": "10.1000/old-title",
+          "abstract": "First plausible publication.",
+        },
+      ),
+      BibliographyEntry(
+        "article",
+        "publication-for-new-title",
+        {
+          "title": "Revised preprint title",
+          "author": "Smith, A",
+          "year": "2024",
+          "doi": "10.1000/new-title",
+          "abstract": "Second plausible publication.",
+        },
+      ),
+    ]
+    expected_aliases = {
+      ("preprint-new-title", "preprint-old-title"),
+      ("publication-for-new-title",),
+      ("publication-for-old-title",),
+    }
+
+    for ordering in permutations(entries):
+      with self.subTest(ordering=tuple(entry.key for entry in ordering)):
+        works = canonicalize_entries(ordering)
+        self.assertEqual({work.aliases for work in works}, expected_aliases)
 
   def test_abstract_exceptions_are_reasoned_and_affect_hash(self) -> None:
     work = canonicalize_entries([

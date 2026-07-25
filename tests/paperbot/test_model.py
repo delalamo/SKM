@@ -26,6 +26,7 @@ from scripts.paperbot.model import (  # noqa: E402
   NegativePaper,
   StaleModelError,
   load_negative_corpus,
+  load_model,
   negative_category_family,
   negative_selection_key,
   model_errors,
@@ -36,7 +37,9 @@ from scripts.paperbot.model import (  # noqa: E402
   validate_negative_metadata,
   check_model,
   _dependency_versions,
+  _array_hash,
   _model_hash,
+  _records_hash,
 )
 from scripts.paperbot.bibliography import embedding_input_hash  # noqa: E402
 from scripts.paperbot.issue_negatives import (  # noqa: E402
@@ -414,6 +417,30 @@ class ArtifactTests(unittest.TestCase):
     )
     check_model(self.bib, self.artifacts, strict_negative_quotas=False)
 
+  def test_fit_omits_identifierless_issue_with_exact_bibliography_title(self) -> None:
+    # Old managed issues do not always carry stable IDs or a compatible
+    # title/author/year alias. Exact normalized-title equality must still
+    # prevent a revised abstract from turning a positive into a negative.
+    self.write_issue_negatives(self.issue_negative(
+      work_id="fallback:unrelated-legacy-identity",
+      title="A useful paper",
+      abstract="A later abstract revision with completely different text.",
+    ))
+
+    manifest = refresh_model(
+      self.bib,
+      self.artifacts,
+      encoder=self.FakeEncoder(),
+      strict_negative_quotas=False,
+    )
+
+    self.assertEqual(manifest["issue_negative_count"], 0)
+    self.assertEqual(
+      manifest["issue_negative_omission_counts"],
+      {"bibliography_overlap": 1},
+    )
+    check_model(self.bib, self.artifacts, strict_negative_quotas=False)
+
   def test_fit_omits_issue_negative_already_in_the_fixed_corpus(self) -> None:
     self.write_issue_negatives(self.issue_negative(
       work_id="pmid:12345",
@@ -431,6 +458,78 @@ class ArtifactTests(unittest.TestCase):
     self.assertEqual(manifest["issue_negative_count"], 0)
     self.assertEqual(manifest["effective_negative_count"], 1)
     self.assertEqual(manifest["issue_negative_fixed_overlap_count"], 1)
+    check_model(self.bib, self.artifacts, strict_negative_quotas=False)
+
+  def test_fit_omits_fixed_negative_with_changed_identity_and_abstract(self) -> None:
+    self.write_issue_negatives(self.issue_negative(
+      work_id="fallback:legacy-fixed-negative",
+      title="Remote stars",
+      abstract="A revised copy whose text no longer matches the frozen record.",
+    ))
+
+    manifest = refresh_model(
+      self.bib,
+      self.artifacts,
+      encoder=self.FakeEncoder(),
+      strict_negative_quotas=False,
+    )
+
+    self.assertEqual(manifest["issue_negative_count"], 0)
+    self.assertEqual(manifest["issue_negative_fixed_overlap_count"], 1)
+    self.assertEqual(manifest["effective_negative_count"], 1)
+    check_model(self.bib, self.artifacts, strict_negative_quotas=False)
+
+  def test_removed_and_readded_issue_reuses_one_append_only_row(self) -> None:
+    feedback = self.issue_negative(
+      work_id="doi:10.9999/irrelevant",
+      title="An irrelevant clinical report",
+      abstract="This report concerns an unrelated therapeutic intervention.",
+    )
+    self.write_issue_negatives(feedback)
+    refresh_model(
+      self.bib,
+      self.artifacts,
+      encoder=self.FakeEncoder(),
+      strict_negative_quotas=False,
+    )
+
+    self.write_issue_negatives()
+    removed = refresh_model(
+      self.bib,
+      self.artifacts,
+      encoder=self.FakeEncoder(),
+      strict_negative_quotas=False,
+    )
+    removed_rows = [
+      json.loads(line)
+      for line in (self.artifacts / ISSUE_NEGATIVE_MANIFEST)
+      .read_text(encoding="utf-8")
+      .splitlines()
+    ]
+    self.assertEqual(removed["issue_negative_count"], 0)
+    self.assertEqual(len(removed_rows), 1)
+    self.assertFalse(removed_rows[0]["active"])
+
+    self.write_issue_negatives(feedback)
+    encoder = self.FakeEncoder()
+    with patch.object(encoder, "embed", wraps=encoder.embed) as embed:
+      restored = refresh_model(
+        self.bib,
+        self.artifacts,
+        encoder=encoder,
+        strict_negative_quotas=False,
+      )
+    restored_rows = [
+      json.loads(line)
+      for line in (self.artifacts / ISSUE_NEGATIVE_MANIFEST)
+      .read_text(encoding="utf-8")
+      .splitlines()
+    ]
+    self.assertEqual(restored["issue_negative_count"], 1)
+    self.assertEqual(len(restored_rows), 1)
+    self.assertEqual(restored_rows[0]["row"], 0)
+    self.assertTrue(restored_rows[0]["active"])
+    embed.assert_not_called()
     check_model(self.bib, self.artifacts, strict_negative_quotas=False)
 
   def test_check_model_accepts_legacy_artifacts_as_empty_feedback(self) -> None:
@@ -471,6 +570,70 @@ class ArtifactTests(unittest.TestCase):
     )
     self.assertEqual(checked["model_hash"], manifest["model_hash"])
 
+  def test_check_rejects_issue_artifacts_orphaned_beside_legacy_model(
+    self,
+  ) -> None:
+    import numpy as np
+
+    refresh_model(
+      self.bib,
+      self.artifacts,
+      encoder=self.FakeEncoder(),
+      strict_negative_quotas=False,
+    )
+    manifest_path = self.artifacts / "model_manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    with np.load(self.artifacts / "classifier.npz", allow_pickle=False) as model:
+      coefficients = np.asarray(model["coef"], dtype=np.float64)
+      intercept = float(np.asarray(model["intercept"])[0])
+    for field in list(manifest):
+      if field.startswith("issue_negative_"):
+        manifest.pop(field)
+    manifest.pop("effective_negative_count")
+    manifest["model_hash"] = _model_hash(
+      coefficients,
+      intercept,
+      manifest["bibliography_hash"],
+      manifest["negative_corpus_file_hash"],
+      manifest["negative_metadata_file_hash"],
+    )
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+
+    errors = model_errors(
+      self.bib, self.artifacts, strict_negative_quotas=False
+    )
+
+    self.assertTrue(
+      any("exist beside a legacy model manifest" in error for error in errors),
+      errors,
+    )
+
+  def test_refresh_refuses_to_drop_a_missing_synchronized_snapshot(
+    self,
+  ) -> None:
+    self.write_issue_negatives(self.issue_negative(
+      work_id="doi:10.9999/irrelevant",
+      title="An irrelevant clinical report",
+      abstract="This report concerns an unrelated therapeutic intervention.",
+    ))
+    refresh_model(
+      self.bib,
+      self.artifacts,
+      encoder=self.FakeEncoder(),
+      strict_negative_quotas=False,
+    )
+    (self.artifacts / ISSUE_NEGATIVE_CORPUS).unlink()
+
+    with self.assertRaisesRegex(
+      ValueError, "synchronized issue-negative snapshot is missing"
+    ):
+      refresh_model(
+        self.bib,
+        self.artifacts,
+        encoder=self.FakeEncoder(),
+        strict_negative_quotas=False,
+      )
+
   def test_check_detects_issue_negative_artifact_tampering(self) -> None:
     import numpy as np
 
@@ -497,6 +660,120 @@ class ArtifactTests(unittest.TestCase):
       any("issue_negative_matrix_hash" in error for error in errors),
       errors,
     )
+
+  def test_refresh_rejects_non_normalized_encoder_output(self) -> None:
+    class NonNormalizedEncoder:
+      def embed(self, documents):
+        import numpy as np
+
+        return np.full(
+          (len(documents), EMBEDDING_DIMENSION),
+          1.0,
+          dtype=np.float32,
+        )
+
+    with self.assertRaisesRegex(ValueError, "not L2-normalized"):
+      refresh_model(
+        self.bib,
+        self.artifacts,
+        encoder=NonNormalizedEncoder(),
+        strict_negative_quotas=False,
+      )
+
+  def test_check_rejects_noncanonical_append_only_manifest(self) -> None:
+    import numpy as np
+
+    refresh_model(
+      self.bib,
+      self.artifacts,
+      encoder=self.FakeEncoder(),
+      strict_negative_quotas=False,
+    )
+    rows_path = self.artifacts / "positive_manifest.jsonl"
+    matrix_path = self.artifacts / "positive_embeddings.npy"
+    model_manifest_path = self.artifacts / "model_manifest.json"
+    rows = [json.loads(line) for line in rows_path.read_text().splitlines()]
+    duplicate = {**rows[0], "row": 1, "active": False}
+    rows.append(duplicate)
+    matrix = np.vstack([np.load(matrix_path, allow_pickle=False)] * 2)
+    rows_path.write_text(
+      "".join(json.dumps(row, sort_keys=True) + "\n" for row in rows),
+      encoding="utf-8",
+    )
+    np.save(matrix_path, matrix, allow_pickle=False)
+    model_manifest = json.loads(model_manifest_path.read_text())
+    model_manifest["positive_rows"] = len(rows)
+    model_manifest["positive_manifest_hash"] = _records_hash(rows)
+    model_manifest["positive_matrix_hash"] = _array_hash(matrix)
+    model_manifest_path.write_text(json.dumps(model_manifest), encoding="utf-8")
+
+    errors = model_errors(
+      self.bib, self.artifacts, strict_negative_quotas=False
+    )
+    self.assertTrue(any("duplicate identifier" in error for error in errors), errors)
+
+  def test_check_rejects_noncanonical_embedding_dtype(self) -> None:
+    import numpy as np
+
+    refresh_model(
+      self.bib,
+      self.artifacts,
+      encoder=self.FakeEncoder(),
+      strict_negative_quotas=False,
+    )
+    matrix_path = self.artifacts / "positive_embeddings.npy"
+    model_manifest_path = self.artifacts / "model_manifest.json"
+    matrix = np.load(matrix_path, allow_pickle=False).astype(np.float64)
+    np.save(matrix_path, matrix, allow_pickle=False)
+    model_manifest = json.loads(model_manifest_path.read_text())
+    model_manifest["positive_matrix_hash"] = _array_hash(matrix)
+    model_manifest_path.write_text(json.dumps(model_manifest), encoding="utf-8")
+
+    errors = model_errors(
+      self.bib, self.artifacts, strict_negative_quotas=False
+    )
+    self.assertTrue(any("expected float32" in error for error in errors), errors)
+
+  def test_check_rejects_ambiguous_classifier_archive(self) -> None:
+    import numpy as np
+
+    refresh_model(
+      self.bib,
+      self.artifacts,
+      encoder=self.FakeEncoder(),
+      strict_negative_quotas=False,
+    )
+    classifier_path = self.artifacts / "classifier.npz"
+    with np.load(classifier_path, allow_pickle=False) as stored:
+      coefficients = stored["coef"].copy()
+      intercept = stored["intercept"].copy()
+      classes = stored["classes"].copy()
+    np.savez(
+      classifier_path,
+      coef=coefficients,
+      intercept=np.concatenate([intercept, [999.0]]),
+      classes=classes,
+    )
+
+    errors = model_errors(
+      self.bib, self.artifacts, strict_negative_quotas=False
+    )
+    self.assertTrue(any("intercept has shape" in error for error in errors), errors)
+
+  def test_load_model_rejects_manifest_classifier_hash_mismatch(self) -> None:
+    refresh_model(
+      self.bib,
+      self.artifacts,
+      encoder=self.FakeEncoder(),
+      strict_negative_quotas=False,
+    )
+    manifest_path = self.artifacts / "model_manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    manifest["model_hash"] = "a" * 64
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+
+    with self.assertRaisesRegex(ValueError, "does not match"):
+      load_model(self.artifacts)
 
   def test_positive_row_is_stable_when_abstract_changes(self) -> None:
     refresh_model(self.bib, self.artifacts, encoder=self.FakeEncoder(), strict_negative_quotas=False)
@@ -601,6 +878,62 @@ class ArtifactTests(unittest.TestCase):
         )
         self.assertTrue(any(field in error for error in errors), errors)
     manifest_path.write_text(json.dumps(original))
+
+  def test_model_contract_rejects_json_type_aliases(self) -> None:
+    refresh_model(
+      self.bib,
+      self.artifacts,
+      encoder=self.FakeEncoder(),
+      strict_negative_quotas=False,
+    )
+    manifest_path = self.artifacts / "model_manifest.json"
+    original = json.loads(manifest_path.read_text(encoding="utf-8"))
+    cases = {
+      "schema": lambda value: value.update(schema=True),
+      "embedding": lambda value: value["embedding"].update(
+        dimension=float(EMBEDDING_DIMENSION)
+      ),
+      "classifier": lambda value: value["classifier"].update(
+        fit_intercept=1
+      ),
+    }
+
+    for expected, mutate in cases.items():
+      with self.subTest(expected=expected):
+        changed = json.loads(json.dumps(original))
+        mutate(changed)
+        manifest_path.write_text(json.dumps(changed), encoding="utf-8")
+        errors = model_errors(
+          self.bib, self.artifacts, strict_negative_quotas=False
+        )
+        self.assertTrue(any(expected in error for error in errors), errors)
+        with self.assertRaisesRegex(ValueError, "model specification"):
+          load_model(self.artifacts)
+
+    manifest_path.write_text(json.dumps(original), encoding="utf-8")
+
+  def test_refresh_does_not_reuse_type_aliased_embedding_contract(self) -> None:
+    refresh_model(
+      self.bib,
+      self.artifacts,
+      encoder=self.FakeEncoder(),
+      strict_negative_quotas=False,
+    )
+    manifest_path = self.artifacts / "model_manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest["embedding"]["dimension"] = float(EMBEDDING_DIMENSION)
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+
+    encoder = self.FakeEncoder()
+    with patch.object(encoder, "embed", wraps=encoder.embed) as embed:
+      refresh_model(
+        self.bib,
+        self.artifacts,
+        encoder=encoder,
+        strict_negative_quotas=False,
+      )
+
+    self.assertEqual(sum(len(call.args[0]) for call in embed.call_args_list), 2)
 
   def test_check_compares_recorded_training_metadata_to_refit(self) -> None:
     refresh_model(
@@ -710,6 +1043,33 @@ class ArtifactTests(unittest.TestCase):
     np.save(matrix_path, matrix, allow_pickle=False)
 
     with self.assertRaisesRegex(ValueError, "Refusing to reuse corrupt positive"):
+      refresh_model(
+        self.bib,
+        self.artifacts,
+        encoder=self.FakeEncoder(),
+        strict_negative_quotas=False,
+      )
+
+  def test_refresh_refuses_hash_consistent_but_invalid_old_manifest(self) -> None:
+    refresh_model(
+      self.bib,
+      self.artifacts,
+      encoder=self.FakeEncoder(),
+      strict_negative_quotas=False,
+    )
+    rows_path = self.artifacts / "positive_manifest.jsonl"
+    manifest_path = self.artifacts / "model_manifest.json"
+    rows = [json.loads(line) for line in rows_path.read_text().splitlines()]
+    rows[0]["active"] = "yes"
+    rows_path.write_text(
+      "".join(json.dumps(row, sort_keys=True) + "\n" for row in rows),
+      encoding="utf-8",
+    )
+    manifest = json.loads(manifest_path.read_text())
+    manifest["positive_manifest_hash"] = _records_hash(rows)
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+
+    with self.assertRaisesRegex(ValueError, "invalid active flag"):
       refresh_model(
         self.bib,
         self.artifacts,

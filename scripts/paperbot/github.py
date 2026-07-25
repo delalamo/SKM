@@ -220,7 +220,12 @@ class GitHubClient:
 
     def list_issues(self, *, label: str | None = "paper") -> list[dict[str, Any]]:
         path = f"/repos/{self.repo}/issues"
-        params = {"state": "all"}
+        # Created-ascending order makes page-number pagination stable when new
+        # issues are opened while a long collection pass is in progress: new
+        # rows are appended after the pages already read instead of shifting
+        # their offsets. Label and state changes can still race a run, so
+        # callers that need a snapshot validate duplicate identities.
+        params = {"state": "all", "sort": "created", "direction": "asc"}
         if label:
             params["labels"] = label
         return [
@@ -471,6 +476,18 @@ def load_managed_issues(client: GitHubClient) -> ManagedIssueIndex:
         meta = parse_managed_meta(body)
         if meta is None:
             continue
+        blocks = list(_MANAGED_RE.finditer(body))
+        if (
+            len(blocks) != 1
+            or body.count(MANAGED_BLOCK_BEGIN) != 1
+            or body.count(MANAGED_BLOCK_END) != 1
+            or META_PREFIX not in blocks[0].group(0)
+        ):
+            number = raw.get("number", "?")
+            raise GitHubError(
+                f"Managed paper issue #{number} must contain exactly one "
+                "complete paperbot block"
+            )
         index.add(_managed_issue_from_api(raw, meta))
     return index
 
@@ -636,14 +653,25 @@ def rescore_managed_issues(
 
 
 def parse_managed_meta(body: str) -> dict[str, Any] | None:
-    match = _META_RE.search(body)
-    if not match:
+    matches = list(_META_RE.finditer(body))
+    if not matches:
+        if META_PREFIX in body:
+            raise GitHubError("Managed paper issue contains an incomplete metadata marker")
         return None
+    if len(matches) != 1 or body.count(META_PREFIX) != 1:
+        raise GitHubError("Managed paper issue must contain exactly one metadata marker")
+    match = matches[0]
     try:
         payload = json.loads(match.group(1))
     except json.JSONDecodeError as error:
         raise GitHubError("Managed paper issue contains invalid metadata JSON") from error
-    if not isinstance(payload, dict) or payload.get("schema") != 1:
+    schema = payload.get("schema") if isinstance(payload, dict) else None
+    if (
+        not isinstance(payload, dict)
+        or not isinstance(schema, int)
+        or isinstance(schema, bool)
+        or schema != 1
+    ):
         raise GitHubError("Managed paper issue has an unsupported metadata schema")
     return payload
 
@@ -813,7 +841,11 @@ def identity_for_record(record: Any) -> tuple[str, list[str]]:
         aliases.add(f"{source}:{source_id.casefold()}")
     identity_aliases = getattr(record, "identity_aliases", None)
     if callable(identity_aliases):
-        aliases.update(normalize_alias(str(alias)) for alias in identity_aliases())
+        aliases.update(
+            normalized
+            for alias in identity_aliases()
+            if (normalized := normalize_alias(str(alias)))
+        )
     related = _value(record, "aliases", []) or []
     related_work = _value(record, "related_work_aliases", []) or []
     related_ids = _value(record, "related_ids", []) or []
@@ -824,8 +856,13 @@ def identity_for_record(record: Any) -> tuple[str, list[str]]:
     title_alias = title_identity_alias(record)
     if title_alias:
         aliases.add(title_alias)
-    ordered = sorted(aliases)
     canonical_id = normalize_alias(str(_value(record, "canonical_id", "") or ""))
+    if canonical_id:
+        # The collector requires the canonical work identity to be one of the
+        # hashed aliases. Keeping that invariant here prevents paperbot from
+        # creating an issue that its own training refresh later rejects.
+        aliases.add(canonical_id)
+    ordered = sorted(aliases)
     preferred = canonical_id or next(
         (
             prefix

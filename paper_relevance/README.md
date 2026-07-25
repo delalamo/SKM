@@ -63,6 +63,9 @@ operation, not part of ordinary bibliography refreshes.
 `sync-issue-negatives` uses GitHub's paginated Issues API and requires
 `GITHUB_TOKEN` with read-only issue access. The trusted bibliography refresh
 workflow runs it after abstract backfill and before model fitting.
+Manual dispatch of that workflow is intentionally verification-only: automatic
+regeneration and bot pushes are limited to same-repository pull requests whose
+diff includes `bibliography.bib` and no sensitive generator or model changes.
 
 Before fitting, issue-derived works are canonicalized against both the frozen
 negative corpus and `bibliography.bib`. A duplicate fixed negative receives no

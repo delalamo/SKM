@@ -29,6 +29,10 @@ BARE_ARXIV_RE = re.compile(
   r"^(?:[a-z-]+(?:\.[A-Z]{2})?/\d{7}|\d{4}\.\d{4,5})(?:v\d+)?$",
   re.IGNORECASE,
 )
+CHEMRXIV_VERSION_RE = re.compile(
+  r"(?P<base>10\.26434/[^\s]+?)(?:-v|/v)\d+$",
+  re.IGNORECASE,
+)
 RELATION_FIELDS = {
   "relation",
   "related",
@@ -42,6 +46,13 @@ RELATION_FIELDS = {
   "publisheddoi",
   "published_doi",
 }
+PREPRINT_DOI_PREFIXES = (
+  "doi:10.1101/",  # bioRxiv and medRxiv
+  "doi:10.21203/rs.",  # Research Square
+  "doi:10.26434/",  # ChemRxiv
+  "doi:10.48550/arxiv.",
+  "doi:10.64898/",  # current bioRxiv and medRxiv DOI prefix
+)
 DEFAULT_FIELD_ORDER = (
   "title",
   "author",
@@ -145,6 +156,11 @@ def normalize_doi(value: str) -> str:
   value = value.rstrip(".,;:)]}").lower()
   # bioRxiv/medRxiv use one base DOI for all versions.
   value = re.sub(r"(10\.1101/[0-9.]+)v\d+$", r"\1", value, flags=re.IGNORECASE)
+  # ChemRxiv has used both ``-vN`` and ``/vN`` suffixes for versions of the
+  # same work. Match PaperRecord.canonical_id so bibliography versions cannot
+  # receive duplicate positive training weight.
+  if match := CHEMRXIV_VERSION_RE.fullmatch(value):
+    value = match.group("base")
   return value
 
 
@@ -405,15 +421,42 @@ def _preprint_match_identity(entry: BibliographyEntry) -> str:
 
 
 def _has_preprint_identifier(identifiers: set[str]) -> bool:
-  return any(identifier.startswith("arxiv:") or identifier.startswith("doi:10.1101/") for identifier in identifiers)
+  return any(
+    identifier.startswith("arxiv:")
+    or identifier.startswith(PREPRINT_DOI_PREFIXES)
+    for identifier in identifiers
+  )
 
 
 def _is_preprint_publication_pair(left: set[str], right: set[str]) -> bool:
   if not left or not right or left & right:
     return False
-  left_preprint = _has_preprint_identifier(left)
-  right_preprint = _has_preprint_identifier(right)
-  return left_preprint != right_preprint
+  return {_identifier_stage(left), _identifier_stage(right)} == {
+    "preprint",
+    "publication",
+  }
+
+
+def _identifier_stage(identifiers: set[str]) -> str:
+  """Classify one already-deduplicated identity component for safe bridging."""
+
+  has_preprint = _has_preprint_identifier(identifiers)
+  has_publication_doi = any(
+    identifier.startswith("doi:")
+    and not identifier.startswith(PREPRINT_DOI_PREFIXES)
+    for identifier in identifiers
+  )
+  if has_preprint and has_publication_doi:
+    return "mixed"
+  if has_preprint:
+    return "preprint"
+  # A PMID-only bibliography record is ordinarily the publication side of a
+  # preprint/publication pair. PMID is neutral when a preprint DOI is present.
+  if has_publication_doi or any(
+    identifier.startswith("pmid:") for identifier in identifiers
+  ):
+    return "publication"
+  return ""
 
 
 class _UnionFind:
@@ -448,29 +491,72 @@ def canonicalize_entries(entries: Sequence[BibliographyEntry]) -> list[Canonical
   # Link an arXiv/bioRxiv preprint to its version of record when the normalized
   # title and first author are exact.  Publication years commonly differ, so
   # this relation intentionally precedes the title/author/year fallback.
-  publication_owner: dict[str, int] = {}
+  publication_groups: dict[str, list[int]] = {}
   for index, entry in enumerate(entries):
     relation = _preprint_match_identity(entry)
     if not relation:
       continue
-    previous = publication_owner.get(relation)
-    if previous is None:
-      publication_owner[relation] = index
-    elif _is_preprint_publication_pair(identities_by_entry[index], identities_by_entry[previous]):
-      union.union(index, previous)
+    publication_groups.setdefault(relation, []).append(index)
+  publication_edges: set[tuple[int, int]] = set()
+  for indexes in publication_groups.values():
+    components = _component_identifiers(union, identities_by_entry, indexes)
+    identified = [
+      (root, identifiers)
+      for root, identifiers in components.items()
+      if identifiers
+    ]
+    # Exact title/author metadata can bridge one unambiguous preprint and one
+    # publication. With more identified components, choosing a publication
+    # would depend on input order and could collapse distinct strong IDs.
+    if (
+      len(identified) == 2
+      and _is_preprint_publication_pair(identified[0][1], identified[1][1])
+    ):
+      publication_edges.add(tuple(sorted((identified[0][0], identified[1][0]))))
+  publication_neighbors: dict[int, set[int]] = {}
+  for left, right in publication_edges:
+    publication_neighbors.setdefault(left, set()).add(right)
+    publication_neighbors.setdefault(right, set()).add(left)
+  for left, right in sorted(publication_edges):
+    # A preprint component can appear under multiple historical titles. Merge
+    # only one-to-one candidate edges so traversal/input order cannot choose
+    # arbitrarily among several plausible versions of record.
+    if (
+      len(publication_neighbors[left]) == 1
+      and len(publication_neighbors[right]) == 1
+    ):
+      union.union(left, right)
 
   # A title fallback can attach an identifier-less alias to an identified work,
   # but it must never merge two entries carrying conflicting strong identifiers.
-  fallback_owner: dict[str, int] = {}
+  fallback_groups: dict[str, list[int]] = {}
   for index, entry in enumerate(entries):
     fallback = fallback_identity(entry)
     if not fallback:
       continue
-    previous = fallback_owner.get(fallback)
-    if previous is None:
-      fallback_owner[fallback] = index
-    elif not identities_by_entry[index] or not identities_by_entry[previous] or identities_by_entry[index] & identities_by_entry[previous]:
-      union.union(index, previous)
+    fallback_groups.setdefault(fallback, []).append(index)
+  for indexes in fallback_groups.values():
+    components = _component_identifiers(union, identities_by_entry, indexes)
+    identified_roots = [
+      root for root, identifiers in components.items() if identifiers
+    ]
+    identifierless_roots = [
+      root for root, identifiers in components.items() if not identifiers
+    ]
+    if len(identified_roots) == 1:
+      destination = identified_roots[0]
+      for root in identifierless_roots:
+        union.union(destination, root)
+    elif not identified_roots and identifierless_roots:
+      destination, *duplicates = identifierless_roots
+      for root in duplicates:
+        union.union(destination, root)
+    elif len(identifierless_roots) > 1:
+      # Preserve duplicate identifier-less aliases as one unresolved work, but
+      # do not arbitrarily attach that work to one of several conflicting IDs.
+      destination, *duplicates = identifierless_roots
+      for root in duplicates:
+        union.union(destination, root)
 
   grouped: dict[int, list[int]] = {}
   for index in range(len(entries)):
@@ -486,6 +572,22 @@ def canonicalize_entries(entries: Sequence[BibliographyEntry]) -> list[Canonical
     entry_type = sorted(component, key=lambda entry: (-_entry_richness(entry), entry.key))[0].entry_type
     works.append(CanonicalWork(work_id, aliases[0], aliases, identifiers, entry_type, merged))
   return sorted(works, key=lambda work: (work.work_id, work.citekey))
+
+
+def _component_identifiers(
+  union: _UnionFind,
+  identities_by_entry: Sequence[set[str]],
+  indexes: Sequence[int],
+) -> dict[int, set[str]]:
+  """Return strong identifiers accumulated by each current union component."""
+
+  wanted_roots = {union.find(index) for index in indexes}
+  components = {root: set() for root in wanted_roots}
+  for index, identifiers in enumerate(identities_by_entry):
+    root = union.find(index)
+    if root in components:
+      components[root].update(identifiers)
+  return components
 
 
 def _entry_richness(entry: BibliographyEntry) -> int:

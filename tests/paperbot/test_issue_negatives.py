@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
+import json
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Any
@@ -172,6 +173,27 @@ def test_duplicate_issues_contribute_one_canonical_work(tmp_path: Path) -> None:
   assert result["duplicate_issue_count"] == 1
   assert result["active_count"] == 1
   assert row.issue_numbers == (4, 9)
+
+
+def test_duplicate_revision_tie_prefers_newer_issue_number(
+  tmp_path: Path,
+) -> None:
+  older_issue = record(abstract="Abstract from the older duplicate issue.")
+  newer_issue = record(abstract="Abstract from the newer duplicate issue.")
+
+  sync_issue_negatives(
+    config(tmp_path),
+    client=MemoryClient([
+      managed_issue(newer_issue, number=9),
+      managed_issue(older_issue, number=4),
+    ]),
+  )
+  [row] = load_issue_negative_snapshot(
+    tmp_path / "paper_relevance" / "issue_negatives.jsonl"
+  )
+
+  assert row.selected_issue_number == 9
+  assert row.abstract == newer_issue.abstract
 
 
 def test_bibliography_overlap_is_recorded_and_omitted(tmp_path: Path) -> None:
@@ -500,3 +522,360 @@ def test_strict_title_author_year_match_omits_preprint_now_in_bibliography(
   assert result["active_count"] == 0
   assert row.omission_reasons == (OMITTED_BIBLIOGRAPHY,)
   assert row.bibliography_keys == ("published2026",)
+
+
+def test_exact_title_match_is_conservatively_omitted_from_bibliography(
+  tmp_path: Path,
+) -> None:
+  paper = record(
+    doi="10.1000/unrelated-identifier",
+    pmid="",
+    source_id="different",
+    title="A useful paper",
+    abstract="The issue has a completely revised abstract.",
+    authors=("Another Author",),
+    updated_at="2025-06-01",
+  )
+  configuration = config(tmp_path)
+
+  result = sync_issue_negatives(
+    configuration, client=MemoryClient([managed_issue(paper)])
+  )
+  [row] = load_issue_negative_snapshot(
+    configuration.artifact_dir / "issue_negatives.jsonl"
+  )
+
+  assert result["active_count"] == 0
+  assert row.omission_reasons == (OMITTED_BIBLIOGRAPHY,)
+  assert row.bibliography_keys == ("positive2026",)
+
+
+def test_exact_title_match_is_conservatively_omitted_from_fixed_negatives(
+  tmp_path: Path,
+) -> None:
+  paper = record(
+    doi="10.1000/revised",
+    pmid="",
+    source_id="revised",
+    abstract="A later abstract with no shared identifier or input hash.",
+    authors=("Another Author",),
+    updated_at="2025-06-01",
+  )
+  configuration = config(
+    tmp_path,
+    fixed={
+      "paper_id": "pmid:99999",
+      "work_id": "pmid:99999",
+      "pmid": "99999",
+      "title": paper.title,
+      "abstract": "The frozen corpus contains an older abstract.",
+      "authors": ["Different, Person"],
+      "published_year": 2019,
+    },
+  )
+
+  result = sync_issue_negatives(
+    configuration, client=MemoryClient([managed_issue(paper)])
+  )
+  [row] = load_issue_negative_snapshot(
+    configuration.artifact_dir / "issue_negatives.jsonl"
+  )
+
+  assert result["active_count"] == 0
+  assert row.omission_reasons == (OMITTED_FIXED,)
+  assert row.fixed_negative_ids == ("pmid:99999",)
+
+
+def test_overlap_on_nonrepresentative_revision_omits_whole_component(
+  tmp_path: Path,
+) -> None:
+  older = record(
+    doi="10.1000/older",
+    pmid="",
+    source_id="older",
+    title="A useful paper",
+    abstract="The historical abstract.",
+    authors=("Different Author",),
+    updated_at="2025-01-01",
+  )
+  latest = record(
+    doi="10.1000/latest",
+    pmid="",
+    source_id="latest",
+    title="A renamed paper",
+    abstract="The revised historical abstract.",
+    authors=("Different Author",),
+    updated_at="2026-01-01",
+    related_ids=("doi:10.1000/older",),
+  )
+  configuration = config(tmp_path)
+
+  result = sync_issue_negatives(
+    configuration,
+    client=MemoryClient([
+      managed_issue(older, number=1),
+      managed_issue(latest, number=2),
+    ]),
+  )
+  [row] = load_issue_negative_snapshot(
+    configuration.artifact_dir / "issue_negatives.jsonl"
+  )
+
+  assert row.selected_issue_number == 2
+  assert row.title == latest.title
+  assert row.active is False
+  assert row.bibliography_keys == ("positive2026",)
+  assert result["active_count"] == 0
+
+
+def test_exact_input_does_not_merge_conflicting_publication_identifiers(
+  tmp_path: Path,
+) -> None:
+  first = record(
+    doi="10.1000/first",
+    pmid="",
+    source_id="first",
+    authors=("First Author",),
+  )
+  second = record(
+    doi="10.1000/second",
+    pmid="",
+    source_id="second",
+    authors=("Second Author",),
+  )
+
+  with pytest.raises(GitHubError, match="Exact SPECTER2 input.*ambiguously"):
+    sync_issue_negatives(
+      config(tmp_path),
+      client=MemoryClient([
+        managed_issue(first, number=1),
+        managed_issue(second, number=2),
+      ]),
+    )
+
+
+def test_title_fallback_does_not_merge_conflicting_native_source_ids(
+  tmp_path: Path,
+) -> None:
+  first = record(
+    doi="",
+    pmid="",
+    source_id="provider-record-one",
+    abstract="First abstract.",
+  )
+  second = record(
+    doi="",
+    pmid="",
+    source_id="provider-record-two",
+    abstract="Second abstract.",
+  )
+
+  with pytest.raises(GitHubError, match="Strict title identity.*ambiguously"):
+    sync_issue_negatives(
+      config(tmp_path),
+      client=MemoryClient([
+        managed_issue(first, number=1),
+        managed_issue(second, number=2),
+      ]),
+    )
+
+
+def test_research_square_preprint_can_merge_with_its_publication(
+  tmp_path: Path,
+) -> None:
+  preprint = PaperRecord(
+    source="research-square",
+    source_id="rs-123",
+    title="A shared preprint title",
+    abstract="The preprint abstract.",
+    authors=("Ada Lovelace",),
+    created_at="2026-01-01",
+    updated_at="2026-01-01",
+    doi="10.21203/rs.3.rs-123/v1",
+  )
+  publication = PaperRecord(
+    source="crossref",
+    source_id="10.1000/publication",
+    title=preprint.title,
+    abstract="The publication abstract.",
+    authors=preprint.authors,
+    created_at="2026-06-01",
+    updated_at="2026-06-01",
+    doi="10.1000/publication",
+  )
+
+  result = sync_issue_negatives(
+    config(tmp_path),
+    client=MemoryClient([
+      managed_issue(preprint, number=1),
+      managed_issue(publication, number=2),
+    ]),
+  )
+  [row] = load_issue_negative_snapshot(
+    tmp_path / "paper_relevance" / "issue_negatives.jsonl"
+  )
+
+  assert result["canonical_work_count"] == 1
+  assert row.issue_numbers == (1, 2)
+  assert row.selected_issue_number == 2
+
+
+@pytest.mark.parametrize("field", ["version", "updated"])
+def test_revision_order_fields_must_match_managed_hashes(
+  tmp_path: Path, field: str
+) -> None:
+  issue = managed_issue(record(version="2"))
+  meta_start = issue["body"].index("<!-- paperbot:meta ") + len(
+    "<!-- paperbot:meta "
+  )
+  meta_end = issue["body"].index(" -->", meta_start)
+  meta = json.loads(issue["body"][meta_start:meta_end])
+  meta[field] = "tampered"
+  issue["body"] = (
+    issue["body"][:meta_start]
+    + json.dumps(meta, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    + issue["body"][meta_end:]
+  )
+
+  with pytest.raises(GitHubError, match=rf"{field}.*hash"):
+    sync_issue_negatives(config(tmp_path), client=MemoryClient([issue]))
+
+
+def test_all_managed_field_hashes_are_required(tmp_path: Path) -> None:
+  issue = managed_issue(record())
+  meta_start = issue["body"].index("<!-- paperbot:meta ") + len(
+    "<!-- paperbot:meta "
+  )
+  meta_end = issue["body"].index(" -->", meta_start)
+  meta = json.loads(issue["body"][meta_start:meta_end])
+  del meta["field_hashes"]["venue"]
+  issue["body"] = (
+    issue["body"][:meta_start]
+    + json.dumps(meta, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    + issue["body"][meta_end:]
+  )
+
+  with pytest.raises(GitHubError, match="incomplete or invalid field hashes"):
+    sync_issue_negatives(config(tmp_path), client=MemoryClient([issue]))
+
+
+def test_boolean_issue_number_is_rejected(tmp_path: Path) -> None:
+  issue = managed_issue(record())
+  issue["number"] = True
+
+  with pytest.raises(GitHubError, match="missing its issue number"):
+    sync_issue_negatives(config(tmp_path), client=MemoryClient([issue]))
+
+
+def test_snapshot_rejects_issue_number_reused_across_works(
+  tmp_path: Path,
+) -> None:
+  configuration = config(tmp_path)
+  first = record()
+  second = record(
+    doi="10.1000/second",
+    pmid="",
+    source_id="second",
+    title="A second unrelated title",
+    abstract="A second unrelated abstract.",
+    authors=("Second Author",),
+  )
+  sync_issue_negatives(
+    configuration,
+    client=MemoryClient([
+      managed_issue(first, number=1),
+      managed_issue(second, number=2),
+    ]),
+  )
+  path = configuration.artifact_dir / "issue_negatives.jsonl"
+  rows = [
+    json.loads(line)
+    for line in path.read_text(encoding="utf-8").splitlines()
+  ]
+  rows[1]["issue_numbers"] = [1]
+  rows[1]["issue_urls"] = ["https://github.test/issues/1"]
+  rows[1]["selected_issue_number"] = 1
+  path.write_text(
+    "".join(
+      json.dumps(row, sort_keys=True, separators=(",", ":")) + "\n"
+      for row in rows
+    ),
+    encoding="utf-8",
+  )
+
+  with pytest.raises(ValueError, match=r"GitHub issue #1 appears"):
+    load_issue_negative_snapshot(path)
+
+
+@pytest.mark.parametrize(
+  ("mutate", "message"),
+  [
+    (
+      lambda row: row.update(schema_version=True),
+      "unsupported schema",
+    ),
+    (
+      lambda row: row.update(work_id=row["work_id"].upper()),
+      "identity",
+    ),
+    (
+      lambda row: row.update(
+        aliases=[
+          alias.upper() if alias == row["work_id"] else alias
+          for alias in row["aliases"]
+        ]
+      ),
+      "aliases.*noncanonical",
+    ),
+    (
+      lambda row: row.update(issue_urls=[]),
+      "issue URLs are invalid",
+    ),
+    (
+      lambda row: row.update(
+        issue_urls=["https://github.test/issues/999"]
+      ),
+      "issue URLs are not unique and sorted",
+    ),
+  ],
+)
+def test_snapshot_requires_canonical_identity_schema_and_issue_provenance(
+  tmp_path: Path,
+  mutate: Any,
+  message: str,
+) -> None:
+  configuration = config(tmp_path)
+  sync_issue_negatives(
+    configuration, client=MemoryClient([managed_issue(record())])
+  )
+  path = configuration.artifact_dir / "issue_negatives.jsonl"
+  row = json.loads(path.read_text(encoding="utf-8"))
+  mutate(row)
+  path.write_text(
+    json.dumps(row, sort_keys=True, separators=(",", ":")) + "\n",
+    encoding="utf-8",
+  )
+
+  with pytest.raises(ValueError, match=message):
+    load_issue_negative_snapshot(path)
+
+
+def test_malformed_fixed_negative_aliases_fail_closed(tmp_path: Path) -> None:
+  configuration = config(
+    tmp_path,
+    fixed={
+      "paper_id": "pmid:99999",
+      "work_id": "pmid:99999",
+      "pmid": "99999",
+      "title": "A fixed negative",
+      "abstract": "A fixed abstract.",
+      "authors": ["Different, Person"],
+      "published_year": 2019,
+      "aliases": "doi:10.1000/not-a-list",
+    },
+  )
+
+  with pytest.raises(ValueError, match="aliases.*must be a list"):
+    sync_issue_negatives(
+      configuration, client=MemoryClient([managed_issue(record())])
+    )

@@ -231,6 +231,25 @@ def test_identity_normalizes_doi_and_arxiv_revision() -> None:
     assert any(alias.startswith("title:") for alias in aliases)
 
 
+def test_explicit_canonical_identity_is_always_a_hashed_alias() -> None:
+    work_id, aliases = identity_for_record(
+        {
+            "canonical_id": "provider:Canonical-123",
+            "source": "other-provider",
+            "source_id": "source-456",
+            "title": "A paper",
+        }
+    )
+
+    assert work_id == "provider:canonical-123"
+    assert work_id in aliases
+
+
+def test_managed_metadata_rejects_boolean_schema_alias() -> None:
+    with pytest.raises(GitHubError, match="unsupported metadata schema"):
+        parse_managed_meta('<!-- paperbot:meta {"schema":true} -->')
+
+
 def test_identity_and_metadata_are_compatible_with_canonical_paper_record() -> None:
     record = PaperRecord(
         source="bioRxiv",
@@ -411,6 +430,8 @@ def test_load_managed_issues_paginates_and_ignores_unmanaged_and_prs() -> None:
 
     assert [issue.number for issue in index.issues] == [4]
     assert len(transport.calls) == 2
+    assert all("sort=created" in url for url in transport.calls)
+    assert all("direction=asc" in url for url in transport.calls)
 
 
 def test_read_only_client_can_use_public_github_without_a_token() -> None:
@@ -442,6 +463,24 @@ def test_alias_collision_between_issues_fails_closed() -> None:
 
     with pytest.raises(GitHubError, match="belongs to both"):
         load_managed_issues(client)
+
+
+@pytest.mark.parametrize(
+    "corrupt",
+    [
+        lambda body: body + "\n<!-- paperbot:meta {not-json} -->",
+        lambda body: body + "\n" + body,
+        lambda body: body.replace("<!-- paperbot:managed:end -->", ""),
+    ],
+)
+def test_bot_authored_malformed_managed_body_fails_before_deduplication(
+    corrupt: Any,
+) -> None:
+    issue = paper_issue(Paper())
+    issue["body"] = corrupt(issue["body"])
+
+    with pytest.raises(GitHubError, match="metadata marker|complete paperbot block"):
+        load_managed_issues(MemoryIssueClient([issue]))
 
 
 def test_user_authored_marker_cannot_claim_aliases_or_be_mutated() -> None:

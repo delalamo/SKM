@@ -49,6 +49,27 @@ _ABSTRACT_RE = re.compile(
   re.DOTALL,
 )
 _VERSION_RE = re.compile(r"\d+")
+_ISSUE_URL_NUMBER_RE = re.compile(r"/issues/(\d+)(?:[/?#].*)?$")
+_MANAGED_HASH_FIELDS = frozenset({
+  "title",
+  "abstract",
+  "bibtex",
+  "identifiers",
+  "version",
+  "authors",
+  "venue",
+  "url",
+  "created",
+  "updated",
+  "license",
+})
+_PREPRINT_DOI_PREFIXES = (
+  "10.1101/",
+  "10.21203/rs.",
+  "10.26434/",
+  "10.48550/arxiv.",
+  "10.64898/",
+)
 
 
 @dataclass(frozen=True)
@@ -90,9 +111,18 @@ class IssueNegativeRecord:
   def from_mapping(
     cls, value: Mapping[str, Any], *, context: str = "issue-negative record"
   ) -> IssueNegativeRecord:
-    if value.get("schema_version") != ISSUE_NEGATIVE_SCHEMA:
+    schema_version = value.get("schema_version")
+    if (
+      not isinstance(schema_version, int)
+      or isinstance(schema_version, bool)
+      or schema_version != ISSUE_NEGATIVE_SCHEMA
+    ):
       raise ValueError(f"{context} has an unsupported schema")
-    work_id = normalize_alias(str(value.get("work_id") or ""))
+    raw_work_id = value.get("work_id")
+    work_id_text = (
+      raw_work_id.strip() if isinstance(raw_work_id, str) else ""
+    )
+    work_id = normalize_alias(work_id_text)
     aliases_value = value.get("aliases")
     numbers_value = value.get("issue_numbers")
     urls_value = value.get("issue_urls")
@@ -105,14 +135,24 @@ class IssueNegativeRecord:
     omission_reasons_value = value.get("omission_reasons")
     bibliography_keys_value = value.get("bibliography_keys")
     fixed_negative_ids_value = value.get("fixed_negative_ids")
-    if not work_id or not title or not abstract:
+    if (
+      not work_id
+      or work_id != work_id_text
+      or not title
+      or not abstract
+    ):
       raise ValueError(f"{context} is missing its identity, title, or abstract")
-    if not isinstance(aliases_value, list):
+    if (
+      not isinstance(aliases_value, list)
+      or any(not isinstance(alias, str) for alias in aliases_value)
+    ):
       raise ValueError(f"{context} aliases must be a list")
-    aliases = tuple(normalize_alias(str(alias)) for alias in aliases_value)
+    raw_aliases = tuple(alias.strip() for alias in aliases_value)
+    aliases = tuple(normalize_alias(alias) for alias in raw_aliases)
     if (
       not aliases
       or any(not alias for alias in aliases)
+      or aliases != raw_aliases
       or aliases != tuple(sorted(set(aliases)))
       or work_id not in aliases
     ):
@@ -137,11 +177,21 @@ class IssueNegativeRecord:
       raise ValueError(f"{context} selected issue number is invalid")
     if (
       not isinstance(urls_value, list)
+      or not urls_value
       or any(not isinstance(url, str) or not url.strip() for url in urls_value)
     ):
       raise ValueError(f"{context} issue URLs are invalid")
     issue_urls = tuple(str(url).strip() for url in urls_value)
-    if issue_urls != tuple(sorted(set(issue_urls))):
+    url_numbers = {
+      int(match.group(1))
+      for url in issue_urls
+      if (match := _ISSUE_URL_NUMBER_RE.search(url))
+    }
+    if (
+      issue_urls != tuple(sorted(set(issue_urls)))
+      or len(url_numbers) != len(issue_urls)
+      or url_numbers != set(issue_numbers)
+    ):
       raise ValueError(f"{context} issue URLs are not unique and sorted")
     if _SHA256_RE.fullmatch(metadata_hash) is None:
       raise ValueError(f"{context} metadata hash is invalid")
@@ -260,6 +310,16 @@ def load_issue_negative_snapshot(path: Path | str) -> list[IssueNegativeRecord]:
     raise ValueError("Issue-negative snapshot is not deterministically sorted")
   if len({record.work_id for record in records}) != len(records):
     raise ValueError("Issue-negative snapshot contains duplicate work identities")
+  issue_owners: dict[int, str] = {}
+  for record in records:
+    for issue_number in record.issue_numbers:
+      previous = issue_owners.get(issue_number)
+      if previous is not None:
+        raise ValueError(
+          f"GitHub issue #{issue_number} appears in issue-negative works "
+          f"{previous} and {record.work_id}"
+        )
+      issue_owners[issue_number] = record.work_id
   return records
 
 
@@ -282,8 +342,10 @@ def sync_issue_negatives(
     )
   github = client or GitHubClient(configured_repository, github_token)
   works = canonicalize_entries(load_bibliography(config.bibliography_path))
-  positive_aliases, positive_inputs = _bibliography_identity(works)
-  fixed_aliases, fixed_inputs = _fixed_negative_identity(
+  positive_aliases, positive_inputs, positive_titles = _bibliography_identity(
+    works
+  )
+  fixed_aliases, fixed_inputs, fixed_titles = _fixed_negative_identity(
     Path(config.negative_corpus_path)
   )
   raw_candidates = _eligible_candidates(github)
@@ -291,8 +353,10 @@ def sync_issue_negatives(
     raw_candidates,
     positive_aliases=positive_aliases,
     positive_inputs=positive_inputs,
+    positive_titles=positive_titles,
     fixed_aliases=fixed_aliases,
     fixed_inputs=fixed_inputs,
+    fixed_titles=fixed_titles,
   )
   output_path = Path(config.artifact_dir) / ISSUE_NEGATIVE_CORPUS
   _write_snapshot(output_path, records)
@@ -363,9 +427,14 @@ def _eligible_candidates(client: GitHubClient) -> list[_Candidate]:
 
 
 def _candidate_from_issue(raw: Mapping[str, Any]) -> _Candidate:
-  number = int(raw.get("number") or 0)
-  if number <= 0:
+  raw_number = raw.get("number")
+  if (
+    not isinstance(raw_number, int)
+    or isinstance(raw_number, bool)
+    or raw_number <= 0
+  ):
     raise GitHubError("Managed negative issue is missing its issue number")
+  number = raw_number
   node_id = str(raw.get("node_id") or "").strip()
   if not node_id:
     raise GitHubError(
@@ -416,6 +485,13 @@ def _candidate_from_issue(raw: Mapping[str, Any]) -> _Candidate:
     raise GitHubError(
       f"Managed negative issue #{number} has no field hashes"
     )
+  if set(field_hashes) != _MANAGED_HASH_FIELDS or any(
+    not isinstance(value, str) or _SHA256_RE.fullmatch(value) is None
+    for value in field_hashes.values()
+  ):
+    raise GitHubError(
+      f"Managed negative issue #{number} has incomplete or invalid field hashes"
+    )
   for field, value in (("title", title), ("abstract", abstract)):
     expected = str(field_hashes.get(field) or "")
     actual = hashlib.sha256(value.encode("utf-8")).hexdigest()
@@ -436,6 +512,15 @@ def _candidate_from_issue(raw: Mapping[str, Any]) -> _Candidate:
     raise GitHubError(
       f"Managed negative issue #{number} identifiers do not match their hash"
     )
+  for field in ("version", "updated"):
+    value = str(meta.get(field) or "")
+    expected = str(field_hashes.get(field) or "")
+    actual = hashlib.sha256(value.encode("utf-8")).hexdigest()
+    if expected != actual:
+      raise GitHubError(
+        f"Managed negative issue #{number} {field} does not match its "
+        "paperbot hash"
+      )
   aliases = tuple(normalize_alias(str(alias)) for alias in aliases_value)
   raw_work_id = str(meta.get("work_id") or "")
   work_id = normalize_alias(raw_work_id)
@@ -480,13 +565,15 @@ def _canonical_records(
   *,
   positive_aliases: Mapping[str, set[str]],
   positive_inputs: Mapping[str, set[str]],
+  positive_titles: Mapping[str, set[str]],
   fixed_aliases: Mapping[str, set[str]],
   fixed_inputs: Mapping[str, set[str]],
+  fixed_titles: Mapping[str, set[str]],
 ) -> list[IssueNegativeRecord]:
   groups = _UnionFind(len(candidates))
   alias_owner: dict[str, int] = {}
   title_aliases: dict[str, list[int]] = {}
-  input_owner: dict[str, int] = {}
+  input_indexes: dict[str, list[int]] = {}
   for index, candidate in enumerate(candidates):
     for alias in candidate.aliases:
       if alias.startswith("title:"):
@@ -497,11 +584,30 @@ def _canonical_records(
         alias_owner[alias] = index
       else:
         groups.union(index, previous)
-    previous_input = input_owner.get(candidate.input_hash)
-    if previous_input is None:
-      input_owner[candidate.input_hash] = index
-    else:
-      groups.union(index, previous_input)
+    input_indexes.setdefault(candidate.input_hash, []).append(index)
+
+  # Exact duplicate model inputs normally identify duplicate paper threads.
+  # Refuse to use that shortcut if the threads also carry contradictory
+  # same-stage identifiers: identical publisher text is not proof that two
+  # separately identified journal articles are one work.
+  for input_hash, indexes in sorted(input_indexes.items()):
+    roots = sorted({groups.find(index) for index in indexes})
+    if len(roots) < 2:
+      continue
+    components = _candidate_components(candidates, groups, roots)
+    if _identity_components_conflict(tuple(components.values())):
+      numbers = sorted(
+        candidate.number
+        for members in components.values()
+        for candidate in members
+      )
+      raise GitHubError(
+        f"Exact SPECTER2 input {input_hash} ambiguously matches managed "
+        f"negative issues {', '.join(f'#{number}' for number in numbers)}"
+      )
+    first, *rest = roots
+    for root in rest:
+      groups.union(first, root)
 
   # The strict title/first-author/year fallback can join a preprint to its
   # publication, but it must not silently collapse distinct strong identities.
@@ -509,15 +615,8 @@ def _canonical_records(
     roots = sorted({groups.find(index) for index in indexes})
     if len(roots) < 2:
       continue
-    components = {
-      root: [
-        candidate
-        for index, candidate in enumerate(candidates)
-        if groups.find(index) == root
-      ]
-      for root in roots
-    }
-    if _title_components_conflict(tuple(components.values())):
+    components = _candidate_components(candidates, groups, roots)
+    if _identity_components_conflict(tuple(components.values())):
       numbers = sorted(
         candidate.number
         for members in components.values()
@@ -544,13 +643,20 @@ def _canonical_records(
     issue_urls = tuple(
       sorted({member.url for member in members if member.url})
     )
+    member_titles = {
+      normalized
+      for member in members
+      if (normalized := normalize_title(member.title))
+    }
     bibliography_keys = set().union(
       *(positive_aliases.get(alias, set()) for alias in aliases),
-      positive_inputs.get(representative.input_hash, set()),
+      *(positive_inputs.get(member.input_hash, set()) for member in members),
+      *(positive_titles.get(title, set()) for title in member_titles),
     )
     fixed_negative_ids = set().union(
       *(fixed_aliases.get(alias, set()) for alias in aliases),
-      fixed_inputs.get(representative.input_hash, set()),
+      *(fixed_inputs.get(member.input_hash, set()) for member in members),
+      *(fixed_titles.get(title, set()) for title in member_titles),
     )
     omission_reasons = tuple(
       reason
@@ -586,14 +692,32 @@ def _canonical_records(
   return records
 
 
-def _title_components_conflict(
+def _candidate_components(
+  candidates: Sequence[_Candidate],
+  groups: _UnionFind,
+  roots: Sequence[int],
+) -> dict[int, list[_Candidate]]:
+  wanted = set(roots)
+  components = {root: [] for root in roots}
+  for index, candidate in enumerate(candidates):
+    root = groups.find(index)
+    if root in wanted:
+      components[root].append(candidate)
+  return components
+
+
+def _identity_components_conflict(
   components: Sequence[Sequence[_Candidate]],
 ) -> bool:
-  """Reject title-only merges carrying contradictory same-stage identifiers."""
+  """Reject fallback merges carrying contradictory same-stage identifiers."""
 
   identities = [_component_strong_identities(component) for component in components]
   for kind in ("pmid", "arxiv"):
-    nonempty = [identity[kind] for identity in identities if identity[kind]]
+    nonempty = [
+      identity[kind]
+      for identity in identities
+      if isinstance(identity[kind], set) and identity[kind]
+    ]
     if len(nonempty) > 1 and not set.intersection(*nonempty):
       return True
   preprint_dois = [
@@ -604,25 +728,45 @@ def _title_components_conflict(
   publication_dois = [
     identity["publication_doi"]
     for identity in identities
-    if identity["publication_doi"]
+    if isinstance(identity["publication_doi"], set)
+    and identity["publication_doi"]
   ]
-  return (
+  if (
     len(preprint_dois) > 1
     and not set.intersection(*preprint_dois)
   ) or (
     len(publication_dois) > 1
     and not set.intersection(*publication_dois)
+  ):
+    return True
+  source_kinds = set().union(
+    *(
+      set(identity["source_ids"])
+      for identity in identities
+      if isinstance(identity["source_ids"], Mapping)
+    )
   )
+  for kind in source_kinds:
+    nonempty = [
+      identity["source_ids"][kind]
+      for identity in identities
+      if isinstance(identity["source_ids"], Mapping)
+      and identity["source_ids"].get(kind)
+    ]
+    if len(nonempty) > 1 and not set.intersection(*nonempty):
+      return True
+  return False
 
 
 def _component_strong_identities(
   candidates: Sequence[_Candidate],
-) -> dict[str, set[str]]:
+) -> dict[str, set[str] | dict[str, set[str]]]:
   result = {
     "pmid": set(),
     "arxiv": set(),
     "preprint_doi": set(),
     "publication_doi": set(),
+    "source_ids": {},
   }
   for candidate in candidates:
     for alias in candidate.aliases:
@@ -634,33 +778,40 @@ def _component_strong_identities(
           "preprint_doi" if _is_preprint_doi(value) else "publication_doi"
         )
         result[destination].add(value)
+      elif kind and kind != "title" and value:
+        source_ids = result["source_ids"]
+        assert isinstance(source_ids, dict)
+        source_ids.setdefault(kind, set()).add(value)
   return result
 
 
 def _is_preprint_doi(doi: str) -> bool:
-  return doi.startswith(
-    ("10.1101/", "10.64898/", "10.26434/", "10.48550/arxiv.")
-  )
+  return doi.startswith(_PREPRINT_DOI_PREFIXES)
 
 
 def _candidate_revision_key(
   candidate: _Candidate,
-) -> tuple[str, int, str, int]:
+) -> tuple[str, int, int, str]:
   version_match = _VERSION_RE.search(candidate.version)
   version = int(version_match.group(0)) if version_match else 0
   return (
     candidate.managed_updated,
     version,
+    candidate.number,
     candidate.metadata_hash,
-    -candidate.number,
   )
 
 
 def _bibliography_identity(
   works: Sequence[CanonicalWork],
-) -> tuple[dict[str, set[str]], dict[str, set[str]]]:
+) -> tuple[
+  dict[str, set[str]],
+  dict[str, set[str]],
+  dict[str, set[str]],
+]:
   aliases: dict[str, set[str]] = {}
   inputs: dict[str, set[str]] = {}
+  titles: dict[str, set[str]] = {}
   for work in works:
     work_aliases = {
       alias
@@ -677,22 +828,34 @@ def _bibliography_identity(
     inputs.setdefault(
       embedding_input_hash(work.title, work.abstract), set()
     ).add(work.citekey)
-  return aliases, inputs
+    if normalized_title := normalize_title(work.title):
+      titles.setdefault(normalized_title, set()).add(work.citekey)
+  return aliases, inputs, titles
 
 
 def _fixed_negative_identity(
   path: Path,
-) -> tuple[dict[str, set[str]], dict[str, set[str]]]:
+) -> tuple[
+  dict[str, set[str]],
+  dict[str, set[str]],
+  dict[str, set[str]],
+]:
   aliases: dict[str, set[str]] = {}
   inputs: dict[str, set[str]] = {}
+  titles: dict[str, set[str]] = {}
   if not path.exists():
-    return aliases, inputs
+    return aliases, inputs, titles
   for line_number, line in enumerate(
     path.read_text(encoding="utf-8").splitlines(), 1
   ):
     if not line.strip():
       continue
-    payload = json.loads(line)
+    try:
+      payload = json.loads(line)
+    except json.JSONDecodeError as error:
+      raise ValueError(
+        f"Invalid fixed-negative JSON at {path.name}:{line_number}"
+      ) from error
     if not isinstance(payload, Mapping):
       raise ValueError(
         f"Expected an object at {path.name}:{line_number}"
@@ -704,6 +867,11 @@ def _fixed_negative_identity(
       raise ValueError(
         f"Fixed negative at {path.name}:{line_number} has no work identity"
       )
+    aliases_value = payload.get("aliases") or []
+    if not isinstance(aliases_value, list):
+      raise ValueError(
+        f"Fixed negative aliases at {path.name}:{line_number} must be a list"
+      )
     row_aliases: set[str] = set()
     for value in (
       payload.get("work_id"),
@@ -711,12 +879,14 @@ def _fixed_negative_identity(
       f"pmid:{payload.get('pmid')}" if payload.get("pmid") else "",
       f"doi:{payload.get('doi')}" if payload.get("doi") else "",
       f"arxiv:{payload.get('arxiv_id')}" if payload.get("arxiv_id") else "",
-      *(payload.get("aliases") or []),
+      *aliases_value,
     ):
       if alias := normalize_alias(str(value or "")):
         row_aliases.add(alias)
     title = str(payload.get("title") or "").strip()
     abstract = str(payload.get("abstract") or "").strip()
+    if normalized_title := normalize_title(title):
+      titles.setdefault(normalized_title, set()).add(fixed_id)
     if title and abstract:
       inputs.setdefault(embedding_input_hash(title, abstract), set()).add(
         fixed_id
@@ -734,7 +904,7 @@ def _fixed_negative_identity(
       row_aliases.add(title_alias)
     for alias in row_aliases:
       aliases.setdefault(alias, set()).add(fixed_id)
-  return aliases, inputs
+  return aliases, inputs, titles
 
 
 def strict_title_alias(title: str, authors: str, year: str) -> str:

@@ -26,6 +26,7 @@ from .bibliography import (
   load_title_only_exceptions,
   normalize_abstract,
   normalize_doi,
+  normalize_title,
   require_abstracts,
   semantic_bibliography_hash,
 )
@@ -668,6 +669,20 @@ def refresh_model(
       # An invalid old manifest provides no trustworthy embedding provenance.
       # Rebuild every row below instead of interpreting old bytes as current.
       old_model_manifest = {}
+  prior_issue_feedback = any(
+    str(field).startswith("issue_negative_") for field in old_model_manifest
+  ) or any(
+    path.exists()
+    for path in (
+      artifacts / ISSUE_NEGATIVE_MATRIX,
+      artifacts / ISSUE_NEGATIVE_MANIFEST,
+    )
+  )
+  if prior_issue_feedback and not issue_negative_path.exists():
+    raise ValueError(
+      "The synchronized issue-negative snapshot is missing; "
+      "run sync-issue-negatives before refreshing the model"
+    )
   old_corpus_file_hash = old_model_manifest.get("negative_corpus_file_hash")
   if (
     old_corpus_file_hash
@@ -935,6 +950,15 @@ def _issue_negative_items(
   """
 
   positive_ids = set().union(*(_work_identities(work) for work in works)) if works else set()
+  # Stable identifiers and title/author/year aliases are the preferred match,
+  # but old issues can lack either one. An exact normalized title is a
+  # deliberately conservative final guard against teaching the classifier
+  # that a bibliography paper is negative after its abstract was revised.
+  positive_titles = {
+    normalized
+    for work in works
+    if (normalized := normalize_title(work.title))
+  }
   positive_inputs = {
     embedding_input_hash(work.title, work.abstract) for work in works
   }
@@ -944,6 +968,11 @@ def _issue_negative_items(
   )
   fixed_inputs = {
     embedding_input_hash(paper.title, paper.abstract) for paper in fixed_negatives
+  }
+  fixed_titles = {
+    normalized
+    for paper in fixed_negatives
+    if (normalized := normalize_title(paper.title))
   }
 
   seen_work_ids: set[str] = set()
@@ -988,12 +1017,14 @@ def _issue_negative_items(
       collector_included_count += 1
       if (
         row_ids & positive_ids
+        or normalize_title(title) in positive_titles
         or input_hash in positive_inputs
       ):
         effective_included = False
         effective_reasons.add("bibliography_overlap")
       elif (
         row_ids & fixed_ids
+        or normalize_title(title) in fixed_titles
         or input_hash in fixed_inputs
       ):
         effective_included = False
@@ -1065,6 +1096,25 @@ def _public_item(item: Mapping[str, Any]) -> dict[str, Any]:
   return {key: value for key, value in item.items() if not key.startswith("_")}
 
 
+def _json_contract_equal(value: Any, expected: Any) -> bool:
+  """Compare JSON values without Python's bool/int or int/float aliases."""
+
+  try:
+    return json.dumps(
+      value,
+      ensure_ascii=False,
+      sort_keys=True,
+      separators=(",", ":"),
+    ) == json.dumps(
+      expected,
+      ensure_ascii=False,
+      sort_keys=True,
+      separators=(",", ":"),
+    )
+  except (TypeError, ValueError):
+    return False
+
+
 def _refresh_embedding_matrix(
   items: Sequence[Mapping[str, Any]],
   matrix_path: Path,
@@ -1128,11 +1178,13 @@ def _refresh_embedding_matrix(
       encoder.embed([(str(item["title"]), str(item.get("_abstract", ""))) for item in pending]),
       dtype=np.float32,
     )
-    _validate_matrix(embedded, len(pending), "embedding backend output")
+    _validate_embedding_vectors(
+      embedded, len(pending), "embedding backend output"
+    )
     for row_index, vector in zip(pending_rows, embedded):
       rows[row_index] = vector
   matrix = np.asarray(rows, dtype=np.float32).reshape((-1, EMBEDDING_DIMENSION))
-  _validate_matrix(matrix, len(manifest), "embedding matrix")
+  _validate_embedding_artifact(matrix, manifest, "embedding matrix")
   return matrix, manifest
 
 
@@ -1252,12 +1304,17 @@ def model_errors(
   has_issue_feedback = any(
     str(field).startswith("issue_negative_") for field in manifest
   )
-  if has_issue_feedback:
-    issue_paths = [
-      artifacts / ISSUE_NEGATIVE_CORPUS,
-      artifacts / ISSUE_NEGATIVE_MATRIX,
-      artifacts / ISSUE_NEGATIVE_MANIFEST,
+  issue_paths = [
+    artifacts / ISSUE_NEGATIVE_CORPUS,
+    artifacts / ISSUE_NEGATIVE_MATRIX,
+    artifacts / ISSUE_NEGATIVE_MANIFEST,
+  ]
+  if not has_issue_feedback and any(path.exists() for path in issue_paths):
+    return [
+      "issue-negative artifacts exist beside a legacy model manifest; "
+      "refresh the model instead of ignoring synchronized feedback"
     ]
+  if has_issue_feedback:
     missing = [path.name for path in issue_paths if not path.exists()]
     if missing:
       return [f"missing artifact: {name}" for name in missing]
@@ -1276,20 +1333,24 @@ def model_errors(
       issue_negative_matrix = np.empty(
         (0, EMBEDDING_DIMENSION), dtype=np.float32
       )
-    with np.load(artifacts / CLASSIFIER_FILE, allow_pickle=False) as model:
-      coefficients = np.asarray(model["coef"], dtype=np.float64)
-      intercept = float(np.asarray(model["intercept"])[0])
-      classes = np.asarray(model["classes"])
+    coefficients, intercept, classes = _load_classifier_artifact(
+      artifacts / CLASSIFIER_FILE
+    )
   except Exception as error:
     return [f"could not safely load artifacts: {error}"]
 
   errors: list[str] = []
   embedding = manifest.get("embedding", {})
-  if embedding != EMBEDDING_CONFIG:
+  if not _json_contract_equal(embedding, EMBEDDING_CONFIG):
     errors.append("embedding specification does not exactly match the runtime")
-  if manifest.get("schema") != ARTIFACT_SCHEMA:
+  schema = manifest.get("schema")
+  if (
+    not isinstance(schema, int)
+    or isinstance(schema, bool)
+    or schema != ARTIFACT_SCHEMA
+  ):
     errors.append(f"artifact schema is {manifest.get('schema')!r}, expected {ARTIFACT_SCHEMA}")
-  if manifest.get("classifier") != CLASSIFIER_CONFIG:
+  if not _json_contract_equal(manifest.get("classifier"), CLASSIFIER_CONFIG):
     errors.append("classifier hyperparameters do not match the deterministic configuration")
   recorded_dependencies = manifest.get("dependencies")
   runtime_dependencies = _dependency_versions()
@@ -1311,11 +1372,15 @@ def model_errors(
     if manifest.get(field) != expected:
       errors.append(f"model manifest {field} is invalid")
   try:
-    _validate_matrix(positive_matrix, len(positive_manifest), "positive matrix")
-    _validate_matrix(negative_matrix, len(negative_manifest), "negative matrix")
-    _validate_matrix(
+    _validate_embedding_artifact(
+      positive_matrix, positive_manifest, "positive matrix"
+    )
+    _validate_embedding_artifact(
+      negative_matrix, negative_manifest, "negative matrix"
+    )
+    _validate_embedding_artifact(
       issue_negative_matrix,
-      len(issue_negative_manifest),
+      issue_negative_manifest,
       "issue-negative matrix",
     )
   except ValueError as error:
@@ -1581,16 +1646,44 @@ def model_errors(
 
 
 def load_model(artifacts_dir: Path | str) -> LoadedModel:
-  np = _numpy()
   artifacts = Path(artifacts_dir)
   manifest = json.loads((artifacts / MODEL_MANIFEST).read_text(encoding="utf-8"))
-  with np.load(artifacts / CLASSIFIER_FILE, allow_pickle=False) as model:
-    coefficients = np.asarray(model["coef"], dtype=np.float64)
-    intercept = float(np.asarray(model["intercept"])[0])
-    classes = np.asarray(model["classes"])
-  if coefficients.shape != (EMBEDDING_DIMENSION,) or classes.tolist() != [0, 1]:
-    raise ValueError("Invalid paperbot classifier artifact")
-  return LoadedModel(coefficients, intercept, str(manifest["model_hash"]))
+  if not isinstance(manifest, Mapping):
+    raise ValueError("Invalid paperbot model manifest")
+  schema = manifest.get("schema")
+  if (
+    not isinstance(schema, int)
+    or isinstance(schema, bool)
+    or schema != ARTIFACT_SCHEMA
+    or not _json_contract_equal(manifest.get("embedding"), EMBEDDING_CONFIG)
+    or not _json_contract_equal(manifest.get("classifier"), CLASSIFIER_CONFIG)
+  ):
+    raise ValueError("Invalid paperbot model specification")
+  coefficients, intercept, _classes = _load_classifier_artifact(
+    artifacts / CLASSIFIER_FILE
+  )
+  has_issue_feedback = any(
+    str(field).startswith("issue_negative_") for field in manifest
+  )
+  try:
+    expected_hash = _model_hash(
+      coefficients,
+      intercept,
+      str(manifest["bibliography_hash"]),
+      str(manifest["negative_corpus_file_hash"]),
+      str(manifest["negative_metadata_file_hash"]),
+      (
+        str(manifest["issue_negative_training_hash"])
+        if has_issue_feedback
+        else None
+      ),
+    )
+  except (KeyError, UnicodeEncodeError) as error:
+    raise ValueError("Invalid paperbot model hash provenance") from error
+  model_hash = str(manifest.get("model_hash") or "")
+  if SHA256_RE.fullmatch(model_hash) is None or model_hash != expected_hash:
+    raise ValueError("Paperbot classifier does not match its model manifest")
+  return LoadedModel(coefficients, intercept, model_hash)
 
 
 def score_embeddings(embeddings: Any, model: LoadedModel) -> Any:
@@ -1622,8 +1715,95 @@ def _validate_matrix(matrix: Any, rows: int, label: str) -> None:
   if getattr(matrix, "shape", None) != (rows, EMBEDDING_DIMENSION):
     raise ValueError(f"{label} has shape {getattr(matrix, 'shape', None)}, expected {(rows, EMBEDDING_DIMENSION)}")
   np = _numpy()
-  if not np.isfinite(matrix).all():
+  try:
+    finite = bool(np.isfinite(matrix).all())
+  except TypeError as error:
+    raise ValueError(f"{label} has a non-numeric dtype") from error
+  if not finite:
     raise ValueError(f"{label} contains non-finite values")
+
+
+def _validate_embedding_vectors(matrix: Any, rows: int, label: str) -> None:
+  """Validate the numerical contract promised by the SPECTER2 artifacts."""
+
+  np = _numpy()
+  _validate_matrix(matrix, rows, label)
+  if np.asarray(matrix).dtype != np.dtype(np.float32):
+    raise ValueError(f"{label} has dtype {np.asarray(matrix).dtype}, expected float32")
+  if rows:
+    norms = np.linalg.norm(np.asarray(matrix, dtype=np.float64), axis=1)
+    if not np.allclose(norms, 1.0, rtol=1e-5, atol=1e-5):
+      raise ValueError(f"{label} contains vectors that are not L2-normalized")
+
+
+def _validate_embedding_artifact(
+  matrix: Any,
+  manifest: Sequence[Mapping[str, Any]],
+  label: str,
+) -> None:
+  """Validate matrix bytes and their canonical one-to-one row mapping."""
+
+  _validate_embedding_vectors(matrix, len(manifest), label)
+  identifiers: set[str] = set()
+  for index, row in enumerate(manifest):
+    row_index = row.get("row")
+    if (
+      not isinstance(row_index, int)
+      or isinstance(row_index, bool)
+      or row_index != index
+    ):
+      raise ValueError(
+        f"{label} manifest row {index} has noncanonical index {row_index!r}"
+      )
+    active = row.get("active")
+    if active is not True and active is not False:
+      raise ValueError(f"{label} manifest row {index} has an invalid active flag")
+    identifier = str(row.get("work_id") or row.get("paper_id") or "").strip()
+    if not identifier:
+      raise ValueError(f"{label} manifest row {index} has no identifier")
+    normalized_identifier = identifier.casefold()
+    if normalized_identifier in identifiers:
+      raise ValueError(f"{label} manifest contains duplicate identifier {identifier}")
+    identifiers.add(normalized_identifier)
+    for hash_field in ("abstract_hash", "input_hash"):
+      value = str(row.get(hash_field) or "")
+      if SHA256_RE.fullmatch(value) is None:
+        raise ValueError(
+          f"{label} manifest row {index} has an invalid {hash_field}"
+        )
+
+
+def _load_classifier_artifact(path: Path) -> tuple[Any, float, Any]:
+  """Load the non-pickle classifier while rejecting ambiguous array layouts."""
+
+  np = _numpy()
+  with np.load(path, allow_pickle=False) as model:
+    if set(model.files) != {"coef", "intercept", "classes"}:
+      raise ValueError("classifier archive has unexpected or missing arrays")
+    coefficients = np.asarray(model["coef"])
+    intercept_array = np.asarray(model["intercept"])
+    classes = np.asarray(model["classes"])
+  if coefficients.dtype != np.dtype(np.float64):
+    raise ValueError(
+      f"classifier coefficients have dtype {coefficients.dtype}, expected float64"
+    )
+  if intercept_array.dtype != np.dtype(np.float64):
+    raise ValueError(
+      f"classifier intercept has dtype {intercept_array.dtype}, expected float64"
+    )
+  if classes.dtype != np.dtype(np.int64):
+    raise ValueError(
+      f"classifier classes have dtype {classes.dtype}, expected int64"
+    )
+  if coefficients.shape != (EMBEDDING_DIMENSION,):
+    raise ValueError(f"classifier coefficients have shape {coefficients.shape}")
+  if intercept_array.shape != (1,):
+    raise ValueError(f"classifier intercept has shape {intercept_array.shape}")
+  if classes.shape != (2,) or classes.tolist() != [0, 1]:
+    raise ValueError(f"classifier classes are {classes.tolist()}, expected [0, 1]")
+  if not np.isfinite(coefficients).all() or not np.isfinite(intercept_array).all():
+    raise ValueError("classifier contains non-finite values")
+  return coefficients, float(intercept_array[0]), classes
 
 
 def _dependency_versions() -> dict[str, str]:
@@ -1693,8 +1873,12 @@ def _verify_reusable_embedding_artifacts(
     for kind in ("matrix", "manifest")
   )
   if (
-    old_model_manifest.get("schema") != ARTIFACT_SCHEMA
-    or old_model_manifest.get("embedding") != EMBEDDING_CONFIG
+    not isinstance(old_model_manifest.get("schema"), int)
+    or isinstance(old_model_manifest.get("schema"), bool)
+    or old_model_manifest.get("schema") != ARTIFACT_SCHEMA
+    or not _json_contract_equal(
+      old_model_manifest.get("embedding"), EMBEDDING_CONFIG
+    )
     or any(
       not isinstance(old_model_manifest.get(name), str)
       or SHA256_RE.fullmatch(str(old_model_manifest.get(name))) is None
@@ -1713,10 +1897,15 @@ def _verify_reusable_embedding_artifacts(
     expected_matrix_hash = str(old_model_manifest[f"{label}_matrix_hash"])
     expected_manifest_hash = str(old_model_manifest[f"{label}_manifest_hash"])
     try:
-      matrix_hash = _array_hash(_load_npy(matrix_path))
-      manifest_hash = _records_hash(_read_jsonl(rows_path))
+      matrix = _load_npy(matrix_path)
+      rows = _read_jsonl(rows_path)
+      _validate_embedding_artifact(matrix, rows, f"{label} matrix")
+      matrix_hash = _array_hash(matrix)
+      manifest_hash = _records_hash(rows)
     except Exception as error:
-      raise ValueError(f"Cannot safely reuse {label} embedding artifacts: {error}") from error
+      raise ValueError(
+        f"Refusing to reuse corrupt {label} embedding artifacts: {error}"
+      ) from error
     if matrix_hash != expected_matrix_hash or manifest_hash != expected_manifest_hash:
       raise ValueError(
         f"Refusing to reuse corrupt {label} embedding artifacts; restore or rebuild them explicitly"
@@ -1735,8 +1924,12 @@ def _verify_reusable_issue_embedding_artifacts(
   expected_matrix_hash = old_model_manifest.get("issue_negative_matrix_hash")
   expected_manifest_hash = old_model_manifest.get("issue_negative_manifest_hash")
   if (
-    old_model_manifest.get("schema") != ARTIFACT_SCHEMA
-    or old_model_manifest.get("embedding") != EMBEDDING_CONFIG
+    not isinstance(old_model_manifest.get("schema"), int)
+    or isinstance(old_model_manifest.get("schema"), bool)
+    or old_model_manifest.get("schema") != ARTIFACT_SCHEMA
+    or not _json_contract_equal(
+      old_model_manifest.get("embedding"), EMBEDDING_CONFIG
+    )
     or not isinstance(expected_matrix_hash, str)
     or SHA256_RE.fullmatch(expected_matrix_hash) is None
     or not isinstance(expected_manifest_hash, str)
@@ -1746,11 +1939,14 @@ def _verify_reusable_issue_embedding_artifacts(
   ):
     return False
   try:
-    matrix_hash = _array_hash(_load_npy(matrix_path))
-    manifest_hash = _records_hash(_read_jsonl(manifest_path))
+    matrix = _load_npy(matrix_path)
+    rows = _read_jsonl(manifest_path)
+    _validate_embedding_artifact(matrix, rows, "issue-negative matrix")
+    matrix_hash = _array_hash(matrix)
+    manifest_hash = _records_hash(rows)
   except Exception as error:
     raise ValueError(
-      f"Cannot safely reuse issue-negative embedding artifacts: {error}"
+      f"Refusing to reuse corrupt issue-negative embedding artifacts: {error}"
     ) from error
   if (
     matrix_hash != expected_matrix_hash

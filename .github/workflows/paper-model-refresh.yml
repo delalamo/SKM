@@ -3,14 +3,6 @@ name: Refresh paper relevance model
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-    paths:
-      - bibliography.bib
-      - paper_relevance/**
-      - paperbot.toml
-      - requirements-paperbot.lock
-      - scripts/paperbot/**
-      - .github/workflows/paper-discovery.yml
-      - .github/workflows/paper-model-refresh.yml
   workflow_dispatch:
 
 permissions:
@@ -21,8 +13,64 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  paperbot-tests:
-    name: Test paperbot without credentials
+  detect_paperbot_changes:
+    name: Detect paperbot-relevant changes
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      relevant: ${{ steps.changes.outputs.relevant }}
+    env:
+      BASE_SHA: ${{ github.event.pull_request.base.sha || github.sha }}
+      HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+    steps:
+      - name: Check out candidate history
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: candidate
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Detect relevant paths
+        id: changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$GITHUB_EVENT_NAME" != "pull_request" ]]; then
+            echo "relevant=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git -C candidate fetch --no-tags --depth=1 \
+            "https://github.com/$GITHUB_REPOSITORY.git" "$BASE_SHA"
+          if git -C candidate diff --quiet --no-renames \
+            "$BASE_SHA...$HEAD_SHA" -- \
+            bibliography.bib \
+            paperbot.toml \
+            requirements-paperbot.lock \
+            conftest.py \
+            pytest.ini \
+            pyproject.toml \
+            setup.cfg \
+            .gitattributes \
+            .lfsconfig \
+            ':(glob)**/.gitattributes' \
+            ':(glob)**/conftest.py' \
+            ':(glob)paper_relevance/**' \
+            ':(glob)scripts/**' \
+            ':(glob)tests/paperbot/**' \
+            .github/workflows/paper-discovery.yml \
+            .github/workflows/paper-model-refresh.yml; then
+            echo "relevant=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "relevant=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  paperbot_tests:
+    name: Run paperbot unit tests
+    needs: detect_paperbot_changes
+    if: needs.detect_paperbot_changes.outputs.relevant == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -98,8 +146,39 @@ jobs:
             --repo-root "$GITHUB_WORKSPACE/candidate" \
             check-model
 
+  paperbot_test_gate:
+    name: Test paperbot without credentials
+    needs: [detect_paperbot_changes, paperbot_tests]
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Require relevant paperbot tests
+        env:
+          DETECT_RESULT: ${{ needs.detect_paperbot_changes.result }}
+          RELEVANT: ${{ needs.detect_paperbot_changes.outputs.relevant }}
+          TEST_RESULT: ${{ needs.paperbot_tests.result }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$DETECT_RESULT" != "success" ]]; then
+            echo "::error::Could not determine whether paperbot tests are required"
+            exit 1
+          fi
+          if [[ "$RELEVANT" == "true" && "$TEST_RESULT" != "success" ]]; then
+            echo "::error::The complete paperbot unit-test suite must pass"
+            exit 1
+          fi
+          if [[ "$RELEVANT" != "true" && "$RELEVANT" != "false" ]]; then
+            echo "::error::Paperbot change detection returned an invalid result"
+            exit 1
+          fi
+
   refresh-or-verify:
     name: Refresh trusted PRs or verify artifacts
+    needs: detect_paperbot_changes
+    if: needs.detect_paperbot_changes.outputs.relevant == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 360
     permissions:
@@ -291,7 +370,12 @@ jobs:
           git -C candidate config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git -C candidate commit -m "chore: refresh paper relevance model"
           gh auth setup-git
-          git -C candidate push "https://github.com/$HEAD_REPOSITORY.git" "HEAD:$HEAD_REF"
+          # The explicit lease prevents a stale run from recreating a deleted
+          # PR branch or writing after its head has moved.
+          git -C candidate push \
+            --force-with-lease="refs/heads/$HEAD_REF:$HEAD_SHA" \
+            "https://github.com/$HEAD_REPOSITORY.git" \
+            "HEAD:refs/heads/$HEAD_REF"
 
       - name: Verify only (fork, manual, or sensitive change)
         if: >-

@@ -520,6 +520,7 @@ def _union_preprint_publication_matches(
       if key := _title_author_key(record):
         buckets.setdefault(key, set()).add(root)
 
+  candidate_edges: set[tuple[int, int]] = set()
   for roots in buckets.values():
     if len(roots) != 2:
       continue
@@ -545,7 +546,7 @@ def _union_preprint_publication_matches(
     if cross_stage and _year_sets_within(
       left["years"], right["years"], PREPRINT_PUBLICATION_YEAR_GAP
     ):
-      groups.union(left_root, right_root)
+      candidate_edges.add((left_root, right_root))
       continue
 
     # PubMed occasionally lacks a DOI while a provider's publication record
@@ -566,6 +567,16 @@ def _union_preprint_publication_matches(
       and not left_preprint
     )
     if doi_pmid_complement and _year_sets_within(left["years"], right["years"], 1):
+      candidate_edges.add((left_root, right_root))
+
+  neighbors: dict[int, set[int]] = {}
+  for left_root, right_root in candidate_edges:
+    neighbors.setdefault(left_root, set()).add(right_root)
+    neighbors.setdefault(right_root, set()).add(left_root)
+  for left_root, right_root in sorted(candidate_edges):
+    # A component may retain several historical titles. Refuse to let bucket
+    # iteration order select one of multiple plausible cross-stage matches.
+    if len(neighbors[left_root]) == 1 and len(neighbors[right_root]) == 1:
       groups.union(left_root, right_root)
 
 

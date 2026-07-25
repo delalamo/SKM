@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import UTC, datetime
+from itertools import permutations
 
 from scripts.paperbot.records import (
   PaperRecord,
@@ -229,6 +230,52 @@ def test_preprint_publication_fallback_allows_two_year_indexing_lag() -> None:
 
   assert len(merged) == 1
   assert merged[0].doi == "10.1016/j.crmeth.2026.101468"
+
+
+def test_revised_preprint_titles_do_not_choose_a_publication_by_order() -> None:
+  preprint_old = paper(
+    title="Original preprint title",
+    abstract="Original preprint abstract.",
+    metadata={"publication_year": 2022},
+  )
+  preprint_new = paper(
+    title="Revised preprint title",
+    abstract="Revised preprint abstract.",
+    metadata={"publication_year": 2022},
+  )
+  publication_old = paper(
+    source="pubmed",
+    source_id="publication-old",
+    title=preprint_old.title,
+    abstract="First plausible publication.",
+    doi="10.1000/old-title",
+    pmid="1001",
+    metadata={"publication_year": 2023},
+  )
+  publication_new = paper(
+    source="pubmed",
+    source_id="publication-new",
+    title=preprint_new.title,
+    abstract="Second plausible publication.",
+    doi="10.1000/new-title",
+    pmid="1002",
+    metadata={"publication_year": 2024},
+  )
+  records = (
+    preprint_old,
+    preprint_new,
+    publication_old,
+    publication_new,
+  )
+  expected_ids = {
+    "doi:10.1101/2026.01.01.123456",
+    "doi:10.1000/old-title",
+    "doi:10.1000/new-title",
+  }
+
+  for ordering in permutations(records):
+    merged = deduplicate_records(ordering)
+    assert {record.canonical_id for record in merged} == expected_ids
 
 
 def test_research_square_fallback_prefers_version_of_record_doi() -> None:

@@ -43,6 +43,28 @@ def test_fork_never_enters_the_credentialed_auto_refresh_path() -> None:
   assert not decision.sensitive_change
 
 
+def test_non_bibliography_change_never_enters_auto_refresh() -> None:
+  decision = classify_paths(
+    ["paper_relevance/README.md"],
+    event_name="pull_request",
+    same_repository=True,
+  )
+
+  assert not decision.auto_refresh
+  assert not decision.sensitive_change
+
+
+def test_manual_dispatch_is_verify_only_even_for_bibliography() -> None:
+  decision = classify_paths(
+    ["bibliography.bib"],
+    event_name="workflow_dispatch",
+    same_repository=True,
+  )
+
+  assert not decision.auto_refresh
+  assert not decision.sensitive_change
+
+
 @pytest.mark.parametrize(
   "path",
   [
@@ -50,6 +72,9 @@ def test_fork_never_enters_the_credentialed_auto_refresh_path() -> None:
     "paperbot.toml",
     "requirements-paperbot.lock",
     ".github/workflows/paper-model-refresh.yml",
+    ".gitattributes",
+    "paper_relevance/.gitattributes",
+    ".lfsconfig",
     "paper_relevance/pubmed_negatives_v1.jsonl",
     "paper_relevance/pubmed_negatives_v1_metadata.json",
     # Retain fail-closed handling for the retired corpus path.
@@ -176,6 +201,8 @@ def test_workflow_bootstrap_is_credential_free_and_read_only() -> None:
   assert "candidate/requirements-paperbot.lock" in tests_job
   assert "steps.dependencies.outputs.bootstrap == 'true'" in tests_job
   assert "tests/paperbot/test_no_remote_summarization.py" in tests_job
+  assert "working-directory: candidate" in tests_job
+  assert "run: python -m pytest tests/paperbot" in tests_job
   assert "check-model" in tests_job
   assert "secrets." not in tests_job
   assert "git push" not in tests_job
@@ -185,6 +212,34 @@ def test_workflow_bootstrap_is_credential_free_and_read_only() -> None:
   assert "Initial paperbot bootstrap is validated by the credential-free test job" in (
     refresh_job
   )
+
+
+def test_workflow_triggers_for_paperbot_test_changes() -> None:
+  workflow = Path(".github/workflows/paper-model-refresh.yml").read_text(
+    encoding="utf-8"
+  )
+
+  trigger = workflow.split("  workflow_dispatch:", maxsplit=1)[0]
+  assert "    paths:" not in trigger
+  assert "Detect paperbot-relevant changes" in workflow
+  assert ":(glob)tests/paperbot/**" in workflow
+  assert "name: Test paperbot without credentials" in workflow
+  assert "if: always()" in workflow
+
+
+def test_required_paperbot_gate_cannot_pass_after_detection_or_test_failure() -> None:
+  workflow = Path(".github/workflows/paper-model-refresh.yml").read_text(
+    encoding="utf-8"
+  )
+  gate = workflow.split("  paperbot_test_gate:", maxsplit=1)[1].split(
+    "  refresh-or-verify:", maxsplit=1
+  )[0]
+
+  assert "needs: [detect_paperbot_changes, paperbot_tests]" in gate
+  assert "DETECT_RESULT" in gate
+  assert '"$DETECT_RESULT" != "success"' in gate
+  assert '"$RELEVANT" == "true" && "$TEST_RESULT" != "success"' in gate
+  assert '"$RELEVANT" != "true" && "$RELEVANT" != "false"' in gate
 
 
 def test_workflow_scopes_tokens_to_their_required_steps() -> None:
@@ -211,6 +266,26 @@ def test_workflow_scopes_tokens_to_their_required_steps() -> None:
   assert "MODEL_UPDATE_TOKEN" not in sync_step
 
   assert "MODEL_UPDATE_TOKEN: ${{ secrets.MODEL_UPDATE_TOKEN }}" in commit_and_after
+  assert '--force-with-lease="refs/heads/$HEAD_REF:$HEAD_SHA"' in commit_and_after
+  assert '"HEAD:refs/heads/$HEAD_REF"' in commit_and_after
+
+
+def test_workflow_stages_exactly_the_generated_allowlist() -> None:
+  workflow = Path(".github/workflows/paper-model-refresh.yml").read_text(
+    encoding="utf-8"
+  )
+  stage_block = workflow.split(
+    "          git -C candidate add -- \\", maxsplit=1
+  )[1].split(
+    "          if git -C candidate diff --cached --quiet;", maxsplit=1
+  )[0]
+  staged = {
+    line.strip().removesuffix("\\").strip()
+    for line in stage_block.splitlines()
+    if line.strip()
+  }
+
+  assert staged == GENERATED_PATHS
 
 
 def test_every_automatic_model_refresh_first_synchronizes_issue_feedback() -> None:
