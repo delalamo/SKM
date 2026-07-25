@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+import os
 import subprocess
 from pathlib import Path
 
 import pytest
+import yaml
 
 from scripts.paperbot.pr_safety import (
   GENERATED_MODEL_PATHS,
@@ -240,6 +242,65 @@ def test_required_paperbot_gate_cannot_pass_after_detection_or_test_failure() ->
   assert '"$DETECT_RESULT" != "success"' in gate
   assert '"$RELEVANT" == "true" && "$TEST_RESULT" != "success"' in gate
   assert '"$RELEVANT" != "true" && "$RELEVANT" != "false"' in gate
+
+
+@pytest.mark.parametrize(
+  ("environment", "expected"),
+  [
+    (
+      {
+        "DETECT_RESULT": "success",
+        "RELEVANT": "false",
+        "TEST_RESULT": "skipped",
+      },
+      0,
+    ),
+    (
+      {
+        "DETECT_RESULT": "success",
+        "RELEVANT": "true",
+        "TEST_RESULT": "success",
+      },
+      0,
+    ),
+    (
+      {
+        "DETECT_RESULT": "success",
+        "RELEVANT": "true",
+        "TEST_RESULT": "failure",
+      },
+      1,
+    ),
+    (
+      {
+        "DETECT_RESULT": "failure",
+        "RELEVANT": "",
+        "TEST_RESULT": "skipped",
+      },
+      1,
+    ),
+  ],
+)
+def test_required_gate_shell_logic(
+  environment: dict[str, str],
+  expected: int,
+) -> None:
+  workflow = yaml.safe_load(
+    Path(".github/workflows/paper-model-refresh.yml").read_text(
+      encoding="utf-8"
+    )
+  )
+  script = workflow["jobs"]["paperbot_test_gate"]["steps"][0]["run"]
+
+  completed = subprocess.run(
+    ["bash", "-c", script],
+    check=False,
+    capture_output=True,
+    text=True,
+    env={**os.environ, **environment},
+  )
+
+  assert completed.returncode == expected
 
 
 def test_workflow_scopes_tokens_to_their_required_steps() -> None:
