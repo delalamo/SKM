@@ -191,10 +191,14 @@ def test_workflow_scopes_tokens_to_their_required_steps() -> None:
   workflow = Path(".github/workflows/paper-model-refresh.yml").read_text(
     encoding="utf-8"
   )
+  tests_job, refresh_job = workflow.split("  refresh-or-verify:", maxsplit=1)
 
   before_commit, commit_and_after = workflow.split(
     "      - name: Commit refreshed artifacts to trusted PR branch", maxsplit=1
   )
+  assert "issues: read" not in tests_job
+  assert "GITHUB_TOKEN:" not in tests_job
+  assert "permissions:\n      contents: read\n      issues: read" in refresh_job
   assert "GITHUB_TOKEN: ${{ github.token }}" in before_commit
   assert workflow.count("GITHUB_TOKEN: ${{ github.token }}") == 1
   assert "MODEL_UPDATE_TOKEN" not in before_commit
@@ -202,7 +206,31 @@ def test_workflow_scopes_tokens_to_their_required_steps() -> None:
   sync_step = before_commit.split(
     "      - name: Synchronize closed negative issues", maxsplit=1
   )[1].split("      - name: Refresh and verify model", maxsplit=1)[0]
+  assert "steps.safety.outputs.auto_refresh == 'true'" in sync_step
   assert "GITHUB_TOKEN: ${{ github.token }}" in sync_step
   assert "MODEL_UPDATE_TOKEN" not in sync_step
 
   assert "MODEL_UPDATE_TOKEN: ${{ secrets.MODEL_UPDATE_TOKEN }}" in commit_and_after
+
+
+def test_every_automatic_model_refresh_first_synchronizes_issue_feedback() -> None:
+  workflow = Path(".github/workflows/paper-model-refresh.yml").read_text(
+    encoding="utf-8"
+  )
+  backfill_step = workflow.split(
+    "      - name: Backfill bibliography abstracts", maxsplit=1
+  )[1].split("      - name: Synchronize closed negative issues", maxsplit=1)[0]
+  sync_step = workflow.split(
+    "      - name: Synchronize closed negative issues", maxsplit=1
+  )[1].split("      - name: Refresh and verify model", maxsplit=1)[0]
+  refresh_step = workflow.split(
+    "      - name: Refresh and verify model", maxsplit=1
+  )[1].split("      - name: Reject unexpected generated paths", maxsplit=1)[0]
+
+  automatic_condition = "steps.safety.outputs.auto_refresh == 'true'"
+  assert automatic_condition in backfill_step
+  assert automatic_condition in sync_step
+  assert automatic_condition in refresh_step
+  assert "backfill-bibliography" in backfill_step
+  assert "sync-issue-negatives" in sync_step
+  assert "refresh-model" in refresh_step

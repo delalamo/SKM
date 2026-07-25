@@ -44,6 +44,14 @@ from .negative_policy import (
   TARGET_TEXT_RE,
   is_target_topic,
 )
+from .issue_negatives import (
+  ISSUE_NEGATIVE_CORPUS,
+  ISSUE_NEGATIVE_MANIFEST,
+  ISSUE_NEGATIVE_MATRIX,
+  IssueNegativeRecord,
+  load_issue_negative_snapshot,
+  strict_title_alias,
+)
 
 
 BASE_MODEL = "allenai/specter2_base"
@@ -76,6 +84,7 @@ MODEL_MANIFEST = "model_manifest.json"
 NEGATIVE_CORPUS_SOURCE = "PubMed/MEDLINE"
 NEGATIVE_METADATA_SOURCE = "PubMed/MEDLINE via NCBI E-utilities"
 NEGATIVE_MANIFEST_SOURCE = "pubmed"
+ISSUE_NEGATIVE_POLICY_VERSION = 1
 SHA256_RE = re.compile(r"[0-9a-f]{64}")
 # Retained as a public compatibility alias for tests and audit tooling.  The
 # PubMed corpus intentionally blocks only explicit target-field phrases; a
@@ -606,10 +615,28 @@ def refresh_model(
   artifacts.mkdir(parents=True, exist_ok=True)
   negative_path = Path(negatives_path) if negatives_path else artifacts / NEGATIVE_CORPUS
   negative_metadata_path = negative_path.with_name(NEGATIVE_METADATA)
+  issue_negative_path = artifacts / ISSUE_NEGATIVE_CORPUS
   exceptions = load_title_only_exceptions(title_only_exceptions_path)
   works = canonicalize_entries(load_bibliography(bibliography_path))
   require_abstracts(works, exceptions)
   negatives = load_negative_corpus(negative_path)
+  issue_negative_snapshot = load_issue_negative_snapshot(issue_negative_path)
+  issue_negative_items, issue_negative_stats = _issue_negative_items(
+    issue_negative_snapshot,
+    works,
+    negatives,
+  )
+  issue_negative_training_hash = _issue_negative_training_hash(
+    issue_negative_items
+  )
+  issue_negative_snapshot_records = _issue_negative_snapshot_records(
+    issue_negative_snapshot
+  )
+  issue_negative_snapshot_file_hash = (
+    _file_hash(issue_negative_path)
+    if issue_negative_path.exists()
+    else hashlib.sha256(b"").hexdigest()
+  )
   negative_corpus_file_hash = _file_hash(negative_path)
   corpus_errors = validate_positive_negative_overlap(works, negatives)
   if strict_negative_quotas:
@@ -620,9 +647,11 @@ def refresh_model(
   negative_metadata_file_hash = (
     _file_hash(negative_metadata_path) if negative_metadata_path.exists() else ""
   )
-  if len(works) > len(negatives) * 1.25:
+  effective_negative_count = len(negatives) + len(issue_negative_items)
+  if len(works) > effective_negative_count * 1.25:
     warnings.warn(
-      f"Positive corpus ({len(works)}) exceeds fixed negatives ({len(negatives)}) by more than 25%",
+      f"Positive corpus ({len(works)}) exceeds effective negatives "
+      f"({effective_negative_count}) by more than 25%",
       RuntimeWarning,
       stacklevel=2,
     )
@@ -661,6 +690,9 @@ def refresh_model(
   reuse_embeddings = _verify_reusable_embedding_artifacts(
     artifacts, old_model_manifest
   )
+  reuse_issue_embeddings = _verify_reusable_issue_embedding_artifacts(
+    artifacts, old_model_manifest
+  )
 
   encoder = encoder or Specter2Encoder()
   positive_items = [_positive_item(work, exceptions, abstract_provenance or {}) for work in works]
@@ -688,10 +720,26 @@ def refresh_model(
     retain_removed=False,
     reuse_existing=reuse_embeddings,
   )
+  issue_negative_matrix, issue_negative_manifest = _refresh_embedding_matrix(
+    issue_negative_items,
+    artifacts / ISSUE_NEGATIVE_MATRIX,
+    artifacts / ISSUE_NEGATIVE_MANIFEST,
+    encoder,
+    retain_removed=True,
+    reuse_existing=reuse_issue_embeddings,
+  )
 
   positive_active = _active_matrix(positive_matrix, positive_manifest)
   negative_active = _active_matrix(negative_matrix, negative_manifest)
-  coefficients, intercept, training = fit_logistic_regression(positive_active, negative_active)
+  issue_negative_active = _active_matrix(
+    issue_negative_matrix, issue_negative_manifest
+  )
+  effective_negative = _combine_negative_matrices(
+    negative_active, issue_negative_active
+  )
+  coefficients, intercept, training = fit_logistic_regression(
+    positive_active, effective_negative
+  )
 
   semantic_hash = semantic_bibliography_hash(works, exceptions)
   classifier_payload = {
@@ -705,6 +753,7 @@ def refresh_model(
     semantic_hash,
     negative_corpus_file_hash,
     negative_metadata_file_hash,
+    issue_negative_training_hash,
   )
   manifest: dict[str, Any] = {
     "schema": ARTIFACT_SCHEMA,
@@ -726,6 +775,31 @@ def refresh_model(
     "negative_count": len(negative_items),
     "negative_manifest_hash": _records_hash(negative_manifest),
     "negative_matrix_hash": _array_hash(negative_matrix),
+    "issue_negative_corpus": ISSUE_NEGATIVE_CORPUS,
+    "issue_negative_policy_version": ISSUE_NEGATIVE_POLICY_VERSION,
+    "issue_negative_snapshot_count": issue_negative_stats["snapshot_count"],
+    "issue_negative_collector_included_count": issue_negative_stats[
+      "collector_included_count"
+    ],
+    "issue_negative_count": issue_negative_stats["active_count"],
+    "issue_negative_omitted_count": issue_negative_stats["omitted_count"],
+    "issue_negative_bibliography_overlap_count": issue_negative_stats[
+      "bibliography_overlap_count"
+    ],
+    "issue_negative_fixed_overlap_count": issue_negative_stats[
+      "fixed_overlap_count"
+    ],
+    "issue_negative_omission_counts": issue_negative_stats["omission_counts"],
+    "issue_negative_snapshot_hash": _records_hash(
+      issue_negative_snapshot_records
+    ),
+    "issue_negative_snapshot_file_hash": issue_negative_snapshot_file_hash,
+    "issue_negative_corpus_hash": _records_hash(issue_negative_items),
+    "issue_negative_training_hash": issue_negative_training_hash,
+    "issue_negative_rows": len(issue_negative_manifest),
+    "issue_negative_manifest_hash": _records_hash(issue_negative_manifest),
+    "issue_negative_matrix_hash": _array_hash(issue_negative_matrix),
+    "effective_negative_count": effective_negative_count,
     "model_hash": model_hash,
     "training": training,
     "dependencies": _dependency_versions(),
@@ -734,6 +808,12 @@ def refresh_model(
   _atomic_write_jsonl(artifacts / POSITIVE_MANIFEST, positive_manifest)
   _atomic_save_npy(artifacts / NEGATIVE_MATRIX, negative_matrix)
   _atomic_write_jsonl(artifacts / NEGATIVE_MANIFEST, negative_manifest)
+  if not issue_negative_path.exists():
+    _atomic_write_jsonl(issue_negative_path, issue_negative_snapshot_records)
+  _atomic_save_npy(artifacts / ISSUE_NEGATIVE_MATRIX, issue_negative_matrix)
+  _atomic_write_jsonl(
+    artifacts / ISSUE_NEGATIVE_MANIFEST, issue_negative_manifest
+  )
   _atomic_save_npz(artifacts / CLASSIFIER_FILE, classifier_payload)
   _atomic_write_json(artifacts / MODEL_MANIFEST, manifest)
   return manifest
@@ -781,6 +861,200 @@ def _negative_item(paper: NegativePaper) -> dict[str, Any]:
     "academic_graph": paper.metadata.get("academic_graph", {}),
     "_abstract": paper.abstract,
   }
+
+
+def _identity_aliases(value: Any) -> set[str]:
+  """Return conservative normalized identity aliases for overlap checks."""
+
+  raw = str(value or "").strip().casefold()
+  if not raw:
+    return set()
+  aliases = {raw}
+  doi_value = raw.removeprefix("doi:")
+  doi = normalize_doi(doi_value)
+  if doi.startswith("10.") and "/" in doi:
+    aliases.add(f"doi:{doi}")
+  if raw.startswith("pmid:"):
+    pmid = raw.removeprefix("pmid:").strip()
+    if pmid:
+      aliases.add(f"pmid:{pmid}")
+  return aliases
+
+
+def _work_identities(work: CanonicalWork) -> set[str]:
+  identities: set[str] = set()
+  for value in (work.work_id, *work.identifiers):
+    identities.update(_identity_aliases(value))
+  title_alias = strict_title_alias(
+    work.title,
+    str(work.fields.get("author") or ""),
+    work.year,
+  )
+  identities.update(_identity_aliases(title_alias))
+  return identities
+
+
+def _fixed_negative_identities(paper: NegativePaper) -> set[str]:
+  identities = _identity_aliases(paper.paper_id)
+  for key, prefix in (
+    ("pmid", "pmid:"),
+    ("doi", "doi:"),
+    ("arxiv_id", "arxiv:"),
+    ("provider_id", ""),
+    ("source_id", ""),
+  ):
+    value = str(paper.metadata.get(key) or "").strip()
+    if value:
+      identities.update(_identity_aliases(f"{prefix}{value}"))
+  authors = paper.metadata.get("authors") or []
+  author_text = (
+    " and ".join(str(author) for author in authors)
+    if isinstance(authors, list)
+    else str(authors)
+  )
+  title_alias = strict_title_alias(
+    paper.title,
+    author_text,
+    str(paper.published_year),
+  )
+  identities.update(_identity_aliases(title_alias))
+  return identities
+
+
+def _issue_negative_items(
+  snapshot: Sequence[IssueNegativeRecord],
+  works: Sequence[CanonicalWork],
+  fixed_negatives: Sequence[NegativePaper],
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+  """Build the effective issue-negative corpus and fail closed on duplicates.
+
+  The collector owns issue selection and canonicalization. This second check is
+  intentionally independent: a paper that has since entered the bibliography,
+  or one already represented by the frozen corpus, must never receive negative
+  training weight even if an old snapshot still marks it as included.
+  """
+
+  positive_ids = set().union(*(_work_identities(work) for work in works)) if works else set()
+  positive_inputs = {
+    embedding_input_hash(work.title, work.abstract) for work in works
+  }
+  fixed_ids = (
+    set().union(*(_fixed_negative_identities(paper) for paper in fixed_negatives))
+    if fixed_negatives else set()
+  )
+  fixed_inputs = {
+    embedding_input_hash(paper.title, paper.abstract) for paper in fixed_negatives
+  }
+
+  seen_work_ids: set[str] = set()
+  seen_aliases: dict[str, str] = {}
+  seen_issue_numbers: dict[int, str] = {}
+  seen_active_inputs: dict[str, str] = {}
+  items: list[dict[str, Any]] = []
+  omission_counts: dict[str, int] = {}
+  collector_included_count = 0
+
+  for record in snapshot:
+    work_id = record.work_id
+    title = record.title
+    abstract = record.abstract
+    input_hash = record.input_hash
+    normalized_work_id = work_id.casefold()
+    if normalized_work_id in seen_work_ids:
+      raise ValueError(f"Duplicate issue-negative work identity: {work_id}")
+    seen_work_ids.add(normalized_work_id)
+    row_ids = _identity_aliases(work_id)
+    for alias in record.aliases:
+      row_ids.update(_identity_aliases(alias))
+    for identity in sorted(row_ids):
+      previous = seen_aliases.get(identity)
+      if previous is not None:
+        raise ValueError(
+          f"Duplicate issue-negative identity {identity}: {previous} and {work_id}"
+        )
+      seen_aliases[identity] = work_id
+    for issue_number in record.issue_numbers:
+      previous = seen_issue_numbers.get(issue_number)
+      if previous is not None:
+        raise ValueError(
+          f"GitHub issue #{issue_number} appears in issue-negative works "
+          f"{previous} and {work_id}"
+        )
+      seen_issue_numbers[issue_number] = work_id
+
+    effective_included = record.active
+    effective_reasons = set(record.omission_reasons)
+    if effective_included:
+      collector_included_count += 1
+      if (
+        row_ids & positive_ids
+        or input_hash in positive_inputs
+      ):
+        effective_included = False
+        effective_reasons.add("bibliography_overlap")
+      elif (
+        row_ids & fixed_ids
+        or input_hash in fixed_inputs
+      ):
+        effective_included = False
+        effective_reasons.add("fixed_negative_overlap")
+
+    if not effective_included:
+      for reason in sorted(effective_reasons):
+        omission_counts[reason] = omission_counts.get(reason, 0) + 1
+      continue
+    previous_input = seen_active_inputs.get(input_hash)
+    if previous_input is not None:
+      raise ValueError(
+        f"Duplicate issue-negative embedding input: {previous_input} and {work_id}"
+      )
+    seen_active_inputs[input_hash] = work_id
+    items.append({
+      "work_id": work_id,
+      "aliases": list(record.aliases),
+      "issue_numbers": list(record.issue_numbers),
+      "issue_urls": list(record.issue_urls),
+      "selected_issue_number": record.selected_issue_number,
+      "title": title,
+      "abstract_hash": hashlib.sha256(abstract.encode("utf-8")).hexdigest(),
+      "input_hash": input_hash,
+      "metadata_hash": record.metadata_hash,
+      "source": "github_issues",
+      "active_snapshot": True,
+      "_abstract": abstract,
+    })
+
+  stats = {
+    "snapshot_count": len(snapshot),
+    "collector_included_count": collector_included_count,
+    "active_count": len(items),
+    "omitted_count": len(snapshot) - len(items),
+    "bibliography_overlap_count": omission_counts.get("bibliography_overlap", 0),
+    "fixed_overlap_count": omission_counts.get("fixed_negative_overlap", 0),
+    "omission_counts": dict(sorted(omission_counts.items())),
+  }
+  return items, stats
+
+
+def _issue_negative_snapshot_records(
+  snapshot: Sequence[IssueNegativeRecord],
+) -> list[dict[str, Any]]:
+  """Return the collector snapshot's stable public representation."""
+
+  return [record.to_dict() for record in snapshot]
+
+
+def _issue_negative_training_hash(
+  items: Sequence[Mapping[str, Any]],
+) -> str:
+  """Hash only inputs that can affect the fitted classifier."""
+
+  return _records_hash(
+    sorted(
+      ({"input_hash": str(item["input_hash"])} for item in items),
+      key=lambda item: item["input_hash"],
+    )
+  )
 
 
 def _item_id(item: Mapping[str, Any]) -> str:
@@ -864,7 +1138,7 @@ def _refresh_embedding_matrix(
 
 def _manifest_item(item: Mapping[str, Any], previous: Mapping[str, Any] | None) -> dict[str, Any]:
   public = _public_item(item)
-  if "work_id" not in public:
+  if "citekey" not in public:
     return public
   for field in (
     "abstract_source",
@@ -883,6 +1157,15 @@ def _active_matrix(matrix: Any, manifest: Sequence[Mapping[str, Any]]) -> Any:
   np = _numpy()
   indexes = [int(row["row"]) for row in manifest if row.get("active", True)]
   return np.asarray(matrix[indexes], dtype=np.float32)
+
+
+def _combine_negative_matrices(fixed: Any, issue_feedback: Any) -> Any:
+  np = _numpy()
+  _validate_matrix(fixed, len(fixed), "fixed negative matrix")
+  _validate_matrix(issue_feedback, len(issue_feedback), "issue-negative matrix")
+  return np.concatenate([fixed, issue_feedback], axis=0).astype(
+    np.float32, copy=False
+  )
 
 
 def fit_logistic_regression(positive: Any, negative: Any) -> tuple[Any, float, dict[str, Any]]:
@@ -961,10 +1244,38 @@ def model_errors(
   try:
     np = _numpy()
     manifest = json.loads((artifacts / MODEL_MANIFEST).read_text(encoding="utf-8"))
+    if not isinstance(manifest, dict):
+      raise ValueError("model manifest is not a JSON object")
+  except Exception as error:
+    return [f"could not safely load artifacts: {error}"]
+
+  has_issue_feedback = any(
+    str(field).startswith("issue_negative_") for field in manifest
+  )
+  if has_issue_feedback:
+    issue_paths = [
+      artifacts / ISSUE_NEGATIVE_CORPUS,
+      artifacts / ISSUE_NEGATIVE_MATRIX,
+      artifacts / ISSUE_NEGATIVE_MANIFEST,
+    ]
+    missing = [path.name for path in issue_paths if not path.exists()]
+    if missing:
+      return [f"missing artifact: {name}" for name in missing]
+  try:
     positive_manifest = _read_jsonl(artifacts / POSITIVE_MANIFEST)
     negative_manifest = _read_jsonl(artifacts / NEGATIVE_MANIFEST)
     positive_matrix = _load_npy(artifacts / POSITIVE_MATRIX)
     negative_matrix = _load_npy(artifacts / NEGATIVE_MATRIX)
+    if has_issue_feedback:
+      issue_negative_manifest = _read_jsonl(
+        artifacts / ISSUE_NEGATIVE_MANIFEST
+      )
+      issue_negative_matrix = _load_npy(artifacts / ISSUE_NEGATIVE_MATRIX)
+    else:
+      issue_negative_manifest = []
+      issue_negative_matrix = np.empty(
+        (0, EMBEDDING_DIMENSION), dtype=np.float32
+      )
     with np.load(artifacts / CLASSIFIER_FILE, allow_pickle=False) as model:
       coefficients = np.asarray(model["coef"], dtype=np.float64)
       intercept = float(np.asarray(model["intercept"])[0])
@@ -991,12 +1302,22 @@ def model_errors(
     "negative_graph_provider": SEMANTIC_SCHOLAR_PROVIDER,
     "negative_metadata": NEGATIVE_METADATA,
   }
+  if has_issue_feedback:
+    expected_negative_fields.update({
+      "issue_negative_corpus": ISSUE_NEGATIVE_CORPUS,
+      "issue_negative_policy_version": ISSUE_NEGATIVE_POLICY_VERSION,
+    })
   for field, expected in expected_negative_fields.items():
     if manifest.get(field) != expected:
       errors.append(f"model manifest {field} is invalid")
   try:
     _validate_matrix(positive_matrix, len(positive_manifest), "positive matrix")
     _validate_matrix(negative_matrix, len(negative_manifest), "negative matrix")
+    _validate_matrix(
+      issue_negative_matrix,
+      len(issue_negative_manifest),
+      "issue-negative matrix",
+    )
   except ValueError as error:
     errors.append(str(error))
   if coefficients.shape != (EMBEDDING_DIMENSION,):
@@ -1006,7 +1327,10 @@ def model_errors(
   try:
     refit_coefficients, refit_intercept, refit_training = fit_logistic_regression(
       _active_matrix(positive_matrix, positive_manifest),
-      _active_matrix(negative_matrix, negative_manifest),
+      _combine_negative_matrices(
+        _active_matrix(negative_matrix, negative_manifest),
+        _active_matrix(issue_negative_matrix, issue_negative_manifest),
+      ),
     )
     if not np.allclose(coefficients, refit_coefficients, rtol=1e-10, atol=1e-12):
       errors.append("stored classifier coefficients do not match a deterministic refit")
@@ -1127,8 +1451,107 @@ def model_errors(
   except Exception as error:
     errors.append(f"could not validate negative corpus: {error}")
     negative_items = []
+    negatives = []
     negative_corpus_file_hash = ""
     negative_metadata_file_hash = ""
+
+  issue_negative_path = artifacts / ISSUE_NEGATIVE_CORPUS
+  issue_negative_items: list[dict[str, Any]] = []
+  issue_negative_corpus_hash = _records_hash(issue_negative_items)
+  issue_negative_training_hash = _issue_negative_training_hash(
+    issue_negative_items
+  )
+  if has_issue_feedback:
+    try:
+      issue_negative_snapshot = load_issue_negative_snapshot(issue_negative_path)
+      issue_negative_snapshot_records = _issue_negative_snapshot_records(
+        issue_negative_snapshot
+      )
+      issue_negative_items, issue_negative_stats = _issue_negative_items(
+        issue_negative_snapshot,
+        works,
+        negatives,
+      )
+      issue_negative_corpus_hash = _records_hash(issue_negative_items)
+      issue_negative_training_hash = _issue_negative_training_hash(
+        issue_negative_items
+      )
+      active_issue_rows = [
+        row for row in issue_negative_manifest if row.get("active", True)
+      ]
+      actual_issue_by_id = {
+        _item_id(row): row for row in active_issue_rows
+      }
+      expected_issue_by_id = {
+        _item_id(item): item for item in issue_negative_items
+      }
+      if len(actual_issue_by_id) != len(active_issue_rows):
+        errors.append(
+          "issue-negative manifest contains duplicate active work identifiers"
+        )
+      if set(actual_issue_by_id) != set(expected_issue_by_id):
+        errors.append(
+          "active issue-negative embedding rows do not match the issue snapshot"
+        )
+      else:
+        core_fields = (
+          "aliases",
+          "issue_numbers",
+          "issue_urls",
+          "selected_issue_number",
+          "title",
+          "abstract_hash",
+          "input_hash",
+          "metadata_hash",
+          "source",
+          "active_snapshot",
+        )
+        stale_issue_rows = [
+          work_id
+          for work_id, item in expected_issue_by_id.items()
+          if any(
+            actual_issue_by_id[work_id].get(field) != item.get(field)
+            for field in core_fields
+          )
+        ]
+        if stale_issue_rows:
+          errors.append(
+            "issue-negative manifest or embeddings are stale for "
+            f"{len(stale_issue_rows)} works"
+          )
+
+      issue_checks = {
+        "issue_negative_snapshot_count": issue_negative_stats["snapshot_count"],
+        "issue_negative_collector_included_count": issue_negative_stats[
+          "collector_included_count"
+        ],
+        "issue_negative_count": issue_negative_stats["active_count"],
+        "issue_negative_omitted_count": issue_negative_stats["omitted_count"],
+        "issue_negative_bibliography_overlap_count": issue_negative_stats[
+          "bibliography_overlap_count"
+        ],
+        "issue_negative_fixed_overlap_count": issue_negative_stats[
+          "fixed_overlap_count"
+        ],
+        "issue_negative_omission_counts": issue_negative_stats[
+          "omission_counts"
+        ],
+        "issue_negative_snapshot_hash": _records_hash(
+          issue_negative_snapshot_records
+        ),
+        "issue_negative_snapshot_file_hash": _file_hash(issue_negative_path),
+        "issue_negative_corpus_hash": issue_negative_corpus_hash,
+        "issue_negative_training_hash": issue_negative_training_hash,
+        "issue_negative_rows": len(issue_negative_manifest),
+        "effective_negative_count": (
+          len(negative_items) + len(issue_negative_items)
+        ),
+      }
+      for field, expected in issue_checks.items():
+        if manifest.get(field) != expected:
+          errors.append(f"model manifest {field} does not match issue feedback")
+    except Exception as error:
+      errors.append(f"could not validate issue-negative corpus: {error}")
 
   checks = {
     "positive_manifest_hash": _records_hash(positive_manifest),
@@ -1136,6 +1559,11 @@ def model_errors(
     "negative_manifest_hash": _records_hash(negative_manifest),
     "negative_matrix_hash": _array_hash(negative_matrix),
   }
+  if has_issue_feedback:
+    checks.update({
+      "issue_negative_manifest_hash": _records_hash(issue_negative_manifest),
+      "issue_negative_matrix_hash": _array_hash(issue_negative_matrix),
+    })
   for name, actual in checks.items():
     if manifest.get(name) != actual:
       errors.append(f"{name} does not match its artifact")
@@ -1145,6 +1573,7 @@ def model_errors(
     expected_hash,
     negative_corpus_file_hash,
     negative_metadata_file_hash,
+    issue_negative_training_hash if has_issue_feedback else None,
   )
   if manifest.get("model_hash") != expected_model_hash:
     errors.append("classifier/model hash does not match")
@@ -1295,12 +1724,52 @@ def _verify_reusable_embedding_artifacts(
   return True
 
 
+def _verify_reusable_issue_embedding_artifacts(
+  artifacts: Path,
+  old_model_manifest: Mapping[str, Any],
+) -> bool:
+  """Independently validate reusable human-feedback embedding rows."""
+
+  matrix_path = artifacts / ISSUE_NEGATIVE_MATRIX
+  manifest_path = artifacts / ISSUE_NEGATIVE_MANIFEST
+  expected_matrix_hash = old_model_manifest.get("issue_negative_matrix_hash")
+  expected_manifest_hash = old_model_manifest.get("issue_negative_manifest_hash")
+  if (
+    old_model_manifest.get("schema") != ARTIFACT_SCHEMA
+    or old_model_manifest.get("embedding") != EMBEDDING_CONFIG
+    or not isinstance(expected_matrix_hash, str)
+    or SHA256_RE.fullmatch(expected_matrix_hash) is None
+    or not isinstance(expected_manifest_hash, str)
+    or SHA256_RE.fullmatch(expected_manifest_hash) is None
+    or not matrix_path.exists()
+    or not manifest_path.exists()
+  ):
+    return False
+  try:
+    matrix_hash = _array_hash(_load_npy(matrix_path))
+    manifest_hash = _records_hash(_read_jsonl(manifest_path))
+  except Exception as error:
+    raise ValueError(
+      f"Cannot safely reuse issue-negative embedding artifacts: {error}"
+    ) from error
+  if (
+    matrix_hash != expected_matrix_hash
+    or manifest_hash != expected_manifest_hash
+  ):
+    raise ValueError(
+      "Refusing to reuse corrupt issue-negative embedding artifacts; "
+      "restore or rebuild them explicitly"
+    )
+  return True
+
+
 def _model_hash(
   coefficients: Any,
   intercept: float,
   bibliography_hash: str,
   negative_hash: str,
   negative_metadata_hash: str,
+  issue_negative_hash: str | None = None,
 ) -> str:
   np = _numpy()
   digest = hashlib.sha256()
@@ -1309,6 +1778,8 @@ def _model_hash(
   digest.update(bibliography_hash.encode("ascii"))
   digest.update(negative_hash.encode("ascii"))
   digest.update(negative_metadata_hash.encode("ascii"))
+  if issue_negative_hash is not None:
+    digest.update(issue_negative_hash.encode("ascii"))
   digest.update(BASE_REVISION.encode("ascii"))
   digest.update(CLASSIFICATION_ADAPTER_REVISION.encode("ascii"))
   digest.update(json.dumps(CLASSIFIER_CONFIG, separators=(",", ":"), sort_keys=True).encode("ascii"))

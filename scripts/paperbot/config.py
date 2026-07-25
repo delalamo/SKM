@@ -56,6 +56,18 @@ class PaperbotConfig:
     return self.artifact_dir / "negative_manifest.jsonl"
 
   @property
+  def issue_negative_corpus_path(self) -> Path:
+    return self.artifact_dir / "issue_negatives.jsonl"
+
+  @property
+  def issue_negative_embeddings_path(self) -> Path:
+    return self.artifact_dir / "issue_negative_embeddings.npy"
+
+  @property
+  def issue_negative_manifest_path(self) -> Path:
+    return self.artifact_dir / "issue_negative_manifest.jsonl"
+
+  @property
   def classifier_path(self) -> Path:
     return self.artifact_dir / "classifier.npz"
 
