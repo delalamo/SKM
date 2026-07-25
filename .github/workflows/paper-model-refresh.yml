@@ -102,6 +102,9 @@ jobs:
     name: Refresh trusted PRs or verify artifacts
     runs-on: ubuntu-latest
     timeout-minutes: 360
+    permissions:
+      contents: read
+      issues: read
     env:
       HF_HUB_DISABLE_TELEMETRY: "1"
       PIP_DISABLE_PIP_VERSION_CHECK: "1"
@@ -202,7 +205,7 @@ jobs:
               --same-repository "$SAME_REPOSITORY" \
               --github-output "$GITHUB_OUTPUT"
 
-      - name: Backfill abstracts and refresh model
+      - name: Backfill bibliography abstracts
         if: >-
           steps.trusted.outputs.available == 'true' &&
           steps.safety.outputs.auto_refresh == 'true'
@@ -219,6 +222,28 @@ jobs:
             exit 1
           fi
           python -m scripts.paperbot --repo-root "$GITHUB_WORKSPACE/candidate" backfill-bibliography
+
+      - name: Synchronize closed negative issues
+        if: >-
+          steps.trusted.outputs.available == 'true' &&
+          steps.safety.outputs.auto_refresh == 'true'
+        env:
+          PYTHONPATH: ${{ github.workspace }}/trusted
+          GITHUB_TOKEN: ${{ github.token }}
+        run: >-
+          python -m scripts.paperbot
+          --repo-root "$GITHUB_WORKSPACE/candidate"
+          sync-issue-negatives
+
+      - name: Refresh and verify model
+        if: >-
+          steps.trusted.outputs.available == 'true' &&
+          steps.safety.outputs.auto_refresh == 'true'
+        env:
+          PYTHONPATH: ${{ github.workspace }}/trusted
+        shell: bash
+        run: |
+          set -euo pipefail
           python -m scripts.paperbot --repo-root "$GITHUB_WORKSPACE/candidate" refresh-model
           python -m scripts.paperbot --repo-root "$GITHUB_WORKSPACE/candidate" check-model
 
@@ -253,6 +278,9 @@ jobs:
             paper_relevance/positive_manifest.jsonl \
             paper_relevance/negative_embeddings.npy \
             paper_relevance/negative_manifest.jsonl \
+            paper_relevance/issue_negatives.jsonl \
+            paper_relevance/issue_negative_embeddings.npy \
+            paper_relevance/issue_negative_manifest.jsonl \
             paper_relevance/classifier.npz \
             paper_relevance/model_manifest.json
           if git -C candidate diff --cached --quiet; then
@@ -275,6 +303,6 @@ jobs:
         run: |
           set -euo pipefail
           if ! python -m scripts.paperbot --repo-root "$GITHUB_WORKSPACE/candidate" check-model; then
-            echo "::error::Model artifacts are stale. Run: python -m scripts.paperbot backfill-bibliography && python -m scripts.paperbot refresh-model"
+            echo "::error::Model artifacts are stale. Run: python -m scripts.paperbot backfill-bibliography && GITHUB_TOKEN=... python -m scripts.paperbot sync-issue-negatives && python -m scripts.paperbot refresh-model"
             exit 1
           fi

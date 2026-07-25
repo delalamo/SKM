@@ -19,6 +19,9 @@ GENERATED_PATHS = frozenset(
     "paper_relevance/positive_manifest.jsonl",
     "paper_relevance/negative_embeddings.npy",
     "paper_relevance/negative_manifest.jsonl",
+    "paper_relevance/issue_negatives.jsonl",
+    "paper_relevance/issue_negative_embeddings.npy",
+    "paper_relevance/issue_negative_manifest.jsonl",
     "paper_relevance/classifier.npz",
     "paper_relevance/model_manifest.json",
   }

@@ -73,6 +73,12 @@ def test_sensitive_inputs_and_generated_artifacts_disable_auto_refresh(
 def test_generated_allowlist_fails_closed() -> None:
   validate_generated_paths(GENERATED_PATHS)
 
+  assert {
+    "paper_relevance/issue_negatives.jsonl",
+    "paper_relevance/issue_negative_embeddings.npy",
+    "paper_relevance/issue_negative_manifest.jsonl",
+  }.issubset(GENERATED_MODEL_PATHS)
+
   with pytest.raises(UnexpectedGeneratedPaths) as caught:
     validate_generated_paths(["bibliography.bib", "content/unexpected.md"])
 
@@ -145,6 +151,19 @@ def test_workflow_routes_push_and_validation_through_trusted_policy() -> None:
   assert "cache: pip" not in workflow
   assert 'PAPERBOT_DISABLE_ARBITRARY_HTML: "1"' in workflow
   assert "-L \"$GITHUB_WORKSPACE/candidate/bibliography.bib\"" in workflow
+  assert "issues: read" in workflow
+
+  backfill = workflow.index("backfill-bibliography")
+  sync = workflow.index("sync-issue-negatives")
+  refresh = workflow.index("refresh-model")
+  assert backfill < sync < refresh
+
+  for path in (
+    "paper_relevance/issue_negatives.jsonl",
+    "paper_relevance/issue_negative_embeddings.npy",
+    "paper_relevance/issue_negative_manifest.jsonl",
+  ):
+    assert path in workflow
 
 
 def test_workflow_bootstrap_is_credential_free_and_read_only() -> None:
@@ -166,3 +185,24 @@ def test_workflow_bootstrap_is_credential_free_and_read_only() -> None:
   assert "Initial paperbot bootstrap is validated by the credential-free test job" in (
     refresh_job
   )
+
+
+def test_workflow_scopes_tokens_to_their_required_steps() -> None:
+  workflow = Path(".github/workflows/paper-model-refresh.yml").read_text(
+    encoding="utf-8"
+  )
+
+  before_commit, commit_and_after = workflow.split(
+    "      - name: Commit refreshed artifacts to trusted PR branch", maxsplit=1
+  )
+  assert "GITHUB_TOKEN: ${{ github.token }}" in before_commit
+  assert workflow.count("GITHUB_TOKEN: ${{ github.token }}") == 1
+  assert "MODEL_UPDATE_TOKEN" not in before_commit
+
+  sync_step = before_commit.split(
+    "      - name: Synchronize closed negative issues", maxsplit=1
+  )[1].split("      - name: Refresh and verify model", maxsplit=1)[0]
+  assert "GITHUB_TOKEN: ${{ github.token }}" in sync_step
+  assert "MODEL_UPDATE_TOKEN" not in sync_step
+
+  assert "MODEL_UPDATE_TOKEN: ${{ secrets.MODEL_UPDATE_TOKEN }}" in commit_and_after
