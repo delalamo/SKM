@@ -10,6 +10,18 @@ For the issue-only reading queue:
 1. Merge the workflow and paperbot files into the default branch.
 2. Optionally add `PAPERBOT_CONTACT_EMAIL=<API contact address>` and the
    `NCBI_API_KEY` secret. The key only raises NCBI's request-rate allowance.
+3. Create a repository label named `negative`. To mark a paper as irrelevant,
+   apply that label and close its paperbot issue. Closed issues without the
+   label, and open or reopened issues, do not become negative training examples.
+4. Require the **Test paperbot without credentials** status check in the
+   `main` branch-protection rule. The check runs the complete paperbot suite for
+   relevant PRs, also requires model refresh/verification to succeed, and uses
+   a lightweight fail-closed gate for unrelated PRs. Keep **Require branches to
+   be up to date before merging** enabled so the tested head cannot lag `main`.
+   Keep code-owner review enabled: stored embeddings can be checked for
+   consistency and deterministic refitting, but only the paperbot maintainer
+   can attest that a direct artifact change came from the pinned SPECTER2
+   generator rather than fabricated vectors.
 
 The daily schedule then runs at 00:00 UTC. A manual run defaults to dry-run mode,
 and a scheduled or explicitly non-dry manual run creates issues above the
@@ -39,6 +51,10 @@ ranked queue:
 `MODEL_UPDATE_TOKEN` is separate and is needed only if the optional trusted-PR
 workflow should commit refreshed bibliography/model artifacts back to a branch.
 It should be a fine-grained token limited to SKM Contents read/write.
+Only configure it when every account and automation allowed to push branches
+inside SKM is trusted: GitHub makes repository secrets available to
+same-repository pull-request workflows. Fork pull requests remain verify-only
+and receive neither this token nor the NCBI key.
 
 Abstracts copied into this public repository retain their source rights. See
 `NOTICE.md` before changing the abstract-storage policy.
@@ -75,6 +91,7 @@ policy, and seed in the trusted generator. Then run:
 ```sh
 SEMANTIC_SCHOLAR_API_KEY=... \
   python -m scripts.paperbot bootstrap-negatives --overwrite
+GITHUB_TOKEN=... python -m scripts.paperbot sync-issue-negatives
 python -m scripts.paperbot refresh-model --allow-negative-change
 python -m scripts.paperbot check-model
 ```

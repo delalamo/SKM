@@ -19,6 +19,9 @@ GENERATED_PATHS = frozenset(
     "paper_relevance/positive_manifest.jsonl",
     "paper_relevance/negative_embeddings.npy",
     "paper_relevance/negative_manifest.jsonl",
+    "paper_relevance/issue_negatives.jsonl",
+    "paper_relevance/issue_negative_embeddings.npy",
+    "paper_relevance/issue_negative_manifest.jsonl",
     "paper_relevance/classifier.npz",
     "paper_relevance/model_manifest.json",
   }
@@ -58,6 +61,12 @@ def is_sensitive_path(value: str) -> bool:
     return True
   return (
     path.startswith("scripts/paperbot/")
+    # Git attributes and LFS configuration can transform or redirect the
+    # generated files when the privileged commit step stages them.
+    or path == ".gitattributes"
+    or path.endswith("/.gitattributes")
+    or path == ".lfsconfig"
+    or path == ".github/CODEOWNERS"
     or path in {"paperbot.toml", "requirements-paperbot.lock"}
     or path.startswith(".github/workflows/")
     or path.startswith("paper_relevance/pubmed_negatives_v1")
@@ -70,10 +79,14 @@ def is_sensitive_path(value: str) -> bool:
 def classify_paths(
   paths: Iterable[str], *, event_name: str, same_repository: bool
 ) -> SafetyDecision:
-  sensitive = any(is_sensitive_path(path) for path in paths)
+  normalized_paths = tuple(normalize_repo_path(path) for path in paths)
+  sensitive = any(is_sensitive_path(path) for path in normalized_paths)
   return SafetyDecision(
     auto_refresh=(
-      event_name == "pull_request" and same_repository and not sensitive
+      event_name == "pull_request"
+      and same_repository
+      and "bibliography.bib" in normalized_paths
+      and not sensitive
     ),
     sensitive_change=sensitive,
   )

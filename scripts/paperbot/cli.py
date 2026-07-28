@@ -68,6 +68,11 @@ def build_parser() -> argparse.ArgumentParser:
     ),
   )
 
+  subparsers.add_parser(
+    "sync-issue-negatives",
+    help="snapshot closed paperbot issues labeled negative for model training",
+  )
+
   refresh = subparsers.add_parser(
     "refresh-model", help="refresh changed embeddings and refit logistic regression"
   )
@@ -109,7 +114,7 @@ def main(argv: Sequence[str] | None = None) -> int:
   elif not config_path.is_absolute():
     config_path = root / config_path
   try:
-    config = load_config(config_path)
+    config = load_config(config_path, repository_root=root)
     _validate_pins(config)
     if args.command == "backfill-bibliography":
       result = backfill_bibliography(config, dry_run=args.dry_run)
@@ -132,6 +137,18 @@ def main(argv: Sequence[str] | None = None) -> int:
           "metadata_path": str(config.negative_metadata_path),
         }
       )
+      return 0
+
+    if args.command == "sync-issue-negatives":
+      token = os.getenv("GITHUB_TOKEN", "")
+      if not token:
+        parser.error("GITHUB_TOKEN is required to synchronize issue negatives")
+      # Import lazily so offline commands and model checks do not load the
+      # network-backed issue collector.
+      from .issue_negatives import sync_issue_negatives
+
+      result = sync_issue_negatives(config, github_token=token)
+      _print_json(result)
       return 0
 
     if args.command == "refresh-model":

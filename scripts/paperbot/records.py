@@ -396,7 +396,21 @@ def _timestamp_value(value: datetime | None) -> float:
   return value.timestamp() if value else float("-inf")
 
 
-def _latest_key(record: PaperRecord) -> tuple[float, int, int, int, int, str]:
+def _stable_record_key(record: PaperRecord) -> str:
+  """Return a complete deterministic tie-break for provider-equivalent rows."""
+
+  return json.dumps(
+    record.to_dict(),
+    ensure_ascii=False,
+    sort_keys=True,
+    separators=(",", ":"),
+    default=str,
+  )
+
+
+def _latest_key(
+  record: PaperRecord,
+) -> tuple[float, int, int, int, int, str, str]:
   return (
     _timestamp_value(record.updated_at or record.created_at),
     int(record.metadata.get("record_kind") == "publication-relation"),
@@ -404,6 +418,7 @@ def _latest_key(record: PaperRecord) -> tuple[float, int, int, int, int, str]:
     int(bool(record.abstract)),
     len(record.abstract),
     record.canonical_id,
+    _stable_record_key(record),
   )
 
 
@@ -520,6 +535,7 @@ def _union_preprint_publication_matches(
       if key := _title_author_key(record):
         buckets.setdefault(key, set()).add(root)
 
+  candidate_edges: set[tuple[int, int]] = set()
   for roots in buckets.values():
     if len(roots) != 2:
       continue
@@ -545,7 +561,7 @@ def _union_preprint_publication_matches(
     if cross_stage and _year_sets_within(
       left["years"], right["years"], PREPRINT_PUBLICATION_YEAR_GAP
     ):
-      groups.union(left_root, right_root)
+      candidate_edges.add((left_root, right_root))
       continue
 
     # PubMed occasionally lacks a DOI while a provider's publication record
@@ -566,6 +582,16 @@ def _union_preprint_publication_matches(
       and not left_preprint
     )
     if doi_pmid_complement and _year_sets_within(left["years"], right["years"], 1):
+      candidate_edges.add((left_root, right_root))
+
+  neighbors: dict[int, set[int]] = {}
+  for left_root, right_root in candidate_edges:
+    neighbors.setdefault(left_root, set()).add(right_root)
+    neighbors.setdefault(right_root, set()).add(left_root)
+  for left_root, right_root in sorted(candidate_edges):
+    # A component may retain several historical titles. Refuse to let bucket
+    # iteration order select one of multiple plausible cross-stage matches.
+    if len(neighbors[left_root]) == 1 and len(neighbors[right_root]) == 1:
       groups.union(left_root, right_root)
 
 
@@ -576,8 +602,16 @@ def _merge_group(records: Sequence[PaperRecord]) -> PaperRecord:
   doi = _preferred_doi(records)
   pmid = min((record.pmid for record in records if record.pmid), default="")
   arxiv_id = min((record.arxiv_id for record in records if record.arxiv_id), default="")
-  abstract = latest.abstract or max((record.abstract for record in records), key=len, default="")
-  authors = latest.authors or max((record.authors for record in records), key=len, default=())
+  abstract_record = max(
+    records,
+    key=lambda record: (len(record.abstract), _latest_key(record)),
+  )
+  author_record = max(
+    records,
+    key=lambda record: (len(record.authors), _latest_key(record)),
+  )
+  abstract = latest.abstract or abstract_record.abstract
+  authors = latest.authors or author_record.authors
   categories = tuple(sorted({item for record in records for item in record.categories}))
   related = {item for record in records for item in record.related_ids}
   for record in records:
@@ -596,6 +630,21 @@ def _merge_group(records: Sequence[PaperRecord]) -> PaperRecord:
     if record.metadata.get("record_kind") == "publication-relation"
   ]
   publication = max(publication_records, key=_latest_key) if publication_records else None
+  venue_record = max(
+    (record for record in records if record.venue),
+    key=_latest_key,
+    default=None,
+  )
+  license_record = max(
+    (record for record in records if record.license),
+    key=_latest_key,
+    default=None,
+  )
+  url_record = max(
+    (record for record in records if record.url),
+    key=_latest_key,
+    default=None,
+  )
   if publication and publication.metadata.get("publication_year"):
     metadata["publication_year"] = publication.metadata["publication_year"]
   if len(records) > 1:
@@ -605,7 +654,7 @@ def _merge_group(records: Sequence[PaperRecord]) -> PaperRecord:
     abstract=abstract,
     authors=authors,
     venue=(publication.venue if publication and publication.venue else latest.venue)
-    or next((record.venue for record in records if record.venue), ""),
+    or (venue_record.venue if venue_record else ""),
     created_at=created,
     updated_at=updated,
     doi=doi,
@@ -613,8 +662,9 @@ def _merge_group(records: Sequence[PaperRecord]) -> PaperRecord:
     arxiv_id=arxiv_id,
     categories=categories,
     related_ids=tuple(sorted(related)),
-    license=latest.license or next((record.license for record in records if record.license), ""),
-    url=publication.url if publication and publication.url else latest.url,
+    license=latest.license or (license_record.license if license_record else ""),
+    url=(publication.url if publication and publication.url else latest.url)
+    or (url_record.url if url_record else ""),
     metadata=metadata,
   )
 

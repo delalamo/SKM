@@ -29,6 +29,10 @@ BARE_ARXIV_RE = re.compile(
   r"^(?:[a-z-]+(?:\.[A-Z]{2})?/\d{7}|\d{4}\.\d{4,5})(?:v\d+)?$",
   re.IGNORECASE,
 )
+CHEMRXIV_VERSION_RE = re.compile(
+  r"(?P<base>10\.26434/[^\s]+?)(?:-v|/v)\d+$",
+  re.IGNORECASE,
+)
 RELATION_FIELDS = {
   "relation",
   "related",
@@ -42,6 +46,13 @@ RELATION_FIELDS = {
   "publisheddoi",
   "published_doi",
 }
+PREPRINT_DOI_PREFIXES = (
+  "doi:10.1101/",  # bioRxiv and medRxiv
+  "doi:10.21203/rs.",  # Research Square
+  "doi:10.26434/",  # ChemRxiv
+  "doi:10.48550/arxiv.",
+  "doi:10.64898/",  # current bioRxiv and medRxiv DOI prefix
+)
 DEFAULT_FIELD_ORDER = (
   "title",
   "author",
@@ -63,6 +74,8 @@ ABSTRACT_TRAILER_RE = re.compile(
   r"\s+(?:competing interests?|conflicts? of interests?|author disclosures?)\s*[:.]\s*.*$",
   re.IGNORECASE | re.DOTALL,
 )
+ENTRY_START_RE = re.compile(r"@(\w+)\s*([({])", re.IGNORECASE)
+CITATION_KEY_RE = re.compile(r"""[^\s\\#%"'(),={}]+""")
 
 
 @dataclass(frozen=True)
@@ -115,11 +128,30 @@ class AbstractCompletenessError(ValueError):
     super().__init__(f"Missing abstracts for {len(self.missing)} canonical works: {labels}")
 
 
+@dataclass(frozen=True)
+class _EntryBlock:
+  entry_type: str
+  start: int
+  body_start: int
+  body_end: int
+  end: int
+  opener: str
+  closer: str
+
+
 def _unescape_bibtex(value: str) -> str:
   # Do not attempt a lossy general LaTeX conversion.  These substitutions only
   # remove braces used to preserve capitalization and common escaped symbols.
+  literal_open = "\ue000"
+  literal_close = "\ue001"
+  value = value.replace(r"\{", literal_open).replace(r"\}", literal_close)
   value = value.replace(r"\&", "&").replace(r"\_", "_").replace(r"\%", "%")
-  return value.replace("{", "").replace("}", "")
+  return (
+    value.replace("{", "")
+    .replace("}", "")
+    .replace(literal_open, "{")
+    .replace(literal_close, "}")
+  )
 
 
 def normalize_abstract(value: str) -> str:
@@ -127,7 +159,7 @@ def normalize_abstract(value: str) -> str:
 
   if not value:
     return ""
-  value = _unescape_percent(value)
+  value = _decode_abstract_escapes(value)
   value = re.sub(r"(?is)<script.*?>.*?</script>|<style.*?>.*?</style>", " ", value)
   value = re.sub(r"(?s)<[^>]+>", " ", value)
   value = html.unescape(value)
@@ -135,6 +167,47 @@ def normalize_abstract(value: str) -> str:
   value = re.sub(r"\s+", " ", value).strip()
   value = ABSTRACT_TRAILER_RE.sub("", value).strip()
   return value
+
+
+def _decode_abstract_escapes(value: str) -> str:
+  """Decode only escapes emitted by ``_escape_inserted_abstract``.
+
+  Interpret escape parity from the original source. Decoding one marker must
+  not change whether an adjacent brace or percent escape is active.
+  """
+
+  marker = r"\textbackslash{}"
+  output: list[str] = []
+  index = 0
+  while index < len(value):
+    if (
+      value.startswith(marker, index)
+      and _is_active_backslash(value, index)
+    ):
+      output.append("\\")
+      index += len(marker)
+      continue
+    if (
+      value[index] == "\\"
+      and index + 1 < len(value)
+      and value[index + 1] in "{}%"
+      and _is_active_backslash(value, index)
+    ):
+      output.append(value[index + 1])
+      index += 2
+      continue
+    output.append(value[index])
+    index += 1
+  return "".join(output)
+
+
+def _is_active_backslash(value: str, index: int) -> bool:
+  preceding = 0
+  for char in reversed(value[:index]):
+    if char != "\\":
+      break
+    preceding += 1
+  return preceding % 2 == 0
 
 
 def normalize_doi(value: str) -> str:
@@ -145,6 +218,11 @@ def normalize_doi(value: str) -> str:
   value = value.rstrip(".,;:)]}").lower()
   # bioRxiv/medRxiv use one base DOI for all versions.
   value = re.sub(r"(10\.1101/[0-9.]+)v\d+$", r"\1", value, flags=re.IGNORECASE)
+  # ChemRxiv has used both ``-vN`` and ``/vN`` suffixes for versions of the
+  # same work. Match PaperRecord.canonical_id so bibliography versions cannot
+  # receive duplicate positive training weight.
+  if match := CHEMRXIV_VERSION_RE.fullmatch(value):
+    value = match.group("base")
   return value
 
 
@@ -177,30 +255,127 @@ def parse_bibtex(text: str) -> list[BibliographyEntry]:
   """Parse ordinary braced/quoted BibTeX entries while preserving all fields."""
 
   entries: list[BibliographyEntry] = []
-  cursor = 0
-  while True:
-    match = re.search(r"@(\w+)\s*([({])", text[cursor:], re.IGNORECASE)
-    if not match:
-      break
-    entry_type = match.group(1).lower()
-    open_delimiter = match.group(2)
-    close_delimiter = "}" if open_delimiter == "{" else ")"
-    body_start = cursor + match.end()
-    end = _balanced_end(
-      text, body_start, open_delimiter, close_delimiter, honor_top_level_quotes=True
-    )
-    body = text[body_start:end]
-    cursor = end + 1
-    if entry_type in {"comment", "preamble", "string"}:
+  for block in _entry_blocks(text):
+    body = text[block.body_start : block.body_end]
+    if block.entry_type in {"comment", "preamble", "string"}:
       continue
     comma = _top_level_comma(body)
     if comma < 0:
-      continue
+      raise ValueError(
+        f"Malformed @{block.entry_type} entry: missing citation-key separator"
+      )
     key = body[:comma].strip()
     if not key:
-      continue
-    entries.append(BibliographyEntry(entry_type, key, _parse_fields(body[comma + 1 :])))
+      raise ValueError(
+        f"Malformed @{block.entry_type} entry: empty citation key"
+      )
+    if CITATION_KEY_RE.fullmatch(key) is None:
+      raise ValueError(
+        f"Malformed @{block.entry_type} entry: invalid citation key {key!r}"
+      )
+    entries.append(
+      BibliographyEntry(
+        block.entry_type,
+        key,
+        _parse_fields(body[comma + 1 :]),
+      )
+    )
   return entries
+
+
+def _entry_blocks(text: str) -> Iterable[_EntryBlock]:
+  """Yield complete BibTeX directives without interpreting their contents."""
+
+  cursor = 0
+  while match := _next_entry_start(text, cursor):
+    opener = match.group(2)
+    closer = "}" if opener == "{" else ")"
+    body_start = match.end()
+    body_end = _entry_end(text, body_start, opener)
+    yield _EntryBlock(
+      entry_type=match.group(1).lower(),
+      start=match.start(),
+      body_start=body_start,
+      body_end=body_end,
+      end=body_end + 1,
+      opener=opener,
+      closer=closer,
+    )
+    cursor = body_end + 1
+
+
+def _next_entry_start(text: str, cursor: int) -> re.Match[str] | None:
+  for match in ENTRY_START_RE.finditer(text, cursor):
+    line_start = max(text.rfind("\n", 0, match.start()), text.rfind("\r", 0, match.start())) + 1
+    prefix = text[line_start : match.start()]
+    for index, char in enumerate(prefix):
+      if char != "%":
+        continue
+      backslashes = 0
+      for previous in reversed(prefix[:index]):
+        if previous != "\\":
+          break
+        backslashes += 1
+      if backslashes % 2 == 0:
+        break
+    else:
+      return match
+  return None
+
+
+def _entry_end(text: str, start: int, opener: str) -> int:
+  """Find an entry's closing delimiter while respecting values and comments."""
+
+  outer_depth = 1
+  brace_depth = 0
+  quoted = False
+  escaped = False
+  commented = False
+  for index in range(start, len(text)):
+    char = text[index]
+    if commented:
+      if char in "\r\n":
+        commented = False
+      continue
+    if escaped:
+      escaped = False
+      continue
+    if char == "\\":
+      escaped = True
+      continue
+    if char == "%" and not quoted:
+      commented = True
+      continue
+    if opener == "{":
+      if char == '"' and outer_depth == 1:
+        quoted = not quoted
+        continue
+      if quoted:
+        continue
+      if char == "{":
+        outer_depth += 1
+      elif char == "}":
+        outer_depth -= 1
+        if outer_depth == 0:
+          return index
+      continue
+
+    if char == '"' and brace_depth == 0:
+      quoted = not quoted
+      continue
+    if quoted:
+      continue
+    if char == "{":
+      brace_depth += 1
+    elif char == "}" and brace_depth:
+      brace_depth -= 1
+    elif brace_depth == 0 and char == "(":
+      outer_depth += 1
+    elif brace_depth == 0 and char == ")":
+      outer_depth -= 1
+      if outer_depth == 0:
+        return index
+  raise ValueError("Unterminated BibTeX entry")
 
 
 def _balanced_end(
@@ -214,8 +389,13 @@ def _balanced_end(
   depth = 1
   quoted = False
   escaped = False
+  commented = False
   for index in range(start, len(text)):
     char = text[index]
+    if commented:
+      if char in "\r\n":
+        commented = False
+      continue
     if escaped:
       escaped = False
       continue
@@ -227,6 +407,9 @@ def _balanced_end(
     # all quotes are ordinary text.
     if char == '"' and honor_top_level_quotes and depth == 1:
       quoted = not quoted
+      continue
+    if char == "%" and not quoted:
+      commented = True
       continue
     if quoted:
       continue
@@ -243,11 +426,18 @@ def _top_level_comma(value: str) -> int:
   brace_depth = 0
   quoted = False
   escaped = False
+  commented = False
   for index, char in enumerate(value):
+    if commented:
+      if char in "\r\n":
+        commented = False
+      continue
     if escaped:
       escaped = False
     elif char == "\\":
       escaped = True
+    elif char == "%" and not quoted:
+      commented = True
     elif char == '"' and brace_depth == 0:
       quoted = not quoted
     elif not quoted and char == "{":
@@ -261,31 +451,93 @@ def _top_level_comma(value: str) -> int:
 
 def _parse_fields(body: str) -> dict[str, str]:
   fields: dict[str, str] = {}
-  index = 0
-  while index < len(body):
-    while index < len(body) and (body[index].isspace() or body[index] == ","):
-      index += 1
-    name_match = re.match(r"[A-Za-z][A-Za-z0-9_-]*", body[index:])
-    if not name_match:
-      break
-    name = name_match.group(0).lower()
-    index += name_match.end()
-    while index < len(body) and body[index].isspace():
-      index += 1
-    if index >= len(body) or body[index] != "=":
-      break
-    index += 1
-    while index < len(body) and body[index].isspace():
-      index += 1
-    value, index = _parse_field_value(body, index)
+  for name, value, _, _ in _field_values(body):
+    if name in fields:
+      raise ValueError(f"Duplicate BibTeX field: {name}")
     fields[name] = html.unescape(value.strip())
   return fields
 
 
+def _field_values(
+  body: str,
+) -> Iterable[tuple[str, str, int, int]]:
+  """Yield normalized field names, values, and exact value spans."""
+
+  index = 0
+  parsed_field = False
+  while index < len(body):
+    index = _skip_bibtex_spacing(body, index)
+    if index >= len(body):
+      break
+    if parsed_field:
+      if body[index] != ",":
+        raise ValueError("Malformed BibTeX fields: missing comma separator")
+      index = _skip_bibtex_spacing(body, index + 1)
+      if index >= len(body):
+        break
+    name_match = re.match(r"[A-Za-z][A-Za-z0-9_-]*", body[index:])
+    if not name_match:
+      excerpt = body[index : index + 40].splitlines()[0]
+      raise ValueError(f"Malformed BibTeX field near {excerpt!r}")
+    name = name_match.group(0).lower()
+    index += name_match.end()
+    index = _skip_bibtex_spacing(body, index)
+    if index >= len(body) or body[index] != "=":
+      raise ValueError(f"Malformed BibTeX field {name!r}: missing '='")
+    index += 1
+    index = _skip_bibtex_spacing(body, index)
+    value_start = index
+    value, index = _parse_field_value(body, index)
+    yield name, value, value_start, index
+    parsed_field = True
+
+
+def _skip_bibtex_spacing(
+  body: str,
+  index: int,
+  *,
+  commas: bool = False,
+) -> int:
+  """Skip syntactic whitespace and TeX comments between BibTeX tokens."""
+
+  while index < len(body):
+    if body[index].isspace() or (commas and body[index] == ","):
+      index += 1
+      continue
+    if body[index] == "%":
+      newline = min(
+        (
+          position
+          for marker in ("\n", "\r")
+          if (position := body.find(marker, index + 1)) >= 0
+        ),
+        default=len(body),
+      )
+      index = newline
+      continue
+    return index
+  return index
+
+
 def _parse_field_value(body: str, index: int) -> tuple[str, int]:
+  values: list[str] = []
+  while True:
+    value, index = _parse_field_atom(body, index)
+    values.append(value)
+    value_end = index
+    separator = _skip_bibtex_spacing(body, index)
+    if separator >= len(body) or body[separator] != "#":
+      return "".join(values), value_end
+    index = separator + 1
+    index = _skip_bibtex_spacing(body, index)
+
+
+def _parse_field_atom(body: str, index: int) -> tuple[str, int]:
   if index >= len(body):
-    return "", index
+    raise ValueError("Malformed BibTeX field: missing value")
   delimiter = body[index]
+  if delimiter in "#,\n\r":
+    raise ValueError("Malformed BibTeX field: missing value")
   if delimiter == "{":
     end = _balanced_end(body, index + 1, "{", "}")
     return body[index + 1 : end], end + 1
@@ -304,9 +556,140 @@ def _parse_field_value(body: str, index: int) -> tuple[str, int]:
       index += 1
     raise ValueError("Unterminated quoted BibTeX value")
   end = index
-  while end < len(body) and body[end] not in ",\n\r":
+  escaped = False
+  while end < len(body):
+    char = body[end]
+    if char in "#,\n\r" or (char == "%" and not escaped):
+      break
+    escaped = char == "\\" and not escaped
+    if char != "\\":
+      escaped = False
     end += 1
   return body[index:end].strip(), end
+
+
+def add_missing_abstracts(
+  text: str,
+  abstracts: Mapping[str, str],
+) -> str:
+  """Insert abstract fields while preserving every other source byte.
+
+  This intentionally does not render the parsed bibliography. BibTeX string
+  directives, comments, macro expressions, field order, and hand formatting
+  remain untouched.
+  """
+
+  if not abstracts:
+    return text
+  pending = dict(abstracts)
+  replacements: list[tuple[int, int, str]] = []
+  for block in _entry_blocks(text):
+    if block.entry_type in {"comment", "preamble", "string"}:
+      continue
+    body = text[block.body_start : block.body_end]
+    comma = _top_level_comma(body)
+    if comma < 0:
+      continue
+    key = body[:comma].strip()
+    abstract = pending.pop(key, None)
+    if abstract is None:
+      continue
+    replacement = _entry_with_abstract(text, block, abstract)
+    replacements.append((block.start, block.end, replacement))
+  if pending:
+    missing = ", ".join(sorted(pending))
+    raise ValueError(f"Could not locate BibTeX entries while adding abstracts: {missing}")
+  updated = text
+  for start, end, replacement in reversed(replacements):
+    updated = updated[:start] + replacement + updated[end:]
+  return updated
+
+
+def _entry_with_abstract(text: str, block: _EntryBlock, abstract: str) -> str:
+  entry = text[block.start : block.end]
+  body = text[block.body_start : block.body_end]
+  first_comma = _top_level_comma(body)
+  if first_comma < 0:
+    raise ValueError("Cannot add an abstract to a BibTeX entry without fields")
+  field_body = body[first_comma + 1 :]
+  abstract_fields = [
+    (value, start, end)
+    for name, value, start, end in _field_values(field_body)
+    if name == "abstract"
+  ]
+  if len(abstract_fields) > 1:
+    raise ValueError("BibTeX entry already contains duplicate abstract fields")
+  if abstract_fields:
+    value, start, end = abstract_fields[0]
+    if normalize_abstract(value):
+      raise ValueError("Refusing to replace a nonempty BibTeX abstract")
+    field_offset = block.body_start - block.start + first_comma + 1
+    value_start = field_offset + start
+    value_end = field_offset + end
+    replacement = "{" + _escape_inserted_abstract(abstract) + "}"
+    return entry[:value_start] + replacement + entry[value_end:]
+
+  closing_index = block.body_end - block.start
+  line_start = entry.rfind("\n", 0, closing_index) + 1
+  closing_prefix = entry[line_start:closing_index]
+  insert_at = line_start if not closing_prefix.strip() else closing_index
+  before = entry[:insert_at]
+  after = entry[insert_at:]
+  significant = _last_uncommented_nonspace(before)
+  if significant < 0:
+    raise ValueError("Cannot add an abstract to an empty BibTeX entry")
+  if before[significant] != ",":
+    before = before[: significant + 1] + "," + before[significant + 1 :]
+  if not before.endswith(("\n", "\r")):
+    before += "\n"
+  indent_match = re.search(
+    r"(?m)^([ \t]+)[A-Za-z][A-Za-z0-9_-]*\s*=",
+    text[block.body_start : block.body_end],
+  )
+  indent = indent_match.group(1) if indent_match else "  "
+  field = f"{indent}abstract = {{{_escape_inserted_abstract(abstract)}}},\n"
+  return before + field + after
+
+
+def _last_uncommented_nonspace(value: str) -> int:
+  """Return the last significant TeX character, ignoring percent comments."""
+
+  last = -1
+  escaped = False
+  commented = False
+  for index, char in enumerate(value):
+    if commented:
+      if char in "\r\n":
+        commented = False
+      continue
+    if escaped:
+      escaped = False
+      if not char.isspace():
+        last = index
+      continue
+    if char == "\\":
+      escaped = True
+      last = index
+    elif char == "%":
+      commented = True
+    elif not char.isspace():
+      last = index
+  return last
+
+
+def _escape_inserted_abstract(value: str) -> str:
+  """Encode plain text so provider punctuation cannot break a braced value."""
+
+  value = normalize_abstract(value)
+  # Encode each original character independently. This prevents an existing
+  # even-length backslash run from cancelling the escape on a following brace.
+  replacements = {
+    "\\": r"\textbackslash{}",
+    "{": r"\{",
+    "}": r"\}",
+    "%": r"\%",
+  }
+  return "".join(replacements.get(char, char) for char in value)
 
 
 def load_bibliography(path: Path | str) -> list[BibliographyEntry]:
@@ -405,15 +788,42 @@ def _preprint_match_identity(entry: BibliographyEntry) -> str:
 
 
 def _has_preprint_identifier(identifiers: set[str]) -> bool:
-  return any(identifier.startswith("arxiv:") or identifier.startswith("doi:10.1101/") for identifier in identifiers)
+  return any(
+    identifier.startswith("arxiv:")
+    or identifier.startswith(PREPRINT_DOI_PREFIXES)
+    for identifier in identifiers
+  )
 
 
 def _is_preprint_publication_pair(left: set[str], right: set[str]) -> bool:
   if not left or not right or left & right:
     return False
-  left_preprint = _has_preprint_identifier(left)
-  right_preprint = _has_preprint_identifier(right)
-  return left_preprint != right_preprint
+  return {_identifier_stage(left), _identifier_stage(right)} == {
+    "preprint",
+    "publication",
+  }
+
+
+def _identifier_stage(identifiers: set[str]) -> str:
+  """Classify one already-deduplicated identity component for safe bridging."""
+
+  has_preprint = _has_preprint_identifier(identifiers)
+  has_publication_doi = any(
+    identifier.startswith("doi:")
+    and not identifier.startswith(PREPRINT_DOI_PREFIXES)
+    for identifier in identifiers
+  )
+  if has_preprint and has_publication_doi:
+    return "mixed"
+  if has_preprint:
+    return "preprint"
+  # A PMID-only bibliography record is ordinarily the publication side of a
+  # preprint/publication pair. PMID is neutral when a preprint DOI is present.
+  if has_publication_doi or any(
+    identifier.startswith("pmid:") for identifier in identifiers
+  ):
+    return "publication"
+  return ""
 
 
 class _UnionFind:
@@ -448,29 +858,72 @@ def canonicalize_entries(entries: Sequence[BibliographyEntry]) -> list[Canonical
   # Link an arXiv/bioRxiv preprint to its version of record when the normalized
   # title and first author are exact.  Publication years commonly differ, so
   # this relation intentionally precedes the title/author/year fallback.
-  publication_owner: dict[str, int] = {}
+  publication_groups: dict[str, list[int]] = {}
   for index, entry in enumerate(entries):
     relation = _preprint_match_identity(entry)
     if not relation:
       continue
-    previous = publication_owner.get(relation)
-    if previous is None:
-      publication_owner[relation] = index
-    elif _is_preprint_publication_pair(identities_by_entry[index], identities_by_entry[previous]):
-      union.union(index, previous)
+    publication_groups.setdefault(relation, []).append(index)
+  publication_edges: set[tuple[int, int]] = set()
+  for indexes in publication_groups.values():
+    components = _component_identifiers(union, identities_by_entry, indexes)
+    identified = [
+      (root, identifiers)
+      for root, identifiers in components.items()
+      if identifiers
+    ]
+    # Exact title/author metadata can bridge one unambiguous preprint and one
+    # publication. With more identified components, choosing a publication
+    # would depend on input order and could collapse distinct strong IDs.
+    if (
+      len(identified) == 2
+      and _is_preprint_publication_pair(identified[0][1], identified[1][1])
+    ):
+      publication_edges.add(tuple(sorted((identified[0][0], identified[1][0]))))
+  publication_neighbors: dict[int, set[int]] = {}
+  for left, right in publication_edges:
+    publication_neighbors.setdefault(left, set()).add(right)
+    publication_neighbors.setdefault(right, set()).add(left)
+  for left, right in sorted(publication_edges):
+    # A preprint component can appear under multiple historical titles. Merge
+    # only one-to-one candidate edges so traversal/input order cannot choose
+    # arbitrarily among several plausible versions of record.
+    if (
+      len(publication_neighbors[left]) == 1
+      and len(publication_neighbors[right]) == 1
+    ):
+      union.union(left, right)
 
   # A title fallback can attach an identifier-less alias to an identified work,
   # but it must never merge two entries carrying conflicting strong identifiers.
-  fallback_owner: dict[str, int] = {}
+  fallback_groups: dict[str, list[int]] = {}
   for index, entry in enumerate(entries):
     fallback = fallback_identity(entry)
     if not fallback:
       continue
-    previous = fallback_owner.get(fallback)
-    if previous is None:
-      fallback_owner[fallback] = index
-    elif not identities_by_entry[index] or not identities_by_entry[previous] or identities_by_entry[index] & identities_by_entry[previous]:
-      union.union(index, previous)
+    fallback_groups.setdefault(fallback, []).append(index)
+  for indexes in fallback_groups.values():
+    components = _component_identifiers(union, identities_by_entry, indexes)
+    identified_roots = [
+      root for root, identifiers in components.items() if identifiers
+    ]
+    identifierless_roots = [
+      root for root, identifiers in components.items() if not identifiers
+    ]
+    if len(identified_roots) == 1:
+      destination = identified_roots[0]
+      for root in identifierless_roots:
+        union.union(destination, root)
+    elif not identified_roots and identifierless_roots:
+      destination, *duplicates = identifierless_roots
+      for root in duplicates:
+        union.union(destination, root)
+    elif len(identifierless_roots) > 1:
+      # Preserve duplicate identifier-less aliases as one unresolved work, but
+      # do not arbitrarily attach that work to one of several conflicting IDs.
+      destination, *duplicates = identifierless_roots
+      for root in duplicates:
+        union.union(destination, root)
 
   grouped: dict[int, list[int]] = {}
   for index in range(len(entries)):
@@ -486,6 +939,22 @@ def canonicalize_entries(entries: Sequence[BibliographyEntry]) -> list[Canonical
     entry_type = sorted(component, key=lambda entry: (-_entry_richness(entry), entry.key))[0].entry_type
     works.append(CanonicalWork(work_id, aliases[0], aliases, identifiers, entry_type, merged))
   return sorted(works, key=lambda work: (work.work_id, work.citekey))
+
+
+def _component_identifiers(
+  union: _UnionFind,
+  identities_by_entry: Sequence[set[str]],
+  indexes: Sequence[int],
+) -> dict[int, set[str]]:
+  """Return strong identifiers accumulated by each current union component."""
+
+  wanted_roots = {union.find(index) for index in indexes}
+  components = {root: set() for root in wanted_roots}
+  for index, identifiers in enumerate(identities_by_entry):
+    root = union.find(index)
+    if root in components:
+      components[root].update(identifiers)
+  return components
 
 
 def _entry_richness(entry: BibliographyEntry) -> int:
@@ -508,7 +977,8 @@ def _merge_fields(entries: Sequence[BibliographyEntry]) -> dict[str, str]:
 def _choose_work_id(identifiers: Sequence[str], entries: Sequence[BibliographyEntry]) -> str:
   doi_candidates = sorted(
     identifier for identifier in identifiers
-    if identifier.startswith("doi:") and not identifier.startswith("doi:10.1101/")
+    if identifier.startswith("doi:")
+    and not identifier.startswith(PREPRINT_DOI_PREFIXES)
   )
   if doi_candidates:
     return doi_candidates[0]

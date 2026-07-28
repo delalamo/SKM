@@ -56,6 +56,18 @@ class PaperbotConfig:
     return self.artifact_dir / "negative_manifest.jsonl"
 
   @property
+  def issue_negative_corpus_path(self) -> Path:
+    return self.artifact_dir / "issue_negatives.jsonl"
+
+  @property
+  def issue_negative_embeddings_path(self) -> Path:
+    return self.artifact_dir / "issue_negative_embeddings.npy"
+
+  @property
+  def issue_negative_manifest_path(self) -> Path:
+    return self.artifact_dir / "issue_negative_manifest.jsonl"
+
+  @property
   def classifier_path(self) -> Path:
     return self.artifact_dir / "classifier.npz"
 
@@ -64,9 +76,22 @@ class PaperbotConfig:
     return self.artifact_dir / "model_manifest.json"
 
 
-def _path(value: str | Path, root: Path) -> Path:
-  path = Path(value)
-  return path if path.is_absolute() else root / path
+def _path(
+  value: str | Path,
+  root: Path,
+  *,
+  repository_root: Path | None = None,
+) -> Path:
+  try:
+    path = Path(value)
+  except TypeError as error:
+    raise ValueError("paperbot data paths must be strings") from error
+  resolved = (path if path.is_absolute() else root / path).resolve()
+  if repository_root is not None and not resolved.is_relative_to(repository_root):
+    raise ValueError(
+      f"paperbot data path escapes repository root {repository_root}: {value}"
+    )
+  return resolved
 
 
 def _section(raw: dict[str, Any], name: str) -> dict[str, Any]:
@@ -76,14 +101,31 @@ def _section(raw: dict[str, Any], name: str) -> dict[str, Any]:
   return value
 
 
-def load_config(path: Path | str = DEFAULT_CONFIG_PATH) -> PaperbotConfig:
-  config_path = Path(path)
+def load_config(
+  path: Path | str = DEFAULT_CONFIG_PATH,
+  *,
+  repository_root: Path | str | None = None,
+) -> PaperbotConfig:
+  requested_config_path = Path(path)
+  config_path = requested_config_path.resolve()
+  confined_root = Path(repository_root).resolve() if repository_root is not None else None
+  if confined_root is not None:
+    if not confined_root.is_dir():
+      raise ValueError(f"paperbot repository root is not a directory: {confined_root}")
+    if not config_path.is_relative_to(confined_root):
+      raise ValueError(
+        f"paperbot config must be inside repository root {confined_root}: {config_path}"
+      )
+    if requested_config_path.is_symlink() or not config_path.is_file():
+      raise ValueError(
+        f"paperbot config must be a regular, non-symlink file: {config_path}"
+      )
   raw: dict[str, Any] = {}
   if config_path.exists():
     with config_path.open("rb") as handle:
       raw = tomllib.load(handle)
 
-  root = config_path.resolve().parent if config_path.exists() else REPO_ROOT
+  root = config_path.parent
   project = _section(raw, "project")
   model = _section(raw, "model")
   discovery = _section(raw, "discovery")
@@ -99,10 +141,20 @@ def load_config(path: Path | str = DEFAULT_CONFIG_PATH) -> PaperbotConfig:
 
   return PaperbotConfig(
     repository=str(raw.get("repository", "delalamo/SKM")),
-    bibliography_path=_path(paths.get("bibliography", "bibliography.bib"), root),
-    artifact_dir=_path(paths.get("artifacts", "paper_relevance"), root),
+    bibliography_path=_path(
+      paths.get("bibliography", "bibliography.bib"),
+      root,
+      repository_root=confined_root,
+    ),
+    artifact_dir=_path(
+      paths.get("artifacts", "paper_relevance"),
+      root,
+      repository_root=confined_root,
+    ),
     abstract_exceptions_path=_path(
-      paths.get("abstract_exceptions", "paper_relevance/abstract_exceptions.json"), root
+      paths.get("abstract_exceptions", "paper_relevance/abstract_exceptions.json"),
+      root,
+      repository_root=confined_root,
     ),
     relevance_threshold=threshold,
     recovery_hours=int(discovery.get("recovery_hours", 72)),
