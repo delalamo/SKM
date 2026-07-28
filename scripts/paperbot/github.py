@@ -108,23 +108,41 @@ class ManagedIssue:
 
 @dataclass
 class ManagedIssueIndex:
-    """Lookup table for every open and closed paperbot-managed issue."""
+    """Canonical lookups for trusted open and closed paperbot issues.
+
+    Exact duplicate work IDs are retained in ``duplicates`` but excluded from
+    canonical lookups and reconciliation.
+    """
 
     issues: list[ManagedIssue] = field(default_factory=list)
+    duplicates: list[ManagedIssue] = field(default_factory=list)
     by_alias: dict[str, ManagedIssue] = field(default_factory=dict)
     by_work_id: dict[str, ManagedIssue] = field(default_factory=dict)
     reserved_bibkeys: set[str] = field(default_factory=set)
 
     def add(self, issue: ManagedIssue) -> None:
-        self.issues.append(issue)
         work_id = str(issue.meta.get("work_id", ""))
+        bibkey = str(issue.meta.get("bibkey", ""))
+        if bibkey:
+            self.reserved_bibkeys.add(bibkey.casefold())
+        incumbent = self.by_work_id.get(work_id) if work_id else None
+        if incumbent is not None and incumbent.number != issue.number:
+            # Legacy local runs authenticated as the repository owner, while
+            # scheduled runs authenticate as github-actions. If both created
+            # the same work before owner-authored issues were indexed, retain
+            # the oldest issue as canonical and prevent any further copies.
+            for alias in issue.meta.get("aliases", []):
+                self._claim(
+                    self.by_alias, normalize_alias(str(alias)), incumbent
+                )
+            self.duplicates.append(issue)
+            return
+
+        self.issues.append(issue)
         if work_id:
             self._claim(self.by_work_id, work_id, issue)
         for alias in issue.meta.get("aliases", []):
             self._claim(self.by_alias, normalize_alias(str(alias)), issue)
-        bibkey = str(issue.meta.get("bibkey", ""))
-        if bibkey:
-            self.reserved_bibkeys.add(bibkey.casefold())
 
     @staticmethod
     def _claim(
@@ -464,13 +482,21 @@ def ensure_paper_label(client: GitHubClient) -> None:
 def load_managed_issues(client: GitHubClient) -> ManagedIssueIndex:
     index = ManagedIssueIndex()
     # Search all issues so removing a label cannot make the next run duplicate a
-    # managed paper thread. Pull requests are filtered by GitHubClient. Check
-    # authorship before parsing the marker so public users cannot claim aliases
-    # or make malformed marker text abort discovery.
+    # managed paper thread. Pull requests are filtered by GitHubClient. Trust
+    # both Actions and the repository owner because the supported local runner
+    # creates issues as the owner. Check authorship before parsing the marker so
+    # other public users cannot claim aliases or make malformed marker text
+    # abort discovery.
+    trusted_logins = {GITHUB_ACTIONS_BOT_LOGIN}
+    repository = str(getattr(client, "repo", "") or "")
+    owner, separator, _name = repository.partition("/")
+    if separator and owner:
+        trusted_logins.add(owner.casefold())
+    managed: list[ManagedIssue] = []
     for raw in client.list_issues(label=None):
         author = raw.get("user")
         login = str(author.get("login", "") if isinstance(author, Mapping) else "")
-        if login.casefold() != GITHUB_ACTIONS_BOT_LOGIN:
+        if login.casefold() not in trusted_logins:
             continue
         body = str(raw.get("body") or "")
         meta = parse_managed_meta(body)
@@ -488,7 +514,9 @@ def load_managed_issues(client: GitHubClient) -> ManagedIssueIndex:
                 f"Managed paper issue #{number} must contain exactly one "
                 "complete paperbot block"
             )
-        index.add(_managed_issue_from_api(raw, meta))
+        managed.append(_managed_issue_from_api(raw, meta))
+    for issue in sorted(managed, key=lambda item: item.number):
+        index.add(issue)
     return index
 
 
