@@ -22,6 +22,7 @@ jobs:
     outputs:
       relevant: ${{ steps.changes.outputs.relevant }}
       lock_changed: ${{ steps.changes.outputs.lock_changed }}
+      bibliography_changed: ${{ steps.changes.outputs.bibliography_changed }}
     env:
       BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha || github.sha }}
       HEAD_SHA: ${{ github.event.pull_request.head.sha || github.event.merge_group.head_sha || github.sha }}
@@ -45,6 +46,9 @@ jobs:
             # Manual dispatch can target a feature branch. Validate that
             # branch's lock in the credential-free job conservatively.
             echo "lock_changed=true" >> "$GITHUB_OUTPUT"
+            # Manual runs do not have a pull-request diff whose later refresh
+            # job can be trusted to reconcile.
+            echo "bibliography_changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           if [[ "$GITHUB_EVENT_NAME" == "merge_group" ]]; then
@@ -53,6 +57,8 @@ jobs:
             # Testing its assembled head with the candidate lock is the safe
             # conservative choice.
             echo "lock_changed=true" >> "$GITHUB_OUTPUT"
+            # Merge groups must already contain refreshed model artifacts.
+            echo "bibliography_changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           if [[ "$GITHUB_EVENT_NAME" != "pull_request" ]]; then
@@ -86,6 +92,9 @@ jobs:
           git -C candidate diff --quiet --no-renames \
             "$BASE_SHA...$HEAD_SHA" -- requirements-paperbot.lock
           lock_status=$?
+          git -C candidate diff --quiet --no-renames \
+            "$BASE_SHA...$HEAD_SHA" -- bibliography.bib
+          bibliography_status=$?
           git -C candidate diff --quiet --no-renames \
             "$BASE_SHA...$HEAD_SHA" -- \
               bibliography.bib \
@@ -133,6 +142,14 @@ jobs:
             *)
               echo "::error::Could not determine whether the dependency lock changed"
               exit "$lock_status"
+              ;;
+          esac
+          case "$bibliography_status" in
+            0) echo "bibliography_changed=false" >> "$GITHUB_OUTPUT" ;;
+            1) echo "bibliography_changed=true" >> "$GITHUB_OUTPUT" ;;
+            *)
+              echo "::error::Could not determine whether the bibliography changed"
+              exit "$bibliography_status"
               ;;
           esac
           case "$relevant_status" in
@@ -229,7 +246,9 @@ jobs:
           raise SystemExit(pytest.main(["tests/paperbot"]))'
 
       - name: Verify model with trusted code under selected dependencies
-        if: steps.dependencies.outputs.bootstrap != 'true'
+        if: >-
+          steps.dependencies.outputs.bootstrap != 'true' &&
+          needs.detect_paperbot_changes.outputs.bibliography_changed != 'true'
         working-directory: trusted
         env:
           PYTHONPATH: ${{ github.workspace }}/trusted
@@ -237,6 +256,14 @@ jobs:
           python -m scripts.paperbot
           --repo-root "$GITHUB_WORKSPACE/candidate"
           check-model
+
+      - name: Defer model freshness to bibliography refresh
+        if: >-
+          steps.dependencies.outputs.bootstrap != 'true' &&
+          needs.detect_paperbot_changes.outputs.bibliography_changed == 'true'
+        run: >-
+          echo "The pull request changes bibliography.bib;
+          the refresh-or-verify job will regenerate and validate the model artifacts."
 
       - name: Verify initial candidate model and policy
         if: steps.dependencies.outputs.bootstrap == 'true'
