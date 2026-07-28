@@ -48,6 +48,7 @@ class Paper:
 
 class MemoryIssueClient:
     def __init__(self, issues: list[dict[str, Any]] | None = None) -> None:
+        self.repo = "delalamo/SKM"
         self.issues = deepcopy(issues or [])
         self.calls: list[tuple[Any, ...]] = []
         self.comments: dict[int, list[dict[str, Any]]] = {}
@@ -454,9 +455,17 @@ def test_public_issue_reads_need_no_token_but_mutations_do() -> None:
         client.create_issue(title="No", body="No")
 
 
-def test_alias_collision_between_issues_fails_closed() -> None:
+def test_alias_collision_between_distinct_works_fails_closed() -> None:
     first = paper_issue(Paper())
-    second = deepcopy(first)
+    second = paper_issue(
+        Paper(
+            doi="10.1000/other",
+            pmid="67890",
+            arxiv_id="2501.99999",
+            source_id="10.1000/other",
+            aliases=("doi:10.1000/test",),
+        )
+    )
     second["number"] = 5
     second["node_id"] = "ISSUE_5"
     client = MemoryIssueClient([first, second])
@@ -481,6 +490,43 @@ def test_bot_authored_malformed_managed_body_fails_before_deduplication(
 
     with pytest.raises(GitHubError, match="metadata marker|complete paperbot block"):
         load_managed_issues(MemoryIssueClient([issue]))
+
+
+def test_repository_owner_managed_issue_prevents_duplicate_creation() -> None:
+    legacy = paper_issue(Paper())
+    legacy["user"] = {"login": "delalamo", "type": "User"}
+    client = MemoryIssueClient([legacy])
+
+    index = load_managed_issues(client)
+    result = upsert_paper_issue(
+        client,
+        Paper(),
+        0.7,
+        "@article{Lovelace2026,\n  title = {A useful paper}\n}",
+        "Lovelace2026",
+        index=index,
+        model_hash="model-v1",
+    )
+
+    assert index.find(Paper()).number == 4
+    assert result.action == "unchanged"
+    assert not any(call[0] == "create_issue" for call in client.calls)
+
+
+def test_exact_duplicate_work_keeps_oldest_issue_canonical() -> None:
+    legacy = paper_issue(Paper())
+    legacy["user"] = {"login": "delalamo", "type": "User"}
+    duplicate = deepcopy(legacy)
+    duplicate["number"] = 5
+    duplicate["node_id"] = "ISSUE_5"
+    duplicate["user"] = {"login": "github-actions[bot]", "type": "Bot"}
+    client = MemoryIssueClient([duplicate, legacy])
+
+    index = load_managed_issues(client)
+
+    assert [issue.number for issue in index.issues] == [4]
+    assert [issue.number for issue in index.duplicates] == [5]
+    assert index.find(Paper()).number == 4
 
 
 def test_user_authored_marker_cannot_claim_aliases_or_be_mutated() -> None:
