@@ -3,7 +3,7 @@ tags:
   - protein-language-models/antibodies
   - antibody-developability/expression
 created: "2026-04-05T17:07:03"
-modified: "2026-04-21T07:28:09"
+modified: "2026-07-28T14:12:17"
 ---
 #### Summary
 **[[antibodies|Antibody]]-specific [[protein-language-models|protein language models]] are worse for antibody [[antibody-developability|expression prediction]] than generic [[protein-language-models|PLMs]]** [@kenlay2024large].
@@ -24,3 +24,4 @@ modified: "2026-04-21T07:28:09"
 
 #### See also
 - [[Antibody LMs outperform generic PLMs on intrafamily thermostability prediction]]
+- [[Random splits overestimate protein language model generalization on antibody expression prediction]]

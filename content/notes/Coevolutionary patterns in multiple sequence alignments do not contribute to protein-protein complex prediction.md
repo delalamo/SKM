@@ -3,7 +3,7 @@ tags:
   - structure-prediction/limitations
   - protein-protein-interactions
 created: "2026-04-21T05:01:15"
-modified: "2026-04-28T09:20:09"
+modified: "2026-07-28T14:12:17"
 ---
 
 #### Summary
@@ -13,3 +13,7 @@ modified: "2026-04-28T09:20:09"
 ![[Pasted image 20260413102824.png]]
 ![[Pasted image 20260413103445.png]]
 *Figures from [@li2026]*
+
+#### See also
+
+- [[MSA protein language models can identify intermolecular contacts]]

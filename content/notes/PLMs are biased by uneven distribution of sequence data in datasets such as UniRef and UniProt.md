@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/training
 created: "2026-04-05T17:52:14"
-modified: "2026-04-21T07:28:09"
+modified: "2026-07-28T14:12:17"
 ---
 
 #### Summary
@@ -37,5 +37,6 @@ Most organisms only have a few proteins assigned to them [@avasthi2024].
 #### See also
 
 * [[Unbalanced composition of sequence data prevents protein fitness from being identifiable from sequence data alone]]
+* [[Inverse folding models favor archaeal proteins while sequence-only PLMs favor eukaryotic proteins]]
 * [[Protein property prediction using PLMs does not benefit from scale except when predicting inferring features of either structural or sparsely populated sequence families]]
 * [[ML models must trade off bias and variance]]
