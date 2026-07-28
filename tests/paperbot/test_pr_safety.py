@@ -293,9 +293,6 @@ def test_workflow_wires_detection_and_required_gate_outputs_exactly() -> None:
   assert detect["outputs"] == {
     "relevant": "${{ steps.changes.outputs.relevant }}",
     "lock_changed": "${{ steps.changes.outputs.lock_changed }}",
-    "bibliography_changed": (
-      "${{ steps.changes.outputs.bibliography_changed }}"
-    ),
   }
   assert detect["env"] == {
     "BASE_SHA": (
@@ -347,24 +344,6 @@ def test_workflow_wires_detection_and_required_gate_outputs_exactly() -> None:
     index
     for index, step in enumerate(test_steps)
     if step["name"] == "Verify model with trusted code under selected dependencies"
-  )
-  verify_model = next(
-    step
-    for step in test_steps
-    if step["name"] == "Verify model with trusted code under selected dependencies"
-  )
-  assert verify_model["if"] == (
-    "steps.dependencies.outputs.bootstrap != 'true' && "
-    "needs.detect_paperbot_changes.outputs.bibliography_changed != 'true'"
-  )
-  deferred_model = next(
-    step
-    for step in test_steps
-    if step["name"] == "Defer model freshness to bibliography refresh"
-  )
-  assert deferred_model["if"] == (
-    "steps.dependencies.outputs.bootstrap != 'true' && "
-    "needs.detect_paperbot_changes.outputs.bibliography_changed == 'true'"
   )
   test_checkout = next(
     step
@@ -436,7 +415,6 @@ def test_non_pr_event_detection_is_fail_closed(
   values = output.read_text(encoding="utf-8")
   assert "relevant=true" in values
   assert f"lock_changed={expected_lock_changed}" in values
-  assert "bibliography_changed=false" in values
 
 
 def test_pr_change_detection_propagates_git_failures(tmp_path: Path) -> None:
@@ -481,56 +459,6 @@ def test_pr_change_detection_propagates_git_failures(tmp_path: Path) -> None:
   assert "Could not inspect changed Git object modes" in (
     completed.stdout + completed.stderr
   )
-
-
-def test_pr_change_detection_reports_bibliography_changes(
-  tmp_path: Path,
-) -> None:
-  workflow = yaml.safe_load(
-    Path(".github/workflows/paper-model-refresh.yml").read_text(
-      encoding="utf-8"
-    )
-  )
-  step = next(
-    step
-    for step in workflow["jobs"]["detect_paperbot_changes"]["steps"]
-    if step["name"] == "Detect relevant paths"
-  )
-  executable_dir = tmp_path / "bin"
-  executable_dir.mkdir()
-  fake_git = executable_dir / "git"
-  fake_git.write_text(
-    "#!/usr/bin/env bash\n"
-    '[[ "$*" == *" fetch "* ]] && exit 0\n'
-    '[[ "$*" == *" --raw "* ]] && exit 0\n'
-    '[[ "$*" == *"-- requirements-paperbot.lock" ]] && exit 0\n'
-    '[[ "$*" == *"-- bibliography.bib" ]] && exit 1\n'
-    "exit 1\n",
-    encoding="utf-8",
-  )
-  fake_git.chmod(0o755)
-  output = tmp_path / "github-output"
-  completed = subprocess.run(
-    ["bash", "-c", step["run"]],
-    check=False,
-    capture_output=True,
-    text=True,
-    env={
-      **os.environ,
-      "BASE_SHA": "a" * 40,
-      "GITHUB_EVENT_NAME": "pull_request",
-      "GITHUB_OUTPUT": str(output),
-      "GITHUB_REPOSITORY": "delalamo/SKM",
-      "HEAD_SHA": "b" * 40,
-      "PATH": f"{executable_dir}{os.pathsep}{os.environ['PATH']}",
-    },
-  )
-
-  assert completed.returncode == 0, completed.stderr
-  values = output.read_text(encoding="utf-8")
-  assert "lock_changed=false" in values
-  assert "bibliography_changed=true" in values
-  assert "relevant=true" in values
 
 
 @pytest.mark.parametrize(
@@ -607,7 +535,6 @@ def test_pr_change_detection_treats_import_shadows_as_relevant(
   assert completed.returncode == 0, completed.stderr
   values = output.read_text(encoding="utf-8")
   assert "lock_changed=false" in values
-  assert "bibliography_changed=false" in values
   assert "relevant=true" in values
 
 
@@ -657,7 +584,7 @@ def test_symlink_detection_cannot_mask_a_later_git_failure(
   )
 
   assert completed.returncode == 128
-  assert "Could not determine whether the bibliography changed" in (
+  assert "Could not determine whether paperbot-relevant paths changed" in (
     completed.stdout + completed.stderr
   )
 
