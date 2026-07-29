@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/representations
 created: "2026-03-22T10:44:50"
-modified: "2026-04-21T07:28:09"
+modified: "2026-07-28T14:12:17"
 ---
 
 #### Summary
@@ -18,3 +18,5 @@ modified: "2026-04-21T07:28:09"
 #### See also
 
 - [[ESM-IF, but not other inverse folding models, has learned some evolutionary constraints from sequence databases]]
+- [[Inverse folding models favor archaeal proteins while sequence-only PLMs favor eukaryotic proteins]]
+- [[Inverse folding selects more evolutionarily conserved design positions than sequence-only protein language models]]

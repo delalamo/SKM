@@ -2,7 +2,7 @@
 tags:
   - citation-fix
 created: 2026-04-05T17:41:51
-modified: "2026-07-17T10:38:09"
+modified: "2026-07-28T14:12:17"
 ---
 
 #### Summary
@@ -25,3 +25,4 @@ Measurements of protein-ligand effects (such as $K_d$ and $IC_50$) carried out i
 * [[About 100k datapoints required to train accurate ddG predictor]]
 * [[Spearman correlations of protein property prediction methods do not correlate perfectly with absolute error]]
 * [[Kd differs from IC50, LD50, and GI50]]
+* [[All-atom structure and affinity predictors partially generalize to point mutants]]

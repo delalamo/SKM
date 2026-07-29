@@ -8269,3 +8269,73 @@
   issn = {1095-9203},
   month = {July},
 }
+
+@misc{dillon2026,
+  title = {Decoding the physicochemical basis of taxonomy preferences in protein design models},
+  author = {Dillon, L. B. and Crook, O. M. and Maiwald, A.},
+  year = {2026},
+  abstract = {Protein design models have transformed protein engineering by enabling computational exploration of sequence spaces far exceeding experimental capacity. However, their outputs are shaped by both the protein distributions represented in their training corpora and the information available during scoring, so the same model score may reflect backbone-compatible biophysics, taxonomic structure in sequence databases, or other learned regularities rather than protein fitness alone. Here we quantify systematic preferences across 14 protein design models that differ in data modality, training-corpus composition, and scoring context, for comparison grouped as backbone-conditioned, structure plus native-sequence context, or sequence-only. Backbone-conditioned models retain little unexplained taxonomic variance after controlling for protein family and measurable biophysical properties, with residual species variance below 3.3\%. In contrast, sequence-only models retain substantial residual taxonomic dependence of 15-20\%, indicating that likelihood remains strongly entangled with organism-level sequence statistics. These differences across model classes produce distinct preference landscapes. Backbone-conditioned models organise scores around compactness, packing, and charge, while sequence-only models preserve stronger within-family taxonomic effects. Redesign experiments show that these preferences propagate into generation, shifting templates toward characteristic biophysical profiles rather than uniformly sampling backbone-compatible sequence space. Continued training of ProteinMPNN on ecologically selected extremophile secretomes redirects designed surface chemistry along an acid-base axis while largely preserving structural compatibility and global taxonomic structure. These results show that systematic preferences are not a single failure mode, but separable components arising from scoring context, training-corpus composition, and learned biophysical constraints. Together, they provide a framework for disentangling the sources of model preference and linking them to both scoring behaviour and generated sequence properties.},
+  doi = {10.1101/2025.10.21.683350},
+  url = {https://doi.org/10.1101/2025.10.21.683350},
+  note = {Version 3},
+}
+
+@misc{whitfield2026,
+  title = {High-resolution dissection of concept acquisition in different families of protein language models},
+  author = {Whitfield, S. T. and Marty, T. and Vernon, R. M. and Langmead, C. J. and Sridhar, D. and Fournier, Q.},
+  year = {2026},
+  abstract = {Protein language models have been increasingly successful on tasks ranging from fitness prediction to functional design, yet what biological knowledge they acquire and where it is encoded within their internal representations remain underexplored. Through a high-resolution layer-by-layer interpretability analysis of 8 models from the ESM2 and AMPLIFY families on 22 concepts from human proteome annotations, we found that these models encode concepts of increasing levels of complexity along their depth: basic physicochemical properties and linear motifs are best captured by early-layer embeddings, secondary structure from subsequent layers, and domain-level semantics from middle layers. Principal component projections of these embeddings showed that they separate biologically meaningful protein groupings, and molecular-biology-inspired interventions demonstrated that pLM embeddings can discriminate phosphomimic-active from inactive mutants. Perhaps surprisingly, we observed that pretraining data and compute had a greater impact on the linear emergence of biological concepts than scaling up parameters. By revealing where biological knowledge is captured in pLMs and which choices shape its emergence, our work offers insights to develop more robust, biologically grounded protein language models.},
+  doi = {10.64898/2026.07.20.739599},
+  url = {https://doi.org/10.64898/2026.07.20.739599},
+  note = {Version 1},
+}
+
+@article{akiyama2026,
+  title = {Expanding the scope of protein language modeling to protein-protein interactions with MSA Pairformer},
+  author = {Yo Akiyama and Zhidian Zhang and Olivia Tang and Rachel Seongeun Kim and Milot Mirdita and Martin Steinegger and Sergey Ovchinnikov},
+  year = {2026},
+  journal = {Cell},
+  abstract = {Protein-protein interactions underlie biological complexity, and modeling their coevolution is essential for characterizing and engineering molecular assemblies. While protein and genomic language models have excelled at modeling individual proteins, extending these capabilities to protein complexes remains challenging. We present multiple sequence alignment (MSA) Pairformer, a protein language model that builds on AlphaFold2/3's bidirectional refinement between sequence and pairwise residue representations to accurately model the evolution of protein-protein interactions, despite training exclusively on individual chains. MSA Pairformer achieves nearly 3-fold improvement over existing methods in predicting protein-protein interface contacts and better distinguishes binding from non-binding sequences. A learned attention mechanism selectively weights sequences by their inferred evolutionary relevance, enabling discovery of subfamily-specific contacts. On single-protein benchmarks, it achieves state-of-the-art contact prediction and strong variant effect prediction using only 111 million parameters, over two orders of magnitude smaller than frontier models. These results offer an evolutionarily grounded, computationally efficient alternative to the scaling paradigm.},
+  doi = {10.1016/j.cell.2026.06.029},
+  url = {https://doi.org/10.1016/j.cell.2026.06.029},
+}
+
+@misc{wang2026_BJ,
+  title = {AINN-Express: A Leakage-Aware, Sequence-Only Predictor of VHH Antibody Expression Built on the AINN-P1 Protein Foundation Model},
+  author = {Wang, R. and Jin, K. and Pan, L.},
+  year = {2026},
+  abstract = {Expression -- whether an antibody can be produced at usable yield -- is one of the earliest and most expensive filters in therapeutic discovery. We present AINN-Express, a sequence-only predictor of VHH single-domain antibody (nanobody) expression built on AINN-P1, Ainnocence's protein foundation model. AINN-Express encodes a VHH with a frozen AINN-P1 encoder and scores it with a lightweight gradient-boosted classifier: it takes only an amino-acid sequence, returns an expression probability, and needs no structure and no per-task model training. Under a leakage-safe, leave-program-out evaluation, AINN-Express reaches ROC-AUC 0.87 within known antibody programs and 0.81 on entirely new programs -- well above the majority baseline -- making it a practical tool for prioritizing candidates before wet-lab work. We further justify the encoder choice with a controlled, leakage-aware benchmark against general-purpose protein language models: on this task, AINN-P1 (167 M parameters) generalizes to unseen programs far better than a general-purpose ESM2 (650 M) -- 0.81 versus 0.68 new-program ROC-AUC -- and matches a domain-finetuned ESM2 (0.83) with no task-specific finetuning, at roughly one-quarter of the parameters. The gap is invisible under a random split, where all encoders score approximately 0.88; only leave-program-out evaluation reveals that general-purpose embeddings largely encode program identity rather than transferable determinants of expression. Purpose-built representation quality, not parameter count, is what makes AINN-Express generalize.},
+  doi = {10.64898/2026.07.21.739256},
+  url = {https://doi.org/10.64898/2026.07.21.739256},
+  note = {Version 1},
+}
+
+@misc{qi2026_D,
+  title = {Programming protein shape as an explicit design layer via CAD blueprint-guided diffusion},
+  author = {Qi, Y. and Zhang, G. and Yserentant, K. and Lee, S. and Lyubimov, A. and Ibrahim, K. and Cimicata, G. and Fraser, J. S. and Huang, B. and Kortemme, T.},
+  year = {2026},
+  abstract = {In engineering, industrial design principles link geometric form with function. In nature, global protein shape, curvature, and chirality similarly drive critical processes like membrane remodeling and cellular motility. However, explicitly programming these global features remains a challenge for generative AI. Here, we integrate computer-aided design (CAD) blueprints with diffusion models, establishing protein shape as an explicit, programmable layer. We engineered diverse, tunable architectures, including single-chain shapes, scaffolds with unusual twist handedness, and superhelical assemblies, structurally validating 31 of 59 designs via X-ray crystallography or electron microscopy. To demonstrate shape-encoded function, we coupled fluid-flow-optimized helical propellers to an F1-ATPase rotor, yielding a prototype ATP-dependent molecular swimmer. This framework translates industrial design principles to the molecular scale, enabling the programmable engineering of biomimetic architecture with emergent functions. One-sentence summaryIntegrating CAD blueprints with diffusion-based AI translates industrial design principles to the molecular scale, enabling the explicit programming of protein shapes with emergent functions.},
+  doi = {10.64898/2026.07.22.740177},
+  url = {https://doi.org/10.64898/2026.07.22.740177},
+  note = {Version 1},
+}
+
+@article{ngo2026,
+  title = {BoltzOmics: Predicting genetic variant effects on drug binding with Boltz-2.},
+  author = {Khoa Ngo and Kermit L Carraway and Colleen E Clancy and Hajar Amini},
+  year = {2026},
+  journal = {iScience},
+  abstract = {A mechanistic understanding of how genetic variants alter drug-receptor binding is central to precision medicine, drug response prediction, and drug development. Yet, experimental mutation-drug profiling remains slow and expensive, while existing computational approaches often trade accuracy for scalability. We developed BoltzOmics, an interactive, open-source platform that integrates Boltz-2, a deep learning model for biomolecular structure prediction, to rapidly assess mutation effects on drug binding. Starting from amino acid sequences, the workflow queries databases for genetic variants, generates wild-type and mutant protein structures, and screens multiple drugs across variants to predict binding affinity changes. We evaluated BoltzOmics across four targets: hERG, NaV1.5, HER2, and CYP3A4. Predictions achieved Pearson correlations with experimental drug IC50 data up to 0.76 for wild-type proteins and 0.60 for mutants. By enabling scalable, high-throughput assessment of drug-variant interactions, BoltzOmics establishes a practical AI-driven framework for accelerating computational drug discovery and advancing precision medicine research.},
+  doi = {10.1016/j.isci.2026.116797},
+  url = {https://doi.org/10.1016/j.isci.2026.116797},
+}
+
+@misc{mcdonald2026,
+  title = {Machine learning-assisted directed evolution of plant Rubisco},
+  author = {McDonald, J. L. and Lin, J. and Zhao, Y. and Hie, B. L. and Birch, R. and Gehring, M. and Bryson, B. D. and Whitney, S. M. and Shoulders, M. D. and Wilson, R. H.},
+  year = {2026},
+  abstract = {Ribulose-1,5-bisphosphate carboxylase/oxygenase (Rubisco) is foundational to life on Earth, catalyzing carbon dioxide (CO2) fixation to generate biomass. However, Rubisco is a slow and inefficient enzyme that has proven challenging to engineer. We applied the structure-informed machine learning (ML) model ESM-IF1 to identify plausible amino acid sites in the large subunit of Nicotiana tabacum Rubisco to target for directed evolution. ML-assisted library design followed by selection in Rubisco-dependent Escherichia coli identified multiple enriched variants displaying improved catalytic efficiency. Several improved variants carried amino acid changes not found in the evolutionary lineage of plants, despite being assembly competent in plant chloroplasts, demonstrating that ML-assisted protein design can explore functional sequence space beyond what is observed from natural sequence diversity. Most prominently, the T391I substitution improved carboxylation rate by 29\% and aerobic carboxylation efficiency by 43\%. Our findings demonstrate the utility of ML-assisted evolution for engineering Rubisco with improved carboxylation efficiency and potential for enhancing crop productivity.},
+  doi = {10.64898/2026.07.25.740226},
+  url = {https://doi.org/10.64898/2026.07.25.740226},
+  note = {Version 1},
+}

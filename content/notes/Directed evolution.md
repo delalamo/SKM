@@ -3,7 +3,7 @@ title: Directed evolution
 tags:
   - citation-fix
 created: 2026-04-10T14:30:55
-modified: "2026-04-21T07:28:09"
+modified: "2026-07-28T14:12:17"
 ---
 
 **Directed evolution** is an approach to evolving enzymes and proteins more generally with novel functions or properties in the laboratory. It typically combines *in silico* modeling with *in vitro* data. Related to [[evolution-and-natural-selection|evolution]].
@@ -15,3 +15,4 @@ modified: "2026-04-21T07:28:09"
 #### See also
 
 * [[thermostability|Stability and thermostability]]
+* [[Inverse-folding-guided site-saturation libraries outperform random mutagenesis]]

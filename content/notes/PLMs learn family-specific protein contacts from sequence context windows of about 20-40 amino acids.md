@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/representations
 created: "2025-09-01T08:38:43"
-modified: "2026-04-21T07:28:09"
+modified: "2026-07-28T14:12:17"
 ---
 
 ## Summary
@@ -26,3 +26,4 @@ Evidence of family-specific features in ESM2-650M was observed by [@adams2025] (
 ## See also
 
 * [[PLM embeddings contain enough information to align proteins without fine-tuning]]
+* [[Random splits overestimate protein language model generalization on antibody expression prediction]]

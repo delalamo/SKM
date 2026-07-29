@@ -9,3 +9,5 @@
 
 #### See also
 * [[Zero-shot performance of PLMs, but not inverse folding models, correlates with number of homologs available for training]]
+* [[Inverse folding models favor archaeal proteins while sequence-only PLMs favor eukaryotic proteins]]
+* [[Inverse folding selects more evolutionarily conserved design positions than sequence-only protein language models]]
