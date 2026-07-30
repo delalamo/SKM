@@ -999,33 +999,39 @@ def test_workflow_scopes_tokens_to_their_required_steps() -> None:
   )
   tests_job, refresh_job = workflow.split("  refresh-or-verify:", maxsplit=1)
 
-  before_commit, commit_and_after = workflow.split(
-    "      - name: Commit refreshed artifacts to trusted PR branch", maxsplit=1
+  before_publish, publish_and_after = workflow.split(
+    "      - name: Publish refreshed artifacts in a model-update PR", maxsplit=1
   )
   assert "issues: read" not in tests_job
   assert "GITHUB_TOKEN:" not in tests_job
-  assert "permissions:\n      contents: read\n      issues: read" in refresh_job
-  assert "GITHUB_TOKEN: ${{ github.token }}" in before_commit
+  assert (
+    "permissions:\n"
+    "      contents: write\n"
+    "      issues: read\n"
+    "      pull-requests: write"
+  ) in refresh_job
+  assert "GITHUB_TOKEN: ${{ github.token }}" in before_publish
   assert workflow.count("GITHUB_TOKEN: ${{ github.token }}") == 1
-  assert "MODEL_UPDATE_TOKEN" not in before_commit
+  assert "MODEL_UPDATE_TOKEN" not in workflow
 
-  sync_step = before_commit.split(
+  sync_step = before_publish.split(
     "      - name: Synchronize closed negative issues", maxsplit=1
   )[1].split("      - name: Refresh and verify model", maxsplit=1)[0]
   assert "steps.safety.outputs.auto_refresh == 'true'" in sync_step
   assert "GITHUB_TOKEN: ${{ github.token }}" in sync_step
-  assert "MODEL_UPDATE_TOKEN" not in sync_step
 
-  assert "MODEL_UPDATE_TOKEN: ${{ secrets.MODEL_UPDATE_TOKEN }}" in commit_and_after
-  assert '--force-with-lease="refs/heads/$HEAD_REF:$HEAD_SHA"' in commit_and_after
-  assert '"HEAD:refs/heads/$HEAD_REF"' in commit_and_after
-  assert (
-    commit_and_after.index("git -C candidate diff --cached --quiet")
-    < commit_and_after.index('[[ -z "$MODEL_UPDATE_TOKEN" ]]')
-  )
+  assert "GH_TOKEN: ${{ github.token }}" in publish_and_after
+  assert workflow.count("${{ github.token }}") == 2
+  assert 'model_branch="paperbot/model-refresh-pr-$PR_NUMBER"' in publish_and_after
+  assert '--force-with-lease="$model_lease"' in publish_and_after
+  assert '"HEAD:refs/heads/$model_branch"' in publish_and_after
+  assert '"HEAD:refs/heads/$HEAD_REF"' not in publish_and_after
+  assert "gh pr create" in publish_and_after
+  assert '--base "$HEAD_REF"' in publish_and_after
+  assert '--head "$model_branch"' in publish_and_after
 
 
-def test_noop_refresh_does_not_require_model_update_token(
+def test_noop_refresh_does_not_publish_a_model_update_pr(
   tmp_path: Path,
 ) -> None:
   candidate = tmp_path / "candidate"
@@ -1048,7 +1054,7 @@ def test_noop_refresh_does_not_require_model_update_token(
   step = next(
     step
     for step in workflow["jobs"]["refresh-or-verify"]["steps"]
-    if step["name"] == "Commit refreshed artifacts to trusted PR branch"
+    if step["name"] == "Publish refreshed artifacts in a model-update PR"
   )
   completed = subprocess.run(
     ["bash", "-c", step["run"]],
@@ -1059,14 +1065,118 @@ def test_noop_refresh_does_not_require_model_update_token(
     env={
       **os.environ,
       "HEAD_REF": "feature",
-      "HEAD_REPOSITORY": "delalamo/SKM",
       "HEAD_SHA": _git(candidate, "rev-parse", "HEAD"),
-      "MODEL_UPDATE_TOKEN": "",
+      "PR_NUMBER": "",
     },
   )
 
   assert completed.returncode == 0, completed.stderr
   assert "already current" in completed.stdout
+
+
+def test_model_refresh_publishes_a_stacked_pr_and_blocks_the_source(
+  tmp_path: Path,
+) -> None:
+  candidate = tmp_path / "candidate"
+  candidate.mkdir()
+  _git(candidate, "init")
+  _git(candidate, "config", "user.name", "Paperbot Test")
+  _git(candidate, "config", "user.email", "paperbot@example.invalid")
+  for relative in GENERATED_PATHS:
+    path = candidate / relative
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(b"base\n")
+  _git(candidate, "add", ".")
+  _git(candidate, "commit", "-m", "source head")
+  source_sha = _git(candidate, "rev-parse", "HEAD")
+  (candidate / "paper_relevance" / "model_manifest.json").write_bytes(
+    b"refreshed\n"
+  )
+
+  workflow = yaml.safe_load(
+    Path(".github/workflows/paper-model-refresh.yml").read_text(
+      encoding="utf-8"
+    )
+  )
+  step = next(
+    step
+    for step in workflow["jobs"]["refresh-or-verify"]["steps"]
+    if step["name"] == "Publish refreshed artifacts in a model-update PR"
+  )
+  executable_dir = tmp_path / "bin"
+  executable_dir.mkdir()
+  real_git = shutil.which("git")
+  assert real_git is not None
+  fake_git = executable_dir / "git"
+  fake_git.write_text(
+    "#!/usr/bin/env bash\n"
+    'if [[ "$1" == "-C" && "$3" == "ls-remote" ]]; then\n'
+    '  ref="${@: -1}"\n'
+    '  if [[ "$ref" == "refs/heads/feature" ]]; then\n'
+    '    printf "%s\\t%s\\n" "$SOURCE_SHA" "$ref"\n'
+    "  fi\n"
+    "  exit 0\n"
+    "fi\n"
+    'if [[ "$1" == "-C" && "$3" == "push" ]]; then\n'
+    '  printf "%s\\n" "$*" >> "$PUSH_LOG"\n'
+    "  exit 0\n"
+    "fi\n"
+    f'exec "{real_git}" "$@"\n',
+    encoding="utf-8",
+  )
+  fake_git.chmod(0o755)
+  fake_gh = executable_dir / "gh"
+  fake_gh.write_text(
+    "#!/usr/bin/env bash\n"
+    'if [[ "$1 $2" == "auth setup-git" ]]; then exit 0; fi\n'
+    'if [[ "$1 $2" == "pr list" ]]; then exit 0; fi\n'
+    'if [[ "$1 $2" == "pr create" ]]; then\n'
+    '  printf "%s\\n" "$*" >> "$PR_LOG"\n'
+    '  echo "https://github.com/delalamo/SKM/pull/999"\n'
+    "  exit 0\n"
+    "fi\n"
+    "exit 1\n",
+    encoding="utf-8",
+  )
+  fake_gh.chmod(0o755)
+  output = tmp_path / "github-output"
+  summary = tmp_path / "summary"
+  push_log = tmp_path / "push-log"
+  pr_log = tmp_path / "pr-log"
+  completed = subprocess.run(
+    ["bash", "-c", step["run"]],
+    cwd=tmp_path,
+    check=False,
+    capture_output=True,
+    text=True,
+    env={
+      **os.environ,
+      "GH_TOKEN": "test-token",
+      "GITHUB_OUTPUT": str(output),
+      "GITHUB_REPOSITORY": "delalamo/SKM",
+      "GITHUB_STEP_SUMMARY": str(summary),
+      "HEAD_REF": "feature",
+      "HEAD_SHA": source_sha,
+      "PATH": f"{executable_dir}{os.pathsep}{os.environ['PATH']}",
+      "PR_LOG": str(pr_log),
+      "PR_NUMBER": "42",
+      "PUSH_LOG": str(push_log),
+      "SOURCE_SHA": source_sha,
+    },
+  )
+
+  assert completed.returncode == 1
+  assert "paperbot/model-refresh-pr-42" in push_log.read_text(encoding="utf-8")
+  pr_arguments = pr_log.read_text(encoding="utf-8")
+  assert "--base feature" in pr_arguments
+  assert "--head paperbot/model-refresh-pr-42" in pr_arguments
+  assert "pr_url=https://github.com/delalamo/SKM/pull/999" in output.read_text(
+    encoding="utf-8"
+  )
+  assert "Merge the generated model-update PR" in (
+    completed.stdout + completed.stderr
+  )
+  assert "pull/999" in summary.read_text(encoding="utf-8")
 
 
 def test_workflow_stages_exactly_the_generated_allowlist() -> None:
