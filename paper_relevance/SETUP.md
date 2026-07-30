@@ -28,6 +28,21 @@ and a scheduled or explicitly non-dry manual run creates issues above the
 configured relevance cutoff. The workflow refuses to publish when the committed
 model is stale.
 
+## Automatic model-update pull requests
+
+No `MODEL_UPDATE_TOKEN` secret is required. For a same-repository pull request
+that safely changes `bibliography.bib`, the trusted workflow uses GitHub's
+temporary `GITHUB_TOKEN` to create or update a separate model-update branch and
+open a pull request from that branch into the source branch. Merge that generated
+pull request first; the source pull request then reruns with the refreshed model
+artifacts and can pass its required check.
+
+Enable this once under **Repository Settings > Actions > General > Workflow
+permissions** by selecting **Allow GitHub Actions to create and approve pull
+requests**. The repository's default workflow permission can remain read-only:
+the model-refresh job requests only `contents: write`, `pull-requests: write`,
+and `issues: read`. Fork pull requests remain verify-only.
+
 ## Optional ranked GitHub Project
 
 Issues work without a Project. To additionally mirror them into a user-owned
@@ -47,14 +62,6 @@ ranked queue:
 5. Add `PROJECTS_TOKEN`, an expiring classic personal access token with `project`
    and `repo` scopes. It is exposed only to the final Project GraphQL step, after
    fetching, scoring, and issue reconciliation have finished without it.
-
-`MODEL_UPDATE_TOKEN` is separate and is needed only if the optional trusted-PR
-workflow should commit refreshed bibliography/model artifacts back to a branch.
-It should be a fine-grained token limited to SKM Contents read/write.
-Only configure it when every account and automation allowed to push branches
-inside SKM is trusted: GitHub makes repository secrets available to
-same-repository pull-request workflows. Fork pull requests remain verify-only
-and receive neither this token nor the NCBI key.
 
 Abstracts copied into this public repository retain their source rights. See
 `NOTICE.md` before changing the abstract-storage policy.
