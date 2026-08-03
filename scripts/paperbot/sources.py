@@ -52,6 +52,7 @@ OPENSEARCH = "{http://a9.com/-/spec/opensearch/1.1/}"
 # wildcard intentionally precedes the dot and covers both the archive and all
 # modern subcategories.  stat has only dotted subject classes.
 ARXIV_CATEGORY_FAMILIES = ("q-bio*", "cond-mat*", "stat.*")
+ARXIV_PAGE_SIZE = 500
 RETRYABLE_STATUS = frozenset({429, 500, 502, 503, 504})
 SENSITIVE_QUERY_KEYS = frozenset(
   {"api_key", "apikey", "token", "access_token", "client_secret"}
@@ -890,9 +891,13 @@ def fetch_arxiv(
   window: FetchWindow,
   client: HttpClientProtocol,
   *,
-  page_size: int = 100,
+  page_size: int = ARXIV_PAGE_SIZE,
   categories: Sequence[str] = ARXIV_CATEGORY_FAMILIES,
 ) -> SourceResult:
+  # arXiv permits slices of up to 2,000 results. A moderate default keeps
+  # responses bounded while avoiding five requests where one is sufficient
+  # for a typical recovery window, reducing exposure to shared-IP throttling.
+  page_size = min(max(1, page_size), 1_000)
   result = SourceResult("arxiv")
   category_query = " OR ".join(f"cat:{category}" for category in categories)
   start_stamp = window.query_since.strftime("%Y%m%d%H%M")

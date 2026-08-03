@@ -136,8 +136,24 @@ class DailyResult:
   publish_errors: tuple[str, ...]
 
   @property
+  def blocking_feed_errors(self) -> tuple[Mapping[str, Any], ...]:
+    """Return feed failures that make this tranche incomplete without recovery."""
+
+    has_recovery_overlap = datetime.fromisoformat(self.query_since) < datetime.fromisoformat(
+      self.logical_since
+    )
+    if not has_recovery_overlap:
+      return self.feed_errors
+    return tuple(
+      error
+      for error in self.feed_errors
+      if error.get("retryable") is not True
+      or self.source_counts.get(str(error.get("source") or ""), 0) <= 0
+    )
+
+  @property
   def ok(self) -> bool:
-    return not self.feed_errors and not self.publish_errors
+    return not self.blocking_feed_errors and not self.publish_errors
 
   def to_dict(self) -> dict[str, Any]:
     return {
@@ -153,6 +169,7 @@ class DailyResult:
       "action_counts": _counts(result.action for result in self.candidates),
       "candidates": [result.to_dict() for result in self.candidates],
       "feed_errors": list(self.feed_errors),
+      "blocking_feed_errors": list(self.blocking_feed_errors),
       "publish_errors": list(self.publish_errors),
     }
 
@@ -175,7 +192,10 @@ def run_daily(
 
   Model integrity is checked before a label, issue, comment, state, or Project
   write is attempted. Feed errors are retained while successful providers are
-  still processed; callers should use ``DailyResult.ok`` as the exit status.
+  still processed. A retryable partial-provider failure is recoverable when the
+  run has a query overlap; zero-result, non-retryable, and exact-backfill
+  failures remain blocking. Callers should use ``DailyResult.ok`` as the exit
+  status.
   """
 
   project_enabled = project_configuration_enabled(config)

@@ -14,6 +14,7 @@ from scripts.paperbot.config import PaperbotConfig
 from scripts.paperbot.cli import main as paperbot_main
 from scripts.paperbot.daily import (
   BibliographyIndex,
+  DailyResult,
   _managed_pubmed_ids,
   _prepare_candidates,
   run_daily,
@@ -123,7 +124,8 @@ def report(records: list[PaperRecord], *, failed: bool = False) -> FetchReport:
     if failed
     else ()
   )
-  return FetchReport(window, tuple(records), errors, {"fixture": len(records)})
+  counts = {"arxiv": len(records)} if failed else {"fixture": len(records)}
+  return FetchReport(window, tuple(records), errors, counts)
 
 
 @pytest.mark.parametrize(
@@ -154,8 +156,48 @@ def test_daily_uses_strict_cutoff_and_reports_partial_feed_failure(
     )
 
   assert result.candidates[0].action == action
-  assert not result.ok
+  assert result.ok
   assert result.feed_errors[0]["source"] == "arxiv"
+  assert result.blocking_feed_errors == ()
+
+
+@pytest.mark.parametrize(
+  ("retryable", "source_count", "manual_backfill"),
+  [
+    (False, 1, False),
+    (True, 0, False),
+    (True, 1, True),
+  ],
+)
+def test_daily_keeps_unrecoverable_feed_failures_blocking(
+  retryable: bool, source_count: int, manual_backfill: bool
+) -> None:
+  window = FetchWindow.ending_at(datetime(2026, 7, 22, tzinfo=UTC))
+  if manual_backfill:
+    window = FetchWindow.between(window.logical_since, window.until)
+  failure = {
+    "source": "arxiv",
+    "operation": "page at 100",
+    "message": "unavailable",
+    "retryable": retryable,
+    "status": 429 if retryable else 400,
+  }
+  result = DailyResult(
+    as_of=window.until.isoformat(),
+    logical_since=window.logical_since.isoformat(),
+    query_since=window.query_since.isoformat(),
+    dry_run=False,
+    model_hash="model",
+    source_counts={"arxiv": source_count},
+    fetched_count=source_count,
+    stale_open_issues=0,
+    candidates=(),
+    feed_errors=(failure,),
+    publish_errors=(),
+  )
+
+  assert not result.ok
+  assert result.blocking_feed_errors == (failure,)
 
 
 def test_candidate_key_collision_uses_b_and_known_work_reuses_key(tmp_path: Path) -> None:
