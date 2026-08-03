@@ -10,6 +10,7 @@ import pytest
 from scripts.paperbot.records import PaperRecord
 from scripts.paperbot.sources import (
   ARXIV_API,
+  ARXIV_PAGE_SIZE,
   CHEMRXIV_API,
   CHEMRXIV_CROSSREF_API,
   CHEMRXIV_FALLBACK_API,
@@ -402,6 +403,16 @@ def test_parse_and_paginate_arxiv_by_last_updated_date() -> None:
   assert len(result.records) == 2
   assert [call[2]["start"] for call in client.calls] == [0, 1]
   assert all(call[3] == 3.1 for call in client.calls)
+
+
+def test_arxiv_uses_a_larger_bounded_default_page() -> None:
+  client = RoutingClient(bytes_route=lambda _url, _params: arxiv_xml())
+
+  result = fetch_arxiv(window(), client)
+
+  assert result.ok
+  assert client.calls[0][2]["max_results"] == ARXIV_PAGE_SIZE
+  assert ARXIV_PAGE_SIZE == 500
 
 
 @pytest.mark.parametrize("server", ["biorxiv", "medrxiv"])

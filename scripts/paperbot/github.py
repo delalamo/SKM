@@ -535,8 +535,8 @@ def upsert_paper_issue(
     """Create or reconcile the one managed issue for *record*.
 
     New papers at or below the strict cutoff are skipped. Existing papers are
-    updated regardless of score so revisions can be surfaced and closed issues
-    can be reopened.
+    updated regardless of score so revisions can be surfaced, but a user's
+    decision to close an issue is preserved.
     """
 
     if not 0.0 <= float(score) <= 1.0:
@@ -613,12 +613,10 @@ def upsert_paper_issue(
                 f"{revision_marker}",
             )
     body = replace_managed_block(existing.body, managed_body)
-    state = "open" if substantive and existing.state == "closed" else None
     raw = client.update_issue(
         existing.number,
         title=title if title_changed else None,
         body=body,
-        state=state,
     )
     issue = _managed_issue_from_api(raw, meta)
     action = "updated" if substantive or identity_changed or title_changed else "rescored"
