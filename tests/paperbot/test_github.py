@@ -334,7 +334,7 @@ def test_new_issue_is_labeled_and_contains_copyable_bibtex() -> None:
     assert result.issue.body.index("**Date:**") < result.issue.body.index("## Abstract")
 
 
-def test_revision_updates_managed_block_comments_once_and_reopens() -> None:
+def test_revision_updates_closed_issue_without_reopening() -> None:
     original = Paper(version="v1", updated="2026-07-21", abstract="Old abstract")
     client = MemoryIssueClient(
         [
@@ -359,7 +359,8 @@ def test_revision_updates_managed_block_comments_once_and_reopens() -> None:
 
     assert result.action == "updated"
     assert result.substantive_change
-    assert client.issues[0]["state"] == "open"
+    assert client.issues[0]["state"] == "closed"
+    assert next(call for call in client.calls if call[0] == "update_issue")[4] is None
     assert client.issues[0]["body"].startswith("Personal finding\n\n")
     assert client.issues[0]["body"].endswith("\n\nDo not overwrite")
     assert len(client.comments[4]) == 1
