@@ -9,6 +9,7 @@ No provider SDK or dataframe dependency is required.
 from __future__ import annotations
 
 import hashlib
+import http.client
 import json
 import math
 import re
@@ -21,7 +22,7 @@ import xml.etree.ElementTree as ET
 from dataclasses import dataclass, field
 from datetime import UTC, date, datetime, timedelta
 from email.utils import parsedate_to_datetime
-from typing import Any, Callable, Iterable, Mapping, Protocol, Sequence
+from typing import Any, Callable, Iterable, Mapping, Protocol, Sequence, TypeVar
 
 from .records import (
   PaperRecord,
@@ -54,6 +55,8 @@ OPENSEARCH = "{http://a9.com/-/spec/opensearch/1.1/}"
 ARXIV_CATEGORY_FAMILIES = ("q-bio*", "cond-mat*", "stat.*")
 ARXIV_PAGE_SIZE = 500
 RETRYABLE_STATUS = frozenset({429, 500, 502, 503, 504})
+# Retry a failed provider before embedding: once quickly, then after an outage-sized pause.
+PROVIDER_RETRY_DELAYS = (60.0, 3_600.0)
 SENSITIVE_QUERY_KEYS = frozenset(
   {"api_key", "apikey", "token", "access_token", "client_secret"}
 )
@@ -173,6 +176,9 @@ class HttpRequestError(RuntimeError):
     self.retryable = retryable
 
 
+_ResponseValue = TypeVar("_ResponseValue")
+
+
 class HttpClientProtocol(Protocol):
   def get_bytes(
     self,
@@ -253,14 +259,15 @@ class HttpClient:
       except (TypeError, ValueError):
         return fallback
 
-  def get_bytes(
+  def _get(
     self,
     url: str,
     *,
     params: Mapping[str, Any] | None = None,
     headers: Mapping[str, str] | None = None,
     min_interval: float = 0.0,
-  ) -> bytes:
+    decode: Callable[[bytes, str], _ResponseValue],
+  ) -> _ResponseValue:
     if params:
       separator = "&" if "?" in url else "?"
       url = f"{url}{separator}{urllib.parse.urlencode(params, doseq=True)}"
@@ -280,7 +287,7 @@ class HttpClient:
             status=response.status,
             retryable=retryable,
           )
-        return response.body
+        return decode(response.body, safe_url)
       except urllib.error.HTTPError as error:
         retryable = error.code in RETRYABLE_STATUS
         last_error = HttpRequestError(
@@ -298,7 +305,13 @@ class HttpClient:
         )
         retryable = error.retryable
         delay = min(60.0, 2.0**attempt)
-      except (TimeoutError, socket.timeout, urllib.error.URLError, OSError) as error:
+      except (
+        http.client.IncompleteRead,
+        TimeoutError,
+        socket.timeout,
+        urllib.error.URLError,
+        OSError,
+      ) as error:
         last_error = HttpRequestError(
           _redact_error_message(str(error), url), retryable=True
         )
@@ -310,6 +323,22 @@ class HttpClient:
       self.sleep(delay)
     raise HttpRequestError(f"request failed for {safe_url}", retryable=True)
 
+  def get_bytes(
+    self,
+    url: str,
+    *,
+    params: Mapping[str, Any] | None = None,
+    headers: Mapping[str, str] | None = None,
+    min_interval: float = 0.0,
+  ) -> bytes:
+    return self._get(
+      url,
+      params=params,
+      headers=headers,
+      min_interval=min_interval,
+      decode=lambda body, _safe_url: body,
+    )
+
   def get_json(
     self,
     url: str,
@@ -318,13 +347,21 @@ class HttpClient:
     headers: Mapping[str, str] | None = None,
     min_interval: float = 0.0,
   ) -> Any:
-    body = self.get_bytes(
-      url, params=params, headers=headers, min_interval=min_interval
+    def decode(body: bytes, safe_url: str) -> Any:
+      try:
+        return json.loads(body)
+      except (UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise HttpRequestError(
+          f"invalid JSON from {safe_url}: {error}", retryable=True
+        ) from error
+
+    return self._get(
+      url,
+      params=params,
+      headers=headers,
+      min_interval=min_interval,
+      decode=decode,
     )
-    try:
-      return json.loads(body)
-    except (UnicodeDecodeError, json.JSONDecodeError) as error:
-      raise HttpRequestError(f"invalid JSON from {_redact_url(url)}: {error}") from error
 
 
 def _redact_url(url: str) -> str:
@@ -1556,6 +1593,18 @@ def fetch_chemrxiv(
 Fetcher = Callable[[FetchWindow, HttpClientProtocol], SourceResult]
 
 
+def _fetch_source(
+  name: str,
+  fetcher: Fetcher,
+  window: FetchWindow,
+  client: HttpClientProtocol,
+) -> SourceResult:
+  try:
+    return fetcher(window, client)
+  except Exception as error:
+    return SourceResult(name, errors=[_failure(name, "fetch", error)])
+
+
 def fetch_all_sources(
   window: FetchWindow,
   *,
@@ -1564,8 +1613,13 @@ def fetch_all_sources(
   ncbi_api_key: str = "",
   known_pubmed_ids: Iterable[str] = (),
   fetchers: Mapping[str, Fetcher] | None = None,
+  provider_retry_delays: Sequence[float] = PROVIDER_RETRY_DELAYS,
+  sleep: Callable[[float], None] = time.sleep,
 ) -> FetchReport:
-  """Fetch every feed independently and retain successes when peers fail."""
+  """Fetch every feed independently and retry transient provider failures."""
+
+  if any(delay < 0 for delay in provider_retry_delays):
+    raise ValueError("provider retry delays cannot be negative")
 
   http = client or HttpClient(
     user_agent=f"SKM-paperbot/1.0 ({contact_email or 'https://github.com/delalamo/SKM'})"
@@ -1590,15 +1644,33 @@ def fetch_all_sources(
   results: list[SourceResult] = []
   for name, fetcher in providers.items():
     print(f"paperbot: fetching {name}", flush=True)
-    try:
-      source_result = fetcher(window, http)
-    except Exception as error:
-      source_result = SourceResult(name, errors=[_failure(name, "fetch", error)])
+    source_result = _fetch_source(name, fetcher, window, http)
     print(
       f"paperbot: completed {name}: {len(source_result.records)} records, "
       f"{len(source_result.errors)} errors",
       flush=True,
     )
+    for retry_number, delay in enumerate(provider_retry_delays, start=1):
+      if not any(error.retryable for error in source_result.errors):
+        break
+      print(
+        f"paperbot: retrying {name} in {delay:g} seconds "
+        f"(retry {retry_number}/{len(provider_retry_delays)})",
+        flush=True,
+      )
+      sleep(delay)
+      retried = _fetch_source(name, fetcher, window, http)
+      source_result = SourceResult(
+        name,
+        records=deduplicate_records([*source_result.records, *retried.records]),
+        errors=retried.errors,
+        skipped=source_result.skipped + retried.skipped,
+      )
+      print(
+        f"paperbot: completed {name} retry {retry_number}: "
+        f"{len(source_result.records)} records, {len(source_result.errors)} errors",
+        flush=True,
+      )
     results.append(source_result)
   records = deduplicate_records(
     record for source_result in results for record in source_result.records

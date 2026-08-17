@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from collections import deque
 from datetime import UTC, datetime
+import http.client
 import json
 from typing import Any, Callable, Mapping
 
@@ -20,6 +21,7 @@ from scripts.paperbot.sources import (
   HttpClient,
   HttpRequestError,
   HttpResponse,
+  SourceFailure,
   SourceResult,
   fetch_all_sources,
   fetch_arxiv,
@@ -661,6 +663,48 @@ def test_http_client_exposes_retry_and_rate_limit_hooks() -> None:
   assert sleeps
 
 
+def test_http_client_retries_incomplete_response_body() -> None:
+  responses: deque[HttpResponse | Exception] = deque(
+    [
+      http.client.IncompleteRead(b'{"ok":', 5),
+      HttpResponse(200, {}, b'{"ok": true}'),
+    ]
+  )
+  sleeps: list[float] = []
+
+  def transport(_request: Any, _timeout: float) -> HttpResponse:
+    response = responses.popleft()
+    if isinstance(response, Exception):
+      raise response
+    return response
+
+  client = HttpClient(
+    user_agent="fixture", attempts=2, transport=transport, sleep=sleeps.append
+  )
+
+  assert client.get_json("https://example.test/feed") == {"ok": True}
+  assert sleeps == [1.0]
+
+
+def test_http_client_retries_invalid_json_response() -> None:
+  responses = deque(
+    [
+      HttpResponse(200, {}, b"temporarily unavailable"),
+      HttpResponse(200, {}, b'{"ok": true}'),
+    ]
+  )
+  sleeps: list[float] = []
+  client = HttpClient(
+    user_agent="fixture",
+    attempts=2,
+    transport=lambda _request, _timeout: responses.popleft(),
+    sleep=sleeps.append,
+  )
+
+  assert client.get_json("https://example.test/feed") == {"ok": True}
+  assert sleeps == [1.0]
+
+
 def test_pubmed_api_key_is_redacted_from_feed_errors_and_reports() -> None:
   secret = "ncbi-secret-value"
   requested_urls: list[str] = []
@@ -749,6 +793,63 @@ def test_fetch_all_sources_isolates_failure_and_reports_progress(capsys: Any) ->
     "paperbot: fetching bad",
     "paperbot: completed bad: 0 records, 1 errors",
   ]
+
+
+def test_fetch_all_sources_retries_only_transient_provider_failures() -> None:
+  first = PaperRecord(
+    source="arxiv",
+    source_id="2401.12345",
+    title="First paper",
+    abstract="First abstract.",
+    authors=("Ada Lovelace",),
+    created_at="2026-07-20T00:00:00Z",
+    updated_at="2026-07-21T00:00:00Z",
+    arxiv_id="2401.12345",
+  )
+  second = PaperRecord(
+    source="arxiv",
+    source_id="2401.54321",
+    title="Second paper",
+    abstract="Second abstract.",
+    authors=("Grace Hopper",),
+    created_at="2026-07-20T00:00:00Z",
+    updated_at="2026-07-21T00:00:00Z",
+    arxiv_id="2401.54321",
+  )
+  transient_attempts = deque(
+    [
+      SourceResult(
+        "transient",
+        records=[first],
+        errors=[SourceFailure("transient", "page at 1", "timeout", retryable=True)],
+      ),
+      SourceResult("transient", records=[first, second]),
+    ]
+  )
+  calls = {"stable": 0, "transient": 0}
+  sleeps: list[float] = []
+
+  def stable(_window: FetchWindow, _client: Any) -> SourceResult:
+    calls["stable"] += 1
+    return SourceResult("stable", records=[first])
+
+  def transient(_window: FetchWindow, _client: Any) -> SourceResult:
+    calls["transient"] += 1
+    return transient_attempts.popleft()
+
+  report = fetch_all_sources(
+    window(),
+    client=object(),  # type: ignore[arg-type]
+    fetchers={"stable": stable, "transient": transient},
+    provider_retry_delays=(3_600.0,),
+    sleep=sleeps.append,
+  )
+
+  assert report.ok
+  assert len(report.records) == 2
+  assert report.source_counts == {"stable": 1, "transient": 2}
+  assert calls == {"stable": 1, "transient": 2}
+  assert sleeps == [3_600.0]
 
 
 def test_fetch_all_sources_passes_known_pubmed_ids(monkeypatch: Any) -> None:
