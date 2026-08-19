@@ -3,13 +3,14 @@ tags:
   - protein-language-models
   - variant-effect-prediction
   - fitness-prediction
+title: Zero-shot protein language models do not reliably extrapolate to functional novelty
 created: "2026-06-23"
-modified: "2026-07-17T10:38:09"
+modified: "2026-08-19T16:32:04"
 ---
 
 #### Summary
 
-**[[protein-language-models|Protein language models]] cannot extrapolate to functional novelty or ultra-high-fitness variants.** Zero-shot PLMs are mostly useful as coarse filters separating poor or unfit variants from fit variants, but do not reliably rank highly fit variants or prioritize new-to-nature functional novelty [@woolley2026].
+**Zero-shot [[protein-language-models|protein language models]] do not reliably extrapolate to functional novelty or ultra-high-fitness variants.** They are mostly useful as coarse filters separating poor or unfit variants from fit variants, but do not reliably rank highly fit variants or prioritize new-to-nature functions [@woolley2026]. This does not preclude functionally active, highly divergent generation after task-specific conditioning or fine-tuning: ProGen generated catalytically active lysozymes with as little as 31.4% identity to natural proteins [@madani2023]. Sequence divergence is therefore not itself evidence of functional extrapolation.
 
 #### Figures
 

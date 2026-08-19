@@ -2,8 +2,9 @@
 tags:
   - protein-language-models/representations
   - alignment/sequence-based
+title: PLM searches can improve remote-homology detection beyond profile HMMs
 created: "2024-07-02T05:12:03"
-modified: "2026-04-21T07:28:09"
+modified: "2026-08-19T16:32:04"
 ---
 #### Summary
-**Remote homologs with sequence identity in the 20-25% region cannot be identified using methods for assembling [[Multiple sequence alignments]] centered on hidden Markov models** [@kilinc2023]. This was corroborated by [@liu2024plmsearch]. [@wu2024proteinclip] found that [[protein-language-models|PLMs]] were better than HMMs at homolog detection at all scales ([[Larger PLMs are better at homolog detection|link]]).
+**[[protein-language-models|PLM]]-based searches can recover remote homologs missed by conventional profile-HMM pipelines, particularly in the 20-25% sequence-identity regime** [@kilinc2023; @liu2024plmsearch]. This does not mean that HMMs cannot identify remote homologs: HMM-HMM comparison in HHsearch was developed specifically for this task and detects relationships below 20% identity [@soding2005]. [@wu2024proteinclip] found that PLMs were better than HMM baselines at homolog detection at all scales ([[Larger PLMs are better at homolog detection|link]]).

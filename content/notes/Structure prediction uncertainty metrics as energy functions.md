@@ -5,10 +5,10 @@ tags:
   - plddt
   - pae
 created: "2026-03-06T12:45:58"
-modified: "2026-04-21T07:28:09"
+modified: "2026-08-19T16:32:04"
 ---
 #### Summary
-In protein [[structure-prediction|structure prediction]], **uncertainty metrics** are used to evaluate the correctness of a structural model at various levels. They have been applied to protein design tasks in ways analogous to energy functions, prompted in part by the observation that these networks have learned an implicit energy function — even though they cannot be used directly for design.
+In protein [[structure-prediction|structure prediction]], **uncertainty metrics can be repurposed as energy-like functions for ranking or optimizing candidate structures.** AlphaFold without coevolutionary input ranks structural decoys with state-of-the-art accuracy [@roney2022], and diffusion-model scores can be interpreted as statistical potentials for structure ranking, mutation-effect prediction, and conformational sampling [@roney2025]. The analogy concerns relative ranking and sampling objectives, not calibrated thermodynamic free energy; raw confidence scores still need not predict stability or binding affinity.
 
 #### Related notes
 - [[Diffusion-based protein structure prediction methods double as energy methods comparable to traditional force fields]]

@@ -1,13 +1,14 @@
 ---
 tags:
   - protein-language-models/representations
+title: Naive concatenation can underperform learned sequence-structure fusion
 created: 2026-04-05T17:27:14
-modified: "2026-04-21T05:01:15"
+modified: "2026-08-19T16:32:04"
 ---
 
 #### Summary
 
-**Concatenating features from ESM-1b and GEARNet was found to be less effective than either cross-attention, ESM-to-GearNet, or even just ESM-1b embeddings alone** [@zhang2023]. Meanwhile, [@detlefsen2022] found that concatenation was outperformed by the use of ResNet as an autoencoder bottleneck.
+**Naively concatenating sequence and structural embeddings can underperform learned fusion mechanisms or sequence embeddings alone.** Concatenating ESM-1b and GEARNet features was less effective than cross-attention, ESM-to-GEARNet, or ESM-1b alone [@zhang2023]. [@detlefsen2022] similarly found that concatenation was outperformed by a ResNet autoencoder bottleneck. This does not imply that the modalities are inherently redundant: SPDesign obtained synergistic inverse-folding gains by combining structural sequence profiles, pretrained structural knowledge, and geometric features [@wang2024spdesign].
 
 #### Figures
 
@@ -20,3 +21,7 @@ modified: "2026-04-21T05:01:15"
 | - w/ cross fusion | 0.880 | **0.893** |
 
 *Ref [@zhang2023]*
+
+#### See also
+
+* [[The effect of including both sequence and structural features can be synergistic]]

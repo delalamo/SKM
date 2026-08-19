@@ -111,14 +111,13 @@
   url = {https://doi.org/10.1101/2023.12.15.571823},
 }
 
-@misc{alamdari2023,
+@inproceedings{alamdari2023,
   title = {Protein generation with evolutionary diffusion: sequence is all you need},
-  author = {Alamdari, Sarah and Thakkar, Nitya and van den Berg, Rianne and Tenenholtz, Neil and Strome, Robert and Moses, Alan M. and Lu, Alex X. and Fusi, Nicolò and Amini, Ava P. and Yang, Kevin K.},
+  author = {Alamdari, Sarah and Thakkar, Nitya and van den Berg, Rianne and Lu, Alex X. and Fusi, Nicolò and Amini, Ava P. and Yang, Kevin K.},
   year = {2023},
-  publisher = {openRxiv},
+  booktitle = {NeurIPS 2023 Generative AI and Biology Workshop},
   abstract = {Deep generative models are increasingly powerful tools for the in silico design of novel proteins. Recently, a family of generative models called diffusion models has demonstrated the ability to generate biologically plausible proteins that are dissimilar to any actual proteins seen in nature, enabling unprecedented capability and control in de novo protein design. However, current state-of-the-art diffusion models generate protein structures, which limits the scope of their training data and restricts generations to a small and biased subset of protein design space. Here, we introduce a general-purpose diffusion framework, EvoDiff, that combines evolutionary-scale data with the distinct conditioning capabilities of diffusion models for controllable protein generation in sequence space. EvoDiff generates high-fidelity, diverse, and structurally-plausible proteins that cover natural sequence and functional space. We show experimentally that EvoDiff generations express, fold, and exhibit expected secondary structure elements. Critically, EvoDiff can generate proteins inaccessible to structure-based models, such as those with disordered regions, while maintaining the ability to design scaffolds for functional structural motifs. We validate the universality of our sequence-based formulation by experimentally characterizing intrinsically-disordered mitochondrial targeting signals, metal-binding proteins, and protein binders designed using EvoDiff. We envision that EvoDiff will expand capabilities in protein engineering beyond the structure-function paradigm toward programmable, sequence-first design.},
-  doi = {10.1101/2023.09.11.556673},
-  url = {https://doi.org/10.1101/2023.09.11.556673},
+  url = {https://mlanthology.org/neuripsw/2023/alamdari2023neuripsw-protein/},
 }
 
 @misc{alcantar2025,
@@ -1396,14 +1395,18 @@
   url = {https://proceedings.mlr.press/v202/di-giovanni23a.html},
 }
 
-@misc{diaz2023,
-  title = {Stability Oracle: A Structure-Based Graph-Transformer for Identifying Stabilizing Mutations},
+@article{diaz2023,
+  title = {Stability Oracle: a structure-based graph-transformer framework for identifying stabilizing mutations},
   author = {Diaz, Daniel J. and Gong, Chengyue and Ouyang-Zhang, Jeffrey and Loy, James M. and Wells, Jordan and Yang, David and Ellington, Andrew D. and Dimakis, Alex and Klivans, Adam R.},
-  year = {2023},
-  publisher = {openRxiv},
+  year = {2024},
+  journal = {Nature Communications},
+  publisher = {Springer Science and Business Media LLC},
+  volume = {15},
+  number = {1},
+  pages = {6170},
   abstract = {Stabilizing proteins is a fundamental challenge in protein engineering and is almost always a prerequisite for the development of industrial and pharmaceutical biotechnologies. Here we present Stability Oracle: a structure-based graph-transformer framework that achieves state-of-the-art performance on predicting the effect of a point mutation on a protein’s thermodynamic stability (ΔΔG). A strength of our model is its ability to identify stabilizing mutations, which often make up a small fraction of a protein’s mutational landscape. Our framework introduces several data and machine learning innovations to overcome well-known challenges in data scarcity and bias, generalization, and computation time. Stability Oracle is first pretrained on over 2M masked microenvironments and then fine-tuned using a novel data augmentation technique, Thermodynamic Permutations (TP), applied to a ∼120K curated subset of the mega-scale cDNA display proteolysis dataset. This technique increases the original 120K mutations to over 2M thermodynamically valid ΔΔG measurements to generate the first structure training set that samples and balances all 380 mutation types. By using the masked microenvironment paradigm, Stability Oracle does not require a second mutant structure and instead uses amino acid structural embeddings to represent a mutation. This architectural design accelerates training and inference times: we can both train on 2M instances with just 119 structures and generate deep mutational scan (DMS) predictions from only the wildtype structure. We benchmark Stability Oracle with both experimental and AlphaFold structures of all proteins on T2837, a test set that aggregates the common test sets (SSym, S669, p53, and Myoglobin) with all additional experimental data from proteins with over a 30\% sequence similarity overlap. We used TP augmented T2837 to evaluate performance for engineering protein stability: Stability Oracle correctly identifies 48\% of stabilizing mutations (ΔΔG < −0.5 kcal/mol) and 74\% of its stabilizing predictions are indeed stabilizing (18\% and 8\% of predictions were neutral and destabilizing, respectively). For a fair comparison between sequence and structure-based fine-tuned deep learning models, we build on the Prostata framework and fine-tune the sequence embeddings of ESM2 on our training set (Prostata-IFML). A head-to-head comparison demonstrates that Stability Oracle outperforms Prostata-IFML on regression and classification even though the model is 548 times smaller and is pretrained with 4000 times fewer proteins, highlighting the advantages of learning from structures.},
-  doi = {10.1101/2023.05.15.540857},
-  url = {https://doi.org/10.1101/2023.05.15.540857},
+  doi = {10.1038/s41467-024-49780-2},
+  url = {https://doi.org/10.1038/s41467-024-49780-2},
 }
 
 @misc{didi2026,
@@ -1841,14 +1844,18 @@
   url = {https://doi.org/10.1080/19420862.2023.2175319},
 }
 
-@misc{ferrari2025,
-  title = {Large-scale discovery, analysis, and design of protein energy landscapes},
+@article{ferrari2025,
+  title = {Large-scale discovery, analysis and design of protein energy landscapes},
   author = {Ferrari, Állan J. R. and Dixit, Sugyan M. and Thibeault, Jane and Garcia, Mario and Houliston, Scott and Ludwig, Robert W. and Notin, Pascal and Phoumyvong, Claire M. and Martell, Cydney M. and Jung, Michelle D. and Tsuboyama, Kotaro and Carter, Lauren and Arrowsmith, Cheryl H. and Guttman, Miklos and Rocklin, Gabriel J.},
-  year = {2025},
-  publisher = {openRxiv},
+  year = {2026},
+  journal = {Nature},
+  publisher = {Springer Science and Business Media LLC},
+  volume = {654},
+  number = {8120},
+  pages = {1108-1118},
   abstract = {All folded proteins continuously fluctuate between their low-energy native structures and higher energy conformations that can be partially or fully unfolded. These rare states influence protein function, interactions, aggregation, and immunogenicity, yet they remain far less understood than protein native states. Although native protein structures are now often predictable with impressive accuracy, conformational fluctuations and their energies remain largely invisible and unpredictable, and experimental challenges have prevented large-scale measurements that could improve machine learning and physics-based modeling. Here, we introduce a multiplexed experimental approach to analyze the energies of conformational fluctuations for hundreds of protein domains in parallel using intact protein hydrogen-deuterium exchange mass spectrometry. We analyzed 5,778 domains 28-64 amino acids in length, revealing hidden variation in conformational fluctuations even between sequences sharing the same fold and global folding stability. Site-resolved hydrogen exchange NMR analysis of 13 domains showed that these fluctuations often involve entire secondary structural elements with lower stability than the overall fold. Computational modeling of our domains identified structural features that correlated with the experimentally observed fluctuations, enabling us to design mutations that stabilized low-stability structural segments. Our dataset enables new machine learning-based analysis of protein energy landscapes, and our experimental approach promises to reveal these landscapes at unprecedented scale.},
-  doi = {10.1101/2025.03.20.644235},
-  url = {https://doi.org/10.1101/2025.03.20.644235},
+  doi = {10.1038/s41586-026-10465-z},
+  url = {https://doi.org/10.1038/s41586-026-10465-z},
 }
 
 @article{fierle2019,
@@ -2024,14 +2031,18 @@
   url = {https://doi.org/10.1073/pnas.2422360122},
 }
 
-@misc{garcia2025,
-  title = {Evaluating zero-shot prediction of protein design success by AlphaFold, ESMFold, and ProteinMPNN},
+@article{garcia2025,
+  title = {Evaluating zero-shot prediction of monomeric protein design success by AlphaFold, ESMFold, and ProteinMPNN},
   author = {Garcia, Mario and Dixit, Sugyan M. and Rocklin, Gabriel J.},
-  year = {2025},
-  publisher = {openRxiv},
+  year = {2026},
+  journal = {Protein Science},
+  publisher = {Wiley},
+  volume = {35},
+  number = {2},
+  pages = {e70453},
   abstract = {De novo protein design has enabled the creation of proteins with diverse functionalities that are not found in nature. Despite recent advances, experimental success rates remain inconsistent and context-dependent, posing a bottleneck for broader applications of de novo design. To overcome this, structure and sequence prediction models have been applied to assess design quality prior to experimental testing to save time and resources. In this study, we aimed to determine the extent to which AlphaFold2, Protein MPNN, and ESMFold can discriminate between experimentally successful and unsuccessful designs. For this, we curated a benchmark dataset of 614 experimentally characterized de novo designed monomers from 11 different design studies between 2012 and 2021. All predictive models demonstrated moderate ability to discriminate experimental successes (expressed, soluble, monomeric, and fold into the intended design structure) from failures, with many failed designs having better confidence metrics than successful designs. Among all computational models evaluated, ESMFold average pLDDT yielded the best individual performance at distinguishing between successful and unsuccessful designs. A logistic regression model combining all confidence metrics provided only modest improvement over ESMFold pLDDT alone. Overall, these results show that these models can serve as an initial filtering strategy prior to experimental validation; however, their utility at accurately predicting experimental successful designs remains limited without task-specific training.},
-  doi = {10.1101/2025.07.29.667290},
-  url = {https://doi.org/10.1101/2025.07.29.667290},
+  doi = {10.1002/pro.70453},
+  url = {https://doi.org/10.1002/pro.70453},
 }
 
 @article{garciasanchez2023,
@@ -2662,15 +2673,18 @@
   url = {https://doi.org/10.1038/s41586-019-1391-0},
 }
 
-@inproceedings{hoie2023,
-  title = {AntiFold: Improved antibody structure design using inverse folding},
-  author = {Hoie, Magnus and Hummer, Alissa and Olsen, Tobias and Nielsen, Morten and Deane, Charlotte},
-  year = {2023},
-  booktitle = {GenBio@NeurIPS2023},
-  abstract = {The design and optimization of antibodies requires an intricate balance across multiple properties. Protein inverse folding models, capable of generating diverse sequences folding into the same structure, are promising tools for maintaining structural integrity during antibody design. Here, we present AntiFold, an antibody-specific inverse folding model, fine-tuned from ESM-IF1 on solved and predicted antibody structures. AntiFold outperforms existing inverse folding tools on sequence recovery across complementarity-determining regions, with designed sequences showing high structural similarity to their solved counterpart. It additionally achieves stronger correlations when predicting antibody-antigen binding affinity in a zero-shot manner, while performance is augmented further when including antigen information. AntiFold assigns low probabilities to mutations that disrupt antigen binding, synergizing with protein language model residue probabilities, and demonstrates promise for guiding antibody optimization while retaining structure-related properties. AntiFold is freely available under the BSD 3-Clause as a web server at https://opig.stats.ox.ac.uk/webapps/antifold/ and and pip installable package at https://github.com/oxpig/AntiFold},
-  eprint = {2405.03370},
-  archiveprefix = {arXiv},
-  url = {https://openreview.net/forum?id=bxZMKHtlL6},
+@article{hoie2023,
+  title = {AntiFold: improved structure-based antibody design using inverse folding},
+  author = {Høie, Magnus Haraldson and Hummer, Alissa M. and Olsen, Tobias H. and Aguilar-Sanjuan, Broncio and Nielsen, Morten and Deane, Charlotte M.},
+  year = {2025},
+  journal = {Bioinformatics Advances},
+  publisher = {Oxford University Press (OUP)},
+  volume = {5},
+  number = {1},
+  pages = {vbae202},
+  abstract = {The design and optimization of antibodies requires an intricate balance across multiple properties. Protein inverse folding models, capable of generating diverse sequences folding into the same structure, are promising tools for maintaining structural integrity during antibody design. Here, we present AntiFold, an antibody-specific inverse folding model, fine-tuned from ESM-IF1 on solved and predicted antibody structures. AntiFold outperforms existing inverse folding tools on sequence recovery across complementarity-determining regions, with designed sequences showing high structural similarity to their solved counterpart. It additionally achieves stronger correlations when predicting antibody-antigen binding affinity in a zero-shot manner. AntiFold assigns low probabilities to mutations that disrupt antigen binding, synergizing with protein language model residue probabilities, and demonstrates promise for guiding antibody optimization while retaining structure-related properties. AntiFold is freely available under the BSD 3-Clause as a web server at https://opig.stats.ox.ac.uk/webapps/antifold/ and pip installable package at https://github.com/oxpig/AntiFold},
+  doi = {10.1093/bioadv/vbae202},
+  url = {https://doi.org/10.1093/bioadv/vbae202},
 }
 
 @article{hong2018,
@@ -3843,14 +3857,18 @@
   url = {https://doi.org/10.1038/s41467-023-39022-2},
 }
 
-@misc{li2024,
-  title = {Design of linear and cyclic peptide binders of different lengths from protein sequence information},
+@article{li2024,
+  title = {Design of linear and cyclic peptide binders from protein sequence information},
   author = {Li, Qiuzhen and Vlachos, Efstathios Nikolaos and Bryant, Patrick},
-  year = {2024},
-  publisher = {openRxiv},
+  year = {2025},
+  journal = {Communications Chemistry},
+  publisher = {Springer Science and Business Media LLC},
+  volume = {8},
+  number = {1},
+  pages = {211},
   abstract = {Structure prediction technology has revolutionised the field of protein design, but key questions such as how to design new functions remain. Many proteins exert their functions through interactions with other proteins, and a significant challenge is designing these interactions effectively. While most efforts have focused on larger, more stable proteins, shorter peptides offer advantages such as lower manufacturing costs, reduced steric hindrance, and the ability to traverse cell membranes when cyclized. However, less structural data is available for peptides and their flexibility makes them harder to design. Here, we present a method to design both novel linear and cyclic peptide binders of varying lengths based solely on a protein target sequence. Our approach does not specify a binding site or the length of the binder, making the procedure completely blind. We demonstrate that linear and cyclic peptide binders of different lengths can be designed with nM affinity in a single shot, and adversarial designs can be avoided through orthogonal in silico evaluation, tripling the success rate. Our protocol, EvoBind2 is freely available https://github.com/patrickbryant1/EvoBind .},
-  doi = {10.1101/2024.06.20.599739},
-  url = {https://doi.org/10.1101/2024.06.20.599739},
+  doi = {10.1038/s42004-025-01601-3},
+  url = {https://doi.org/10.1038/s42004-025-01601-3},
 }
 
 @article{li2024c,
@@ -6435,14 +6453,13 @@
   url = {https://doi.org/10.1016/j.neucom.2023.127063},
 }
 
-@misc{su2023,
+@inproceedings{su2023,
   title = {SaProt: Protein Language Modeling with Structure-aware Vocabulary},
   author = {Su, Jin and Han, Chenchen and Zhou, Yuyang and Shan, Junjie and Zhou, Xibin and Yuan, Fajie},
-  year = {2023},
-  publisher = {openRxiv},
+  year = {2024},
+  booktitle = {International Conference on Learning Representations},
   abstract = {A bstract Large-scale protein language models (PLMs), such as the ESM family, have achieved remarkable performance in various downstream tasks related to protein structure and function by undergoing unsupervised training on residue sequences. They have become essential tools for researchers and practitioners in biology. However, a limitation of vanilla PLMs is their lack of explicit consideration for protein structure information, which suggests the potential for further improvement. Motivated by this, we introduce the concept of a “ s tructure- a ware vocabulary” that integrates residue tokens with structure tokens. The structure tokens are derived by encoding the 3D structure of proteins using Foldseek. We then propose SaProt, a large-scale general-purpose PLM trained on an extensive dataset comprising approximately 40 million protein sequences and structures. Through extensive evaluation, our SaProt model surpasses well-established and renowned baselines across 10 significant downstream tasks, demonstrating its exceptional capacity and broad applicability. We have made the code 1 , pre-trained model, and all relevant materials available at https://github.com/westlake-repl/SaProt .},
-  doi = {10.1101/2023.10.01.560349},
-  url = {https://doi.org/10.1101/2023.10.01.560349},
+  url = {https://openreview.net/forum?id=6MRm3G4NiU},
 }
 
 @article{su2024,
@@ -8338,4 +8355,36 @@
   doi = {10.64898/2026.07.25.740226},
   url = {https://doi.org/10.64898/2026.07.25.740226},
   note = {Version 1},
+}
+
+@inproceedings{jiao2025,
+  title = {Boltzmann-Aligned Inverse Folding Model as a Predictor of Mutational Effects on Protein-Protein Interactions},
+  author = {Jiao, Xiaoran and Mao, Weian and Jin, Wengong and Yang, Peiyuan and Chen, Hao and Shen, Chunhua},
+  year = {2025},
+  booktitle = {International Conference on Learning Representations},
+  url = {https://proceedings.iclr.cc/paper_files/paper/2025/hash/2e10d50dfd2a9d52c06fbcd4ed89a022-Abstract-Conference.html},
+}
+
+@article{soding2005,
+  title = {Protein homology detection by HMM-HMM comparison},
+  author = {Söding, Johannes},
+  year = {2005},
+  journal = {Bioinformatics},
+  publisher = {Oxford University Press (OUP)},
+  volume = {21},
+  number = {7},
+  pages = {951-960},
+  doi = {10.1093/bioinformatics/bti125},
+  url = {https://doi.org/10.1093/bioinformatics/bti125},
+}
+
+@inproceedings{davis2006,
+  title = {The Relationship between Precision-Recall and ROC Curves},
+  author = {Davis, Jesse and Goadrich, Mark},
+  year = {2006},
+  booktitle = {Proceedings of the 23rd International Conference on Machine Learning},
+  publisher = {ACM Press},
+  pages = {233-240},
+  doi = {10.1145/1143844.1143874},
+  url = {https://doi.org/10.1145/1143844.1143874},
 }

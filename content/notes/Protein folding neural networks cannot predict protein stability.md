@@ -3,13 +3,14 @@ tags:
   - structure-prediction/limitations
   - thermostability/prediction
   - plddt
+title: Raw folding-model confidence is not a general protein stability predictor
 created: "2026-03-06T09:43:56"
-modified: "2026-04-21T07:28:09"
+modified: "2026-08-19T16:32:04"
 ---
 
 ## Summary
 
-**Protein folding neural networks cannot predict [[thermostability|stability]].** [@pak2023alphafold] found that ddG values did not correlate with [[plddt|pLDDT]]. [@aina2023] found by running Hamiltonian [[Replica-exchange molecular dynamics]] on high-[[plddt|pLDDT]] designs that subsequently fell apart. Papers cited by [@diaz2023] showed that RMSD also does not correlate with stability, although [@mcbride2023] showed that a custom strain score was able to predict this with some success.
+**Raw confidence from protein folding neural networks is not a general predictor of [[thermostability|protein stability]].** Mutation-induced ddG values show little or no correlation with changes in [[plddt|pLDDT]] [@pak2023alphafold], and high-pLDDT designs can still unfold during Hamiltonian [[Replica-exchange molecular dynamics]] [@aina2023]. The networks nonetheless contain some stability-related signal: AlphaFold2 pLDDT correlates with stability within restricted fold families [@ferrari2025], and ESMFold pLDDT moderately discriminates experimentally successful from unsuccessful monomer designs [@garcia2025]. Dedicated downstream models can also predict ddG from AlphaFold structures about as accurately as from experimental structures [@diaz2023]. RMSD itself does not correlate with stability, although [@mcbride2023] showed that a custom strain score was able to predict this with some success.
 
 ## Figures
 
@@ -20,3 +21,4 @@ modified: "2026-04-21T07:28:09"
 
 * [[High-pLDDT designs can be insoluble]]
 * [[Protein structure prediction and design confidence metrics do not correlate with binding affinity]]
+* [[ESMFold pLDDT weakly correlates with intra-family differences in stability and experimental success, but not differences in cooperativity]]

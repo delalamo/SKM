@@ -2,7 +2,7 @@
 tags:
   - inverse-folding/evaluation
 created: "2026-04-05T17:58:34"
-modified: "2026-04-21T07:28:09"
+modified: "2026-08-19T16:32:04"
 summary: The effect of including both sequence and structural features can be synergistic
 ---
 #### Summary
@@ -17,3 +17,7 @@ summary: The effect of including both sequence and structural features can be sy
 | Perplexity | 5.36 | 4.96 | 3.51 | 2.43 |
 | Recovery (%) | 44.60 | 48.81 | 58.76 | 67.05 |
 *Table 3 from [@wang2024spdesign]*
+
+#### See also
+
+* [[Concatenating sequence and structural features is not effective for sequence recovery]]
