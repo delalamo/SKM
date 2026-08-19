@@ -1,13 +1,13 @@
 ---
 title: Fab
 created: 2026-04-05T23:36:09
-modified: "2026-04-21T07:28:09"
+modified: "2026-08-19T17:14:27"
 ---
 
-The **Fab** of an [[antibodies|antibody]] refers to the [[Variable-regions|variable region]] and the first domain of the [[Constant-regions|constant region]]. Antibodies have two while [[Nanobodies|nanobodies]] have only one. They are sometimes used for biophysical studies and have been explored for therapeutic applications.
+The **Fab** of an [[antibodies|antibody]] comprises the heavy- and light-chain [[Variable-regions|variable regions]] and their first [[Constant-regions|constant domains]]. Conventional antibodies have two Fabs. [[Nanobodies]] are isolated VHH single variable domains and are not Fabs [@ketaren2023]. Fabs are sometimes used for biophysical studies and have been explored for therapeutic applications.
 
 #### Observations
 
-* **[[antibodies|Antibody]] fragments such as [[Fab]] regions are cleared more easily than full-lengths Abs** ([[_Articles that need citations|citation needed]]).
-* **[[antibodies|Antibody]] fragments such as [[Fab]] regions can, when not [[Glycosylation|glycosylated]], be expressed in prokaryotes** ([[_Articles that need citations|citation needed]]).
-* **Fragments of [[antibodies|Antibodies]] with only the [[Fab]] region can bypass the [[Lymphatic-system]] and penetrate deeper into tissues** ([[_Articles that need citations|citation needed]]).
+* **[[antibodies|Antibody]] fragments such as Fabs are cleared from circulation more rapidly than full-length Abs** [@pimm1989].
+* **Recombinant Fab and related antibody fragments can be expressed in _E. coli_** [@carter1992].
+* **Fabs can enter tumors rapidly, but rapid clearance can limit tumor exposure and retention.** Extending Fab circulation through albumin binding increased tumor accumulation [@dennis2007].
