@@ -13,7 +13,7 @@ modified: "2026-08-25T12:02:05"
 *Figure 2C-E from [@shehata2019]*
 
 #### See also
-- [[Antibody hydrophobicity and polyreactivity associations vary between datasets]]
+- [[Antibody hydrophobicity sometimes correlates with polyreactivity]]
 - [[Antibody thermostability is not correlated with polyreactivity]]
 - [[Antibody thermostability decreases during affinity maturation, up to a threshold]]
 - [[Antibodies from naive B cells are more polyreactive]]

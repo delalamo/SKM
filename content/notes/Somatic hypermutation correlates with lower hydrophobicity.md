@@ -13,6 +13,6 @@ modified: "2026-08-25T12:02:05"
 *Figure 2B from [@shehata2019]*
 
 #### See also
-- [[Antibody hydrophobicity and polyreactivity associations vary between datasets]]
+- [[Antibody hydrophobicity sometimes correlates with polyreactivity]]
 - [[Antibody thermostability is not correlated with hydrophobicity]]
 - [[Somatic hypermutation correlates with lower polyreactivity]]
