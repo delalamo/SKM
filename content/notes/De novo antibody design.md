@@ -3,7 +3,7 @@ title: De novo antibody design
 tags:
   - citation-fix
 created: 2026-04-10T14:30:55
-modified: "2026-04-21T07:28:09"
+modified: "2026-08-25T10:16:02"
 ---
 
 ***De novo* [[antibodies|antibody]] design** aims to create antibodies purely *in silico* that are capable of binding antigens at predefined epitopes in user-specified ways.
@@ -17,6 +17,8 @@ modified: "2026-04-21T07:28:09"
 	* RF-antibody [@bennett2024]
 	* DiffAb
 	* IgGM
+* [[Flow matching|Flow matching]]-based
+	* TiDE-Ab [@kim2026tideab]
 * Hallucination-based
 	* BoltzGen
 	* Boltz (but requires [[inverse-folding|structure-based sequence design]]; [@wohlwend2024])
