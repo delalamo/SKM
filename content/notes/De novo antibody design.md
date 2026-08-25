@@ -13,15 +13,14 @@ modified: "2026-08-25T10:16:02"
 * [[Inversion of protein folding neural networks|Backpropagation]]-based
 	* Germinal [@millefragoso2025]
 	* BoltzDesign [@cho2025b]
-* [[diffusion-models|Diffusion]]-based
+* [[diffusion-models|Diffusion]]/flow matching-based
 	* RF-antibody [@bennett2024]
 	* DiffAb
 	* IgGM
-* [[Flow matching|Flow matching]]-based
 	* TiDE-Ab [@kim2026tideab]
-* Hallucination-based
 	* BoltzGen
 	* Boltz (but requires [[inverse-folding|structure-based sequence design]]; [@wohlwend2024])
 * Unknown due to proprietary methods
 	* Chai-2
 	* JAM-2 (Nabla)
+    * Latent-X 
