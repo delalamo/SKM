@@ -6,7 +6,7 @@ created: "2024-09-19T05:32:41"
 modified: "2026-08-25T12:02:05"
 ---
 #### Summary
-**In the repertoire studied by Shehata et al., the [[thermostability|thermostability]] of [[antibodies|antibodies]] decreased during [[affinity-maturation|affinity maturation]] until a threshold was reached** [@shehata2019]. This threshold was usually reached within a few mutations, and thermostability could be increased by introducing [[Germline|germline]] mutations [@shehata2019]. Thermostability can be subsequently increased with rescue mutations that bring the sequence farther from germline precursors [@julian2017].
+**In the repertoire studied by Shehata et al., the [[thermostability|thermostability]] of [[antibodies|antibodies]] decreased during [[affinity-maturation|affinity maturation]] until a threshold was reached** [@shehata2019]. This threshold was usually reached within a few mutations, and thermostability could subsequently be increased by either introducing [[Germline|germline]] mutations [@shehata2019], or with rescue mutations that bring the sequence even farther from germline precursors [@julian2017].
 
 #### Figures
 ![[Pasted-image-20240119161059.png]]
