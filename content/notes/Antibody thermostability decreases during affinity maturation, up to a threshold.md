@@ -3,7 +3,7 @@ title: Antibody thermostability can decrease during affinity maturation, up to a
 tags:
   - affinity-maturation
 created: "2024-09-19T05:32:41"
-modified: "2026-08-19T17:14:27"
+modified: "2026-08-25T12:02:05"
 ---
 #### Summary
 **In the repertoire studied by Shehata et al., the [[thermostability|thermostability]] of [[antibodies|antibodies]] decreased during [[affinity-maturation|affinity maturation]] until a threshold was reached** [@shehata2019]. This threshold was usually reached within a few mutations, and thermostability could be increased by introducing [[Germline|germline]] mutations [@shehata2019]. Thermostability can be subsequently increased with rescue mutations that bring the sequence farther from germline precursors [@julian2017].
@@ -13,5 +13,7 @@ modified: "2026-08-19T17:14:27"
 *Figure 3C from [@shehata2019]*
 
 #### See also
+- [[Antibody thermostability is not correlated with hydrophobicity]]
+- [[Antibody thermostability is not correlated with polyreactivity]]
 - [[Conformational entropy in antibodies is inversely proportional to antigen affinity]]
 - [[Antibody affinity can be improved by stabilization]]
