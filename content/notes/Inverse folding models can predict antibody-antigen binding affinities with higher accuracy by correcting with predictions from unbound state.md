@@ -9,7 +9,10 @@ modified: "2026-08-19T16:32:04"
 
 #### Summary
 
-**Accounting explicitly for both bound and unbound states improves [[inverse-folding|inverse-folding]] estimates of mutation-induced changes in protein-protein binding free energy** [@jiao2025]. Boltzmann Alignment subtracts unbound-state log-likelihood contributions and improved unsupervised and supervised Spearman correlations on SKEMPI v2 from 0.2632 to 0.3201 and from 0.4324 to 0.5134, respectively. The method was also evaluated for antibody optimization.
+**Accounting explicitly for both bound and unbound states improves [[inverse-folding|inverse-folding]] estimates of mutation-induced changes in protein-protein binding free energy** [@jiao2025]. 
+
+#### Details
+Boltzmann Alignment subtracts unbound-state log-likelihood contributions and improved unsupervised and supervised Spearman correlations on SKEMPI v2 from 0.2632 to 0.3201 and from 0.4324 to 0.5134, respectively [@jiao2025]. The method was also evaluated for antibody optimization.
 
 #### See also
 
