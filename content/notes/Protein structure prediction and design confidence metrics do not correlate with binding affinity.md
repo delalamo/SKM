@@ -3,15 +3,16 @@ tags:
   - tm-score
   - plddt
   - protein-protein-interactions
+title: Confidence metrics are not general binding-affinity predictors
 created: 2026-03-06T11:07:36
-modified: "2026-04-21T09:59:52"
+modified: "2026-08-19T16:32:04"
 publicationHistory:
   "2026-03-06": "https://delalamo.xyz/post/2026-03-06-conf-affinity"
 ---
 
 #### Summary
 
-**Confidence metrics from structural modeling and design neural networks, namely [[plddt|pLDDT]], [[tm-score|ipTM]], [[Rosetta]] scores, [[ProteinMPNN]] likelihoods, and [[ESM]]-2 log-likelihoods, do not correlate with binding for *de novo* binders** [@li2024; @kosonocky2026]. For pLDDT is also broadly true of [[Protein folding neural networks cannot predict protein stability|protein stability]]. [@maddipatla2026] showed that metrics like ipTM can quickly [[Confidence metrics for diffusion-based structure prediction methods can be improved with minimal changes to conditioning representations|respond to even small changes in the conditioning representations used to drive diffusion-based structure prediction, showing how brittle such metrics are with respect to input sequences and MSAs]].
+**Confidence metrics from structural modeling and design neural networks are not calibrated, target-independent predictors of binding affinity for *de novo* binders** [@li2024; @kosonocky2026]. This includes [[plddt|pLDDT]], [[tm-score|ipTM]], [[Rosetta]] scores, [[ProteinMPNN]] likelihoods, and [[ESM]]-2 log-likelihoods. They can nonetheless contain target-specific classification or ranking signal: [[pae|PAE]] weakly correlates with antibody-antigen affinity and better separates binders from nonbinders [@jin2023], while [[alphafold3|AlphaFold3]] ipTM distinguishes [[antibodies|antibody]] binders on some targets [@bennett2024; @harvey2026]. Binder classification or target-specific enrichment should therefore not be conflated with general affinity regression. The limitation of pLDDT is also broadly true of [[Protein folding neural networks cannot predict protein stability|monomeric protein stability]]. Metrics like ipTM can quickly [[Confidence metrics for diffusion-based structure prediction methods can be improved with minimal changes to conditioning representations|respond to even small changes in the conditioning representations used to drive diffusion-based structure prediction, showing how brittle such metrics are with respect to input sequences and MSAs]] [@maddipatla2026].
 
 #### Figures
 

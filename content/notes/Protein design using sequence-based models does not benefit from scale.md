@@ -2,13 +2,14 @@
 tags:
   - protein-language-models/training
   - plddt
+title: Unconditional design does not consistently improve with model scale
 created: "2026-01-22T12:38:44"
-modified: "2026-04-21T07:28:09"
+modified: "2026-08-19T16:32:04"
 ---
 
 #### Summary
 
-**Protein design using [[protein-language-models|sequence-based models]] does not benefit from scale** [@alamdari2023]. Increasing the size of the model used for design from 38M to 650M parameters did not lead to higher [[plddt|pLDDT]] or [[Sequence perplexity|self-consistency perplexity]] of designs.
+**For unconditional sequence generation, scaling from 38M to 650M parameters did not consistently improve [[plddt|pLDDT]] or [[Sequence perplexity|self-consistency perplexity]] of designs** [@alamdari2023]. This was shown with EvoDiff and is metric- and task-specific: larger [[protein-language-models|protein language models]] can be more steerable under activation steering even when raw generation metrics plateau [@huang2025].
 
 #### Figures
 

@@ -1,12 +1,12 @@
 ---
-title: NMR ensembles are not thermodynamic ensembles
+title: Conventional NMR structure bundles are not thermodynamic ensembles
 tags:
   - conformational-dynamics/experimental-ensembles
 created: "2025-05-05T02:24:41"
-modified: "2026-04-11T07:27:50"
+modified: "2026-08-19T17:14:27"
 ---
 #### Summary
- **[[NMR]] ensembles do not capture the [[Protein dynamics|thermodynamics]] of a protein structure** ([[_Articles that need citations|citation needed]]). They instead are independent calculations that attempt to find 3D structural models consistent with the NMR data. The NMR spectra themselves are better equipped for evaluating physiological relevance of an computationally generated ensemble.
+ **Conventional deposited [[NMR]] structure bundles are not [[Boltzmann distribution|Boltzmann-weighted]] [[Protein dynamics|thermodynamic ensembles]]** [@reinknecht2021]. They are sets of independently calculated models consistent with the experimental restraints, and their spread often reflects structural uncertainty rather than conformer populations. Ensemble-averaged NMR restraints can, however, be integrated with simulations to construct dynamics-bearing ensembles [@lindorfflarsen2005].
 
 #### See also
 * [[Cryo-EM particle counting does not reliably provide true Boltzmann distributions of molecules]]

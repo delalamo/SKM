@@ -2,7 +2,7 @@
 tags:
   - fine-tuning
 created: 2026-04-05T17:17:55
-modified: "2026-04-21T05:01:15"
+modified: "2026-08-25T13:38:32"
 ---
 #### Summary
 **Fine-tuning deep learning models leads to small differences in parameter values in L2 space** [@neyshabur2020]. The foundation model and fine-tuned model often occupy the same basin of the loss landscape. Output features of each layer were examined using centered kernel alignment.
@@ -17,6 +17,6 @@ modified: "2026-04-21T05:01:15"
 *Ref [@neyshabur2020]*
 
 #### See also
-- [[Fine-tuning can be detrimental to performance]]
+- [[Fine-tuning almost always improves property prediction]]
 - [[Low-rank adaptation causes models to learn less and forget less]]
 - [[Low-rank adaptation changes the magnitude, but not directionality, of matrix operations relative to fine-tuning]]
