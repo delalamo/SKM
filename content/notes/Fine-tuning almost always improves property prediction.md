@@ -8,7 +8,10 @@ modified: "2026-08-19T16:32:04"
 
 #### Summary
 
-**Fine-tuning [[protein-language-models|PLMs]] [[ESM]]2, ProtT5, and Ankh virtually always improved property prediction** ([[variant-effect-prediction|variant effect prediction]], [[thermostability|stability]] prediction, [[Function prediction|function prediction]], others) **compared to zero-shot across eight supervised benchmarks** [@schmirler2023]. This is not a guarantee for every objective or evaluation split: fine-tuning can degrade representations or generalization through high variance and [[Catastrophic forgetting|catastrophic forgetting]] [@detlefsen2022; @heinzinger2023]. [@jiang2024] found that active learning for [[Directed evolution|directed evolution]] benefited from fine-tuning over zero-shot prediction after two to four rounds (fine-tuning carried out using a [[Random forest|random forest]] model trained on mean-pooled embeddings).
+**Fine-tuning [[protein-language-models|PLMs]] [[ESM]]2, ProtT5, and Ankh virtually always improved property prediction** ([[variant-effect-prediction|variant effect prediction]], [[thermostability|stability]] prediction, [[Function prediction|function prediction]], others) **compared to zero-shot across eight supervised benchmarks** [@schmirler2023]. [@jiang2024] found that active learning for [[Directed evolution|directed evolution]] benefited from fine-tuning over zero-shot prediction after two to four rounds (fine-tuning carried out using a [[Random forest|random forest]] model trained on mean-pooled embeddings).
+
+#### Details
+This is not a guarantee for every objective or evaluation split: fine-tuning can degrade representations or generalization through high variance and [[Catastrophic forgetting|catastrophic forgetting]] [@detlefsen2022; @heinzinger2023].
 
 #### Figures
 ![[Pasted-image-20240102175550.png]]
