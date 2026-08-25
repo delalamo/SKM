@@ -6,7 +6,7 @@ tags:
   - confidence-metrics
   - antibody-antigen-interactions/complex-prediction
 created: 2026-03-06T09:43:56
-modified: "2026-08-25T10:16:02"
+modified: "2026-08-25T13:38:32"
 ---
 
 #### Summary
@@ -20,3 +20,5 @@ modified: "2026-08-25T10:16:02"
 #### See also
 - [[PAE weakly correlates with Ab-Ag binding]]
 - [[Protein structure prediction and design confidence metrics do not correlate with binding affinity]]
+- [[Boltz-2 intermediate representations can predict protein-protein binding affinity]]
+- [[Ensembling structure prediction methods for filtering improves recovery]]

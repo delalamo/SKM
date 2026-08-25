@@ -4,7 +4,7 @@ tags:
   - antibody-antigen-interactions/binding-affinity
 title: Accounting for the unbound state improves inverse-folding prediction of binding-affinity changes
 created: "2025-02-04T03:00:01"
-modified: "2026-08-19T16:32:04"
+modified: "2026-08-25T13:38:32"
 ---
 
 #### Summary
