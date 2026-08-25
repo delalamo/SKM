@@ -15,7 +15,7 @@ modified: "2026-08-25T10:55:31"
 
 ![[af3-antibody-antigen-pae-by-target-size.png]]
 
-*Figure from [@solanki2026]*
+*Ref [@solanki2026]*
 
 #### See also
 - [[AlphaFold3 ipTM can distinguish between antibody binders and nonbinders]]
