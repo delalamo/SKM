@@ -6,10 +6,16 @@ tags:
   - pae
   - tm-score
 created: "2026-08-25"
-modified: "2026-08-25T10:16:02"
+modified: "2026-08-25T10:55:31"
 ---
 #### Summary
 **[[alphafold3|AlphaFold3]] antibody-antigen confidence is biased by antigen size and experimental structure source** [@solanki2026]. 
+
+#### Figures
+
+![[af3-antibody-antigen-pae-by-target-size.png]]
+
+*Figure from [@solanki2026]*
 
 #### See also
 - [[AlphaFold3 ipTM can distinguish between antibody binders and nonbinders]]
