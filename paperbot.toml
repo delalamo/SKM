@@ -1,0 +1,22 @@
+repository = "delalamo/SKM"
+
+[paths]
+bibliography = "bibliography.bib"
+artifacts = "paper_relevance"
+abstract_exceptions = "paper_relevance/abstract_exceptions.json"
+
+[discovery]
+relevance_threshold = 0.80
+recovery_hours = 72
+
+[model]
+base = "allenai/specter2_base"
+base_revision = "3447645e1def9117997203454fa4495937bfbd83"
+adapter = "allenai/specter2_classification"
+adapter_revision = "d843816b414a856d9a5268d5865f188bb589e6e1"
+embedding_dimension = 768
+max_tokens = 512
+negative_seed = "skm-pubmed-negatives-v1"
+
+[project]
+relevance_field = "Relevance"

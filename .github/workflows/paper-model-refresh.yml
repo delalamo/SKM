@@ -1,0 +1,587 @@
+name: Refresh paper relevance model
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  merge_group:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: paper-model-refresh-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  detect_paperbot_changes:
+    name: Detect paperbot-relevant changes
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      relevant: ${{ steps.changes.outputs.relevant }}
+      lock_changed: ${{ steps.changes.outputs.lock_changed }}
+      bibliography_changed: ${{ steps.changes.outputs.bibliography_changed }}
+    env:
+      BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha || github.sha }}
+      HEAD_SHA: ${{ github.event.pull_request.head.sha || github.event.merge_group.head_sha || github.sha }}
+    steps:
+      - name: Check out candidate history
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: candidate
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Detect relevant paths
+        id: changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
+            echo "relevant=true" >> "$GITHUB_OUTPUT"
+            # Manual dispatch can target a feature branch. Validate that
+            # branch's lock in the credential-free job conservatively.
+            echo "lock_changed=true" >> "$GITHUB_OUTPUT"
+            # Manual runs do not have a pull-request diff whose later refresh
+            # job can be trusted to reconcile.
+            echo "bibliography_changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [[ "$GITHUB_EVENT_NAME" == "merge_group" ]]; then
+            echo "relevant=true" >> "$GITHUB_OUTPUT"
+            # A merge group may contain a dependency change from any member.
+            # Testing its assembled head with the candidate lock is the safe
+            # conservative choice.
+            echo "lock_changed=true" >> "$GITHUB_OUTPUT"
+            # Merge groups must already contain refreshed model artifacts.
+            echo "bibliography_changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [[ "$GITHUB_EVENT_NAME" != "pull_request" ]]; then
+            echo "::error::Unsupported paperbot workflow event: $GITHUB_EVENT_NAME"
+            exit 1
+          fi
+          git -C candidate fetch --no-tags \
+            "https://github.com/$GITHUB_REPOSITORY.git" "$BASE_SHA"
+          set +e
+          raw_diff=$(git -C candidate diff --raw --no-renames \
+            "$BASE_SHA...$HEAD_SHA")
+          raw_status=$?
+          set -e
+          if [[ "$raw_status" -ne 0 ]]; then
+            echo "::error::Could not inspect changed Git object modes"
+            exit "$raw_status"
+          fi
+          symlink_changed=false
+          while IFS= read -r raw_line; do
+            metadata=${raw_line%%$'\t'*}
+            old_mode=${metadata%% *}
+            old_mode=${old_mode#:}
+            metadata=${metadata#* }
+            new_mode=${metadata%% *}
+            if [[ "$old_mode" == "120000" || "$new_mode" == "120000" ]]; then
+              symlink_changed=true
+              break
+            fi
+          done <<< "$raw_diff"
+          set +e
+          git -C candidate diff --quiet --no-renames \
+            "$BASE_SHA...$HEAD_SHA" -- requirements-paperbot.lock
+          lock_status=$?
+          git -C candidate diff --quiet --no-renames \
+            "$BASE_SHA...$HEAD_SHA" -- bibliography.bib
+          bibliography_status=$?
+          git -C candidate diff --quiet --no-renames \
+            "$BASE_SHA...$HEAD_SHA" -- \
+              bibliography.bib \
+              paperbot.toml \
+              requirements-paperbot.lock \
+              sitecustomize.py \
+              usercustomize.py \
+              .gitattributes \
+              .gitignore \
+              .lfsconfig \
+              .github/CODEOWNERS \
+              ':(glob)**/.gitattributes' \
+              ':(glob)**/.gitignore' \
+              ':(glob)**/.pytest.ini' \
+              ':(glob)**/.pytest.toml' \
+              ':(glob)**/conftest.py' \
+              ':(glob)**/pyproject.toml' \
+              ':(glob)**/pytest.ini' \
+              ':(glob)**/pytest.toml' \
+              ':(glob)**/setup.cfg' \
+              ':(glob)**/tox.ini' \
+              ':(glob)*.py' \
+              ':(glob)**/*.py' \
+              ':(glob)*.py[cod]' \
+              ':(glob)**/*.py[cod]' \
+              ':(glob)*.so' \
+              ':(glob)**/*.so' \
+              ':(glob)*.pyd' \
+              ':(glob)**/*.pyd' \
+              ':(glob)*.dylib' \
+              ':(glob)**/*.dylib' \
+              ':(glob)paper_relevance/**' \
+              ':(glob)scripts/**' \
+              ':(glob)tests/paperbot/**' \
+              .github/workflows/paper-discovery.yml \
+              .github/workflows/paper-model-refresh.yml
+          relevant_status=$?
+          set -e
+          if [[ "$symlink_changed" == "true" && "$relevant_status" -eq 0 ]]; then
+            relevant_status=1
+          fi
+          case "$lock_status" in
+            0) echo "lock_changed=false" >> "$GITHUB_OUTPUT" ;;
+            1) echo "lock_changed=true" >> "$GITHUB_OUTPUT" ;;
+            *)
+              echo "::error::Could not determine whether the dependency lock changed"
+              exit "$lock_status"
+              ;;
+          esac
+          case "$bibliography_status" in
+            0) echo "bibliography_changed=false" >> "$GITHUB_OUTPUT" ;;
+            1) echo "bibliography_changed=true" >> "$GITHUB_OUTPUT" ;;
+            *)
+              echo "::error::Could not determine whether the bibliography changed"
+              exit "$bibliography_status"
+              ;;
+          esac
+          case "$relevant_status" in
+            0) echo "relevant=false" >> "$GITHUB_OUTPUT" ;;
+            1) echo "relevant=true" >> "$GITHUB_OUTPUT" ;;
+            *)
+              echo "::error::Could not determine whether paperbot-relevant paths changed"
+              exit "$relevant_status"
+              ;;
+          esac
+
+  paperbot_tests:
+    name: Run paperbot unit tests
+    needs: detect_paperbot_changes
+    if: needs.detect_paperbot_changes.outputs.relevant == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out trusted dependencies
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          path: trusted
+          persist-credentials: false
+
+      - name: Check out candidate code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: candidate
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      # The first PR that introduces paperbot has no trusted dependency lock on
+      # the default branch yet.  This job has no secrets and read-only
+      # permissions, so it may use the candidate lock for bootstrap validation.
+      # Once paperbot lands, every later PR automatically uses the trusted lock.
+      - name: Select dependency source
+        id: dependencies
+        env:
+          LOCK_CHANGED: ${{ needs.detect_paperbot_changes.outputs.lock_changed }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$LOCK_CHANGED" != "true" && "$LOCK_CHANGED" != "false" ]]; then
+            echo "::error::Dependency-lock change detection returned an invalid result"
+            exit 1
+          fi
+          if [[ -f "$GITHUB_WORKSPACE/trusted/requirements-paperbot.lock" && \
+                ! -L "$GITHUB_WORKSPACE/trusted/requirements-paperbot.lock" && \
+                -f "$GITHUB_WORKSPACE/trusted/scripts/paperbot/pr_safety.py" && \
+                ! -L "$GITHUB_WORKSPACE/trusted/scripts/paperbot/pr_safety.py" ]]; then
+            if [[ "$LOCK_CHANGED" == "true" ]]; then
+              if [[ ! -f "$GITHUB_WORKSPACE/candidate/requirements-paperbot.lock" || \
+                    -L "$GITHUB_WORKSPACE/candidate/requirements-paperbot.lock" ]]; then
+                echo "::error::Candidate dependency lock must be a regular, non-symlink file"
+                exit 1
+              fi
+              echo "lock=candidate/requirements-paperbot.lock" >> "$GITHUB_OUTPUT"
+            else
+              echo "lock=trusted/requirements-paperbot.lock" >> "$GITHUB_OUTPUT"
+            fi
+            echo "bootstrap=false" >> "$GITHUB_OUTPUT"
+          else
+            if [[ ! -f "$GITHUB_WORKSPACE/candidate/requirements-paperbot.lock" || \
+                  -L "$GITHUB_WORKSPACE/candidate/requirements-paperbot.lock" ]]; then
+              echo "::error::Candidate dependency lock must be a regular, non-symlink file"
+              exit 1
+            fi
+            echo "lock=candidate/requirements-paperbot.lock" >> "$GITHUB_OUTPUT"
+            echo "bootstrap=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install CPU-only PyTorch
+        run: >-
+          python -m pip install
+          --index-url https://download.pytorch.org/whl/cpu
+          "torch==2.13.0"
+
+      - name: Install pinned dependencies
+        run: python -m pip install --requirement "${{ steps.dependencies.outputs.lock }}"
+
+      - name: Run candidate paperbot tests
+        working-directory: candidate
+        run: >-
+          env -u PYTHONPATH python -P -c
+          'import pytest,sys; sys.path.insert(0, ".");
+          raise SystemExit(pytest.main(["tests/paperbot"]))'
+
+      - name: Verify model with trusted code under selected dependencies
+        if: >-
+          steps.dependencies.outputs.bootstrap != 'true' &&
+          needs.detect_paperbot_changes.outputs.bibliography_changed != 'true'
+        working-directory: trusted
+        env:
+          PYTHONPATH: ${{ github.workspace }}/trusted
+        run: >-
+          python -m scripts.paperbot
+          --repo-root "$GITHUB_WORKSPACE/candidate"
+          check-model
+
+      - name: Defer model freshness to bibliography refresh
+        if: >-
+          steps.dependencies.outputs.bootstrap != 'true' &&
+          needs.detect_paperbot_changes.outputs.bibliography_changed == 'true'
+        run: >-
+          echo "The pull request changes bibliography.bib;
+          the refresh-or-verify job will regenerate and validate the model artifacts."
+
+      - name: Verify initial candidate model and policy
+        if: steps.dependencies.outputs.bootstrap == 'true'
+        working-directory: candidate
+        env:
+          PAPERBOT_POLICY_ROOT: ${{ github.workspace }}/candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          env -u PYTHONPATH python -P -c \
+            'import pytest,sys; sys.path.insert(0, "."); raise SystemExit(pytest.main(["tests/paperbot/test_no_remote_summarization.py"]))'
+          python -m scripts.paperbot \
+            --repo-root "$GITHUB_WORKSPACE/candidate" \
+            check-model
+
+  paperbot_test_gate:
+    name: Test paperbot without credentials
+    needs: [detect_paperbot_changes, paperbot_tests, refresh-or-verify]
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Require relevant paperbot tests
+        env:
+          DETECT_RESULT: ${{ needs.detect_paperbot_changes.result }}
+          RELEVANT: ${{ needs.detect_paperbot_changes.outputs.relevant }}
+          TEST_RESULT: ${{ needs.paperbot_tests.result }}
+          REFRESH_RESULT: ${{ needs.refresh-or-verify.result }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$DETECT_RESULT" != "success" ]]; then
+            echo "::error::Could not determine whether paperbot tests are required"
+            exit 1
+          fi
+          if [[ "$RELEVANT" == "true" && "$TEST_RESULT" != "success" ]]; then
+            echo "::error::The complete paperbot unit-test suite must pass"
+            exit 1
+          fi
+          if [[ "$RELEVANT" == "true" && "$REFRESH_RESULT" != "success" ]]; then
+            echo "::error::The paperbot refresh-or-verify job must pass"
+            exit 1
+          fi
+          if [[ "$RELEVANT" != "true" && "$RELEVANT" != "false" ]]; then
+            echo "::error::Paperbot change detection returned an invalid result"
+            exit 1
+          fi
+
+  refresh-or-verify:
+    name: Refresh trusted PRs or verify artifacts
+    needs: detect_paperbot_changes
+    if: needs.detect_paperbot_changes.outputs.relevant == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    permissions:
+      contents: write
+      issues: read
+      pull-requests: write
+    env:
+      HF_HUB_DISABLE_TELEMETRY: "1"
+      PIP_DISABLE_PIP_VERSION_CHECK: "1"
+      TOKENIZERS_PARALLELISM: "false"
+      PAPERBOT_CONTACT_EMAIL: ${{ vars.PAPERBOT_CONTACT_EMAIL }}
+      BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha || github.sha }}
+      HEAD_SHA: ${{ github.event.pull_request.head.sha || github.event.merge_group.head_sha || github.sha }}
+      HEAD_REF: ${{ github.event.pull_request.head.ref || github.ref_name }}
+    steps:
+      # Generator code and dependency pins always come from the trusted base.
+      - name: Check out trusted generator
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          path: trusted
+          persist-credentials: false
+
+      - name: Detect trusted generator
+        id: trusted
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -f "$GITHUB_WORKSPACE/trusted/requirements-paperbot.lock" && \
+                ! -L "$GITHUB_WORKSPACE/trusted/requirements-paperbot.lock" && \
+                -f "$GITHUB_WORKSPACE/trusted/scripts/paperbot/pr_safety.py" && \
+                ! -L "$GITHUB_WORKSPACE/trusted/scripts/paperbot/pr_safety.py" ]]; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "Initial paperbot bootstrap is validated by the credential-free test job."
+          fi
+
+      # The pull request checkout is data. No executable file from it is run.
+      - name: Check out candidate bibliography
+        if: steps.trusted.outputs.available == 'true'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: candidate
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Python
+        if: steps.trusted.outputs.available == 'true'
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Cache SPECTER2 weights
+        if: steps.trusted.outputs.available == 'true'
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        with:
+          path: ~/.cache/huggingface
+          key: >-
+            ${{ runner.os }}-specter2-
+            ${{ hashFiles('trusted/requirements-paperbot.lock', 'trusted/paperbot.toml') }}
+
+      - name: Install CPU-only PyTorch
+        if: steps.trusted.outputs.available == 'true'
+        run: >-
+          python -m pip install
+          --index-url https://download.pytorch.org/whl/cpu
+          "torch==2.13.0"
+
+      # Never install candidate-controlled packages in this job: later steps
+      # receive a repository-scoped write token. Lock changes are checked with
+      # trusted code in the separate credential-free test job above.
+      - name: Install trusted pinned dependencies
+        if: steps.trusted.outputs.available == 'true'
+        run: >-
+          python -m pip install
+          --requirement trusted/requirements-paperbot.lock
+
+      - name: Enforce the no-remote-summarization policy with trusted code
+        if: steps.trusted.outputs.available == 'true'
+        working-directory: trusted
+        env:
+          PAPERBOT_POLICY_ROOT: ${{ github.workspace }}/candidate
+        run: >-
+          env -u PYTHONPATH python -P -c
+          'import pytest,sys; sys.path.insert(0, ".");
+          raise SystemExit(pytest.main(["tests/paperbot/test_no_remote_summarization.py"]))'
+
+      - name: Classify the pull request
+        if: steps.trusted.outputs.available == 'true'
+        id: safety
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          SAME_REPOSITORY: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$EVENT_NAME" == "pull_request" ]]; then
+            git -C candidate fetch --no-tags \
+              "https://github.com/$GITHUB_REPOSITORY.git" "$BASE_SHA"
+          fi
+          PYTHONPATH="$GITHUB_WORKSPACE/trusted" \
+            python -m scripts.paperbot.pr_safety classify \
+              --repo "$GITHUB_WORKSPACE/candidate" \
+              --base "$BASE_SHA" \
+              --head "$HEAD_SHA" \
+              --event-name "$EVENT_NAME" \
+              --same-repository "$SAME_REPOSITORY" \
+              --github-output "$GITHUB_OUTPUT"
+
+      - name: Backfill bibliography abstracts
+        if: >-
+          steps.trusted.outputs.available == 'true' &&
+          steps.safety.outputs.auto_refresh == 'true'
+        env:
+          PYTHONPATH: ${{ github.workspace }}/trusted
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+          PAPERBOT_DISABLE_ARBITRARY_HTML: "1"
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -L "$GITHUB_WORKSPACE/candidate/bibliography.bib" || \
+                ! -f "$GITHUB_WORKSPACE/candidate/bibliography.bib" ]]; then
+            echo "::error::Candidate bibliography must be a regular, non-symlink file"
+            exit 1
+          fi
+          python -m scripts.paperbot --repo-root "$GITHUB_WORKSPACE/candidate" backfill-bibliography
+
+      - name: Synchronize closed negative issues
+        if: >-
+          steps.trusted.outputs.available == 'true' &&
+          steps.safety.outputs.auto_refresh == 'true'
+        env:
+          PYTHONPATH: ${{ github.workspace }}/trusted
+          GITHUB_TOKEN: ${{ github.token }}
+        run: >-
+          python -m scripts.paperbot
+          --repo-root "$GITHUB_WORKSPACE/candidate"
+          sync-issue-negatives
+
+      - name: Refresh and verify model
+        if: >-
+          steps.trusted.outputs.available == 'true' &&
+          steps.safety.outputs.auto_refresh == 'true'
+        env:
+          PYTHONPATH: ${{ github.workspace }}/trusted
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m scripts.paperbot --repo-root "$GITHUB_WORKSPACE/candidate" refresh-model
+          python -m scripts.paperbot --repo-root "$GITHUB_WORKSPACE/candidate" check-model
+
+      - name: Reject unexpected generated paths
+        if: >-
+          steps.trusted.outputs.available == 'true' &&
+          steps.safety.outputs.auto_refresh == 'true'
+        env:
+          PYTHONPATH: ${{ github.workspace }}/trusted
+        run: >-
+          python -m scripts.paperbot.pr_safety validate-generated
+          --repo "$GITHUB_WORKSPACE/candidate"
+
+      - name: Publish refreshed artifacts in a model-update PR
+        id: model_update
+        if: >-
+          steps.trusted.outputs.available == 'true' &&
+          steps.safety.outputs.auto_refresh == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git -C candidate add -- \
+            bibliography.bib \
+            paper_relevance/abstract_provenance.jsonl \
+            paper_relevance/positive_embeddings.npy \
+            paper_relevance/positive_manifest.jsonl \
+            paper_relevance/negative_embeddings.npy \
+            paper_relevance/negative_manifest.jsonl \
+            paper_relevance/issue_negatives.jsonl \
+            paper_relevance/issue_negative_embeddings.npy \
+            paper_relevance/issue_negative_manifest.jsonl \
+            paper_relevance/classifier.npz \
+            paper_relevance/model_manifest.json
+          if git -C candidate diff --cached --quiet; then
+            echo "Model artifacts are already current."
+            exit 0
+          fi
+          if [[ ! "$PR_NUMBER" =~ ^[1-9][0-9]*$ ]]; then
+            echo "::error::A pull-request number is required to publish model artifacts"
+            exit 1
+          fi
+          model_branch="paperbot/model-refresh-pr-$PR_NUMBER"
+          git -C candidate checkout -B "$model_branch"
+          git -C candidate config user.name "github-actions[bot]"
+          git -C candidate config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C candidate commit -m "chore: refresh paper relevance model"
+          gh auth setup-git
+          source_tip=$(
+            git -C candidate ls-remote \
+              "https://github.com/$GITHUB_REPOSITORY.git" \
+              "refs/heads/$HEAD_REF" |
+              awk '{print $1}'
+          )
+          if [[ "$source_tip" != "$HEAD_SHA" ]]; then
+            echo "::error::The source branch moved while its model was refreshing"
+            exit 1
+          fi
+          model_tip=$(
+            git -C candidate ls-remote \
+              "https://github.com/$GITHUB_REPOSITORY.git" \
+              "refs/heads/$model_branch" |
+              awk '{print $1}'
+          )
+          model_lease="refs/heads/$model_branch:$model_tip"
+          git -C candidate push \
+            --force-with-lease="$model_lease" \
+            "https://github.com/$GITHUB_REPOSITORY.git" \
+            "HEAD:refs/heads/$model_branch"
+          pr_url=$(
+            gh pr list \
+              --repo "$GITHUB_REPOSITORY" \
+              --state open \
+              --base "$HEAD_REF" \
+              --head "$model_branch" \
+              --json url \
+              --jq '.[0].url // ""'
+          )
+          if [[ -z "$pr_url" ]]; then
+            pr_url=$(
+              gh pr create \
+                --repo "$GITHUB_REPOSITORY" \
+                --base "$HEAD_REF" \
+                --head "$model_branch" \
+                --title "Refresh paper relevance model for #$PR_NUMBER" \
+                --body "Generated by the trusted paper-model workflow for source PR #$PR_NUMBER. Merge this PR into $HEAD_REF, then allow the source PR checks to run again."
+            )
+          fi
+          echo "pr_url=$pr_url" >> "$GITHUB_OUTPUT"
+          {
+            echo "### Paper relevance model update required"
+            echo
+            echo "Merge [$pr_url]($pr_url) into $HEAD_REF."
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "::error::Merge the generated model-update PR before merging the source PR: $pr_url"
+          exit 1
+
+      - name: Verify only (fork, manual, or sensitive change)
+        if: >-
+          steps.trusted.outputs.available == 'true' &&
+          steps.safety.outputs.auto_refresh != 'true'
+        env:
+          LOCK_CHANGED: ${{ needs.detect_paperbot_changes.outputs.lock_changed }}
+          PYTHONPATH: ${{ github.workspace }}/trusted
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$LOCK_CHANGED" == "true" ]]; then
+            echo "The model was checked with trusted code under the candidate dependencies in the credential-free test job."
+            exit 0
+          fi
+          if ! python -m scripts.paperbot --repo-root "$GITHUB_WORKSPACE/candidate" check-model; then
+            echo "::error::Model artifacts are stale. Run: python -m scripts.paperbot backfill-bibliography && GITHUB_TOKEN=... python -m scripts.paperbot sync-issue-negatives && python -m scripts.paperbot refresh-model"
+            exit 1
+          fi

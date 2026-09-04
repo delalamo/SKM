@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/training
 created: "2026-02-26T15:30:30"
-modified: "2026-04-21T07:28:09"
+modified: "2026-08-19T16:32:04"
 ---
 
 ## Summary
@@ -13,3 +13,7 @@ modified: "2026-04-21T07:28:09"
 
 ![[Pasted-image-20260226153026.png]]
 *Ref [@didi2026]*
+
+## See also
+
+* [[Ab-Ag inverse folding methods benefit from pretraining]]

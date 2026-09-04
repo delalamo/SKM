@@ -1,0 +1,9 @@
+# Stored vectors are self-consistency checked, but only a maintainer can attest
+# that artifact changes came from the trusted pinned SPECTER2 generator.
+/.github/CODEOWNERS @delalamo
+/.github/workflows/paper-*.yml @delalamo
+/paperbot.toml @delalamo
+/requirements-paperbot.lock @delalamo
+/scripts/paperbot/ @delalamo
+/paper_relevance/ @delalamo
+/tests/paperbot/ @delalamo

@@ -1,0 +1,143 @@
+name: Daily paper discovery
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+    inputs:
+      as_of:
+        description: "Immutable UTC run boundary (ISO 8601); empty uses the current time"
+        required: false
+        type: string
+      since:
+        description: "Backfill start in UTC (ISO 8601)"
+        required: false
+        type: string
+      until:
+        description: "Backfill end in UTC (ISO 8601)"
+        required: false
+        type: string
+      dry_run:
+        description: "Fetch, deduplicate, and score without writing issues or Projects"
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: paper-discovery
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    name: Fetch, rank, and publish papers
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    env:
+      HF_HUB_DISABLE_TELEMETRY: "1"
+      PIP_DISABLE_PIP_VERSION_CHECK: "1"
+      TOKENIZERS_PARALLELISM: "false"
+      PAPERBOT_CONTACT_EMAIL: ${{ vars.PAPERBOT_CONTACT_EMAIL }}
+      PAPER_PROJECT_OWNER: ${{ vars.PAPER_PROJECT_OWNER }}
+      PAPER_PROJECT_NUMBER: ${{ vars.PAPER_PROJECT_NUMBER }}
+      PAPER_PROJECT_FIELD: ${{ vars.PAPER_PROJECT_FIELD }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-paperbot.lock
+
+      - name: Cache SPECTER2 weights
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        with:
+          path: ~/.cache/huggingface
+          key: >-
+            ${{ runner.os }}-specter2-
+            ${{ hashFiles('requirements-paperbot.lock', 'paperbot.toml') }}
+
+      - name: Install CPU-only PyTorch
+        run: >-
+          python -m pip install
+          --index-url https://download.pytorch.org/whl/cpu
+          "torch==2.13.0"
+
+      - name: Install pinned paperbot dependencies
+        run: python -m pip install --requirement requirements-paperbot.lock
+
+      - name: Verify committed relevance model
+        run: python -m scripts.paperbot check-model
+
+      - name: Fetch and rank the daily tranche
+        id: daily
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+          PAPERBOT_AS_OF: ${{ inputs.as_of }}
+          PAPERBOT_SINCE: ${{ inputs.since }}
+          PAPERBOT_UNTIL: ${{ inputs.until }}
+          PAPERBOT_DRY_RUN: ${{ inputs.dry_run }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(daily)
+          if [[ -n "${PAPERBOT_AS_OF:-}" ]]; then
+            args+=(--as-of "$PAPERBOT_AS_OF")
+          elif [[ "$GITHUB_EVENT_NAME" == "schedule" ]]; then
+            # Cron can start late; keep the logical tranche pinned to midnight.
+            args+=(--as-of "$(date -u +%Y-%m-%dT00:00:00Z)")
+          fi
+          if [[ -n "${PAPERBOT_SINCE:-}" ]]; then
+            args+=(--since "$PAPERBOT_SINCE")
+          fi
+          if [[ -n "${PAPERBOT_UNTIL:-}" ]]; then
+            args+=(--until "$PAPERBOT_UNTIL")
+          fi
+          if [[ "${PAPERBOT_DRY_RUN:-false}" == "true" ]]; then
+            args+=(--dry-run)
+          else
+            args+=(--project-queue "$RUNNER_TEMP/paper-project-queue.json")
+          fi
+          args+=(--report "$RUNNER_TEMP/paperbot-report.json")
+          python -m scripts.paperbot "${args[@]}"
+
+      - name: Upload the run report
+        if: ${{ always() && !cancelled() }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: paperbot-report-${{ github.run_id }}
+          path: ${{ runner.temp }}/paperbot-report.json
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Check for a Project synchronization queue
+        id: project_queue
+        if: ${{ always() && !cancelled() && inputs.dry_run != true }}
+        shell: bash
+        run: |
+          if [[ -f "$RUNNER_TEMP/paper-project-queue.json" ]]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No Project queue was produced; issue-only publishing is complete."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Reconcile the ranked Project
+        if: ${{ always() && !cancelled() && steps.project_queue.outputs.ready == 'true' }}
+        env:
+          PROJECTS_TOKEN: ${{ secrets.PROJECTS_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          queue="$RUNNER_TEMP/paper-project-queue.json"
+          python -m scripts.paperbot daily --sync-project "$queue"

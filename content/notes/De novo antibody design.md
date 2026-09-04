@@ -3,7 +3,7 @@ title: De novo antibody design
 tags:
   - citation-fix
 created: 2026-04-10T14:30:55
-modified: "2026-04-21T07:28:09"
+modified: "2026-08-25T10:16:02"
 ---
 
 ***De novo* [[antibodies|antibody]] design** aims to create antibodies purely *in silico* that are capable of binding antigens at predefined epitopes in user-specified ways.
@@ -13,13 +13,14 @@ modified: "2026-04-21T07:28:09"
 * [[Inversion of protein folding neural networks|Backpropagation]]-based
 	* Germinal [@millefragoso2025]
 	* BoltzDesign [@cho2025b]
-* [[diffusion-models|Diffusion]]-based
+* [[diffusion-models|Diffusion]]/flow matching-based
 	* RF-antibody [@bennett2024]
 	* DiffAb
 	* IgGM
-* Hallucination-based
+	* TiDE-Ab [@kim2026tideab]
 	* BoltzGen
 	* Boltz (but requires [[inverse-folding|structure-based sequence design]]; [@wohlwend2024])
 * Unknown due to proprietary methods
 	* Chai-2
 	* JAM-2 (Nabla)
+    * Latent-X 

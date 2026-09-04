@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/representations
 created: "2025-08-29T08:38:40"
-modified: "2026-04-21T07:28:09"
+modified: "2026-08-25T13:38:32"
 ---
 
 #### Summary
@@ -17,6 +17,6 @@ modified: "2026-04-21T07:28:09"
 
 #### See also
 
-- [[Inverse folding models can predict antibody-antigen binding affinities with higher accuracy by correcting with predictions from unbound state]]
+- [[Accounting for the unbound state improves inverse-folding prediction of binding-affinity changes]]
 - [[Zero-shot protein stability prediction using inverse folding models can be improved by subtracting predictions from residue in isolation]]
 - [[Averaging logits from multiple sources can improve fitness prediction]]

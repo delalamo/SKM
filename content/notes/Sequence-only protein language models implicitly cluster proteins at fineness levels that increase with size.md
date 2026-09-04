@@ -2,7 +2,7 @@
 tags:
   - protein-language-models/training
 created: "2026-03-26T21:47:41"
-modified: "2026-04-21T07:28:09"
+modified: "2026-07-28T14:12:17"
 ---
 
 #### Summary
@@ -18,3 +18,4 @@ modified: "2026-04-21T07:28:09"
 
 * [[Protein property prediction using PLMs does not benefit from scale except when predicting inferring features of either structural or sparsely populated sequence families]]
 * [[Larger PLMs generate more novel sequences from more sparsely populated protein families]]
+* [[Query-conditioned outer product]]

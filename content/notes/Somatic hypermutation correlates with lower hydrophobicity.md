@@ -3,7 +3,7 @@ tags:
   - affinity-maturation
   - antibody-developability/hydrophobicity
 created: "2025-02-01T11:25:59"
-modified: "2026-04-21T07:28:09"
+modified: "2026-08-25T12:02:05"
 ---
 #### Summary
 **[[Somatic hypermutation]] of [[antibodies|antibodies]] correlates with lower [[antibody-developability|hydrophobicity]]** [@shehata2019].
@@ -13,4 +13,6 @@ modified: "2026-04-21T07:28:09"
 *Figure 2B from [@shehata2019]*
 
 #### See also
+- [[Antibody hydrophobicity sometimes correlates with polyreactivity]]
+- [[Antibody thermostability is not correlated with hydrophobicity]]
 - [[Somatic hypermutation correlates with lower polyreactivity]]
