@@ -1,8 +1,9 @@
 ---
 tags:
-  - inverse-folding/evaluation
+  - evidence/generalization
+  - design/inverse-folding
 created: "2025-02-03T03:25:04"
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
- **[[inverse-folding|Inverse folding]] methods generalize to unseen structures more effectively than [[protein-language-models|PLMs]]** [@ingraham2019].
+ **[[notes/inverse-folding|Inverse folding]] methods generalize to unseen structures more effectively than [[notes/protein-language-models|PLMs]]** [@ingraham2019].

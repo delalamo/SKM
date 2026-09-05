@@ -1,7 +1,8 @@
 ---
 tags:
-  - protein-language-models/antibodies
-  - contrastive-learning
+  - model-design/multimodal
+  - training/fine-tuning
+  - evidence/datasets
 created: 2025-07-22T11:37:28
 modified: "2026-04-21T05:01:15"
 ---

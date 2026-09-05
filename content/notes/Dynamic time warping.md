@@ -1,5 +1,7 @@
 ---
 tags:
+  - evolution/homology
+  - antibodies/architecture
 created: 2024-05-08T17:45:39
 modified: "2026-04-21T05:01:15"
 ---

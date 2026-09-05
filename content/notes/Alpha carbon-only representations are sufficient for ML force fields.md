@@ -1,5 +1,7 @@
 ---
 tags:
+  - biophysics/molecular-simulation
+  - model-design/architectures
 created: 2024-07-08T02:37:17
 modified: "2026-04-21T05:01:15"
 ---

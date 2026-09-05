@@ -1,13 +1,15 @@
 ---
 tags:
-  - plddt
+  - evidence/design-validation
+  - prediction/stability-expression
+  - prediction/confidence
 created: 2026-03-06T09:43:56
 modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**Protein [[structure-prediction|structure prediction]] and design metrics ([[plddt|pLDDT]], perplexity, sequence homology) do not correlate with probability of expression** [@yang2025dayhoff].
+**Protein [[notes/structure-prediction|structure prediction]] and design metrics ([[notes/plddt|pLDDT]], perplexity, sequence homology) do not correlate with probability of expression** [@yang2025dayhoff].
 
 #### Figures
 

@@ -1,5 +1,6 @@
 ---
 tags:
+  - biophysics/ensemble-analysis
 created: 2024-07-15T03:47:37
 modified: "2026-04-20T10:13:23"
 ---

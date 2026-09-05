@@ -1,7 +1,7 @@
 ---
 tags:
-  - pae
-  - confidence-metrics
+  - prediction/confidence
+  - evidence/measurements
 created: 2024-05-30T05:39:55
 modified: "2026-04-21T05:01:15"
 ---

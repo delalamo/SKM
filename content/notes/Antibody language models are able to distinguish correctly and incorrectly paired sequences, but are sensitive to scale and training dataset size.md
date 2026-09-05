@@ -1,11 +1,12 @@
 ---
 tags:
-  - protein-language-models/antibodies
+  - antibodies/repertoires
+  - model-analysis/representation-geometry
 created: "2025-09-19T06:55:26"
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
-**[[antibodies|Antibody]]-specific [[protein-language-models|protein language models]] are able to distinguish correctly and incorrectly paired sequences, but are sensitive to model [[Scaling hypothesis|scale]] and training dataset size** [@neyestanak2025].
+**[[tags/antibodies|Antibody]]-specific [[notes/protein-language-models|protein language models]] are able to distinguish correctly and incorrectly paired sequences, but are sensitive to model [[Scaling hypothesis|scale]] and training dataset size** [@neyestanak2025].
 
 #### Figures
 ![[Pasted-image-20250919065446.png]]

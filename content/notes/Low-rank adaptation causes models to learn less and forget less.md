@@ -1,6 +1,6 @@
 ---
 tags:
-  - low-rank-adaptation
+  - training/fine-tuning
 created: 2024-05-20T04:31:32
 modified: "2026-08-25T13:38:32"
 ---

@@ -2,6 +2,9 @@
 title: Cytokines
 created: 2026-04-10T14:02:57
 modified: "2026-04-21T07:03:26"
+tags:
+  - cell-biology/immune-signaling
+  - design/modular-proteins
 ---
 
 **Cytokines** are signaling molecules involved in inflammation. They include [[Interferons]], [[Interleukins]], [[Chemokines]], colony-stimulating factors, [[Tumor necrosis factors]], and Transforming growth factors. At baseline their concentration in the blood is low. Overrelease can cause a cytokine storm, triggering massive inflammation.

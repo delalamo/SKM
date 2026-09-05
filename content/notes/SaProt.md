@@ -2,13 +2,16 @@
 title: SaProt
 created: 2026-04-10T14:30:55
 modified: "2026-08-19T16:32:04"
+tags:
+  - model-design/multimodal
+  - prediction/variant-effects
 ---
 
-**SaProt** is a [[protein-language-models|protein language model]] trained on paired amino acid identities and [[Foldseek]] tokens derived largely from [[alphafold2|AlphaFold2]] structures [@su2023]. It outperformed sequence-only baselines across ten downstream tasks, including zero-shot [[variant-effect-prediction|variant effect prediction]].
+**SaProt** is a [[notes/protein-language-models|protein language model]] trained on paired amino acid identities and [[Foldseek]] tokens derived largely from [[notes/alphafold2|AlphaFold2]] structures [@su2023]. It outperformed sequence-only baselines across ten downstream tasks, including zero-shot [[notes/variant-effect-prediction|variant effect prediction]].
 
 #### Details
 
-* Structural tokens for residues with [[plddt|pLDDT]] values less than 70 are masked.
+* Structural tokens for residues with [[notes/plddt|pLDDT]] values less than 70 are masked.
 
 #### See also
 

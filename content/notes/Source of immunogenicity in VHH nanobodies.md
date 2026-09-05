@@ -1,6 +1,6 @@
 ---
 tags:
-  - antibody-developability/immunogenicity
+  - design/developability
   - antibodies/nanobodies
 created: 2025-09-04T12:58:49
 modified: "2026-04-21T05:01:15"

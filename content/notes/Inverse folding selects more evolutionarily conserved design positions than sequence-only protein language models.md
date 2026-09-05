@@ -1,15 +1,15 @@
 ---
 tags:
-  - inverse-folding/evaluation
-  - protein-language-models/representations
-  - evolution-and-natural-selection
+  - design/inverse-folding
+  - evolution/selection
+  - design/directed-evolution
 created: "2026-07-28"
 modified: "2026-07-28T14:12:17"
 ---
 
 #### Summary
 
-**Structure-conditioned [[inverse-folding|inverse folding]] selects more evolutionarily conserved design positions than sequence-only [[protein-language-models|protein language models]]** [@mcdonald2026]. When selecting positions for site-saturation mutagenesis of [[Rubisco]], [[ESM-IF|ESM-IF1[[ recommendations were more conserved than those from [[ESM|ESM-1b]].
+**Structure-conditioned [[notes/inverse-folding|inverse folding]] selects more evolutionarily conserved design positions than sequence-only [[notes/protein-language-models|protein language models]]** [@mcdonald2026]. When selecting positions for site-saturation mutagenesis of [[Rubisco]], [[ESM-IF|ESM-IF1[[ recommendations were more conserved than those from [[ESM|ESM-1b]].
 
 #### See also
 

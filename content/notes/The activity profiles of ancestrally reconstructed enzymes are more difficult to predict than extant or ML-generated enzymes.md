@@ -1,13 +1,15 @@
 ---
 tags:
-  - ancestral-sequence-reconstruction
+  - prediction/function
+  - evidence/design-validation
+  - evolution/ancestry
 created: 2024-04-26T03:56:31
 modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**Activity profiles (active vs inactive) of [[ancestral-sequence-reconstruction|ancestrally reconstructed]] sequences were consistently less effectively distinguished using a large variety of metrics when compared to extant and ML-generated enzymes** [@johnson2024].
+**Activity profiles (active vs inactive) of [[notes/ancestral-sequence-reconstruction|ancestrally reconstructed]] sequences were consistently less effectively distinguished using a large variety of metrics when compared to extant and ML-generated enzymes** [@johnson2024].
 
 #### Figures
 

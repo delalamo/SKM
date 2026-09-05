@@ -1,13 +1,13 @@
 ---
 tags:
-  - diffusion-models/training
-  - protein-design/training
+  - evidence/datasets
+  - design/backbones
 created: "2025-02-07T00:45:33"
 modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-**[[protein-backbone-design|Protein backbone diffusion models]] generate more designable structures when trained on synthetic proteins compared to when trained on the PDB** [@jendrusch2025].
+**[[notes/protein-backbone-design|Protein backbone diffusion models]] generate more designable structures when trained on synthetic proteins compared to when trained on the PDB** [@jendrusch2025].
 
 #### Figure
 ![[Pasted-image-20250207064156.png]]

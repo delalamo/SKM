@@ -1,7 +1,7 @@
 ---
 title: MD potentials from ML are more effective when protein-specific
 tags:
-  - conformational-dynamics/molecular-dynamics
+  - biophysics/molecular-simulation
 created: "2026-04-05T18:00:02"
 modified: "2026-04-21T05:01:15"
 ---

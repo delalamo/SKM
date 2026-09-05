@@ -1,9 +1,8 @@
 ---
 title: Small energy barriers separate unfolded and folded states of small fast-folding proteins
 tags:
-  - thermostability
-  - conformational-dynamics/kinetics
-  - protein-folding/unfolding
+  - biophysics/folding
+  - biophysics/thermodynamics
 created: "2024-06-11T02:20:42"
 modified: "2026-04-21T05:01:15"
 ---

@@ -1,7 +1,7 @@
 ---
 tags:
-  - structure-prediction/sampling
-  - conformational-dynamics/modeling
+  - prediction/ensembles
+  - inference/sampling-and-search
 created: "2024-12-31T08:37:40"
 modified: "2026-04-21T05:01:15"
 ---

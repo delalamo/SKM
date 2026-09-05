@@ -1,6 +1,8 @@
 ---
 title: DNA sequence entropy is strongly predictive of protein expression
 tags:
+  - prediction/stability-expression
+  - design/developability
 created: 2026-03-06T09:32:32
 modified: "2026-04-21T05:01:15"
 ---

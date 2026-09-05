@@ -1,13 +1,15 @@
 ---
 tags:
-  - ligand-docking
-  - citation-fix
+  - prediction/ligand-docking
+  - training/objectives-and-optimization
 created: "2024-05-02T18:09:03"
 modified: "2026-04-21T07:28:09"
+review:
+  - "citation-fix"
 ---
 
 #### Summary
-Small molecule docking accuracy can by improved by including confidence during training of small molecule docking via DiffDock and propagating that information to the early frames. Corso et al. [@corso2024deep] showed this as a form of [[diffusion-guidance|guidance]]-involved training.
+Small molecule docking accuracy can by improved by including confidence during training of small molecule docking via DiffDock and propagating that information to the early frames. Corso et al. [@corso2024deep] showed this as a form of [[notes/diffusion-guidance|guidance]]-involved training.
 
 #### See also
 

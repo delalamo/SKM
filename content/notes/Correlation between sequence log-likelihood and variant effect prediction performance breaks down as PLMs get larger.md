@@ -1,6 +1,8 @@
 ---
 tags:
-  - protein-language-models/representations
+  - prediction/variant-effects
+  - prediction/confidence
+  - training/pretraining-and-scaling
 created: "2026-01-22T12:38:44"
 modified: "2026-04-21T05:01:15"
 ---

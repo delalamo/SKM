@@ -1,13 +1,15 @@
 ---
 tags:
-  - protein-backbone-design/designability
+  - evidence/generalization
+  - prediction/structure
+  - design/sequence-generation
 created: "2025-02-17T05:10:10"
 modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**[[protein-language-models|PLMs]] and PLM-based [[structure-prediction|structure predictors]] generalize to some *de novo* designed proteins** [@verkuil2022]. Synthetic proteins designed using [[ESM]] were successfully expressed in the wet lab and adopted a structure consisted with predicted contacts. Likewise, [[ESMFold]] correctly predicted the structures of other de novo designed proteins (such as those designed by [@praetorius2023]; see [@del2023]).
+**[[notes/protein-language-models|PLMs]] and PLM-based [[notes/structure-prediction|structure predictors]] generalize to some *de novo* designed proteins** [@verkuil2022]. Synthetic proteins designed using [[ESM]] were successfully expressed in the wet lab and adopted a structure consisted with predicted contacts. Likewise, [[ESMFold]] correctly predicted the structures of other de novo designed proteins (such as those designed by [@praetorius2023]; see [@del2023]).
 
 #### Details
 

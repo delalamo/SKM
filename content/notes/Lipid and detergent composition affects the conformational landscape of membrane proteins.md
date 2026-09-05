@@ -1,6 +1,7 @@
 ---
 tags:
-  - conformational-dynamics/kinetics
+  - biophysics/dynamics
+  - evidence/measurements
 created: "2024-06-23T04:57:44"
 modified: "2026-04-21T05:01:15"
 ---

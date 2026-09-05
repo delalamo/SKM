@@ -1,12 +1,13 @@
 ---
 title: Recessive genetic diseases more likely to be caused by protein destabilization than dominant genetic diseases
 tags:
-  - thermostability/mutations
+  - evolution/mutation-effects
+  - biophysics/stability
 created: "2024-05-01T01:23:18"
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
- **Recessive genetic diseases are more likely to be caused by protein [[thermostability|destabilization]] than dominant genetic diseases** [@beltran2024].
+ **Recessive genetic diseases are more likely to be caused by protein [[notes/thermostability|destabilization]] than dominant genetic diseases** [@beltran2024].
 
 #### Details
 From [@beltran2024], who carried out a site-saturation mutagenesis experiment on 500 human domains:

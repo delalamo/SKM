@@ -1,7 +1,8 @@
 ---
 title: Rosetta
 tags:
-  - rosetta
+  - design/sequence-generation
+  - prediction/structure
 created: "2026-04-10T14:30:55"
 modified: "2026-04-10T14:30:55"
 ---

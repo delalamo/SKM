@@ -1,6 +1,8 @@
 ---
 title: Proteins from halophilic organisms are more negatively charged
 tags:
+  - evolution/selection
+  - design/developability
 created: 2024-05-08T17:43:16
 modified: "2026-04-21T05:01:15"
 ---

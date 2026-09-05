@@ -1,6 +1,7 @@
 ---
 tags:
-  - conformational-dynamics/modeling
+  - biophysics/ensemble-analysis
+  - model-design/generative-models
 created: "2024-06-24T10:45:46"
 modified: "2026-04-21T05:01:15"
 ---

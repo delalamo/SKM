@@ -1,15 +1,14 @@
 ---
 tags:
-  - protein-language-models/antibodies
-  - protein-language-models/representations
-  - antibody-developability/expression
+  - evidence/generalization
+  - prediction/stability-expression
 created: "2026-07-28"
 modified: "2026-07-28T14:12:17"
 ---
 
 #### Summary
 
-**Random data splits overestimate the ability of general-purpose [[protein-language-models|protein language model]] embeddings to predict [[Nanobodies|nanobody]] expression because the embeddings encode antibody-program identity rather than transferable determinants of expression** [@wang2026_BJ]. General-purpose ESM2 embeddings achieved a ROC-AUC of approximately 0.88 under a random split but only 0.68 when evaluated on held-out antibody programs. AINN-P1 and domain-fine-tuned ESM2 retained ROC-AUC values of 0.81 and 0.83, respectively, on unseen programs. This qualifies comparisons such as [[Antibody LMs are worse for expression prediction than generic PLMs]]: model rankings and apparent representation quality can depend strongly on whether the evaluation split separates related discovery programs.
+**Random data splits overestimate the ability of general-purpose [[notes/protein-language-models|protein language model]] embeddings to predict [[Nanobodies|nanobody]] expression because the embeddings encode antibody-program identity rather than transferable determinants of expression** [@wang2026_BJ]. General-purpose ESM2 embeddings achieved a ROC-AUC of approximately 0.88 under a random split but only 0.68 when evaluated on held-out antibody programs. AINN-P1 and domain-fine-tuned ESM2 retained ROC-AUC values of 0.81 and 0.83, respectively, on unseen programs. This qualifies comparisons such as [[Antibody LMs are worse for expression prediction than generic PLMs]]: model rankings and apparent representation quality can depend strongly on whether the evaluation split separates related discovery programs.
 
 #### Figures
 

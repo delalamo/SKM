@@ -1,14 +1,14 @@
 ---
 tags:
-  - diffusion-models/protein-design
-  - protein-design/design
+  - design/backbones
+  - design/sequence-generation
 created: "2024-11-04T23:46:29"
 modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**[[protein-backbone-design|Designed protein backbones]] have more secondary structure content than naturally occurring proteins** [@chu2024]. Natural proteins redesigned for improved expression have also had their loops removed [@sumida2024]. In contrast, [[protein-language-models|language model]]-designed proteins tend to have [[Protein backbones designed using diffusion, but not sequence-based models, have fewer beta sheets|more sheets]] and loops.
+**[[notes/protein-backbone-design|Designed protein backbones]] have more secondary structure content than naturally occurring proteins** [@chu2024]. Natural proteins redesigned for improved expression have also had their loops removed [@sumida2024]. In contrast, [[notes/protein-language-models|language model]]-designed proteins tend to have [[Protein backbones designed using diffusion, but not sequence-based models, have fewer beta sheets|more sheets]] and loops.
 
 #### Figures
 

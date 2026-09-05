@@ -1,11 +1,11 @@
 ---
 tags:
-  - protein-backbone-design/designability
-  - affinity-maturation
+  - design/binders
+  - design/directed-evolution
 created: 2025-10-27T12:55:37
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
- **[[affinity-maturation|Affinity maturation]] of *de novo* designed minibinders introduces mutations far from the active site** [@alcantar2025].
+ **[[notes/affinity-maturation|Affinity maturation]] of *de novo* designed minibinders introduces mutations far from the active site** [@alcantar2025].
 
 #### References

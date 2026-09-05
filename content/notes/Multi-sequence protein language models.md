@@ -2,9 +2,12 @@
 title: Multi-sequence protein language models
 created: 2026-04-10T14:30:55
 modified: "2026-04-21T07:28:09"
+tags:
+  - model-design/architectures
+  - inference/conditioning
 ---
 
-Multi-sequence [[protein-language-models|protein language models]] use a context of related sequences, either through [[Multiple sequence alignments|multiple sequence alignments]] or through unaligned sequences pre-pended to the query.
+Multi-sequence [[notes/protein-language-models|protein language models]] use a context of related sequences, either through [[Multiple sequence alignments|multiple sequence alignments]] or through unaligned sequences pre-pended to the query.
 
 #### Models
 

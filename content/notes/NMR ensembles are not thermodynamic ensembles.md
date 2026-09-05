@@ -1,7 +1,8 @@
 ---
 title: Conventional NMR structure bundles are not thermodynamic ensembles
 tags:
-  - conformational-dynamics/experimental-ensembles
+  - evidence/measurements
+  - biophysics/ensemble-analysis
 created: "2025-05-05T02:24:41"
 modified: "2026-08-19T17:14:27"
 ---

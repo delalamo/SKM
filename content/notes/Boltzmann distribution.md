@@ -1,5 +1,6 @@
 ---
 tags:
+  - biophysics/thermodynamics
 created: 2024-04-29T14:55:51
 modified: "2026-04-21T05:19:34"
 ---

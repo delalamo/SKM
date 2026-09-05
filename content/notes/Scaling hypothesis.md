@@ -1,5 +1,6 @@
 ---
 tags:
+  - training/pretraining-and-scaling
 created: 2024-05-20T04:02:56
 modified: "2026-04-21T05:01:15"
 ---

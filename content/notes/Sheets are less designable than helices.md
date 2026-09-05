@@ -1,13 +1,13 @@
 ---
 tags:
-  - inverse-folding/evaluation
-  - protein-backbone-design/designability
+  - design/inverse-folding
+  - design/backbones
 created: "2026-04-05T17:57:34"
 modified: "2026-04-21T07:28:09"
 summary: Sheets are less designable than helices
 ---
 #### Summary
-Beta-sheets are less designable than alpha helices using [[inverse-folding|Inverse folding]] models [@wang2023]. This was true for a range of models.
+Beta-sheets are less designable than alpha helices using [[notes/inverse-folding|Inverse folding]] models [@wang2023]. This was true for a range of models.
 
 #### Figures
 | Design method | EHEE_3 | EHEE_4 | EHEE_5 | EHEE_6 | HHH_54 | HHH_82 | HHH_84 | HHH_86 | mean |

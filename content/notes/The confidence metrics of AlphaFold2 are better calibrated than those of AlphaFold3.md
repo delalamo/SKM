@@ -1,15 +1,13 @@
 ---
 tags:
-  - alphafold3
-  - alphafold2
-  - structure-prediction/metrics
+  - prediction/confidence
 created: "2025-12-19T12:46:41"
 modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**The confidence metrics from [[alphafold2|AlphaFold2]] are better calibrated than those of AlphaFold3** [@roney2025]. This was observed when oversampling with the two methods, the more accurate models were not given higher confidence.
+**The confidence metrics from [[notes/alphafold2|AlphaFold2]] are better calibrated than those of AlphaFold3** [@roney2025]. This was observed when oversampling with the two methods, the more accurate models were not given higher confidence.
 
 #### Figures
 

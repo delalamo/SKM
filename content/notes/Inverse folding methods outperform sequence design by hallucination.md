@@ -1,8 +1,7 @@
 ---
 tags:
-  - inverse-folding/evaluation
-  - protein-backbone-design/designability
-  - plddt
+  - design/inverse-folding
+  - evidence/design-validation
 created: "2026-04-05T17:36:43"
 modified: "2026-04-21T05:01:15"
 ---

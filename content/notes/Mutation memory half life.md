@@ -1,7 +1,7 @@
 ---
 title: Mutation memory half life
 tags:
-  - epistasis
+  - evolution/mutation-effects
 created: 2024-05-02T05:15:27
 modified: "2026-04-21T07:28:09"
 ---
@@ -26,6 +26,6 @@ An earlier study in $beta$-lactamase found that not all mutational paths to an c
 *Ref [@weinreich2006]*
 
 #### See also
-* [[ancestral-sequence-reconstruction|Ancestral sequence reconstruction]]
-* [[epistasis|Epistasis]]
+* [[notes/ancestral-sequence-reconstruction|Ancestral sequence reconstruction]]
+* [[notes/epistasis|Epistasis]]
 * [[Not all sequences with improved activity have plausible evolutionary paths via stepwise introduction of mutations]]

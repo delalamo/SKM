@@ -2,6 +2,9 @@
 title: Bayesian optimization
 created: 2026-04-10T14:30:55
 modified: "2026-04-20T10:13:23"
+tags:
+  - design/directed-evolution
+  - inference/sampling-and-search
 ---
 
 **Bayesian optimization** is a sequential design strategy for global optimization of black-box functions (such as fitness functions). Uses [[Gaussian processes]] as a prior. It implies diversity when selecting sequences [@fannjiang2023]:

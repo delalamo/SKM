@@ -1,8 +1,7 @@
 ---
 tags:
-  - alphafold3
-  - confidence-metrics
-  - antibody-antigen-interactions/complex-prediction
+  - prediction/confidence
+  - prediction/complexes
 created: "2026-06-23"
 modified: "2026-07-17T10:38:09"
 ---
@@ -15,7 +14,7 @@ modified: "2026-07-17T10:38:09"
 
 Promera trains an additional confidence module to classify each predicted interface contact as correct if it appears in the ground-truth complex and incorrect otherwise. iCS is defined as the average predicted correctness probability over the interface contacts present in the prediction.
 
-In shuffled nanobody-antigen pairs, Promera iCS gives stronger enrichment of correct pairs than [[tm-score|ipTM]] or ipSAE, reaching about 18x enrichment at 10% recall and about 20x enrichment around the high-stringency threshold discussed by the authors [@jing2026].
+In shuffled nanobody-antigen pairs, Promera iCS gives stronger enrichment of correct pairs than [[notes/tm-score|ipTM]] or ipSAE, reaching about 18x enrichment at 10% recall and about 20x enrichment around the high-stringency threshold discussed by the authors [@jing2026].
 
 #### See also
 

@@ -2,6 +2,8 @@
 title: Bias-exchange metadynamics
 created: 2026-04-10T14:30:55
 modified: "2026-04-21T05:19:34"
+tags:
+  - biophysics/molecular-simulation
 ---
 
 **Bias-exchange metadynamics** is an [[Enhanced sampling|enhanced sampling]] method for [[MD simulations]], specifically a form of parallel-tempering [[Metadynamics|metadynamics]] intended for systems with a large number of [[Collective variables|collective variables]] (CVs). Unlike traditional metadynamics where all CVs are treated in combination, bias-exchange metadynamics runs one independent simulation per CV and swaps them randomly after a predetermined number of steps according to the Metropolis rule, similar to [[Replica-exchange molecular dynamics]].

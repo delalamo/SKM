@@ -1,12 +1,13 @@
 ---
 tags:
-  - antibody-structure-prediction/cdr
+  - prediction/antibody-structure
+  - prediction/complexes
   - antibodies/nanobodies
 created: "2025-02-27T04:35:40"
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
-**[[Kinked CDRH3 loops|Kinks]] in [[Nanobodies|nanobody]] [[Complementarity-determining regions|CDR3]] loops are correctly predicted by generic [[structure-prediction|protein structure prediction]] software** [@eshak2025]. Nevertheless, kinks reduce the tendency of these methods to correctly model the assembled complex. This could be due to relative homogeneity among extended conformations but diversity among the kinked conformations.
+**[[Kinked CDRH3 loops|Kinks]] in [[Nanobodies|nanobody]] [[Complementarity-determining regions|CDR3]] loops are correctly predicted by generic [[notes/structure-prediction|protein structure prediction]] software** [@eshak2025]. Nevertheless, kinks reduce the tendency of these methods to correctly model the assembled complex. This could be due to relative homogeneity among extended conformations but diversity among the kinked conformations.
 
 #### Figures
 ![[Misclassified.png]]

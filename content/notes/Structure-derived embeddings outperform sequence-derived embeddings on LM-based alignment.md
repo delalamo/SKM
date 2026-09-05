@@ -1,15 +1,14 @@
 ---
 tags:
-  - protein-language-models/representations
-  - alignment/sequence-based
-  - alignment/structure-based
+  - evolution/homology
+  - model-design/multimodal
 created: "2025-05-19T03:43:52"
 modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**Structure-derived representations (embeddings) outperform [[protein-language-models#Representations|sequence-derived representations]] on protein alignment** [@trinquier2025]. They also outperform structure tokenization methods such as alignment using [[Foldseek]] alphabets.
+**Structure-derived representations (embeddings) outperform [[notes/protein-language-models#Representations|sequence-derived representations]] on protein alignment** [@trinquier2025]. They also outperform structure tokenization methods such as alignment using [[Foldseek]] alphabets.
 
 #### See also
 

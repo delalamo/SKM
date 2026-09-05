@@ -1,7 +1,7 @@
 ---
 tags:
-  - variant-effect-prediction
-  - epistasis
+  - evolution/mutation-effects
+  - biophysics/stability
 created: 2026-03-16T11:46:02
 modified: "2026-04-21T05:01:15"
 ---

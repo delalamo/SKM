@@ -1,6 +1,6 @@
 ---
 tags:
-  - transformers
+  - model-design/architectures
 created: 2024-05-17T17:12:12
 modified: "2026-04-20T10:13:23"
 ---

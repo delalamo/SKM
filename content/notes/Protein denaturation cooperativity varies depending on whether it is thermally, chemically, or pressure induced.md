@@ -1,8 +1,8 @@
 ---
 title: Protein denaturation cooperativity varies depending on whether it is thermally, chemically, or pressure induced
 tags:
-  - thermostability
-  - protein-folding/unfolding
+  - biophysics/folding
+  - evidence/measurements
 created: "2024-08-17T01:31:46"
 modified: "2026-04-21T05:01:15"
 ---

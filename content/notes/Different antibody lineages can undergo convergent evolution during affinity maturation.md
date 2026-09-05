@@ -1,11 +1,12 @@
 ---
 tags:
-  - affinity-maturation
+  - antibodies/maturation
+  - antibodies/repertoires
 created: 2026-04-05T23:36:09
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
-**Different [[antibodies|antibody]] and [[Nanobodies|nanobody]] lineages, including those from different [[Germline|germlines]], can undergo [[evolution-and-natural-selection|convergent evolution]] during [[affinity-maturation|affinity maturation]]** [@robinson2014; @wu2011]. This includes binding to the same epitope in the same place [@malby1994; @de2005]. For cases with the same germline, this can happen both within the same [[immune-repertoires|immune repertoire]] and across different organisms exposed to the same antigen. Convergent evolution across different VH germlines can also arise in the same individual [@ogega2024].
+**Different [[tags/antibodies|antibody]] and [[Nanobodies|nanobody]] lineages, including those from different [[Germline|germlines]], can undergo [[notes/evolution-and-natural-selection|convergent evolution]] during [[notes/affinity-maturation|affinity maturation]]** [@robinson2014; @wu2011]. This includes binding to the same epitope in the same place [@malby1994; @de2005]. For cases with the same germline, this can happen both within the same [[notes/immune-repertoires|immune repertoire]] and across different organisms exposed to the same antigen. Convergent evolution across different VH germlines can also arise in the same individual [@ogega2024].
 
 #### Details
 Ogega et al. found that three antibody lineages, taken from the same person, independently evolved the same three somatic (non-germline) mutations in [[Complementarity-determining regions|CDRH1]] and [[Complementarity-determining regions|CDRH2]] [@ogega2024].

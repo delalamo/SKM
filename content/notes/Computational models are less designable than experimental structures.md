@@ -1,7 +1,8 @@
 ---
 title: Computational models are less designable than experimental structures
 tags:
-  - protein-backbone-design/designability
+  - evidence/design-validation
+  - design/inverse-folding
 created: "2025-07-22T11:37:28"
 modified: "2026-04-21T05:01:15"
 ---

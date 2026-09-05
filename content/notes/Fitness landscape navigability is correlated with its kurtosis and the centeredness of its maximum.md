@@ -1,6 +1,7 @@
 ---
 tags:
-  - conformational-dynamics/evolution
+  - evolution/mutation-effects
+  - design/directed-evolution
 created: "2026-03-22T10:44:50"
 modified: "2026-04-21T05:01:15"
 ---

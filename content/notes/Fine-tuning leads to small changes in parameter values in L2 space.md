@@ -1,6 +1,6 @@
 ---
 tags:
-  - fine-tuning
+  - training/fine-tuning
 created: 2026-04-05T17:17:55
 modified: "2026-08-25T13:38:32"
 ---

@@ -2,6 +2,8 @@
 title: Markov State Models
 created: 2026-04-10T14:02:57
 modified: "2026-04-21T05:01:15"
+tags:
+  - biophysics/ensemble-analysis
 ---
 
 **Markov state models** (MSMs) are a framework for assigning frames of an [[MD simulations|MD simulation]] to a small number of specific states.

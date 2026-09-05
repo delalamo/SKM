@@ -1,11 +1,14 @@
 ---
 tags:
-  - citation-fix
+  - antibodies/repertoires
+  - antibodies/architecture
 created: 2026-04-10T14:30:55
 modified: "2026-04-21T07:28:09"
+review:
+  - "citation-fix"
 ---
 
-**Allelic exclusion** refers to the observation that the vast majority of [[b-cells|B cells]], including naive B cells, express only one [[Heavy chains|heavy chain]] and only one [[light-chains|light chain]]. **Allelic inclusion** refers to the observation that a small fraction (≤1%) express two light chains, one of which is dysfunctional (e.g., [[antibody-developability#Polyreactivity|autoreactive]]; [@jagota2024]). This confounds the analysis of heavy/light chain pairing.
+**Allelic exclusion** refers to the observation that the vast majority of [[notes/b-cells|B cells]], including naive B cells, express only one [[Heavy chains|heavy chain]] and only one [[notes/light-chains|light chain]]. **Allelic inclusion** refers to the observation that a small fraction (≤1%) express two light chains, one of which is dysfunctional (e.g., [[notes/antibody-developability#Polyreactivity|autoreactive]]; [@jagota2024]). This confounds the analysis of heavy/light chain pairing.
 
 #### See also
 

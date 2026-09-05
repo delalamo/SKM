@@ -1,17 +1,17 @@
 ---
 tags:
-  - affinity-maturation
-  - conformational-dynamics/evolution
-  - citation-fix
-  - antibody-antigen-interactions/misc
+  - antibodies/maturation
+  - biophysics/dynamics
 aliases:
   - Conformational entropy in antibodies decreases during affinity maturation
 created: "2026-04-21T05:01:15"
 modified: "2026-07-17T10:38:09"
+review:
+  - "citation-fix"
 ---
 
 #### Summary
-[[Conformational entropy in antibodies decreases during affinity maturation|🔗]] **[[Protein dynamics|Conformational entropy]] in [[antibodies|antibodies]] decreases during [[affinity-maturation|affinity maturation]]** [@guloglu2023; @fernandezquintero2020local]. The claim is corroborated by anecdotal [[MD simulations]] [@zimmermann2006; @fernandezquintero2020; @chong1999] and various spectroscopy measurements ([[_Articles that need citations|citation needed]]). Some studies found that only [[Complementarity-determining regions#CDRH3|CDRH3]] rigidified to a statistically significant degree [@haidar2014], while other regions like the light chain CDRs either did not or became more flexible [@li2015]. This rigidification claim is context-dependent: Solieva et al. found that affinity maturation increased rigidity in protein-contacting regions but increased flexibility at glycan-contacting interfaces [@solieva2026].
+[[Conformational entropy in antibodies decreases during affinity maturation|🔗]] **[[Protein dynamics|Conformational entropy]] in [[tags/antibodies|antibodies]] decreases during [[notes/affinity-maturation|affinity maturation]]** [@guloglu2023; @fernandezquintero2020local]. The claim is corroborated by anecdotal [[MD simulations]] [@zimmermann2006; @fernandezquintero2020; @chong1999] and various spectroscopy measurements ([[_Articles that need citations|citation needed]]). Some studies found that only [[Complementarity-determining regions#CDRH3|CDRH3]] rigidified to a statistically significant degree [@haidar2014], while other regions like the light chain CDRs either did not or became more flexible [@li2015]. This rigidification claim is context-dependent: Solieva et al. found that affinity maturation increased rigidity in protein-contacting regions but increased flexibility at glycan-contacting interfaces [@solieva2026].
 
 #### Details
 

@@ -1,6 +1,7 @@
 ---
 tags:
-  - protein-backbone-design/designability
+  - biophysics/stability
+  - design/backbones
 created: "2025-04-22T00:43:20"
 modified: "2026-04-21T05:01:15"
 ---

@@ -1,8 +1,7 @@
 ---
 tags:
-  - plddt
-  - pae
-  - confidence-metrics
+  - evidence/design-validation
+  - prediction/confidence
 created: 2024-11-04T22:55:26
 modified: "2026-04-21T05:01:15"
 ---

@@ -1,7 +1,8 @@
 ---
 title: Prefusion stabilization often requires multiple mutations, but single substitutions can suffice
 tags:
-  - protein-design/design
+  - design/sequence-generation
+  - biophysics/stability
 created: 2026-03-24T09:39:47
 modified: "2026-08-25T13:38:32"
 ---

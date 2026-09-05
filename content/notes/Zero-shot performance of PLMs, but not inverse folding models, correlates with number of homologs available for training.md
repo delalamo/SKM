@@ -1,13 +1,14 @@
 ---
 tags:
-  - protein-language-models/representations
+  - prediction/variant-effects
+  - evidence/datasets
 created: "2026-03-22T10:44:50"
 modified: "2026-07-28T14:12:17"
 ---
 
 #### Summary
 
-**Zero-shot [[Fitness prediction|fitness prediction]] performance with [[protein-language-models|protein language models]], but not structure-based models (e.g., [[inverse-folding|inverse folding]] models), correlates with number of homologs available for training** [@li2024c].
+**Zero-shot [[Fitness prediction|fitness prediction]] performance with [[notes/protein-language-models|protein language models]], but not structure-based models (e.g., [[notes/inverse-folding|inverse folding]] models), correlates with number of homologs available for training** [@li2024c].
 
 #### Figures
 

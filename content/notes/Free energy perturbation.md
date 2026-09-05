@@ -2,9 +2,13 @@
 title: Free energy perturbation
 created: 2026-04-10T14:02:57
 modified: "2026-04-21T07:28:09"
+tags:
+  - biophysics/molecular-simulation
+  - prediction/stability-expression
+  - prediction/binding
 ---
 
-**Free energy perturbation** (FEP) is a method for calculating changes in either binding free energy (of a small molecule or protein binder) or protein [[thermostability|stability]]. Furui & Ohue [@furui2024] showed that models from [[structure-prediction|all-atom protein-structure predictors]] are as accurate as crystal structures for FEP calculations.
+**Free energy perturbation** (FEP) is a method for calculating changes in either binding free energy (of a small molecule or protein binder) or protein [[notes/thermostability|stability]]. Furui & Ohue [@furui2024] showed that models from [[notes/structure-prediction|all-atom protein-structure predictors]] are as accurate as crystal structures for FEP calculations.
 
 ![[Pasted-image-20241118062341.png]]
 *Ref [@furui2024]*

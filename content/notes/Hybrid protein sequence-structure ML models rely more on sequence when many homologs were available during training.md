@@ -1,7 +1,7 @@
 ---
 tags:
-  - protein-language-models/training
-  - inverse-folding/training
+  - model-design/multimodal
+  - evidence/generalization
 created: 2024-07-02T05:13:15
 modified: "2026-04-21T07:20:46"
 ---

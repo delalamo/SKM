@@ -1,12 +1,12 @@
 ---
 tags:
-  - affinity-maturation
-  - antibody-antigen-interactions/binding-affinity
+  - design/antibodies
+  - biophysics/stability
 created: 2024-11-14T02:47:10
 modified: "2026-08-25T13:38:32"
 ---
 #### Summary
-**[[thermostability|Stabilization]] can sometimes improve the [[Antibody-antigen binding affinity prediction|affinity]] of [[antibodies|antibodies]] and [[Nanobodies|nanobodies]], but the relationship between stability and affinity is non-monotonic.** There are several examples of affinity improvements using framework-targeting stabilizing mutations [@hie2023; @shanker2024; @ketaren2023], while destabilizing mutations have also been shown to improve affinity [@ketaren2023].
+**[[notes/thermostability|Stabilization]] can sometimes improve the [[Antibody-antigen binding affinity prediction|affinity]] of [[tags/antibodies|antibodies]] and [[Nanobodies|nanobodies]], but the relationship between stability and affinity is non-monotonic.** There are several examples of affinity improvements using framework-targeting stabilizing mutations [@hie2023; @shanker2024; @ketaren2023], while destabilizing mutations have also been shown to improve affinity [@ketaren2023].
 
 #### Figures
 ![[Pasted-image-20231023071242.png]]

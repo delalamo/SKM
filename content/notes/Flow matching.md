@@ -2,9 +2,11 @@
 title: Flow matching
 created: 2026-04-10T14:30:55
 modified: "2026-04-21T07:28:09"
+tags:
+  - model-design/generative-models
 ---
 
-**Flow matching** is a generative AI approach that builds upon [[diffusion-models|diffusion]] to denoise Gaussian noise into a complex distribution of interest. In contrast with diffusion, flow matching learns a velocity operation to push samples along a path from a (usually) normal distribution to an arbitrarily complex distribution.
+**Flow matching** is a generative AI approach that builds upon [[notes/diffusion-models|diffusion]] to denoise Gaussian noise into a complex distribution of interest. In contrast with diffusion, flow matching learns a velocity operation to push samples along a path from a (usually) normal distribution to an arbitrarily complex distribution.
 
 #### Details
 

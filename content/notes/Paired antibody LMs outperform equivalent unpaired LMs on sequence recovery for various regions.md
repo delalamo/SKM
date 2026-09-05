@@ -1,11 +1,13 @@
 ---
 tags:
-  - protein-language-models/antibodies
+  - training/pretraining-and-scaling
+  - antibodies/architecture
+  - evidence/datasets
 created: "2026-04-05T17:10:58"
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
-**[[antibodies|Antibody]] [[protein-language-models|language models]] trained on paired [[Heavy chains|heavy]] and [[light-chains|light]] chains outperform equivalent models trained only on unpaired data** [@kenlay2024large]. They also outperform generic PLMs.
+**[[tags/antibodies|Antibody]] [[notes/protein-language-models|language models]] trained on paired [[Heavy chains|heavy]] and [[notes/light-chains|light]] chains outperform equivalent models trained only on unpaired data** [@kenlay2024large]. They also outperform generic PLMs.
 
 #### Figures
 

@@ -1,14 +1,14 @@
 ---
 tags:
-  - structure-prediction/metrics
-  - plddt
+  - prediction/confidence
+  - inference/conditioning
 created: "2024-08-06T11:30:37"
 modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**[[plddt|pLDDT]] of structures predicted by [[alphafold2|AlphaFold2]] correlate with the number of sequences provided for inference during runtime** [@avasthi2024].
+**[[notes/plddt|pLDDT]] of structures predicted by [[notes/alphafold2|AlphaFold2]] correlate with the number of sequences provided for inference during runtime** [@avasthi2024].
 
 #### Figures
 

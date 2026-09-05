@@ -1,13 +1,14 @@
 ---
 tags:
-  - structure-prediction/architecture
+  - prediction/structure
+  - inference/sampling-and-search
 created: "2026-04-05T17:37:18"
 modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**Iterative [[structure-prediction|protein structure prediction]] outperforms all-at-once structure prediction** [@hayes2025]. This was pronounced for difficult targets (e.g., [[CASP14]] and [[CASP15]] proteins), whereas easy targets (CAMEO) could be predicted using either approach.
+**Iterative [[notes/structure-prediction|protein structure prediction]] outperforms all-at-once structure prediction** [@hayes2025]. This was pronounced for difficult targets (e.g., [[CASP14]] and [[CASP15]] proteins), whereas easy targets (CAMEO) could be predicted using either approach.
 
 #### Figures
 

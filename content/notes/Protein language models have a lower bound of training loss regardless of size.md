@@ -1,12 +1,12 @@
 ---
 tags:
-  - protein-language-models/training
+  - training/pretraining-and-scaling
 created: "2026-01-22T12:38:44"
 modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-**[[protein-language-models|Protein language models]] achieve a lower bound on pretraining loss, regardless of model size.**
+**[[notes/protein-language-models|Protein language models]] achieve a lower bound on pretraining loss, regardless of model size.**
 
 #### Figures
 ![[Pasted-Graphic-18.png]]

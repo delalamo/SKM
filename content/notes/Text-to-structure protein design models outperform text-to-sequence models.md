@@ -1,5 +1,7 @@
 ---
 tags:
+  - design/backbones
+  - model-design/multimodal
 created: "2024-08-06T04:31:10"
 modified: "2026-04-21T07:03:26"
 ---

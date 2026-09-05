@@ -1,12 +1,13 @@
 ---
 tags:
-  - affinity-maturation
-  - epistasis
+  - evolution/mutation-effects
+  - antibodies/maturation
+  - biophysics/dynamics
 created: 2026-03-16T11:47:05
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
-**[[epistasis|Epistasis]] in [[antibodies|antibodies]] during [[affinity-maturation|affinity maturation]] can be driven by conformational rearrangements in [[Complementarity-determining regions|CDRs]]** [@tharp2026]. In this case, the mechanism by which some mutations are not uniformly beneficial is due to [[Conformational entropy in antibodies decreases during affinity maturation|conformational rigidification]].
+**[[notes/epistasis|Epistasis]] in [[tags/antibodies|antibodies]] during [[notes/affinity-maturation|affinity maturation]] can be driven by conformational rearrangements in [[Complementarity-determining regions|CDRs]]** [@tharp2026]. In this case, the mechanism by which some mutations are not uniformly beneficial is due to [[Conformational entropy in antibodies decreases during affinity maturation|conformational rigidification]].
 
 #### Figures
 ![[LC-kappa-VHH.png]]
