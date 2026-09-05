@@ -1,14 +1,14 @@
 ---
 tags:
-  - protein-language-models/representations
-  - protein-protein-interactions
+  - prediction/structure
+  - prediction/complexes
 created: "2026-07-28"
 modified: "2026-07-28T14:12:17"
 ---
 
 #### Summary
 
-**[[Multi-sequence protein language models|MSA protein language models]] can identify intermolecular contacts and generalize from single-chain training to heterooligomeric [[protein-protein-interactions|protein-protein interactions]].** [[MSA Transformer]] extracts intermolecular contacts from correctly paired, but not incorrectly paired, MSAs [@lupo2024]. MSA Pairformer predicts protein-protein interface contacts and distinguishes binding from non-binding sequences despite being trained exclusively on individual chains [@akiyama2026]. This extends the observation that [[Structure prediction and design tools trained on monomers generalize to oligomers|structure prediction and design models trained on monomers can generalize to oligomers]] to MSA-based language models.
+**[[Multi-sequence protein language models|MSA protein language models]] can identify intermolecular contacts and generalize from single-chain training to heterooligomeric [[notes/Protein-protein interactions|protein-protein interactions]].** [[MSA Transformer]] extracts intermolecular contacts from correctly paired, but not incorrectly paired, MSAs [@lupo2024]. MSA Pairformer predicts protein-protein interface contacts and distinguishes binding from non-binding sequences despite being trained exclusively on individual chains [@akiyama2026]. This extends the observation that [[Structure prediction and design tools trained on monomers generalize to oligomers|structure prediction and design models trained on monomers can generalize to oligomers]] to MSA-based language models.
 
 #### Details
 The findings in MSA Pairformer were obtained by using a specific pairing strategy[@akiyama2026]:

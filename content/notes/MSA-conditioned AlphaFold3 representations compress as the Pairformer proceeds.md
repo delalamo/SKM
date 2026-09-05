@@ -1,7 +1,7 @@
 ---
 tags:
-  - alphafold3
-  - structure-prediction/architecture
+  - model-analysis/representation-geometry
+  - prediction/structure
 created: "2026-07-19"
 modified: "2026-07-20T09:52:04"
 ---

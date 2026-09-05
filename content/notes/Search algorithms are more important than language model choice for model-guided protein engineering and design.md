@@ -1,12 +1,13 @@
 ---
 tags:
-  - protein-design
+  - inference/sampling-and-search
+  - design/directed-evolution
 created: "2026-03-20T07:32:50"
 modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-**Search algorithms are more important parameters than exact [[protein-language-models|protein language models]] for model-guided engineering and design** [@mccarter2026]. This was shown with ESM and AbLang, which were barely different from one another, but the latter showed huge differences in success rates depending on whether Beam search or Gibbs sampling was used.
+**Search algorithms are more important parameters than exact [[notes/Protein language models|protein language models]] for model-guided engineering and design** [@mccarter2026]. This was shown with ESM and AbLang, which were barely different from one another, but the latter showed huge differences in success rates depending on whether Beam search or Gibbs sampling was used.
 
 #### Figures
 ![[Pasted-image-20260316152952.png]]

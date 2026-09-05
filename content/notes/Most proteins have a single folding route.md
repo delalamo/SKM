@@ -1,7 +1,7 @@
 ---
 title: Most proteins have a single folding route
 tags:
-  - protein-folding/unfolding
+  - biophysics/folding
 created: 2024-06-11T02:18:08
 modified: "2026-04-21T05:01:15"
 ---

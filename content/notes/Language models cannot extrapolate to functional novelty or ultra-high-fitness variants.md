@@ -1,15 +1,15 @@
 ---
 tags:
-  - protein-language-models
-  - variant-effect-prediction
-  - fitness-prediction
+  - evidence/generalization
+  - prediction/variant-effects
+  - evidence/design-validation
 created: "2026-06-23"
 modified: "2026-07-17T10:38:09"
 ---
 
 #### Summary
 
-**[[protein-language-models|Protein language models]] cannot extrapolate to functional novelty or ultra-high-fitness variants.** Zero-shot PLMs are mostly useful as coarse filters separating poor or unfit variants from fit variants, but do not reliably rank highly fit variants or prioritize new-to-nature functional novelty [@woolley2026].
+**[[notes/Protein language models|Protein language models]] cannot extrapolate to functional novelty or ultra-high-fitness variants.** Zero-shot PLMs are mostly useful as coarse filters separating poor or unfit variants from fit variants, but do not reliably rank highly fit variants or prioritize new-to-nature functional novelty [@woolley2026].
 
 #### Figures
 

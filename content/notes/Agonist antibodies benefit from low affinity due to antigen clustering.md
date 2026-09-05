@@ -1,8 +1,7 @@
 ---
 tags:
-  - antibodies/function
-  - protein-protein-interactions
-  - antibody-antigen-interactions/binding-affinity
+  - cell-biology/therapeutic-mechanisms
+  - biophysics/interactions
 created: 2025-12-19T11:45:16
 modified: "2026-04-21T10:30:31"
 ---

@@ -1,6 +1,8 @@
 ---
 tags:
-  - antibody-structure-prediction/cdr
+  - biophysics/molecular-simulation
+  - biophysics/ensemble-analysis
+  - antibodies/architecture
 created: "2024-05-05T08:18:38"
 modified: "2026-04-21T05:01:15"
 ---

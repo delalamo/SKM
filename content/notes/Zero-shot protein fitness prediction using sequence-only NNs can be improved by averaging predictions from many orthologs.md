@@ -1,13 +1,14 @@
 ---
 tags:
-  - protein-language-models/representations
+  - prediction/variant-effects
+  - inference/ensembling
 created: "2025-08-29T08:38:40"
 modified: "2026-08-25T13:38:32"
 ---
 
 #### Summary
 
-**Zero-shot [[variant-effect-prediction|variant effect prediction]] using sequence-only [[protein-language-models|protein language models]] can be improved by averaging predictions from many orthologs** [@pugh2025]. This was shown with [[ESM]] and [[ProGen]].
+**Zero-shot [[notes/Variant effect prediction|variant effect prediction]] using sequence-only [[notes/Protein language models|protein language models]] can be improved by averaging predictions from many orthologs** [@pugh2025]. This was shown with [[ESM]] and [[ProGen]].
 
 #### Figures
 

@@ -1,7 +1,7 @@
 ---
 tags:
-  - structure-prediction
-  - property-prediction
+  - inference/feature-extraction
+  - model-analysis/interpretability
 created: "2026-06-23"
 modified: "2026-07-17T10:38:09"
 ---

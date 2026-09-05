@@ -1,6 +1,8 @@
 ---
 tags:
-  - antibody-developability/polyspecificity
+  - antibodies/recognition
+  - design/developability
+  - biophysics/dynamics
 created: "2024-09-19T05:32:41"
 modified: "2026-04-21T07:20:46"
 ---

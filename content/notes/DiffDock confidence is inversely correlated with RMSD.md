@@ -1,8 +1,7 @@
 ---
 tags:
-  - structure-prediction/metrics
-  - plddt
-  - pae
+  - prediction/ligand-docking
+  - prediction/confidence
 created: "2026-02-20T18:08:22"
 modified: "2026-04-21T05:01:15"
 ---

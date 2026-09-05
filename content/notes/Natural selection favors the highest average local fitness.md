@@ -1,7 +1,8 @@
 ---
 title: Natural selection favors the highest average local fitness
 tags:
-  - evolution-and-natural-selection
+  - evolution/selection
+  - evolution/mutation-effects
 created: 2024-06-11T01:58:30
 modified: "2026-04-21T05:01:15"
 ---

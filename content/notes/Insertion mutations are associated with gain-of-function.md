@@ -1,6 +1,7 @@
 ---
 tags:
-  - evolution-and-natural-selection
+  - evolution/mutation-effects
+  - biophysics/interactions
 created: 2024-05-05T01:24:43
 modified: "2026-04-21T05:01:15"
 ---

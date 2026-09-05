@@ -1,7 +1,8 @@
 ---
 title: Functional proteins emerge from libraries of random sequences
 tags:
-  - evolution-and-natural-selection
+  - evolution/selection
+  - design/directed-evolution
 created: 2024-05-01T07:05:26
 modified: "2026-04-21T05:01:15"
 ---

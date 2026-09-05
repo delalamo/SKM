@@ -1,6 +1,8 @@
 ---
 title: Focused protein sequence libraries are poor training sets
 tags:
+  - design/directed-evolution
+  - evidence/datasets
 created: 2024-04-25T00:43:29
 modified: "2026-04-21T05:01:15"
 ---

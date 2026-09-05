@@ -1,6 +1,7 @@
 ---
 tags:
-  - conformational-dynamics/molecular-dynamics
+  - model-analysis/interpretability
+  - biophysics/ensemble-analysis
 created: "2025-05-23T04:55:28"
 modified: "2026-04-21T05:01:15"
 ---

@@ -1,5 +1,6 @@
 ---
 tags:
+  - evidence/measurements
 title: ROC-AUC is prevalence-invariant but does not measure deployment precision
 created: 2024-07-01T02:28:08
 modified: "2026-08-19T16:32:04"

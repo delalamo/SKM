@@ -1,7 +1,7 @@
 ---
 title: Fitness landscapes are locally smooth but globally rugged
 tags:
-  - epistasis
+  - evolution/mutation-effects
 created: 2024-05-05T09:49:33
 modified: "2026-04-21T07:03:26"
 ---

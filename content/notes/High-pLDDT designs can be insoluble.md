@@ -1,7 +1,8 @@
 ---
 tags:
-  - plddt
-  - confidence-metrics
+  - evidence/design-validation
+  - design/developability
+  - design/sequence-generation
 created: 2024-10-25T03:44:34
 modified: "2026-04-21T05:01:15"
 ---

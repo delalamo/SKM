@@ -1,12 +1,13 @@
 ---
 title: Smooth protein folding landscapes are the result of natural selection
 tags:
-  - conformational-dynamics/evolution
+  - evolution/selection
+  - biophysics/folding
 created: "2024-06-11T04:33:55"
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
- **Smooth [[protein-folding|protein folding]] landscapes are the result of [[evolution-and-natural-selection|natural selection]]** [@watters2007]. This was the conclusion after observing that [[De novo designed proteins have multiphasic folding pathways|the de novo designed protein Top7 has a multiphasic folding pathway]].
+ **Smooth [[notes/Protein folding|protein folding]] landscapes are the result of [[notes/Evolution and natural selection|natural selection]]** [@watters2007]. This was the conclusion after observing that [[De novo designed proteins have multiphasic folding pathways|the de novo designed protein Top7 has a multiphasic folding pathway]].
 
 #### See also
 * [[Most possible alpha-beta topologies unexplored by nature]]

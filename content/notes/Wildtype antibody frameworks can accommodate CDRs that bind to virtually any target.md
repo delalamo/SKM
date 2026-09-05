@@ -1,6 +1,7 @@
 ---
 tags:
-  - antibodies/engineering-and-design
+  - design/antibodies
+  - antibodies/architecture
 created: 2025-10-27T11:57:51
 modified: "2026-04-21T05:01:15"
 ---

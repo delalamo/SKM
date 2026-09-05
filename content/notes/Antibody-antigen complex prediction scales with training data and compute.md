@@ -1,13 +1,15 @@
 ---
 tags:
-  - antibody-antigen-interactions/complex-prediction
+  - prediction/complexes
+  - training/pretraining-and-scaling
+  - evidence/datasets
 created: "2026-06-23"
 modified: "2026-07-17T10:38:09"
 ---
 
 #### Summary
 
-**[[antibodies|Antibody]]-antigen complex prediction appears to scale with training data and compute.** Co-folding performance appears to follow a scaling law dependent on both training data and compute [@jing2026].
+**[[tags/antibodies|Antibody]]-antigen complex prediction appears to scale with training data and compute.** Co-folding performance appears to follow a scaling law dependent on both training data and compute [@jing2026].
 
 #### Figures
 

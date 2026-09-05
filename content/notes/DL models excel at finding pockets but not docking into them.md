@@ -1,6 +1,6 @@
 ---
 tags:
-  - ligand-docking
+  - prediction/ligand-docking
 created: 2026-04-05T17:32:01
 modified: "2026-04-21T05:01:15"
 ---

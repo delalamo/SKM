@@ -1,6 +1,6 @@
 ---
 tags:
-  - evolution-and-natural-selection
+  - evolution/mutation-effects
 created: 2024-05-01T03:17:41
 modified: "2026-04-21T05:01:15"
 ---

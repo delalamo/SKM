@@ -1,5 +1,7 @@
 ---
 tags:
+  - model-analysis/interpretability
+  - model-design/architectures
 created: 2024-06-04T03:22:01
 modified: 2024-06-04T03:22:01
 ---

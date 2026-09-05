@@ -1,6 +1,7 @@
 ---
 tags:
-  - conformational-dynamics/evolution
+  - evolution/mutation-effects
+  - biophysics/dynamics
 created: 2024-11-26T23:10:09
 modified: "2026-04-21T05:01:15"
 ---

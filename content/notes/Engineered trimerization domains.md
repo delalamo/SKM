@@ -1,6 +1,7 @@
 ---
 title: Engineered trimerization domains
 tags:
+  - design/modular-proteins
 created: 2024-05-02T05:08:13
 modified: "2026-04-20T10:13:23"
 ---

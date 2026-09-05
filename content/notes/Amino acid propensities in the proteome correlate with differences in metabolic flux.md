@@ -1,6 +1,6 @@
 ---
 tags:
-  - evolution-and-natural-selection
+  - evolution/selection
 created: 2024-06-18T06:15:04
 modified: "2026-04-21T05:01:15"
 ---

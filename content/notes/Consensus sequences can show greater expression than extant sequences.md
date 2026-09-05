@@ -1,6 +1,8 @@
 ---
 title: Consensus sequences can show greater expression than extant sequences
 tags:
+  - evolution/ancestry
+  - design/developability
 created: 2024-12-04T02:50:40
 modified: "2026-04-21T05:01:15"
 ---

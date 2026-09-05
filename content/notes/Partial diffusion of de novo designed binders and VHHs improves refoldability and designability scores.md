@@ -1,14 +1,15 @@
 ---
 tags:
-  - antibody-structure-prediction/complex-prediction
-  - antibodies/nanobodies
+  - design/binders
+  - design/antibodies
+  - evidence/design-validation
 created: "2026-01-23T17:17:44"
 modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**Partial [[diffusion-models|diffusion]] and [[Flow matching|flow matching]] of *de novo* [[protein-backbone-design|binders]] binders and [[Nanobodies|VHHs]] improves refoldability and designability** [@yu2026].
+**Partial [[notes/Diffusion models|diffusion]] and [[Flow matching|flow matching]] of *de novo* [[notes/Protein backbone design|binders]] binders and [[Nanobodies|VHHs]] improves refoldability and designability** [@yu2026].
 
 #### Figures
 

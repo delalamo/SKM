@@ -1,5 +1,7 @@
 ---
 tags:
+  - design/enzymes
+  - biophysics/catalysis
 created: 2025-02-27T03:51:29
 modified: "2026-04-21T05:01:15"
 ---

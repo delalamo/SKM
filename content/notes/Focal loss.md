@@ -1,5 +1,6 @@
 ---
 tags:
+  - training/objectives-and-optimization
 created: 2024-05-15T10:13:01
 modified: "2026-04-20T10:13:23"
 ---

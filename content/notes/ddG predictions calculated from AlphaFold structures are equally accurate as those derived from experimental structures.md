@@ -1,15 +1,14 @@
 ---
 tags:
-  - alphafold2
-  - structure-prediction/sampling
-  - thermostability/prediction
+  - prediction/stability-expression
+  - evidence/generalization
 created: "2025-07-22T11:37:28"
 modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**ddG predictions calculated from [[alphafold2|AlphaFold2]] structures using [[variant-effect-prediction|variant effect prediction]] methods are equally accurate as those derived from experimental structures** [@diaz2023].
+**ddG predictions calculated from [[notes/AlphaFold2|AlphaFold2]] structures using [[notes/Variant effect prediction|variant effect prediction]] methods are equally accurate as those derived from experimental structures** [@diaz2023].
 
 #### See also
 

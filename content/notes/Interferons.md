@@ -2,6 +2,8 @@
 title: Interferons
 created: 2026-04-10T14:02:57
 modified: "2026-04-21T07:28:09"
+tags:
+  - cell-biology/immune-signaling
 ---
 
 **Interferons** are a type of [[Cytokines|cytokine]] that interrupt protein production in cells.
@@ -13,7 +15,7 @@ modified: "2026-04-21T07:28:09"
 Characterized by:
 * Antiviral activity
 * Anti-proliferative activity
-* Differentiation of [[b-cells|B cells]]
+* Differentiation of [[notes/B cells|B cells]]
 * TH17 response
 * Maturation and activation of dendritic cells
 * Interferon receptors are ubiquitously expressed, and this can be a problem.

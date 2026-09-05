@@ -1,8 +1,7 @@
 ---
 tags:
-  - protein-language-models/representations
-  - protein-protein-interactions
-  - transformers
+  - model-design/architectures
+  - prediction/structure
 created: "2026-07-28"
 modified: "2026-07-28T14:12:17"
 ---

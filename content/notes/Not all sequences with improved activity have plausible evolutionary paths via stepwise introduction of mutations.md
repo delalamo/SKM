@@ -1,7 +1,7 @@
 ---
 tags:
-  - epistasis
-  - evolution-and-natural-selection
+  - evolution/mutation-effects
+  - design/directed-evolution
 created: 2026-03-29T11:17:38
 modified: "2026-04-21T09:59:52"
 publicationHistory:
