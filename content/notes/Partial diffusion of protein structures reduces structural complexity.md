@@ -7,7 +7,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**Partial [[notes/diffusion-models|diffusion]] reduces the structural complexity of [[notes/protein-backbone-design|designed protein backbones]]** [@lu2025]. Running RF-diffusion on ProtPardelle designs led to greater helix/sheet character. It also converts sheets to helices, but not vice versa. Authors say "this behavior is valuable in design tasks which require engineering structural rigidity but could be a limitation in design tasks which require structural flexibility, such as engineering for allostery."
+**Partial [[notes/Diffusion models|diffusion]] reduces the structural complexity of [[notes/Protein backbone design|designed protein backbones]]** [@lu2025]. Running RF-diffusion on ProtPardelle designs led to greater helix/sheet character. It also converts sheets to helices, but not vice versa. Authors say "this behavior is valuable in design tasks which require engineering structural rigidity but could be a limitation in design tasks which require structural flexibility, such as engineering for allostery."
 
 #### Figures
 

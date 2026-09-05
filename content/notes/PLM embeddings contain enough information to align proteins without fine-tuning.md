@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 ## Summary
 
-**[[notes/protein-language-models|PLM]] embeddings contain enough information to be aligned without fine-tuning** [@kaminski2023], **and these alignments outperform purely sequence-based but not structure-based methods** ([@llinareslpez2022], [@hamamsy2023]). This could be since the embeddings of aligned positions in related sequences tend to co-[[Clustering|cluster]] [@mcwhite2023]. Alignment quality can be further improved by normalization [@pantolini2022], which does not require PLM fine-tuning. [@ashrafzadeh2023] surmise that the distance matrices implied by these embeddings are more effective than the [[notes/blosum62|BLOSUM62]] matrix used by many sequence alignments by default.
+**[[notes/Protein language models|PLM]] embeddings contain enough information to be aligned without fine-tuning** [@kaminski2023], **and these alignments outperform purely sequence-based but not structure-based methods** ([@llinareslpez2022], [@hamamsy2023]). This could be since the embeddings of aligned positions in related sequences tend to co-[[Clustering|cluster]] [@mcwhite2023]. Alignment quality can be further improved by normalization [@pantolini2022], which does not require PLM fine-tuning. [@ashrafzadeh2023] surmise that the distance matrices implied by these embeddings are more effective than the [[notes/BLOSUM62|BLOSUM62]] matrix used by many sequence alignments by default.
 
 ## Details
 

@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-Using the minimum logit from an ensemble of models rather than averaging all logits can lead to improved performance on [[notes/variant-effect-prediction|pathogenicity prediction]] [@dinh2026]. This is particularly effective when distinct models have different levels of confidence.
+Using the minimum logit from an ensemble of models rather than averaging all logits can lead to improved performance on [[notes/Variant effect prediction|pathogenicity prediction]] [@dinh2026]. This is particularly effective when distinct models have different levels of confidence.
 
 #### Figures
 ![[Pasted image 20260410104403.png|400]]

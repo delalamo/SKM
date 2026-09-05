@@ -1,6 +1,7 @@
 ---
 title: Affinity maturation
 aliases:
+  - "notes/affinity-maturation"
   - "Affinity maturation"
   - "tags/affinity-maturation"
 created: "2026-04-10T14:30:55"

@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**For structure prediction methods that using language models such as [[OmegaFold]] and [[ESMFold]], unfreezing the [[notes/protein-language-models|language model]] during fine-tuning improves structure prediction [[notes/tm-score|TM-score]].** This was without an [[Evoformer]] module which may skew results.
+**For structure prediction methods that using language models such as [[OmegaFold]] and [[ESMFold]], unfreezing the [[notes/Protein language models|language model]] during fine-tuning improves structure prediction [[notes/TM-score|TM-score]].** This was without an [[Evoformer]] module which may skew results.
 
 #### Figures
 

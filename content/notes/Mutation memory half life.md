@@ -26,6 +26,6 @@ An earlier study in $beta$-lactamase found that not all mutational paths to an c
 *Ref [@weinreich2006]*
 
 #### See also
-* [[notes/ancestral-sequence-reconstruction|Ancestral sequence reconstruction]]
-* [[notes/epistasis|Epistasis]]
+* [[notes/Ancestral sequence reconstruction|Ancestral sequence reconstruction]]
+* [[notes/Epistasis|Epistasis]]
 * [[Not all sequences with improved activity have plausible evolutionary paths via stepwise introduction of mutations]]

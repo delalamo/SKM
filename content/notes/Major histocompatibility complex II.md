@@ -6,4 +6,4 @@ tags:
   - cell-biology/immune-signaling
 ---
 
-The **major histocompatibility complex II** (MHC-II) binds and presents antigens to CD4+ [[T cells]]. It is expressed by monocytes, dendritic cells, and [[notes/b-cells|B cells]].
+The **major histocompatibility complex II** (MHC-II) binds and presents antigens to CD4+ [[T cells]]. It is expressed by monocytes, dendritic cells, and [[notes/B cells|B cells]].

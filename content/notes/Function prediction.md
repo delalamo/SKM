@@ -6,4 +6,4 @@ tags:
   - prediction/function
 ---
 
-**Protein function prediction** is the prediction of what proteins do from sequence or structure alone. Recent methods rely on embeddings from [[notes/protein-language-models|PLMs]], [[notes/inverse-folding|inverse folding]] or [[Hybrid sequence-structure models|hybrid sequence/structure models]].
+**Protein function prediction** is the prediction of what proteins do from sequence or structure alone. Recent methods rely on embeddings from [[notes/Protein language models|PLMs]], [[notes/Inverse folding|inverse folding]] or [[Hybrid sequence-structure models|hybrid sequence/structure models]].

@@ -13,7 +13,7 @@ tags:
 
 * [[Heavy chains]]:
 	* There are 7 human VH families containing 51 sequences.
-* [[notes/light-chains|Light chains]]:
+* [[notes/Light chains|Light chains]]:
 	* There are 16 human VL families containing 100 sequences (50 kappa and 50 lambda).
 	* Mice only have three functional lambda V-gene segments [@shrock2023].
 
@@ -21,7 +21,7 @@ tags:
 
 * [[Heavy chains]]:
 	* There are six JH segments
-* [[notes/light-chains|Light chains]]:
+* [[notes/Light chains|Light chains]]:
 	* There are 5 J-kappa and 7 J-lambda segments
 
 ###### D-genes

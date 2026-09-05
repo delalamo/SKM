@@ -7,7 +7,7 @@ created: "2024-05-05T09:50:14"
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
- **Proteins with higher [[notes/thermostability|thermostability]] are more capable of [[Directed evolution|laboratory evolution]] new functions; e.g., they are more [[notes/evolution-and-natural-selection|evolvable]]** [@bloom2006]. This was determined using cytochrome P450, where stabilizing mutations acted as a buffer against destabilizing mutations.
+ **Proteins with higher [[notes/Stability and thermostability|thermostability]] are more capable of [[Directed evolution|laboratory evolution]] new functions; e.g., they are more [[notes/Evolution and natural selection|evolvable]]** [@bloom2006]. This was determined using cytochrome P450, where stabilizing mutations acted as a buffer against destabilizing mutations.
 
 #### Details
 Additionally, [@zheng2020] found that evolving YFP to GFP had greater overall success and greater fitness if starting from YFP that was under greater selective pressure in prior rounds:
@@ -16,5 +16,5 @@ Additionally, [@zheng2020] found that evolving YFP to GFP had greater overall su
 
 #### See also
 * [[Ancestrally reconstructed sequences are more thermostable than extant sequences]]
-* [[notes/ancestral-sequence-reconstruction|Ancestral sequence reconstruction]]
+* [[notes/Ancestral sequence reconstruction|Ancestral sequence reconstruction]]
 * [[The majority of missense mutations are destabilizing]]

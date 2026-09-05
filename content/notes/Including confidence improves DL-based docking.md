@@ -9,7 +9,7 @@ review:
 ---
 
 #### Summary
-Small molecule docking accuracy can by improved by including confidence during training of small molecule docking via DiffDock and propagating that information to the early frames. Corso et al. [@corso2024deep] showed this as a form of [[notes/diffusion-guidance|guidance]]-involved training.
+Small molecule docking accuracy can by improved by including confidence during training of small molecule docking via DiffDock and propagating that information to the early frames. Corso et al. [@corso2024deep] showed this as a form of [[notes/Diffusion guidance|guidance]]-involved training.
 
 #### See also
 

@@ -14,4 +14,4 @@ modified: "2026-04-21T07:28:09"
 *Ref [@ertelt2024]*
 
 #### See also
-* [[notes/thermostability|Stability and thermostability]]
+* [[notes/Stability and thermostability|Stability and thermostability]]

@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**[[Protein dynamics#Ensemble prediction|Protein ensemble prediction]] methods do not generate conformations that can be used for [[notes/protein-protein-interactions|PPI]] docking** [@kyrylenko2025]. This was even the case when the resulting structures were closer in RMSD than the alternative conformation (e.g., the apo unbound state normally being predicted).
+**[[Protein dynamics#Ensemble prediction|Protein ensemble prediction]] methods do not generate conformations that can be used for [[notes/Protein-protein interactions|PPI]] docking** [@kyrylenko2025]. This was even the case when the resulting structures were closer in RMSD than the alternative conformation (e.g., the apo unbound state normally being predicted).
 
 #### See also
 

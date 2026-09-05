@@ -6,4 +6,4 @@ modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-**Scoring functions from (Rosetta) correlate with [[notes/thermostability|stability]], except when only energy terms between backbone atoms is considered** [@ferrari2025]. This shows that sidechain interactions are critical to accurate prediction.
+**Scoring functions from (Rosetta) correlate with [[notes/Stability and thermostability|stability]], except when only energy terms between backbone atoms is considered** [@ferrari2025]. This shows that sidechain interactions are critical to accurate prediction.

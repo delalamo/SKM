@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**Multistate Bennett acceptance ratio can be used to reweight one or more weighted samples from a [[notes/diffusion-guidance|guided]] [[notes/diffusion-models|diffusion]] trajectory** [@xie2026]. It does not work unless the samples are pre-weighted; [@xie2026] use the steering importance weights from Feynman-Kac guidance.
+**Multistate Bennett acceptance ratio can be used to reweight one or more weighted samples from a [[notes/Diffusion guidance|guided]] [[notes/Diffusion models|diffusion]] trajectory** [@xie2026]. It does not work unless the samples are pre-weighted; [@xie2026] use the steering importance weights from Feynman-Kac guidance.
 
 #### Details
 

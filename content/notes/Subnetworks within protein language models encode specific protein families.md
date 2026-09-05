@@ -7,7 +7,7 @@ modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-Subnetworks within [[notes/protein-language-models|protein language models]] encode specific protein families [@vinod2026], and individual competencies are stored in distinct parts of the neural network. This might be why [[Sequence-only protein language models implicitly cluster proteins at fineness levels that increase with size|larger PLMs are able to cluster protein families are finer levels]], as their capacity is simply larger.
+Subnetworks within [[notes/Protein language models|protein language models]] encode specific protein families [@vinod2026], and individual competencies are stored in distinct parts of the neural network. This might be why [[Sequence-only protein language models implicitly cluster proteins at fineness levels that increase with size|larger PLMs are able to cluster protein families are finer levels]], as their capacity is simply larger.
 
 #### Figures
 ![[Pasted image 20260410103621.png]]

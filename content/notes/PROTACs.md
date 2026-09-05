@@ -6,7 +6,7 @@ tags:
   - cell-biology/therapeutic-mechanisms
 ---
 
-**PROTACs** are small molecules that facilitate targeted protein degradation by binding to [[notes/protein-protein-interactions|two proteins simultaneously]], one of them being an [[E3 ubiquitin ligases|E3 ubiquitin ligase]]. In contrast with [[Molecular glues|molecular glues]] like Thalidomide (not all of which facilitate protein degradation), these consist of discrete small molecular binders connected by a linker.
+**PROTACs** are small molecules that facilitate targeted protein degradation by binding to [[notes/Protein-protein interactions|two proteins simultaneously]], one of them being an [[E3 ubiquitin ligases|E3 ubiquitin ligase]]. In contrast with [[Molecular glues|molecular glues]] like Thalidomide (not all of which facilitate protein degradation), these consist of discrete small molecular binders connected by a linker.
 
 #### Details
 

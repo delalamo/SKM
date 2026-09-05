@@ -9,7 +9,7 @@ tags:
 **PyMOL** is a modeling visualization program for proteins.
 
 #### Shortcuts
-###### Color a protein by b-factor (or [[notes/plddt|pLDDT]])
+###### Color a protein by b-factor (or [[notes/pLDDT|pLDDT]])
 
 ```
 spectrum b, minimum=0, maximum=100, selection=obj01

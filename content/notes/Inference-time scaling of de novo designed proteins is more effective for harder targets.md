@@ -8,7 +8,7 @@ publicationHistory:
   "2026-03-20": "https://biomlzk.ghost.io/language-models-matter-less-than-search-algorithms-for-difficult-protein-design-tasks/"
 ---
 #### Summary
- **Inference-time scaling of *de novo* [[notes/protein-backbone-design|designed proteins]] is more effective for harder targets** [@didi2026a]. Scaling was executed using [[Beam search|beam search]], [[notes/diffusion-guidance|Feynman-Kac steering]], and [[Monte Carlo Tree Search]]. Surprisingly, all three gave comparable results to one another.
+ **Inference-time scaling of *de novo* [[notes/Protein backbone design|designed proteins]] is more effective for harder targets** [@didi2026a]. Scaling was executed using [[Beam search|beam search]], [[notes/Diffusion guidance|Feynman-Kac steering]], and [[Monte Carlo Tree Search]]. Surprisingly, all three gave comparable results to one another.
 
 #### Figures
 ![[Pasted-image-20260318080351.png]]

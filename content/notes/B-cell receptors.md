@@ -8,4 +8,4 @@ tags:
   - cell-biology/immune-signaling
 ---
 
-**B-cell receptors** (BCRs) are [[tags/antibodies|antibodies]] that are membrane-bound to [[notes/b-cells|B cells]] and trigger cell activation of antibody production when they bind the antigen. Most data in the [[Observable Antibody Space]] (OAS) is derived from these.
+**B-cell receptors** (BCRs) are [[tags/antibodies|antibodies]] that are membrane-bound to [[notes/B cells|B cells]] and trigger cell activation of antibody production when they bind the antigen. Most data in the [[Observable Antibody Space]] (OAS) is derived from these.

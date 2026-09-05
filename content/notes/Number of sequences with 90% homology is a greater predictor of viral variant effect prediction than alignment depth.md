@@ -9,7 +9,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**The number of sequences in an [[Multiple sequence alignments|MSA]] with ≥90% sequence identity is a better predictor of viral [[notes/variant-effect-prediction|variant effect prediction]] than alignment depth** [@gurev2025]. It is also an effective diagnostic tool to determine if the Spearman correlation to ground truth exceeds a certain threshold (0.4).
+**The number of sequences in an [[Multiple sequence alignments|MSA]] with ≥90% sequence identity is a better predictor of viral [[notes/Variant effect prediction|variant effect prediction]] than alignment depth** [@gurev2025]. It is also an effective diagnostic tool to determine if the Spearman correlation to ground truth exceeds a certain threshold (0.4).
 
 #### Figures
 

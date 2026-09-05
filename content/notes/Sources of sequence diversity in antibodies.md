@@ -13,6 +13,6 @@ review:
 2. P-diversity: Asymmetric nicking of hairpins at VH/DH junction to generate blunt ends that get ligated
 3. Movement of D-gene nucleotides into new reading frames. Occurs in mice but rare in humans
 4. Inversion of D-genes, though this basically doesn't happen in humans
-5. Formation of VH-DH-DH-JH assemblies (two D genes), ref 22 found this happens in about 1 in 800 B cells and even lower in memory [[notes/b-cells|B cells]]. Ref 23 first suggested these
+5. Formation of VH-DH-DH-JH assemblies (two D genes), ref 22 found this happens in about 1 in 800 B cells and even lower in memory [[notes/B cells|B cells]]. Ref 23 first suggested these
 6. Transfer of VDJ gene to other V genes by [[Activation-induced deaminase|activation-induced deaminase]] (ref 27)
-7. "VH invasion": replacement of entire VH region with new upstream VH gene, leading to longer [[Complementarity-determining regions|CDRH3]]s. Also seen in [[notes/light-chains|light chains]]
+7. "VH invasion": replacement of entire VH region with new upstream VH gene, leading to longer [[Complementarity-determining regions|CDRH3]]s. Also seen in [[notes/Light chains|light chains]]

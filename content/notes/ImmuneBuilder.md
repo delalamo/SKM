@@ -6,11 +6,11 @@ tags:
   - prediction/antibody-structure
 ---
 
-**ImmuneBuilder** is an [[notes/antibody-structure-prediction|Antibody structure prediction]] method consisting of ABodyBuilder2 for [[tags/antibodies|antibodies]], NanoBodyBuilder2 for [[Nanobodies|nanobodies]], and TCRBuilder2 for [[T-cell receptors|TCRs]] [@abanades2023].
+**ImmuneBuilder** is an [[notes/Antibody structure prediction|Antibody structure prediction]] method consisting of ABodyBuilder2 for [[tags/antibodies|antibodies]], NanoBodyBuilder2 for [[Nanobodies|nanobodies]], and TCRBuilder2 for [[T-cell receptors|TCRs]] [@abanades2023].
 
 #### Details
 
-* ABodyBuilder2 is trained on [[Observable Antibody Space]] and outperforms [[notes/alphafold2|AlphaFold2]] on antibody [[Complementarity-determining regions#CDRH3|CDRH3]] loops. However EquiFold outperforms it on side chain recovery. Provides uncertainty estimation that correlates for CDRH3 RMSD.
+* ABodyBuilder2 is trained on [[Observable Antibody Space]] and outperforms [[notes/AlphaFold2|AlphaFold2]] on antibody [[Complementarity-determining regions#CDRH3|CDRH3]] loops. However EquiFold outperforms it on side chain recovery. Provides uncertainty estimation that correlates for CDRH3 RMSD.
 * Data elision studies on ABodyBuilder2 showed that [[DL structure prediction methods cannot predict CDR conformations unseen during training]].
 * Models generated with ABodyBuilder2 have [[Structural modeling introduces bias toward larger hydrophobic patches in antibodies|larger hydrophobic patches]].
 

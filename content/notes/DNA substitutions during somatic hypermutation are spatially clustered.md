@@ -7,7 +7,7 @@ modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-DNA substitutions during [[Somatic hypermutation|somatic hypermutation]] are spatially clustered. In other words, codons are more likely to get multiple nucleotide substitutions in the same codon than equivalent stretches of DNA in other parts of the genome. [@matsen2026] found that a "multihit correction" during parametrization of their [[tags/antibodies|antibody]] [[notes/protein-language-models|language model]] could account for this phenomenon. This was achieved by training on out-of-frame immunoglobulin sequence stretches.
+DNA substitutions during [[Somatic hypermutation|somatic hypermutation]] are spatially clustered. In other words, codons are more likely to get multiple nucleotide substitutions in the same codon than equivalent stretches of DNA in other parts of the genome. [@matsen2026] found that a "multihit correction" during parametrization of their [[tags/antibodies|antibody]] [[notes/Protein language models|language model]] could account for this phenomenon. This was achieved by training on out-of-frame immunoglobulin sequence stretches.
 
 #### Figures
 ![[Pasted-image-20260410102518.png]]

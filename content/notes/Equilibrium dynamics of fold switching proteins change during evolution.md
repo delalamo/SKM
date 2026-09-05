@@ -7,7 +7,7 @@ modified: "2026-04-21T07:28:09"
 summary: Equilibrium dynamics of the fold-switching protein XCL1 differ from those of an ancestral protein
 ---
 #### Summary
-**The equilibrium dynamics of [[Fold-switching proteins]] change over time.** [@dishman2021] show used [[notes/ancestral-sequence-reconstruction|Ancestral sequence reconstruction]] on XCL1 and (NMR) that the relative populations of two states change as the sequence changes.
+**The equilibrium dynamics of [[Fold-switching proteins]] change over time.** [@dishman2021] show used [[notes/Ancestral sequence reconstruction|Ancestral sequence reconstruction]] on XCL1 and (NMR) that the relative populations of two states change as the sequence changes.
 
 #### Figures
 ![[Fold-switching-evolution.png]]

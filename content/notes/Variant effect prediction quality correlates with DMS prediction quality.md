@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**The quality of predictions made by [[notes/variant-effect-prediction|variant effect prediction]] models correlates with actual pathogenicity in that gene** [@livesey2024].
+**The quality of predictions made by [[notes/Variant effect prediction|variant effect prediction]] models correlates with actual pathogenicity in that gene** [@livesey2024].
 
 #### Figures
 

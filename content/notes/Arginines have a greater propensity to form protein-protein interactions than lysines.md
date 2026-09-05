@@ -7,4 +7,4 @@ modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-**Arginine residues have a greater propensity to form [[notes/protein-protein-interactions|protein-protein interactions]] than lysine residues** [@levy2012]. As a result R$\leftrightarrow$K substitutions in surface-exposed residues are not as common as D$\leftrightarrow$E substitutions.
+**Arginine residues have a greater propensity to form [[notes/Protein-protein interactions|protein-protein interactions]] than lysine residues** [@levy2012]. As a result R$\leftrightarrow$K substitutions in surface-exposed residues are not as common as D$\leftrightarrow$E substitutions.

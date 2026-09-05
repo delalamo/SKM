@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**[[notes/plddt|pLDDT]] of structures predicted by [[notes/alphafold2|AlphaFold2]] correlate with the number of sequences provided for inference during runtime** [@avasthi2024].
+**[[notes/pLDDT|pLDDT]] of structures predicted by [[notes/AlphaFold2|AlphaFold2]] correlate with the number of sequences provided for inference during runtime** [@avasthi2024].
 
 #### Figures
 

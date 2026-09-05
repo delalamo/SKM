@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**The ability to tolerate neutral mutations correlates with [[notes/thermostability|protein thermostability]]** [@depristo2005]. Direct manifestations of this are uncoupling of tightly packed, stable structures such as TIM barrels and immunoglobulin folds, from the loops mediating function (in [[tags/antibodies|antibodies]], the [[Complementarity-determining regions|CDRs]]).
+**The ability to tolerate neutral mutations correlates with [[notes/Stability and thermostability|protein thermostability]]** [@depristo2005]. Direct manifestations of this are uncoupling of tightly packed, stable structures such as TIM barrels and immunoglobulin folds, from the loops mediating function (in [[tags/antibodies|antibodies]], the [[Complementarity-determining regions|CDRs]]).
 
 #### Details
 

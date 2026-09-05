@@ -7,7 +7,7 @@ created: 2024-06-14T01:39:29
 modified: "2026-04-21T10:30:31"
 ---
 #### Summary
-**[[tags/antibodies|Antibodies]] from different [[notes/immune-repertoires|immune repertoires]] from the same species that target the same epitope often have the same [[notes/light-chains|light chain isotype]]** [@shrock2023]. This was tested on disordered peptide truncates from common viral targets and is attributed to [[GRAB motifs]] in [[Germline|germline]] antibodies. It is related to the funding of [[Light chain coherence|light chain coherence]], whereby functional antibodies with the same CDRH3 share the same light chain.
+**[[tags/antibodies|Antibodies]] from different [[notes/Immune repertoires|immune repertoires]] from the same species that target the same epitope often have the same [[notes/Light chains|light chain isotype]]** [@shrock2023]. This was tested on disordered peptide truncates from common viral targets and is attributed to [[GRAB motifs]] in [[Germline|germline]] antibodies. It is related to the funding of [[Light chain coherence|light chain coherence]], whereby functional antibodies with the same CDRH3 share the same light chain.
 
 #### Figures
 ![[Observed-distribution.png]]

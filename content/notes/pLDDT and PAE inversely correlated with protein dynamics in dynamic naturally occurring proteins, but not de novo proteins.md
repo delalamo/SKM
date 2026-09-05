@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**The [[notes/plddt|pLDDT]] and [[notes/pae|PAE]] of [[notes/alphafold2|AlphaFold2]] predictions is inversely correlated with RMSD between conformations observed experimentally** ([@saldao2022] and Chakravarty and [@chakravarty2022]) **and from [[MD simulations]]** [@jussupow2023; @gavaldagarcia2024]. Low pLDDT is also predictive of intrinsic disorder. However, in *de novo* proteins, pLDDT predictions do not correlate with flexibility, based on studies with [[NMR]] [@mntener2026]. This is a form of [[Uncertainty quantification|aleotoric uncertainty]] in the neural network's confidence prediction module.
+**The [[notes/pLDDT|pLDDT]] and [[notes/Predicted aligned error|PAE]] of [[notes/AlphaFold2|AlphaFold2]] predictions is inversely correlated with RMSD between conformations observed experimentally** ([@saldao2022] and Chakravarty and [@chakravarty2022]) **and from [[MD simulations]]** [@jussupow2023; @gavaldagarcia2024]. Low pLDDT is also predictive of intrinsic disorder. However, in *de novo* proteins, pLDDT predictions do not correlate with flexibility, based on studies with [[NMR]] [@mntener2026]. This is a form of [[Uncertainty quantification|aleotoric uncertainty]] in the neural network's confidence prediction module.
 
 #### Figures
 

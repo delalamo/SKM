@@ -9,7 +9,7 @@ modified: "2026-04-21T07:28:09"
 
 ## Summary
 
-**A [[notes/contrastive-learning|Contrastive learning]] approach with pretrained ProtBERT embeddings and Morgan fingerprints outperformed state-of-the-art methods on drug-target interaction prediction** [@singh2023].
+**A [[notes/Contrastive learning|Contrastive learning]] approach with pretrained ProtBERT embeddings and Morgan fingerprints outperformed state-of-the-art methods on drug-target interaction prediction** [@singh2023].
 
 ## Figures
 

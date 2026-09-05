@@ -9,7 +9,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**Partial [[notes/diffusion-models|diffusion]] and [[Flow matching|flow matching]] of *de novo* [[notes/protein-backbone-design|binders]] binders and [[Nanobodies|VHHs]] improves refoldability and designability** [@yu2026].
+**Partial [[notes/Diffusion models|diffusion]] and [[Flow matching|flow matching]] of *de novo* [[notes/Protein backbone design|binders]] binders and [[Nanobodies|VHHs]] improves refoldability and designability** [@yu2026].
 
 #### Figures
 

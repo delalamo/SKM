@@ -8,4 +8,4 @@ modified: "2026-04-21T07:28:09"
 summary: Multiplexed ancestral sequence reconstruction
 ---
 #### Summary
-**Multiplexed [[notes/ancestral-sequence-reconstruction|ASR]] involves the generation of many possible phylogenetic trees in parallel.** It was used by [@matthews2023] to train small [[notes/protein-language-models|PLMs]].
+**Multiplexed [[notes/Ancestral sequence reconstruction|ASR]] involves the generation of many possible phylogenetic trees in parallel.** It was used by [@matthews2023] to train small [[notes/Protein language models|PLMs]].

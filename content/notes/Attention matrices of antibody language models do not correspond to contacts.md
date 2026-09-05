@@ -7,7 +7,7 @@ modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-**[[Attention (machine learning)|Attention]] matrices of [[tags/antibodies|antibody]]-specific [[notes/protein-language-models|protein language models]] do not correspond to contacts** [@burbach2024]. [[PLM attention matrices correspond to 3D contacts|This is in contrast to generic protein language models]].
+**[[Attention (machine learning)|Attention]] matrices of [[tags/antibodies|antibody]]-specific [[notes/Protein language models|protein language models]] do not correspond to contacts** [@burbach2024]. [[PLM attention matrices correspond to 3D contacts|This is in contrast to generic protein language models]].
 
 #### Details
 

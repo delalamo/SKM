@@ -7,11 +7,11 @@ tags:
   - prediction/variant-effects
 ---
 
-**SaProt** is a [[notes/protein-language-models|protein language model]] trained on paired amino acid identities and [[Foldseek]] tokens derived largely from [[notes/alphafold2|AlphaFold2]] structures [@su2023]. It outperformed sequence-only baselines across ten downstream tasks, including zero-shot [[notes/variant-effect-prediction|variant effect prediction]].
+**SaProt** is a [[notes/Protein language models|protein language model]] trained on paired amino acid identities and [[Foldseek]] tokens derived largely from [[notes/AlphaFold2|AlphaFold2]] structures [@su2023]. It outperformed sequence-only baselines across ten downstream tasks, including zero-shot [[notes/Variant effect prediction|variant effect prediction]].
 
 #### Details
 
-* Structural tokens for residues with [[notes/plddt|pLDDT]] values less than 70 are masked.
+* Structural tokens for residues with [[notes/pLDDT|pLDDT]] values less than 70 are masked.
 
 #### See also
 

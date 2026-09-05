@@ -6,7 +6,7 @@ tags:
   - model-design/multimodal
 ---
 
-**Hybrid sequence-structure models** combine [[notes/protein-language-models|protein language models]] with [[notes/inverse-folding|inverse folding]] models to draw from both massive sequence databases and highly detailed structural data.
+**Hybrid sequence-structure models** combine [[notes/Protein language models|protein language models]] with [[notes/Inverse folding|inverse folding]] models to draw from both massive sequence databases and highly detailed structural data.
 
 #### Methods
 

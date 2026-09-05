@@ -7,7 +7,7 @@ tags:
   - model-design/architectures
 ---
 
-**ProteinNPT** is a module that can be appended to [[Multiple sequence alignments|MSA]]-based [[notes/protein-language-models|protein language models]] that was first introduced by [@notin2023b].
+**ProteinNPT** is a module that can be appended to [[Multiple sequence alignments|MSA]]-based [[notes/Protein language models|protein language models]] that was first introduced by [@notin2023b].
 ![[Pasted-image-20240126170230.png]]
 *Figure 1 from Notin et al. [@notin2023b]*
 

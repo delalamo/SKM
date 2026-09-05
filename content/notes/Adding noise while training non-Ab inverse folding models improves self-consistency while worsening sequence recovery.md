@@ -9,7 +9,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**Introducing noise to structures during training improves self-consistency RMSD of generic [[notes/inverse-folding|inverse folding]] models but not [[tags/antibodies|antibody]] inverse folding models, while worsening sequence recovery** [@dauparas2022; @hsu2022; @ren2024; @ruffolo2024]. It also improves self-consistency RMSD when forward-folding [[notes/protein-backbone-design|de novo designed proteins]] [@ren2024].
+**Introducing noise to structures during training improves self-consistency RMSD of generic [[notes/Inverse folding|inverse folding]] models but not [[tags/antibodies|antibody]] inverse folding models, while worsening sequence recovery** [@dauparas2022; @hsu2022; @ren2024; @ruffolo2024]. It also improves self-consistency RMSD when forward-folding [[notes/Protein backbone design|de novo designed proteins]] [@ren2024].
 
 #### Figures
 

@@ -6,7 +6,7 @@ created: "2024-07-02T05:20:06"
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
-**Masked [[notes/protein-language-models|PLMs]] (such as [[ESM]]) are more sensitive to training imbalances than autoregressive models (such as [[ProGen]];** [@cheng2024]). Presumably this is also true of [[Transformer|transformers]] trained on natural language.
+**Masked [[notes/Protein language models|PLMs]] (such as [[ESM]]) are more sensitive to training imbalances than autoregressive models (such as [[ProGen]];** [@cheng2024]). Presumably this is also true of [[Transformer|transformers]] trained on natural language.
 
 #### Figures
 ![[Pasted-Graphic-5.png]]

@@ -11,7 +11,7 @@ publicationHistory:
 
 #### Summary
 
-**Using evolutionary information for label smoothing when training [[notes/inverse-folding|inverse folding]] models improves [[notes/variant-effect-prediction|variant effect prediction]].** Zhou et al. used the [[notes/blosum62|BLOSUM62]] matrix, whereas Gong et al. [@gong2024] used PSSMs. By contrast, Dauparas et al. used uniform smoothing [@zhou2024; @dauparas2022].
+**Using evolutionary information for label smoothing when training [[notes/Inverse folding|inverse folding]] models improves [[notes/Variant effect prediction|variant effect prediction]].** Zhou et al. used the [[notes/BLOSUM62|BLOSUM62]] matrix, whereas Gong et al. [@gong2024] used PSSMs. By contrast, Dauparas et al. used uniform smoothing [@zhou2024; @dauparas2022].
 
 #### Details
 

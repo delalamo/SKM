@@ -1,6 +1,7 @@
 ---
 title: B cells
 aliases:
+  - "notes/b-cells"
   - "B cells"
   - "tags/b-cells"
 created: 2026-04-10T14:30:55

@@ -6,7 +6,7 @@ created: "2026-08-25"
 modified: "2026-08-25T10:55:31"
 ---
 #### Summary
-**In epitope-guided [[De novo antibody design|de novo antibody design]], applying strong [[notes/diffusion-guidance|guidance]] early for epitope targeting and annealing it to zero can preserve high targeting fidelity while reducing steric clashes and biophysical distortions** [@kim2026tideab].
+**In epitope-guided [[De novo antibody design|de novo antibody design]], applying strong [[notes/Diffusion guidance|guidance]] early for epitope targeting and annealing it to zero can preserve high targeting fidelity while reducing steric clashes and biophysical distortions** [@kim2026tideab].
 
 #### Details
 Static classifier-free guidance in TiDE-Ab gave heavy-chain epitope recall of 0.934 and 43.35 clashes per design. Combining cosine annealing with truncation at $t = 0.5$ preserved recall at 0.935, increased epitope precision from 0.777 to 0.889, and reduced clashes to 8.14. These results are in silico and await experimental validation.

@@ -7,7 +7,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**[[notes/alphafold2|AlphaFold2]] predicts apo conformations with poorer RMSD than holo conformations** [@saldao2022]. On average it was 2.58 A vs 1.87 A, respectively.
+**[[notes/AlphaFold2|AlphaFold2]] predicts apo conformations with poorer RMSD than holo conformations** [@saldao2022]. On average it was 2.58 A vs 1.87 A, respectively.
 
 #### See also
 

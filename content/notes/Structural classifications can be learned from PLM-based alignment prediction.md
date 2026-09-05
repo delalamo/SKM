@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**Learning to predict TM-scores from sequence alone (by learning cosine similarity from whole-sequence representations), allows [[notes/protein-language-models|PLMs]] to learn structural classifications** [@hamamsy2023].
+**Learning to predict TM-scores from sequence alone (by learning cosine similarity from whole-sequence representations), allows [[notes/Protein language models|PLMs]] to learn structural classifications** [@hamamsy2023].
 
 #### Figures
 

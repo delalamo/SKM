@@ -8,7 +8,7 @@ modified: "2026-07-20T09:52:04"
 
 #### Summary
 
-**Removing [[Multiple sequence alignments|MSAs]] collapses the coherent latent geometry learned by [[notes/alphafold3|AlphaFold3]], even for familiar sequences.** Low-confidence predictions occupy a poorly organized region rather than the compact pair-space manifold produced when comparative evolutionary context is available [@feldman2026].
+**Removing [[Multiple sequence alignments|MSAs]] collapses the coherent latent geometry learned by [[notes/AlphaFold3|AlphaFold3]], even for familiar sequences.** Low-confidence predictions occupy a poorly organized region rather than the compact pair-space manifold produced when comparative evolutionary context is available [@feldman2026].
 
 #### See also
 

@@ -8,4 +8,4 @@ modified: "2026-04-21T07:20:46"
 
 #### Summary
 
-Of ~350 screened mutations in the [[Intrinsically disordered regions|intrinsically disordered regions]] of 80 proteins shown to be pathogenic, half were shown to either enhance [[notes/protein-protein-interactions|protein-protein interactions]] or create new interactions, while the other half shown to diminish binding [@kliche2023].
+Of ~350 screened mutations in the [[Intrinsically disordered regions|intrinsically disordered regions]] of 80 proteins shown to be pathogenic, half were shown to either enhance [[notes/Protein-protein interactions|protein-protein interactions]] or create new interactions, while the other half shown to diminish binding [@kliche2023].

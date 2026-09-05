@@ -8,4 +8,4 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**Conformational changes have been modeled using [[notes/alphafold2|AlphaFold2]] by [[Inversion of protein folding neural networks|inversion]] and driving specific [[Collective variables|collective variables]]** [@xie2023]. A related approach using [[ESMFold]] attempted to sample conformational transition paths using language model embeddings as the target [@del2023].
+**Conformational changes have been modeled using [[notes/AlphaFold2|AlphaFold2]] by [[Inversion of protein folding neural networks|inversion]] and driving specific [[Collective variables|collective variables]]** [@xie2023]. A related approach using [[ESMFold]] attempted to sample conformational transition paths using language model embeddings as the target [@del2023].

@@ -1,6 +1,7 @@
 ---
-title: Alphafold2
+title: AlphaFold2
 aliases:
+  - "notes/alphafold2"
   - "openfold"
   - "Alphafold2"
   - "tags/alphafold2"
@@ -13,7 +14,7 @@ tags:
 
 _(OpenFold redirects here)_
 
-**AlphaFold2** is a protein [[notes/structure-prediction|structure prediction]] method from 2020, and is the first to make extensive use of the [[Transformer]] architecture, consisting of 97 million parameters. [[AlphaMissense]] is a derivative of this method.
+**AlphaFold2** is a protein [[notes/Structure prediction|structure prediction]] method from 2020, and is the first to make extensive use of the [[Transformer]] architecture, consisting of 97 million parameters. [[AlphaMissense]] is a derivative of this method.
 
 ![[Pasted-image-20231029184254.png]]
 _Architecture of AlphaFold2 from Jumper et al. [@jumper2021]_
@@ -24,5 +25,5 @@ _Architecture of AlphaFold2 from Jumper et al. [@jumper2021]_
 - [[Invariant point attention]]
 - [[Frame aligned point error]]
 - [[Distillation|Self-distillation]] for protein structures
-- [[notes/pae|Predicted aligned error]]
+- [[notes/Predicted aligned error|Predicted aligned error]]
 - [[Triangular update]]

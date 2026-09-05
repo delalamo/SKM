@@ -1,6 +1,7 @@
 ---
 title: Contrastive learning
 aliases:
+  - "notes/contrastive-learning"
   - "Contrastive learning"
   - "tags/contrastive-learning"
 created: 2026-04-10T14:30:55

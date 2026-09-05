@@ -8,7 +8,7 @@ modified: "2026-04-21T07:20:46"
 
 #### Summary
 
-[[Flow matching]] and [[notes/diffusion-models|diffusion]] perform comparably for biomolecular [[notes/structure-prediction|structure prediction]] [@gong2025].
+[[Flow matching]] and [[notes/Diffusion models|diffusion]] perform comparably for biomolecular [[notes/Structure prediction|structure prediction]] [@gong2025].
 
 #### Figures
 

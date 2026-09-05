@@ -7,7 +7,7 @@ tags:
   - evolution/selection
 ---
 
-EVE is a [[Variational autoencoders|VAE]]-based generative method for [[notes/variant-effect-prediction|Variant effect prediction]] prediction that is trained on [[Multiple sequence alignments|MSAs]] [@frazer2021].
+EVE is a [[Variational autoencoders|VAE]]-based generative method for [[notes/Variant effect prediction|Variant effect prediction]] prediction that is trained on [[Multiple sequence alignments|MSAs]] [@frazer2021].
 
 ![[Pasted-image-20240502090757.png]]
 *Ref [@frazer2021]*

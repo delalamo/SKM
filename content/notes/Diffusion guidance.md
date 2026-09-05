@@ -1,6 +1,7 @@
 ---
 title: Diffusion guidance
 aliases:
+  - "notes/diffusion-guidance"
   - "Guidance sampling of all-atom diffusion"
   - "Diffusion guidance"
   - "tags/diffusion-guidance"
@@ -10,7 +11,7 @@ tags:
   - inference/guidance
 ---
 
-**Diffusion guidance** refers to inference-time methods that steer a [[notes/diffusion-models|diffusion]] process toward desired properties, constraints, or observations. It is a general concept that applies to both [[notes/protein-backbone-design|protein design]], [[notes/structure-prediction|structure prediction]], and sequence-based protein design, of which all-atom diffusion is just one application.
+**Diffusion guidance** refers to inference-time methods that steer a [[notes/Diffusion models|diffusion]] process toward desired properties, constraints, or observations. It is a general concept that applies to both [[notes/Protein backbone design|protein design]], [[notes/Structure prediction|structure prediction]], and sequence-based protein design, of which all-atom diffusion is just one application.
 
 #### Details
 

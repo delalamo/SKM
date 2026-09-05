@@ -1,6 +1,7 @@
 ---
 title: Ancestral sequence reconstruction
 aliases:
+  - "notes/ancestral-sequence-reconstruction"
   - "Ancestral sequence reconstruction"
   - "tags/ancestral-sequence-reconstruction"
 created: 2026-04-10T14:02:57

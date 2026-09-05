@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**The [[notes/protein-language-models#Representations|latent space]] of [[ESMFold]] is discontinuous** [@del2023; @lu2025tokenized]. However, it can be smoothened by compression using a [[Variational autoencoders|VAE]].
+**The [[notes/Protein language models#Representations|latent space]] of [[ESMFold]] is discontinuous** [@del2023; @lu2025tokenized]. However, it can be smoothened by compression using a [[Variational autoencoders|VAE]].
 
 #### Figures
 

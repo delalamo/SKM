@@ -8,7 +8,7 @@ modified: "2026-04-21T10:30:31"
 
 #### Summary
 
-**Structure-based methods such as [[notes/inverse-folding|inverse folding]] methods outperform sequence-based methods such as [[notes/protein-language-models|PLMs]] on the design of high-affinity [[tags/antibodies|antibodies]]** [@shanker2024]. This is irrespective of whether the language model was trained on [[tags/antibodies|antibodies]] (AbLang) or [[notes/protein-language-models|generic proteins]] ([[ESM]]-1v).
+**Structure-based methods such as [[notes/Inverse folding|inverse folding]] methods outperform sequence-based methods such as [[notes/Protein language models|PLMs]] on the design of high-affinity [[tags/antibodies|antibodies]]** [@shanker2024]. This is irrespective of whether the language model was trained on [[tags/antibodies|antibodies]] (AbLang) or [[notes/Protein language models|generic proteins]] ([[ESM]]-1v).
 
 #### Figures
 

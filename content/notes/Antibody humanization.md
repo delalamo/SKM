@@ -14,7 +14,7 @@ tags:
 * Reasons for humanization of antibodies:
 	* Recruit immune system through [[Fc-regions]]
 	* Increasing blood circulation half life
-	* Reduce or eliminate [[notes/antibody-developability#Immunogenicity|immunogenicity]]
+	* Reduce or eliminate [[notes/Antibody developability#Immunogenicity|immunogenicity]]
 * Approaches for humanization:
 	* Identify and humanize predicted immunogenic regions
 	* Graft animal [[Complementarity-determining regions|CDRs]] onto human [[Framework region|frameworks]].

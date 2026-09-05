@@ -20,7 +20,7 @@ Kinases in an active state were found to consist of several structural features:
 * N-terminal salt bridge between conserved Glu of C-helix and Lys of N-terminal beta sheet. Presence of this salt bridge is strongly correlated with the "BLAminus" conformation
 * H-bond between residue three after DFG (DFGxxX) and residue preceding HRD motif, found in 97% of BLAminus conformations
 * Contact between alpha carbon of residue nine AAs before activation loop C-terminus
-These were modeled with [[notes/alphafold2|AlphaFold2]] [@faezov2023].
+These were modeled with [[notes/AlphaFold2|AlphaFold2]] [@faezov2023].
 * *Regulatory spine:** Consists of histidine from HRD motif, phenylalanine from DFG motif, the AA four positions after conserved glutanmate salt bridge, and a final unspecified hydrophobic amino acid (usually leucine) seven positions after HPN motif.
 * **DFG-in:** A conformation where the Asp side chain of the DFG-motif is in the ATP binding site, while the Phe is either in a pocket or adjacent to C-helix or N-terminal domain. Majority of ATP-bound structures in PDB are DFGin
 * **DFG-out:** A conformation where the Asp side chan of the DFG-motif is not in the active site and the Phe is released from C-terminal pocket.

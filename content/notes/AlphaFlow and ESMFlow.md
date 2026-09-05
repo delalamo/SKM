@@ -9,4 +9,4 @@ review:
   - "citation-fix"
 ---
 
-**AlphaFlow** and **ESMFlow** are versions of [[notes/alphafold2|AlphaFold2]] and [[ESMFold]] that are fine-tuned on [[MD simulations]] to model conformational heterogeneity using [[Normalizing flows|normalizing flows]] [@jing2023b].
+**AlphaFlow** and **ESMFlow** are versions of [[notes/AlphaFold2|AlphaFold2]] and [[ESMFold]] that are fine-tuned on [[MD simulations]] to model conformational heterogeneity using [[Normalizing flows|normalizing flows]] [@jing2023b].

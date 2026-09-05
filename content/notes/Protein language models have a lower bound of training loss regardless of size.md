@@ -6,7 +6,7 @@ modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-**[[notes/protein-language-models|Protein language models]] achieve a lower bound on pretraining loss, regardless of model size.**
+**[[notes/Protein language models|Protein language models]] achieve a lower bound on pretraining loss, regardless of model size.**
 
 #### Figures
 ![[Pasted-Graphic-18.png]]

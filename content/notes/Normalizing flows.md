@@ -19,4 +19,4 @@ The entirety of this note liberally cites from [@invernizzi2022].
 
 #### Applications
 - They have been used in conjunction with [[Replica-exchange molecular dynamics]] [@invernizzi2022]
-- They have been used for [[notes/structure-prediction#Conformational sampling methods|conformational sampling]] via fine-tuned [[notes/alphafold2|AlphaFold2]] and [[ESMFold]] [@jing2024]
+- They have been used for [[notes/Structure prediction#Conformational sampling methods|conformational sampling]] via fine-tuned [[notes/AlphaFold2|AlphaFold2]] and [[ESMFold]] [@jing2024]

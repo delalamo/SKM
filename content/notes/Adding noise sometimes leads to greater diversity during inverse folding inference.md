@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**For [[notes/inverse-folding|Inverse folding]] models, adding noise during inference sometimes leads to greater diversity** [@liu2024]. Perturbations in this case were carried using [[Rosetta]].
+**For [[notes/Inverse folding|Inverse folding]] models, adding noise during inference sometimes leads to greater diversity** [@liu2024]. Perturbations in this case were carried using [[Rosetta]].
 
 #### Figures
 

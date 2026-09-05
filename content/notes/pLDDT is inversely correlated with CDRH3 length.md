@@ -6,7 +6,7 @@ created: "2026-02-20T18:08:22"
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
-**[[notes/plddt|pLDDT]] is inversely correlated with [[Complementarity-determining regions#CDRH3|CDRH3]] length** [@chen2024].
+**[[notes/pLDDT|pLDDT]] is inversely correlated with [[Complementarity-determining regions#CDRH3|CDRH3]] length** [@chen2024].
 
 #### Figures
 ![[Confidence.png]]

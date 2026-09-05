@@ -9,7 +9,7 @@ modified: "2026-07-17T10:38:09"
 
 #### Summary
 
-**[[notes/protein-language-models|Protein language models]] cannot extrapolate to functional novelty or ultra-high-fitness variants.** Zero-shot PLMs are mostly useful as coarse filters separating poor or unfit variants from fit variants, but do not reliably rank highly fit variants or prioritize new-to-nature functional novelty [@woolley2026].
+**[[notes/Protein language models|Protein language models]] cannot extrapolate to functional novelty or ultra-high-fitness variants.** Zero-shot PLMs are mostly useful as coarse filters separating poor or unfit variants from fit variants, but do not reliably rank highly fit variants or prioritize new-to-nature functional novelty [@woolley2026].
 
 #### Figures
 

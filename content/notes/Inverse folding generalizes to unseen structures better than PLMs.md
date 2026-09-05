@@ -6,4 +6,4 @@ created: "2025-02-03T03:25:04"
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
- **[[notes/inverse-folding|Inverse folding]] methods generalize to unseen structures more effectively than [[notes/protein-language-models|PLMs]]** [@ingraham2019].
+ **[[notes/Inverse folding|Inverse folding]] methods generalize to unseen structures more effectively than [[notes/Protein language models|PLMs]]** [@ingraham2019].

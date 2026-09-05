@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**The experimental effect of [[notes/variant-effect-prediction#Missense mutations|missense mutations]] was reasonably predictive of the effect of [[notes/variant-effect-prediction#Indels|deletion mutations]], and slightly less predictive of [[notes/variant-effect-prediction#Indels|insertion mutations]] on either side that residue, though this depends on the protein** [@topolska2023].
+**The experimental effect of [[notes/Variant effect prediction#Missense mutations|missense mutations]] was reasonably predictive of the effect of [[notes/Variant effect prediction#Indels|deletion mutations]], and slightly less predictive of [[notes/Variant effect prediction#Indels|insertion mutations]] on either side that residue, though this depends on the protein** [@topolska2023].
 
 #### Details
 

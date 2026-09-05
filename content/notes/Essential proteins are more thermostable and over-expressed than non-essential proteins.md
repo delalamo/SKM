@@ -9,7 +9,7 @@ publicationHistory:
 ---
 
 #### Summary
-**Essential proteins are more likely to be thermostable** [@leuenberger2017] **and over-expressed** [@choi2026] **than non-essential proteins.** These results were obtained in *E. coli* and *Acinetobacter baylyi*, respectively. This points to varying degrees of [[notes/evolution-and-natural-selection|evolutionary pressure]] being placed on proteins, depending on their impact on cellular fitness, and directly contradicts the principle of marginal thermostability.
+**Essential proteins are more likely to be thermostable** [@leuenberger2017] **and over-expressed** [@choi2026] **than non-essential proteins.** These results were obtained in *E. coli* and *Acinetobacter baylyi*, respectively. This points to varying degrees of [[notes/Evolution and natural selection|evolutionary pressure]] being placed on proteins, depending on their impact on cellular fitness, and directly contradicts the principle of marginal thermostability.
 
 #### Figures
 ![[Pasted-image-20260324085157.png]]

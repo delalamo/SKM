@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**The loss function [[Frame aligned point error|FAPE]], used by [[notes/alphafold2|AlphaFold2]] and [[notes/rosettafold|RosettaFold]]2, can be extended to ligands** [@qiao2022].
+**The loss function [[Frame aligned point error|FAPE]], used by [[notes/AlphaFold2|AlphaFold2]] and [[notes/RoseTTAFold|RosettaFold]]2, can be extended to ligands** [@qiao2022].
 
 #### Figures
 ![[Protein-ligand-design-method.png]]

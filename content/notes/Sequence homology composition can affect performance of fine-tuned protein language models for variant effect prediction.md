@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-**[[Multiple sequence alignments|Sequence homology]] composition can affect how well a fine-tuned [[notes/protein-language-models|protein language model]] performs for [[notes/variant-effect-prediction|variant effect prediction]]** [@bixby2026]. Here, it was used to rank possible designs given several design constraints.
+**[[Multiple sequence alignments|Sequence homology]] composition can affect how well a fine-tuned [[notes/Protein language models|protein language model]] performs for [[notes/Variant effect prediction|variant effect prediction]]** [@bixby2026]. Here, it was used to rank possible designs given several design constraints.
 
 #### Figures
 ![[Pasted-image-20260311080631.png]]

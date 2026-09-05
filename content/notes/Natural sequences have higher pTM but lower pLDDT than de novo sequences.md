@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**Natural sequences have higher [[notes/tm-score|pTM]] but lower [[notes/plddt|pLDDT]] than *de novo* designed sequences** [@hayes2025].
+**Natural sequences have higher [[notes/TM-score|pTM]] but lower [[notes/pLDDT|pLDDT]] than *de novo* designed sequences** [@hayes2025].
 
 #### Figures
 

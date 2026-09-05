@@ -9,7 +9,7 @@ modified: "2026-07-28T14:12:17"
 
 #### Summary
 
-**Using [[notes/inverse-folding|inverse folding]] to select positions for site-saturation mutagenesis can produce higher experimental hit rates than random mutagenesis** [@mcdonald2026]. [[ESM-IF]]-guided library design followed by selection identified multiple [[Rubisco]] variants with improved catalytic efficiency. This is complementary to the observation that [[Directed evolution can uncover beneficial sequence modifications that might be missed by inverse folding|directed evolution can discover beneficial mutations missed by inverse folding]]: inverse folding can improve which positions are explored, while experimental selection can still recover mutations outside the model's preferred sequence space.
+**Using [[notes/Inverse folding|inverse folding]] to select positions for site-saturation mutagenesis can produce higher experimental hit rates than random mutagenesis** [@mcdonald2026]. [[ESM-IF]]-guided library design followed by selection identified multiple [[Rubisco]] variants with improved catalytic efficiency. This is complementary to the observation that [[Directed evolution can uncover beneficial sequence modifications that might be missed by inverse folding|directed evolution can discover beneficial mutations missed by inverse folding]]: inverse folding can improve which positions are explored, while experimental selection can still recover mutations outside the model's preferred sequence space.
 
 #### Figures
 

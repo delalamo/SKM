@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**[[notes/structure-prediction|Protein structure prediction]] methods predicted idealized secondary structure arrangements in *de novo*-designed proteins** [@orr2025]. This was shown with [[notes/alphafold2|AlphaFold2]], [[OmegaFold]], [[notes/rosettafold|RosettaFold]], and others.
+**[[notes/Structure prediction|Protein structure prediction]] methods predicted idealized secondary structure arrangements in *de novo*-designed proteins** [@orr2025]. This was shown with [[notes/AlphaFold2|AlphaFold2]], [[OmegaFold]], [[notes/RoseTTAFold|RosettaFold]], and others.
 
 #### Figures
 

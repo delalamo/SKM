@@ -9,7 +9,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**Unbalanced composition of protein sequence databases prevents prediction of [[Fitness prediction|fitness]] from sequence data alone, or from models derived from such data such as [[notes/protein-language-models|PLMs]]** [@weinstein2022]. Those authors argue that bigger models and datasets do not guarantee improvements in fitness prediction.
+**Unbalanced composition of protein sequence databases prevents prediction of [[Fitness prediction|fitness]] from sequence data alone, or from models derived from such data such as [[notes/Protein language models|PLMs]]** [@weinstein2022]. Those authors argue that bigger models and datasets do not guarantee improvements in fitness prediction.
 
 #### Details
 

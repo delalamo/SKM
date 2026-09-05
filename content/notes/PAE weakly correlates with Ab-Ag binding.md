@@ -8,7 +8,7 @@ modified: "2026-04-21T10:30:31"
 
 ## Summary
 
-**The [[notes/pae|PAE]] of [[notes/alphafold2|AlphaFold2]] weakly correlates with the binding affinity of [[tags/antibodies|Antibodies]] to their antigens** [@jin2023]. It is more effective at discriminating between positive and negative [[Trastuzumab]] binders.
+**The [[notes/Predicted aligned error|PAE]] of [[notes/AlphaFold2|AlphaFold2]] weakly correlates with the binding affinity of [[tags/antibodies|Antibodies]] to their antigens** [@jin2023]. It is more effective at discriminating between positive and negative [[Trastuzumab]] binders.
 
 ## Figures
 

@@ -7,7 +7,7 @@ created: "2024-09-19T05:32:41"
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
-**[[tags/antibodies|Antibodies]] from naive [[notes/b-cells|B cells]] are more [[notes/antibody-developability|polyreactive]] than those from memory B cells or those that have been clinically approved** [@shehata2019].
+**[[tags/antibodies|Antibodies]] from naive [[notes/B cells|B cells]] are more [[notes/Antibody developability|polyreactive]] than those from memory B cells or those that have been clinically approved** [@shehata2019].
 
 #### Figures
 ![[Pasted-image-20240119161818.png]]

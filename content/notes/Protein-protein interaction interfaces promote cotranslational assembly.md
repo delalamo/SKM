@@ -7,4 +7,4 @@ created: 2024-10-03T11:59:30
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
- **[[notes/protein-protein-interactions|Protein-protein interaction]] interfaces promote cotranslational assembly** [@badonyi2022]. This means that interaction surfaces are more common on the N-terminal part of proteins in the PDB.
+ **[[notes/Protein-protein interactions|Protein-protein interaction]] interfaces promote cotranslational assembly** [@badonyi2022]. This means that interaction surfaces are more common on the N-terminal part of proteins in the PDB.

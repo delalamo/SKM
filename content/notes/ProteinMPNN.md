@@ -6,7 +6,7 @@ created: "2026-04-10T14:02:57"
 modified: "2026-04-21T07:28:09"
 ---
 
-**ProteinMPNN** is an [[notes/inverse-folding|inverse folding]] method that uses a message-passing neural network. It has extensive wet-lab validation.
+**ProteinMPNN** is an [[notes/Inverse folding|inverse folding]] method that uses a message-passing neural network. It has extensive wet-lab validation.
 ![[Pasted-image-20231016154908.png]]
 *Ref [@dauparas2022]*
 
@@ -25,7 +25,7 @@ modified: "2026-04-21T07:28:09"
 * **MiniMPNN**: A modified version of ProteinMPNN that has $O(1)$ performance; i.e., it predicts the whole sequence in a single pass. Used by ProtPardelle [@chu2023].
 * **ProteinIPMP**: A version that uses [[Invariant point attention]], leading to accuracy improvements. Co-released with PIPPack.
 ![[ProteinIPMP-vs-ProteinMPNN.png]]
-* **ThermoMPNN**: A topped-off version for predicting [[notes/thermostability|Stability and thermostability]]. Trained using a high-quality subset of the Tsuboyama et al. [@tsuboyama2023] data [@dieckhaus2024]. Was found by Beltran et al. [@beltran2024] to be the best at [[notes/variant-effect-prediction|variant effect prediction]].
+* **ThermoMPNN**: A topped-off version for predicting [[notes/Stability and thermostability|Stability and thermostability]]. Trained using a high-quality subset of the Tsuboyama et al. [@tsuboyama2023] data [@dieckhaus2024]. Was found by Beltran et al. [@beltran2024] to be the best at [[notes/Variant effect prediction|variant effect prediction]].
 * **LigandMPNN**: A version that can account for non-protein matter [@dauparas2023].
 * **IgMPNN**: A version pretrained on the PDB and fine-tuned on antibody structures [@shanehsazzadeh2023].
 * **SoftAlign**: A retrained encoder used for structure-based alignment [@trinquier2025].

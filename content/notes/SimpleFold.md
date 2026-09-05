@@ -8,7 +8,7 @@ tags:
   - model-design/generative-models
 ---
 
-**SimpleFold** is a [[notes/structure-prediction|protein structure prediction]] method that exclusively relies on [[Transformer|transformer]] blocks and [[Flow matching|flow matching]] [@wang2025b]. It relies on embeddings from [[ESM]]2-3B and models from the [[notes/alphafold2|AlphaFold2]] DB and [[ESMFold]] Atlas. Authors scaled it from several hundred million parameters to 3 billion parameters, observing improved performance with larger sizes. They also fine-tuned versions of all six models on ATLAS MD data.
+**SimpleFold** is a [[notes/Structure prediction|protein structure prediction]] method that exclusively relies on [[Transformer|transformer]] blocks and [[Flow matching|flow matching]] [@wang2025b]. It relies on embeddings from [[ESM]]2-3B and models from the [[notes/AlphaFold2|AlphaFold2]] DB and [[ESMFold]] Atlas. Authors scaled it from several hundred million parameters to 3 billion parameters, observing improved performance with larger sizes. They also fine-tuned versions of all six models on ATLAS MD data.
 
 #### Details
 

@@ -9,6 +9,6 @@ review:
   - "citation-fix"
 ---
 
-**DiffDock** is a [[notes/diffusion-models|diffusion]] model for small molecule ligand docking.
+**DiffDock** is a [[notes/Diffusion models|diffusion]] model for small molecule ligand docking.
 ![[DiffDock_fig1.png]]
 *From [@corso2023].*

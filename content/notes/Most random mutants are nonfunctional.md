@@ -13,4 +13,4 @@ modified: "2026-04-21T07:28:09"
 #### See also
 
 * [[The majority of missense mutations are destabilizing]]
-* [[notes/evolution-and-natural-selection|Evolution and natural selection]]
+* [[notes/Evolution and natural selection|Evolution and natural selection]]

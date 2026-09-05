@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**[[Protein-ligand co-folding|All-atom protein structure prediction]] methods are unable to accurately model [[notes/protein-protein-interactions|protein-protein interactions]] with large buried surface areas** [@liao2025].
+**[[Protein-ligand co-folding|All-atom protein structure prediction]] methods are unable to accurately model [[notes/Protein-protein interactions|protein-protein interactions]] with large buried surface areas** [@liao2025].
 
 #### Figures
 

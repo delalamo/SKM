@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 ## Summary
 
-**[[notes/protein-language-models|PLMs]] are biased against sequences with multiple mutations** [@shaw2023].
+**[[notes/Protein language models|PLMs]] are biased against sequences with multiple mutations** [@shaw2023].
 
 ## Details
 

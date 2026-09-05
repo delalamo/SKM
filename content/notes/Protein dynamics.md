@@ -22,4 +22,4 @@ tags:
 
 
 #### Related
-* [[notes/protein-folding|Protein folding]]
+* [[notes/Protein folding|Protein folding]]

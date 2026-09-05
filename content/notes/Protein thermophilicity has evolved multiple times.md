@@ -7,7 +7,7 @@ created: "2024-11-14T02:41:30"
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
- **Changes in protein [[notes/thermostability|thermostability]] occur frequently over long evolutionary timescales, and related proteins can show drastic differences in thermostability** [@muir2024].
+ **Changes in protein [[notes/Stability and thermostability|thermostability]] occur frequently over long evolutionary timescales, and related proteins can show drastic differences in thermostability** [@muir2024].
 
 #### Figures
 ![[Median-Growth-Temperature-(C).png]]

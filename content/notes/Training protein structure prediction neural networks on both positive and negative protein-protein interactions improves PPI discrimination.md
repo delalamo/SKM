@@ -8,4 +8,4 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**Training [[notes/structure-prediction|Structure prediction]] neural networks on both interacting and non-interacting pairs of proteins improves precision and recall when discriminating of positive and negative [[notes/protein-protein-interactions|protein-protein interactions]]** [@zhang2025b]. This suggests limited generalization on the part of vanilla structure prediction models. This is comparable to how [[Protein folding neural networks cannot predict protein stability|protein folding neural network outputs are not predictive of monomeric stability]].
+**Training [[notes/Structure prediction|Structure prediction]] neural networks on both interacting and non-interacting pairs of proteins improves precision and recall when discriminating of positive and negative [[notes/Protein-protein interactions|protein-protein interactions]]** [@zhang2025b]. This suggests limited generalization on the part of vanilla structure prediction models. This is comparable to how [[Protein folding neural networks cannot predict protein stability|protein folding neural network outputs are not predictive of monomeric stability]].

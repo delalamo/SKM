@@ -7,7 +7,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**[[notes/alphafold3|AlphaFold3]] performs comparably to AlphaFold2 (specifically [[Alternate conformations can be sampled with MSA-based structure prediction methods using custom PDB databases and subsampled MSAs|MSA clustering and sequence masking]]) when [[notes/structure-prediction|predicting the structures]] of [[Fold-switching proteins|fold-switching proteins]]** [@chakravarty2024].
+**[[notes/AlphaFold3|AlphaFold3]] performs comparably to AlphaFold2 (specifically [[Alternate conformations can be sampled with MSA-based structure prediction methods using custom PDB databases and subsampled MSAs|MSA clustering and sequence masking]]) when [[notes/Structure prediction|predicting the structures]] of [[Fold-switching proteins|fold-switching proteins]]** [@chakravarty2024].
 
 #### Figures
 

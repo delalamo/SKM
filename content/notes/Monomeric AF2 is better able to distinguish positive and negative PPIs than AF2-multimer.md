@@ -9,7 +9,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**Monomeric [[notes/alphafold2|AlphaFold2]] is better able to distinguish positive and negative [[notes/protein-protein-interactions|PPIs]] than AF2-multimer** [@zhang2025b]. [@pacesa2025] found that this made it effective at filtering *de novo* binder designs made by [[Inversion of protein folding neural networks|hallucination]].
+**Monomeric [[notes/AlphaFold2|AlphaFold2]] is better able to distinguish positive and negative [[notes/Protein-protein interactions|PPIs]] than AF2-multimer** [@zhang2025b]. [@pacesa2025] found that this made it effective at filtering *de novo* binder designs made by [[Inversion of protein folding neural networks|hallucination]].
 
 #### Figures
 

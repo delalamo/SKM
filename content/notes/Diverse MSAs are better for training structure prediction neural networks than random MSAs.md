@@ -13,5 +13,5 @@ modified: "2026-04-21T07:28:09"
 #### See also
 * [[Evoformer]]
 * [[MSA Transformer]]
-* [[notes/inverse-folding#Sequence diffusion|Sequence diffusion]]
+* [[notes/Inverse folding#Sequence diffusion|Sequence diffusion]]
 * [[Variant effect prediction with homology-aware PLMs improves with ensembling of multiple prompts]]

@@ -6,7 +6,7 @@ modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-**[[notes/protein-backbone-design|De novo protein backbones]] designed by [[notes/diffusion-models|diffusion]] are more compact than those designed by [[Inversion of protein folding neural networks|hallucination]]** (Christopher Frank, [personal correspondence](https://x.com/chrisfrank662/status/1849795366465552731))
+**[[notes/Protein backbone design|De novo protein backbones]] designed by [[notes/Diffusion models|diffusion]] are more compact than those designed by [[Inversion of protein folding neural networks|hallucination]]** (Christopher Frank, [personal correspondence](https://x.com/chrisfrank662/status/1849795366465552731))
 
 
 #### Figures

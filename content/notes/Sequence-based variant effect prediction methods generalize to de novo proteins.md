@@ -7,4 +7,4 @@ modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-**Sequence-based ML models for [[notes/variant-effect-prediction|variant effect prediction]] generalize to *[[notes/protein-backbone-design|de novo]]* designed proteins** [@marquet2024]. A [[notes/protein-language-models|PLM]] with a top-off layer that was fine-tuned on bulk GEMME predictions achieved a Spearman correlation of 0.386 on *de novo* proteins in the mega-scale dataset [@tsuboyama2023].
+**Sequence-based ML models for [[notes/Variant effect prediction|variant effect prediction]] generalize to *[[notes/Protein backbone design|de novo]]* designed proteins** [@marquet2024]. A [[notes/Protein language models|PLM]] with a top-off layer that was fine-tuned on bulk GEMME predictions achieved a Spearman correlation of 0.386 on *de novo* proteins in the mega-scale dataset [@tsuboyama2023].

@@ -1,6 +1,7 @@
 ---
 title: TM-score
 aliases:
+  - "notes/tm-score"
   - "TM-score"
   - "ipTM"
   - "ipSAE"
@@ -14,7 +15,7 @@ tags:
 
 #### Summary
 
-**TM-score** is an alignment-dependent protein structure similarity term introduced by [@zhang2004] that is widely used for assessing [[notes/structure-prediction|protein structure prediction]] methods. It is defined as:
+**TM-score** is an alignment-dependent protein structure similarity term introduced by [@zhang2004] that is widely used for assessing [[notes/Structure prediction|protein structure prediction]] methods. It is defined as:
 
 $$
 TM\text{-}score = max \left[\frac{1}{L_{target}} \sum_{i}^{L_{common}} \left(\frac{1}{1+ \left( \frac{d_{i}}{d_{0} \left( L_{target} \right)} \right)^{2}} \right) \right]
@@ -27,7 +28,7 @@ $d_{0}(L_{target}) = 1.24*\sqrt[3]{L_{target}-15}-1.8$: Distance scaling factor
 
 #### Predicted variants
 
-[[notes/structure-prediction|Protein folding neural networks]] such as [[notes/alphafold2|AlphaFold2]] and [[notes/alphafold3|AlphaFold3]] predict a distribution over aligned errors for each ordered residue pair, then use that distribution to calculate pTM and ipTM confidence scores [@jumper2021; @evans2021]. For bin center $\Delta_b$ and probability $p_{ijb}$, the expected TM contribution for a residue pair is:
+[[notes/Structure prediction|Protein folding neural networks]] such as [[notes/AlphaFold2|AlphaFold2]] and [[notes/AlphaFold3|AlphaFold3]] predict a distribution over aligned errors for each ordered residue pair, then use that distribution to calculate pTM and ipTM confidence scores [@jumper2021; @evans2021]. For bin center $\Delta_b$ and probability $p_{ijb}$, the expected TM contribution for a residue pair is:
 
 $$
 E_{ij} = \sum_b p_{ijb}\frac{1}{1+\left(\frac{\Delta_b}{d_0(L)}\right)^2}
@@ -41,7 +42,7 @@ $$
 
 $L$ is the number of modeled residues used for $d_0$. In practice, ipTM is an inter-chain pTM score rather than a direct interface-contact score: all residues in other chains can contribute, not just residues close in 3D.
 
-**ipSAE** (interaction prediction score from aligned errors) is a [[notes/pae|PAE]]-derived replacement for ipTM calculated after choosing a PAE cutoff $\tau$ [@dunbrack2025]. For a chain direction $A \to B$ and aligned residue $i \in A$, it keeps only residues in the other chain with $PAE_{ij}<\tau$ and computes:
+**ipSAE** (interaction prediction score from aligned errors) is a [[notes/Predicted aligned error|PAE]]-derived replacement for ipTM calculated after choosing a PAE cutoff $\tau$ [@dunbrack2025]. For a chain direction $A \to B$ and aligned residue $i \in A$, it keeps only residues in the other chain with $PAE_{ij}<\tau$ and computes:
 
 $$
 pSAE_i(A \to B)= \frac{1}{|S_i|} \sum_{j \in S_i}\frac{1}{1+\left(\frac{PAE_{ij}}{d_0(|S_i|)}\right)^2}, \quad S_i = \{j \in B: PAE_{ij}<\tau\}

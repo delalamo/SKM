@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**[[Attention (machine learning)|Attention matrices]] of [[notes/protein-language-models|PLMs]] can capture whether a protein sequence is interpreted as a soluble protein or membrane protein** [@wenzel2024]. In membrane proteins, more attention is given to solvent-exposed hydrophobic residues.
+**[[Attention (machine learning)|Attention matrices]] of [[notes/Protein language models|PLMs]] can capture whether a protein sequence is interpreted as a soluble protein or membrane protein** [@wenzel2024]. In membrane proteins, more attention is given to solvent-exposed hydrophobic residues.
 
 #### See also
 

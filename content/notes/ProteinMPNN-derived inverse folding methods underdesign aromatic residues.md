@@ -7,7 +7,7 @@ modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-**(ProteinMPNN) and derivative methods underdesign aromatic residues** [@staerk2025; @pacesa2025]. This is suggested by the authors of BindCraft to be why [[notes/diffusion-models|diffusion]]-based [[notes/protein-backbone-design|backbone design]] plus [[notes/inverse-folding|inverse folding]] with ProteinMPNN underperform [[Inversion of protein folding neural networks|hallucination]]-based methods on binder design.
+**(ProteinMPNN) and derivative methods underdesign aromatic residues** [@staerk2025; @pacesa2025]. This is suggested by the authors of BindCraft to be why [[notes/Diffusion models|diffusion]]-based [[notes/Protein backbone design|backbone design]] plus [[notes/Inverse folding|inverse folding]] with ProteinMPNN underperform [[Inversion of protein folding neural networks|hallucination]]-based methods on binder design.
 
 #### Details
 Chow et al. also note overdesign of alanines by RFD-MPNN pipelines: [@chow2025]

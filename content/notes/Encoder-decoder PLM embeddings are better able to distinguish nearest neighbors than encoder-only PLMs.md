@@ -7,7 +7,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**The encoder-decoder [[notes/protein-language-models|protein language model]] ProtT5 is better able to distinguish near neighbors than the encoder-only PLM [[ESM|ESM C]]** [@rissom2024].
+**The encoder-decoder [[notes/Protein language models|protein language model]] ProtT5 is better able to distinguish near neighbors than the encoder-only PLM [[ESM|ESM C]]** [@rissom2024].
 
 #### Figures
 ![[Pasted-image-20250212104009.png]]

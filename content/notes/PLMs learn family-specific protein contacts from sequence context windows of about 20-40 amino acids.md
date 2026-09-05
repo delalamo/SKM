@@ -8,7 +8,7 @@ modified: "2026-07-28T14:12:17"
 
 ## Summary
 
-**[[notes/protein-language-models|PLMs]] learn from a sequence context of about twenty to forty amino acids** [@zhang2024]. This is evidence that they have not learned how proteins fold, but have rather memorized family-specific statistics of protein motif pairings. Evidence that they learned family-specific features was observed by [@adams2025] using [[Sparse autoencoder|sparse autoencoders]]. Nevertheless, the observation that [[Protein language models and PLM-based structure prediction generalize to de novo designed proteins]] calls this conclusion into question, at least for small globular proteins.
+**[[notes/Protein language models|PLMs]] learn from a sequence context of about twenty to forty amino acids** [@zhang2024]. This is evidence that they have not learned how proteins fold, but have rather memorized family-specific statistics of protein motif pairings. Evidence that they learned family-specific features was observed by [@adams2025] using [[Sparse autoencoder|sparse autoencoders]]. Nevertheless, the observation that [[Protein language models and PLM-based structure prediction generalize to de novo designed proteins]] calls this conclusion into question, at least for small globular proteins.
 
 ## Details
 

@@ -1,6 +1,7 @@
 ---
 title: Structure prediction
 aliases:
+  - "notes/structure-prediction"
   - "Structure prediction"
   - "tags/structure-prediction"
 created: "2026-04-10T14:02:57"
@@ -9,17 +10,17 @@ tags:
   - prediction/structure
 ---
 
-**Structure prediction** refers to the problem of predicting the 3D shape of a protein or nucleotide sequence without any experimental information. Common metrics used for evaluating the quality of predicted structures include [[LDDT]] (residue-level, [[notes/tm-score|TM-score]] (whole-structure level), and [[DockQ]] (complex level).
+**Structure prediction** refers to the problem of predicting the 3D shape of a protein or nucleotide sequence without any experimental information. Common metrics used for evaluating the quality of predicted structures include [[LDDT]] (residue-level, [[notes/TM-score|TM-score]] (whole-structure level), and [[DockQ]] (complex level).
 
 ## Methods
 
 #### [[Multiple sequence alignments|MSA]]-based
 
-- **[[notes/alphafold2|AlphaFold2]]**: currently viewed as the highest-accuracy method
-- **[[notes/rosettafold|RosettaFold]]**
+- **[[notes/AlphaFold2|AlphaFold2]]**: currently viewed as the highest-accuracy method
+- **[[notes/RoseTTAFold|RosettaFold]]**
 - **Diffold**: A fine-tuned version of AlphaFold2
 
-#### [[notes/protein-language-models|PLM]]-based
+#### [[notes/Protein language models|PLM]]-based
 
 - **[[ESMFold]]**: currently the most widely-used method, albeit probably not the most accurate model in this category
 - **[[OmegaFold]]**
@@ -32,7 +33,7 @@ tags:
 
 #### For [[tags/antibodies|antibodies]]
 
-_See [[notes/antibody-structure-prediction|Antibody structure prediction]]_
+_See [[notes/Antibody structure prediction|Antibody structure prediction]]_
 
 ## Notes
 

@@ -1,6 +1,7 @@
 ---
 title: BLOSUM62
 aliases:
+  - "notes/blosum62"
   - "BLOSUM62"
   - "tags/blosum62"
 created: 2026-04-10T14:02:57

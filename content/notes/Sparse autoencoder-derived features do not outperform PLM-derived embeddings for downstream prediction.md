@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**[[Sparse autoencoder]]-derived features do not outperform [[notes/protein-language-models|PLM]] embeddings for downstream prediction** [@adams2025].
+**[[Sparse autoencoder]]-derived features do not outperform [[notes/Protein language models|PLM]] embeddings for downstream prediction** [@adams2025].
 
 #### Figures
 

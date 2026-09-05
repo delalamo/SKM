@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**Scrambled [[Multiple sequence alignments|MSAs]] outperform single sequence predictions when [[notes/structure-prediction|predicting protein structures]] with [[notes/alphafold2|AlphaFold2]]**. They perform comparably to PSSMs and much worse than intact MSAs.
+**Scrambled [[Multiple sequence alignments|MSAs]] outperform single sequence predictions when [[notes/Structure prediction|predicting protein structures]] with [[notes/AlphaFold2|AlphaFold2]]**. They perform comparably to PSSMs and much worse than intact MSAs.
 
 #### Figures
 

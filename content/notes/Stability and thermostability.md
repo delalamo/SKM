@@ -1,6 +1,7 @@
 ---
 title: Stability and thermostability
 aliases:
+  - "notes/thermostability"
   - "Stability and thermostability"
   - "tags/thermostability"
 created: "2026-04-05T23:36:09"

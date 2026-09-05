@@ -7,7 +7,7 @@ modified: "2026-04-28T09:20:09"
 ---
 
 #### Summary
-Aromatic and polar residues make up a disproportionate number of antigen epitopes, while apolar residues are underrepresented[@sang2026]. This was derived from several hundred thousand predicted [[tags/antibodies|antibody]] structures from [[notes/alphafold3|Alphafold3]].
+Aromatic and polar residues make up a disproportionate number of antigen epitopes, while apolar residues are underrepresented[@sang2026]. This was derived from several hundred thousand predicted [[tags/antibodies|antibody]] structures from [[notes/AlphaFold3|Alphafold3]].
 
 #### Figures
 ![[polar_residue_hotspots.png|250]]

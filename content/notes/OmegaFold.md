@@ -9,4 +9,4 @@ review:
   - "citation-fix"
 ---
 
-**OmegaFold** is a [[notes/structure-prediction|protein structure prediction]] method from Wu et al. [@wu2022] that uses a custom-designed [[notes/protein-language-models|masked PLM]] to predict structures without [[Multiple sequence alignments]]. Similar to [[ESMFold]]. Found to model [[Complementarity-determining regions#CDRH3|CDRH3]] loops more accurately than [[notes/alphafold2|AlphaFold2]] [@singh2025].
+**OmegaFold** is a [[notes/Structure prediction|protein structure prediction]] method from Wu et al. [@wu2022] that uses a custom-designed [[notes/Protein language models|masked PLM]] to predict structures without [[Multiple sequence alignments]]. Similar to [[ESMFold]]. Found to model [[Complementarity-determining regions#CDRH3|CDRH3]] loops more accurately than [[notes/AlphaFold2|AlphaFold2]] [@singh2025].

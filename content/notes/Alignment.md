@@ -1,6 +1,7 @@
 ---
 title: Alignment
 aliases:
+  - "notes/alignment"
   - "Alignment"
   - "tags/alignment"
 created: "2026-04-20T07:41:09"

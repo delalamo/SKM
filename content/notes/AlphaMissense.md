@@ -9,7 +9,7 @@ review:
   - "citation-fix"
 ---
 
-**AlphaMissense** is a [[notes/protein-language-models|protein language model]] designed for [[notes/variant-effect-prediction|variant effect prediction]] that is built on top of [[notes/alphafold2|AlphaFold2]] and fine-tuned using primate data. During its release, it achieved state-of-the-are performance on ClinVar data, and predicted that a third of missense mutations in the human proteome were likely pathogenic and half as likely benign. A later paper found that, in the ion channel CFTR, it had both a high false positive rate and high correlation with *in vitro* functional data, concluding that it "cannot differentiate mechanistic effects or the nature of pathophysiology" [@mcdonald2024].
+**AlphaMissense** is a [[notes/Protein language models|protein language model]] designed for [[notes/Variant effect prediction|variant effect prediction]] that is built on top of [[notes/AlphaFold2|AlphaFold2]] and fine-tuned using primate data. During its release, it achieved state-of-the-are performance on ClinVar data, and predicted that a third of missense mutations in the human proteome were likely pathogenic and half as likely benign. A later paper found that, in the ion channel CFTR, it had both a high false positive rate and high correlation with *in vitro* functional data, concluding that it "cannot differentiate mechanistic effects or the nature of pathophysiology" [@mcdonald2024].
 
 ![[AlphaMissense.png]]
 *Ref [@cheng2023]*

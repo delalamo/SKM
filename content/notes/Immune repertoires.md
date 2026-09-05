@@ -1,6 +1,7 @@
 ---
 title: Immune repertoires
 aliases:
+  - "notes/immune-repertoires"
   - "Immune repertoires"
   - "tags/immune-repertoires"
 created: 2026-04-10T14:30:55
@@ -13,5 +14,5 @@ tags:
 
 Related:
 
-- [[notes/affinity-maturation|Affinity maturation]]
+- [[notes/Affinity maturation|Affinity maturation]]
 - [[tags/antibodies|Antibodies]]

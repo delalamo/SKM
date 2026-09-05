@@ -9,7 +9,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**Changing [[notes/alphafold2|AlphaFold2]]'s starting position for the protein structure from the "black hole" initialization dramatically improves the [[notes/structure-prediction|Structure prediction]] accuracy** [@bennett2023; @frank2024]. Monomer prediction was improved by starting from an initial guess (like a [[Rosetta]] model), and [@praetorius2023] used this to design dynamic proteins in multiple conformations. [@schweke2023] modeled homo-oligomers starting from the structure of a monomer.
+**Changing [[notes/AlphaFold2|AlphaFold2]]'s starting position for the protein structure from the "black hole" initialization dramatically improves the [[notes/Structure prediction|Structure prediction]] accuracy** [@bennett2023; @frank2024]. Monomer prediction was improved by starting from an initial guess (like a [[Rosetta]] model), and [@praetorius2023] used this to design dynamic proteins in multiple conformations. [@schweke2023] modeled homo-oligomers starting from the structure of a monomer.
 
 #### Figures
 

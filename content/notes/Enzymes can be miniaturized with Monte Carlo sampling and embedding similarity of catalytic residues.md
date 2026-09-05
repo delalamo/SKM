@@ -7,4 +7,4 @@ created: "2026-03-23T08:51:49"
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
- **Enzymes can be miniaturized with Monte Carlo sampling and [[notes/protein-language-models|protein language model]] per-residue embedding similarity at key catalytic residues** [@lla2026]. This required a loss function for sequence length and for embedding similarity (cosine). No wet lab validation was carried out to see if the designs actually worked.
+ **Enzymes can be miniaturized with Monte Carlo sampling and [[notes/Protein language models|protein language model]] per-residue embedding similarity at key catalytic residues** [@lla2026]. This required a loss function for sequence length and for embedding similarity (cosine). No wet lab validation was carried out to see if the designs actually worked.

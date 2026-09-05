@@ -8,11 +8,11 @@ tags:
 
 **Multiple sequence alignments** (MSAs) are sets of sequences aligned either to a reference sequence or to each other. They are widely used in bioinformatics:
 * Calculate summary statistics such as PSSMs and Potts models
-* Infer protein properties, such as structure, via neural networks ([[MSA Transformer]], [[notes/alphafold2|AlphaFold2]]/[[notes/rosettafold|RosettaFold]])
-* Predict evolutionary relationships (e.g., [[notes/ancestral-sequence-reconstruction|ancestral sequence reconstruction]])
+* Infer protein properties, such as structure, via neural networks ([[MSA Transformer]], [[notes/AlphaFold2|AlphaFold2]]/[[notes/RoseTTAFold|RosettaFold]])
+* Predict evolutionary relationships (e.g., [[notes/Ancestral sequence reconstruction|ancestral sequence reconstruction]])
 
 #### Notes
 
-* **The inclusion of MSAs improves zero-shot prediction using [[notes/protein-language-models|PLMs]]** [@su2023]
+* **The inclusion of MSAs improves zero-shot prediction using [[notes/Protein language models|PLMs]]** [@su2023]
 ![[MSA-effect-on-variant-effect-prediction.png]]
 	*Ref [@su2023]*

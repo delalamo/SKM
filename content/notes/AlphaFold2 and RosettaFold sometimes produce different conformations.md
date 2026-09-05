@@ -7,7 +7,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**For conformationally heterogeneous proteins, [[notes/alphafold2|AlphaFold2]] and [[notes/rosettafold|RosettaFold]] sometimes produce different conformations** [@hou2024].
+**For conformationally heterogeneous proteins, [[notes/AlphaFold2|AlphaFold2]] and [[notes/RoseTTAFold|RosettaFold]] sometimes produce different conformations** [@hou2024].
 
 #### See also
 

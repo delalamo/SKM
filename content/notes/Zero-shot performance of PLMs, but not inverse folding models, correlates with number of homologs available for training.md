@@ -8,7 +8,7 @@ modified: "2026-07-28T14:12:17"
 
 #### Summary
 
-**Zero-shot [[Fitness prediction|fitness prediction]] performance with [[notes/protein-language-models|protein language models]], but not structure-based models (e.g., [[notes/inverse-folding|inverse folding]] models), correlates with number of homologs available for training** [@li2024c].
+**Zero-shot [[Fitness prediction|fitness prediction]] performance with [[notes/Protein language models|protein language models]], but not structure-based models (e.g., [[notes/Inverse folding|inverse folding]] models), correlates with number of homologs available for training** [@li2024c].
 
 #### Figures
 

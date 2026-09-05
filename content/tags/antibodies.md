@@ -10,7 +10,7 @@ tags:
   - cell-biology/immune-signaling
 ---
 
-**Antibodies** are proteins with two [[Heavy chains|heavy chains]] and two [[notes/light-chains|light chains]] produced by [[notes/b-cells|B cells]], central to the adaptive immune system. Their structure consists of a variable region (containing [[Complementarity-determining regions|CDRs]] and a framework region) and three constant regions (CH1, CH2, CH3). The variable region and CH1 form the [[Fab]], while the remainder forms the Fc region. [[B-cell receptors|B cell receptors]] are antibodies with an additional CH4 domain.
+**Antibodies** are proteins with two [[Heavy chains|heavy chains]] and two [[notes/Light chains|light chains]] produced by [[notes/B cells|B cells]], central to the adaptive immune system. Their structure consists of a variable region (containing [[Complementarity-determining regions|CDRs]] and a framework region) and three constant regions (CH1, CH2, CH3). The variable region and CH1 form the [[Fab]], while the remainder forms the Fc region. [[B-cell receptors|B cell receptors]] are antibodies with an additional CH4 domain.
 
 ## Types of antibodies
 
@@ -25,7 +25,7 @@ tags:
 - _IgG3_ makes up ~7% of IgGs and has a notably shorter half-life due to poor binding to [[FcRn]], attributed to an H435R mutation.
 - _IgG4_ is the rarest IgG and undergoes Fab-arm exchange, dissociating into half-bodies and forming novel combinations via R409 in the hinge. Therapeutic IgG4 antibodies use the S228P substitution to stabilize the hinge and prevent this.
 
-**IgM** is far less subject to [[notes/affinity-maturation|affinity maturation]] than IgG, responds to lipids and polysaccharides, and activates the complement system.
+**IgM** is far less subject to [[notes/Affinity maturation|affinity maturation]] than IgG, responds to lipids and polysaccharides, and activates the complement system.
 
 ## Datasets
 

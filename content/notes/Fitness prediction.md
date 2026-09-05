@@ -7,7 +7,7 @@ tags:
   - evolution/mutation-effects
 ---
 
-**Fitness prediction** describes the problem of predicting a protein's fitness from its sequence, with or without structural data. It is affected by many other observables ([[notes/thermostability|stability]], [[notes/protein-folding|correct folding]], etc) which can lead to [[notes/epistasis|epistasis]], which is the inability to model fitness as a linear combination of the effects of individual mutations.
+**Fitness prediction** describes the problem of predicting a protein's fitness from its sequence, with or without structural data. It is affected by many other observables ([[notes/Stability and thermostability|stability]], [[notes/Protein folding|correct folding]], etc) which can lead to [[notes/Epistasis|epistasis]], which is the inability to model fitness as a linear combination of the effects of individual mutations.
 
 ![[Pasted-image-20241127045541.png]]
 *Ref [@sandhu2024]*
@@ -19,7 +19,7 @@ tags:
 * **Complex models are worse than ridge regression when the number of training examples is low** [@singh2025].
 ![[AbMAP-ridge-regression.png]]
 	*Ref [@singh2025]*
-* **Threshold robustness** refers to the fact that slightly deleterious mutations that negatively effect [[notes/thermostability|stability]] might have no impact on fitness up to a certain point, and that the effects can be devastating beyond this point.
+* **Threshold robustness** refers to the fact that slightly deleterious mutations that negatively effect [[notes/Stability and thermostability|stability]] might have no impact on fitness up to a certain point, and that the effects can be devastating beyond this point.
 ![[Fitness_sigmoidal.png]]
 	*Ref [@sarkisyan2016]*
 

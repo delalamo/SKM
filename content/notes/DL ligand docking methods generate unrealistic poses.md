@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**Deep learning is significantly worse at maintaining the shape of the ligand in general than classical approaches** [@buttenschoen2023]. For [[notes/diffusion-models|diffusion]]-based prediction, this can be partially fixed with m[[notes/diffusion-guidance|guidance]].
+**Deep learning is significantly worse at maintaining the shape of the ligand in general than classical approaches** [@buttenschoen2023]. For [[notes/Diffusion models|diffusion]]-based prediction, this can be partially fixed with m[[notes/Diffusion guidance|guidance]].
 
 #### Figures
 

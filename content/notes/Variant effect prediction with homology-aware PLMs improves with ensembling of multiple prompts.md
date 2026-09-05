@@ -9,7 +9,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**[[notes/variant-effect-prediction|Variant effect prediction]] with homology-aware [[notes/protein-language-models|PLMs]] improves with ensembling of multiple prompts** [@wells2025profam]. This means stochastically sampling from homologs to include during inference and pooling the predicted results.
+**[[notes/Variant effect prediction|Variant effect prediction]] with homology-aware [[notes/Protein language models|PLMs]] improves with ensembling of multiple prompts** [@wells2025profam]. This means stochastically sampling from homologs to include during inference and pooling the predicted results.
 
 #### Figures
 

@@ -7,7 +7,7 @@ modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-**[[Sequence perplexity|Self-consistency perplexity]] is correlated with [[notes/plddt|pLDDT]]** [@alamdari2023].
+**[[Sequence perplexity|Self-consistency perplexity]] is correlated with [[notes/pLDDT|pLDDT]]** [@alamdari2023].
 
 #### Figures
 ![[Pasted-image-20241105051614.png]]

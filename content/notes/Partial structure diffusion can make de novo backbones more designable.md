@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**Partial [[notes/protein-backbone-design#Diffusion|structure diffusion]] can improve the designability of *de novo* designed backbones.**
+**Partial [[notes/Protein backbone design#Diffusion|structure diffusion]] can improve the designability of *de novo* designed backbones.**
 
 #### Details
 
@@ -22,4 +22,4 @@ Partial RF-diffusion was applied to [[Chroma]] designs, followed by sequence des
 
 #### See also
 
-* [[notes/protein-backbone-design|Protein backbone design]]
+* [[notes/Protein backbone design|Protein backbone design]]

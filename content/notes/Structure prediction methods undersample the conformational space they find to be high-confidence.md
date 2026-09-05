@@ -8,4 +8,4 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**Protein [[notes/structure-prediction|Structure prediction]] methods from both [[notes/alphafold2|AlphaFold2]]- and [[notes/diffusion-models|AF3]]-generation undersample the conformational space that they find to be high-confidence** [@roney2025]. In other words, they will favorably score physiologically relevant conformations when presented indirectly with the structure, but will fail to sample it by default unless hacked with custom alignments and/or templates (e.g., for conformational changes).
+**Protein [[notes/Structure prediction|Structure prediction]] methods from both [[notes/AlphaFold2|AlphaFold2]]- and [[notes/Diffusion models|AF3]]-generation undersample the conformational space that they find to be high-confidence** [@roney2025]. In other words, they will favorably score physiologically relevant conformations when presented indirectly with the structure, but will fail to sample it by default unless hacked with custom alignments and/or templates (e.g., for conformational changes).

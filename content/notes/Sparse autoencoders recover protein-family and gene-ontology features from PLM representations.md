@@ -7,7 +7,7 @@ modified: "2026-07-20T09:52:04"
 
 #### Summary
 
-**[[Sparse autoencoder|Sparse autoencoders]] trained on [[notes/protein-language-models|protein language model]] representations recover interpretable features associated with protein families, gene names, and Gene Ontology terms.** These features can be extracted from both pooled protein representations and residue-level representations [@gujral2025].
+**[[Sparse autoencoder|Sparse autoencoders]] trained on [[notes/Protein language models|protein language model]] representations recover interpretable features associated with protein families, gene names, and Gene Ontology terms.** These features can be extracted from both pooled protein representations and residue-level representations [@gujral2025].
 
 #### See also
 

@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**Protein structure is more conserved than sequence.** Many proteins have similar structures but barely any sequence overlap [@kilinc2023; @illergrd2009; @chothia1986; @delalamo2022]. As a result, [[Clustering|clustering]] proteins using their structures is more effective than clustering by using their sequence [@moi2023]. Likewise, calculating phylogenies is more accurate using structure than sequence - [@moi2023] used [[notes/alphafold2|AlphaFold2]] models alongside [[Foldseek]] to do so.
+**Protein structure is more conserved than sequence.** Many proteins have similar structures but barely any sequence overlap [@kilinc2023; @illergrd2009; @chothia1986; @delalamo2022]. As a result, [[Clustering|clustering]] proteins using their structures is more effective than clustering by using their sequence [@moi2023]. Likewise, calculating phylogenies is more accurate using structure than sequence - [@moi2023] used [[notes/AlphaFold2|AlphaFold2]] models alongside [[Foldseek]] to do so.
 
 #### Details
 

@@ -6,7 +6,7 @@ tags:
   - design/inverse-folding
 ---
 
-**ESM-IF** is an [[notes/inverse-folding|Inverse folding]] method that uses twelve million [[notes/alphafold2|AlphaFold2]] structures during training, in addition to PDB. It uses an encoder-decoder [[Transformer]] architecture with a [[Geometric Vector Perceptrons|GVP]] as well as fixed-order decoding (autoregressive).
+**ESM-IF** is an [[notes/Inverse folding|Inverse folding]] method that uses twelve million [[notes/AlphaFold2|AlphaFold2]] structures during training, in addition to PDB. It uses an encoder-decoder [[Transformer]] architecture with a [[Geometric Vector Perceptrons|GVP]] as well as fixed-order decoding (autoregressive).
 
 ![[ESM-IF.png]]
 *Ref [@hsu2022]*

@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**There is no best-at-everything [[notes/protein-backbone-design|protein design]] method specifically for motif scaffolding** [@frank2024]. For some cases, [[Inversion of protein folding neural networks|hallucination]] outperforms [[notes/diffusion-models|diffusion]], for others vice-versa. No clear pattern is evident.
+**There is no best-at-everything [[notes/Protein backbone design|protein design]] method specifically for motif scaffolding** [@frank2024]. For some cases, [[Inversion of protein folding neural networks|hallucination]] outperforms [[notes/Diffusion models|diffusion]], for others vice-versa. No clear pattern is evident.
 
 #### Figures
 

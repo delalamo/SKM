@@ -6,7 +6,7 @@ tags:
   - model-design/architectures
 ---
 
-**Transformers** are a type of neural network widely used in language modeling. Most [[notes/protein-language-models|Protein language models]] and [[notes/structure-prediction|protein folding methods]] use transformers in some capacity.
+**Transformers** are a type of neural network widely used in language modeling. Most [[notes/Protein language models|Protein language models]] and [[notes/Structure prediction|protein folding methods]] use transformers in some capacity.
 
 #### Types
 

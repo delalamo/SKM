@@ -15,7 +15,7 @@ tags:
 Characterized by:
 * Antiviral activity
 * Anti-proliferative activity
-* Differentiation of [[notes/b-cells|B cells]]
+* Differentiation of [[notes/B cells|B cells]]
 * TH17 response
 * Maturation and activation of dendritic cells
 * Interferon receptors are ubiquitously expressed, and this can be a problem.

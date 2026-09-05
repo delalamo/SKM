@@ -7,4 +7,4 @@ tags:
   - biophysics/interactions
 ---
 
-**Molecular glues** are small molecules that facilitate [[notes/protein-protein-interactions|protein-protein interactions]]. Most but not all of these act through [[Targeted protein degradation|targeted protein degradation]] [@bekes2022].
+**Molecular glues** are small molecules that facilitate [[notes/Protein-protein interactions|protein-protein interactions]]. Most but not all of these act through [[Targeted protein degradation|targeted protein degradation]] [@bekes2022].

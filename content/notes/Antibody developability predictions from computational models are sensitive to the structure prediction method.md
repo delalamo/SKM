@@ -9,7 +9,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**[[tags/antibodies|Antibody]] [[notes/antibody-developability|developability]] predictions from computational models are highly sensitive to the method used to [[notes/antibody-structure-prediction|predict the structure]]** ([@bashour2024], Victor Greiff's EMBL-EBI presentation, 2024). The use of short [[MD simulations]] can be used to partially offset this and will lead to distributions of predictions that match experimental distributions, but it's unclear if this is addressed at the per-antibody level.
+**[[tags/antibodies|Antibody]] [[notes/Antibody developability|developability]] predictions from computational models are highly sensitive to the method used to [[notes/Antibody structure prediction|predict the structure]]** ([@bashour2024], Victor Greiff's EMBL-EBI presentation, 2024). The use of short [[MD simulations]] can be used to partially offset this and will lead to distributions of predictions that match experimental distributions, but it's unclear if this is addressed at the per-antibody level.
 
 #### Figures
 

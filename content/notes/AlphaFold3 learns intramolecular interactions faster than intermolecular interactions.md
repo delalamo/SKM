@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**[[notes/alphafold3|AlphaFold3]] learns interactions between the same type of molecule faster than interactions between different types of molecules** [@abramson2024].
+**[[notes/AlphaFold3|AlphaFold3]] learns interactions between the same type of molecule faster than interactions between different types of molecules** [@abramson2024].
 
 #### Figures
 

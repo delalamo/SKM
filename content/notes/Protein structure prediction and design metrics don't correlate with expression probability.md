@@ -9,7 +9,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**Protein [[notes/structure-prediction|structure prediction]] and design metrics ([[notes/plddt|pLDDT]], perplexity, sequence homology) do not correlate with probability of expression** [@yang2025dayhoff].
+**Protein [[notes/Structure prediction|structure prediction]] and design metrics ([[notes/pLDDT|pLDDT]], perplexity, sequence homology) do not correlate with probability of expression** [@yang2025dayhoff].
 
 #### Figures
 

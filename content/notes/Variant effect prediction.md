@@ -1,6 +1,7 @@
 ---
 title: Variant effect prediction
 aliases:
+  - "notes/variant-effect-prediction"
   - "Variant effect prediction"
   - "tags/variant-effect-prediction"
 created: "2026-04-10T14:30:55"

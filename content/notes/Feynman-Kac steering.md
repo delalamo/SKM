@@ -4,7 +4,7 @@ tags:
   - model-design/generative-models
 ---
 #### Summary
-**Feynman-Kac steering** is a sequential Monte Carlo-based scheme for [[notes/diffusion-guidance|guiding]] [[notes/diffusion-models|diffusion models]] at inference time. Examples include its use in the [[notes/alphafold3|Alphafold3]] clone [[Boltz]].
+**Feynman-Kac steering** is a sequential Monte Carlo-based scheme for [[notes/Diffusion guidance|guiding]] [[notes/Diffusion models|diffusion models]] at inference time. Examples include its use in the [[notes/AlphaFold3|Alphafold3]] clone [[Boltz]].
 
 It reweights a base model using a reward,
 

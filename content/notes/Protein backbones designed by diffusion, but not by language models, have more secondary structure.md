@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**[[notes/protein-backbone-design|Designed protein backbones]] have more secondary structure content than naturally occurring proteins** [@chu2024]. Natural proteins redesigned for improved expression have also had their loops removed [@sumida2024]. In contrast, [[notes/protein-language-models|language model]]-designed proteins tend to have [[Protein backbones designed using diffusion, but not sequence-based models, have fewer beta sheets|more sheets]] and loops.
+**[[notes/Protein backbone design|Designed protein backbones]] have more secondary structure content than naturally occurring proteins** [@chu2024]. Natural proteins redesigned for improved expression have also had their loops removed [@sumida2024]. In contrast, [[notes/Protein language models|language model]]-designed proteins tend to have [[Protein backbones designed using diffusion, but not sequence-based models, have fewer beta sheets|more sheets]] and loops.
 
 #### Figures
 

@@ -9,7 +9,7 @@ tags:
 ---
 #### Summary
 
-**Fine-tuned [[notes/protein-language-models|protein language models]] generalize poorly to mutations at positions absent from the fine-tuning dataset** [@didi2026]. This is not universal: likelihood-based ranking fine-tuning outperformed embedding-based predictors on positional extrapolation splits, although performance still fell relative to random splits [@hawkinshooker2024].
+**Fine-tuned [[notes/Protein language models|protein language models]] generalize poorly to mutations at positions absent from the fine-tuning dataset** [@didi2026]. This is not universal: likelihood-based ranking fine-tuning outperformed embedding-based predictors on positional extrapolation splits, although performance still fell relative to random splits [@hawkinshooker2024].
 
 #### Figures
 ![[Pasted-image-20260226153311.png]]

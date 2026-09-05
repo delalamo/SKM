@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**[[notes/tm-score|pTM]] is less lenient than [[notes/plddt|pLDDT]] when assessing structurally novel alternate conformations** [@herrington2023].
+**[[notes/TM-score|pTM]] is less lenient than [[notes/pLDDT|pLDDT]] when assessing structurally novel alternate conformations** [@herrington2023].
 
 #### See also
 

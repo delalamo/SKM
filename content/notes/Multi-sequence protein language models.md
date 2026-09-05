@@ -7,7 +7,7 @@ tags:
   - inference/conditioning
 ---
 
-Multi-sequence [[notes/protein-language-models|protein language models]] use a context of related sequences, either through [[Multiple sequence alignments|multiple sequence alignments]] or through unaligned sequences pre-pended to the query.
+Multi-sequence [[notes/Protein language models|protein language models]] use a context of related sequences, either through [[Multiple sequence alignments|multiple sequence alignments]] or through unaligned sequences pre-pended to the query.
 
 #### Models
 

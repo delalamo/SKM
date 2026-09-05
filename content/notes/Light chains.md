@@ -1,6 +1,7 @@
 ---
 title: Light chains
 aliases:
+  - "notes/light-chains"
   - "Light chains"
   - "tags/light-chains"
 created: 2026-04-10T14:30:55
@@ -13,5 +14,5 @@ The **light chain** of an [[tags/antibodies|antibody]] makes up part of its [[Va
 
 #### Kappa and lambda subtype
 
-- **The ratio of kappa to lambda in circulating antibodies is about 60:40; when this falls out of balance, that can be a symptom of [[notes/b-cells|B cell]] lymphoma.**
+- **The ratio of kappa to lambda in circulating antibodies is about 60:40; when this falls out of balance, that can be a symptom of [[notes/B cells|B cell]] lymphoma.**
 - **Lambda light chains are more flexible than kappa light chains due to an extra glycine in the switch region** ([[_Articles that need citations]]).

@@ -9,7 +9,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**Sequences with lower [[Sequence perplexity|log-likelihood]] values yield poor zero-shot [[notes/variant-effect-prediction|variant effect prediction values]] using [[notes/protein-language-models|protein language models]]** [@gordon2024; @wells2025profam]. This can be mitigated by fine-tuning [@gordon2024]. In contrast, sequences with high log-likelihoods yield poorer predictions when using a fine-tuned model (i.e., the opposite result). However, [[Correlation between sequence log-likelihood and variant effect prediction performance breaks down as PLMs get larger|this correlation breaks down as PLMs get larger]].
+**Sequences with lower [[Sequence perplexity|log-likelihood]] values yield poor zero-shot [[notes/Variant effect prediction|variant effect prediction values]] using [[notes/Protein language models|protein language models]]** [@gordon2024; @wells2025profam]. This can be mitigated by fine-tuning [@gordon2024]. In contrast, sequences with high log-likelihoods yield poorer predictions when using a fine-tuned model (i.e., the opposite result). However, [[Correlation between sequence log-likelihood and variant effect prediction performance breaks down as PLMs get larger|this correlation breaks down as PLMs get larger]].
 
 #### Figures
 

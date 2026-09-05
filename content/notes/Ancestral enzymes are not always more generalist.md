@@ -7,4 +7,4 @@ modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-**[[notes/ancestral-sequence-reconstruction|Ancestrally reconstructed]] enzymes are not always more generalist than extant enzymes.** [@busch2016] found that an ancestral tryptophan synthase did not have greater substrate breadth than modern enzymes. This contrasts with prior hypotheses that generalist ancestral enzymes evolved specificity over time, which is corroborated by other reports, such as ancestral L-arginine oxidase from [@nakano2019], and transaminase from [@wilding2017].
+**[[notes/Ancestral sequence reconstruction|Ancestrally reconstructed]] enzymes are not always more generalist than extant enzymes.** [@busch2016] found that an ancestral tryptophan synthase did not have greater substrate breadth than modern enzymes. This contrasts with prior hypotheses that generalist ancestral enzymes evolved specificity over time, which is corroborated by other reports, such as ancestral L-arginine oxidase from [@nakano2019], and transaminase from [@wilding2017].

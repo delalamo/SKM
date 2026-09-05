@@ -9,7 +9,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**ML models trained exclusively on experimental structures are less effective on computational models** [@huang2024; @su2023]. [@huang2024] attributed this to "structure embedding bias", hypothesize that improvements in structure prediction are not predicted to remove this bias, and address it using [[notes/contrastive-learning|contrastive learning]]. [@su2023] observe this in a version of SaProt which is trained on [[Foldseek]] tokens derived from PDB structures rather than [[notes/alphafold2|AlphaFold2]] models.
+**ML models trained exclusively on experimental structures are less effective on computational models** [@huang2024; @su2023]. [@huang2024] attributed this to "structure embedding bias", hypothesize that improvements in structure prediction are not predicted to remove this bias, and address it using [[notes/Contrastive learning|contrastive learning]]. [@su2023] observe this in a version of SaProt which is trained on [[Foldseek]] tokens derived from PDB structures rather than [[notes/AlphaFold2|AlphaFold2]] models.
 
 #### See also
 

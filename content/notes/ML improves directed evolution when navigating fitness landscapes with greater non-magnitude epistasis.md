@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**ML improves [[Directed evolution|directed evolution]] when navigating fitness landscapes with greater non-magnitude [[notes/epistasis|epistasis]]** (e.g., a sign change; [@li2024c]).
+**ML improves [[Directed evolution|directed evolution]] when navigating fitness landscapes with greater non-magnitude [[notes/Epistasis|epistasis]]** (e.g., a sign change; [@li2024c]).
 
 #### Figures
 

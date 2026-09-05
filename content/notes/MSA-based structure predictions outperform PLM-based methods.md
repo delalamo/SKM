@@ -7,7 +7,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**Protein [[notes/structure-prediction|structure prediction]] methods reliant on [[Multiple sequence alignments|MSAs]] outperform those that use [[notes/protein-language-models|PLMs]]**. This was observed in [[CASP15]] and documented by [@hu2022; @barrett2022].
+**Protein [[notes/Structure prediction|structure prediction]] methods reliant on [[Multiple sequence alignments|MSAs]] outperform those that use [[notes/Protein language models|PLMs]]**. This was observed in [[CASP15]] and documented by [@hu2022; @barrett2022].
 
 #### Details
 

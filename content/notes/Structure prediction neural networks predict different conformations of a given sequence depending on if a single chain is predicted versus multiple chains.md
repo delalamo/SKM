@@ -9,4 +9,4 @@ review:
 ---
 
 #### Summary
-**[[notes/structure-prediction|Structure prediction]] neural networks predict different conformations of a given sequence depending on if a single chain is predicted vs. multiple chains** [@jendrusch2025b; @cummins2022].
+**[[notes/Structure prediction|Structure prediction]] neural networks predict different conformations of a given sequence depending on if a single chain is predicted vs. multiple chains** [@jendrusch2025b; @cummins2022].

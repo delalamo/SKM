@@ -7,7 +7,7 @@ tags:
   - antibodies/repertoires
 ---
 
-**[[Germline]]-encoded amino acid-binding motifs** (shortened **GRAB motifs**, coined by [@shrock2023]) are regions in [[tags/antibodies|antibodies]], mostly in the [[notes/light-chains|light chain]] [[Complementarity-determining regions|CDRs]], that target specific amino acids on the surface of potential epitopes. For example, a common lysine-binding GRAB motif is D51 in CDR2 of many lambda light chains.
+**[[Germline]]-encoded amino acid-binding motifs** (shortened **GRAB motifs**, coined by [@shrock2023]) are regions in [[tags/antibodies|antibodies]], mostly in the [[notes/Light chains|light chain]] [[Complementarity-determining regions|CDRs]], that target specific amino acids on the surface of potential epitopes. For example, a common lysine-binding GRAB motif is D51 in CDR2 of many lambda light chains.
 
 #### Details
 - Lysine-binding GRAB motifs:

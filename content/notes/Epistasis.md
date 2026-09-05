@@ -1,6 +1,7 @@
 ---
 title: Epistasis
 aliases:
+  - "notes/epistasis"
   - "Epistasis"
   - "tags/epistasis"
 created: 2026-04-10T14:02:57

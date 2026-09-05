@@ -6,7 +6,7 @@ created: "2024-04-15T02:57:00"
 modified: "2026-08-25T12:02:05"
 ---
 #### Summary
-**Fab [[notes/thermostability|thermostability]] is not correlated with [[notes/antibody-developability|polyreactivity]]** [@shehata2019].
+**Fab [[notes/Stability and thermostability|thermostability]] is not correlated with [[notes/Antibody developability|polyreactivity]]** [@shehata2019].
 
 #### Details
 In a panel of B cell-derived [[tags/antibodies|mAbs]], apparent melting temperature and PSR score had $R^2 = 0.0083$.

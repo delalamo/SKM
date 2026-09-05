@@ -7,7 +7,7 @@ created: "2025-02-16T03:31:21"
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
-**[[tags/antibodies|Antibody]] [[notes/protein-language-models|language models]] learn about both V gene usage and [[notes/affinity-maturation|affinity maturation]] status (how far antibody sequences are from [[Germline|germline]]).** This has been observed in AntiBERTy, AbLang, and PALM [@ruffolo2021; @olsen2022; @jing2024]. Progression of sequences in [[notes/immune-repertoires|immune repertoires]] can be observed in [[Dimensionality reduction|dimensionality reduction]] of AntiBERTy embeddings (t-SNE). This was also shown with AntiBERTa but not SAPIENS or ProtBERT.
+**[[tags/antibodies|Antibody]] [[notes/Protein language models|language models]] learn about both V gene usage and [[notes/Affinity maturation|affinity maturation]] status (how far antibody sequences are from [[Germline|germline]]).** This has been observed in AntiBERTy, AbLang, and PALM [@ruffolo2021; @olsen2022; @jing2024]. Progression of sequences in [[notes/Immune repertoires|immune repertoires]] can be observed in [[Dimensionality reduction|dimensionality reduction]] of AntiBERTy embeddings (t-SNE). This was also shown with AntiBERTa but not SAPIENS or ProtBERT.
 
 #### Figures
 ![[Repertoire-AntiBERTy-PCA.png]]

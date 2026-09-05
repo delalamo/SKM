@@ -7,7 +7,7 @@ tags:
   - prediction/structure
 ---
 
-The **Evoformer** is a deep learning module introduced and used by [[notes/alphafold2|AlphaFold2]] that processes [[Multiple sequence alignments]] for protein [[notes/structure-prediction|structure prediction]]. It contains the majority of trainable parameters and is similar to [[MSA Transformer]] (probably independently developed) in that it uses axial attention.
+The **Evoformer** is a deep learning module introduced and used by [[notes/AlphaFold2|AlphaFold2]] that processes [[Multiple sequence alignments]] for protein [[notes/Structure prediction|structure prediction]]. It contains the majority of trainable parameters and is similar to [[MSA Transformer]] (probably independently developed) in that it uses axial attention.
 
 #### Mentions
 

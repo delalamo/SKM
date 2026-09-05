@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**The distance between mean-pooled [[notes/protein-language-models|PLM]] embeddings of domains are negatively correlated with functional similarity of those domains** [@ibtehaz2023].
+**The distance between mean-pooled [[notes/Protein language models|PLM]] embeddings of domains are negatively correlated with functional similarity of those domains** [@ibtehaz2023].
 
 #### See also
 * [[Function prediction]]

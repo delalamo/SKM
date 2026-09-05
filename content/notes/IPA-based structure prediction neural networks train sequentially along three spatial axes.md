@@ -8,4 +8,4 @@ created: "2026-04-21T05:01:15"
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
-**[[notes/alphafold2|OpenFold]] training proceeds sequentially along XYZ principal components** [@ahdritz2022].
+**[[notes/AlphaFold2|OpenFold]] training proceeds sequentially along XYZ principal components** [@ahdritz2022].

@@ -6,7 +6,7 @@ created: "2026-03-25T08:53:13"
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
-[[MPNN-like design profiles may be the source of high thermostability]]**[[ProteinMPNN]]-like [[notes/inverse-folding|sequence design]] profiles may be the source of high [[notes/thermostability|thermostability]]** [@didi2026a]. This was observed in the Proteina-Complexa paper, which sampled sequences in two "modes", one low-temperature (yielding sequence profiles similar to ProteinMPNN outputs) and one high-temperature (yield sequences with UniProt-like residue propensities). The former were more thermostable than the latter.
+[[MPNN-like design profiles may be the source of high thermostability]]**[[ProteinMPNN]]-like [[notes/Inverse folding|sequence design]] profiles may be the source of high [[notes/Stability and thermostability|thermostability]]** [@didi2026a]. This was observed in the Proteina-Complexa paper, which sampled sequences in two "modes", one low-temperature (yielding sequence profiles similar to ProteinMPNN outputs) and one high-temperature (yield sequences with UniProt-like residue propensities). The former were more thermostable than the latter.
 
 #### Figures
 ![[Pasted-image-20260325085259.png]]

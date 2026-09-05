@@ -6,7 +6,7 @@ created: "2025-04-24T03:21:49"
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
-**Sequence clustering of training data affects performance of [[notes/variant-effect-prediction|variant effect prediction]] by [[notes/protein-language-models|protein language models]]** [@meier2022]. Clustering at 90% leads to the best performance when training [[ESM]] models.
+**Sequence clustering of training data affects performance of [[notes/Variant effect prediction|variant effect prediction]] by [[notes/Protein language models|protein language models]]** [@meier2022]. Clustering at 90% leads to the best performance when training [[ESM]] models.
 
 #### Figures
 ![[Pasted-image-20241009102907.png|300]]

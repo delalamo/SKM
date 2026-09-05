@@ -8,4 +8,4 @@ modified: "2026-04-21T10:30:31"
 ---
 
 #### Summary
-**[[notes/affinity-maturation|Affinity maturation]] causes antibody-antigen interfaces to more closely resemble those of generic [[notes/protein-protein-interactions|protein-protein interactions]]** [@burkovitz2013].
+**[[notes/Affinity maturation|Affinity maturation]] causes antibody-antigen interfaces to more closely resemble those of generic [[notes/Protein-protein interactions|protein-protein interactions]]** [@burkovitz2013].

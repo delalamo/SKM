@@ -1,6 +1,7 @@
 ---
 title: Protein-protein interactions
 aliases:
+  - "notes/protein-protein-interactions"
   - "Protein-protein interactions"
   - "tags/protein-protein-interactions"
 created: "2026-04-10T14:30:55"

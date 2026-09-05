@@ -8,7 +8,7 @@ modified: "2026-07-19T10:07:27"
 
 ## Summary
 
-**Compression of protein sequences and [[notes/structure-prediction|structures]] from [[notes/protein-language-models#Representations|PLM representations]] passed through [[Variational autoencoders|VQ-VAEs]] is prone to codebook collapse when insufficiently compressed** [@lu2025tokenized]. This can be ameliorated using alternative architectures.
+**Compression of protein sequences and [[notes/Structure prediction|structures]] from [[notes/Protein language models#Representations|PLM representations]] passed through [[Variational autoencoders|VQ-VAEs]] is prone to codebook collapse when insufficiently compressed** [@lu2025tokenized]. This can be ameliorated using alternative architectures.
 
 ## Figures
 
@@ -17,5 +17,5 @@ modified: "2026-07-19T10:07:27"
 
 ## See also
 
-* [[notes/protein-structure-tokenization|Protein structure tokenization]]
+* [[notes/Protein structure tokenization|Protein structure tokenization]]
 * [[Straight-through estimator]]

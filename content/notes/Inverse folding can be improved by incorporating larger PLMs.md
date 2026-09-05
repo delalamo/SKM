@@ -6,7 +6,7 @@ created: "2024-07-02T05:18:09"
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
- **[[notes/inverse-folding|Inverse folding]] can be improved by incorporating larger [[notes/protein-language-models|PLMs]]** [@ren2024]. This was shown using CarbonDesign, which incorporates an [[ESM]] during inference.
+ **[[notes/Inverse folding|Inverse folding]] can be improved by incorporating larger [[notes/Protein language models|PLMs]]** [@ren2024]. This was shown using CarbonDesign, which incorporates an [[ESM]] during inference.
 
 #### Figures
 ![[Pasted-image-20240528070135.png]]

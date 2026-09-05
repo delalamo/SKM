@@ -1,6 +1,7 @@
 ---
-title: Developability
+title: Antibody developability
 aliases:
+  - "notes/antibody-developability"
   - "Developability"
   - "tags/antibody-developability"
 created: 2026-04-05T23:36:09
@@ -22,9 +23,9 @@ tags:
 
 #### Thermostability
 
-_See [[notes/thermostability|Stability and thermostability]]_
+_See [[notes/Stability and thermostability|Stability and thermostability]]_
 
 #### Immunogenicity
 
-- **Glycine residues doesn't cause [[notes/antibody-developability#Immunogenicity|immunogenicity]] as much as other residues** [@aina2023]. This makes them used for including during design of cyclic peptides or peptide therapeutics.
+- **Glycine residues doesn't cause [[notes/Antibody developability#Immunogenicity|immunogenicity]] as much as other residues** [@aina2023]. This makes them used for including during design of cyclic peptides or peptide therapeutics.
 - **[[Antibody humanization]] can lead to immunogenic reactions.**

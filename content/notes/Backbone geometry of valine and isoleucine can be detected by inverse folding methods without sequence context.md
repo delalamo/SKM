@@ -6,7 +6,7 @@ modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-**The backbone geometry of valine and isoleucine can be detected by [[notes/inverse-folding|inverse folding]] methods without sequence context** [@dutton2024].
+**The backbone geometry of valine and isoleucine can be detected by [[notes/Inverse folding|inverse folding]] methods without sequence context** [@dutton2024].
 
 #### Figures
 ![[Pasted-image-20240618132444.png]]

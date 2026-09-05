@@ -7,7 +7,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**[[notes/alphafold2|AlphaFold2]] prefers to model proteins in the holo form for 67% of cases** [@saldao2022].
+**[[notes/AlphaFold2|AlphaFold2]] prefers to model proteins in the holo form for 67% of cases** [@saldao2022].
 
 #### See also
 

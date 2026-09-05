@@ -7,12 +7,12 @@ tags:
   - prediction/complexes
 ---
 
-**Protein-ligand co-folding** refers to methods that can [[notes/structure-prediction|predict the structures of proteins]] with small molecules or other macromolecules such as RNA.
+**Protein-ligand co-folding** refers to methods that can [[notes/Structure prediction|predict the structures of proteins]] with small molecules or other macromolecules such as RNA.
 
 #### Methods
 
-* [[notes/alphafold3|AlphaFold3]]
-* [[notes/rosettafold|RosettaFold-AllAtom]]
+* [[notes/AlphaFold3|AlphaFold3]]
+* [[notes/RoseTTAFold|RosettaFold-AllAtom]]
 * Chai-1
 * Boltz-1
 * NeuralPlexer

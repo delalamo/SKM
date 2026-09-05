@@ -8,7 +8,7 @@ modified: "2026-04-21T07:28:09"
 
 #### Summary
 
-**Protein [[notes/structure-prediction|structural ensemble prediction]] methods such as [[AlphaFlow and ESMFlow]], as well as [[Multiple sequence alignments|MSA]]-based tricks such as subsampling and clustering, are unable to capture [[Protein dynamics|alternate conformations]] found in [[X-ray-crystallography]] density** [@rosenberg2024]. In contrast, [[MD simulations]] can often (but not always) sample both states.
+**Protein [[notes/Structure prediction|structural ensemble prediction]] methods such as [[AlphaFlow and ESMFlow]], as well as [[Multiple sequence alignments|MSA]]-based tricks such as subsampling and clustering, are unable to capture [[Protein dynamics|alternate conformations]] found in [[X-ray-crystallography]] density** [@rosenberg2024]. In contrast, [[MD simulations]] can often (but not always) sample both states.
 
 #### Figures
 

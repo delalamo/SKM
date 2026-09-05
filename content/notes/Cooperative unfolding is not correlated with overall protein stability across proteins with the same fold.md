@@ -7,7 +7,7 @@ modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-**Cooperative unfolding is uncorrelated with overall protein [[notes/thermostability|stability]] across proteins with the same fold** [@ferrari2025].
+**Cooperative unfolding is uncorrelated with overall protein [[notes/Stability and thermostability|stability]] across proteins with the same fold** [@ferrari2025].
 
 #### Figures
 ![[Mesophilic.png]]

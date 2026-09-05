@@ -1,6 +1,7 @@
 ---
 title: Protein structure tokenization
 aliases:
+  - "notes/protein-structure-tokenization"
   - "Protein structure tokenization"
   - "tags/protein-structure-tokenization"
 created: "2026-04-10T14:30:55"
@@ -14,4 +15,4 @@ tags:
 
 #### Notes
 
-- **Structural tokenization circumvents the inability of [[notes/inverse-folding|inverse folding]] models to be [[ML models trained exclusively on experimental structures are less effective on computational models|effectively trained on exclusively computational models]].**
+- **Structural tokenization circumvents the inability of [[notes/Inverse folding|inverse folding]] models to be [[ML models trained exclusively on experimental structures are less effective on computational models|effectively trained on exclusively computational models]].**

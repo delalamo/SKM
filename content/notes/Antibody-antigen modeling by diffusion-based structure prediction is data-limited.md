@@ -10,7 +10,7 @@ publicationHistory:
 
 #### Summary
 
-**[[Antibody-antigen interactions|Antibody-antigen]] [[notes/structure-prediction|complex prediction]] by [[notes/diffusion-models|diffusion]]-based [[notes/structure-prediction|structure prediction]] methods is data-limited** [@zhang2026]. This is not true of other poor-performing tasks, such as small molecule docking. This was observed using a version of Protenix trained on four additional years of public data.
+**[[Antibody-antigen interactions|Antibody-antigen]] [[notes/Structure prediction|complex prediction]] by [[notes/Diffusion models|diffusion]]-based [[notes/Structure prediction|structure prediction]] methods is data-limited** [@zhang2026]. This is not true of other poor-performing tasks, such as small molecule docking. This was observed using a version of Protenix trained on four additional years of public data.
 
 #### Figures
 
