@@ -1,7 +1,7 @@
 ---
 tags:
-  - thermostability
-  - protein-folding/unfolding
+  - biophysics/folding
+  - biophysics/stability
 created: "2025-04-22T00:48:43"
 modified: "2026-04-21T05:01:15"
 ---

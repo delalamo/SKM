@@ -1,6 +1,9 @@
 ---
 title: Gibbs sampling is less effective than simpler algorithms for sequence design using PSSMs
 tags:
+  - design/sequence-generation
+  - inference/sampling-and-search
+  - design/antibodies
 created: 2024-05-18T07:14:07
 modified: "2026-04-21T05:01:15"
 ---

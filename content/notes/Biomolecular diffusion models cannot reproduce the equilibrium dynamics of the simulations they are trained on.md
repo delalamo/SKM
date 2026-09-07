@@ -1,8 +1,8 @@
 ---
 tags:
-  - diffusion-models/structure-prediction
-  - protein-folding/structure-prediction
-  - conformational-dynamics/modeling
+  - prediction/ensembles
+  - evidence/generalization
+  - model-design/generative-models
 created: "2025-12-22T11:49:01"
 modified: "2026-04-21T05:01:15"
 ---

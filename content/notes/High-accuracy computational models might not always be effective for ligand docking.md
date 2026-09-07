@@ -1,6 +1,7 @@
 ---
 tags:
-  - ligand-docking
+  - prediction/ligand-docking
+  - evidence/design-validation
 created: 2024-12-04T02:49:44
 modified: "2026-04-21T05:01:15"
 ---

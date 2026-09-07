@@ -1,6 +1,7 @@
 ---
 tags:
-  - structure-prediction/architecture
+  - prediction/binding
+  - model-analysis/interpretability
 created: "2024-05-05T08:54:45"
 modified: "2026-04-21T05:01:15"
 ---

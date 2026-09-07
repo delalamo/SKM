@@ -1,6 +1,7 @@
 ---
 tags:
-  - protein-design/design
+  - design/directed-evolution
+  - evidence/design-validation
 created: 2024-05-08T18:09:20
 modified: "2026-04-21T05:01:15"
 ---

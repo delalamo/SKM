@@ -1,6 +1,7 @@
 ---
 tags:
-  - thermostability/design
+  - evolution/ancestry
+  - design/enzymes
 created: "2024-11-14T03:09:22"
 modified: "2026-04-21T05:01:15"
 ---

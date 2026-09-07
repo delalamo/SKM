@@ -1,6 +1,7 @@
 ---
 tags:
-  - variant-effect-prediction
+  - evidence/design-validation
+  - design/inverse-folding
 created: 2024-07-03T12:15:47
 modified: "2026-04-21T05:01:15"
 ---

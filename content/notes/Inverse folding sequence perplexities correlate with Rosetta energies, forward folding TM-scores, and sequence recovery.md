@@ -1,12 +1,13 @@
 ---
 tags:
-  - inverse-folding/evaluation
-  - tm-score
+  - evidence/design-validation
+  - design/inverse-folding
+  - prediction/confidence
 created: "2024-05-20T04:08:54"
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
- **[[inverse-folding|Inverse folding]] perplexities/log-likelihood values correlate with energies calculated with [[Rosetta]], [[tm-score|TM-score]] of forward-folded decoys using [[OmegaFold]]** [@liu2024]**, and sequence recovery** [@akpinaroglu2023].
+ **[[notes/Inverse folding|Inverse folding]] perplexities/log-likelihood values correlate with energies calculated with [[Rosetta]], [[notes/TM-score|TM-score]] of forward-folded decoys using [[OmegaFold]]** [@liu2024]**, and sequence recovery** [@akpinaroglu2023].
 
 #### Figures
 ![[Pasted-image-20240418073054.png]]

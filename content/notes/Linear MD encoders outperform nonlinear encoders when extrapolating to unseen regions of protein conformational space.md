@@ -1,6 +1,7 @@
 ---
 tags:
-  - conformational-dynamics/molecular-dynamics
+  - biophysics/ensemble-analysis
+  - evidence/generalization
 created: "2024-06-25T04:22:19"
 modified: "2026-04-21T05:01:15"
 ---

@@ -1,6 +1,8 @@
 ---
 tags:
-  - protein-backbone-design/designability
+  - prediction/structure
+  - prediction/ligand-docking
+  - inference/conditioning
 created: "2024-05-08T18:00:00"
 modified: "2026-04-21T05:01:15"
 ---

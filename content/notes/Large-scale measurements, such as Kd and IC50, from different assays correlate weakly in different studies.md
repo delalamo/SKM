@@ -1,8 +1,11 @@
 ---
 tags:
-  - citation-fix
+  - evidence/measurements
+  - prediction/binding
 created: 2026-04-05T17:41:51
 modified: "2026-07-28T14:12:17"
+review:
+  - "citation-fix"
 ---
 
 #### Summary

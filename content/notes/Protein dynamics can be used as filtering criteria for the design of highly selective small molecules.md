@@ -1,7 +1,9 @@
 ---
 title: Protein dynamics can be used as filtering criteria for the design of highly selective small molecules
 tags:
-  - conformational-dynamics/allostery
+  - biophysics/dynamics
+  - biophysics/interactions
+  - biophysics/molecular-simulation
 created: "2025-02-07T12:52:28"
 modified: "2026-04-21T05:01:15"
 ---

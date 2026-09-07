@@ -1,12 +1,13 @@
 ---
 tags:
-  - protein-language-models/antibodies
-  - antibody-developability/expression
+  - prediction/stability-expression
+  - inference/feature-extraction
+  - design/developability
 created: "2026-04-05T17:07:03"
 modified: "2026-07-28T14:12:17"
 ---
 #### Summary
-**[[antibodies|Antibody]]-specific [[protein-language-models|protein language models]] are worse for antibody [[antibody-developability|expression prediction]] than generic [[protein-language-models|PLMs]]** [@kenlay2024large].
+**[[tags/antibodies|Antibody]]-specific [[notes/Protein language models|protein language models]] are worse for antibody [[notes/Antibody developability|expression prediction]] than generic [[notes/Protein language models|PLMs]]** [@kenlay2024large].
 
 #### Figures
 | Model | Binding *N* = 422 (Shanehsazzadeh et al., 2023) | Binding *N* = 2048 (Warszawski et al., 2019) | Binding *N* = 4275 (Koenig et al., 2017) | Expression *N* = 4275 (Koenig et al., 2017) |

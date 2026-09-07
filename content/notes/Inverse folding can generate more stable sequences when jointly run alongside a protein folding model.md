@@ -1,12 +1,12 @@
 ---
 tags:
-  - inverse-folding/evaluation
-  - thermostability/design
+  - design/inverse-folding
+  - biophysics/stability
 created: "2025-02-17T06:26:27"
 modified: "2026-04-21T07:28:09"
 ---
 #### Summary
- **[[inverse-folding|Inverse folding]] can generate more [[thermostability|stable]] sequences when jointly run with a [[structure-prediction|protein folding]] model** [@cho2024]. This was achieved using trRosetta and backpropagated trRosetta. The authors formulate this design approach by jointly considering the inverse folding model $p(sequence|structure)$ and the forward-folding model $p(structure|sequence)$, as the former does not guarantee that the sequence preferentially folds into other states.
+ **[[notes/Inverse folding|Inverse folding]] can generate more [[notes/Stability and thermostability|stable]] sequences when jointly run with a [[notes/Structure prediction|protein folding]] model** [@cho2024]. This was achieved using trRosetta and backpropagated trRosetta. The authors formulate this design approach by jointly considering the inverse folding model $p(sequence|structure)$ and the forward-folding model $p(structure|sequence)$, as the former does not guarantee that the sequence preferentially folds into other states.
 
 #### Figures
 ![[Pasted-image-20241231142119.png]]

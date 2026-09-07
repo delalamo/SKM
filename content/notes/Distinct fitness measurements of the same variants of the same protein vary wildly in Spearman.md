@@ -1,7 +1,7 @@
 ---
 tags:
-  - variant-effect-prediction
-  - fitness-prediction
+  - evidence/measurements
+  - prediction/variant-effects
 created: "2026-06-23"
 modified: "2026-07-17T10:38:09"
 ---

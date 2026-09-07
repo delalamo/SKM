@@ -1,6 +1,7 @@
 ---
 tags:
-  - machine-learning
+  - training/pretraining-and-scaling
+  - model-analysis/interpretability
 created: "2026-07-19"
 modified: "2026-07-22T09:15:30"
 ---

@@ -1,6 +1,7 @@
 ---
 tags:
-  - conformational-dynamics/experimental-ensembles
+  - evidence/measurements
+  - biophysics/ensemble-analysis
 created: "2024-05-05T10:33:35"
 modified: "2026-04-21T05:01:15"
 summary: Cooling samples for cryogenic crystallography or cryo-EM narrows the conformational ensemble

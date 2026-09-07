@@ -1,6 +1,7 @@
 ---
 tags:
-  - antibody-structure-prediction/cdr
+  - prediction/antibody-structure
+  - prediction/ensembles
 created: "2024-08-22T05:12:57"
 modified: "2026-04-21T05:01:15"
 ---

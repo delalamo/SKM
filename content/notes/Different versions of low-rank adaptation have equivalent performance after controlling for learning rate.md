@@ -1,7 +1,6 @@
 ---
 tags:
-  - transformers
-  - low-rank-adaptation
+  - training/fine-tuning
 created: 2026-02-26T15:37:26
 modified: "2026-04-21T05:01:15"
 ---

@@ -1,6 +1,7 @@
 ---
 tags:
-  - thermostability/mutations
+  - evolution/mutation-effects
+  - biophysics/stability
 created: 2024-05-02T04:21:57
 modified: "2026-04-21T05:01:15"
 ---

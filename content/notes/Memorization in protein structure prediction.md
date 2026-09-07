@@ -1,6 +1,7 @@
 ---
 tags:
-  - structure-prediction/limitations
+  - evidence/generalization
+  - prediction/structure
 created: "2025-07-22T11:26:16"
 modified: "2026-04-21T05:01:15"
 ---

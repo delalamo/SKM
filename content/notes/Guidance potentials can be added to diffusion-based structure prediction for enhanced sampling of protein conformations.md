@@ -1,10 +1,7 @@
 ---
 tags:
-  - diffusion-models/structure-prediction
-  - diffusion-guidance/structure-prediction
-  - protein-folding/structure-prediction
-  - structure-prediction/sampling
-  - conformational-dynamics/modeling
+  - prediction/ensembles
+  - inference/guidance
 created: "2026-02-20T18:23:36"
 modified: "2026-04-21T05:01:15"
 ---

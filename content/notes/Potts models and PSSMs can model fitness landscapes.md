@@ -1,7 +1,8 @@
 ---
 title: Potts models and PSSMs can model fitness landscapes
 tags:
-  - conformational-dynamics/evolution
+  - prediction/variant-effects
+  - evolution/mutation-effects
 created: "2024-04-29T14:38:30"
 modified: "2026-04-21T05:01:15"
 ---

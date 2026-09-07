@@ -1,8 +1,7 @@
 ---
 tags:
-  - alphafold3
-  - structure-prediction/sampling
-  - conformational-dynamics/modeling
+  - prediction/ensembles
+  - inference/conditioning
 created: "2026-02-09T13:35:21"
 modified: "2026-04-21T05:01:15"
 ---

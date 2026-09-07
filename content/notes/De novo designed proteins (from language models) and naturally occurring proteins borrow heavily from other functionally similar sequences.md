@@ -1,6 +1,7 @@
 ---
 tags:
-  - protein-design/design
+  - evidence/generalization
+  - design/sequence-generation
 created: 2025-08-03T09:54:48
 modified: "2026-04-21T05:01:15"
 ---

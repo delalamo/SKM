@@ -4,6 +4,9 @@ aliases:
   - ESS
 created: "2026-07-22"
 modified: "2026-07-22T09:05:16"
+tags:
+  - biophysics/thermodynamics
+  - inference/guidance
 ---
 
 #### Summary

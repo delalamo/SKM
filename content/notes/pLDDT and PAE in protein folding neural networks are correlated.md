@@ -1,15 +1,13 @@
 ---
 tags:
-  - structure-prediction/metrics
-  - plddt
-  - pae
+  - prediction/confidence
 created: "2024-11-04T22:57:17"
 modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**The [[plddt|pLDDT]] and [[pae|PAE]] values of [[structure-prediction|protein folding neural networks]] are correlated** [@bennett2023; @strashnov2024].
+**The [[notes/pLDDT|pLDDT]] and [[notes/Predicted aligned error|PAE]] values of [[notes/Structure prediction|protein folding neural networks]] are correlated** [@bennett2023; @strashnov2024].
 
 #### Figures
 

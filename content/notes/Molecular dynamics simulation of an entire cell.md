@@ -1,7 +1,7 @@
 ---
 title: Molecular dynamics simulation of an entire cell
 tags:
-  - conformational-dynamics/molecular-dynamics
+  - biophysics/molecular-simulation
 created: "2024-04-16T08:45:31"
 modified: "2026-04-21T05:01:15"
 ---

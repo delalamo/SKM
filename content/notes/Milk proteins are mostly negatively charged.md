@@ -1,6 +1,6 @@
 ---
 title: Milk proteins are mostly negatively charged
-tags:
+tags: []
 created: 2024-05-05T10:35:12
 modified: "2026-04-21T05:01:15"
 ---

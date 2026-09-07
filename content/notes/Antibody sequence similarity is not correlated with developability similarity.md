@@ -1,6 +1,7 @@
 ---
 tags:
-  - antibody-developability/general
+  - design/developability
+  - prediction/stability-expression
 created: "2024-08-22T05:07:32"
 modified: "2026-04-21T05:01:15"
 ---

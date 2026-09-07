@@ -1,6 +1,7 @@
 ---
 tags:
-  - conformational-dynamics/allostery
+  - biophysics/dynamics
+  - biophysics/interactions
 created: "2024-09-19T05:32:41"
 modified: "2026-04-28T09:20:09"
 summary: Protein dynamics and substrate specificity are inversely correlated

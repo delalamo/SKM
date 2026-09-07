@@ -1,6 +1,7 @@
 ---
 tags:
-  - thermostability/prediction
+  - prediction/stability-expression
+  - prediction/variant-effects
 created: "2024-09-27T01:34:00"
 modified: "2026-04-21T05:01:15"
 ---

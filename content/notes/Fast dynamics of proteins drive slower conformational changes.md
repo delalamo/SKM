@@ -1,6 +1,6 @@
 ---
 tags:
-  - conformational-dynamics/kinetics
+  - biophysics/dynamics
 created: "2025-09-04T13:07:45"
 modified: "2026-04-21T05:01:15"
 ---

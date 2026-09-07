@@ -2,6 +2,8 @@
 title: Enhanced sampling
 created: 2026-04-10T14:30:55
 modified: "2026-04-17T06:40:29"
+tags:
+  - biophysics/molecular-simulation
 ---
 
 **Enhanced sampling** refers to methods to augment [[MD simulations]] by sample the [[Protein dynamics|conformational space of proteins]] more efficiently. In general there are two approaches:

@@ -1,7 +1,7 @@
 ---
 title: Allostery can be mediated by changes in thermal fluctuations without a mean structural change
 tags:
-  - conformational-dynamics/allostery
+  - biophysics/dynamics
 created: "2025-09-11T09:42:59"
 modified: "2026-08-19T17:14:27"
 ---

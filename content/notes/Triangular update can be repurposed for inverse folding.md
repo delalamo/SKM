@@ -1,12 +1,13 @@
 ---
 tags:
-  - inverse-folding/evaluation
+  - model-design/architectures
+  - design/inverse-folding
 created: "2024-05-28T00:59:15"
 modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
-**The [[Triangular update|triangular update]] can be repurposed for [[inverse-folding|inverse folding]]** [@ren2024].
+**The [[Triangular update|triangular update]] can be repurposed for [[notes/Inverse folding|inverse folding]]** [@ren2024].
 
 #### Figures
 ![[Pasted-image-20240528065907.png]]

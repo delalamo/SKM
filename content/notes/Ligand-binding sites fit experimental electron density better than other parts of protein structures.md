@@ -1,6 +1,7 @@
 ---
 tags:
-  - structure-prediction/experimental-data
+  - evidence/measurements
+  - prediction/ligand-docking
 created: 2024-12-17T02:52:28
 modified: "2026-04-21T05:01:15"
 ---

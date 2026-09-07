@@ -1,5 +1,6 @@
 ---
 tags:
+  - inference/sampling-and-search
 created: 2024-10-18T07:05:52
 modified: "2026-04-21T05:19:34"
 ---

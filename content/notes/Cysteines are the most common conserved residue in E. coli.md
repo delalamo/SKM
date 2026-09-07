@@ -1,3 +1,7 @@
+---
+tags:
+  - evolution/selection
+---
 #### Summary
 Cysteine residues are the most widespread conserved residue in *E. coli*[@liu2026].
 

@@ -1,7 +1,7 @@
 ---
 tags:
-  - affinity-maturation
-  - antibody-developability/polyspecificity
+  - antibodies/maturation
+  - evolution/mutation-effects
 created: "2026-03-16T11:36:47"
 modified: "2026-04-21T05:01:15"
 ---

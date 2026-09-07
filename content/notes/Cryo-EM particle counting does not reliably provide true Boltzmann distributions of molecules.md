@@ -1,5 +1,7 @@
 ---
 tags:
+  - evidence/measurements
+  - biophysics/ensemble-analysis
 created: 2025-04-07T12:22:36
 modified: "2026-04-21T05:01:15"
 ---

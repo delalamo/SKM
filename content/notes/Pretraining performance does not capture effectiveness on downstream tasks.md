@@ -1,6 +1,8 @@
 ---
 tags:
-  - transformers
+  - training/pretraining-and-scaling
+  - training/fine-tuning
+  - evidence/generalization
 created: 2026-01-22T12:38:44
 modified: "2026-08-25T13:38:32"
 ---

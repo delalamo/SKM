@@ -1,12 +1,13 @@
 ---
 tags:
-  - structure-prediction/complex-prediction
-  - antibody-antigen-interactions/complex-prediction
+  - prediction/antibody-structure
+  - prediction/complexes
+  - inference/conditioning
 created: 2024-10-01T00:38:57
 modified: "2026-04-21T10:30:31"
 ---
 #### Summary
-**Antigen context improves [[Complementarity-determining regions|CDRH3]] [[antibody-structure-prediction|structure prediction]]** [@hitawala2024]. This is pronounced in longer loops (17+ residues).
+**Antigen context improves [[Complementarity-determining regions|CDRH3]] [[notes/Antibody structure prediction|structure prediction]]** [@hitawala2024]. This is pronounced in longer loops (17+ residues).
 
 #### Figures
 ![[Pasted-image-20241001063632.png]]

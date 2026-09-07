@@ -1,5 +1,7 @@
 ---
 tags:
+  - prediction/structure
+  - design/inverse-folding
 created: 2024-07-15T02:51:15
 modified: "2026-04-21T05:01:15"
 ---

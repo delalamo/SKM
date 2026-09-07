@@ -1,5 +1,6 @@
 ---
 tags:
+  - prediction/confidence
 created: 2025-12-22T13:15:00
 modified: "2026-04-20T10:13:23"
 ---

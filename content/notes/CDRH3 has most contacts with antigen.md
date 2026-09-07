@@ -1,8 +1,7 @@
 ---
 tags:
-  - cdrh3
-  - protein-protein-interactions
-  - antibody-antigen-interactions/misc
+  - antibodies/recognition
+  - antibodies/architecture
 created: 2025-02-17T05:13:04
 modified: "2026-04-21T10:30:31"
 ---

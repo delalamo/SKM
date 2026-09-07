@@ -4,7 +4,9 @@ aliases:
   - Straight-through trick
   - Straight-through gradient estimator
 tags:
-  - machine-learning
+  - training/objectives-and-optimization
+  - model-design/multimodal
+  - inference/guidance
 created: "2026-07-19"
 modified: "2026-07-19T10:07:27"
 ---
