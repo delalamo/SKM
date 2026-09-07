@@ -1,6 +1,7 @@
 ---
 tags:
-  - protein-language-models/training
+  - training/fine-tuning
+  - training/pretraining-and-scaling
 created: "2025-03-27T03:00:53"
 modified: "2026-04-21T05:01:15"
 ---

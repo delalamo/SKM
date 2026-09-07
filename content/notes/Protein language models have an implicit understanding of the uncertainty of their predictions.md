@@ -1,13 +1,13 @@
 ---
 tags:
-  - protein-language-models
+  - prediction/confidence
 created: "2026-06-23"
 modified: "2026-07-17T10:38:09"
 ---
 
 #### Summary
 
-**[[protein-language-models|Protein language models]] have an implicit understanding of the uncertainty of their predictions.** This can be measured through pseudolikelihood and perplexity structure in the model's sequence predictions [@bigot2026].
+**[[notes/Protein language models|Protein language models]] have an implicit understanding of the uncertainty of their predictions.** This can be measured through pseudolikelihood and perplexity structure in the model's sequence predictions [@bigot2026].
 
 #### Figures
 

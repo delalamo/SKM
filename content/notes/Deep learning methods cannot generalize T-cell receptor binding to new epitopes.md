@@ -1,13 +1,14 @@
 ---
 tags:
-  - epitope-prediction
+  - evidence/generalization
+  - prediction/binding
 created: 2024-05-18T08:35:46
 modified: "2026-04-21T07:28:09"
 ---
 
 #### Summary
 
-**Deep learning methods fail to identify new epitopes for [[T-cell receptors]].** They only generalize to very similar epitopes found in the training set [@groce2023]. This could be applicable to [[B-cell receptors]] and [[antibodies|antibodies]] as well.
+**Deep learning methods fail to identify new epitopes for [[T-cell receptors]].** They only generalize to very similar epitopes found in the training set [@groce2023]. This could be applicable to [[B-cell receptors]] and [[tags/antibodies|antibodies]] as well.
 
 #### See also
 * [[DL models excel at finding pockets but not docking into them]]

@@ -1,7 +1,8 @@
 ---
 title: X-ray density can capture alternate conformations of proteins and their ligands
 tags:
-  - conformational-dynamics/experimental-ensembles
+  - evidence/measurements
+  - biophysics/ensemble-analysis
 created: "2025-04-24T03:11:21"
 modified: "2026-04-21T05:01:15"
 ---

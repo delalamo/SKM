@@ -1,6 +1,7 @@
 ---
 tags:
-  - variant-effect-prediction
+  - evidence/datasets
+  - prediction/variant-effects
 created: 2024-05-05T08:24:56
 modified: "2026-04-21T05:01:15"
 ---

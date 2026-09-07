@@ -1,6 +1,6 @@
 ---
 tags:
-  - conformational-dynamics/kinetics
+  - biophysics/ensemble-analysis
 created: "2024-07-15T03:47:57"
 modified: "2026-04-21T05:01:15"
 ---

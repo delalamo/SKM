@@ -1,7 +1,8 @@
 ---
 title: Thermophilic proteins have more aliphatic and charged residues on surface than mesophilic proteins
 tags:
-  - thermostability/determinants
+  - biophysics/stability
+  - evolution/selection
 created: "2024-12-02T06:54:20"
 modified: "2026-04-21T07:28:09"
 ---
@@ -13,4 +14,4 @@ modified: "2026-04-21T07:28:09"
 *Ref [@ertelt2024]*
 
 #### See also
-* [[thermostability|Stability and thermostability]]
+* [[notes/Stability and thermostability|Stability and thermostability]]

@@ -1,6 +1,7 @@
 ---
 tags:
-  - thermostability/design
+  - evolution/ancestry
+  - biophysics/stability
 created: "2024-11-14T02:49:32"
 modified: "2026-04-21T05:01:15"
 ---

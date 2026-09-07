@@ -1,6 +1,7 @@
 ---
 tags:
-  - antibodies/engineering-and-design
+  - design/antibodies
+  - inference/guidance
 created: 2025-12-19T11:23:25
 modified: "2026-04-21T05:01:15"
 ---

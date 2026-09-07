@@ -1,7 +1,7 @@
 ---
 tags:
-  - evolution-and-natural-selection
-  - conformational-dynamics/evolution
+  - design/enzymes
+  - biophysics/dynamics
 created: 2025-02-27T03:56:22
 modified: "2026-04-21T05:01:15"
 ---

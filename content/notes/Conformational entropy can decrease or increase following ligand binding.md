@@ -1,6 +1,7 @@
 ---
 tags:
-  - conformational-dynamics/allostery
+  - biophysics/interactions
+  - biophysics/dynamics
 created: "2025-09-11T09:42:59"
 modified: "2026-04-21T05:01:15"
 ---

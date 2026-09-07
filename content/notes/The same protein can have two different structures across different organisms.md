@@ -1,7 +1,7 @@
 ---
 tags:
-  - conformational-dynamics/evolution
-  - evolution-and-natural-selection
+  - evolution/selection
+  - biophysics/dynamics
 created: 2024-05-01T07:11:29
 modified: "2026-04-21T05:01:15"
 ---

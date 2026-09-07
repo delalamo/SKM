@@ -1,12 +1,13 @@
 ---
 tags:
-  - inverse-folding/evaluation
+  - model-design/multimodal
+  - design/inverse-folding
 created: "2026-04-05T17:58:34"
 modified: "2026-08-25T13:38:32"
 summary: The effect of including both sequence and structural features can be synergistic
 ---
 #### Summary
-**The benefit of including both sequence- and structure-based features during [[inverse-folding|Inverse folding]] is greater than the sum of each feature's benefit in isolation** [@wang2024spdesign].
+**The benefit of including both sequence- and structure-based features during [[notes/Inverse folding|Inverse folding]] is greater than the sum of each feature's benefit in isolation** [@wang2024spdesign].
 
 #### Figures
 | | SPDesign¹ (distance only) | SPDesign² (+ pre-trained structure) | SPDesign³ (+ sequence profile) | SPDesign (all features) |

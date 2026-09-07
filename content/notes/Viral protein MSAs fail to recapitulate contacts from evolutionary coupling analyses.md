@@ -1,5 +1,7 @@
 ---
 tags:
+  - evolution/homology
+  - evidence/generalization
 created: 2026-01-22T12:41:50
 modified: "2026-04-21T05:01:15"
 ---

@@ -1,7 +1,6 @@
 ---
 tags:
-  - antibody-structure-prediction
-  - complementarity-determining-regions
+  - design/antibodies
 created: "2026-06-23"
 modified: "2026-07-17T10:38:09"
 ---

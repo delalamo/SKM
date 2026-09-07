@@ -1,14 +1,15 @@
 ---
 tags:
-  - alphafold3
-  - variant-effect-prediction
+  - prediction/binding
+  - prediction/variant-effects
+  - evidence/generalization
 created: "2026-07-28"
 modified: "2026-07-28T14:12:17"
 ---
 
 #### Summary
 
-**All-atom structure-and-affinity predictors partially generalize from wild-type protein-drug binding to the effects of [[variant-effect-prediction|point mutations]], but mutant predictions are less accurate** [@ngo2026]. Across hERG, NaV1.5, HER2, and CYP3A4, [[alphafold3|Boltz-2]] affinity predictions reached Pearson correlations with experimental IC50 values of up to 0.76 for wild-type proteins and 0.60 for mutants.
+**All-atom structure-and-affinity predictors partially generalize from wild-type protein-drug binding to the effects of [[notes/Variant effect prediction|point mutations]], but mutant predictions are less accurate** [@ngo2026]. Across hERG, NaV1.5, HER2, and CYP3A4, [[notes/AlphaFold3|Boltz-2]] affinity predictions reached Pearson correlations with experimental IC50 values of up to 0.76 for wild-type proteins and 0.60 for mutants.
 
 The evaluation compared the default setting of 200 diffusion steps and five samples with increased-sampling settings of 300 steps and seven samples or 400 steps and nine samples.
 

@@ -1,7 +1,7 @@
 ---
 tags:
   - antibodies/nanobodies
-  - antibody-antigen-interactions/misc
+  - antibodies/recognition
 created: 2024-04-15T01:48:17
 modified: "2026-08-19T17:14:27"
 ---

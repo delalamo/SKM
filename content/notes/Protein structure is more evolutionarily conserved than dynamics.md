@@ -1,7 +1,8 @@
 ---
 title: Protein structure is more evolutionarily conserved than dynamics
 tags:
-  - conformational-dynamics/evolution
+  - evolution/selection
+  - biophysics/dynamics
 created: "2025-04-22T00:44:25"
 modified: "2026-04-21T05:01:15"
 ---

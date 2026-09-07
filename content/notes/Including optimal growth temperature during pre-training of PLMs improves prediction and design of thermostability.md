@@ -1,7 +1,8 @@
 ---
 tags:
-  - protein-language-models/training
-  - thermostability/prediction
+  - prediction/stability-expression
+  - training/pretraining-and-scaling
+  - design/sequence-generation
 created: "2024-11-29T03:39:16"
 modified: "2026-04-21T05:01:15"
 ---

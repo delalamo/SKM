@@ -1,6 +1,7 @@
 ---
 tags:
-  - transformers
+  - model-design/architectures
+  - training/pretraining-and-scaling
 created: 2026-04-05T17:19:25
 modified: "2026-04-21T05:01:15"
 ---

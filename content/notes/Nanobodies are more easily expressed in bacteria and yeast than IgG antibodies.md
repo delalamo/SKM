@@ -1,6 +1,7 @@
 ---
 tags:
-  - antibody-developability/expression
+  - antibodies/nanobodies
+  - design/developability
 created: "2025-09-04T12:56:47"
 modified: "2026-04-21T05:01:15"
 ---

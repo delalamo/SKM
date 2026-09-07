@@ -1,11 +1,7 @@
 ---
 tags:
-  - diffusion-models/structure-prediction
-  - diffusion-guidance/structure-prediction
-  - protein-folding/structure-prediction
-  - structure-prediction/metrics
-  - tm-score
-  - plddt
+  - prediction/confidence
+  - inference/guidance
 created: "2026-03-06T09:43:56"
 modified: "2026-04-21T05:01:15"
 ---

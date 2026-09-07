@@ -1,8 +1,6 @@
 ---
 tags:
-  - structure-prediction/metrics
-  - tm-score
-  - plddt
+  - prediction/confidence
 created: "2025-02-27T04:19:52"
 modified: "2026-04-21T05:01:15"
 ---

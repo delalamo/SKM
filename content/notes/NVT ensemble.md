@@ -1,6 +1,7 @@
 ---
 tags:
-  - conformational-dynamics/molecular-dynamics
+  - biophysics/thermodynamics
+  - biophysics/molecular-simulation
 created: "2024-07-15T08:36:40"
 modified: "2026-04-21T05:19:34"
 ---

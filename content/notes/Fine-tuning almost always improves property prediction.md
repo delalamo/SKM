@@ -1,14 +1,14 @@
 ---
 tags:
-  - protein-language-models/training
-  - thermostability/prediction
+  - training/fine-tuning
+  - inference/feature-extraction
 created: "2026-01-22T12:38:44"
 modified: "2026-08-25T13:38:32"
 ---
 
 #### Summary
 
-**Fine-tuning [[protein-language-models|PLMs]] [[ESM]]2, ProtT5, and Ankh virtually always improves property prediction** ([[variant-effect-prediction|variant effect prediction]], [[thermostability|stability]] prediction, [[Function prediction|function prediction]], others) **compared to zero-shot across eight supervised benchmarks** [@schmirler2023]. However, this is not a guarantee for every objective or evaluation split: fine-tuning can degrade representations or generalization through high variance and [[Catastrophic forgetting|catastrophic forgetting]] [@detlefsen2022; @heinzinger2023]. When fine-tuning on paired [[antibodies|antibody]] sequences, retaining the unpaired pretraining data and objective mitigated forgetting [@kenlay2024large]. Outside protein ML, RLHF also worsened the performance of [[GPT]]-4 on some tasks [@chen2024how].
+**Fine-tuning [[notes/Protein language models|PLMs]] [[ESM]]2, ProtT5, and Ankh virtually always improves property prediction** ([[notes/Variant effect prediction|variant effect prediction]], [[notes/Stability and thermostability|stability]] prediction, [[Function prediction|function prediction]], others) **compared to zero-shot across eight supervised benchmarks** [@schmirler2023]. However, this is not a guarantee for every objective or evaluation split: fine-tuning can degrade representations or generalization through high variance and [[Catastrophic forgetting|catastrophic forgetting]] [@detlefsen2022; @heinzinger2023]. When fine-tuning on paired [[tags/antibodies|antibody]] sequences, retaining the unpaired pretraining data and objective mitigated forgetting [@kenlay2024large]. Outside protein ML, RLHF also worsened the performance of [[GPT]]-4 on some tasks [@chen2024how].
 
 #### Figures
 ![[Pasted-image-20240102175550.png]]

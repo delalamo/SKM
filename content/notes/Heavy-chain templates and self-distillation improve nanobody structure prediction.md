@@ -1,7 +1,8 @@
 ---
 tags:
-  - antibody-structure-prediction
-  - antibodies
+  - prediction/antibody-structure
+  - evidence/datasets
+  - antibodies/nanobodies
 created: "2026-07-19"
 modified: "2026-07-20T09:52:04"
 ---

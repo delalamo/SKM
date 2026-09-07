@@ -1,7 +1,8 @@
 ---
 title: Second-shell mutations can yield positive epistasis
 tags:
-  - epistasis
+  - evolution/mutation-effects
+  - design/enzymes
 created: 2025-03-15T23:48:51
 modified: "2026-04-21T05:01:15"
 ---

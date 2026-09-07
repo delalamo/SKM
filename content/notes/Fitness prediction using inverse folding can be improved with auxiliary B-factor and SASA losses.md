@@ -1,7 +1,8 @@
 ---
 tags:
-  - inverse-folding/evaluation
-  - variant-effect-prediction
+  - prediction/variant-effects
+  - training/objectives-and-optimization
+  - design/inverse-folding
 created: 2024-04-30T03:19:19
 modified: "2026-04-21T05:01:15"
 ---

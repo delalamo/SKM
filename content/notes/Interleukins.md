@@ -2,6 +2,8 @@
 title: Interleukins
 created: 2026-04-10T14:02:57
 modified: "2026-04-21T07:28:09"
+tags:
+  - cell-biology/immune-signaling
 ---
 
 **Interleukins** are one of the major types of [[Cytokines|cytokine]].
@@ -37,4 +39,4 @@ Promotes cytokine production in [[T cells]], but which types depend on the prese
 
 # Synthetic interleukins
 
-A mimic of IL-2/IL-15 was made with [[Rosetta]] by Silva et al (Nature, 2019) that binds all three receptor chains. A second-generation version did not need to contact the alpha chain, and had greater [[thermostability|thermostability]].
+A mimic of IL-2/IL-15 was made with [[Rosetta]] by Silva et al (Nature, 2019) that binds all three receptor chains. A second-generation version did not need to contact the alpha chain, and had greater [[notes/Stability and thermostability|thermostability]].

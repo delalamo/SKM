@@ -1,17 +1,14 @@
 ---
 tags:
-  - alphafold3
-  - diffusion-models/structure-prediction
-  - protein-folding/structure-prediction
-  - structure-prediction/architecture
-  - plddt
+  - prediction/structure
+  - model-design/generative-models
 created: "2026-04-05T17:34:36"
 modified: "2026-04-21T07:20:46"
 ---
 
 #### Summary
 
-[[Flow matching]] and [[diffusion-models|diffusion]] perform comparably for biomolecular [[structure-prediction|structure prediction]] [@gong2025].
+[[Flow matching]] and [[notes/Diffusion models|diffusion]] perform comparably for biomolecular [[notes/Structure prediction|structure prediction]] [@gong2025].
 
 #### Figures
 

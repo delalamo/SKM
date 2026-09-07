@@ -1,7 +1,7 @@
 ---
 tags:
-  - protein-language-models/training
-  - structure-prediction/training
+  - evidence/datasets
+  - prediction/structure
 created: "2026-01-26T11:06:52"
 modified: "2026-04-21T07:28:09"
 ---
@@ -13,5 +13,5 @@ modified: "2026-04-21T07:28:09"
 #### See also
 * [[Evoformer]]
 * [[MSA Transformer]]
-* [[inverse-folding#Sequence diffusion|Sequence diffusion]]
+* [[notes/Inverse folding#Sequence diffusion|Sequence diffusion]]
 * [[Variant effect prediction with homology-aware PLMs improves with ensembling of multiple prompts]]

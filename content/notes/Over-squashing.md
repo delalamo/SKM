@@ -1,5 +1,6 @@
 ---
 tags:
+  - model-design/architectures
 created: 2024-05-28T04:59:48
 modified: "2026-04-21T05:01:15"
 ---

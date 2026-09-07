@@ -1,6 +1,7 @@
 ---
 tags:
-  - conformational-dynamics/modeling
+  - biophysics/dynamics
+  - design/backbones
 created: 2024-10-14T12:57:29
 modified: "2026-04-21T05:01:15"
 ---

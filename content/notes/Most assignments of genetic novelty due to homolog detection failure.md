@@ -1,6 +1,8 @@
 ---
 title: Most assignments of genetic novelty due to homolog detection failure
 tags:
+  - evolution/homology
+  - evolution/selection
 created: 2024-05-01T01:39:09
 modified: "2026-08-25T13:38:32"
 ---

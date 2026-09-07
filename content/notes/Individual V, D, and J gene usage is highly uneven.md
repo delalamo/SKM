@@ -1,6 +1,6 @@
 ---
 tags:
-  - immune-repertoires
+  - antibodies/repertoires
 created: 2025-11-20T16:49:04
 modified: "2026-04-21T05:01:15"
 ---

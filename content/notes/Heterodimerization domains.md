@@ -2,6 +2,9 @@
 title: Heterodimerization domains
 created: 2026-04-10T14:30:55
 modified: "2026-04-17T06:40:29"
+tags:
+  - design/modular-proteins
+  - biophysics/interactions
 ---
 
 **Heterodimerization domains** can be used to noncovalently link two different proteins together.

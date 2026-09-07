@@ -1,6 +1,7 @@
 ---
 tags:
-  - alignment/structure-based
+  - prediction/ligand-docking
+  - evolution/homology
 created: "2024-04-19T11:39:06"
 modified: "2026-04-21T05:01:15"
 ---

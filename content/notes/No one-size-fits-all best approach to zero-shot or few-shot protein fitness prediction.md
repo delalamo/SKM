@@ -1,6 +1,7 @@
 ---
 tags:
-  - variant-effect-prediction
+  - prediction/variant-effects
+  - evidence/design-validation
 created: 2026-02-26T15:17:04
 modified: "2026-04-21T05:01:15"
 ---

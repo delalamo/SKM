@@ -1,7 +1,7 @@
 ---
 tags:
-  - protein-design
-  - conformational-dynamics/allostery
+  - inference/guidance
+  - design/sequence-generation
 created: "2026-06-23"
 modified: "2026-07-17T10:38:09"
 ---

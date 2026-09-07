@@ -1,6 +1,7 @@
 ---
 tags:
-  - antibody-structure-prediction/cdr
+  - antibodies/architecture
+  - prediction/antibody-structure
 created: "2025-09-19T06:48:46"
 modified: "2026-04-21T05:01:15"
 ---

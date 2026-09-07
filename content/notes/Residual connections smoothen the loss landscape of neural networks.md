@@ -1,6 +1,7 @@
 ---
 tags:
-  - conformational-dynamics
+  - model-design/architectures
+  - training/objectives-and-optimization
 created: "2024-06-14T08:07:59"
 modified: "2026-04-21T05:01:15"
 ---

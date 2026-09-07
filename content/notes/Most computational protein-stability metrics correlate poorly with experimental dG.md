@@ -1,6 +1,7 @@
 ---
 tags:
-  - thermostability/prediction
+  - prediction/stability-expression
+  - evidence/design-validation
 created: "2026-07-19"
 modified: "2026-07-20T09:52:04"
 ---
