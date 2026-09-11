@@ -1,7 +1,7 @@
 ---
 title: CDR definitions
 created: 2026-09-11T13:00:00
-modified: "2026-09-11T13:36:49"
+modified: "2026-09-11T13:42:32"
 aliases:
   - CDR definition
   - CDR boundaries
@@ -26,7 +26,7 @@ tags:
 | **Paratope / antigen-contacting residues** | The receptor surface contacting a particular antigen; the observed set depends on the complex and contact criterion | That the contact set is identical to one of the conventional CDR intervals |
 | **Energetic hotspot** | A residue whose perturbation substantially changes binding energetics | That all contacting residues contribute equally to affinity |
 
-The sequence, structural, and contact perspectives explain why the conventions disagree. Wu and Kabat analyzed sequence variability, Chothia and Lesk compared loop conformations, and MacCallum and colleagues measured antibody–antigen contacts [@wukabat1970; @chothia1987; @maccallum1996]. The term *framework* is also definition-dependent at a CDR's edges: being outside a chosen CDR does not make a residue irrelevant to binding or loop geometry.
+The sequence, structural, and contact perspectives explain why the conventions disagree. Wu and Kabat analyzed sequence variability [@wukabat1970], Chothia and Lesk compared loop conformations [@chothia1987], and MacCallum and colleagues measured antibody–antigen contacts [@maccallum1996]. The term *framework* is also definition-dependent at a CDR's edges: being outside a chosen CDR does not make a residue irrelevant to binding or loop geometry.
 
 ## Definitions and their origins
 
@@ -40,22 +40,37 @@ The sequence, structural, and contact perspectives explain why the conventions d
 | **North–Dunbrack / PyIgClassify** | **Structural alignment and conformational clustering.** Selects endpoints near stable framework positions, with approximately corresponding boundaries in VH and VL; L2 is an exception. | North, Lehmann & Dunbrack (2011). The loops extend farther into flanking structure than some narrower Chothia definitions; their lengths are used in conformational cluster names [@north2011]. |
 | **WolfGuy composite** | **Union of Kabat and Chothia CDR residue sets.** Used in structure modeling together with WolfGuy's separate numbering system. | Bujotzek et al. (2015), particularly the *MoFvAb* methods. The union is taken over corresponding residues, not over numbers from different schemes [@bujotzek2015; @bujotzek2015mofvab]. |
 
-**AHo is a numbering scheme, not an independently fixed CDR definition.** Its structural alignment provides useful coordinates for North/PyIgClassify loops; naming AHo alone does not specify those boundaries [@honegger2001; @north2011]. Similarly, Gelfand–Kister structural segments describe the fold, EU numbers describe a reference immunoglobulin sequence, and ANARCI/ANARCII assign residue labels; none is a substitute for specifying the intended CDR definition [@gelfand1995; @edelman1969; @dunbar2016; @greenshieldswatson2026].
+**AHo is a numbering scheme, not an independently fixed CDR definition.** Its structural alignment provides useful coordinates for North/PyIgClassify loops; naming AHo alone does not specify those boundaries [@honegger2001; @north2011]. Gelfand–Kister structural segments describe the fold [@gelfand1995], EU numbers describe a reference immunoglobulin sequence [@edelman1969], and ANARCI/ANARCII assign residue labels [@dunbar2016; @greenshieldswatson2026]. When selecting CDRs, specify the boundary convention as well as the residue labels.
 
 ## Boundary reference
 
 ### Kabat, Chothia, AbM, Contact, and WolfGuy boundaries
 
-**Read the numbering column before using an interval.** Kabat's row uses Kabat labels; the other rows use Chothia labels to make their operational boundaries explicit. H and L identify heavy and light variable domains. Intervals are inclusive and contain insertion-coded residues assigned within them; they are not offsets into an unnumbered sequence.
+**Read the numbering column before using an interval.** Kabat's rows use Kabat labels; the other rows use Chothia labels to make their operational boundaries explicit. H and L identify heavy and light variable domains. Intervals are inclusive and contain insertion-coded residues assigned within them; they are not offsets into an unnumbered sequence.
 
-| CDR definition | Numbering | H1 | H2 | H3 | L1 | L2 | L3 |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| Kabat | **Kabat** | H31–H35, including H35A/B when present | H50–H65 | H95–H102 | L24–L34 | L50–L56 | L89–L97 |
-| Common Chothia convention | **Chothia** | H26–H32 | H52–H56 | H95–H102 | L24–L34 | L50–L56 | L89–L97 |
-| Chothia consensus, as implemented by Zhu et al. (2024) | **Chothia** | H26–H32 | H52–H56 | H96–H101 | L26–L32 | L50–L52 | L91–L96 |
-| AbM | **Chothia** | H26–H35 | H50–H58 | H95–H102 | L24–L34 | L50–L56 | L89–L97 |
-| Contact / MacCallum | **Chothia** | H30–H35 | H47–H58 | H93–H101 | L30–L36 | L46–L55 | L89–L96 |
-| WolfGuy composite | **Chothia** | H26–H35 | H50–H65 | H95–H102 | L24–L34 | L50–L56 | L89–L97 |
+**Heavy-chain variable domain (VH)**
+
+| CDR definition | Numbering | H1 | H2 | H3 |
+| --- | --- | --- | --- | --- |
+| Kabat | **Kabat** | H31–H35† | H50–H65 | H95–H102 |
+| Common Chothia | **Chothia** | H26–H32 | H52–H56 | H95–H102 |
+| Chothia consensus (Zhu 2024) | **Chothia** | H26–H32 | H52–H56 | H96–H101 |
+| AbM | **Chothia** | H26–H35 | H50–H58 | H95–H102 |
+| Contact / MacCallum | **Chothia** | H30–H35 | H47–H58 | H93–H101 |
+| WolfGuy composite | **Chothia** | H26–H35 | H50–H65 | H95–H102 |
+
+† Kabat H1 includes H35A/H35B when present.
+
+**Light-chain variable domain (Vκ/Vλ)**
+
+| CDR definition | Numbering | L1 | L2 | L3 |
+| --- | --- | --- | --- | --- |
+| Kabat | **Kabat** | L24–L34 | L50–L56 | L89–L97 |
+| Common Chothia | **Chothia** | L24–L34 | L50–L56 | L89–L97 |
+| Chothia consensus (Zhu 2024) | **Chothia** | L26–L32 | L50–L52 | L91–L96 |
+| AbM | **Chothia** | L24–L34 | L50–L56 | L89–L97 |
+| Contact / MacCallum | **Chothia** | L30–L36 | L46–L55 | L89–L96 |
+| WolfGuy composite | **Chothia** | L24–L34 | L50–L56 | L89–L97 |
 
 Kabat's native-coordinate boundaries follow its compiled convention [@kabat1991]. Common Chothia and Contact boundaries follow [MacCallum's author-hosted comparison, Table 2.3](https://nucpred.bioinfo.se/thesis/node66.html). AbM and the separately labeled consensus implementation are tabulated in [Zhu et al. (2024), Table 1](https://pmc.ncbi.nlm.nih.gov/articles/PMC11672675/). Zhu and colleagues attribute their consensus interpretation to the Martin group's 2021 documentation; this row reproduces **their stated implementation**. The WolfGuy row is the residue-set union described in *MoFvAb* [@bujotzek2015mofvab]. In particular, this Contact version starts **L2 at L46**; if a program or paper uses L45, record that variant explicitly.
 

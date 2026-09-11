@@ -1,7 +1,7 @@
 ---
 title: Antibody numbering
 created: 2026-04-10T14:02:57
-modified: "2026-09-11T13:36:49"
+modified: "2026-09-11T13:42:32"
 aliases:
   - Antibody numbering conventions
   - Antibody numbering schemes
@@ -56,7 +56,7 @@ The relevant unit is the **domain**, not the antibody's isotype. The VH/VL domai
 | EU | Use a V-domain scheme for comparisons | — | — | — | — | IgG reference sequence, especially CH1/hinge/Fc |
 | IMGT C-domain | — | — | — | — | Not a VNAR scheme | IG/TR **C-domains** and IgSF **C-like** domains |
 
-Coverage follows the original IMGT/AHo papers and the [ANARCI authors' supported schemes](https://github.com/oxpig/ANARCI#schemes); a particular program can support fewer species or chains than the convention itself [@lefranc2003; @lefranc2005; @honegger2001; @dunbar2016]. Camelid VHH numbering is illustrated experimentally by the [[The solubilization tetrad allows camelid nanobodies to remain soluble in the absence of a light chain|VHH humanization work]] [@vincke2009].
+Domain coverage follows the original IMGT papers [@lefranc2003; @lefranc2005] and AHo paper [@honegger2001]. The [ANARCI authors' supported schemes](https://github.com/oxpig/ANARCI#schemes) illustrate that a particular program can support fewer species or chains than the convention itself [@dunbar2016]. Camelid VHH numbering is illustrated experimentally by the [[The solubilization tetrad allows camelid nanobodies to remain soluble in the absence of a light chain|VHH humanization work]] [@vincke2009].
 
 **VNAR needs special care.** It lacks the conventional antibody CDR2 architecture, so calling every assigned IMGT 56–65 residue “CDR2” is misleading. ANARCII's VNAR study required conditioned or specialized models to place the large gap consistently across the CDR2/framework region. A successful generic antibody-numbering run is insufficient validation [@greenshieldswatson2026].
 
@@ -82,7 +82,7 @@ The IMGT coordinate system provides the common structural reference below. These
 | 105–117 | CDR3 | FG loop; 104 and 118 are its flanking anchors, not part of CDR3-IMGT |
 | 118–128 | FR4 | J-derived G-strand framework, beginning with the conserved aromatic/Gly motif |
 
-Here H and L refer to heavy- and light-domain labels, not the arbitrary chain IDs in a PDB. The numeric assignments match the examples below and the primary IMGT/AHo references. The Martin H77 versus Kabat/Chothia H80 difference reflects the common heavy-framework insertion convention [@abhinandan2008; @honegger2001; @lefranc2003].
+Here H and L refer to heavy- and light-domain labels, not the arbitrary chain IDs in a PDB. The numeric assignments match the examples below and the primary IMGT/AHo references [@honegger2001; @lefranc2003]. The Martin H77 versus Kabat/Chothia H80 difference reflects the common heavy-framework insertion convention [@abhinandan2008].
 
 | Landmark | IMGT | AHo | Kabat H / L | Chothia H / L | Martin H / L |
 | --- | --- | --- | --- | --- | --- |
