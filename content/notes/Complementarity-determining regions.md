@@ -11,8 +11,6 @@ review:
 
 The **complementarity-determining regions** of [[tags/antibodies|antibodies]], abbreviated **CDRs** and sometimes collectively called **hypervariable regions**, are loops that mediate binding to antigens. They are the most difficult part of the protein to predict and get fine-tuned by [[notes/Affinity maturation|affinity maturation]] and [[Somatic hypermutation|somatic hypermutation]].
 
-See [[Antibody numbering]] for the Kabat, Chothia, IMGT, and other numbering schemes, their CDR definitions, and residue equivalences. A residue numbering scheme and a choice of CDR boundaries are separate conventions; specify both when comparing loop lengths or selecting residues for grafting.
-
 ### General observations
 #### Confomational clustering
 
