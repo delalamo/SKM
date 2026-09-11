@@ -6,4 +6,4 @@ aliases:
   - "tags/complementarity-determining-regions"
 ---
 
-CDR and framework organization, heavy/light-chain pairing, loop geometry, numbering, and antibody formats as structures.
+CDR and framework organization, heavy/light-chain pairing, loop geometry, [[Antibody numbering|numbering]], and antibody formats as structures.

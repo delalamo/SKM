@@ -1,7 +1,7 @@
 ---
 title: Antibody humanization
 created: 2026-04-10T14:30:55
-modified: "2026-04-21T07:28:09"
+modified: "2026-09-11T12:44:28"
 tags:
   - design/developability
   - design/antibodies
@@ -17,5 +17,5 @@ tags:
 	* Reduce or eliminate [[notes/Antibody developability#Immunogenicity|immunogenicity]]
 * Approaches for humanization:
 	* Identify and humanize predicted immunogenic regions
-	* Graft animal [[Complementarity-determining regions|CDRs]] onto human [[Framework region|frameworks]].
+	* Graft animal [[Complementarity-determining regions|CDRs]] onto human [[Framework region|frameworks]]. Use [[Antibody numbering]] to distinguish residue labels from CDR boundaries when defining a graft.
 * **Humanized mice circumvent the need to do this.** It is worth noting that some humans can still produce blocking antibodies against antibodies designed by humanization, for reasons that are not well understood.
