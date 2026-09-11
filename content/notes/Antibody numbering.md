@@ -1,7 +1,7 @@
 ---
 title: Antibody numbering
 created: 2026-04-10T14:02:57
-modified: "2026-09-11T12:44:28"
+modified: "2026-09-11T13:36:49"
 aliases:
   - Antibody numbering conventions
   - Antibody numbering schemes
@@ -18,7 +18,7 @@ tags:
   - antibodies/architecture
 ---
 
-**Antibody numbering assigns comparable labels to residues in variable-length immunoglobulin domains.** This is the reference page for numbering conventions in these notes, including [[tags/antibodies|antibodies]], [[Nanobodies|VHHs]], [[T-cell receptors|TCRs]], and shark IgNARs. Use it alongside [[Complementarity-determining regions]] for loop biology and [[PyRosetta convert mAb structure numbering]] for a structure-conversion recipe.
+**Antibody numbering assigns comparable labels to residues in variable-length immunoglobulin domains.** This is the reference page for numbering conventions in these notes, including [[tags/antibodies|antibodies]], [[Nanobodies|VHHs]], [[T-cell receptors|TCRs]], and shark IgNARs.
 
 A residue label needs a **scheme, domain/chain, number, and any insertion code**: for example, Kabat H100A. It is neither a sequence-array index nor necessarily the number already present in a PDB file. **Numbering and CDR definition are separate choices**: an antibody can use one set of residue labels and another set of CDR boundaries. Renumbering does not change the molecule or establish which residues contact antigen.
 
@@ -62,19 +62,7 @@ Coverage follows the original IMGT/AHo papers and the [ANARCI authors' supported
 
 ## CDR definitions are not numbering schemes
 
-Chothia boundaries vary among historical publications; the commonly used convention is shown here. These common boundaries are stated in **each row's named coordinates**, including insertion labels within the interval. They describe the conventional definitions, not the measured paratope of an individual antibody. For insertion-bearing H1/L1 loops, use the [IMGT length-specific correspondence tables](https://www.imgt.org/IMGTScientificChart/Numbering/IMGTcorrespondence.html) rather than treating identical-looking endpoint numbers as identical residues [@wukabat1970; @chothia1987; @allazikani1997; @lefranc2003].
-
-| CDR definition and coordinate system | H1 | H2 | H3 | L1 | L2 | L3 |
-| --- | --- | --- | --- | --- | --- | --- |
-| Kabat definition, **Kabat** coordinates | 31–35, including 35A/B when present | 50–65 | 95–102 | 24–34 | 50–56 | 89–97 |
-| Common Chothia definition, **Chothia** coordinates | 26–32 | 52–56 | 95–102 | 24–34 | 50–56 | 89–97 |
-| IMGT definition, **IMGT** coordinates | 27–38 | 56–65 | 105–117 | 27–38 | 56–65 | 105–117 |
-
-Other frequently encountered labels belong here:
-
-- **AbM:** modeling-oriented CDR boundaries associated with antibody loop modeling; not a synonym for Martin numbering [@martin1989].
-- **Contact / MacCallum:** boundaries derived from contacts in antibody–antigen crystal structures. A generic contact definition does not identify every contact in a new complex [@maccallum1996].
-- **North–Dunbrack / PyIgClassify:** loop boundaries and conformational classes based on structural alignments and stable flanking anchors. State the numbering separately, including when these loops are expressed in AHo coordinates [@north2011].
+A numbering scheme assigns residue labels; a CDR definition selects which residues belong to each loop. [[CDR definitions]] compares the sequence-, structure-, modeling-, and contact-based definitions, their boundary tables, and their applicability to different antigen receptors. State both choices when reporting a CDR.
 
 For example, **Kabat H93/H94 are outside Kabat-defined H3 but correspond to IMGT 105/106, inside CDR3-IMGT**. Similarly, Kabat H71 remains a framework residue even though it can determine H2 conformation. Functional importance, structural-loop membership, and a chosen CDR definition are related but distinct [@lefranc2003; @tramontano1990].
 
