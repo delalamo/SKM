@@ -1,7 +1,7 @@
 ---
 title: CDR definitions
 created: 2026-09-11T13:00:00
-modified: "2026-09-11T13:42:32"
+modified: "2026-09-11T13:52:58"
 aliases:
   - CDR definition
   - CDR boundaries
@@ -9,6 +9,10 @@ aliases:
   - Complementarity-determining region definitions
   - AbM CDR definition
   - Contact CDR definition
+  - IMGT CDR definition
+  - North CDR definition
+  - North-Dunbrack CDR definition
+  - PyIgClassify CDR definition
 tags:
   - antibodies/architecture
   - antibodies/recognition
@@ -44,9 +48,9 @@ The sequence, structural, and contact perspectives explain why the conventions d
 
 ## Boundary reference
 
-### Kabat, Chothia, AbM, Contact, and WolfGuy boundaries
+### Heavy- and light-chain boundaries across definitions
 
-**Read the numbering column before using an interval.** Kabat's rows use Kabat labels; the other rows use Chothia labels to make their operational boundaries explicit. H and L identify heavy and light variable domains. Intervals are inclusive and contain insertion-coded residues assigned within them; they are not offsets into an unnumbered sequence.
+**Read the numbering column before using an interval.** Kabat uses Kabat labels, IMGT uses IMGT labels, and North/PyIgClassify uses AHo labels. The remaining rows express their boundaries in Chothia labels. H and L identify heavy and light variable domains. Intervals are inclusive and contain insertion-coded residues assigned within them; they are not offsets into an unnumbered sequence.
 
 **Heavy-chain variable domain (VH)**
 
@@ -56,6 +60,8 @@ The sequence, structural, and contact perspectives explain why the conventions d
 | Common Chothia | **Chothia** | H26–H32 | H52–H56 | H95–H102 |
 | Chothia consensus (Zhu 2024) | **Chothia** | H26–H32 | H52–H56 | H96–H101 |
 | AbM | **Chothia** | H26–H35 | H50–H58 | H95–H102 |
+| **IMGT** | **IMGT** | **27–38** | **56–65** | **105–117** |
+| **North / PyIgClassify** | **AHo** | **24–42** | **57–69** | **107–138** |
 | Contact / MacCallum | **Chothia** | H30–H35 | H47–H58 | H93–H101 |
 | WolfGuy composite | **Chothia** | H26–H35 | H50–H65 | H95–H102 |
 
@@ -69,8 +75,12 @@ The sequence, structural, and contact perspectives explain why the conventions d
 | Common Chothia | **Chothia** | L24–L34 | L50–L56 | L89–L97 |
 | Chothia consensus (Zhu 2024) | **Chothia** | L26–L32 | L50–L52 | L91–L96 |
 | AbM | **Chothia** | L24–L34 | L50–L56 | L89–L97 |
+| **IMGT** | **IMGT** | **27–38** | **56–65** | **105–117** |
+| **North / PyIgClassify** | **AHo** | **24–42** | **57–72** | **107–138** |
 | Contact / MacCallum | **Chothia** | L30–L36 | L46–L55 | L89–L96 |
 | WolfGuy composite | **Chothia** | L24–L34 | L50–L56 | L89–L97 |
+
+IMGT's intervals apply to rearranged IG and TR variable domains [@lefranc2003]. North/PyIgClassify's AHo endpoints are explicitly listed by Guest et al.; **North L2 ends at AHo72, whereas H2 ends at AHo69** [@guest2021]. Equal-looking integers across numbering systems do not identify equal residue sets. The dedicated sections below explain their anchors and gap handling.
 
 Kabat's native-coordinate boundaries follow its compiled convention [@kabat1991]. Common Chothia and Contact boundaries follow [MacCallum's author-hosted comparison, Table 2.3](https://nucpred.bioinfo.se/thesis/node66.html). AbM and the separately labeled consensus implementation are tabulated in [Zhu et al. (2024), Table 1](https://pmc.ncbi.nlm.nih.gov/articles/PMC11672675/). Zhu and colleagues attribute their consensus interpretation to the Martin group's 2021 documentation; this row reproduces **their stated implementation**. The WolfGuy row is the residue-set union described in *MoFvAb* [@bujotzek2015mofvab]. In particular, this Contact version starts **L2 at L46**; if a program or paper uses L45, record that variant explicitly.
 
@@ -78,19 +88,52 @@ Kabat's native-coordinate boundaries follow its compiled convention [@kabat1991]
 
 **Insertion placement matters most when translating H1 and L1.** For example, Kabat H1 can extend through H35A/H35B, whereas the corresponding extra labels in Chothia H1 are placed elsewhere. The common Chothia H1 ending at H32 corresponds to a Kabat endpoint that can shift with loop length. Use the [IMGT length-specific correspondence tables](https://www.imgt.org/IMGTScientificChart/Numbering/IMGTcorrespondence.html) or map the actual sequence; do not translate an interval by copying its endpoint integers [@abhinandan2008].
 
-### IMGT and North/PyIgClassify in their own coordinates
+## IMGT: homologous regions between framework anchors
 
-These rows use their explicitly named numbering systems. **They cannot be applied directly to a Kabat- or Chothia-numbered sequence.**
+**IMGT defines CDR1, CDR2, and CDR3 in one V-domain coordinate system shared by antibody heavy/light chains and TCR α/β/γ/δ chains.** Its sequence alignments incorporate structural correspondence and conserved framework landmarks. The regions surround the BC, C′C″, and FG connections, respectively; their boundaries are annotations of homologous regions, not a requirement that every included residue be classified as coil in a particular crystal structure [@lefranc2003].
 
-| CDR definition | Numbering | Domain | CDR1 | CDR2 | CDR3 |
-| --- | --- | --- | --- | --- | --- |
-| IMGT | IMGT | IG VH/VL; TR Vα/Vβ/Vγ/Vδ | 27–38 | 56–65 | 105–117 |
-| North / PyIgClassify | AHo | Antibody VH | 24–42 | 57–69 | 107–138 |
-| North / PyIgClassify | AHo | Antibody Vκ/Vλ | 24–42 | 57–72 | 107–138 |
+| Region | IMGT positions included | Flanking IMGT anchors, excluded | Structural context |
+| --- | --- | --- | --- |
+| CDR1-IMGT | 27–38 | 26 and 39 | B–C connection; first conserved Cys23 lies farther into FR1, and core Trp41 into FR2 |
+| CDR2-IMGT | 56–65 | 55 and 66 | C′–C″ connection in the conventional IG/TR V-domain fold |
+| CDR3-IMGT | 105–117, including additional apex positions | Cys104 and J-Phe/Trp118 | F–G connection in a rearranged variable domain |
 
-IMGT ranges refer to **rearranged variable domains**. They are documented in the [IMGT FR/CDR definitions](https://www.imgt.org/IMGTScientificChart/Nomenclature/IMGT-FRCDRdefinition.html) and the primary V-domain paper [@lefranc2003]. The AHo intervals are those used for North/PyIgClassify loops, explicitly enumerated in the structural-analysis methods of Guest et al. (2021) [@north2011; @guest2021].
+The flanking anchors belong to framework, even when their side chains support a CDR or contact antigen. For a complete V-domain the intervening framework intervals are FR1 1–26, FR2 39–55, FR3 66–104, and FR4 118–129 (depending on J-region length) [@lefranc2003].
 
-An interval's numerical span is not its amino-acid length. IMGT and AHo reserve positions that may be unoccupied. Long CDR3-IMGT loops add labels around the loop apex, such as 111.1 and 112.1; these are position labels, not decimal sequence indices. Count the **occupied residues** and preserve their sequence order. The germline V segment's CDR3 annotation is also not the complete rearranged V(D)J junction. [IMGT's definition and length rules](https://www.imgt.org/IMGTScientificChart/Nomenclature/IMGT-FRCDRdefinition.html).
+**Gaps preserve labels; they do not add amino acids.** In the structural display, an eight-residue CDR1 occupies 27–30 and 35–38, leaving 31–34 empty. An eight-residue CDR2 occupies 56–59 and 62–65. For a CDR3 shorter than 13 residues, gaps are introduced in the order 111, 112, 110, 113, and outward. Thus Herceptin has CDR-IMGT lengths **[8.8.13]**, although the standard reserved spans contain 12, 10, and 13 integer labels. Longer CDR3 loops add positions between 111 and 112: a 15-residue loop contains the local sequence of labels `111, 111.1, 112.1, 112`. The extra labels are ordered by their place along the chain, not as decimal numbers. [IMGT's occupied-position tables](https://www.imgt.org/IMGTScientificChart/Numbering/IMGTIGVLsuperfamily.html).
+
+**Gap placement can also depend on the IMGT display.** Structural resources place CDR1/CDR2 gaps near the apex; V-QUEST sequence displays can place them at the interval's end. This leaves CDR membership and length unchanged but changes which occupied residue receives an internal label. State the tool/display when comparing individual positions. [IMGT FAQ on sequence and structural gap placement](https://www.imgt.org/FAQ/). The worked examples and diagram on this page use the frozen ANARCII assignments, which follow the structural placement shown here.
+
+Three CDR3-related objects must be distinguished:
+
+| Object | What is included |
+| --- | --- |
+| **Germline V-gene CDR3-IMGT annotation** | The V gene's terminal portion, conventionally within positions 105–116; this is not the completed rearranged CDR3. |
+| **Rearranged CDR3-IMGT** | The complete segment between Cys104 and J-Phe/Trp118, excluding both anchors; labels 105–117 with gaps or extra positions. |
+| **IMGT JUNCTION** | Rearranged CDR3 plus its two anchors, making it two amino acids longer when both anchors are present. |
+
+Germline and rearranged CDR3 position labels cannot simply be equated across the recombination event. [IMGT's germline/rearranged definitions](https://www.imgt.org/IMGTScientificChart/Nomenclature/IMGT-FRCDRdefinition.html), [IMGT's JUNCTION definition](https://www.imgt.org/textes/FAQ/).
+
+## North and PyIgClassify: loops chosen for structural comparison
+
+**North, Lehmann & Dunbrack selected CDR boundaries to make loop conformations comparable.** They sought stable flanking positions, approximately opposite endpoints across the fold, and corresponding selections in VH and VL where possible. CDR1 and CDR3 begin immediately after the respective conserved disulfide cysteines and end before conserved aromatic framework residues. This includes some positions classified as framework by narrower definitions [@north2011].
+
+These are **North CDR definitions expressed in AHo numbering**. Honegger–Plückthun's original AHo numbering did not itself impose this one CDR boundary set [@honegger2001; @north2011].
+
+| North-defined loop | Included AHo positions | Immediately flanking AHo positions, excluded |
+| --- | --- | --- |
+| H1 and L1 | 24–42 | Cys23 and Trp43 |
+| H2 | 57–69 | 56 and 70 |
+| L2 | 57–72 | 56 and 73 |
+| H3 and L3 | 107–138 | Cys106 and Phe/Trp139 |
+
+These ranges are explicitly enumerated for North/PyIgClassify structural comparisons by Guest et al. [@guest2021]. Their numerical spans include unoccupied AHo positions, so they are not the physical loop lengths.
+
+**L2 intentionally extends beyond the corresponding H2 endpoint.** North's VH endpoint lies at the end of a short β-strand; the corresponding VL region is less consistently strand-like and remains variable farther along the sequence. The chosen light-chain interval therefore includes three additional AHo positions, 70–72. A generic shared H2/L2 cutoff would change the definition [@north2011].
+
+**A CDR's boundary and its conformational cluster are separate annotations.** A label such as `H1-13-1` specifies the loop type, its occupied-residue length, and a cluster identifier in a particular classification. PyIgClassify2 subsequently reassessed clusters using larger datasets and electron-density support, retaining, retiring, and adding classes. The update changes the classification assigned to a structure; naming a cluster is not a new way to number its residues. Cite the database/classification version used [@kelow2022]. [PyIgClassify2's account of the revision](https://dunbrack2.fccc.edu/PyIgClassify2/default.aspx).
+
+North's antibody analysis included camelid sequences, and Guest et al. applied the heavy-loop ranges to single-domain antibodies [@north2011; @guest2021]. AHo also numbers TCRs [@honegger2001], but assigning AHo labels does not validate antibody-derived canonical classes for TCRs. A TCR analysis must state its own loop selection and classification.
 
 ## Which molecules do the definitions apply to?
 
@@ -128,6 +171,12 @@ The two conserved cysteines usually form the intradomain disulfide. Extra cystei
 ## Worked equivalence: the same molecules, different CDRs
 
 These examples apply the displayed definitions to the **same occupied residues** in the frozen [[Antibody numbering#Full position correspondence|numbering crosswalk]]. They are calculated examples, not new experimental contact assignments. Parentheses give amino-acid counts; insertion-coded residues are included.
+
+### IMGT versus North, residue by residue
+
+![Residue-level comparison of IMGT and North CDR selections in Herceptin VH and the MS6-12 kappa light domain, with IMGT coordinates and framework anchors.](../assets/cdr-imgt-north-comparison.svg)
+
+**Calculated from the deposited sequences and frozen numbering crosswalk.** Both rows refer to the same residues, displayed with IMGT labels; North membership is selected using its AHo intervals. Empty reserved positions are gaps, not residues. In Herceptin, North adds five residues to IMGT H1 and the two flanking anchors to IMGT H2, while both definitions select the same H3. The light-chain example also shows why the North L2 endpoint must be handled separately.
 
 ### Herceptin VH
 
