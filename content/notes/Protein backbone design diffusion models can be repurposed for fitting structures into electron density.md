@@ -4,7 +4,7 @@ tags:
   - evidence/measurements
   - inference/guidance
 created: "2024-12-31T07:33:08"
-modified: "2026-07-28T14:12:17"
+modified: "2026-09-16T12:00:34"
 ---
 
 #### Summary
@@ -16,3 +16,12 @@ modified: "2026-07-28T14:12:17"
 ![[Pasted-image-20241231133007.png]]
 
 *Ref [@maddipatla2024]*
+
+#### Details
+
+ADP-3D similarly uses a pretrained Chroma denoiser as a prior for fitting and completing atomic models in cryo-EM maps [@levy2024]. It alternates denoising with measurement-fitting steps and combines density, sequence, and partial-model information. This supplies additional evidence for repurposing a backbone generator without training a dedicated model for each measurement type. Its [[Diffusion priors improve reconstruction from sparse distances without guaranteeing a unique structure|sparse-distance experiments]] also illustrate why realistic completion should not be confused with uniquely determined experimental structure.
+
+#### See also
+
+- [[Diffusion guidance]]
+- [[Diffusion priors improve reconstruction from sparse distances without guaranteeing a unique structure]]

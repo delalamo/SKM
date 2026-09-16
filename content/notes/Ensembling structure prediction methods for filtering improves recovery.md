@@ -4,7 +4,7 @@ tags:
   - design/binders
   - inference/ensembling
 created: "2026-08-25"
-modified: "2026-08-25T13:38:32"
+modified: "2026-09-16T12:00:34"
 ---
 
 #### Summary
@@ -13,5 +13,7 @@ modified: "2026-08-25T13:38:32"
 
 #### See also
 
+- [[LLM agents can autonomously coordinate protein design campaigns that yield experimental binders]]
+- [[Large language models in molecular and protein design]]
 - [[Effectiveness of filtering metrics for de novo minibinder design vary by target]]
 - [[Protein structure prediction and design confidence metrics do not correlate with binding affinity]]

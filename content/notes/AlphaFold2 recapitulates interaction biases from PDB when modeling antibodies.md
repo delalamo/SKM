@@ -3,7 +3,7 @@ tags:
   - evidence/generalization
   - prediction/complexes
 created: 2024-05-08T17:57:58
-modified: "2026-04-21T10:30:31"
+modified: "2026-09-16T12:00:34"
 ---
 #### Summary
 **[[notes/AlphaFold2|AlphaFold2]] models interactions between [[tags/antibodies|antibodies]] and antigens using motifs found in non-antibody structural complexes in the PDB** [@mccoy2024]. Better antibody-antigen predictions recycle interactions from non-PDB structures.
@@ -13,5 +13,5 @@ modified: "2026-04-21T10:30:31"
 *Ref [@mccoy2024]*
 
 #### See also
-- [[Protein-protein interaction interfaces are highly degenerate]]
+- [[Protein interface space remains far from complete despite recurring local geometries]]
 - [[Protein folding neural networks do not extrapolate to new ligand binding sites]]
