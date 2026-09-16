@@ -2,10 +2,11 @@
 title: Protein interface space remains far from complete despite recurring local geometries
 aliases:
   - Protein-protein interaction interfaces are highly degenerate
+  - notes/Protein-protein interaction interfaces are highly degenerate
 tags:
   - biophysics/interactions
 created: 2024-10-02T16:11:39
-modified: "2026-09-16T12:00:34"
+modified: "2026-09-16T12:02:38"
 ---
 #### Summary
 
