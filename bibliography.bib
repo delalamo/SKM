@@ -8711,6 +8711,7 @@
   doi = {10.1101/2025.01.11.631697},
   url = {https://www.biorxiv.org/content/10.1101/2025.01.11.631697v5},
   note = {Version 5},
+  abstract = {Compensatory mutations can mitigate the fitness costs of deleterious mutations, yet their distribution, structural contexts, and evolutionary roles remain poorly characterized. Here, we systematically analyzed a public deep mutational scanning (DMS) dataset comprising ∼400,000 amino acid variants of imidazole glycerol-phosphate dehydratase (IGPD), with substitutions spanning the entire length of the protein. We found that roughly one-tenth of nonfunctional missense variants can regain function through additional substitutions, predominantly at solvent exposed residues with weak local contacts. Notably, we identified a distinct class of super compensatory substitutions that enhance fitness across diverse genetic backgrounds and buffer mutational effects, resulting in genotypes that occupy locally flatter regions of the fitness landscape. Comparative analyses of additional public DMS datasets across diverse proteins and assays revealed that super compensators recur across different natural sequence–function maps, indicating a broadly represented mode of compensatory effects that sustains mutational persistence and contributes to protein evolutionary robustness. Significance Compensatory mutations allow deleterious mutations to persist and even fix in populations, shaping protein evolution. Yet, comprehensive analyses of their prevalence and mechanisms have been lacking. Through a systematic analysis of large-scale deep mutational scanning (DMS) datasets, we identified a class of super compensatory substitutions that enhance fitness across diverse genetic backgrounds. Our results reveal a previously unrecognized mode of compensatory effects that promote mutational robustness in evolving proteins.},
 }
 
 @article{chow2026,
@@ -8720,6 +8721,7 @@
   journal = {Nature Biomedical Engineering},
   doi = {10.1038/s41551-026-01790-9},
   url = {https://doi.org/10.1038/s41551-026-01790-9},
+  abstract = {Advances in generative protein design using artificial intelligence (AI) have enabled the rapid development of binders against heterogeneous targets, including tumour-associated antigens. Despite extensive biochemical characterization, these novel protein binders have had limited evaluation in candidate therapeutics, including chimaeric antigen receptor (CAR) T cells. Here we synthesize generative protein design workflows to screen 1,758 newly designed protein binders targeting BCMA, CD19 and CD22 for efficacy in scalable protein-binding, T-cell activation and in vivo killing assays. We characterize three main challenges that hinder the utility of de novo protein binders as CARs, including tonic signalling, occluded epitope engagement and off-target activity. We develop computational and experimental heuristics to overcome these limitations, including screens of sequence variants of individual parental structures, that retain on-target CAR activation while mitigating liabilities. Together, our framework accelerates the development of AI-designed proteins for future preclinical therapeutic screening, helping enable a new generation of cellular therapies.},
 }
 
 @misc{wang2026msfold,
@@ -8730,6 +8732,7 @@
   doi = {10.64898/2026.03.03.708411},
   url = {https://www.biorxiv.org/content/10.64898/2026.03.03.708411v3},
   note = {Version 3},
+  abstract = {Proteins often function through multiple conformations, yet most structure-prediction methods are biased toward a single dominant state. Here we present MSFold, a training-free framework that explores the discrete, sequence-conditioned structure-token space of ESM3 using parallel tempering, coupling high-temperature exploration with low-temperature refinement to cross barriers between conformational states. Across 312 multi-conformation protein pairs, MSFold recovered both conformations in 51.6\% of cases, compared with 38.1\% for MSA Cluster and 37.8\% for AlphaFold3. This performance advantage persisted on a post-ESM3-cutoff evaluation set, arguing against simple structural memorization. We further introduce sequence log-likelihood, a reference-free confidence score based on sequence–structure consistency, which improves ranking of sampled conformations. Together, these results provide a practical means of accessing the conformational information encoded by protein language models and establish MSFold as an effective framework for multi-conformation prediction.},
 }
 
 @misc{tartici2026,
@@ -8740,6 +8743,7 @@
   doi = {10.64898/2026.09.06.749733},
   url = {https://www.biorxiv.org/content/10.64898/2026.09.06.749733v2},
   note = {Version 2},
+  abstract = {1 Protein engineering has important implications in the bioeconomy, enabling applications in materials, medicine, and energy. A key challenge is designing protein sequences that have a specific form and function. Protein inverse folding seeks to address this challenge by identifying amino acid sequences compatible with a desired protein backbone. This task is central to protein redesign and can provide a sequence-design capability for de novo backbones produced by structure-generation methods. Ideally, inverse folding can provide diverse sequence alternatives, fixed residues or motifs, soft biochemical preferences at selected positions, and candidates that remain experimentally useful. We developed Inverse FoldDir, a controllable inverse-folding method that performs iterative denoising on the amino acid probability simplex. Given a backbone structure, the model updates all positions jointly through a learned Dirichlet flow, supporting full sequence generation, fixed-residue inpainting, and user-defined soft residue priors. On the held-out CATH 4.2 test set, Inverse FoldDir achieved a mean TM-score of 84.5 (on a 0-100 scale) and a mean C α RMSD of 1.76 Å, compared with 83.3 and 1.86 Å, respectively, for ESM-IF1, the strongest evaluated baseline on both metrics. Denoising trajectory analyses showed that positions commit at different rates and that some residues change identity late in generation, illustrating whole-sequence refinement rather than one-shot prediction or irreversible sequential decoding. We experimentally tested Inverse FoldDir in an anti-GFP nanobody redesign task, where two of 35 redesigned sequences retained reproducible sfGFP-binding signal across independent assay runs with approximately 43\% sequence divergence from the native nanobody. Inverse FoldDir is a structure-conditioned protein redesign method that combines structural recovery, user control, experimental validation, and a natural route toward future property-guided sampling.},
 }
 
 @misc{kim2026llmdesign,
@@ -8750,6 +8754,7 @@
   doi = {10.64898/2026.09.02.748987},
   url = {https://www.biorxiv.org/content/10.64898/2026.09.02.748987v1},
   note = {Version 1},
+  abstract = {Protein design has rapidly advanced with the advent of sequence- and structure-based machine learning models. However, reasoned design, which applies physicochemical principles and rules derived from sequence-structure-function relationships, has not seen the same benefits from generative machine learning models. Here, we test the ability of common large language models (LLMs; e.g. Claude, ChatGPT, and Gemini) to consider design principles to generate de novo proteins that bind metals and lipophilic small molecules without copying existing sequences. Common LLMs alone are able to 1) generate protein sequences to adopt a desired fold and bind the target ligand and 2) explain the principles that motivate the design choices. Following structure prediction and filtering, we selected a small set of designs (6 to 12 designs per query) for experimental validation, affording metal binders in one round of LLM-based design (25\% hit rate) and perfluorooctanoic acid binders in two rounds (25\% hit rate in the second round of design). Importantly, the LLMs produce detailed justification to accompany the de novo designed sequences, providing a conceptual framework on which designs can be evaluated. While the successful designs have some deviations from the prompted parameters and LLM-articulated design rationale, these campaigns provide a case study that highlights the utility of LLMs in making protein design more comprehensible and accessible to users without sophisticated design expertise.},
 }
 
 @article{tadiello2026,
@@ -8760,6 +8765,7 @@
   pages = {btag663},
   doi = {10.1093/bioinformatics/btag663},
   url = {https://doi.org/10.1093/bioinformatics/btag663},
+  abstract = {Motivation AlphaFold has transformed structural biology with an unprecedented accuracy in modelling protein structures and their interactions with biomolecules, with AlphaFold3 (AF3) achieving state-of-the-art performance. However, AF3 and other methods often struggle to accurately predict the structure of protein complexes that lack strong co-evolutionary information, such as antibody-antigen (Ab-Ag) complexes. One of the fundamental issues is that AF3 often generates accurate predictions, but fails to reliably distinguish them from the much larger set of incorrect ones. Results To address this, we propose ABAG-Rank, a deep neural network that provides an efficient and robust solution for model selection of Ab-Ag interactions from a pool of structural ensembles predicted with AlphaFold. Built on the permutation-invariant DeepSets architecture, ABAG-Rank can process variable-sized ensembles of structural decoys and is directly applicable to prediction settings in which the number of candidates may vary. We train a model on a redundancy-reduced set of all known antibody-antigen complexes and find that simple geometric descriptors, along with confidence scores from AlphaFold, provide rich information about interface quality without requiring intensive physics-based calculations. Our experiments demonstrate that ABAG-Rank significantly outperforms AF3 internal scoring and the ranking performance of existing deep learning baselines. Availability and implementation Source code can be found at: https://github.com/tadteo/ABAG-Rank or on Zenodo at https://doi.org/10.5281/zenodo.21132090.},
 }
 
 @article{chrone2026,
@@ -8773,6 +8779,7 @@
   doi = {10.1016/j.bbapap.2026.141174},
   pmid = {42648603},
   url = {https://doi.org/10.1016/j.bbapap.2026.141174},
+  abstract = {The native structure of natalizumab, an IgG4/κ α4β5 integrin monoclonal therapeutic antibody used for treatment of multiple sclerosis, was determined by a combination of chemical cross-linking, mass spectrometry, biophysical, and immunochemical methods. This revealed a compact, closed, m-shaped ellipsoidal structure with the paratopes at each end. Physicochemical stress, in the form of elevated temperature and lowered pH, induced an open, Y-shaped conformation of the antibody. This conformational change may reflect what is happening by binding of antibodies to their cognate antigens, e.g., in the form of pathogen-associated molecular patterns on the surface of microorganisms, where the antibodies have an intrinsic ability to change conformation and expose their effector function sites. Thus, in the absence of their cognate antigen, antibodies circulate as closed, m-shaped, inactive molecules.},
 }
 
 @misc{levy2024,
@@ -8783,6 +8790,7 @@
   archiveprefix = {arXiv},
   url = {https://arxiv.org/abs/2406.04239},
   note = {arXiv version 2, revised 23 April 2025},
+  abstract = {The interaction of a protein with its environment can be understood and controlled via its 3D structure. Experimental methods for protein structure determination, such as X-ray crystallography or cryogenic electron microscopy, shed light on biological processes but introduce challenging inverse problems. Learning-based approaches have emerged as accurate and efficient methods to solve these inverse problems for 3D structure determination, but are specialized for a predefined type of measurement. Here, we introduce a versatile framework to turn biophysical measurements, such as cryo-EM density maps, into 3D atomic models. Our method combines a physics-based forward model of the measurement process with a pretrained generative model providing a task-agnostic, data-driven prior. Our method outperforms posterior sampling baselines on linear and non-linear inverse problems. In particular, it is the first diffusion-based method for refining atomic models from cryo-EM maps and building atomic models from sparse distance matrices.},
 }
 
 @misc{strom2026,
@@ -8793,6 +8801,7 @@
   doi = {10.64898/2026.08.24.746585},
   url = {https://www.biorxiv.org/content/10.64898/2026.08.24.746585v2},
   note = {Version 2},
+  abstract = {Protein-protein interactions mediate a vast range of cellular functions, requiring diverse modes of binding. While recent years have seen major efforts to chart and classify the protein structure universe, we lack comparable methods to assess and cluster that diversity in interface structure at interactome scale. Here, we present Foldseek-Interface, a method that converts 3D interface structures into searchable sequences to enable fast alignment and clustering of protein interaction interfaces. It matches the accuracy of state-of-the-art tools while running up to 230 times faster. Applying it to all biological assemblies in the PDB, we cluster 3.1 million dimers into 77,167 interface clusters and use this resource to characterise interface diversity, evolution, and pathogen mimicry. Application of Foldseek-Interface to resources of predicted protein complex structures rapidly revealed putatively novel interface types worth further experimental interrogation. Foldseek-Interface and the interface cluster resource are freely available as webservers for search ( https://search.foldseek.com/interface ) and exploration ( https://interface.foldseek.com ). Contact: martin.steinegger@snu.ac.kr , k.luck@imb-mainz.de},
 }
 
 @article{arora2026pgllm,
@@ -8803,6 +8812,7 @@
   doi = {10.64898/2026.07.27.741045},
   url = {https://doi.org/10.64898/2026.07.27.741045},
   note = {Version posted August 19, 2026},
+  abstract = {ABSTRACT General-purpose frontier language models are being increasingly utilized for protein-design work, yet their ability to understand and evaluate variant effects remains unclear. Here, we introduce PG-LLM, a benchmark comprising 276 protein-variant prioritization tasks: 217 from ProteinGym and a temporally held-out set of 59 from recently published studies. Each task follows the same format: a language model is asked to rank a list of variant sequences given only the wild-type protein sequence and an assay description with no access to tools, multiple-sequence alignments, or protein structures. We evaluate thirteen language models and 95 published protein predictors on the same variants with the same evaluation metric. Claude Opus 5 (Max) and GPT 5.6 Sol (Max) are the best performing LLMs with Spearman correlations of ρ = 0.406 and 0.402 respectively. Opus 5 outperforms 49 of 95 published protein predictors, including 41 of 46 sequence-only methods, and approaches ESM2-650M at ρ = 0.411, but remains below the leading predictor VenusREM at ρ = 0.523. We observe that variant-ranking performance scales with test-time compute across GPT, Claude, and Gemini models, but gains taper before closing the gap to specialist protein predictors. To address contamination risk, we create a held-out evaluation set with 59 DMS assays from 19 studies whose scores first became public after January 2026. On this set, we observe performance and test time compute scaling trends similar to those on the 217 tasks derived from ProteinGym. PG-LLM shows that tool-free language models capture substantial protein-variant signal, outperforming many sequence-based predictors while remaining below the strongest specialized models.},
 }
 
 @techreport{openddeharness2026,
@@ -8812,4 +8822,53 @@
   year = {2026},
   url = {https://github.com/aurekaresearch/OpenDDE-Harness/blob/a0a8d1a07d92ab54947ef4d90ade982a682598d1/docs/assets/OpenDDE_harness_tech_report.pdf},
   note = {Public technical report, repository revision September 10, 2026},
+  abstract = {Antibody design requires iterative search over sequence space under structural and developability constraints. We introduce OpenDDE-Harness, a framework that couples large language model (LLM) agents to OpenDDE-based structural evaluation for antibody design. Agents propose constrained antibody designs and interpret their outcomes; the execution layer validates proposals, runs molecular evaluations, applies quality gates, and maintains candidate populations and provenance. Persistent records make accepted, rejected, and failed designs available to later cycles without updating the LLM’s parameters. Across six computational antibody-design targets, the evaluated pipeline yielded higher mean structural-filter success and more successful CDR sequence clusters than the tested baselines. In a separate experimental campaign, 38 of 80 synthesized designs bound their targets across four target–format cohorts involving RAGE (17/20), TfR1 (11/20), CXCR4 mAb (4/20), and CXCR VHH (6/20), validated through Carterra SPR or BLI. These results support the use of LLM-guided design with structural feedback to prioritize antibodies for experimental testing.},
+}
+
+@article{rennella2018,
+  title = {Role of domain interactions in the aggregation of full-length immunoglobulin light chains},
+  volume = {116},
+  ISSN = {1091-6490},
+  url = {https://doi.org/10.1073/pnas.1817538116},
+  DOI = {10.1073/pnas.1817538116},
+  number = {3},
+  journal = {Proceedings of the National Academy of Sciences},
+  publisher = {National Academy of Sciences},
+  author = {Rennella, Enrico and Morgan, Gareth J. and Kelly, Jeffery W. and Kay, Lewis E.},
+  year = {2018},
+  month = Dec,
+  pages = {854--863},
+  abstract = {Amyloid light-chain (LC) amyloidosis is a protein misfolding disease in which the aggregation of an overexpressed antibody LC from a clonal plasma cell leads to organ toxicity and patient death if left untreated. While the overall dimeric architecture of LC molecules is established, with each LC composed of variable (V L ) and constant (C L ) domains, the relative contributions of LC domain-domain interfaces and intrinsic domain stabilities to protection against LC aggregation are not well understood. To address these topics we have engineered a number of domain-destabilized LC mutants and used solution NMR spectroscopy to characterize their structural properties and intrinsic stabilities. Moreover, we used fluorescence spectroscopy to assay their aggregation propensities. Our results point to the importance of both dimerization strength and intrinsic monomer stability in stabilizing V L domains against aggregation. Notably, in all cases considered V L domains aggregate at least 10-fold faster than full-length LCs, establishing the important protective role of C L domains. A strong protective coupling is found between V L -V L and C L -C L dimer interfaces, with destabilization of one interface adversely affecting the stability of the other. Fibril formation is observed when either the V L or C L domain in the full-length protein is severely destabilized (i.e., where domain unfolding free energies are less than 2 kcal/mol). The important role of C L domains in preventing aggregation highlights the potential of the C L -C L interface as a target for the development of drugs to stabilize the dimeric LC structure and hence prevent LC amyloidosis.},
+}
+
+@article{brumshtein2014,
+  title = {Formation of Amyloid Fibers by Monomeric Light Chain Variable Domains},
+  volume = {289},
+  ISSN = {0021-9258},
+  url = {https://doi.org/10.1074/jbc.M114.585638},
+  DOI = {10.1074/jbc.M114.585638},
+  number = {40},
+  journal = {Journal of Biological Chemistry},
+  publisher = {Elsevier BV},
+  author = {Brumshtein, Boris and Esswein, Shannon R. and Landau, Meytal and Ryan, Christopher M. and Whitelegge, Julian P. and Phillips, Martin L. and Cascio, Duilio and Sawaya, Michael R. and Eisenberg, David S.},
+  year = {2014},
+  month = Oct,
+  pages = {27513--27525},
+  abstract = {Systemic light chain amyloidosis is a lethal disease characterized by excess immunoglobulin light chains and light chain fragments composed of variable domains, which aggregate into amyloid fibers. These fibers accumulate and damage organs. Some light chains induce formation of amyloid fibers, whereas others do not, making it unclear what distinguishes amyloid formers from non-formers. One mechanism by which sequence variation may reduce propensity to form amyloid fibers is by shifting the equilibrium toward an amyloid-resistant quaternary structure. Here we identify the monomeric form of the Mcg immunoglobulin light chain variable domain as the quaternary unit required for amyloid fiber assembly. Dimers of Mcg variable domains remain stable and soluble, yet become prone to assemble into amyloid fibers upon disassociation into monomers.},
+}
+
+@article{rottenaicher2023,
+  title = {A constant domain mutation in a patient-derived antibody light chain reveals principles of {AL} amyloidosis},
+  volume = {6},
+  ISSN = {2399-3642},
+  url = {https://doi.org/10.1038/s42003-023-04574-y},
+  DOI = {10.1038/s42003-023-04574-y},
+  number = {1},
+  journal = {Communications Biology},
+  publisher = {Springer Science and Business Media LLC},
+  author = {Rottenaicher, Georg J. and Absmeier, Ramona M. and Meier, Laura and Zacharias, Martin and Buchner, Johannes},
+  year = {2023},
+  month = Feb,
+  pages = {209},
+  abstract = {Light chain (AL) amyloidosis is a debilitating disease in which mutant antibody light chains (LC), secreted by aberrant plasma cell clones, misfold and form insoluble fibrils, which can be deposited in various organs. In the majority of cases, the fibrillar deposits consist of LC variable domains (V L ) containing destabilizing mutations compared to their germline counterparts. This is also true for the patient LC FOR005. However, this pathogenic LC sequence contains an additional mutation in the constant domain (C L ). The mechanistic impact of C L mutations is not yet understood in the context of AL amyloidosis. Our analysis reveals that the FOR005 C L mutation influences the amyloid pathway in specific ways: (1) folding and stability of the patient C L domain are strongly impaired; (2) the mutation disrupts the LC dimer interface and weakens dimerization; (3) the C L mutation promotes proteolytic cleavage of the LC monomers resulting in an isolated, amyloidogenic V L domain while dimeric LCs are not cleaved. The enhanced proteolysis rates and the inability of full-length LCs to form amyloid fibrils even in the presence of a destabilized C L domain support a model for AL amyloidosis in which the C L domain plays a protective role and in which proteolytic cleavage precedes amyloid formation.},
 }
