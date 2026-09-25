@@ -16,6 +16,7 @@ tags:
 
 - **[[Chroma]]** [@ingraham2023]
 - **RF-diffusion** [@watson2023] and **RFam** [@kim2025]
+  - [[Surface-complementary seeds expand the structural diversity of diffusion-designed protein binders|Surface-complementary seeds can broaden binder topologies]].
 - [[Inversion of protein folding neural networks|Hallucination]] using [[notes/AlphaFold2|AlphaFold2]] and [[notes/RoseTTAFold|RosettaFold]]
 - Inpainting using [[notes/RoseTTAFold|RosettaFold]] [@wang2022]
 - [[Pairwise motif distances allow functional atoms to move jointly with a designed scaffold|Pairwise motif-distance conditioning]] in all-atom design (PANDA).
