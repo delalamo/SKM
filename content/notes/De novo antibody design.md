@@ -25,4 +25,8 @@ review:
 * Unknown due to proprietary methods
 	* Chai-2
 	* JAM-2 (Nabla)
-    * Latent-X 
+    * Latent-X
+
+#### Epitope identification
+
+[[General-purpose language models underperform specialist models on tested epitope identification tasks|Sequence-based epitope identification remains a limitation of general-purpose LLMs]]. Identifying an epitope and designing a binder to it are distinct tests.
