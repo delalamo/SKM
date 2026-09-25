@@ -3,7 +3,7 @@ title: Directed evolution
 tags:
   - design/directed-evolution
 created: 2026-04-10T14:30:55
-modified: "2026-07-28T14:12:17"
+modified: "2026-09-25"
 review:
   - "citation-fix"
 ---
@@ -13,6 +13,8 @@ review:
 #### Notes
 
 * **Estimates for the minimum number of mutations that are required to improve catalytic activity range from five mutations for 10x** [@goldsmith2017] **to ten mutations for 1000x** [@kheronsky2018]. The latter authors say that most of these "occur outside catalytic pocket and are likely to affect activity only indirectly by enhancing tolerance to function-enhancing mutations."
+
+Robust starting backgrounds can [[Highly thermostable sequences make better starting points to evolve new functions|buffer subsequent mutations]], including compensatory substitutions far from an enzyme's catalytic site.
 
 #### See also
 
