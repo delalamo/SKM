@@ -3,7 +3,7 @@ tags:
   - prediction/complexes
   - evidence/datasets
 created: 2026-04-05T17:25:38
-modified: "2026-07-17T10:38:09"
+modified: "2026-09-25"
 publicationHistory:
   "2026-03-16": "https://biomlzk.ghost.io/antibody-antigen-complex-prediction-by-af3-generation-methods-is-data-limited/"
 ---
@@ -24,3 +24,7 @@ publicationHistory:
 | Protenix-v1-20250630 | **39.49** | **0.3574** |
 
 *Ref [@zhang2026]*
+
+#### Additional training evidence
+
+[[Antibody-antigen complex prediction scales with training data and compute|TorchFold improves with a larger combined experimental and distilled training collection]], although its expanded SAbDab data and changed training settings confound attribution to distillation alone.
