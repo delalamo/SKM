@@ -17,7 +17,7 @@ Framework sequence and pairwise structural information condition the generator w
 #### Figures
 
 ![[rfdiffusion-antibody-framework-hotspot-ablation.png]]
-*Framework and hotspot ablation from [@bennett2024], supplied in issue #901; Supplementary Figure 1 in the published version.*
+*Framework and hotspot ablation from [@bennett2024]; Supplementary Figure 1 in the published version.*
 
 #### See also
 
