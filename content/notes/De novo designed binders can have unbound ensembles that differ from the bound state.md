@@ -11,5 +11,11 @@ modified: "2026-09-25"
 
 **De novo designed binders can have unbound ensembles that differ from the bound state** [@britton2026].
 
+#### Figures
+
+![[designed-binder-unbound-remd-ensemble.png]]
+
+*REMD conformational clusters of the unbound binder, plotted by RMSD to the bound and unbound reference structures. Ref [@britton2026].*
+
 #### See also
 - [[Structure prediction neural networks predict different conformations of a given sequence depending on if a single chain is predicted versus multiple chains]]
