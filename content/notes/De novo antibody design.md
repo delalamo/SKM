@@ -16,7 +16,7 @@ review:
 	* Germinal [@millefragoso2025]
 	* BoltzDesign [@cho2025b]
 * [[notes/Diffusion models|Diffusion]]/flow matching-based
-	* RF-antibody [@bennett2024]; [[Antibody-specific fine-tuning improves framework preservation and hotspot targeting in RFdiffusion|antibody-specific training improves framework preservation and hotspot targeting]]
+	* RF-antibody [@bennett2024]
 	* DiffAb
 	* IgGM
 	* TiDE-Ab [@kim2026tideab]
@@ -25,4 +25,4 @@ review:
 * Unknown due to proprietary methods
 	* Chai-2
 	* JAM-2 (Nabla)
-    * Latent-X
+    * Latent-X 
