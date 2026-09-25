@@ -15,7 +15,7 @@ modified: "2026-09-25"
 
 ![[designed-binder-unbound-remd-ensemble.png]]
 
-*REMD conformational clusters of the unbound binder, plotted by RMSD to the bound and unbound reference structures. Ref [@britton2026].*
+*REMD conformational clusters of the unbound binder, ref [@britton2026].*
 
 #### See also
 - [[Structure prediction neural networks predict different conformations of a given sequence depending on if a single chain is predicted versus multiple chains]]
