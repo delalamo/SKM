@@ -5,7 +5,7 @@ aliases:
   - "Protein backbone design"
   - "tags/protein-backbone-design"
 created: "2026-04-10T14:30:55"
-modified: "2026-04-20T07:16:03"
+modified: "2026-09-25"
 tags:
   - design/backbones
 ---
@@ -18,6 +18,7 @@ tags:
 - **RF-diffusion** [@watson2023] and **RFam** [@kim2025]
 - [[Inversion of protein folding neural networks|Hallucination]] using [[notes/AlphaFold2|AlphaFold2]] and [[notes/RoseTTAFold|RosettaFold]]
 - Inpainting using [[notes/RoseTTAFold|RosettaFold]] [@wang2022]
+- [[Pairwise motif distances allow functional atoms to move jointly with a designed scaffold|Pairwise motif-distance conditioning]] in all-atom design (PANDA).
 
 #### Datasets
 
