@@ -7128,6 +7128,17 @@
   url = {https://arxiv.org/abs/2509.18480},
 }
 
+@misc{wang2026_G,
+  title = {EpiBench: Can LLMs Understand Epitopes for Antibody Drug Discovery?},
+  author = {Zirui Wang and Jiaqi Wang and Qinghan Wang and Yuzhi Xu and Gang Du and Tingjun Hou and Odin Zhang},
+  year = {2026},
+  eprint = {2608.06022},
+  archiveprefix = {arXiv},
+  url = {https://arxiv.org/abs/2608.06022},
+  note = {Version 1},
+  abstract = {Epitopes determine where antibodies bind antigens and shape downstream therapeutic properties such as functional blockade and escape resistance, making epitope understanding central to antibody drug discovery. Although large language models (LLMs) have shown strong biomedical reasoning ability, it remains unclear whether they can infer epitope information directly from antigen and antibody sequences. Existing epitope resources typically focus on isolated prediction tasks or rely on specialized structural settings, while general protein benchmarks do not evaluate epitope-centered decisions across the antibody development workflow. To address this gap, we introduce EpiBench, a closed-book, sequence-based, and automatically scorable benchmark for evaluating epitope reasoning in LLMs. EpiBench contains 1,609 curated samples grounded in structural antibody--antigen contacts, curated functional B-cell assays, and deep mutational scanning escape measurements. It covers five connected tasks: targetable region discovery, antibody-conditioned epitope identification, epitope binning, functional epitope assessment, and antibody escape assessment, with controlled sampling to reduce shortcut-based evaluation artifacts. We evaluate nine general-purpose LLMs and analyze their behavior through task-specific baselines, antigen length stratification, explicit-reasoning comparison, and failure-mode inspection. The results show that current LLMs capture partial epitope-related signals but remain limited in antibody-specific sequence grounding, long-context residue localization, and biologically grounded reasoning. Therefore, EpiBench provides a diagnostic testbed for measuring and improving sequence-aware biomedical LLMs toward reliable LLM-assisted antibody discovery.},
+}
+
 @inproceedings{wankmuller2021,
   title = {How to Estimate Continuous Sentiments From Texts Using Binary Training Data},
   author = {Sandra Wankmüller and Christian Heumann},
@@ -8749,15 +8760,4 @@
   month = Feb,
   pages = {209},
   abstract = {Light chain (AL) amyloidosis is a debilitating disease in which mutant antibody light chains (LC), secreted by aberrant plasma cell clones, misfold and form insoluble fibrils, which can be deposited in various organs. In the majority of cases, the fibrillar deposits consist of LC variable domains (V L ) containing destabilizing mutations compared to their germline counterparts. This is also true for the patient LC FOR005. However, this pathogenic LC sequence contains an additional mutation in the constant domain (C L ). The mechanistic impact of C L mutations is not yet understood in the context of AL amyloidosis. Our analysis reveals that the FOR005 C L mutation influences the amyloid pathway in specific ways: (1) folding and stability of the patient C L domain are strongly impaired; (2) the mutation disrupts the LC dimer interface and weakens dimerization; (3) the C L mutation promotes proteolytic cleavage of the LC monomers resulting in an isolated, amyloidogenic V L domain while dimeric LCs are not cleaved. The enhanced proteolysis rates and the inability of full-length LCs to form amyloid fibrils even in the presence of a destabilized C L domain support a model for AL amyloidosis in which the C L domain plays a protective role and in which proteolytic cleavage precedes amyloid formation.},
-}
-
-@misc{wang2026_G,
-  title = {EpiBench: Can LLMs Understand Epitopes for Antibody Drug Discovery?},
-  author = {Zirui Wang and Jiaqi Wang and Qinghan Wang and Yuzhi Xu and Gang Du and Tingjun Hou and Odin Zhang},
-  year = {2026},
-  eprint = {2608.06022},
-  archiveprefix = {arXiv},
-  url = {https://arxiv.org/abs/2608.06022},
-  note = {Version 1},
-  abstract = {Epitopes determine where antibodies bind antigens and shape downstream therapeutic properties such as functional blockade and escape resistance, making epitope understanding central to antibody drug discovery. Although large language models (LLMs) have shown strong biomedical reasoning ability, it remains unclear whether they can infer epitope information directly from antigen and antibody sequences. Existing epitope resources typically focus on isolated prediction tasks or rely on specialized structural settings, while general protein benchmarks do not evaluate epitope-centered decisions across the antibody development workflow. To address this gap, we introduce EpiBench, a closed-book, sequence-based, and automatically scorable benchmark for evaluating epitope reasoning in LLMs. EpiBench contains 1,609 curated samples grounded in structural antibody--antigen contacts, curated functional B-cell assays, and deep mutational scanning escape measurements. It covers five connected tasks: targetable region discovery, antibody-conditioned epitope identification, epitope binning, functional epitope assessment, and antibody escape assessment, with controlled sampling to reduce shortcut-based evaluation artifacts. We evaluate nine general-purpose LLMs and analyze their behavior through task-specific baselines, antigen length stratification, explicit-reasoning comparison, and failure-mode inspection. The results show that current LLMs capture partial epitope-related signals but remain limited in antibody-specific sequence grounding, long-context residue localization, and biologically grounded reasoning. Therefore, EpiBench provides a diagnostic testbed for measuring and improving sequence-aware biomedical LLMs toward reliable LLM-assisted antibody discovery.},
 }
