@@ -18,3 +18,5 @@ Engineering sequences, folds, binding, catalytic function, and properties that m
 - [[tags/design/directed-evolution|Directed evolution]]
 - [[tags/design/developability|Developability]]
 - [[tags/design/modular-proteins|Modular proteins]]
+
+[[Large language models in molecular and protein design]] compares evidence for general-purpose language models across molecular design tasks.
