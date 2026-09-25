@@ -6,7 +6,7 @@ aliases:
   - "Diffusion guidance"
   - "tags/diffusion-guidance"
 created: 2026-04-10T14:30:55
-modified: "2026-04-20T10:13:23"
+modified: "2026-09-25"
 tags:
   - inference/guidance
 ---
@@ -22,3 +22,7 @@ Xie et al [@xie2026] outline three broad types of guidance used by diffusion mod
 3. Invariant correctors, such as Metropolis-adjusted Langevin methods, which mix within a biased marginal without changing the trajectory weights.
 
 However, other search algorithms such as [[Beam search]] and [[Monte Carlo Tree Search]] have been used in conjunction with diffusion models [@didi2026a].
+
+#### Conformational sampling
+
+[[Guidance potentials can enhance conformational sampling in protein diffusion models|Guidance can promote alternative conformations]] in prediction and supply candidate multistate backbones for design. History-dependent collective-variable biases provide one such strategy [@omidi2026].
