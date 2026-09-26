@@ -4,7 +4,7 @@ aliases:
   - Antibodies
   - "tags/protein-language-models/antibodies"
 created: "2026-04-10T14:30:55"
-modified: "2026-04-20T10:13:23"
+modified: "2026-09-25"
 tags:
   - antibodies/architecture
   - cell-biology/immune-signaling
@@ -23,7 +23,7 @@ tags:
 - _IgG1_ makes up 67% of all antibodies in the human body, is capable of antibody-dependent cellular phagocytosis, and has the longest hinge region. IgG1 immune repertoires consist mostly of just a few dozen dominant clones and are unique to each individual, remaining largely stable over time.
 - _IgG2_ — mice have IgG2a and IgG2b instead; some strains have IgG2c instead of IgG2a.
 - _IgG3_ makes up ~7% of IgGs and has a notably shorter half-life due to poor binding to [[FcRn]], attributed to an H435R mutation.
-- _IgG4_ is the rarest IgG and undergoes Fab-arm exchange, dissociating into half-bodies and forming novel combinations via R409 in the hinge. Therapeutic IgG4 antibodies use the S228P substitution to stabilize the hinge and prevent this.
+- _IgG4_ is the rarest IgG and undergoes Fab-arm exchange, dissociating into half-bodies and forming novel combinations via R409 in the hinge. Therapeutic IgG4 antibodies use the S228P substitution to stabilize the hinge and prevent this. Full-length IgG4 can also adopt a [[Natalizumab can adopt a compact closed conformation that shields the Fc region|compact closed arrangement, as observed for natalizumab]].
 
 **IgM** is far less subject to [[notes/Affinity maturation|affinity maturation]] than IgG, responds to lipids and polysaccharides, and activates the complement system.
 
