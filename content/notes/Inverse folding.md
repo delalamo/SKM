@@ -5,7 +5,7 @@ aliases:
   - "Inverse folding"
   - "tags/inverse-folding"
 created: "2026-04-10T14:02:57"
-modified: "2026-04-20T10:13:23"
+modified: "2026-09-25"
 tags:
   - design/inverse-folding
 ---
@@ -31,6 +31,8 @@ _See [[Hybrid sequence-structure models]] for a list of methods that incorporate
  _Figure from [@jamasb2024]_
 
 #### Execution
+
+- [[Sequence design by flow matching resolves different residues at different time steps|Flow-matching sequence design resolves residue identities asynchronously]], even when the backbone is fixed.
 
 - **Forward-folding is a stronger predictor of inverse folding success than sequence recovery** ([@yang2023b], citing Watson et al. [@watson2023; @dauparas2022]).
 
