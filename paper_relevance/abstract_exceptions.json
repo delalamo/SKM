@@ -3,7 +3,9 @@
   "entries": {
     "dieleman2023": "Author essay/blog post; the source publishes no formal abstract.",
     "frenkel2002": "Scholarly monograph; the publisher supplies descriptive book copy but no author abstract.",
+    "kabat1991": "Three-volume NIH sequence-reference monograph (5th ed., NIH Publication No. 91-3242); the NLM catalog record provides bibliographic metadata but no author abstract (https://briscoe.uthscsa.edu/cgi-bin/koha/opac-MARCdetail.pl?biblionumber=8433).",
     "kimura1985": "Scholarly monograph published in 1985; no author abstract exists.",
+    "lefranc1997": "One-page numbering-system notice; PubMed explicitly records no abstract available (PMID 9386342; https://pubmed.ncbi.nlm.nih.gov/9386342/).",
     "michaud2026": "Author essay/blog post; the source publishes no formal abstract.",
     "monod1965": "1965 journal article predating routine abstract indexing; PubMed and the publisher expose no author abstract.",
     "pl2001": "Letter to the editor; PubMed Central and the journal record expose full text but no abstract.",

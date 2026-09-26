@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1268" viewBox="0 0 800 1268" role="img" aria-labelledby="title desc">
+<title id="title">IMGT and North CDR definitions compared on identical antibody sequences</title>
+<desc id="desc">Four sequence panels compare IMGT and North membership for Herceptin heavy-chain CDR1, CDR2 and CDR3 and the MS6-12 kappa light-chain CDR2. All displayed position labels use IMGT numbering. Hatched columns represent unoccupied labels, not amino acids. IMGT versus North occupied lengths are 8 versus 13 for H1, 8 versus 10 for H2, 13 versus 13 for H3, and 3 versus 8 for L2. Gold marks conserved cysteines and tryptophans, while boxed labels mark the IMGT flanking anchors. This is an annotation diagram, not a depiction of three-dimensional structure.</desc>
+<defs><pattern id="gap" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#fafbfc"/><path d="M-1 1L1-1M0 6L6 0M5 7L7 5" stroke="#d6dce3" stroke-width="1"/></pattern></defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#172b3d} .muted{fill:#516373} .coord{font-size:14px;font-weight:600} .aa{font-size:22px;font-weight:600} .row{font-size:16px;font-weight:700} .small{font-size:14px} .subtitle{font-size:16px}</style>
+<rect width="800" height="1268" fill="#ffffff"/>
+<text x="24.00" y="42.00" font-size="28" font-weight="700">IMGT and North CDR definitions</text>
+<text x="24.00" y="71.00" font-size="19" class="muted">Identical sequences, different residue selections</text>
+<text x="24.00" y="99.00" font-size="16" class="muted">Every position label below is IMGT. Colored bands select occupied residues.</text>
+<rect x="24.00" y="116.00" width="20.00" height="14.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<text x="52.00" y="129.00" font-size="15">IMGT</text>
+<rect x="153.00" y="116.00" width="20.00" height="14.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<text x="181.00" y="129.00" font-size="15">North</text>
+<rect x="282.00" y="116.00" width="20.00" height="14.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<text x="310.00" y="129.00" font-size="15">Outside CDR</text>
+<rect x="478.00" y="116.00" width="20.00" height="14.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<text x="506.00" y="129.00" font-size="15">Unoccupied label</text>
+<rect x="16.00" y="152.00" width="768.00" height="232.00" fill="#ffffff" rx="10" stroke="#dfe5eb" />
+<text x="30.00" y="183.00" font-size="21" font-weight="700">A. H1 · Herceptin VH</text>
+<text x="30.00" y="210.00" font-size="16" class="muted">North adds the flanks at IMGT 24–26 and 39–40.</text>
+<text x="30.00" y="308.00" font-size="16" style="fill:#2c7c6d" font-weight="700">IMGT</text>
+<text x="93.00" y="308.00" font-size="14" class="muted">8 aa</text>
+<rect x="147.00" y="289.00" width="30.63" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="179.63" y="289.00" width="30.63" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="212.26" y="289.00" width="30.63" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="244.89" y="289.00" width="30.63" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="277.53" y="289.00" width="30.63" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="310.16" y="289.00" width="30.63" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="342.79" y="289.00" width="30.63" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="375.42" y="289.00" width="30.63" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="408.05" y="289.00" width="30.63" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="440.68" y="289.00" width="30.63" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="473.32" y="289.00" width="30.63" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="505.95" y="289.00" width="30.63" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="538.58" y="289.00" width="30.63" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="571.21" y="289.00" width="30.63" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="603.84" y="289.00" width="30.63" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="636.47" y="289.00" width="30.63" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="669.11" y="289.00" width="30.63" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="701.74" y="289.00" width="30.63" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="734.37" y="289.00" width="30.63" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<text x="30.00" y="349.00" font-size="16" style="fill:#8858a3" font-weight="700">North</text>
+<text x="93.00" y="349.00" font-size="14" class="muted">13 aa</text>
+<rect x="147.00" y="330.00" width="30.63" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="179.63" y="330.00" width="30.63" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="212.26" y="330.00" width="30.63" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="244.89" y="330.00" width="30.63" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="277.53" y="330.00" width="30.63" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="310.16" y="330.00" width="30.63" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="342.79" y="330.00" width="30.63" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="375.42" y="330.00" width="30.63" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="408.05" y="330.00" width="30.63" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="440.68" y="330.00" width="30.63" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="473.32" y="330.00" width="30.63" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="505.95" y="330.00" width="30.63" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="538.58" y="330.00" width="30.63" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="571.21" y="330.00" width="30.63" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="603.84" y="330.00" width="30.63" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="636.47" y="330.00" width="30.63" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="669.11" y="330.00" width="30.63" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="701.74" y="330.00" width="30.63" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="734.37" y="330.00" width="30.63" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<text x="162.32" y="241.00" class="coord" text-anchor="middle">23</text>
+<rect x="150.32" y="251.00" width="24.00" height="29.00" fill="#f9e5a8" rx="5" stroke="#b18416" />
+<text x="162.32" y="274.00" class="aa" text-anchor="middle" style="fill:#172b3d">C</text>
+<text x="194.95" y="241.00" class="coord" text-anchor="middle">24</text>
+<text x="194.95" y="274.00" class="aa" text-anchor="middle" style="fill:#172b3d">A</text>
+<text x="227.58" y="241.00" class="coord" text-anchor="middle">25</text>
+<text x="227.58" y="274.00" class="aa" text-anchor="middle" style="fill:#172b3d">A</text>
+<rect x="245.89" y="224.00" width="28.63" height="23.00" fill="#edf5fb" rx="3" stroke="#486e8b" />
+<text x="260.21" y="241.00" class="coord" text-anchor="middle">26</text>
+<text x="260.21" y="274.00" class="aa" text-anchor="middle" style="fill:#172b3d">S</text>
+<text x="292.84" y="241.00" class="coord" text-anchor="middle">27</text>
+<text x="292.84" y="274.00" class="aa" text-anchor="middle" style="fill:#172b3d">G</text>
+<text x="325.47" y="241.00" class="coord" text-anchor="middle">28</text>
+<text x="325.47" y="274.00" class="aa" text-anchor="middle" style="fill:#172b3d">F</text>
+<text x="358.11" y="241.00" class="coord" text-anchor="middle">29</text>
+<text x="358.11" y="274.00" class="aa" text-anchor="middle" style="fill:#172b3d">N</text>
+<text x="390.74" y="241.00" class="coord" text-anchor="middle">30</text>
+<text x="390.74" y="274.00" class="aa" text-anchor="middle" style="fill:#172b3d">I</text>
+<text x="423.37" y="241.00" class="coord" text-anchor="middle">31</text>
+<text x="423.37" y="274.00" class="aa" text-anchor="middle" style="fill:#9aa8b5">–</text>
+<text x="456.00" y="241.00" class="coord" text-anchor="middle">32</text>
+<text x="456.00" y="274.00" class="aa" text-anchor="middle" style="fill:#9aa8b5">–</text>
+<text x="488.63" y="241.00" class="coord" text-anchor="middle">33</text>
+<text x="488.63" y="274.00" class="aa" text-anchor="middle" style="fill:#9aa8b5">–</text>
+<text x="521.26" y="241.00" class="coord" text-anchor="middle">34</text>
+<text x="521.26" y="274.00" class="aa" text-anchor="middle" style="fill:#9aa8b5">–</text>
+<text x="553.89" y="241.00" class="coord" text-anchor="middle">35</text>
+<text x="553.89" y="274.00" class="aa" text-anchor="middle" style="fill:#172b3d">K</text>
+<text x="586.53" y="241.00" class="coord" text-anchor="middle">36</text>
+<text x="586.53" y="274.00" class="aa" text-anchor="middle" style="fill:#172b3d">D</text>
+<text x="619.16" y="241.00" class="coord" text-anchor="middle">37</text>
+<text x="619.16" y="274.00" class="aa" text-anchor="middle" style="fill:#172b3d">T</text>
+<text x="651.79" y="241.00" class="coord" text-anchor="middle">38</text>
+<text x="651.79" y="274.00" class="aa" text-anchor="middle" style="fill:#172b3d">Y</text>
+<rect x="670.11" y="224.00" width="28.63" height="23.00" fill="#edf5fb" rx="3" stroke="#486e8b" />
+<text x="684.42" y="241.00" class="coord" text-anchor="middle">39</text>
+<text x="684.42" y="274.00" class="aa" text-anchor="middle" style="fill:#172b3d">I</text>
+<text x="717.05" y="241.00" class="coord" text-anchor="middle">40</text>
+<text x="717.05" y="274.00" class="aa" text-anchor="middle" style="fill:#172b3d">H</text>
+<text x="749.68" y="241.00" class="coord" text-anchor="middle">41</text>
+<rect x="737.68" y="251.00" width="24.00" height="29.00" fill="#f9e5a8" rx="5" stroke="#b18416" />
+<text x="749.68" y="274.00" class="aa" text-anchor="middle" style="fill:#172b3d">W</text>
+<text x="30.00" y="241.00" font-size="14" class="muted">IMGT</text>
+<text x="30.00" y="274.00" font-size="14" class="muted">Residue</text>
+<text x="146.00" y="376.00" font-size="13" class="muted">Hatching = an unoccupied IMGT label; it is not counted as a residue.</text>
+<rect x="16.00" y="402.00" width="768.00" height="232.00" fill="#ffffff" rx="10" stroke="#dfe5eb" />
+<text x="30.00" y="433.00" font-size="21" font-weight="700">B. H2 · Herceptin VH</text>
+<text x="30.00" y="460.00" font-size="16" class="muted">North includes both IMGT CDR2 anchors: Arg55 and Arg66.</text>
+<text x="30.00" y="558.00" font-size="16" style="fill:#2c7c6d" font-weight="700">IMGT</text>
+<text x="93.00" y="558.00" font-size="14" class="muted">8 aa</text>
+<rect x="147.00" y="539.00" width="42.29" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="191.29" y="539.00" width="42.29" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="235.57" y="539.00" width="42.29" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="279.86" y="539.00" width="42.29" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="324.14" y="539.00" width="42.29" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="368.43" y="539.00" width="42.29" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="412.71" y="539.00" width="42.29" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="457.00" y="539.00" width="42.29" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="501.29" y="539.00" width="42.29" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="545.57" y="539.00" width="42.29" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="589.86" y="539.00" width="42.29" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="634.14" y="539.00" width="42.29" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="678.43" y="539.00" width="42.29" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="722.71" y="539.00" width="42.29" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<text x="30.00" y="599.00" font-size="16" style="fill:#8858a3" font-weight="700">North</text>
+<text x="93.00" y="599.00" font-size="14" class="muted">10 aa</text>
+<rect x="147.00" y="580.00" width="42.29" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="191.29" y="580.00" width="42.29" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="235.57" y="580.00" width="42.29" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="279.86" y="580.00" width="42.29" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="324.14" y="580.00" width="42.29" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="368.43" y="580.00" width="42.29" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="412.71" y="580.00" width="42.29" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="457.00" y="580.00" width="42.29" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="501.29" y="580.00" width="42.29" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="545.57" y="580.00" width="42.29" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="589.86" y="580.00" width="42.29" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="634.14" y="580.00" width="42.29" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="678.43" y="580.00" width="42.29" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="722.71" y="580.00" width="42.29" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<text x="168.14" y="491.00" class="coord" text-anchor="middle">54</text>
+<text x="168.14" y="524.00" class="aa" text-anchor="middle" style="fill:#172b3d">A</text>
+<rect x="192.29" y="474.00" width="40.29" height="23.00" fill="#edf5fb" rx="3" stroke="#486e8b" />
+<text x="212.43" y="491.00" class="coord" text-anchor="middle">55</text>
+<text x="212.43" y="524.00" class="aa" text-anchor="middle" style="fill:#172b3d">R</text>
+<text x="256.71" y="491.00" class="coord" text-anchor="middle">56</text>
+<text x="256.71" y="524.00" class="aa" text-anchor="middle" style="fill:#172b3d">I</text>
+<text x="301.00" y="491.00" class="coord" text-anchor="middle">57</text>
+<text x="301.00" y="524.00" class="aa" text-anchor="middle" style="fill:#172b3d">Y</text>
+<text x="345.29" y="491.00" class="coord" text-anchor="middle">58</text>
+<text x="345.29" y="524.00" class="aa" text-anchor="middle" style="fill:#172b3d">P</text>
+<text x="389.57" y="491.00" class="coord" text-anchor="middle">59</text>
+<text x="389.57" y="524.00" class="aa" text-anchor="middle" style="fill:#172b3d">T</text>
+<text x="433.86" y="491.00" class="coord" text-anchor="middle">60</text>
+<text x="433.86" y="524.00" class="aa" text-anchor="middle" style="fill:#9aa8b5">–</text>
+<text x="478.14" y="491.00" class="coord" text-anchor="middle">61</text>
+<text x="478.14" y="524.00" class="aa" text-anchor="middle" style="fill:#9aa8b5">–</text>
+<text x="522.43" y="491.00" class="coord" text-anchor="middle">62</text>
+<text x="522.43" y="524.00" class="aa" text-anchor="middle" style="fill:#172b3d">N</text>
+<text x="566.71" y="491.00" class="coord" text-anchor="middle">63</text>
+<text x="566.71" y="524.00" class="aa" text-anchor="middle" style="fill:#172b3d">G</text>
+<text x="611.00" y="491.00" class="coord" text-anchor="middle">64</text>
+<text x="611.00" y="524.00" class="aa" text-anchor="middle" style="fill:#172b3d">Y</text>
+<text x="655.29" y="491.00" class="coord" text-anchor="middle">65</text>
+<text x="655.29" y="524.00" class="aa" text-anchor="middle" style="fill:#172b3d">T</text>
+<rect x="679.43" y="474.00" width="40.29" height="23.00" fill="#edf5fb" rx="3" stroke="#486e8b" />
+<text x="699.57" y="491.00" class="coord" text-anchor="middle">66</text>
+<text x="699.57" y="524.00" class="aa" text-anchor="middle" style="fill:#172b3d">R</text>
+<text x="743.86" y="491.00" class="coord" text-anchor="middle">67</text>
+<text x="743.86" y="524.00" class="aa" text-anchor="middle" style="fill:#172b3d">Y</text>
+<text x="30.00" y="491.00" font-size="14" class="muted">IMGT</text>
+<text x="30.00" y="524.00" font-size="14" class="muted">Residue</text>
+<text x="146.00" y="626.00" font-size="13" class="muted">Hatching = an unoccupied IMGT label; it is not counted as a residue.</text>
+<rect x="16.00" y="652.00" width="768.00" height="232.00" fill="#ffffff" rx="10" stroke="#dfe5eb" />
+<text x="30.00" y="683.00" font-size="21" font-weight="700">C. H3 · Herceptin VH</text>
+<text x="30.00" y="710.00" font-size="16" class="muted">Both select the same 13 residues, excluding Cys104 and Trp118.</text>
+<text x="30.00" y="808.00" font-size="16" style="fill:#2c7c6d" font-weight="700">IMGT</text>
+<text x="93.00" y="808.00" font-size="14" class="muted">13 aa</text>
+<rect x="147.00" y="789.00" width="39.33" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="188.33" y="789.00" width="39.33" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="229.67" y="789.00" width="39.33" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="271.00" y="789.00" width="39.33" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="312.33" y="789.00" width="39.33" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="353.67" y="789.00" width="39.33" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="395.00" y="789.00" width="39.33" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="436.33" y="789.00" width="39.33" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="477.67" y="789.00" width="39.33" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="519.00" y="789.00" width="39.33" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="560.33" y="789.00" width="39.33" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="601.67" y="789.00" width="39.33" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="643.00" y="789.00" width="39.33" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="684.33" y="789.00" width="39.33" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="725.67" y="789.00" width="39.33" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<text x="30.00" y="849.00" font-size="16" style="fill:#8858a3" font-weight="700">North</text>
+<text x="93.00" y="849.00" font-size="14" class="muted">13 aa</text>
+<rect x="147.00" y="830.00" width="39.33" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="188.33" y="830.00" width="39.33" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="229.67" y="830.00" width="39.33" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="271.00" y="830.00" width="39.33" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="312.33" y="830.00" width="39.33" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="353.67" y="830.00" width="39.33" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="395.00" y="830.00" width="39.33" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="436.33" y="830.00" width="39.33" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="477.67" y="830.00" width="39.33" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="519.00" y="830.00" width="39.33" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="560.33" y="830.00" width="39.33" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="601.67" y="830.00" width="39.33" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="643.00" y="830.00" width="39.33" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="684.33" y="830.00" width="39.33" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="725.67" y="830.00" width="39.33" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="148.00" y="724.00" width="37.33" height="23.00" fill="#edf5fb" rx="3" stroke="#486e8b" />
+<text x="166.67" y="741.00" class="coord" text-anchor="middle">104</text>
+<rect x="154.67" y="751.00" width="24.00" height="29.00" fill="#f9e5a8" rx="5" stroke="#b18416" />
+<text x="166.67" y="774.00" class="aa" text-anchor="middle" style="fill:#172b3d">C</text>
+<text x="208.00" y="741.00" class="coord" text-anchor="middle">105</text>
+<text x="208.00" y="774.00" class="aa" text-anchor="middle" style="fill:#172b3d">S</text>
+<text x="249.33" y="741.00" class="coord" text-anchor="middle">106</text>
+<text x="249.33" y="774.00" class="aa" text-anchor="middle" style="fill:#172b3d">R</text>
+<text x="290.67" y="741.00" class="coord" text-anchor="middle">107</text>
+<text x="290.67" y="774.00" class="aa" text-anchor="middle" style="fill:#172b3d">W</text>
+<text x="332.00" y="741.00" class="coord" text-anchor="middle">108</text>
+<text x="332.00" y="774.00" class="aa" text-anchor="middle" style="fill:#172b3d">G</text>
+<text x="373.33" y="741.00" class="coord" text-anchor="middle">109</text>
+<text x="373.33" y="774.00" class="aa" text-anchor="middle" style="fill:#172b3d">G</text>
+<text x="414.67" y="741.00" class="coord" text-anchor="middle">110</text>
+<text x="414.67" y="774.00" class="aa" text-anchor="middle" style="fill:#172b3d">D</text>
+<text x="456.00" y="741.00" class="coord" text-anchor="middle">111</text>
+<text x="456.00" y="774.00" class="aa" text-anchor="middle" style="fill:#172b3d">G</text>
+<text x="497.33" y="741.00" class="coord" text-anchor="middle">112</text>
+<text x="497.33" y="774.00" class="aa" text-anchor="middle" style="fill:#172b3d">F</text>
+<text x="538.67" y="741.00" class="coord" text-anchor="middle">113</text>
+<text x="538.67" y="774.00" class="aa" text-anchor="middle" style="fill:#172b3d">Y</text>
+<text x="580.00" y="741.00" class="coord" text-anchor="middle">114</text>
+<text x="580.00" y="774.00" class="aa" text-anchor="middle" style="fill:#172b3d">A</text>
+<text x="621.33" y="741.00" class="coord" text-anchor="middle">115</text>
+<text x="621.33" y="774.00" class="aa" text-anchor="middle" style="fill:#172b3d">M</text>
+<text x="662.67" y="741.00" class="coord" text-anchor="middle">116</text>
+<text x="662.67" y="774.00" class="aa" text-anchor="middle" style="fill:#172b3d">D</text>
+<text x="704.00" y="741.00" class="coord" text-anchor="middle">117</text>
+<text x="704.00" y="774.00" class="aa" text-anchor="middle" style="fill:#172b3d">Y</text>
+<rect x="726.67" y="724.00" width="37.33" height="23.00" fill="#edf5fb" rx="3" stroke="#486e8b" />
+<text x="745.33" y="741.00" class="coord" text-anchor="middle">118</text>
+<rect x="733.33" y="751.00" width="24.00" height="29.00" fill="#f9e5a8" rx="5" stroke="#b18416" />
+<text x="745.33" y="774.00" class="aa" text-anchor="middle" style="fill:#172b3d">W</text>
+<text x="30.00" y="741.00" font-size="14" class="muted">IMGT</text>
+<text x="30.00" y="774.00" font-size="14" class="muted">Residue</text>
+<text x="146.00" y="876.00" font-size="13" class="muted">No gaps in the displayed IMGT labels.</text>
+<rect x="16.00" y="902.00" width="768.00" height="232.00" fill="#ffffff" rx="10" stroke="#dfe5eb" />
+<text x="30.00" y="933.00" font-size="21" font-weight="700">D. L2 · MS6-12 κ light domain</text>
+<text x="30.00" y="960.00" font-size="16" class="muted">North L2 extends to AHo 72 (IMGT 69 in this light domain).</text>
+<text x="30.00" y="1058.00" font-size="16" style="fill:#2c7c6d" font-weight="700">IMGT</text>
+<text x="93.00" y="1058.00" font-size="14" class="muted">3 aa</text>
+<rect x="147.00" y="1039.00" width="34.47" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="183.47" y="1039.00" width="34.47" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="219.94" y="1039.00" width="34.47" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="256.41" y="1039.00" width="34.47" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="292.88" y="1039.00" width="34.47" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="329.35" y="1039.00" width="34.47" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="365.82" y="1039.00" width="34.47" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="402.29" y="1039.00" width="34.47" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="438.76" y="1039.00" width="34.47" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="475.24" y="1039.00" width="34.47" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="511.71" y="1039.00" width="34.47" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="548.18" y="1039.00" width="34.47" height="28.00" fill="#bfe7df" rx="3" stroke="#2c7c6d" />
+<rect x="584.65" y="1039.00" width="34.47" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="621.12" y="1039.00" width="34.47" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="657.59" y="1039.00" width="34.47" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="694.06" y="1039.00" width="34.47" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="730.53" y="1039.00" width="34.47" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<text x="30.00" y="1099.00" font-size="16" style="fill:#8858a3" font-weight="700">North</text>
+<text x="93.00" y="1099.00" font-size="14" class="muted">8 aa</text>
+<rect x="147.00" y="1080.00" width="34.47" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<rect x="183.47" y="1080.00" width="34.47" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="219.94" y="1080.00" width="34.47" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="256.41" y="1080.00" width="34.47" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="292.88" y="1080.00" width="34.47" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="329.35" y="1080.00" width="34.47" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="365.82" y="1080.00" width="34.47" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="402.29" y="1080.00" width="34.47" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="438.76" y="1080.00" width="34.47" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="475.24" y="1080.00" width="34.47" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="511.71" y="1080.00" width="34.47" height="28.00" fill="url(#gap)" rx="3" stroke="#d7dde4" />
+<rect x="548.18" y="1080.00" width="34.47" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="584.65" y="1080.00" width="34.47" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="621.12" y="1080.00" width="34.47" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="657.59" y="1080.00" width="34.47" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="694.06" y="1080.00" width="34.47" height="28.00" fill="#e0cdee" rx="3" stroke="#8858a3" />
+<rect x="730.53" y="1080.00" width="34.47" height="28.00" fill="#f0f3f6" rx="3" stroke="#d7dde4" />
+<text x="164.24" y="991.00" class="coord" text-anchor="middle">54</text>
+<text x="164.24" y="1024.00" class="aa" text-anchor="middle" style="fill:#172b3d">I</text>
+<rect x="184.47" y="974.00" width="32.47" height="23.00" fill="#edf5fb" rx="3" stroke="#486e8b" />
+<text x="200.71" y="991.00" class="coord" text-anchor="middle">55</text>
+<text x="200.71" y="1024.00" class="aa" text-anchor="middle" style="fill:#172b3d">Y</text>
+<text x="237.18" y="991.00" class="coord" text-anchor="middle">56</text>
+<text x="237.18" y="1024.00" class="aa" text-anchor="middle" style="fill:#172b3d">R</text>
+<text x="273.65" y="991.00" class="coord" text-anchor="middle">57</text>
+<text x="273.65" y="1024.00" class="aa" text-anchor="middle" style="fill:#172b3d">M</text>
+<text x="310.12" y="991.00" class="coord" text-anchor="middle">58</text>
+<text x="310.12" y="1024.00" class="aa" text-anchor="middle" style="fill:#9aa8b5">–</text>
+<text x="346.59" y="991.00" class="coord" text-anchor="middle">59</text>
+<text x="346.59" y="1024.00" class="aa" text-anchor="middle" style="fill:#9aa8b5">–</text>
+<text x="383.06" y="991.00" class="coord" text-anchor="middle">60</text>
+<text x="383.06" y="1024.00" class="aa" text-anchor="middle" style="fill:#9aa8b5">–</text>
+<text x="419.53" y="991.00" class="coord" text-anchor="middle">61</text>
+<text x="419.53" y="1024.00" class="aa" text-anchor="middle" style="fill:#9aa8b5">–</text>
+<text x="456.00" y="991.00" class="coord" text-anchor="middle">62</text>
+<text x="456.00" y="1024.00" class="aa" text-anchor="middle" style="fill:#9aa8b5">–</text>
+<text x="492.47" y="991.00" class="coord" text-anchor="middle">63</text>
+<text x="492.47" y="1024.00" class="aa" text-anchor="middle" style="fill:#9aa8b5">–</text>
+<text x="528.94" y="991.00" class="coord" text-anchor="middle">64</text>
+<text x="528.94" y="1024.00" class="aa" text-anchor="middle" style="fill:#9aa8b5">–</text>
+<text x="565.41" y="991.00" class="coord" text-anchor="middle">65</text>
+<text x="565.41" y="1024.00" class="aa" text-anchor="middle" style="fill:#172b3d">S</text>
+<rect x="585.65" y="974.00" width="32.47" height="23.00" fill="#edf5fb" rx="3" stroke="#486e8b" />
+<text x="601.88" y="991.00" class="coord" text-anchor="middle">66</text>
+<text x="601.88" y="1024.00" class="aa" text-anchor="middle" style="fill:#172b3d">N</text>
+<text x="638.35" y="991.00" class="coord" text-anchor="middle">67</text>
+<text x="638.35" y="1024.00" class="aa" text-anchor="middle" style="fill:#172b3d">L</text>
+<text x="674.82" y="991.00" class="coord" text-anchor="middle">68</text>
+<text x="674.82" y="1024.00" class="aa" text-anchor="middle" style="fill:#172b3d">A</text>
+<text x="711.29" y="991.00" class="coord" text-anchor="middle">69</text>
+<text x="711.29" y="1024.00" class="aa" text-anchor="middle" style="fill:#172b3d">S</text>
+<text x="747.76" y="991.00" class="coord" text-anchor="middle">70</text>
+<text x="747.76" y="1024.00" class="aa" text-anchor="middle" style="fill:#172b3d">G</text>
+<text x="30.00" y="991.00" font-size="14" class="muted">IMGT</text>
+<text x="30.00" y="1024.00" font-size="14" class="muted">Residue</text>
+<text x="146.00" y="1126.00" font-size="13" class="muted">Hatching = an unoccupied IMGT label; it is not counted as a residue.</text>
+<rect x="24.00" y="1168.00" width="18.00" height="18.00" fill="#f9e5a8" rx="4" stroke="#b18416" />
+<text x="50.00" y="1182.00" font-size="14">Conserved residue</text>
+<rect x="225.00" y="1168.00" width="24.00" height="18.00" fill="#edf5fb" rx="3" stroke="#486e8b" />
+<text x="257.00" y="1182.00" font-size="14">IMGT flanking anchor</text>
+<text x="24.00" y="1209.00" font-size="14" class="muted">North bands use AHo ranges H1 24–42, H2 57–69, H3 107–138, L2 57–72.</text>
+<text x="24.00" y="1232.00" font-size="14" class="muted">Data: frozen crosswalk; PDB 1N8Z entity 2 / chain B and 1MJU entity 1 / chain L.</text>
+<text x="24.00" y="1254.00" font-size="14" class="muted">Definitions: Lefranc et al. (2003); North et al. (2011); Guest et al. (2021).</text>
+<metadata>{&quot;source&quot;: &quot;antibody-numbering-crosswalk.csv&quot;, &quot;selections&quot;: [{&quot;panel&quot;: &quot;A. H1 · Herceptin VH&quot;, &quot;definition&quot;: &quot;IMGT&quot;, &quot;source_column&quot;: &quot;imgt&quot;, &quot;inclusive_range&quot;: [27, 38], &quot;sequence&quot;: &quot;GFNIKDTY&quot;, &quot;count&quot;: 8}, {&quot;panel&quot;: &quot;A. H1 · Herceptin VH&quot;, &quot;definition&quot;: &quot;North&quot;, &quot;source_column&quot;: &quot;aho&quot;, &quot;inclusive_range&quot;: [24, 42], &quot;sequence&quot;: &quot;AASGFNIKDTYIH&quot;, &quot;count&quot;: 13}, {&quot;panel&quot;: &quot;B. H2 · Herceptin VH&quot;, &quot;definition&quot;: &quot;IMGT&quot;, &quot;source_column&quot;: &quot;imgt&quot;, &quot;inclusive_range&quot;: [56, 65], &quot;sequence&quot;: &quot;IYPTNGYT&quot;, &quot;count&quot;: 8}, {&quot;panel&quot;: &quot;B. H2 · Herceptin VH&quot;, &quot;definition&quot;: &quot;North&quot;, &quot;source_column&quot;: &quot;aho&quot;, &quot;inclusive_range&quot;: [57, 69], &quot;sequence&quot;: &quot;RIYPTNGYTR&quot;, &quot;count&quot;: 10}, {&quot;panel&quot;: &quot;C. H3 · Herceptin VH&quot;, &quot;definition&quot;: &quot;IMGT&quot;, &quot;source_column&quot;: &quot;imgt&quot;, &quot;inclusive_range&quot;: [105, 117], &quot;sequence&quot;: &quot;SRWGGDGFYAMDY&quot;, &quot;count&quot;: 13}, {&quot;panel&quot;: &quot;C. H3 · Herceptin VH&quot;, &quot;definition&quot;: &quot;North&quot;, &quot;source_column&quot;: &quot;aho&quot;, &quot;inclusive_range&quot;: [107, 138], &quot;sequence&quot;: &quot;SRWGGDGFYAMDY&quot;, &quot;count&quot;: 13}, {&quot;panel&quot;: &quot;D. L2 · MS6-12 κ light domain&quot;, &quot;definition&quot;: &quot;IMGT&quot;, &quot;source_column&quot;: &quot;imgt&quot;, &quot;inclusive_range&quot;: [56, 65], &quot;sequence&quot;: &quot;RMS&quot;, &quot;count&quot;: 3}, {&quot;panel&quot;: &quot;D. L2 · MS6-12 κ light domain&quot;, &quot;definition&quot;: &quot;North&quot;, &quot;source_column&quot;: &quot;aho&quot;, &quot;inclusive_range&quot;: [57, 72], &quot;sequence&quot;: &quot;YRMSNLAS&quot;, &quot;count&quot;: 8}]}</metadata>
+</svg>

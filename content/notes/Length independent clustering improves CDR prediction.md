@@ -3,10 +3,10 @@ tags:
   - prediction/antibody-structure
   - evolution/homology
 created: "2024-07-02T08:01:15"
-modified: "2026-04-21T05:01:15"
+modified: "2026-09-11T14:08:06"
 ---
 #### Summary
-**Loop prediction precision for [[Complementarity-determining regions|CDRs]] can be improved using length-independent structural hierarchical [[Clustering|clustering]]** [@nowak2016]. This allows "a much larger part of the antibody space" to be structurally defined. Sequence similarity within clusters of different sizes is attributed to shared [[Germline|V-genes]].
+**Loop prediction precision for [[Complementarity-determining regions|CDRs]] can be improved using length-independent structural hierarchical [[Clustering|clustering]]** [@nowak2016]. This allows "a much larger part of the antibody space" to be structurally defined. The study uses [[CDR definitions|Chothia CDR boundaries with H2 extended to H50–H56]]. Sequence similarity within clusters of different sizes is attributed to shared [[Germline|V-genes]].
 
 #### Details
 Length-independent conformational clustering was carried out using the [[Dynamic time warping]] algorithm. No multi-length clusters were found in CDRH1, CDRH2, or CDRH3.
