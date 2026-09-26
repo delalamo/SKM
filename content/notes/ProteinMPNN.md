@@ -3,7 +3,7 @@ title: ProteinMPNN
 tags:
   - design/inverse-folding
 created: "2026-04-10T14:02:57"
-modified: "2026-04-21T07:28:09"
+modified: "2026-09-25"
 ---
 
 **ProteinMPNN** is an [[notes/Inverse folding|inverse folding]] method that uses a message-passing neural network. It has extensive wet-lab validation.
@@ -29,3 +29,9 @@ modified: "2026-04-21T07:28:09"
 * **LigandMPNN**: A version that can account for non-protein matter [@dauparas2023].
 * **IgMPNN**: A version pretrained on the PDB and fine-tuned on antibody structures [@shanehsazzadeh2023].
 * **SoftAlign**: A retrained encoder used for structure-based alignment [@trinquier2025].
+
+#### Antibody redesign and computational filtering
+
+Optional AbMPNN redesign improved computational pass rates for TorchCraft VHH designs in several benchmark settings [@torchcraft2026, Results 2.3 and Appendix A.4.3.2]. The experimentally tested VHHs were generated without post-hoc redesign, so this comparison does not establish an increase in experimental hit rate.
+
+This is an application to [[notes/De novo antibody design|antibody design]] with [[Protein structure prediction and design confidence metrics do not correlate with binding affinity|predictor-derived filtering criteria]], rather than a direct measurement of affinity improvement.
