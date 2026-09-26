@@ -3430,6 +3430,17 @@
   url = {https://doi.org/10.1038/s41586-025-09746-w},
 }
 
+@misc{kim2026llmdesign,
+  title = {De novo design of ligand binding proteins using large language models alone},
+  author = {Kim, N. H. and Hatstat, A. K. and Jo, H. and Wu, Y. and DeGrado, W. F.},
+  year = {2026},
+  publisher = {bioRxiv},
+  doi = {10.64898/2026.09.02.748987},
+  url = {https://www.biorxiv.org/content/10.64898/2026.09.02.748987v1},
+  note = {Version 1},
+  abstract = {Protein design has rapidly advanced with the advent of sequence- and structure-based machine learning models. However, reasoned design, which applies physicochemical principles and rules derived from sequence-structure-function relationships, has not seen the same benefits from generative machine learning models. Here, we test the ability of common large language models (LLMs; e.g. Claude, ChatGPT, and Gemini) to consider design principles to generate de novo proteins that bind metals and lipophilic small molecules without copying existing sequences. Common LLMs alone are able to 1) generate protein sequences to adopt a desired fold and bind the target ligand and 2) explain the principles that motivate the design choices. Following structure prediction and filtering, we selected a small set of designs (6 to 12 designs per query) for experimental validation, affording metal binders in one round of LLM-based design (25\% hit rate) and perfluorooctanoic acid binders in two rounds (25\% hit rate in the second round of design). Importantly, the LLMs produce detailed justification to accompany the de novo designed sequences, providing a conceptual framework on which designs can be evaluated. While the successful designs have some deviations from the prompted parameters and LLM-articulated design rationale, these campaigns provide a case study that highlights the utility of LLMs in making protein design more comprehensible and accessible to users without sophisticated design expertise.},
+}
+
 @article{king2025,
   title = {On fine-tuning Boltz-2 for protein-protein affinity prediction},
   author = {King, James and Cornwall, Lewis and Nica, Andrei Cristian and Day, James and Sim, Aaron and Dalchau, Neil and Wollman, Lilly and Meyers, Joshua},
@@ -7136,6 +7147,17 @@
   abstract = {Protein folding models have achieved groundbreaking results typically via a combination of integrating domain knowledge into the architectural blocks and training pipelines. Nonetheless, given the success of generative models across different but related problems, it is natural to question whether these architectural designs are a necessary condition to build performant models. In this paper, we introduce SimpleFold, the first flow-matching based protein folding model that solely uses general purpose transformer blocks. Protein folding models typically employ computationally expensive modules involving triangular updates, explicit pair representations or multiple training objectives curated for this specific domain. Instead, SimpleFold employs standard transformer blocks with adaptive layers and is trained via a generative flow-matching objective with an additional structural term. We scale SimpleFold to 3B parameters and train it on approximately 9M distilled protein structures together with experimental PDB data. On standard folding benchmarks, SimpleFold-3B achieves competitive performance compared to state-of-the-art baselines, in addition SimpleFold demonstrates strong performance in ensemble prediction which is typically difficult for models trained via deterministic reconstruction objectives. Due to its general-purpose architecture, SimpleFold shows efficiency in deployment and inference on consumer-level hardware. SimpleFold challenges the reliance on complex domain-specific architectures designs in protein folding, opening up an alternative design space for future progress.},
   doi = {10.48550/arXiv.2509.18480},
   url = {https://arxiv.org/abs/2509.18480},
+}
+
+@misc{wang2026_G,
+  title = {EpiBench: Can LLMs Understand Epitopes for Antibody Drug Discovery?},
+  author = {Zirui Wang and Jiaqi Wang and Qinghan Wang and Yuzhi Xu and Gang Du and Tingjun Hou and Odin Zhang},
+  year = {2026},
+  eprint = {2608.06022},
+  archiveprefix = {arXiv},
+  url = {https://arxiv.org/abs/2608.06022},
+  note = {Version 1},
+  abstract = {Epitopes determine where antibodies bind antigens and shape downstream therapeutic properties such as functional blockade and escape resistance, making epitope understanding central to antibody drug discovery. Although large language models (LLMs) have shown strong biomedical reasoning ability, it remains unclear whether they can infer epitope information directly from antigen and antibody sequences. Existing epitope resources typically focus on isolated prediction tasks or rely on specialized structural settings, while general protein benchmarks do not evaluate epitope-centered decisions across the antibody development workflow. To address this gap, we introduce EpiBench, a closed-book, sequence-based, and automatically scorable benchmark for evaluating epitope reasoning in LLMs. EpiBench contains 1,609 curated samples grounded in structural antibody--antigen contacts, curated functional B-cell assays, and deep mutational scanning escape measurements. It covers five connected tasks: targetable region discovery, antibody-conditioned epitope identification, epitope binning, functional epitope assessment, and antibody escape assessment, with controlled sampling to reduce shortcut-based evaluation artifacts. We evaluate nine general-purpose LLMs and analyze their behavior through task-specific baselines, antigen length stratification, explicit-reasoning comparison, and failure-mode inspection. The results show that current LLMs capture partial epitope-related signals but remain limited in antibody-specific sequence grounding, long-context residue localization, and biologically grounded reasoning. Therefore, EpiBench provides a diagnostic testbed for measuring and improving sequence-aware biomedical LLMs toward reliable LLM-assisted antibody discovery.},
 }
 
 @inproceedings{wankmuller2021,
