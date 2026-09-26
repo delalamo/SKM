@@ -3,7 +3,7 @@ tags:
   - prediction/confidence
   - design/sequence-generation
 created: 2026-04-05T17:41:51
-modified: "2026-04-21T07:28:09"
+modified: "2026-09-25"
 ---
 #### Summary
 Sequence perplexity is a metric used by [[notes/Protein language models|protein language models]] and [[notes/Inverse folding|inverse folding]] to quantify sequence recovery. Self-consistency perplexity is a derived metric where the perplexity is calculated using a [[notes/Structure prediction|forward-folded model]] rather than the original model/structure.
@@ -22,6 +22,8 @@ Meier et al. introduced ways of calculating probabilities or "energies" of seque
 - **Mutant marginal probability:** Requires a single forward pass for each mutation: $\sum{\log{p(x_{i}=x_{i}^{mnt}|x^{mnt}) - \log{p(x_{i}=x_{i}^{wt}|x^{mnt})}}}$. The entire sequence is kept fixed except for one mutation and the preference for the mutation of interest, normalized to the WT residue, is calculated. This was used for structure-based [[Fitness prediction|fitness prediction]] in [@ding2024] with Spearman $R$ values ranging from 0.39–0.71.
 - **Wildtype marginal probability:** The same as mutant marginal probability, except the background is the wildtype sequence: $\sum{\log{p(x_{i}=x_{i}^{mnt}|x^{wt}) - \log{p(x_{i}=x_{i}^{wt}|x^{wt})}}}$
 - **Pseudo-likelihood:** [@devkota2024] found that [[ESM]]2 pseudo-log likelihood values scaled linearly with the length of the sequence. They introduced a length-invariant correction ($pLL_{invar}$): $pLL(S)=\sum{\log{p(x_{i}=x_{i}^{mnt}|x_{i-1}^{mnt}) - \log{p(x_{i}=x_{i}^{wt}|x_{i-1}^{wt})}}}$, $pLL_{invar}(S)=\frac{pLL(S)}{|-0.406*len(S)+1.363|}$
+
+This length correction is used to rank variable-length [[Raygun]] candidates. The published method retains the need for length-adjusted scoring [@devkota2026]; the formula and figure here are from its earlier preprint [@devkota2024]. Total pseudo-log-likelihood and normalized perplexity need not have the same dependence on sequence length.
 
 ![[Pasted-image-20240820153913.png]]
 *Ref [@devkota2024]*
