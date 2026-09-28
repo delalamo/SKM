@@ -11,4 +11,4 @@ The structures of [[tags/antibodies|antibody]] [[Complementarity-determining reg
 
 #### See also
 - [[Focused protein sequence libraries are poor training sets]]
-- [[Deep learning methods cannot generalize T-cell receptor binding to new epitopes]]
+- [[Sequence-only TCR specificity models often struggle to generalize to unseen epitopes]]
