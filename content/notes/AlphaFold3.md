@@ -5,7 +5,7 @@ aliases:
   - "Alphafold3"
   - "tags/alphafold3"
 created: "2026-04-11T06:06:39"
-modified: "2026-09-28T18:27:42"
+modified: "2026-04-20T10:13:23"
 tags:
   - prediction/structure
   - prediction/complexes
