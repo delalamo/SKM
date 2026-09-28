@@ -22,8 +22,6 @@ For TorchFold, ranked success at DockQ > 0.23 fell across the following bins, po
 | 301–600 | 264 | 57 |
 | >600 | 42 | 38 |
 
-Length also covaries with target composition and training coverage; ASD distillation curation excluded antigens longer than 500 residues. This association therefore does not isolate length as a causal factor.
-
 #### See also
 
 - [[Antigen size biases AlphaFold3 antibody-antigen confidence]] — confidence distributions rather than DockQ recovery.
