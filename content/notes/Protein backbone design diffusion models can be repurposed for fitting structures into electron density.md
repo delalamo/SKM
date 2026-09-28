@@ -4,7 +4,7 @@ tags:
   - evidence/measurements
   - inference/guidance
 created: "2024-12-31T07:33:08"
-modified: "2026-07-28T14:12:17"
+modified: "2026-09-25"
 ---
 
 #### Summary
@@ -16,3 +16,7 @@ modified: "2026-07-28T14:12:17"
 ![[Pasted-image-20241231133007.png]]
 
 *Ref [@maddipatla2024]*
+
+#### Related reconstruction problems
+
+[[Diffusion priors improve reconstruction from sparse distances without guaranteeing a unique structure|Sparse-distance reconstruction uses a related diffusion prior]], but a plausible completion does not establish that the measurements determine a unique structure.
