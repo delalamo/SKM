@@ -360,6 +360,16 @@
   url = {https://doi.org/10.1038/s41586-025-09721-5},
 }
 
+@misc{berry2026,
+  title = {Differences between protein fitness models can be used to design variants of altered specificity},
+  author = {Samuel P. Berry and Rachelle Gaudet and Debora S. Marks},
+  year = {2026},
+  doi = {10.64898/2026.06.10.731299},
+  url = {https://doi.org/10.64898/2026.06.10.731299},
+  note = {Version 1},
+  abstract = {The vastness of sequence space makes it challenging for directed evolution to efficiently traverse the fitness landscape. In recent years, unsupervised probabilistic models trained on natural sequences have shown promise for predicting the functional effects of mutations and designing new proteins, leading many to suggest that these models may be useful for guiding directed evolution campaigns toward functional regions of sequence space. However, many directed evolution campaigns are interested in evolving new substrate or ligand specificity, and the behavior of unsupervised sequence models on predicting and designing activity against altered substrates or ligands has not been tested. We have built a curated database of multiplexed functional assay results profiling substrate or ligand specificity and systematically how assessed various popular unsupervised protein fitness models score and design variants that alter selectivity in these datasets. We find that sequence models that learn from the surrounding sequence context, especially protein language models, systematically bias against variants that alter specificity. This bias leads them to design altered-specificity variants at similar or lower rates than random chance. However, we propose a simple strategy to exploit this bias by taking weighted differences of model scores to enrich libraries for altered-specificity variants. These findings and our database should help guide how biologists best use protein fitness models and provide a framework to help machine learning researchers develop a new generation of machine learning models that can better design novelty.},
+}
+
 @article{best2006,
   title = {Relation between native ensembles and experimental structures of proteins},
   author = {Best, Robert B. and Lindorff-Larsen, Kresten and DePristo, Mark A. and Vendruscolo, Michele},
@@ -7147,6 +7157,17 @@
   abstract = {Protein folding models have achieved groundbreaking results typically via a combination of integrating domain knowledge into the architectural blocks and training pipelines. Nonetheless, given the success of generative models across different but related problems, it is natural to question whether these architectural designs are a necessary condition to build performant models. In this paper, we introduce SimpleFold, the first flow-matching based protein folding model that solely uses general purpose transformer blocks. Protein folding models typically employ computationally expensive modules involving triangular updates, explicit pair representations or multiple training objectives curated for this specific domain. Instead, SimpleFold employs standard transformer blocks with adaptive layers and is trained via a generative flow-matching objective with an additional structural term. We scale SimpleFold to 3B parameters and train it on approximately 9M distilled protein structures together with experimental PDB data. On standard folding benchmarks, SimpleFold-3B achieves competitive performance compared to state-of-the-art baselines, in addition SimpleFold demonstrates strong performance in ensemble prediction which is typically difficult for models trained via deterministic reconstruction objectives. Due to its general-purpose architecture, SimpleFold shows efficiency in deployment and inference on consumer-level hardware. SimpleFold challenges the reliance on complex domain-specific architectures designs in protein folding, opening up an alternative design space for future progress.},
   doi = {10.48550/arXiv.2509.18480},
   url = {https://arxiv.org/abs/2509.18480},
+}
+
+@misc{wang2026_G,
+  title = {EpiBench: Can LLMs Understand Epitopes for Antibody Drug Discovery?},
+  author = {Zirui Wang and Jiaqi Wang and Qinghan Wang and Yuzhi Xu and Gang Du and Tingjun Hou and Odin Zhang},
+  year = {2026},
+  eprint = {2608.06022},
+  archiveprefix = {arXiv},
+  url = {https://arxiv.org/abs/2608.06022},
+  note = {Version 1},
+  abstract = {Epitopes determine where antibodies bind antigens and shape downstream therapeutic properties such as functional blockade and escape resistance, making epitope understanding central to antibody drug discovery. Although large language models (LLMs) have shown strong biomedical reasoning ability, it remains unclear whether they can infer epitope information directly from antigen and antibody sequences. Existing epitope resources typically focus on isolated prediction tasks or rely on specialized structural settings, while general protein benchmarks do not evaluate epitope-centered decisions across the antibody development workflow. To address this gap, we introduce EpiBench, a closed-book, sequence-based, and automatically scorable benchmark for evaluating epitope reasoning in LLMs. EpiBench contains 1,609 curated samples grounded in structural antibody--antigen contacts, curated functional B-cell assays, and deep mutational scanning escape measurements. It covers five connected tasks: targetable region discovery, antibody-conditioned epitope identification, epitope binning, functional epitope assessment, and antibody escape assessment, with controlled sampling to reduce shortcut-based evaluation artifacts. We evaluate nine general-purpose LLMs and analyze their behavior through task-specific baselines, antigen length stratification, explicit-reasoning comparison, and failure-mode inspection. The results show that current LLMs capture partial epitope-related signals but remain limited in antibody-specific sequence grounding, long-context residue localization, and biologically grounded reasoning. Therefore, EpiBench provides a diagnostic testbed for measuring and improving sequence-aware biomedical LLMs toward reliable LLM-assisted antibody discovery.},
 }
 
 @inproceedings{wankmuller2021,
