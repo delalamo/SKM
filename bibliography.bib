@@ -360,6 +360,16 @@
   url = {https://doi.org/10.1038/s41586-025-09721-5},
 }
 
+@misc{berry2026,
+  title = {Differences between protein fitness models can be used to design variants of altered specificity},
+  author = {Samuel P. Berry and Rachelle Gaudet and Debora S. Marks},
+  year = {2026},
+  doi = {10.64898/2026.06.10.731299},
+  url = {https://doi.org/10.64898/2026.06.10.731299},
+  note = {Version 1},
+  abstract = {The vastness of sequence space makes it challenging for directed evolution to efficiently traverse the fitness landscape. In recent years, unsupervised probabilistic models trained on natural sequences have shown promise for predicting the functional effects of mutations and designing new proteins, leading many to suggest that these models may be useful for guiding directed evolution campaigns toward functional regions of sequence space. However, many directed evolution campaigns are interested in evolving new substrate or ligand specificity, and the behavior of unsupervised sequence models on predicting and designing activity against altered substrates or ligands has not been tested. We have built a curated database of multiplexed functional assay results profiling substrate or ligand specificity and systematically how assessed various popular unsupervised protein fitness models score and design variants that alter selectivity in these datasets. We find that sequence models that learn from the surrounding sequence context, especially protein language models, systematically bias against variants that alter specificity. This bias leads them to design altered-specificity variants at similar or lower rates than random chance. However, we propose a simple strategy to exploit this bias by taking weighted differences of model scores to enrich libraries for altered-specificity variants. These findings and our database should help guide how biologists best use protein fitness models and provide a framework to help machine learning researchers develop a new generation of machine learning models that can better design novelty.},
+}
+
 @article{best2006,
   title = {Relation between native ensembles and experimental structures of proteins},
   author = {Best, Robert B. and Lindorff-Larsen, Kresten and DePristo, Mark A. and Vendruscolo, Michele},
@@ -6753,6 +6763,15 @@
   url = {https://doi.org/10.1038/s41467-025-57510-5},
 }
 
+@misc{torchfold2026,
+  title = {Improving antibody-antigen structure prediction through large-scale distillation of sequence pairs},
+  author = {Chen, Mingchen and Cao, Yunlong and {TorchFold Team}},
+  year = {2026},
+  note = {Changping Laboratory},
+  url = {https://torchx-cpl.github.io/assets/papers/torchfold.pdf},
+  abstract = {Antibody–antigen complex prediction remains limited by errors in epitope localization and binding orientation, while experimentally resolved complexes provide sparse training coverage of molecular recognition. Antibody discovery collections contain many additional sequence pairs whose complex structures are unknown. Here we introduce TorchFold, which uses two rounds of confidence-filtered structural distillation to convert these pairs into training examples for antibody–antigen co-folding. The predicted complexes extend epitope coverage and interface contact patterns beyond those represented in SAbDab. Retaining the AlphaFold3 architecture, TorchFold combines the distilled structures with interface-weighted coordinate supervision and a revised diffusion noise schedule. The complete training programme increases ranked FoldBench interface success from 34.0\% to 70.1\% at DockQ > 0.23 and achieves competitive performance across five benchmark collections. Among 297 pooled benchmark predictions with ipTM ≥ 0.8, 292 have successful interfaces (98.3\%), corresponding to acceptance of 31.1\% of the 956 scored interfaces. These results support structural distillation of antibody–antigen sequence pairs as a practical approach to expanding supervision for complex prediction. TorchFold provides training and inference code and an antibody–antigen checkpoint under the MIT license.},
+}
+
 @article{torres2023,
   title = {De novo design of high-affinity binders of bioactive helical peptides},
   author = {Vázquez Torres, Susana and Leung, Philip J. Y. and Venkatesh, Preetham and Lutz, Isaac D. and Hink, Fabian and Huynh, Huu-Hien and Becker, Jessica and Yeh, Andy Hsien-Wei and Juergens, David and Bennett, Nathaniel R. and Hoofnagle, Andrew N. and Huang, Eric and MacCoss, Michael J. and Expòsit, Marc and Lee, Gyu Rie and Bera, Asim K. and Kang, Alex and De La Cruz, Joshmyn and Levine, Paul M. and Li, Xinting and Lamb, Mila and Gerben, Stacey R. and Murray, Analisa and Heine, Piper and Korkmaz, Elif Nihal and Nivala, Jeff and Stewart, Lance and Watson, Joseph L. and Rogers, Joseph M. and Baker, David},
@@ -7146,6 +7165,17 @@
   abstract = {Protein folding models have achieved groundbreaking results typically via a combination of integrating domain knowledge into the architectural blocks and training pipelines. Nonetheless, given the success of generative models across different but related problems, it is natural to question whether these architectural designs are a necessary condition to build performant models. In this paper, we introduce SimpleFold, the first flow-matching based protein folding model that solely uses general purpose transformer blocks. Protein folding models typically employ computationally expensive modules involving triangular updates, explicit pair representations or multiple training objectives curated for this specific domain. Instead, SimpleFold employs standard transformer blocks with adaptive layers and is trained via a generative flow-matching objective with an additional structural term. We scale SimpleFold to 3B parameters and train it on approximately 9M distilled protein structures together with experimental PDB data. On standard folding benchmarks, SimpleFold-3B achieves competitive performance compared to state-of-the-art baselines, in addition SimpleFold demonstrates strong performance in ensemble prediction which is typically difficult for models trained via deterministic reconstruction objectives. Due to its general-purpose architecture, SimpleFold shows efficiency in deployment and inference on consumer-level hardware. SimpleFold challenges the reliance on complex domain-specific architectures designs in protein folding, opening up an alternative design space for future progress.},
   doi = {10.48550/arXiv.2509.18480},
   url = {https://arxiv.org/abs/2509.18480},
+}
+
+@misc{wang2026_G,
+  title = {EpiBench: Can LLMs Understand Epitopes for Antibody Drug Discovery?},
+  author = {Zirui Wang and Jiaqi Wang and Qinghan Wang and Yuzhi Xu and Gang Du and Tingjun Hou and Odin Zhang},
+  year = {2026},
+  eprint = {2608.06022},
+  archiveprefix = {arXiv},
+  url = {https://arxiv.org/abs/2608.06022},
+  note = {Version 1},
+  abstract = {Epitopes determine where antibodies bind antigens and shape downstream therapeutic properties such as functional blockade and escape resistance, making epitope understanding central to antibody drug discovery. Although large language models (LLMs) have shown strong biomedical reasoning ability, it remains unclear whether they can infer epitope information directly from antigen and antibody sequences. Existing epitope resources typically focus on isolated prediction tasks or rely on specialized structural settings, while general protein benchmarks do not evaluate epitope-centered decisions across the antibody development workflow. To address this gap, we introduce EpiBench, a closed-book, sequence-based, and automatically scorable benchmark for evaluating epitope reasoning in LLMs. EpiBench contains 1,609 curated samples grounded in structural antibody--antigen contacts, curated functional B-cell assays, and deep mutational scanning escape measurements. It covers five connected tasks: targetable region discovery, antibody-conditioned epitope identification, epitope binning, functional epitope assessment, and antibody escape assessment, with controlled sampling to reduce shortcut-based evaluation artifacts. We evaluate nine general-purpose LLMs and analyze their behavior through task-specific baselines, antigen length stratification, explicit-reasoning comparison, and failure-mode inspection. The results show that current LLMs capture partial epitope-related signals but remain limited in antibody-specific sequence grounding, long-context residue localization, and biologically grounded reasoning. Therefore, EpiBench provides a diagnostic testbed for measuring and improving sequence-aware biomedical LLMs toward reliable LLM-assisted antibody discovery.},
 }
 
 @inproceedings{wankmuller2021,
