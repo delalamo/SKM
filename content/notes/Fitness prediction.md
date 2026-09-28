@@ -14,7 +14,7 @@ tags:
 
 #### Notes
 
-* **Sequence-based predictors (e.g., PSSMs and [[Potts models]]) could miss high-fitness naturally occurring mutations** [@johnston2024].
+* **Sequence-based predictors (e.g., PSSMs and [[Potts models]]) could miss high-fitness naturally occurring mutations** [@johnston2024]. Context-aware scores can also [[Unmodified zero-shot PLM scores struggle to prioritize functional novelty and exceptionally fit variants|favor native specificity over functional novelty]].
 * **Including nonfunctional sequences during training improves prediction of poor performers but not top performers** [@morenopaz2023]. This was demonstrated using several ML models.
 * [[Linear models remain competitive on epistasis-enriched protein fitness tests|Additive models can remain competitive on epistasis-enriched tests]], although ranking total fitness does not establish prediction of epistatic effects.
 * **Complex models are worse than ridge regression when the number of training examples is low** [@singh2025].
