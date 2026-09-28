@@ -8,7 +8,7 @@ modified: "2026-09-28T18:18:21"
 
 #### Summary
 
-**[[tags/antibodies|Antibody]]–antigen [[notes/Structure prediction|structure prediction]] accuracy decreases with antigen length across the predictors evaluated by TorchFold** (section 4.5) [@torchfold2026]. This concerns recovery of experimentally observed interfaces, not merely a shift in confidence scores.
+**[[tags/antibodies|Antibody]]–antigen [[notes/Structure prediction|structure prediction]] accuracy decreases with antigen length across the predictors evaluated by TorchFold** (section 4.5) [@torchfold2026].
 
 #### Details
 
