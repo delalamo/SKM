@@ -1,5 +1,5 @@
 {
-  "bibliography_hash": "2e46dda82a6a0f3ae27a5082ede4efba8444e860e4ad49441ed43390eaa0b91b",
+  "bibliography_hash": "aba56684f5b12a05c0263f64a932b8b7705541582add3d5b6ceebdd0bb9b4406",
   "classifier": {
     "C": 1.0,
     "class_weight": "balanced",
@@ -53,7 +53,7 @@
   "issue_negative_snapshot_file_hash": "73ecf4f89432532f4c8bb144ae37aa54d3ee5ce5ab102a4da6911bff6629fbb1",
   "issue_negative_snapshot_hash": "339067609b892130dcef50f5dfec6385bd700040f0206099fe485162de102d44",
   "issue_negative_training_hash": "070986f6fdc8a1f854e381f2b19b150c52644ab4c9bf8355f975eb8fcabecc7b",
-  "model_hash": "6c25b91b7c1b2cc0ea322ac73d408515558b14a56dad267b893c93d60e7c873e",
+  "model_hash": "5874727ecf775748b2d115cfd76b2df3676104a98b01148fad04ea66af0871df",
   "negative_corpus": "pubmed_negatives_v1.jsonl",
   "negative_corpus_file_hash": "0c6a385cf3c85479163037e9393f404fe63feba3d7a4a7817adc844efdd7ed8c",
   "negative_corpus_hash": "60f1ed1a1a3fd15206eb0ca35ea366d688a03871002540e977b94fa5b8428764",
@@ -65,14 +65,14 @@
   "negative_metadata": "pubmed_negatives_v1_metadata.json",
   "negative_metadata_file_hash": "21d864c0a28feb5a4748306e0da82e54e10bb2ff91ca614b2e478b1d23fc44ed",
   "negative_source": "pubmed",
-  "positive_count": 709,
-  "positive_manifest_hash": "bc9dd89ba873e60e0cc30c485667cc9dc06fc6b5efeae69df9c61fa999673552",
-  "positive_matrix_hash": "95c549ca578863837a2bc8f4353f658f415f9ede846d8299f40cd1735e3afe10",
-  "positive_rows": 718,
+  "positive_count": 710,
+  "positive_manifest_hash": "957fcef7226c5e1c1c479aae1acae1fc00618921d7795d2740f32d0d7b6ec5d3",
+  "positive_matrix_hash": "3092c02205986c7c0ca12db30071786f8d9e05bebfe27259cd7a09b441486596",
+  "positive_rows": 719,
   "schema": 1,
   "training": {
     "converged": true,
-    "iterations": 25,
-    "training_accuracy": 0.8992339422510313
+    "iterations": 21,
+    "training_accuracy": 0.8992932862190812
   }
 }
