@@ -1,7 +1,7 @@
 ---
 title: Kinked CDRH3 loops
 created: 2026-04-10T14:02:57
-modified: "2026-09-04T08:07:29"
+modified: "2026-09-11T12:44:28"
 tags:
   - antibodies/architecture
   - antibodies/nanobodies
@@ -16,7 +16,7 @@ tags:
 
 #### Details
 
-The precise definition by Weitzner et al uses the following two parameters:
+The precise definition by Weitzner et al uses the following two parameters (see [[Antibody numbering]] for Chothia/IMGT residue equivalences):
 * $\mathbf{\tau_{101}}$: $C_{\alpha}$-$C_{\alpha}$-$C_{\alpha}$ pseudo-bond angle over the three C-terminal loop residues (Chothia 100X–101–102, IMGT 115-116-117).
 * $\mathbf{\alpha_{101}}$: $C_{\alpha}$-$C_{\alpha}$-$C_{\alpha}$-$C_{\alpha}$ pseudo-dihedral angle over the same three residues plus the next one (Chothia 103, IMGT 118).
 
