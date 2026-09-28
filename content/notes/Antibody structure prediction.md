@@ -21,4 +21,4 @@ The **[[tags/antibodies|antibody]] [[notes/Structure prediction|structure predic
 
 #### Target context
 
-[[Antibody-antigen structure prediction accuracy decreases with antigen length|Longer antigens are associated with lower complex-prediction accuracy]] in TorchFold's benchmark comparison. This is distinct from confidence-score sensitivity to construct length.
+[[Antibody-antigen structure prediction accuracy decreases with antigen length|Longer antigens are associated with lower complex-prediction accuracy]] in TorchFold's benchmark comparison.
