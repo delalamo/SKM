@@ -3,16 +3,16 @@ tags:
   - prediction/complexes
   - evidence/generalization
 created: "2026-09-25"
-modified: "2026-09-25"
+modified: "2026-09-28T18:18:21"
 ---
 
 #### Summary
 
-**Antibody–antigen structure prediction accuracy decreases with antigen length across the predictors evaluated by TorchFold** (section 4.5) [@torchfold2026]. This concerns recovery of experimentally observed interfaces, not merely a shift in confidence scores.
+**[[tags/antibodies|Antibody]]–antigen [[notes/Structure prediction|structure prediction]] accuracy decreases with antigen length across the predictors evaluated by TorchFold** (section 4.5) [@torchfold2026]. This concerns recovery of experimentally observed interfaces, not merely a shift in confidence scores.
 
 #### Details
 
-For TorchFold, ranked success at DockQ > 0.23 fell across the following bins, pooled over five benchmarks:
+For TorchFold, ranked success at [[DockQ]] > 0.23 fell across the following bins, pooled over five benchmarks:
 
 | Antigen residues | Scored interfaces | Successful interfaces (%) |
 | --- | ---: | ---: |
@@ -26,3 +26,5 @@ For TorchFold, ranked success at DockQ > 0.23 fell across the following bins, po
 
 - [[Antigen size biases AlphaFold3 antibody-antigen confidence]] — confidence distributions rather than DockQ recovery.
 - [[ipTM is sensitive to construct length even when predicted interfaces are unchanged]] — score changes with an unchanged binding mode.
+- [[tags/antibodies/recognition|Antibody–antigen interactions]]
+- [[Protein-protein interactions]]
