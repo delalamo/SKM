@@ -3,7 +3,7 @@ tags:
   - prediction/complexes
   - evidence/generalization
 created: "2026-09-25"
-modified: "2026-09-28T20:16:01"
+modified: "2026-09-28T18:18:21"
 ---
 
 #### Summary
