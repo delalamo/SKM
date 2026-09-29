@@ -4,7 +4,7 @@ tags:
   - training/pretraining-and-scaling
   - evidence/datasets
 created: "2026-06-23"
-modified: "2026-09-28T20:40:22"
+modified: "2026-09-25"
 ---
 
 #### Summary
