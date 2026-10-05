@@ -4,7 +4,7 @@ tags:
   - antibodies/recognition
   - evidence/measurements
 created: "2026-09-25"
-modified: "2026-09-25"
+modified: "2026-10-05T19:58:48"
 ---
 
 #### Summary
@@ -15,3 +15,4 @@ modified: "2026-09-25"
 
 - [[notes/Antibody developability|Antibody developability]]
 - [[Net charge of CDRs strongly predicts nonspecific binding]]
+- [[Most commercially available tool antibodies are nonspecific]]
