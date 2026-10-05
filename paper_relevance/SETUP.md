@@ -15,8 +15,9 @@ For the issue-only reading queue:
    label, and open or reopened issues, do not become negative training examples.
 4. Require the **Test paperbot without credentials** status check in the
    `main` branch-protection rule. The check runs the complete paperbot suite for
-   relevant PRs, also requires model refresh/verification to succeed, and uses
-   a lightweight fail-closed gate for unrelated PRs. Keep **Require branches to
+   relevant code, configuration, or artifact changes and uses a lightweight
+   fail-closed gate for unrelated and bibliography-only PRs. It does not require
+   model freshness or generate model-update PRs. Keep **Require branches to
    be up to date before merging** enabled so the tested head cannot lag `main`.
    Keep code-owner review enabled: stored embeddings can be checked for
    consistency and deterministic refitting, but only the paperbot maintainer
@@ -25,23 +26,28 @@ For the issue-only reading queue:
 
 The daily schedule then runs at 00:00 UTC. A manual run defaults to dry-run mode,
 and a scheduled or explicitly non-dry manual run creates issues above the
-configured relevance cutoff. The workflow refuses to publish when the committed
-model is stale.
+configured relevance cutoff. Discovery uses the last trained model, validating
+its specification, runtime dependencies, and classifier hash before publishing.
+Bibliography edits do not require retraining before discovery can run. The
+current bibliography is still used to recognize known papers and citation keys.
 
-## Automatic model-update pull requests
+## Manual model refreshes
 
-No `MODEL_UPDATE_TOKEN` secret is required. For a same-repository pull request
-that safely changes `bibliography.bib`, the trusted workflow uses GitHub's
-temporary `GITHUB_TOKEN` to create or update a separate model-update branch and
-open a pull request from that branch into the source branch. Merge that generated
-pull request first; the source pull request then reruns with the refreshed model
-artifacts and can pass its required check.
+Refresh the model deliberately when you want new bibliography entries and
+closed negative issues to influence relevance scores. With Python 3.12 and
+`requirements-paperbot.lock` installed, run:
 
-Enable this once under **Repository Settings > Actions > General > Workflow
-permissions** by selecting **Allow GitHub Actions to create and approve pull
-requests**. The repository's default workflow permission can remain read-only:
-the model-refresh job requests only `contents: write`, `pull-requests: write`,
-and `issues: read`. Fork pull requests remain verify-only.
+```sh
+python -m scripts.paperbot backfill-bibliography
+GITHUB_TOKEN=... python -m scripts.paperbot sync-issue-negatives
+python -m scripts.paperbot refresh-model
+python -m scripts.paperbot check-model
+```
+
+The token needs read-only issue access. Review and commit the bibliography and
+artifacts under `paper_relevance/` after the freshness check succeeds. Paperbot
+does not create model-update branches or pull requests automatically, and its
+workflows do not require permission to create pull requests.
 
 ## Optional ranked GitHub Project
 
