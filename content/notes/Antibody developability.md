@@ -21,9 +21,9 @@ tags:
  - Positive patches
  - Viscosity
 
-#### Specific off-target recognition
+#### Polyreactivity
 
-[[Off-target binding was detected in 28 percent of a tested clinical antibody panel|A REAP screen detected off-target binding in 28% of 174 approved or clinical-stage antibodies]]. Specific recognition of unintended proteins is distinct from nonspecific polyreactivity.
+[[Off-target binding was detected in 28 percent of a tested clinical antibody panel|Off-target binding has been detected in 28% of 174 approved or clinical-stage antibodies]]. Specific recognition of unintended proteins is distinct from nonspecific polyreactivity.
 
 #### Thermostability
 
