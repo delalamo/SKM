@@ -23,7 +23,7 @@ tags:
 
 #### Polyreactivity
 
-[[Off-target binding was detected in 28 percent of a tested clinical antibody panel|Off-target binding has been detected in 28% of 174 approved or clinical-stage antibodies]]. Specific recognition of unintended proteins is distinct from nonspecific polyreactivity.
+[[Over a quarter of clinical antibodies have validated off-target binding|Off-target binding has been detected in 28% of 174 approved or clinical-stage antibodies]]. Specific recognition of unintended proteins is distinct from nonspecific polyreactivity.
 
 #### Thermostability
 
