@@ -34,7 +34,7 @@ from .github import (
   sync_project,
   upsert_paper_issue,
 )
-from .model import LoadedModel, Specter2Encoder, check_model, load_model, score_documents
+from .model import LoadedModel, Specter2Encoder, load_model, score_documents
 from .records import PaperRecord, first_author_key, normalize_title
 from .sources import FetchReport, FetchWindow, SourceFailure, fetch_all_sources
 
@@ -190,10 +190,11 @@ def run_daily(
 ) -> DailyResult:
   """Run one idempotent discovery tranche.
 
-  Model integrity is checked before a label, issue, comment, state, or Project
-  write is attempted. Feed errors are retained while successful providers are
-  still processed. A retryable partial-provider failure is recoverable when the
-  run has a query overlap; zero-result, non-retryable, and exact-backfill
+  The last trained model is validated before a label, issue, comment, state,
+  or Project write is attempted. Bibliography edits take effect in training
+  only after a manual refresh. Feed errors are retained while successful
+  providers are still processed. A retryable partial-provider failure is
+  recoverable when the run has a query overlap; zero-result, non-retryable, and exact-backfill
   failures remain blocking. Callers should use ``DailyResult.ok`` as the exit
   status.
   """
@@ -208,15 +209,7 @@ def run_daily(
   ):
     raise ValueError("PROJECTS_TOKEN is required when Project publishing is configured")
 
-  model_manifest = check_model(
-    config.bibliography_path,
-    config.artifact_dir,
-    negatives_path=config.negative_corpus_path,
-    title_only_exceptions_path=config.abstract_exceptions_path,
-  )
   model = load_model(config.artifact_dir)
-  if model.model_hash != model_manifest.get("model_hash"):
-    raise ValueError("loaded classifier does not match the verified model manifest")
 
   client = github_client or GitHubClient(config.repository, github_token)
   issue_index = load_managed_issues(client)

@@ -6,9 +6,9 @@ deterministic logistic-regression head. SPECTER2's encoder weights are pinned in
 `paperbot.toml`, downloaded at runtime, and cached by GitHub Actions rather than
 stored in Git.
 
-The float32 matrices contain one 768-dimensional row for every active
-bibliography work, every frozen negative, and every unique issue-derived
-negative encountered over time. Inactive issue rows are retained for audit and
+As of the last model refresh, the float32 matrices contain one 768-dimensional
+row for every active bibliography work, every frozen negative, and every unique
+issue-derived negative encountered over time. Inactive issue rows are retained for audit and
 cheap reactivation. The vector data remains small enough that Git LFS is not
 needed.
 
@@ -18,7 +18,8 @@ probability. New issues use the strict configurable cutoff `score > 0.80`.
 Generated files:
 
 - `positive_embeddings.npy` and `positive_manifest.jsonl`: one active row per
-  canonical work in `bibliography.bib`; duplicate citation keys are aliases.
+  canonical work in `bibliography.bib` at the last refresh; duplicate citation
+  keys are aliases.
 - `pubmed_negatives_v1.jsonl` and `negative_embeddings.npy`: a frozen corpus of
   biological PubMed papers outside the target field and its embeddings. Each
   corpus row records its PubMed query group, MeSH evidence, and
@@ -50,7 +51,7 @@ Generated files:
 - `abstract_exceptions.json`: reviewed, reasoned title-only exceptions for works
   whose source publishes no author abstract; lookup failures are not exceptions.
 - `classifier.npz` and `model_manifest.json`: non-pickle model parameters and
-  hashes needed to prove that the model matches the bibliography.
+  hashes recording the training inputs and validating the model artifacts.
 
 Run `python -m scripts.paperbot check-model` for an offline freshness check.
 Network-backed regeneration requires Python 3.12 and the dependencies in
@@ -61,13 +62,22 @@ The stable commands are `backfill-bibliography`, `bootstrap-negatives`,
 `bootstrap-negatives` is a network-backed, deliberate corpus-versioning
 operation, not part of ordinary bibliography refreshes.
 `sync-issue-negatives` uses GitHub's paginated Issues API and requires
-`GITHUB_TOKEN` with read-only issue access. The trusted bibliography refresh
-workflow runs it after abstract backfill and before model fitting.
-`refresh-model` refuses to invent an empty feedback snapshot, so a successful
-`sync-issue-negatives` run is required even when no issues currently qualify.
-Manual dispatch of that workflow is intentionally verification-only: automatic
-regeneration and bot pushes are limited to same-repository pull requests whose
-diff includes `bibliography.bib` and no sensitive generator or model changes.
+`GITHUB_TOKEN` with read-only issue access. Run it after abstract backfill and
+before model fitting. `refresh-model` refuses to invent an empty feedback
+snapshot, so a successful `sync-issue-negatives` run is required even when no
+issues currently qualify.
+
+Model refreshes are manual. Pull requests run paperbot unit tests for relevant
+code, configuration, or artifact changes; bibliography-only edits do not
+trigger those tests. PR checks do not require the model to match the current
+bibliography, regenerate artifacts, or open model-update PRs. See
+[SETUP.md](SETUP.md#manual-model-refreshes) for the refresh commands.
+
+Daily discovery and Project synchronization use the last trained model even
+when the bibliography has changed. They validate the classifier's specification,
+runtime dependencies, and model hash without requiring fresh training inputs.
+New bibliography entries and negative feedback influence relevance scores only
+after a manual refresh; current bibliography matching still applies to discovery.
 
 Before fitting, issue-derived works are canonicalized against both the frozen
 negative corpus and `bibliography.bib`. A duplicate fixed negative receives no
