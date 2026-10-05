@@ -34,6 +34,7 @@ from .model import (
   NEGATIVE_SEED,
   StaleModelError,
   check_model,
+  load_model,
   refresh_model,
 )
 from .records import ensure_utc
@@ -180,12 +181,12 @@ def main(argv: Sequence[str] | None = None) -> int:
       if args.sync_project:
         if args.as_of or args.since or args.until or args.dry_run or args.project_queue:
           parser.error("--sync-project cannot be combined with fetch/window options")
-        manifest = _check(config)
+        model = load_model(config.artifact_dir)
         count = sync_project_queue(
           config,
           _resolve_output(root, args.sync_project),
           projects_token=os.getenv("PROJECTS_TOKEN", ""),
-          expected_model_hash=str(manifest["model_hash"]),
+          expected_model_hash=model.model_hash,
         )
         _print_json({"ok": True, "project_items_synced": count})
         return 0
