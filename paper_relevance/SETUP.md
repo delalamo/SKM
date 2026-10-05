@@ -28,6 +28,47 @@ and a scheduled or explicitly non-dry manual run creates issues above the
 configured relevance cutoff. The workflow refuses to publish when the committed
 model is stale.
 
+## Recovering failed discovery runs
+
+Check the failed step before rerunning. The `paperbot-report-<run-id>` artifact
+includes `paperbot-model-check.log` even when validation stops discovery before
+the JSON fetch report can be created. A failed fetch may still have created or
+updated issues from healthy providers; inspect `action_counts`, `source_counts`,
+and `blocking_feed_errors` in its JSON report.
+
+If the model is stale, repair the bibliography and all generated artifacts
+together on a branch based on current `main`. A generated model-update PR targets
+its source PR's branch, so merging it there after the source PR has already
+merged does not repair `main`. Reuse its generated commit only after confirming
+that it fits the current bibliography with:
+
+```sh
+python -m scripts.paperbot check-model
+python -m pytest tests/paperbot
+```
+
+Manual dispatch of **Refresh paper relevance model** verifies artifacts; it does
+not regenerate them. Keep **Test paperbot without credentials** required in the
+repository's branch protection settings, as described above. A workflow file
+alone cannot make a check required.
+
+After merging a repair, manually dispatch **Daily paper discovery** with
+`dry_run: true` and explicit UTC `since`/`until` boundaries for one missed day.
+Review the report, then repeat that same interval with `dry_run: false`. Continue
+in daily batches through the gap; the normal 72-hour overlap cannot recover a
+longer outage. Existing issue identities make these reruns idempotent. For the
+September 2026 outage, start at `2026-09-16T00:00:00Z`, the last successful run
+boundary, and continue through the recovery boundary.
+
+arXiv discovery uses the documented `lastUpdatedDate` sort, newest first, and
+filters update timestamps locally. Using `submittedDate` as the date filter
+would omit new revisions of old papers. Pagination stops after crossing the
+requested start; a backfill that reaches the API's 30,000-result cap fails
+explicitly instead of claiming complete coverage. Older intervals beyond that
+cap require a separate metadata-harvesting path. For persistent HTTP 406s, use
+the bounded response diagnostic in the report and verify from the Actions
+runner; a successful local probe does not prove the runner has recovered.
+
 ## Automatic model-update pull requests
 
 No `MODEL_UPDATE_TOKEN` secret is required. For a same-repository pull request
