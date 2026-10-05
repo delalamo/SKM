@@ -106,14 +106,16 @@ jobs:
             args+=(--project-queue "$RUNNER_TEMP/paper-project-queue.json")
           fi
           args+=(--report "$RUNNER_TEMP/paperbot-report.json")
-          python -m scripts.paperbot "${args[@]}"
+          python -m scripts.paperbot "${args[@]}" 2>&1 | tee "$RUNNER_TEMP/paperbot-discovery.log"
 
       - name: Upload the run report
         if: ${{ always() && !cancelled() }}
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: paperbot-report-${{ github.run_id }}
-          path: ${{ runner.temp }}/paperbot-report.json
+          path: |
+            ${{ runner.temp }}/paperbot-report.json
+            ${{ runner.temp }}/paperbot-discovery.log
           if-no-files-found: ignore
           retention-days: 14
 
