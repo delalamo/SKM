@@ -11,7 +11,7 @@ SCOPED_FILES = [
   *sorted((REPO_ROOT / "scripts" / "paperbot").glob("*.py")),
   REPO_ROOT / "requirements-paperbot.lock",
   REPO_ROOT / ".github" / "workflows" / "paper-discovery.yml",
-  REPO_ROOT / ".github" / "workflows" / "paper-model-refresh.yml",
+  REPO_ROOT / ".github" / "workflows" / "paper-tests.yml",
 ]
 FORBIDDEN = (
   "open" + "ai",
