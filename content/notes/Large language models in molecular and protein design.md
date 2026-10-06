@@ -8,7 +8,7 @@ tags:
   - inference/sampling-and-search
   - evidence/design-validation
 created: "2026-09-16"
-modified: "2026-09-16T12:00:34"
+modified: "2026-10-05"
 ---
 
 ## Overview
@@ -21,20 +21,25 @@ This map currently emphasizes proteins and antibodies, including proteins that b
 
 | LLM role | Main note | Evidence |
 | --- | --- | --- |
+| Identify epitopes | [[General-purpose language models underperform specialist models on tested epitope identification tasks|Epitope identification with LLMs]] | Specialist methods outperform general-purpose LLMs on matched, labeled benchmark examples |
 | Rank existing variants | [[General-purpose language models can rank protein variants without specialist tools|PG-LLM]] | Retrospective ranking against measured variant effects |
 | Propose complete sequences | [[General-purpose language models can propose ligand binders but do not reliably satisfy design constraints|Ligand-binding protein design with LLMs]] | Binding hits after structure prediction, human filtering, and experimental testing |
 | Propose mutations and interpret feedback | [[LLM-proposed antibody mutations can yield binders when guided by structural feedback|OpenDDE-Harness]] | Iterative computational search followed by prospective binding assays |
 | Direct a design campaign | [[LLM agents can autonomously coordinate protein design campaigns that yield experimental binders|Autonomous binder design with Claude]] | Target research, tool coordination, and candidate selection followed by external wet-lab validation |
 
+## Epitope identification
+
+[[General-purpose language models underperform specialist models on tested epitope identification tasks|Specialist methods outperformed general-purpose LLMs on the matched epitope-identification benchmarks]] [@wang2026_G]. These tests used existing labeled examples and do not establish prospective binder-design performance. Weak epitope-identification results need not rule out useful sequence proposals; the roles and endpoints differ.
+
 ## Variant evaluation
 
 [[General-purpose language models can rank protein variants without specialist tools|PG-LLM]] demonstrates useful [[Variant effect prediction|variant-ranking]] ability from sequences and assay descriptions alone. The strongest tested LLMs outperform many sequence-only predictors, while the leading specialist remains better on the main benchmark [@arora2026pgllm].
 
-This supports a role in prioritization and interpretation. It does not establish prospective design hit rates or accurate ranking among only the highest-fitness candidates. See [[Aggregate benchmark correlations can mask weak within-category performance]] and [[Language models cannot extrapolate to functional novelty or ultra-high-fitness variants]]; the latter concerns protein language models and should not automatically be generalized to text LLMs.
+This supports a role in prioritization and interpretation. It does not establish prospective design hit rates or accurate ranking among only the highest-fitness candidates. See [[Aggregate benchmark correlations can mask weak within-category performance]] and [[Unmodified zero-shot PLM scores struggle to prioritize functional novelty and exceptionally fit variants]]; the latter concerns protein language models and should not automatically be generalized to text LLMs.
 
 ## Sequence proposals and structural feedback
 
-[[General-purpose language models can propose ligand binders but do not reliably satisfy design constraints|The ligand-design study]] shows that direct sequence proposals can produce active proteins, while also exposing failures to satisfy requested topology, binding-site, and oligomerization constraints [@kim2026llmdesign].
+[[General-purpose language models can propose ligand binders but do not reliably satisfy design constraints|The ligand-design study]] shows that direct sequence proposals can produce active proteins, while also exposing failures to satisfy requested topology, binding-site, and oligomerization constraints [@kim2026llmdesign]. The study does not isolate a general experimental advantage from adding specialist tools.
 
 [[LLM-proposed antibody mutations can yield binders when guided by structural feedback|OpenDDE-Harness]] places an external evaluator, or *oracle*, in the loop: the LLM proposes edits, OpenDDE predicts the complex, and the resulting evidence informs selection and subsequent proposals. The complete pipeline yielded experimentally detected binders [@openddeharness2026]. Here, “oracle” means a computational scoring tool; its confidence scores are not binding measurements.
 
@@ -51,4 +56,4 @@ The report's separate filtering result is already covered in [[Ensembling struct
 - **Ranking measured variants** tests prioritization; **prospective binding assays** test whether new designs work.
 - Computational feedback can guide a search without being an accurate measurement of affinity: [[Accurate fitness landscapes are unnecessary for productively engineering enzymes or proteins]].
 - Autonomous computational design and an autonomous laboratory are different levels of automation. Human target selection, protocol design, synthesis orders, and experimental interpretation remain part of the Anthropic study.
-- These studies evaluate different tasks and selection procedures. Their hit rates do not constitute a controlled comparison of direct LLM design, oracle-guided mutation, and agent-managed campaigns.
+- A few experimental hits do not establish reliable performance across molecular design tasks. These studies evaluate different tasks and selection procedures. Their hit rates do not constitute a controlled comparison of direct LLM design, oracle-guided mutation, and agent-managed campaigns.
