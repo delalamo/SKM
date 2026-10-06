@@ -1,9 +1,6 @@
 import { createHash } from "node:crypto"
 import { writeFile } from "node:fs/promises"
 
-const START = /^<!-- note: (.+) -->\r?\n/gm
-const END = /^<!-- \/note -->(?:\r?\n|$)/gm
-
 export function notePath(name) {
   if (!name.endsWith(".md")) name += ".md"
   if (
@@ -16,34 +13,70 @@ export function notePath(name) {
   return `content/notes/${name}`
 }
 
-export function parseNotes(title, body) {
-  if (!body?.trim()) throw new Error("The issue body is empty.")
+function noteTitle(content) {
+  let first = content.trimStart().split(/\r?\n/, 1)[0].trim()
+  if (first.startsWith("**") && first.endsWith("**")) first = first.slice(2, -2)
+  const title = /^(?:\*\*Title:\*\*\s*|Title:\s*|#\s+)(.+)$/i.exec(first)?.[1].trim()
+  if (!title) throw new Error("Start each Markdown block with Title: Note name or # Note name.")
+  return title
+}
+
+export function parseNotes(body) {
   const notes = []
-  const starts = [...body.matchAll(START)]
-  if (starts.length === 0) {
-    if (body.includes("<!-- note:") || body.includes("<!-- /note")) {
-      throw new Error("Malformed note markers. See docs/github-notes.md.")
+  let fence
+  for (const line of (body || "").matchAll(/[^\n]*(?:\n|$)/g)) {
+    const text = line[0].replace(/\r?\n$/, "")
+    if (fence) {
+      if (new RegExp(`^ {0,3}${fence.character}{${fence.length},}[ \\t]*$`).test(text)) {
+        if (fence.markdown) {
+          const content = body.slice(fence.start, line.index)
+          if (!content.trim()) throw new Error("Markdown note blocks cannot be empty.")
+          notes.push({ path: notePath(noteTitle(content)), content })
+        }
+        fence = undefined
+      }
+      continue
     }
-    notes.push({ path: notePath(title), content: body })
-  } else {
-    let previousEnd = 0
-    for (const start of starts) {
-      if (start.index < previousEnd) throw new Error("Note blocks cannot be nested.")
-      END.lastIndex = start.index + start[0].length
-      const end = END.exec(body)
-      if (!end) throw new Error("Every note block needs a closing <!-- /note --> line.")
-      const content = body.slice(start.index + start[0].length, end.index)
-      if (!content.trim()) throw new Error("Note blocks cannot be empty.")
-      notes.push({ path: notePath(start[1]), content })
-      previousEnd = end.index + end[0].length
+    const opening = /^ {0,3}(`{3,}|~{3,})(.*)$/.exec(text)
+    if (!opening) continue
+    const language = opening[2].trim()
+    if (/^(markdown|md)\b/i.test(language) && !/^(markdown|md)$/i.test(language)) {
+      throw new Error("Use an opening ```markdown or ```md fence on its own line.")
     }
-    END.lastIndex = 0
-    if ([...body.matchAll(END)].length !== starts.length) {
-      throw new Error("Unmatched closing note marker.")
+    // Track other code fences too, so Markdown examples nested inside them are ignored.
+    if (opening[1][0] === "`" && language.includes("`")) continue
+    fence = {
+      character: opening[1][0],
+      length: opening[1].length,
+      markdown: /^(markdown|md)$/i.test(language),
+      start: line.index + line[0].length,
     }
   }
+  if (fence?.markdown) throw new Error("Close each Markdown note block with a matching fence.")
+  return notes
+}
+
+export function notesFromComments(comments, commandId) {
+  const notes = []
+  for (const comment of comments.filter((c) => c.id < commandId).sort((a, b) => a.id - b.id)) {
+    if (comment.user?.type !== "User" || comment.user.login.endsWith("[bot]")) continue
+    try {
+      notes.push(
+        ...parseNotes(comment.body).map((note) => ({
+          ...note,
+          source: comment.html_url,
+          updatedAt: comment.updated_at,
+        })),
+      )
+    } catch (error) {
+      throw new Error(`${comment.html_url}: ${error.message}`)
+    }
+  }
+  if (!notes.length) throw new Error("No fenced Markdown notes found in earlier issue comments.")
   const names = notes.map((n) => n.path.normalize("NFC").toLowerCase())
-  if (new Set(names).size !== names.length) throw new Error("Duplicate note filenames.")
+  if (new Set(names).size !== names.length) {
+    throw new Error("Duplicate note filenames in issue comments. Give each note a unique title.")
+  }
   return notes
 }
 
@@ -61,7 +94,6 @@ export async function importNotes({ github, context, core }) {
     issue_number: context.issue.number,
   })
   if (issue.pull_request || issue.state !== "open") throw new Error("Use an open issue.")
-  const notes = parseNotes(issue.title, issue.body)
   // A repeated delivery or re-run finds the same PR and never resets reviewer edits.
   const branch = `codex/issue-${issue.number}-comment-${context.payload.comment.id}`
   const existing = await github.rest.pulls.list({
@@ -73,6 +105,12 @@ export async function importNotes({ github, context, core }) {
     if (existing.data[0].state === "open") core.setOutput("pr", existing.data[0].number)
     return
   }
+  const comments = await github.paginate(github.rest.issues.listComments, {
+    ...repo,
+    issue_number: issue.number,
+    per_page: 100,
+  })
+  const notes = notesFromComments(comments, context.payload.comment.id)
   const { data: repository } = await github.rest.repos.get(repo)
   const base = repository.default_branch
   const { data: ref } = await github.rest.git.getRef({ ...repo, ref: `heads/${base}` })
@@ -111,7 +149,7 @@ export async function importNotes({ github, context, core }) {
   })
   const { data: newCommit } = await github.rest.git.createCommit({
     ...repo,
-    message: `Add verbatim notes from issue #${issue.number}`,
+    message: `Add verbatim notes from comments on issue #${issue.number}`,
     tree: newTree.sha,
     parents: [ref.object.sha],
   })
@@ -129,14 +167,17 @@ export async function importNotes({ github, context, core }) {
       throw new Error("Import branch exists with different content; it was preserved.")
   }
   const hashes = notes
-    .map((n) => `- \`${n.path}\`: \`${createHash("sha256").update(n.content).digest("hex")}\``)
+    .map(
+      (n) =>
+        `- \`${n.path}\`: \`${createHash("sha256").update(n.content).digest("hex")}\` — [source comment](${n.source}), last updated ${n.updatedAt}`,
+    )
     .join("\n")
   const { data: pr } = await github.rest.pulls.create({
     ...repo,
     head: branch,
     base,
     title: `Add notes from #${issue.number}: ${issue.title}`.slice(0, 240),
-    body: `Copies the selected text verbatim from ${issue.html_url}.\n\nRequested by ${context.payload.comment.html_url}.\n\nNo summarization, formatting, metadata, citation conversion, or related links were added. Related-note suggestions are posted separately.\n\nSource issue last updated: ${issue.updated_at}\n\n### Imported UTF-8 SHA-256 checksums\n\n${hashes}`,
+    body: `Copies fenced Markdown notes verbatim from comments on ${issue.html_url}.\n\nRequested by ${context.payload.comment.html_url}.\n\nNo summarization, formatting, metadata, citation conversion, or related links were added. Related-note suggestions are posted separately.\n\n### Source comments and imported UTF-8 SHA-256 checksums\n\n${hashes}`,
   })
   core.setOutput("pr", pr.number)
   core.summary.addLink(`Note PR #${pr.number}`, pr.html_url)

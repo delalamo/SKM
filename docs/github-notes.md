@@ -2,58 +2,72 @@
 
 ## One note
 
-Create an issue whose title is the desired note filename (the `.md` suffix is
-optional), and whose body is the exact Markdown you want to publish. Comment:
+On an open issue, post a comment containing your note in a fenced `markdown` or
+`md` code block. Start the note with `Title: Note name` or `# Note name` on its
+first nonblank line. Bold forms such as `**Title: Note name**` and
+`**Title:** Note name` also work.
+
+````text
+```markdown
+Title: My note
+
+This is my note, in my own words. [@existingCitationKey]
+```
+````
+
+Then post a separate comment containing only:
 
 ```text
 /codex add-notes
 ```
 
-The workflow creates one PR adding `content/notes/<issue title>.md`. It copies the
-entire issue body, including frontmatter if supplied, exactly as GitHub returns
-it. It adds no metadata and does not summarize, fix spelling, convert citations,
-or reformat whitespace. Use a filename without slashes or reserved characters
-such as `:`. A filename collision fails rather than modifying an existing note.
+The workflow creates one PR adding `content/notes/My note.md`. The title line
+determines the filename (the `.md` suffix is optional) and remains in the copied
+text. Use a title without slashes or reserved filename characters such as `:`.
+A filename collision fails rather than modifying an existing note.
 
 ## Several notes in one PR
 
-Put named blocks in the issue body:
+Put each note in its own fenced block, in one comment or several comments:
 
+````text
 ```markdown
-<!-- note: First note.md -->
+Title: First note
 
 This is my first note, in my own words. [@existingCitationKey]
-<!-- /note -->
-
-<!-- note: Second note.md -->
-
----
-
-title: Second note
-tags:
-
-- prediction/variant-effects
-
----
-
-This is my second note.
-<!-- /note -->
 ```
 
-Comment `/codex add-notes` to import all the blocks. Each opening marker and its
-newline are excluded, as is the closing marker line. Every character between
-those lines is retained, including blank lines and the final newline. Text
-outside the blocks is excluded. These marker lines are reserved delimiters and
-cannot appear literally inside a note. Put any desired title, tags, dates, and
-citations inside the blocks yourself. Existing bibliography keys can be used;
-this command does not fetch papers or add bibliography entries.
+```md
+# Second note
+This is my second note.
+```
+````
 
-The source is the current **issue body**, not comments or linked papers. For an
-existing paper issue, wrap only your intended note text in blocks. The command
-must be the entire comment, with no surrounding text. Issue edits made after the
-import are not synced. Each new command comment requests a fresh PR; rerunning
-the same Actions run reuses its PR and preserves any reviewer edits. Existing
-filenames still cause a new request to fail.
+Comment `/codex add-notes` to import all the Markdown blocks from earlier human
+comments on that issue into one PR. Bot comments, other code-block languages,
+ordinary comment text, and the issue body are ignored. Each note needs a unique
+title. Missing titles, duplicate filenames, or malformed Markdown fences stop
+the import before any files are written. Title and fence errors identify the
+source comment.
+
+Put the opening fence, such as three backticks followed by `markdown`, on its own
+line. Do not put the closing backticks on that same line. Tilde fences also work;
+use a longer outer fence if your note contains nested code blocks.
+
+The opening fence and its newline are excluded, as is the closing fence line.
+Every character between them is retained exactly as GitHub returns it, including
+blank lines, line endings, and trailing whitespace. The command adds no metadata
+and does not summarize, fix spelling, convert citations, or reformat text.
+Include any desired figure links, tags, dates, and citations inside the blocks
+yourself. Images attached outside a block are not imported. Existing bibliography
+keys can be used; this command does not fetch papers or add bibliography entries.
+
+Comments are read in their current, possibly edited form when the workflow runs.
+Comments posted after the command are excluded. Later edits are not synced.
+Each new command comment requests a fresh PR containing all eligible blocks;
+this is not an incremental import. Rerunning the same Actions run reuses its PR
+and preserves any reviewer edits. Existing filenames still cause a new request
+to fail. There is no fallback to the issue body when no comment blocks are found.
 
 ## Find related notes
 
@@ -95,8 +109,9 @@ request these operations. The search executes trusted default-branch code,
 loads PR blobs as data, and gives Codex a read-only sandbox. Posting the result
 runs in a separate job. It never checks out or executes a PR's scripts.
 
-The imported PR links its source issue and command and includes SHA-256 hashes
-of the copied UTF-8 text. It does not close the source issue or merge itself.
+The imported PR links its source issue and command, and lists each note's source
+comment, last-edit timestamp, and SHA-256 hash of the copied UTF-8 text. It does
+not close the source issue or merge itself.
 The import run's summary links to the PR. Errors appear in the Actions run.
 If the API key is missing or analysis fails, the imported PR remains available;
 configure the key and comment `/codex related-notes` on it to retry.

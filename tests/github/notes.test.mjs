@@ -1,13 +1,31 @@
 import test from "node:test"
 import assert from "node:assert/strict"
-import { importNotes, parseNotes, prepareRelated } from "../../scripts/github/notes.mjs"
+import {
+  importNotes,
+  notesFromComments,
+  parseNotes,
+  prepareRelated,
+} from "../../scripts/github/notes.mjs"
+
+function comment(id, body, type = "User") {
+  return {
+    id,
+    body,
+    user: { login: type === "Bot" ? "codex[bot]" : "writer", type },
+    html_url: `https://example.com/12#issuecomment-${id}`,
+    updated_at: "2026-10-06T12:00:00Z",
+  }
+}
+
+const exactNote = "**Title: A note**\r\n\r\nα **claim** [@key]  \r\n\n"
 
 function harness({
   permission = "write",
   existing = [],
   tree = [],
-  body = "  Exact text\r\n\n",
-  title = "A note",
+  comments = [comment(50, `Outside prose\n\`\`\`markdown\r\n${exactNote}\`\`\`\nIgnored`)],
+  body = "Issue metadata that must never be imported",
+  title = "Paper title, not a note filename",
 } = {}) {
   const calls = []
   const response = (name, data) => async (args) => {
@@ -21,6 +39,7 @@ function harness({
         get: response("repository", { default_branch: "main" }),
       },
       issues: {
+        listComments() {},
         get: response("issue", {
           title,
           body,
@@ -45,6 +64,11 @@ function harness({
       },
     },
   }
+  github.paginate = async (method, args) => {
+    assert.equal(method, github.rest.issues.listComments)
+    calls.push({ name: "comments", args })
+    return comments
+  }
   const outputs = {}
   const core = {
     setOutput: (k, v) => {
@@ -61,48 +85,96 @@ function harness({
   return { github, context, core, calls, outputs }
 }
 
-test("single note preserves every character, including CRLF and trailing whitespace", () => {
-  const body = "\r\n---\r\ntitle: 'Original'\r\n---\r\n\r\nα **claim** [@key]  \r\n\n"
-  assert.deepEqual(parseNotes("Filename", body), [
-    { path: "content/notes/Filename.md", content: body },
+test("Markdown fences preserve all inner characters, including CRLF and trailing whitespace", () => {
+  assert.deepEqual(parseNotes(`Outside\n\`\`\`markdown\r\n${exactNote}\`\`\`\nOutside`), [
+    { path: "content/notes/A note.md", content: exactNote },
   ])
 })
 
-test("multiple blocks preserve code fences, frontmatter, Unicode and whitespace", () => {
-  const a = "---\ntitle: A\n---\n\n```python\nprint('α')\n```  \n\n"
-  const b = "\r\n[[A]] [@citation]\r\n"
-  const body = `Outside prose\n<!-- note: A.md -->\n${a}<!-- /note -->\n\n<!-- note: B.md -->\r\n${b}<!-- /note -->`
+test("multiple blocks support md, tilde fences and longer fences around nested code", () => {
+  const a = "Title: A.md\n\n```python\nprint('α')\n```  \n\n"
+  const b = "\r\n# B\r\n[[A]] [@citation]\r\n"
+  const body = `Outside prose\n\`\`\`\`markdown\n${a}\`\`\`\`\n\n~~~md\r\n${b}~~~~`
   const expected = [
     { path: "content/notes/A.md", content: a },
     { path: "content/notes/B.md", content: b },
   ]
-  assert.deepEqual(parseNotes("ignored", body), expected)
-  assert.deepEqual(parseNotes("ignored", body), expected)
+  assert.deepEqual(parseNotes(body), expected)
 })
 
-test("unsafe paths, empty notes, duplicate paths, and malformed blocks fail", () => {
-  for (const name of ["../bad", "a/b", "a\\b", ".hidden", "a\nb", "a: b", "a\0b"]) {
-    assert.throws(() => parseNotes(name, "text"), /filename/)
+test("plain, bold and heading titles name notes without changing the title line", () => {
+  for (const title of ["Title: Example", "**Title: Example**", "**Title:** Example", "# Example"]) {
+    const content = `${title}\nText\n`
+    assert.deepEqual(parseNotes(`\`\`\`MD\n${content}\`\`\``), [
+      { path: "content/notes/Example.md", content },
+    ])
+  }
+})
+
+test("ordinary prose and other code blocks are ignored, including nested Markdown examples", () => {
+  assert.deepEqual(parseNotes("# Not a note\nText"), [])
+  assert.deepEqual(parseNotes("````text\n```markdown\n# Example\n```\n````"), [])
+  assert.deepEqual(parseNotes("```python\nprint('x')\n```"), [])
+})
+
+test("unsafe paths, empty notes, missing titles and malformed Markdown fences fail", () => {
+  for (const name of ["../bad", "a/b", "a\\b", ".hidden", "a: b", "a\0b"]) {
+    assert.throws(() => parseNotes(`\`\`\`markdown\nTitle: ${name}\nText\n\`\`\``), /filename/)
   }
   for (const body of [
-    "",
-    " \n",
-    "<!-- note: A -->\nx",
-    "<!-- note:A -->\nx",
-    "<!-- /note -->",
-    "<!-- note: A -->\n<!-- /note -->",
-    "<!-- note: A -->\nx\n<!-- note: B -->\ny\n<!-- /note -->\n",
-    "<!-- note: A -->\nx\n<!-- /note -->\n<!-- /note -->",
+    "```markdown\n```",
+    "```markdown\n \n```",
+    "```markdown\nText without a title\n```",
+    "```markdown\nTitle: \n```",
+    "```markdown\n# A\nUnclosed",
+    "````markdown\n# A\n```",
+    "```markdown```\nTitle: A\nText\n```",
   ]) {
-    assert.throws(() => parseNotes("title", body))
+    assert.throws(() => parseNotes(body))
   }
+})
+
+test("duplicate names across comments fail, including case and Unicode equivalents", () => {
+  for (const titles of [
+    ["A", "a.md"],
+    ["Café", "Cafe\u0301"],
+  ]) {
+    assert.throws(
+      () =>
+        notesFromComments(
+          titles.map((title, i) => comment(i, `\`\`\`md\n# ${title}\nText\n\`\`\``)),
+          99,
+        ),
+      /Duplicate/,
+    )
+  }
+})
+
+test("only earlier human comments are selected and each block retains its source", () => {
+  const block = (title) => `\`\`\`markdown\n# ${title}\nText\n\`\`\``
+  const notes = notesFromComments(
+    [
+      comment(101, block("Future")),
+      comment(99, block("Command")),
+      comment(51, block("B")),
+      comment(50, block("A")),
+      comment(49, block("Bot"), "Bot"),
+    ],
+    99,
+  )
+  assert.deepEqual(
+    notes.map((n) => n.path),
+    ["content/notes/A.md", "content/notes/B.md"],
+  )
+  assert.equal(notes[0].source, "https://example.com/12#issuecomment-50")
+  assert.equal(notes[0].updatedAt, "2026-10-06T12:00:00Z")
+})
+
+test("missing blocks and malformed source comments have actionable errors", () => {
+  assert.throws(() => notesFromComments([comment(50, "Plain text")], 99), /No fenced Markdown/)
   assert.throws(
-    () =>
-      parseNotes(
-        "title",
-        "<!-- note: A -->\nx\n<!-- /note -->\n<!-- note: a.md -->\ny\n<!-- /note -->",
-      ),
-    /Duplicate/,
+    () => notesFromComments([comment(50, "```markdown```\n# A\n```")], 99),
+    /issuecomment-50: Use an opening/,
   )
 })
 
@@ -110,14 +182,38 @@ test("import creates only new note blobs with byte-identical text and source att
   const h = harness()
   await importNotes(h)
   const blob = h.calls.find((c) => c.name === "blob").args
-  assert.equal(Buffer.from(blob.content, "base64").toString("utf8"), "  Exact text\r\n\n")
+  assert.equal(Buffer.from(blob.content, "base64").toString("utf8"), exactNote)
   const entries = h.calls.find((c) => c.name === "newTree").args
   assert.equal(entries.base_tree, "tree")
   assert.deepEqual(entries.tree, [
     { path: "content/notes/A note.md", mode: "100644", type: "blob", sha: "blob" },
   ])
   assert.match(h.calls.find((c) => c.name === "pr").args.body, /https:\/\/example.com\/12/)
+  assert.match(h.calls.find((c) => c.name === "pr").args.body, /issuecomment-50/)
+  assert.match(h.calls.find((c) => c.name === "pr").args.body, /2026-10-06T12:00:00Z/)
+  assert.equal(h.calls.find((c) => c.name === "comments").args.per_page, 100)
   assert.equal(h.outputs.pr, 34)
+})
+
+test("multiple comments become one PR; the issue body never becomes a note", async () => {
+  const h = harness({
+    body: "```markdown\n# Wrong source\nText\n```",
+    comments: [comment(50, "```markdown\n# A\nText\n```"), comment(51, "```md\n# B\nText\n```")],
+  })
+  await importNotes(h)
+  assert.deepEqual(
+    h.calls.find((c) => c.name === "newTree").args.tree.map((f) => f.path),
+    ["content/notes/A.md", "content/notes/B.md"],
+  )
+  assert.equal(h.calls.filter((c) => c.name === "pr").length, 1)
+})
+
+test("missing or malformed comment notes fail before any writes, without body fallback", async () => {
+  for (const comments of [[], [comment(50, "```markdown\nNo title\n```")]]) {
+    const h = harness({ comments, body: "```markdown\n# Body note\nText\n```" })
+    await assert.rejects(importNotes(h), /No fenced Markdown|Start each Markdown/)
+    assert.ok(!h.calls.some((c) => c.name === "blob" || c.name === "newRef" || c.name === "pr"))
+  }
 })
 
 test("readers cannot create branches, invoke Codex preparation, or read issue text", async () => {
@@ -133,10 +229,10 @@ test("readers cannot create branches, invoke Codex preparation, or read issue te
 })
 
 test("repeated delivery reuses a PR without overwriting its branch", async () => {
-  const h = harness({ existing: [{ number: 34, state: "open" }] })
+  const h = harness({ existing: [{ number: 34, state: "open" }], comments: [] })
   await importNotes(h)
   assert.equal(h.outputs.pr, 34)
-  assert.ok(!h.calls.some((c) => c.name === "newRef" || c.name === "blob"))
+  assert.ok(!h.calls.some((c) => c.name === "newRef" || c.name === "blob" || c.name === "comments"))
 })
 
 test("closed PRs are never reopened by a retry", async () => {
