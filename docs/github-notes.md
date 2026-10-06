@@ -81,9 +81,12 @@ protein language models → [[Protein language models|protein language models]]
 PLMs → [[Protein language models|PLMs]]
 ```
 
-Matching is case-insensitive and favors longer names. It links every matching
-mention, including repeats, so you can remove unwanted links in the PR. It keeps
-the original visible wording. Exact filenames take priority over aliases;
+Matching is case-insensitive and favors longer names. It links only the first
+eligible prose mention of each destination note; aliases and case variants count
+as the same destination. Existing wikilinks or internal Markdown links anywhere
+in the note are preserved and prevent another link to that destination. The rule
+resets for each imported note. It keeps the original visible wording, and you
+can remove unwanted links in the PR. Exact filenames take priority over aliases;
 ambiguous aliases are skipped. It does not invent targets or link a note to
 itself. Matches require whole words: `ESM` does not match inside `ESMFold` or `ESM2`.
 

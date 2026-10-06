@@ -114,13 +114,23 @@ export function buildLinkIndex(notes) {
   const escaped = [...terms.keys()]
     .sort((a, b) => b.length - a.length || a.localeCompare(b))
     .map((term) => term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
-  return { terms, targets, pattern: escaped.length ? new RegExp(escaped.join("|"), "giu") : null }
+  const resolvedDestinations = new Map()
+  for (const [key, aliases] of destinations) {
+    const paths = names.get(key) ?? aliases
+    if (paths.size === 1) resolvedDestinations.set(key, [...paths][0])
+  }
+  return {
+    terms,
+    targets,
+    destinations: resolvedDestinations,
+    pattern: escaped.length ? new RegExp(escaped.join("|"), "giu") : null,
+  }
 }
 
-function textRanges(tree) {
+function textRanges(tree, includeHeadings = false) {
   const ranges = []
   function visit(node) {
-    if (skip.has(node.type)) return
+    if (skip.has(node.type) && !(includeHeadings && node.type === "heading")) return
     // GFM can synthesize empty table-cell text with no source position.
     if (node.type === "text" && node.position) {
       ranges.push({ start: node.position.start.offset, end: node.position.end.offset })
@@ -131,12 +141,12 @@ function textRanges(tree) {
   return ranges
 }
 
-function protectedRanges(content) {
+function protectedRanges(content, includeWikilinks = true) {
   const ranges = []
   // Obsidian links/comments and Pandoc citations are not recognized by CommonMark.
   // Protect paired inline HTML too: its text would otherwise look like ordinary prose.
   for (const pattern of [
-    /!?\[\[[\s\S]*?\]\]/g,
+    ...(includeWikilinks ? [/!?\[\[[\s\S]*?\]\]/g] : []),
     /\[[^\]\n]*@[^\]\n]*\]/g,
     /(?<![\p{L}\p{N}_])@[\p{L}\p{N}_][\p{L}\p{N}_.:/-]*/gu,
     /%%[\s\S]*?%%/g,
@@ -152,12 +162,61 @@ function protectedRanges(content) {
   return ranges
 }
 
+function existingTargets(tree, content, index) {
+  const linked = new Set()
+  function remember(destination) {
+    // Resolve local Markdown URLs and wikilinks to the same canonical note path.
+    try {
+      destination = decodeURIComponent(destination)
+    } catch {
+      return
+    }
+    const key = normalize(
+      destination
+        .split(/[#^]/)[0]
+        .replace(/\.md$/i, "")
+        .replace(/^(?:\.\.?\/)+/, "")
+        .replace(/^\/?(?:content\/)?/, ""),
+    )
+    const path = index.destinations.get(key) ?? index.destinations.get(`notes/${key}`)
+    if (path) linked.add(path)
+  }
+  const protectedText = protectedRanges(content, false)
+  const prose = textRanges(tree, true)
+  for (const match of content.matchAll(wikiLinks)) {
+    const start = match.index
+    if (
+      match[0].startsWith("!") ||
+      !prose.some((span) => start >= span.start && start < span.end) ||
+      protectedText.some((span) => start < span.end && start + match[0].length > span.start)
+    )
+      continue
+    remember(match[1].split("|")[0])
+  }
+  const definitions = new Map()
+  const references = []
+  function visit(node) {
+    if (node.type === "link") remember(node.url)
+    if (node.type === "definition") definitions.set(node.identifier, node.url)
+    if (node.type === "linkReference") references.push(node.identifier)
+    for (const child of node.children ?? []) visit(child)
+  }
+  visit(tree)
+  for (const identifier of references) {
+    if (definitions.has(identifier)) remember(definitions.get(identifier))
+  }
+  return linked
+}
+
 export function linkNote(note, index) {
   if (!index.pattern) return { ...note, links: [] }
   const { content } = note
+  const tree = markdown.parse(content)
+  // Preserve authored links wherever they occur; do not add another to that destination.
+  const linkedTargets = existingTargets(tree, content, index)
   const protectedText = protectedRanges(content)
   const edits = []
-  for (const range of textRanges(markdown.parse(content))) {
+  for (const range of textRanges(tree)) {
     const text = content.slice(range.start, range.end)
     for (const match of text.matchAll(index.pattern)) {
       const start = range.start + match.index
@@ -169,10 +228,11 @@ export function linkNote(note, index) {
         continue
       if (protectedText.some((span) => start < span.end && end > span.start)) continue
       const path = index.terms.get(normalize(match[0]))
-      if (!path || path === note.path) continue
+      if (!path || path === note.path || linkedTargets.has(path)) continue
       const target = index.targets.get(path)
       const link = target === match[0] ? `[[${target}]]` : `[[${target}|${match[0]}]]`
       edits.push({ start, end, link, target })
+      linkedTargets.add(path)
     }
   }
   // Apply only insertions around existing prose, from right to left; never reserialize Markdown.

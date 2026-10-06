@@ -211,7 +211,7 @@ test("multiple comments become one PR; the issue body never becomes a note", asy
 
 test("import applies inline links and records both source and imported checksums", async () => {
   const source = "# New note\nESM and ESM\n"
-  const linked = "# New note\n[[ESM]] and [[ESM]]\n"
+  const linked = "# New note\n[[ESM]] and ESM\n"
   const h = harness({ comments: [comment(50, `\`\`\`md\n${source}\`\`\``)] })
   h.readCatalog = async () => [{ path: "content/notes/ESM.md", content: "# ESM" }]
   await importNotes(h)
@@ -222,7 +222,7 @@ test("import applies inline links and records both source and imported checksums
   const body = h.calls.find((c) => c.name === "pr").args.body
   for (const text of [source, linked])
     assert.ok(body.includes(createHash("sha256").update(text).digest("hex")))
-  assert.match(body, /Added 2 inline wikilinks/)
+  assert.match(body, /Added 1 inline wikilinks/)
   assert.match(body, /issuecomment-50/)
 })
 

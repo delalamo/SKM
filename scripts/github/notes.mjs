@@ -180,7 +180,7 @@ export async function importNotes({ github, context, core, readCatalog }) {
     head: branch,
     base,
     title: `Add notes from #${issue.number}: ${issue.title}`.slice(0, 240),
-    body: `Imports fenced Markdown notes from comments on ${issue.html_url}.\n\nRequested by ${context.payload.comment.html_url}.\n\nAdds inline wikilinks using existing note names and aliases, preserving the author's wording and formatting. Review freely and remove unwanted links. Quartz generates backlinks from these links. See Also and reciprocal-link suggestions are posted separately by the related-note search.\n\n### Source comments and UTF-8 SHA-256 checksums\n\n${hashes}`,
+    body: `Imports fenced Markdown notes from comments on ${issue.html_url}.\n\nRequested by ${context.payload.comment.html_url}.\n\nAdds an inline wikilink to the first mention of each unlinked destination note, using existing names and aliases while preserving the author's wording and formatting. Review freely and remove unwanted links. Quartz generates backlinks from these links. See Also and reciprocal-link suggestions are posted separately by the related-note search.\n\n### Source comments and UTF-8 SHA-256 checksums\n\n${hashes}`,
   })
   core.setOutput("pr", pr.number)
   core.summary.addLink(`Note PR #${pr.number}`, pr.html_url)

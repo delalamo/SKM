@@ -26,7 +26,9 @@ For every proposed note:
 5. Look for additional inline links that name/alias matching may have missed,
    such as domain abbreviations or contextual synonyms. Show the exact original
    phrase and proposed `[[Canonical filename|original phrase]]` replacement.
-   Preserve the visible wording and do not duplicate existing inline links.
+   Suggest only the first eligible prose mention of each destination in a note;
+   aliases and case variants count as the same destination. Preserve the visible
+   wording and do not suggest another inline link to an already-linked note.
 6. Suggest useful reciprocal links in existing notes: name the existing note and
    the precise section or phrase where a link to the proposed note belongs.
    Quartz already generates backlinks from outgoing links; these suggestions

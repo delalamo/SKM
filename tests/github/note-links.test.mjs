@@ -23,7 +23,7 @@ const catalog = [
 ]
 const index = buildLinkIndex(catalog)
 
-test("links repeated names, frontmatter aliases and established display aliases generously", () => {
+test("links only the first mention of each destination across names, aliases and case variants", () => {
   const original = note(
     "New note",
     "Title: ESM and PLMs\r\n\r\n**ESM** and ESMFold use PLMs; esm and PLM help inverse folding and sequence design. ESM!  \r\n",
@@ -31,9 +31,9 @@ test("links repeated names, frontmatter aliases and established display aliases 
   const result = linkNote(original, index)
   assert.equal(
     result.content,
-    "Title: ESM and PLMs\r\n\r\n**[[ESM]]** and [[ESMFold]] use [[Protein language models|PLMs]]; [[ESM|esm]] and [[Protein language models|PLM]] help [[Inverse folding|inverse folding]] and [[Inverse folding|sequence design]]. [[ESM]]!  \r\n",
+    "Title: ESM and PLMs\r\n\r\n**[[ESM]]** and [[ESMFold]] use [[Protein language models|PLMs]]; esm and PLM help [[Inverse folding|inverse folding]] and sequence design. ESM!  \r\n",
   )
-  assert.equal(result.links.length, 8)
+  assert.equal(result.links.length, 4)
   assert.equal(linkNote(result, index).content, result.content)
   assert.equal(linkNote(result, index).links.length, 0)
 })
@@ -42,7 +42,7 @@ test("protects Markdown syntax, existing links, images, citations, code, math an
   const protectedText = [
     "---\ntitle: ESM\naliases: [ESM]\n---",
     "# ESM",
-    "[[ESM]] ![[ESM]] [[Other|ESM]] [[Other|**ESM**]]",
+    "[[Other]] ![[ESM]] [[Other|ESM]] [[Other|**ESM**]]",
     "[ESM](https://example.com/ESM) ![ESM](image.png)",
     "[ESM][ref]\n\n[ref]: https://example.com/ESM 'ESM'",
     "https://example.com/ESM user@ESM.org <https://example.com/ESM>",
@@ -61,7 +61,7 @@ test("respects word boundaries and prefers the longest name, including Unicode l
     note("New note", "ESMFold ESM2 xESM ESM_name ESMé αESM ESM-based (ESM)."),
     index,
   )
-  assert.equal(result.content, "[[ESMFold]] ESM2 xESM ESM_name ESMé αESM [[ESM]]-based ([[ESM]]).")
+  assert.equal(result.content, "[[ESMFold]] ESM2 xESM ESM_name ESMé αESM [[ESM]]-based (ESM).")
 })
 
 test("does not link to itself or invent missing or ambiguous targets", () => {
@@ -86,18 +86,22 @@ test("duplicate basenames use full destinations when a unique title or alias res
     linkNote(note("New note", "Shared First model Second model"), nested).content,
     "Shared [[notes/one/Shared|First model]] [[notes/two/Shared|Second model]]",
   )
+  assert.equal(
+    linkNote(note("New note", "[first](./one/Shared.md) First model Second model"), nested).content,
+    "[first](./one/Shared.md) First model [[notes/two/Shared|Second model]]",
+  )
 })
 
 test("new notes can link to each other without modifying their source objects or existing notes", () => {
   const notes = [
     note("First note", "# First note\nSecond note ESM"),
-    note("Second note", "Title: Second note\nFirst note"),
+    note("Second note", "Title: Second note\nFirst note ESM ESM"),
   ]
   const originals = structuredClone(notes)
   const before = structuredClone(catalog)
   const linked = linkNotes(notes, catalog)
   assert.equal(linked[0].content, "# First note\n[[Second note]] [[ESM]]")
-  assert.equal(linked[1].content, "Title: Second note\n[[First note]]")
+  assert.equal(linked[1].content, "Title: Second note\n[[First note]] [[ESM]] ESM")
   assert.deepEqual(notes, originals)
   assert.deepEqual(catalog, before)
 })
@@ -106,7 +110,37 @@ test("links prose in tables with empty cells and lists without reformatting it",
   const content = "| | Purpose |\n| --- | --- |\n| ESM | PLMs |\n\n- ESM\n> ESM"
   assert.equal(
     linkNote(note("New note", content), index).content,
-    "| | Purpose |\n| --- | --- |\n| [[ESM]] | [[Protein language models|PLMs]] |\n\n- [[ESM]]\n> [[ESM]]",
+    "| | Purpose |\n| --- | --- |\n| [[ESM]] | [[Protein language models|PLMs]] |\n\n- ESM\n> ESM",
+  )
+})
+
+test("existing wikilinks suppress new links to their destination regardless of label or location", () => {
+  for (const content of [
+    "[[ESM]] ESM esm",
+    "[[ESM|**model**]] ESM",
+    "ESM\n\n#### See also\n- [[notes/ESM#Details|model]]",
+    "[[PLM]] PLMs and protein language models",
+    "# [[Protein language models|PLMs]]\nPLM and protein language models",
+  ]) {
+    assert.equal(linkNote(note("New note", content), index).content, content)
+  }
+})
+
+test("existing internal Markdown links and reference links also count as linked destinations", () => {
+  for (const content of [
+    "[model](./ESM.md) ESM ESM",
+    "[model](../notes/Protein%20language%20models.md#Details) PLMs PLM",
+    "[model][ref] ESM\n\n[ref]: /notes/ESM",
+  ]) {
+    assert.equal(linkNote(note("New note", content), index).content, content)
+  }
+})
+
+test("wikilinks in code, comments, or images do not consume the first prose mention", () => {
+  const content = "`[[ESM]]`\n\n```md\n[[ESM]]\n```\n\n%% [[ESM]] %%\n\n![[ESM]]\n\nESM ESM"
+  assert.equal(
+    linkNote(note("New note", content), index).content,
+    content.replace(/ESM ESM$/, "[[ESM]] ESM"),
   )
 })
 
