@@ -5,7 +5,7 @@ aliases:
   - "Inverse folding"
   - "tags/inverse-folding"
 created: "2026-04-10T14:02:57"
-modified: "2026-10-05T21:03:30"
+modified: "2026-09-25"
 tags:
   - design/inverse-folding
 ---

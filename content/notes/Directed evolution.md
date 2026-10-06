@@ -3,7 +3,7 @@ title: Directed evolution
 tags:
   - design/directed-evolution
 created: 2026-04-10T14:30:55
-modified: "2026-10-05T21:03:30"
+modified: "2026-09-25"
 review:
   - "citation-fix"
 ---

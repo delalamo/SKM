@@ -3,7 +3,7 @@ tags:
   - design/backbones
   - inference/conditioning
 created: "2026-09-25"
-modified: "2026-10-05T21:03:30"
+modified: "2026-09-25"
 ---
 
 #### Summary
