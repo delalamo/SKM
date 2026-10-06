@@ -1710,6 +1710,12 @@ def model_errors(
 
 
 def load_model(artifacts_dir: Path | str) -> LoadedModel:
+  """Validate and load the trained classifier independently of training inputs.
+
+  Daily discovery may use this snapshot after bibliography edits. The explicit
+  ``check_model`` command additionally checks corpus freshness and refitting.
+  """
+
   artifacts = Path(artifacts_dir)
   manifest = json.loads((artifacts / MODEL_MANIFEST).read_text(encoding="utf-8"))
   if not isinstance(manifest, Mapping):
@@ -1723,6 +1729,8 @@ def load_model(artifacts_dir: Path | str) -> LoadedModel:
     or not _json_contract_equal(manifest.get("classifier"), CLASSIFIER_CONFIG)
   ):
     raise ValueError("Invalid paperbot model specification")
+  if manifest.get("dependencies") != _dependency_versions():
+    raise ValueError("model dependency versions do not exactly match the runtime")
   coefficients, intercept, _classes = _load_classifier_artifact(
     artifacts / CLASSIFIER_FILE
   )
