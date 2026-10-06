@@ -5,10 +5,12 @@ import sys
 from pathlib import Path
 from types import ModuleType
 from typing import Any
+from unittest.mock import Mock
 
 import pytest
 
 from scripts.paperbot.cli import build_parser, main
+from scripts.paperbot.model import LoadedModel
 
 
 def test_sync_issue_negatives_command_is_registered() -> None:
@@ -56,3 +58,21 @@ def test_repo_root_requires_its_own_config(
 ) -> None:
   assert main(["--repo-root", str(tmp_path), "check-model"]) == 1
   assert "regular, non-symlink file" in capsys.readouterr().err
+
+
+def test_project_sync_uses_the_saved_model_without_requiring_fresh_training(
+  monkeypatch: pytest.MonkeyPatch,
+) -> None:
+  saved_model = LoadedModel(None, 0, "trained-model")
+  monkeypatch.setattr("scripts.paperbot.cli.load_model", lambda _: saved_model)
+  monkeypatch.setattr(
+    "scripts.paperbot.cli.check_model",
+    Mock(side_effect=AssertionError("training corpus freshness is not required")),
+  )
+  sync = Mock(return_value=2)
+  monkeypatch.setattr("scripts.paperbot.cli.sync_project_queue", sync)
+  monkeypatch.setenv("PROJECTS_TOKEN", "project-token")
+
+  assert main(["daily", "--sync-project", "queue.json"]) == 0
+  assert sync.call_args.kwargs["expected_model_hash"] == "trained-model"
+  assert sync.call_args.kwargs["projects_token"] == "project-token"
