@@ -5,7 +5,7 @@ aliases:
   - "Protein backbone design"
   - "tags/protein-backbone-design"
 created: "2026-04-10T14:30:55"
-modified: "2026-10-05T20:49:40"
+modified: "2026-09-25"
 tags:
   - design/backbones
 ---
