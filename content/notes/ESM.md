@@ -13,6 +13,5 @@ tags:
 
 * ESM1b used dropout in the attention matrices during training, but ESM2 did not.
 * Verkuil et al. [@verkuil2022] argue that it generalizes beyond natural proteins. Its training set excludes artificial proteins.
-* ESM-1v is a variant effect prediction model trained on [[MSA Transformer]] logits [@meier2022].
-
+* ESM-1v is a variant effect prediction model trained on [[MSA Transformer]] logits [@meier2022]
 * [[Raygun]] uses ESM-2 embeddings for template-guided generation at a specified sequence length [@devkota2026].
