@@ -1040,6 +1040,16 @@
   url = {https://doi.org/10.64898/2025.12.12.694033},
 }
 
+@article{chow2026,
+  title = {Sequence and structural determinants of efficacious de novo chimaeric antigen receptors.},
+  author = {Arthur Chow and Hoyin Chu and Ruofan Li and Benan N Nalbant and Abdul Vehab Dozic and Laura C Kida and Zeyu Tang and Joseph R Palmeri and Caleb A Lareau},
+  year = {2026},
+  journal = {Nature biomedical engineering},
+  doi = {10.1038/s41551-026-01790-9},
+  url = {https://doi.org/10.1038/s41551-026-01790-9},
+  abstract = {Advances in generative protein design using artificial intelligence (AI) have enabled the rapid development of binders against heterogeneous targets, including tumour-associated antigens. Despite extensive biochemical characterization, these novel protein binders have had limited evaluation in candidate therapeutics, including chimaeric antigen receptor (CAR) T cells. Here we synthesize generative protein design workflows to screen 1,758 newly designed protein binders targeting BCMA, CD19 and CD22 for efficacy in scalable protein-binding, T-cell activation and in vivo killing assays. We characterize three main challenges that hinder the utility of de novo protein binders as CARs, including tonic signalling, occluded epitope engagement and off-target activity. We develop computational and experimental heuristics to overcome these limitations, including screens of sequence variants of individual parental structures, that retain on-target CAR activation while mitigating liabilities. Together, our framework accelerates the development of AI-designed proteins for future preclinical therapeutic screening, helping enable a new generation of cellular therapies.},
+}
+
 @article{christlet2001,
   title = {Database Analysis of O-Glycosylation Sites in Proteins},
   author = {Hema Thanka Christlet, T. and Veluraja, K.},
@@ -6644,6 +6654,17 @@
   url = {https://arxiv.org/abs/2506.08365},
 }
 
+@misc{tartici2026,
+  title = {Inverse FoldDir: Structure-conditioned Protein Sequence Design by Dirichlet Flow Matching},
+  author = {TARTICI, A. and Stojkovic, M. and Tian, A. and Jewett, M. C. and Altman, R. B. and Wittmann, B. J.},
+  year = {2026},
+  publisher = {bioRxiv},
+  doi = {10.64898/2026.09.06.749733},
+  url = {https://www.biorxiv.org/content/10.64898/2026.09.06.749733v2},
+  note = {Version 2},
+  abstract = {1 Protein engineering has important implications in the bioeconomy, enabling applications in materials, medicine, and energy. A key challenge is designing protein sequences that have a specific form and function. Protein inverse folding seeks to address this challenge by identifying amino acid sequences compatible with a desired protein backbone. This task is central to protein redesign and can provide a sequence-design capability for de novo backbones produced by structure-generation methods. Ideally, inverse folding can provide diverse sequence alternatives, fixed residues or motifs, soft biochemical preferences at selected positions, and candidates that remain experimentally useful. We developed Inverse FoldDir, a controllable inverse-folding method that performs iterative denoising on the amino acid probability simplex. Given a backbone structure, the model updates all positions jointly through a learned Dirichlet flow, supporting full sequence generation, fixed-residue inpainting, and user-defined soft residue priors. On the held-out CATH 4.2 test set, Inverse FoldDir achieved a mean TM-score of 84.5 (on a 0-100 scale) and a mean C α RMSD of 1.76 Å, compared with 83.3 and 1.86 Å, respectively, for ESM-IF1, the strongest evaluated baseline on both metrics. Denoising trajectory analyses showed that positions commit at different rates and that some residues change identity late in generation, illustrating whole-sequence refinement rather than one-shot prediction or irreversible sequential decoding. We experimentally tested Inverse FoldDir in an anti-GFP nanobody redesign task, where two of 35 redesigned sequences retained reproducible sfGFP-binding signal across independent assay runs with approximately 43\% sequence divergence from the native nanobody. Inverse FoldDir is a structure-conditioned protein redesign method that combines structural recovery, user control, experimental validation, and a natural route toward future property-guided sampling.},
+}
+
 @article{tennenhouse2023,
   title = {Computational optimization of antibody humanness and stability by systematic energy-based ranking},
   author = {Tennenhouse, Ariel and Khmelnitsky, Lev and Khalaila, Razi and Yeshaya, Noa and Noronha, Ashish and Lindzen, Moshit and Makowski, Emily K. and Zaretsky, Ira and Sirkis, Yael Fridmann and Galon-Wolfenson, Yael and Tessier, Peter M. and Abramson, Jakub and Yarden, Yosef and Fass, Deborah and Fleishman, Sarel J.},
@@ -8822,16 +8843,6 @@
   url = {https://www-cdn.anthropic.com/30bf50e22a01388bb29bf077ee3f244531594b7a.pdf},
 }
 
-@article{chow2026,
-  title = {Sequence and structural determinants of efficacious de novo chimaeric antigen receptors.},
-  author = {Arthur Chow and Hoyin Chu and Ruofan Li and Benan N Nalbant and Abdul Vehab Dozic and Laura C Kida and Zeyu Tang and Joseph R Palmeri and Caleb A Lareau},
-  year = {2026},
-  journal = {Nature Biomedical Engineering},
-  doi = {10.1038/s41551-026-01790-9},
-  url = {https://doi.org/10.1038/s41551-026-01790-9},
-  abstract = {Advances in generative protein design using artificial intelligence (AI) have enabled the rapid development of binders against heterogeneous targets, including tumour-associated antigens. Despite extensive biochemical characterization, these novel protein binders have had limited evaluation in candidate therapeutics, including chimaeric antigen receptor (CAR) T cells. Here we synthesize generative protein design workflows to screen 1,758 newly designed protein binders targeting BCMA, CD19 and CD22 for efficacy in scalable protein-binding, T-cell activation and in vivo killing assays. We characterize three main challenges that hinder the utility of de novo protein binders as CARs, including tonic signalling, occluded epitope engagement and off-target activity. We develop computational and experimental heuristics to overcome these limitations, including screens of sequence variants of individual parental structures, that retain on-target CAR activation while mitigating liabilities. Together, our framework accelerates the development of AI-designed proteins for future preclinical therapeutic screening, helping enable a new generation of cellular therapies.},
-}
-
 @misc{wang2026msfold,
   title = {Sampling in structure-token space enables accurate prediction of multiple protein conformations},
   author = {Wang, Z. and Yu, Y. and Zheng, W.-M. and Yu, C. and Bu, D.},
@@ -8841,17 +8852,6 @@
   url = {https://www.biorxiv.org/content/10.64898/2026.03.03.708411v3},
   note = {Version 3},
   abstract = {Proteins often function through multiple conformations, yet most structure-prediction methods are biased toward a single dominant state. Here we present MSFold, a training-free framework that explores the discrete, sequence-conditioned structure-token space of ESM3 using parallel tempering, coupling high-temperature exploration with low-temperature refinement to cross barriers between conformational states. Across 312 multi-conformation protein pairs, MSFold recovered both conformations in 51.6\% of cases, compared with 38.1\% for MSA Cluster and 37.8\% for AlphaFold3. This performance advantage persisted on a post-ESM3-cutoff evaluation set, arguing against simple structural memorization. We further introduce sequence log-likelihood, a reference-free confidence score based on sequence–structure consistency, which improves ranking of sampled conformations. Together, these results provide a practical means of accessing the conformational information encoded by protein language models and establish MSFold as an effective framework for multi-conformation prediction.},
-}
-
-@misc{tartici2026,
-  title = {Inverse FoldDir: Structure-conditioned Protein Sequence Design by Dirichlet Flow Matching},
-  author = {TARTICI, A. and Stojkovic, M. and Tian, A. and Jewett, M. C. and Altman, R. B. and Wittmann, B. J.},
-  year = {2026},
-  publisher = {bioRxiv},
-  doi = {10.64898/2026.09.06.749733},
-  url = {https://www.biorxiv.org/content/10.64898/2026.09.06.749733v2},
-  note = {Version 2},
-  abstract = {1 Protein engineering has important implications in the bioeconomy, enabling applications in materials, medicine, and energy. A key challenge is designing protein sequences that have a specific form and function. Protein inverse folding seeks to address this challenge by identifying amino acid sequences compatible with a desired protein backbone. This task is central to protein redesign and can provide a sequence-design capability for de novo backbones produced by structure-generation methods. Ideally, inverse folding can provide diverse sequence alternatives, fixed residues or motifs, soft biochemical preferences at selected positions, and candidates that remain experimentally useful. We developed Inverse FoldDir, a controllable inverse-folding method that performs iterative denoising on the amino acid probability simplex. Given a backbone structure, the model updates all positions jointly through a learned Dirichlet flow, supporting full sequence generation, fixed-residue inpainting, and user-defined soft residue priors. On the held-out CATH 4.2 test set, Inverse FoldDir achieved a mean TM-score of 84.5 (on a 0-100 scale) and a mean C α RMSD of 1.76 Å, compared with 83.3 and 1.86 Å, respectively, for ESM-IF1, the strongest evaluated baseline on both metrics. Denoising trajectory analyses showed that positions commit at different rates and that some residues change identity late in generation, illustrating whole-sequence refinement rather than one-shot prediction or irreversible sequential decoding. We experimentally tested Inverse FoldDir in an anti-GFP nanobody redesign task, where two of 35 redesigned sequences retained reproducible sfGFP-binding signal across independent assay runs with approximately 43\% sequence divergence from the native nanobody. Inverse FoldDir is a structure-conditioned protein redesign method that combines structural recovery, user control, experimental validation, and a natural route toward future property-guided sampling.},
 }
 
 @article{tadiello2026,

@@ -5,7 +5,7 @@ aliases:
   - "Developability"
   - "tags/antibody-developability"
 created: 2026-04-05T23:36:09
-modified: "2026-09-25"
+modified: "2026-10-05T20:20:15"
 tags:
   - design/developability
 ---
@@ -24,6 +24,8 @@ tags:
 #### Polyreactivity
 
 [[Over a quarter of clinical antibodies have validated off-target binding|Off-target binding has been detected in 28% of 174 approved or clinical-stage antibodies]]. Specific recognition of unintended proteins is distinct from nonspecific polyreactivity.
+
+- [[Redesigning non-interface residues can reduce off-target reactivity]]
 
 #### Thermostability
 

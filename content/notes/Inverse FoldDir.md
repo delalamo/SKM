@@ -5,7 +5,7 @@ tags:
   - model-design/generative-models
   - evidence/generalization
 created: "2026-09-15"
-modified: "2026-09-16T12:00:34"
+modified: "2026-10-05"
 ---
 
 **Inverse FoldDir** combines a [[Geometric Vector Perceptrons|GVP]] structural encoder with Dirichlet [[Flow matching]] to design sequences on fixed protein backbones. It supports full-sequence design, fixed-residue inpainting, and soft amino-acid preferences [@tartici2026].
@@ -26,6 +26,6 @@ Uncertainties are standard deviations of three generation-replicate means. These
 
 #### See also
 
-- [[Inverse folding by flow matching resolves residue identities at different times]]
+- [[Sequence design by flow matching resolves different residues at different time steps]]
 - [[Protein models designed using inverse folding can be used to supplement training DBs for PLMs and structure prediction models]]
 - [[Sequence recovery in inverse folding models is not correlated with self-consistency of generated designs]]
