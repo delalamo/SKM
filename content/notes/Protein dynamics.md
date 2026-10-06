@@ -1,7 +1,7 @@
 ---
 title: Protein dynamics
 created: 2026-04-10T14:30:55
-modified: "2026-04-21T07:28:09"
+modified: "2026-10-05T20:01:26"
 tags:
   - biophysics/dynamics
   - biophysics/ensemble-analysis
@@ -12,6 +12,7 @@ tags:
 #### Notes
 * **The variation among protein structures determined by [[X-ray-crystallography]] broadly reproduce the dynamics measured by [[NMR]]** [@best2006]. They also fit NMR data better than ensembles folded using those NMR data.
 * ***De novo* designed proteins can also have conformational equilibria that are modified by point mutations** [@guo2025].
+* [[De novo designed binders can have unbound ensembles that differ from the bound state|Designed binders can reorganize between unbound and bound ensembles]], as suggested by simulations and HDX measurements of a RelE binder.
 * The free energy landscape model of protein dynamics was first proposed by [@austin1975].
 
 #### Measurement

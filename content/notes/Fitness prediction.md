@@ -1,7 +1,7 @@
 ---
 title: Fitness prediction
 created: 2026-04-10T14:02:57
-modified: "2026-04-21T07:28:09"
+modified: "2026-10-05T20:01:26"
 tags:
   - prediction/variant-effects
   - evolution/mutation-effects
@@ -14,8 +14,9 @@ tags:
 
 #### Notes
 
-* **Sequence-based predictors (e.g., PSSMs and [[Potts models]]) could miss high-fitness naturally occurring mutations** [@johnston2024].
+* **Sequence-based predictors (e.g., PSSMs and [[Potts models]]) could miss high-fitness naturally occurring mutations** [@johnston2024]. Context-aware scores can also [[Unmodified zero-shot PLM scores struggle to prioritize functional novelty and exceptionally fit variants|favor native specificity over functional novelty]].
 * **Including nonfunctional sequences during training improves prediction of poor performers but not top performers** [@morenopaz2023]. This was demonstrated using several ML models.
+* [[Linear models remain competitive on epistasis-enriched protein fitness tests|Additive models can remain competitive on epistasis-enriched tests]], although ranking total fitness does not establish prediction of epistatic effects.
 * **Complex models are worse than ridge regression when the number of training examples is low** [@singh2025].
 ![[AbMAP-ridge-regression.png]]
 	*Ref [@singh2025]*

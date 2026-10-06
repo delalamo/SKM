@@ -54,6 +54,7 @@ OPENSEARCH = "{http://a9.com/-/spec/opensearch/1.1/}"
 # modern subcategories.  stat has only dotted subject classes.
 ARXIV_CATEGORY_FAMILIES = ("q-bio*", "cond-mat*", "stat.*")
 ARXIV_PAGE_SIZE = 500
+ARXIV_RESULT_CAP = 30_000
 RETRYABLE_STATUS = frozenset({429, 500, 502, 503, 504})
 # Retry a failed provider before embedding: once quickly, then after an outage-sized pause.
 PROVIDER_RETRY_DELAYS = (60.0, 3_600.0)
@@ -283,19 +284,25 @@ class HttpClient:
         if response.status >= 400:
           retryable = response.status in RETRYABLE_STATUS
           raise HttpRequestError(
-            f"HTTP {response.status} for {safe_url}",
+            _http_error_message(response.status, url, response.headers, response.body),
             status=response.status,
             retryable=retryable,
           )
         return decode(response.body, safe_url)
       except urllib.error.HTTPError as error:
         retryable = error.code in RETRYABLE_STATUS
+        error_headers = dict(error.headers.items()) if error.headers else {}
+        try:
+          error_body = error.read(4096)
+        except (OSError, http.client.HTTPException):
+          error_body = b""
+        finally:
+          error.close()
         last_error = HttpRequestError(
-          f"HTTP {error.code} for {safe_url}",
+          _http_error_message(error.code, url, error_headers, error_body),
           status=error.code,
           retryable=retryable,
         )
-        error_headers = dict(error.headers.items()) if error.headers else {}
         delay = self._retry_after(error_headers, min(60.0, 2.0**attempt))
       except HttpRequestError as error:
         last_error = HttpRequestError(
@@ -401,6 +408,33 @@ def _redact_error_message(message: str, request_url: str) -> str:
     }:
       safe = safe.replace(representation, "REDACTED")
   return safe
+
+
+def _http_error_message(
+  status: int, url: str, headers: Mapping[str, str], body: bytes
+) -> str:
+  """Keep bounded diagnostics for the public arXiv endpoint's unexplained 406s.
+
+  Other providers can receive credentials; never include their response bodies
+  or arbitrary headers in a report. Even arXiv diagnostics are omitted if the
+  request contains a credential, since a truncated echo cannot be fully redacted.
+  """
+
+  message = f"HTTP {status} for {_redact_url(url)}"
+  parsed = urllib.parse.urlsplit(url)
+  if (
+    url.split("?", 1)[0] != ARXIV_API
+    or any(
+      key.casefold() in SENSITIVE_QUERY_KEYS
+      for key, _value in urllib.parse.parse_qsl(parsed.query)
+    )
+  ):
+    return message
+  content_type = next(
+    (value for key, value in headers.items() if key.casefold() == "content-type"), ""
+  )
+  detail = clean_text(body[:4096].decode("utf-8", errors="replace"))[:512]
+  return f"{message}; content-type={clean_text(content_type)[:100]}; response={detail}"
 
 
 def _failure(source: str, operation: str, error: Exception) -> SourceFailure:
@@ -693,7 +727,19 @@ def _pubmed_search_page(
     raise HttpRequestError("PubMed ESearch returned an unexpected response")
   search = payload["esearchresult"]
   if search.get("ERROR") or search.get("error"):
-    raise HttpRequestError(f"PubMed ESearch error: {search.get('ERROR') or search.get('error')}")
+    message = str(search.get("ERROR") or search.get("error"))
+    # ESearch can return an HTTP 200 JSON envelope containing a backend 5xx.
+    # Preserve permanent query errors, but let the provider retry loop recover
+    # the same outages that would be retried if expressed as an HTTP status.
+    status_match = re.search(r"\bStatus:\s*(\d{3})\b", message, re.IGNORECASE)
+    status = int(status_match[1]) if status_match else None
+    retryable = status in RETRYABLE_STATUS or any(
+      marker in message.casefold()
+      for marker in ("search is temporarily unavailable", "cannot connect to solr")
+    )
+    raise HttpRequestError(
+      f"PubMed ESearch error: {message}", status=status, retryable=retryable
+    )
   page = [str(value) for value in search.get("idlist", []) if str(value).isdigit()]
   try:
     total = int(search.get("count", 0))
@@ -876,8 +922,13 @@ def fetch_pubmed(
 
 def parse_arxiv_atom(payload: bytes) -> tuple[list[PaperRecord], int]:
   root = ET.fromstring(payload)
+  for entry in root.findall(f"{ATOM}entry"):
+    if "/api/errors" in _xml_text(entry.find(f"{ATOM}id")):
+      raise HttpRequestError(f"arXiv API error: {_xml_text(entry.find(f'{ATOM}summary'))}")
   total_text = _xml_text(root.find(f"{OPENSEARCH}totalResults"))
-  total = int(total_text or 0)
+  if not total_text.isdigit():
+    raise HttpRequestError("arXiv response lacks a valid totalResults", retryable=True)
+  total = int(total_text)
   records: list[PaperRecord] = []
   for entry in root.findall(f"{ATOM}entry"):
     raw_id = _xml_text(entry.find(f"{ATOM}id"))
@@ -937,28 +988,45 @@ def fetch_arxiv(
   page_size = min(max(1, page_size), 1_000)
   result = SourceResult("arxiv")
   category_query = " OR ".join(f"cat:{category}" for category in categories)
-  start_stamp = window.query_since.strftime("%Y%m%d%H%M")
-  end_stamp = (window.until - timedelta(microseconds=1)).strftime("%Y%m%d%H%M")
-  query = f"({category_query}) AND lastUpdatedDate:[{start_stamp} TO {end_stamp}]"
+  # The API documents submittedDate as a filter, but lastUpdatedDate only as
+  # a sort key. A submission-date filter loses revisions of older papers.
+  # Walk newest updates first and stop after crossing the recovery boundary.
+  # https://info.arxiv.org/help/api/user-manual.html#51-details-of-query-construction
+  query = f"({category_query})"
   offset = 0
   total = math.inf
+  previous_stamp: datetime | None = None
   page_fingerprints: set[tuple[str, str, int]] = set()
   while offset < total:
+    if offset >= ARXIV_RESULT_CAP:
+      result.errors.append(SourceFailure(
+        "arxiv", f"page at {offset}",
+        "arXiv result cap reached before the requested update window was exhausted",
+      ))
+      break
     try:
       payload = client.get_bytes(
         ARXIV_API,
         params={
           "search_query": query,
           "start": offset,
-          "max_results": page_size,
+          "max_results": min(page_size, ARXIV_RESULT_CAP - offset),
           "sortBy": "lastUpdatedDate",
-          "sortOrder": "ascending",
+          "sortOrder": "descending",
         },
+        headers={"Accept": "application/atom+xml"},
         min_interval=3.1,
       )
       records, page_total = parse_arxiv_atom(payload)
       entries = ET.fromstring(payload).findall(f"{ATOM}entry")
       entry_count = len(entries)
+      stamps = [ensure_utc(_xml_text(entry.find(f"{ATOM}updated"))) for entry in entries]
+      for stamp in stamps:
+        if stamp is None or (previous_stamp is not None and stamp > previous_stamp):
+          raise HttpRequestError(
+            "arXiv updates are missing or not sorted newest first", retryable=True
+          )
+        previous_stamp = stamp
     except Exception as error:
       result.errors.append(_failure("arxiv", f"page at {offset}", error))
       break
@@ -1005,6 +1073,8 @@ def fetch_arxiv(
         result.skipped += 1
     result.skipped += entry_count - len(records)
     offset += entry_count
+    if stamps and stamps[-1] < window.query_since:
+      break
   result.records = deduplicate_records(result.records)
   return result
 

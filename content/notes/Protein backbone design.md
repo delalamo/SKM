@@ -5,7 +5,7 @@ aliases:
   - "Protein backbone design"
   - "tags/protein-backbone-design"
 created: "2026-04-10T14:30:55"
-modified: "2026-04-20T07:16:03"
+modified: "2026-10-05T20:01:26"
 tags:
   - design/backbones
 ---
@@ -16,6 +16,7 @@ tags:
 
 - **[[Chroma]]** [@ingraham2023]
 - **RF-diffusion** [@watson2023] and **RFam** [@kim2025]
+  - [[Surface-complementary seeds expand the structural diversity of diffusion-designed protein binders|Surface-complementary seeds can broaden binder topologies]].
 - [[Inversion of protein folding neural networks|Hallucination]] using [[notes/AlphaFold2|AlphaFold2]] and [[notes/RoseTTAFold|RosettaFold]]
 - Inpainting using [[notes/RoseTTAFold|RosettaFold]] [@wang2022]
 
