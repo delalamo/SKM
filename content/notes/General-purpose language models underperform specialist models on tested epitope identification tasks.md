@@ -1,9 +1,10 @@
 ---
 tags:
+  - inference/llm-science
   - antibodies/recognition
   - evidence/generalization
 created: "2026-09-25"
-modified: "2026-09-25"
+modified: "2026-10-05"
 ---
 
 #### Summary
@@ -14,3 +15,4 @@ modified: "2026-09-25"
 
 - [[notes/Antibody structure prediction|Antibody structure prediction]]
 - [[Correct antibody-antigen prediction in AF3 and related models is partially determined by training set similarity]]
+- [[Large language models in molecular and protein design]]

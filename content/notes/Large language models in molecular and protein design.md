@@ -5,7 +5,7 @@ aliases:
   - LLM design MOC
 tags:
   - design/sequence-generation
-  - inference/sampling-and-search
+  - inference/llm-science
   - evidence/design-validation
 created: "2026-09-16"
 modified: "2026-10-05"

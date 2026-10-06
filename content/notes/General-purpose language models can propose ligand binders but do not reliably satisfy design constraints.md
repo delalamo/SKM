@@ -2,9 +2,9 @@
 tags:
   - design/sequence-generation
   - evidence/design-validation
-  - prediction/ligand-docking
+  - inference/llm-science
 created: "2026-09-15"
-modified: "2026-09-16T12:00:34"
+modified: "2026-10-05"
 ---
 
 #### Summary

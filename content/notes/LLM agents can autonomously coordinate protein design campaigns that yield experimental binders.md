@@ -3,10 +3,10 @@ aliases:
   - Autonomous de novo protein binder design with Claude
 tags:
   - design/binders
-  - inference/sampling-and-search
+  - inference/llm-science
   - evidence/design-validation
 created: "2026-09-16"
-modified: "2026-09-16T12:00:34"
+modified: "2026-10-05"
 ---
 
 #### Summary
