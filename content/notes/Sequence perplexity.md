@@ -3,7 +3,7 @@ tags:
   - prediction/confidence
   - design/sequence-generation
 created: 2026-04-05T17:41:51
-modified: "2026-10-05T21:31:49"
+modified: "2026-09-25"
 ---
 #### Summary
 Sequence perplexity is a metric used by [[notes/Protein language models|protein language models]] and [[notes/Inverse folding|inverse folding]] to quantify sequence recovery. Self-consistency perplexity is a derived metric where the perplexity is calculated using a [[notes/Structure prediction|forward-folded model]] rather than the original model/structure.

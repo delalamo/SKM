@@ -4,7 +4,7 @@ tags:
   - inference/guidance
   - evidence/measurements
 created: "2026-09-15"
-modified: "2026-10-05T21:31:49"
+modified: "2026-09-25"
 ---
 
 #### Summary

@@ -5,7 +5,7 @@ aliases:
   - "Developability"
   - "tags/antibody-developability"
 created: 2026-04-05T23:36:09
-modified: "2026-10-05T21:31:49"
+modified: "2026-10-05T20:20:15"
 tags:
   - design/developability
 ---
