@@ -14,12 +14,7 @@ modified: "2026-09-25"
 #### Figures
 
 ![[plms-poorly-rank-high-fitness-variants.png]]
-
 *Ref [@woolley2026]*
-
-#### Antibody-antigen model ranking
-
-The same distinction appears when ranking [[AlphaFold3]] antibody-antigen decoys by [[DockQ]] [@tadiello2026]. On a matched held-out subset of 1,009 complexes and 50,433 predictions, ABAG-Rank achieved global Spearman ρ = 0.804 but per-complex ρ = 0.178. AlphaFold3's corresponding values were 0.733 and 0.134. Strong pooled correlations therefore coexist with weak ordering within an individual target's ensemble.
 
 | Method | RMSE ↓ | Global ρ ↑ | Per-complex ρ ↑ | AUC, DockQ > 0.23 ↑ | AUC, DockQ > 0.50 ↑ | AUC, DockQ > 0.80 ↑ | Seconds/sample ↓ |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -30,10 +25,7 @@ The same distinction appears when ranking [[AlphaFold3]] antibody-antigen decoys
 | pDockQ | 0.331 | 0.423 | 0.110 | 0.758 | 0.780 | 0.692 | 1.95 |
 | pDockQ2 | 0.201 | 0.664 | 0.096 | 0.890 | 0.918 | **0.915** | — |
 | ABAG-Rank | **0.175** | **0.804** | **0.178** | **0.935** | **0.946** | 0.910 | **≤ 0.05** |
-
-*Numerical values from Table 1 of [@tadiello2026], transcribed as text; significance symbols omitted. DeepRank-Ab uses its published default settings. ABAG-Rank timing includes preparation and inference with batch size 10. A dash means no timing was reported.*
-
-Low within-complex correlation does not by itself imply useless top-candidate selection: small DockQ differences can make exact ordering unimportant. The paper separately evaluates top-K retrieval. These are structural-quality metrics, not binding-affinity measurements.
+*Ref [@tadiello2026] showing per-complex Spearman far lower than global Spearman values across a variety of metrics*
 
 #### See also
 
