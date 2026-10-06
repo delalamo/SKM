@@ -7,7 +7,7 @@ tags:
   - prediction/variant-effects
   - evidence/design-validation
 created: "2026-06-23"
-modified: "2026-10-05T20:01:26"
+modified: "2026-09-25"
 ---
 
 #### Summary

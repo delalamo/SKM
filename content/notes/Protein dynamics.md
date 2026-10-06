@@ -1,7 +1,7 @@
 ---
 title: Protein dynamics
 created: 2026-04-10T14:30:55
-modified: "2026-10-05T20:01:26"
+modified: "2026-04-21T07:28:09"
 tags:
   - biophysics/dynamics
   - biophysics/ensemble-analysis

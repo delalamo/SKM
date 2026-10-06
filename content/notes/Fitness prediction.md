@@ -1,7 +1,7 @@
 ---
 title: Fitness prediction
 created: 2026-04-10T14:02:57
-modified: "2026-10-05T20:01:26"
+modified: "2026-04-21T07:28:09"
 tags:
   - prediction/variant-effects
   - evolution/mutation-effects

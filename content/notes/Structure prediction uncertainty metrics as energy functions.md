@@ -3,7 +3,7 @@ tags:
   - prediction/confidence
   - model-design/generative-models
 created: "2026-03-06T12:45:58"
-modified: "2026-10-05T20:01:26"
+modified: "2026-09-28T19:46:41"
 ---
 #### Summary
 In protein [[notes/Structure prediction|structure prediction]], **uncertainty metrics can be repurposed as energy-like functions for ranking or optimizing candidate structures.** [[notes/AlphaFold2|AlphaFold]] without coevolutionary input ranks structural decoys with state-of-the-art accuracy [@roney2022], and [[notes/Diffusion models|diffusion]]-model scores can be interpreted as statistical potentials for structure ranking, mutation-effect prediction, and conformational sampling [@roney2025]. The analogy concerns relative ranking and sampling objectives, not calibrated thermodynamic free energy; raw confidence scores still need not predict [[notes/Stability and thermostability|stability]] or binding affinity.
