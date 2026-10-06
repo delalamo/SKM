@@ -3,7 +3,9 @@ from __future__ import annotations
 from collections import deque
 from datetime import UTC, datetime
 import http.client
+import io
 import json
+import urllib.error
 from typing import Any, Callable, Mapping
 
 import pytest
@@ -113,7 +115,8 @@ PUBMED_BOOK_XML = b"""<?xml version="1.0"?>
 
 
 def arxiv_xml(
-  identifier: str = "2401.12345v2", *, total: int = 1, updated: str = "2026-07-21T12:00:00Z"
+  identifier: str = "2401.12345v2", *, total: int = 1,
+  updated: str = "2026-07-21T12:00:00Z", published: str = "2026-07-20T11:00:00Z"
 ) -> bytes:
   return f"""<?xml version="1.0"?>
   <feed xmlns="http://www.w3.org/2005/Atom"
@@ -123,7 +126,7 @@ def arxiv_xml(
     <entry>
       <id>https://arxiv.org/abs/{identifier}</id>
       <updated>{updated}</updated>
-      <published>2026-07-20T11:00:00Z</published>
+      <published>{published}</published>
       <title>Fixture arXiv paper {identifier}</title>
       <summary>A complete abstract from the Atom feed.</summary>
       <author><name>Ada Lovelace</name></author>
@@ -380,6 +383,45 @@ def test_pubmed_partitions_uid_space_beyond_the_9999_result_cap() -> None:
   assert len(client.calls) == 4
 
 
+@pytest.mark.parametrize(
+  ("message", "retryable", "status"),
+  [
+    ("Search Backend failed: Status: 500. Cannot connect to SOLR", True, 500),
+    ("Search is temporarily unavailable. Please try again later.", True, None),
+    ("Invalid query syntax", False, None),
+    ("Invalid request. Status: 400.", False, 400),
+  ],
+)
+def test_pubmed_classifies_errors_inside_successful_json(
+  message: str, retryable: bool, status: int | None
+) -> None:
+  client = RoutingClient(json_route=lambda _url, _params: {"esearchresult": {"ERROR": message}})
+
+  result = fetch_pubmed(window(), client)
+
+  assert result.errors
+  assert all(error.retryable is retryable and error.status == status for error in result.errors)
+
+
+def test_pubmed_backend_error_enters_provider_retry_and_recovers() -> None:
+  responses = deque([
+    {"esearchresult": {"error": "Search Backend failed: Status: 500."}},
+    {"esearchresult": {"count": "0", "idlist": []}},
+  ])
+  sleeps: list[float] = []
+  report = fetch_all_sources(
+    window(),
+    client=RoutingClient(json_route=lambda _url, _params: responses.popleft()),
+    fetchers={"pubmed": fetch_pubmed},
+    provider_retry_delays=(1,),
+    sleep=sleeps.append,
+  )
+
+  assert report.ok
+  assert sleeps == [1]
+  assert not responses
+
+
 def test_parse_and_paginate_arxiv_by_last_updated_date() -> None:
   parsed, total = parse_arxiv_atom(arxiv_xml(total=2))
   assert total == 2
@@ -392,7 +434,9 @@ def test_parse_and_paginate_arxiv_by_last_updated_date() -> None:
   def get_bytes(url: str, params: Mapping[str, Any]) -> bytes:
     assert url == ARXIV_API
     query = str(params["search_query"])
-    assert "lastUpdatedDate:[202607190000 TO 202607212359]" in query
+    assert "Date:" not in query
+    assert params["sortBy"] == "lastUpdatedDate"
+    assert params["sortOrder"] == "descending"
     assert all(category in query for category in ("q-bio*", "cond-mat*", "stat.*"))
     return pages.popleft()
 
@@ -415,6 +459,65 @@ def test_arxiv_uses_a_larger_bounded_default_page() -> None:
   assert result.ok
   assert client.calls[0][2]["max_results"] == ARXIV_PAGE_SIZE
   assert ARXIV_PAGE_SIZE == 500
+
+
+def test_arxiv_preserves_old_paper_revisions_and_exact_window_boundaries() -> None:
+  pages = deque([
+    arxiv_xml("2401.10001v1", total=100, updated="2026-07-23T00:00:00Z"),
+    arxiv_xml("2401.10002v1", total=100, updated="2026-07-22T00:00:00Z"),
+    arxiv_xml("2401.10003v2", total=100, published="2024-01-01T00:00:00Z"),
+    arxiv_xml("2401.10004v1", total=100, updated="2026-07-19T00:00:00Z"),
+    arxiv_xml("2401.10005v1", total=100, updated="2026-07-18T23:59:59Z"),
+  ])
+  client = RoutingClient(bytes_route=lambda _url, _params: pages.popleft())
+
+  result = fetch_arxiv(window(), client, page_size=1)
+
+  assert result.ok
+  assert {record.arxiv_id for record in result.records} == {"2401.10003", "2401.10004"}
+  assert next(record for record in result.records if record.arxiv_id == "2401.10003").version == "2"
+  assert len(client.calls) == 5  # Stop at the lower bound, not the archive's total.
+  assert result.skipped == 3
+
+
+@pytest.mark.parametrize("bad_stamp", ["", "2026-07-22T00:00:00Z"])
+def test_arxiv_fails_if_update_order_cannot_be_trusted(bad_stamp: str) -> None:
+  pages = deque([
+    arxiv_xml("2401.10001v1", total=3),
+    arxiv_xml("2401.10002v1", total=3, updated=bad_stamp),
+  ])
+  result = fetch_arxiv(window(), RoutingClient(bytes_route=lambda _url, _params: pages.popleft()))
+
+  assert not result.ok
+  assert len(result.records) == 1
+  assert result.errors[0].retryable
+  assert "not sorted" in result.errors[0].message
+
+
+def test_arxiv_reports_truncated_backfill_at_api_result_cap(monkeypatch: Any) -> None:
+  monkeypatch.setattr("scripts.paperbot.sources.ARXIV_RESULT_CAP", 2)
+  client = RoutingClient(bytes_route=lambda _url, params: arxiv_xml(
+    f"2401.1000{params['start']}v1", total=100
+  ))
+
+  result = fetch_arxiv(window(), client)
+
+  assert not result.ok
+  assert len(result.records) == 2
+  assert [call[2]["max_results"] for call in client.calls] == [2, 1]
+  assert "result cap reached" in result.errors[0].message
+
+
+@pytest.mark.parametrize("payload", [
+  b'<feed xmlns="http://www.w3.org/2005/Atom"><entry><id>http://arxiv.org/api/errors#bad_query</id>'
+  b'<summary>invalid query</summary></entry></feed>',
+  b'<feed xmlns="http://www.w3.org/2005/Atom"/>',
+])
+def test_arxiv_does_not_treat_error_feeds_as_empty_success(payload: bytes) -> None:
+  result = fetch_arxiv(window(), RoutingClient(bytes_route=lambda _url, _params: payload))
+
+  assert not result.ok
+  assert not result.records
 
 
 @pytest.mark.parametrize("server", ["biorxiv", "medrxiv"])
@@ -758,6 +861,43 @@ def test_http_error_redacts_common_query_credential_names() -> None:
   assert all(value not in message for value in secrets.values())
   assert all(f"{key}=REDACTED" in message for key in secrets)
   assert "page=2" in message
+
+
+@pytest.mark.parametrize("raised_http_error", [False, True])
+def test_arxiv_http_failure_retains_bounded_diagnostics(raised_http_error: bool) -> None:
+  body = b"<html>Not Acceptable: request rejected</html>" + b"x" * 5000
+  headers = {"Content-Type": "text/html", "Set-Cookie": "never-log-this"}
+  sleeps: list[float] = []
+
+  def transport(request: Any, _timeout: float) -> HttpResponse:
+    if raised_http_error:
+      raise urllib.error.HTTPError(request.full_url, 406, "Not Acceptable", headers, io.BytesIO(body))
+    return HttpResponse(406, headers, body)
+
+  client = HttpClient(user_agent="fixture", transport=transport, sleep=sleeps.append)
+  result = fetch_arxiv(window(), client)
+
+  assert not result.ok
+  error = result.errors[0]
+  assert error.status == 406
+  assert not error.retryable  # Retrying every permanent 4xx would hide the cause.
+  assert "content-type=text/html" in error.message
+  assert "request rejected" in error.message
+  assert "never-log-this" not in error.message
+  assert len(error.message) < 1000
+  assert sleeps == []
+
+
+def test_http_diagnostics_omit_bodies_for_credentialed_requests() -> None:
+  client = HttpClient(
+    user_agent="fixture", attempts=1,
+    transport=lambda _request, _timeout: HttpResponse(406, {}, b"arbitrary secret response"),
+  )
+  with pytest.raises(HttpRequestError) as captured:
+    client.get_bytes(ARXIV_API, params={"api_key": "secret"})
+
+  assert "secret" not in str(captured.value)
+  assert "api_key=REDACTED" in str(captured.value)
 
 
 def test_fetch_all_sources_isolates_failure_and_reports_progress(capsys: Any) -> None:
