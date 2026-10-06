@@ -5,7 +5,7 @@ aliases:
   - "Light chains"
   - "tags/light-chains"
 created: 2026-04-10T14:30:55
-modified: "2026-04-20T10:13:23"
+modified: "2026-09-25"
 tags:
   - antibodies/architecture
 ---
@@ -16,3 +16,7 @@ The **light chain** of an [[tags/antibodies|antibody]] makes up part of its [[Va
 
 - **The ratio of kappa to lambda in circulating antibodies is about 60:40; when this falls out of balance, that can be a symptom of [[notes/B cells|B cell]] lymphoma.**
 - **Lambda light chains are more flexible than kappa light chains due to an extra glycine in the switch region** ([[_Articles that need citations]]).
+
+#### Free light chains
+
+[[Free antibody light chains can homodimerize|Free light chains can associate as homodimers]], including the full-length lambda-chain assembly in PDB 1JVK.
