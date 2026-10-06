@@ -5,7 +5,7 @@ aliases:
   - "Developability"
   - "tags/antibody-developability"
 created: 2026-04-05T23:36:09
-modified: "2026-04-20T10:13:23"
+modified: "2026-10-05T20:08:30"
 tags:
   - design/developability
 ---
@@ -24,6 +24,10 @@ tags:
 #### Thermostability
 
 _See [[notes/Stability and thermostability|Stability and thermostability]]_
+
+#### Polyreactivity
+
+- [[Redesigning non-interface residues can reduce off-target reactivity]]
 
 #### Immunogenicity
 
