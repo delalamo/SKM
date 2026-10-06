@@ -1,12 +1,10 @@
 ---
-aliases:
-  - Inverse folding by flow matching resolves residue identities at different times
 tags:
   - design/sequence-generation
   - inference/sampling-and-search
   - model-analysis/interpretability
 created: "2026-09-25"
-modified: "2026-10-05"
+modified: "2026-09-25"
 ---
 
 #### Summary

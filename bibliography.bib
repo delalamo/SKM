@@ -1437,6 +1437,16 @@
   url = {https://doi.org/10.1101/2024.08.13.607858},
 }
 
+@article{devkota2026,
+  title = {Miniaturizing and modifying natural proteins with Raygun.},
+  author = {Kapil Devkota and Daichi Shonai and Joey Mao and Young Su Ko and Wei Wang and Scott Soderling and Rohit Singh},
+  year = {2026},
+  journal = {Nature},
+  doi = {10.1038/s41586-026-10842-8},
+  url = {https://doi.org/10.1038/s41586-026-10842-8},
+  abstract = {Proteins have evolved over billions of years through coordinated substitutions, insertions and deletions, yet computational protein design cannot fully replicate nature's ability to engineer new proteins from existing templates. Protein language models 1-3 generate informative per-residue representations, but harnessing them for large-scale, function-preserving sequence modifications has remained beyond reach. Here we introduce Raygun, a generative artificial intelligence framework that enables miniaturization, modification and augmentation of proteins, using a probabilistic encoding of protein sequences constructed from language model embeddings. Our key conceptual advance is to encode each protein not as a sequence of variable length in high-dimensional space, but as a probability distribution in fixed dimensions, making proteins of any length directly commensurable. Controlled by just two parameters governing substitutions and length changes, Raygun can shrink proteins by 10-25\% (sometimes more than 50\%), expand them beyond their natural size, and introduce extensive sequence diversity, all while preserving predicted structural integrity and functional sites. In cell-based validation, Raygun miniaturized fluorescent proteins (2 shorter than 96\% of fluorescent proteins in FPbase) and TurboID, a synthetic biotin ligase that has been widely adopted for proteomics. It also expanded epidermal growth factor (EGF), generating variants with higher EGFR-binding affinity than the wild type. These results show that protein function can be faithfully captured in a length-agnostic representation, enabling the kind of coordinated, large-scale sequence modifications that characterize natural protein evolution.},
+}
+
 @inproceedings{di2023,
   title = {On Over-Squashing in Message Passing Neural Networks: The Impact of Width, Depth, and Topology},
   author = {Francesco Di Giovanni and Lorenzo Giusti and Federico Barbero and Giulia Luise and Pietro Lio and Michael M. Bronstein},
@@ -3493,17 +3503,6 @@
   abstract = {De novo enzyme design seeks to build proteins containing ideal active sites with catalytic residues surrounding and stabilizing the transition state(s) of the target chemical reaction 1-7 . The generative artificial intelligence method RFdiffusion 8,9 solves this problem, but requires specifying both the sequence position and backbone coordinates for each catalytic residue, limiting sampling. Here we introduce RFdiffusion2, which eliminates these requirements, and use it to design zinc metallohydrolases starting from quantum chemistry-derived active site geometries. From an initial set of 96 designs tested experimentally, the most active has a catalytic efficiency (k cat /K M ) of 16,000 M -1 s -1 , orders of magnitude higher than previously designed metallohydrolases 6,7,10,11 . A second round of 96 designs yielded 3 additional highly active enzymes, with k cat /K M values of up to 53,000 M -1 s -1 and a catalytic rate constant (k cat ) of up to 1.5 s -1 . The design models of the four most active designs differ from known structures and from each other, and the crystal structure of the most active design is very close to the design model, demonstrating the accuracy of the design method. The most active enzymes are predicted by PLACER 12 and Chai-1 (ref. 13 ) to have preorganized active sites that effectively position the substrate for nucleophilic attack by a water molecule activated by the bound metal. The ability to generate highly active enzymes directly from the computer, without experimental optimization, should enable a new generation of potent designer catalysts 14,15 .},
   doi = {10.1038/s41586-025-09746-w},
   url = {https://doi.org/10.1038/s41586-025-09746-w},
-}
-
-@misc{kim2026llmdesign,
-  title = {De novo design of ligand binding proteins using large language models alone},
-  author = {Kim, N. H. and Hatstat, A. K. and Jo, H. and Wu, Y. and DeGrado, W. F.},
-  year = {2026},
-  publisher = {bioRxiv},
-  doi = {10.64898/2026.09.02.748987},
-  url = {https://www.biorxiv.org/content/10.64898/2026.09.02.748987v1},
-  note = {Version 1},
-  abstract = {Protein design has rapidly advanced with the advent of sequence- and structure-based machine learning models. However, reasoned design, which applies physicochemical principles and rules derived from sequence-structure-function relationships, has not seen the same benefits from generative machine learning models. Here, we test the ability of common large language models (LLMs; e.g. Claude, ChatGPT, and Gemini) to consider design principles to generate de novo proteins that bind metals and lipophilic small molecules without copying existing sequences. Common LLMs alone are able to 1) generate protein sequences to adopt a desired fold and bind the target ligand and 2) explain the principles that motivate the design choices. Following structure prediction and filtering, we selected a small set of designs (6 to 12 designs per query) for experimental validation, affording metal binders in one round of LLM-based design (25\% hit rate) and perfluorooctanoic acid binders in two rounds (25\% hit rate in the second round of design). Importantly, the LLMs produce detailed justification to accompany the de novo designed sequences, providing a conceptual framework on which designs can be evaluated. While the successful designs have some deviations from the prompted parameters and LLM-articulated design rationale, these campaigns provide a case study that highlights the utility of LLMs in making protein design more comprehensible and accessible to users without sophisticated design expertise.},
 }
 
 @article{king2025,
@@ -8854,74 +8853,6 @@
   url = {https://www-cdn.anthropic.com/30bf50e22a01388bb29bf077ee3f244531594b7a.pdf},
 }
 
-@misc{wang2026msfold,
-  title = {Sampling in structure-token space enables accurate prediction of multiple protein conformations},
-  author = {Wang, Z. and Yu, Y. and Zheng, W.-M. and Yu, C. and Bu, D.},
-  year = {2026},
-  publisher = {bioRxiv},
-  doi = {10.64898/2026.03.03.708411},
-  url = {https://www.biorxiv.org/content/10.64898/2026.03.03.708411v3},
-  note = {Version 3},
-  abstract = {Proteins often function through multiple conformations, yet most structure-prediction methods are biased toward a single dominant state. Here we present MSFold, a training-free framework that explores the discrete, sequence-conditioned structure-token space of ESM3 using parallel tempering, coupling high-temperature exploration with low-temperature refinement to cross barriers between conformational states. Across 312 multi-conformation protein pairs, MSFold recovered both conformations in 51.6\% of cases, compared with 38.1\% for MSA Cluster and 37.8\% for AlphaFold3. This performance advantage persisted on a post-ESM3-cutoff evaluation set, arguing against simple structural memorization. We further introduce sequence log-likelihood, a reference-free confidence score based on sequence–structure consistency, which improves ranking of sampled conformations. Together, these results provide a practical means of accessing the conformational information encoded by protein language models and establish MSFold as an effective framework for multi-conformation prediction.},
-}
-
-@article{tadiello2026,
-  title = {ABAG-Rank: Improving Model Selection of AlphaFold Antibody-Antigen Complexes by Learning to Rank.},
-  author = {Matteo Tadiello and Marko Ludaic and Vsevolod Viliuga and Arne Elofsson},
-  year = {2026},
-  journal = {Bioinformatics},
-  pages = {btag663},
-  doi = {10.1093/bioinformatics/btag663},
-  url = {https://doi.org/10.1093/bioinformatics/btag663},
-  abstract = {Motivation AlphaFold has transformed structural biology with an unprecedented accuracy in modelling protein structures and their interactions with biomolecules, with AlphaFold3 (AF3) achieving state-of-the-art performance. However, AF3 and other methods often struggle to accurately predict the structure of protein complexes that lack strong co-evolutionary information, such as antibody-antigen (Ab-Ag) complexes. One of the fundamental issues is that AF3 often generates accurate predictions, but fails to reliably distinguish them from the much larger set of incorrect ones. Results To address this, we propose ABAG-Rank, a deep neural network that provides an efficient and robust solution for model selection of Ab-Ag interactions from a pool of structural ensembles predicted with AlphaFold. Built on the permutation-invariant DeepSets architecture, ABAG-Rank can process variable-sized ensembles of structural decoys and is directly applicable to prediction settings in which the number of candidates may vary. We train a model on a redundancy-reduced set of all known antibody-antigen complexes and find that simple geometric descriptors, along with confidence scores from AlphaFold, provide rich information about interface quality without requiring intensive physics-based calculations. Our experiments demonstrate that ABAG-Rank significantly outperforms AF3 internal scoring and the ranking performance of existing deep learning baselines. Availability and implementation Source code can be found at: https://github.com/tadteo/ABAG-Rank or on Zenodo at https://doi.org/10.5281/zenodo.21132090.},
-}
-
-@article{chrone2026,
-  title = {Native structure of the therapeutic IgG4 α4β5 integrin antibody natalizumab},
-  author = {Victor G. Chrone and Johan C. Jespersen and Daut C. Asani and Jens Hieronymus and Soumik Ray and Nicole H. Trier and Jette L. Frederiksen and Peter Højrup and Gunnar Houen},
-  year = {2026},
-  journal = {Biochimica et Biophysica Acta (BBA) - Proteins and Proteomics},
-  volume = {1874},
-  number = {6},
-  pages = {141174},
-  doi = {10.1016/j.bbapap.2026.141174},
-  pmid = {42648603},
-  url = {https://doi.org/10.1016/j.bbapap.2026.141174},
-  abstract = {The native structure of natalizumab, an IgG4/κ α4β5 integrin monoclonal therapeutic antibody used for treatment of multiple sclerosis, was determined by a combination of chemical cross-linking, mass spectrometry, biophysical, and immunochemical methods. This revealed a compact, closed, m-shaped ellipsoidal structure with the paratopes at each end. Physicochemical stress, in the form of elevated temperature and lowered pH, induced an open, Y-shaped conformation of the antibody. This conformational change may reflect what is happening by binding of antibodies to their cognate antigens, e.g., in the form of pathogen-associated molecular patterns on the surface of microorganisms, where the antibodies have an intrinsic ability to change conformation and expose their effector function sites. Thus, in the absence of their cognate antigen, antibodies circulate as closed, m-shaped, inactive molecules.},
-}
-
-@misc{strom2026,
-  title = {Foldseek-Interface reveals a protein interface universe far from complete},
-  author = {Strom, J. M. and Cha, S. and Kim, R. S. and Sajal, H. and Gilchrist, C. L. and Steinegger, M. and Luck, K.},
-  year = {2026},
-  publisher = {bioRxiv},
-  doi = {10.64898/2026.08.24.746585},
-  url = {https://www.biorxiv.org/content/10.64898/2026.08.24.746585v2},
-  note = {Version 2},
-  abstract = {Protein-protein interactions mediate a vast range of cellular functions, requiring diverse modes of binding. While recent years have seen major efforts to chart and classify the protein structure universe, we lack comparable methods to assess and cluster that diversity in interface structure at interactome scale. Here, we present Foldseek-Interface, a method that converts 3D interface structures into searchable sequences to enable fast alignment and clustering of protein interaction interfaces. It matches the accuracy of state-of-the-art tools while running up to 230 times faster. Applying it to all biological assemblies in the PDB, we cluster 3.1 million dimers into 77,167 interface clusters and use this resource to characterise interface diversity, evolution, and pathogen mimicry. Application of Foldseek-Interface to resources of predicted protein complex structures rapidly revealed putatively novel interface types worth further experimental interrogation. Foldseek-Interface and the interface cluster resource are freely available as webservers for search ( https://search.foldseek.com/interface ) and exploration ( https://interface.foldseek.com ). Contact: martin.steinegger@snu.ac.kr , k.luck@imb-mainz.de},
-}
-
-@article{arora2026pgllm,
-  title = {{PG-LLM}: Benchmarking General-Purpose Language Models for Protein Variant Ranking},
-  author = {Arora, Rohit and Chen, Leo Tianlai and Du, Melissa and Marks, Debora S. and Church, George M.},
-  year = {2026},
-  journal = {bioRxiv},
-  doi = {10.64898/2026.07.27.741045},
-  url = {https://doi.org/10.64898/2026.07.27.741045},
-  note = {Version posted August 19, 2026},
-  abstract = {ABSTRACT General-purpose frontier language models are being increasingly utilized for protein-design work, yet their ability to understand and evaluate variant effects remains unclear. Here, we introduce PG-LLM, a benchmark comprising 276 protein-variant prioritization tasks: 217 from ProteinGym and a temporally held-out set of 59 from recently published studies. Each task follows the same format: a language model is asked to rank a list of variant sequences given only the wild-type protein sequence and an assay description with no access to tools, multiple-sequence alignments, or protein structures. We evaluate thirteen language models and 95 published protein predictors on the same variants with the same evaluation metric. Claude Opus 5 (Max) and GPT 5.6 Sol (Max) are the best performing LLMs with Spearman correlations of ρ = 0.406 and 0.402 respectively. Opus 5 outperforms 49 of 95 published protein predictors, including 41 of 46 sequence-only methods, and approaches ESM2-650M at ρ = 0.411, but remains below the leading predictor VenusREM at ρ = 0.523. We observe that variant-ranking performance scales with test-time compute across GPT, Claude, and Gemini models, but gains taper before closing the gap to specialist protein predictors. To address contamination risk, we create a held-out evaluation set with 59 DMS assays from 19 studies whose scores first became public after January 2026. On this set, we observe performance and test time compute scaling trends similar to those on the 217 tasks derived from ProteinGym. PG-LLM shows that tool-free language models capture substantial protein-variant signal, outperforming many sequence-based predictors while remaining below the strongest specialized models.},
-}
-
-@techreport{openddeharness2026,
-  title = {Unlocking the Power of {LLM} Reasoning in Antibody Design with {OpenDDE-Harness}},
-  author = {{OpenDDE Project, Aureka AI Research}},
-  institution = {Aureka AI Research},
-  year = {2026},
-  url = {https://github.com/aurekaresearch/OpenDDE-Harness/blob/a0a8d1a07d92ab54947ef4d90ade982a682598d1/docs/assets/OpenDDE_harness_tech_report.pdf},
-  note = {Public technical report, repository revision September 10, 2026},
-  abstract = {Antibody design requires iterative search over sequence space under structural and developability constraints. We introduce OpenDDE-Harness, a framework that couples large language model (LLM) agents to OpenDDE-based structural evaluation for antibody design. Agents propose constrained antibody designs and interpret their outcomes; the execution layer validates proposals, runs molecular evaluations, applies quality gates, and maintains candidate populations and provenance. Persistent records make accepted, rejected, and failed designs available to later cycles without updating the LLM’s parameters. Across six computational antibody-design targets, the evaluated pipeline yielded higher mean structural-filter success and more successful CDR sequence clusters than the tested baselines. In a separate experimental campaign, 38 of 80 synthesized designs bound their targets across four target–format cohorts involving RAGE (17/20), TfR1 (11/20), CXCR4 mAb (4/20), and CXCR VHH (6/20), validated through Carterra SPR or BLI. These results support the use of LLM-guided design with structural feedback to prioritize antibodies for experimental testing.},
-}
-
 @article{rennella2018,
   title = {Role of domain interactions in the aggregation of full-length immunoglobulin light chains},
   volume = {116},
@@ -8968,4 +8899,36 @@
   month = Feb,
   pages = {209},
   abstract = {Light chain (AL) amyloidosis is a debilitating disease in which mutant antibody light chains (LC), secreted by aberrant plasma cell clones, misfold and form insoluble fibrils, which can be deposited in various organs. In the majority of cases, the fibrillar deposits consist of LC variable domains (V L ) containing destabilizing mutations compared to their germline counterparts. This is also true for the patient LC FOR005. However, this pathogenic LC sequence contains an additional mutation in the constant domain (C L ). The mechanistic impact of C L mutations is not yet understood in the context of AL amyloidosis. Our analysis reveals that the FOR005 C L mutation influences the amyloid pathway in specific ways: (1) folding and stability of the patient C L domain are strongly impaired; (2) the mutation disrupts the LC dimer interface and weakens dimerization; (3) the C L mutation promotes proteolytic cleavage of the LC monomers resulting in an isolated, amyloidogenic V L domain while dimeric LCs are not cleaved. The enhanced proteolysis rates and the inability of full-length LCs to form amyloid fibrils even in the presence of a destabilized C L domain support a model for AL amyloidosis in which the C L domain plays a protective role and in which proteolytic cleavage precedes amyloid formation.},
+}
+
+@misc{kim2026llmdesign,
+  title = {De novo design of ligand binding proteins using large language models alone},
+  author = {Kim, N. H. and Hatstat, A. K. and Jo, H. and Wu, Y. and DeGrado, W. F.},
+  year = {2026},
+  publisher = {bioRxiv},
+  doi = {10.64898/2026.09.02.748987},
+  url = {https://www.biorxiv.org/content/10.64898/2026.09.02.748987v1},
+  note = {Version 1},
+  abstract = {Protein design has rapidly advanced with the advent of sequence- and structure-based machine learning models. However, reasoned design, which applies physicochemical principles and rules derived from sequence-structure-function relationships, has not seen the same benefits from generative machine learning models. Here, we test the ability of common large language models (LLMs; e.g. Claude, ChatGPT, and Gemini) to consider design principles to generate de novo proteins that bind metals and lipophilic small molecules without copying existing sequences. Common LLMs alone are able to 1) generate protein sequences to adopt a desired fold and bind the target ligand and 2) explain the principles that motivate the design choices. Following structure prediction and filtering, we selected a small set of designs (6 to 12 designs per query) for experimental validation, affording metal binders in one round of LLM-based design (25\% hit rate) and perfluorooctanoic acid binders in two rounds (25\% hit rate in the second round of design). Importantly, the LLMs produce detailed justification to accompany the de novo designed sequences, providing a conceptual framework on which designs can be evaluated. While the successful designs have some deviations from the prompted parameters and LLM-articulated design rationale, these campaigns provide a case study that highlights the utility of LLMs in making protein design more comprehensible and accessible to users without sophisticated design expertise.},
+}
+
+@article{arora2026pgllm,
+  title = {{PG-LLM}: Benchmarking General-Purpose Language Models for Protein Variant Ranking},
+  author = {Arora, Rohit and Chen, Leo Tianlai and Du, Melissa and Marks, Debora S. and Church, George M.},
+  year = {2026},
+  journal = {bioRxiv},
+  doi = {10.64898/2026.07.27.741045},
+  url = {https://doi.org/10.64898/2026.07.27.741045},
+  note = {Version posted August 19, 2026},
+  abstract = {ABSTRACT General-purpose frontier language models are being increasingly utilized for protein-design work, yet their ability to understand and evaluate variant effects remains unclear. Here, we introduce PG-LLM, a benchmark comprising 276 protein-variant prioritization tasks: 217 from ProteinGym and a temporally held-out set of 59 from recently published studies. Each task follows the same format: a language model is asked to rank a list of variant sequences given only the wild-type protein sequence and an assay description with no access to tools, multiple-sequence alignments, or protein structures. We evaluate thirteen language models and 95 published protein predictors on the same variants with the same evaluation metric. Claude Opus 5 (Max) and GPT 5.6 Sol (Max) are the best performing LLMs with Spearman correlations of ρ = 0.406 and 0.402 respectively. Opus 5 outperforms 49 of 95 published protein predictors, including 41 of 46 sequence-only methods, and approaches ESM2-650M at ρ = 0.411, but remains below the leading predictor VenusREM at ρ = 0.523. We observe that variant-ranking performance scales with test-time compute across GPT, Claude, and Gemini models, but gains taper before closing the gap to specialist protein predictors. To address contamination risk, we create a held-out evaluation set with 59 DMS assays from 19 studies whose scores first became public after January 2026. On this set, we observe performance and test time compute scaling trends similar to those on the 217 tasks derived from ProteinGym. PG-LLM shows that tool-free language models capture substantial protein-variant signal, outperforming many sequence-based predictors while remaining below the strongest specialized models.},
+}
+
+@techreport{openddeharness2026,
+  title = {Unlocking the Power of {LLM} Reasoning in Antibody Design with {OpenDDE-Harness}},
+  author = {{OpenDDE Project, Aureka AI Research}},
+  institution = {Aureka AI Research},
+  year = {2026},
+  url = {https://github.com/aurekaresearch/OpenDDE-Harness/blob/a0a8d1a07d92ab54947ef4d90ade982a682598d1/docs/assets/OpenDDE_harness_tech_report.pdf},
+  note = {Public technical report, repository revision September 10, 2026},
+  abstract = {Antibody design requires iterative search over sequence space under structural and developability constraints. We introduce OpenDDE-Harness, a framework that couples large language model (LLM) agents to OpenDDE-based structural evaluation for antibody design. Agents propose constrained antibody designs and interpret their outcomes; the execution layer validates proposals, runs molecular evaluations, applies quality gates, and maintains candidate populations and provenance. Persistent records make accepted, rejected, and failed designs available to later cycles without updating the LLM’s parameters. Across six computational antibody-design targets, the evaluated pipeline yielded higher mean structural-filter success and more successful CDR sequence clusters than the tested baselines. In a separate experimental campaign, 38 of 80 synthesized designs bound their targets across four target–format cohorts involving RAGE (17/20), TfR1 (11/20), CXCR4 mAb (4/20), and CXCR VHH (6/20), validated through Carterra SPR or BLI. These results support the use of LLM-guided design with structural feedback to prioritize antibodies for experimental testing.},
 }

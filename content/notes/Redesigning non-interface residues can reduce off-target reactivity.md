@@ -1,12 +1,10 @@
 ---
-aliases:
-  - Redesigning non-interface residues can reduce off-target activation by de novo CAR binders
 tags:
   - design/developability
   - design/binders
   - biophysics/interactions
 created: "2026-09-25"
-modified: "2026-10-05"
+modified: "2026-09-25"
 ---
 
 #### Summary

@@ -4,7 +4,7 @@ tags:
   - evidence/measurements
   - inference/guidance
 created: "2024-12-31T07:33:08"
-modified: "2026-10-05"
+modified: "2026-09-25"
 ---
 
 #### Summary
@@ -16,8 +16,3 @@ modified: "2026-10-05"
 ![[Pasted-image-20241231133007.png]]
 
 *Ref [@maddipatla2024]*
-
-#### See also
-
-- [[Diffusion guidance]]
-- [[Diffusion priors improve reconstruction from sparse distances without guaranteeing a unique structure]]
