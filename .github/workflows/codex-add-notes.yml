@@ -1,4 +1,4 @@
-name: Import verbatim notes
+name: Import notes from comments
 
 on:
   issue_comment:
@@ -28,6 +28,12 @@ jobs:
         with:
           ref: ${{ github.event.repository.default_branch }}
           persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Install Markdown parsers
+        run: npm ci --ignore-scripts
       - uses: actions/github-script@v7
         id: import
         with:

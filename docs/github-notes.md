@@ -55,9 +55,9 @@ line. Do not put the closing backticks on that same line. Tilde fences also work
 use a longer outer fence if your note contains nested code blocks.
 
 The opening fence and its newline are excluded, as is the closing fence line.
-Every character between them is retained exactly as GitHub returns it, including
-blank lines, line endings, and trailing whitespace. The command adds no metadata
-and does not summarize, fix spelling, convert citations, or reformat text.
+The command adds inline wikilinks as described below. Apart from those link
+wrappers, it retains the original wording, blank lines, line endings, and trailing
+whitespace. It does not summarize, fix spelling, convert citations, or add metadata.
 Include any desired figure links, tags, dates, and citations inside the blocks
 yourself. Images attached outside a block are not imported. Existing bibliography
 keys can be used; this command does not fetch papers or add bibliography entries.
@@ -69,12 +69,46 @@ this is not an incremental import. Rerunning the same Actions run reuses its PR
 and preserves any reviewer edits. Existing filenames still cause a new request
 to fail. There is no fallback to the issue body when no comment blocks are found.
 
+## Automatic inline links and backlinks
+
+The importer matches prose against existing note filenames, frontmatter titles
+and aliases, and established display aliases in the vault's wikilinks. It also
+links between notes in the same import. Examples:
+
+```text
+ESM → [[ESM]]
+protein language models → [[Protein language models|protein language models]]
+PLMs → [[Protein language models|PLMs]]
+```
+
+Matching is case-insensitive and favors longer names. It links every matching
+mention, including repeats, so you can remove unwanted links in the PR. It keeps
+the original visible wording. Exact filenames take priority over aliases;
+ambiguous aliases are skipped. It does not invent targets or link a note to
+itself. Matches require whole words: `ESM` does not match inside `ESMFold` or `ESM2`.
+
+Existing links and images, code, citations, formulas, HTML, frontmatter, headings,
+and the opening `Title:` line are preserved. The parser identifies prose spans
+and inserts links without reformatting the Markdown. This step is deterministic
+and requires no OpenAI API key.
+
+Quartz generates backlinks automatically from these outgoing links when the
+site builds. The importer does not edit existing notes to insert reciprocal links;
+Codex can suggest those separately for review.
+
 ## Find related notes
 
 After import, Codex searches the existing vault and posts a separate PR comment
-with up to five useful connections per proposed note. It identifies duplicates,
-supporting evidence, qualifications, and complementary ideas, with links and
-suggested wikilinks. It does not edit any note.
+with a copy-ready `#### See also` list for each proposed note. Paste the suggested
+entries into that note's See Also section after review. If the section already
+exists, the suggestions follow its heading level and omit entries already there.
+
+The search favors broad coverage over a short list: it identifies duplicates,
+supporting evidence, qualifications, and complementary ideas, explains the
+connections, and labels tentative associations. It also suggests contextual
+inline links that name/alias matching missed and useful reciprocal links to add
+in existing notes. These semantic suggestions require the OpenAI API key. The
+search itself does not edit notes or insert a See Also section automatically.
 
 The search also runs when a writer opens or updates a note PR. To request it on
 an existing PR, comment:
@@ -97,7 +131,7 @@ skipped; a writer can explicitly request analysis on their PR.
    contents and pull-request write access explicitly.
 3. Add `OPENAI_API_KEY` under **Settings → Secrets and variables → Actions** to
    enable the related-note search. This uses the OpenAI API and its billing.
-   Importing notes itself needs no model or API key.
+   Importing notes and matching inline links need no model or API key.
 
 These are repository commands implemented by GitHub Actions, using the
 [official Codex action](https://developers.openai.com/codex/github-action) for
@@ -110,8 +144,9 @@ loads PR blobs as data, and gives Codex a read-only sandbox. Posting the result
 runs in a separate job. It never checks out or executes a PR's scripts.
 
 The imported PR links its source issue and command, and lists each note's source
-comment, last-edit timestamp, and SHA-256 hash of the copied UTF-8 text. It does
-not close the source issue or merge itself.
+comment, last-edit timestamp, number of added inline links, and separate SHA-256
+hashes for the original and linked UTF-8 text. It does not close the source issue
+or merge itself.
 The import run's summary links to the PR. Errors appear in the Actions run.
 If the API key is missing or analysis fails, the imported PR remains available;
 configure the key and comment `/codex related-notes` on it to retry.
@@ -124,5 +159,6 @@ manual run before merging. No checks are bypassed by this workflow.
 ## Local validation
 
 ```sh
-node --test tests/github/notes.test.mjs
+npm ci --ignore-scripts
+node --test tests/github/*.test.mjs
 ```

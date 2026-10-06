@@ -85,7 +85,7 @@ export async function canWrite(github, repo, username) {
   return ["admin", "maintain", "write"].includes(data.permission)
 }
 
-export async function importNotes({ github, context, core }) {
+export async function importNotes({ github, context, core, readCatalog }) {
   const repo = context.repo
   if (!(await canWrite(github, repo, context.actor)))
     throw new Error("Write permission is required.")
@@ -133,8 +133,11 @@ export async function importNotes({ github, context, core }) {
     if (paths.has(note.path.normalize("NFC").toLowerCase()))
       throw new Error(`Already exists: ${note.path}`)
   }
+  // Load Markdown dependencies only for import; related-note preparation stays dependency-free.
+  const { linkNotes, readNoteCatalog } = await import("./note-links.mjs")
+  const linkedNotes = linkNotes(notes, await (readCatalog ?? readNoteCatalog)(tree.tree))
   const entries = []
-  for (const note of notes) {
+  for (const note of linkedNotes) {
     const { data: blob } = await github.rest.git.createBlob({
       ...repo,
       content: Buffer.from(note.content).toString("base64"),
@@ -149,7 +152,7 @@ export async function importNotes({ github, context, core }) {
   })
   const { data: newCommit } = await github.rest.git.createCommit({
     ...repo,
-    message: `Add verbatim notes from comments on issue #${issue.number}`,
+    message: `Add linked notes from comments on issue #${issue.number}`,
     tree: newTree.sha,
     parents: [ref.object.sha],
   })
@@ -168,8 +171,8 @@ export async function importNotes({ github, context, core }) {
   }
   const hashes = notes
     .map(
-      (n) =>
-        `- \`${n.path}\`: \`${createHash("sha256").update(n.content).digest("hex")}\` — [source comment](${n.source}), last updated ${n.updatedAt}`,
+      (n, i) =>
+        `- \`${n.path}\` — [source comment](${n.source}), last updated ${n.updatedAt}\n  - Source SHA-256: \`${createHash("sha256").update(n.content).digest("hex")}\`\n  - Imported SHA-256: \`${createHash("sha256").update(linkedNotes[i].content).digest("hex")}\`\n  - Added ${linkedNotes[i].links.length} inline wikilinks.`,
     )
     .join("\n")
   const { data: pr } = await github.rest.pulls.create({
@@ -177,7 +180,7 @@ export async function importNotes({ github, context, core }) {
     head: branch,
     base,
     title: `Add notes from #${issue.number}: ${issue.title}`.slice(0, 240),
-    body: `Copies fenced Markdown notes verbatim from comments on ${issue.html_url}.\n\nRequested by ${context.payload.comment.html_url}.\n\nNo summarization, formatting, metadata, citation conversion, or related links were added. Related-note suggestions are posted separately.\n\n### Source comments and imported UTF-8 SHA-256 checksums\n\n${hashes}`,
+    body: `Imports fenced Markdown notes from comments on ${issue.html_url}.\n\nRequested by ${context.payload.comment.html_url}.\n\nAdds inline wikilinks using existing note names and aliases, preserving the author's wording and formatting. Review freely and remove unwanted links. Quartz generates backlinks from these links. See Also and reciprocal-link suggestions are posted separately by the related-note search.\n\n### Source comments and UTF-8 SHA-256 checksums\n\n${hashes}`,
   })
   core.setOutput("pr", pr.number)
   core.summary.addLink(`Note PR #${pr.number}`, pr.html_url)

@@ -2,6 +2,6 @@ This repository is the source for [notes.delalamo.xyz](https://notes.delalamo.xy
 
 See [the tagging guide](docs/tag-taxonomy.md) for the topic hierarchy and conventions.
 
-To import your writing verbatim from fenced Markdown blocks in GitHub issue
-comments and ask Codex for related-note suggestions on the resulting PR, see
+To import your writing from fenced Markdown blocks in GitHub issue comments,
+automatically link known note names and aliases, and get See Also suggestions, see
 [adding notes from GitHub](docs/github-notes.md).

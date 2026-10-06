@@ -3,14 +3,20 @@ name: Test GitHub note commands
 on:
   pull_request:
     paths:
-      - "scripts/github/notes.mjs"
+      - "scripts/github/**"
       - "tests/github/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/codex/**"
       - ".github/workflows/codex-*.yml"
   push:
     branches: [main]
     paths:
-      - "scripts/github/notes.mjs"
+      - "scripts/github/**"
       - "tests/github/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/codex/**"
       - ".github/workflows/codex-*.yml"
 
 permissions:
@@ -26,4 +32,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - run: node --test tests/github/notes.test.mjs
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: node --test tests/github/*.test.mjs

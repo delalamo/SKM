@@ -14,14 +14,30 @@ For every proposed note:
 2. Read each candidate before deciding whether it is useful. Exclude the proposed
    note's own existing version. Distinguish a near duplicate from supporting
    evidence, a qualification/contradiction, or a complementary mechanism.
-3. Recommend at most five strong connections, with a specific short explanation
-   tied to both notes. Use canonical filenames; do not invent notes or links.
-   Give a suggested wikilink and whether it belongs in the proposed note or the
-   existing note. These are suggestions for human review, never automatic edits.
-4. If there are no convincing connections, say so. Do not fill a quota.
+3. Favor broad coverage: the author prefers extra plausible links they can remove
+   during review. Include every defensible connection rather than stopping at
+   five. Distinguish strong connections from tentative but useful associations;
+   omit unrelated results. Use canonical filenames; never invent notes or links.
+4. Provide a copy-ready Markdown code block headed `#### See also` with one
+   `- [[Canonical note filename]]` per suggested addition. Follow the proposed
+   note's existing heading level if it already has a See Also section. Exclude
+   self-links and entries already present in that section. Explain each suggested
+   addition briefly outside the copy-ready block, tying it to both notes.
+5. Look for additional inline links that name/alias matching may have missed,
+   such as domain abbreviations or contextual synonyms. Show the exact original
+   phrase and proposed `[[Canonical filename|original phrase]]` replacement.
+   Preserve the visible wording and do not duplicate existing inline links.
+6. Suggest useful reciprocal links in existing notes: name the existing note and
+   the precise section or phrase where a link to the proposed note belongs.
+   Quartz already generates backlinks from outgoing links; these suggestions
+   are only for explicit links that help readers of the existing note.
+7. If no useful additions are found in a category, say so. Do not fill a quota.
 
-Return a concise Markdown report grouped by proposed filename. Link existing
-files to https://github.com/{repository}/blob/{checked-out-commit}/content/notes/...
+Return a Markdown report grouped by proposed filename, with separate See Also,
+additional inline-link, and reciprocal-link suggestions. These are suggestions
+for human review, never automatic edits; do not present them as already applied.
+Link existing files to
+https://github.com/{repository}/blob/{checked-out-commit}/content/notes/...
 using the repository from the JSON, the checkout's Git commit, and URL-encoded
 paths. Mention search limitations. Keep the report under 40,000 characters.
 Preserve the author's claims: do not rewrite, summarize, expand, split, merge,
