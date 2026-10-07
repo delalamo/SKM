@@ -545,6 +545,16 @@
   abstract = {De novo design of protein binders targeting extended, multi-site interaction surfaces remains difficult for current generative methods, which often produce limited structural diversity and predominantly helical topologies. Here, we advance diffusion-based binder design by guiding protein backbone generation through ′′seeds,′′ which are PDB-derived fragments selected for geometric complementarity to the target surface. To test this approach, we computationally generated seed-guided binders of the bacterial toxin RelE. RelB, the native antitoxin of RelE, engages two distinct interfaces with high surface complementarity, making it an appropriate test case. Seed-guided RFdiffusion produced backbones with substantially higher structural diversity and more target contacts than RFdiffusion alone. Experimental screening of 1,402 designs in a high-throughput bacterial survival assay identified multiple functional binders, including variants with nanomolar to low-micromolar affinity and one design with RelE neutralization comparable to RelB pep . Computational structure prediction and mutational analyses support that the designed interfaces rely on seed-derived contacts and adopt binding modes distinct from RelB. Molecular dynamics simulations and hydrogen-deuterium exchange experiments further suggest that one high-affinity design undergoes a conformational change upon binding. Notably, successful designs exhibited reduced cross-reactivity to RelE orthologs compared with RelB pep , suggesting that the extensive interfaces generated through seed-guided design can enable enhanced selectivity. These results establish motif scaffolding of surface-complementing seeds as an effective strategy for overcoming current limitations of de novo generative models, enabling the design of proteins that can engage challenging interface sites.},
 }
 
+@misc{brooks2026_C,
+  title = {Mutation choice biases the structure of empirical fitness landscapes},
+  author = {Brooks, C. and Desai, M. M. and Carlson, M. O.},
+  year = {2026},
+  abstract = {Evolution can be thought of as taking place in a fitness landscape which maps each genotype to a fitness value. This abstraction has motivated significant efforts to quantify the statistical properties of random fitness landscapes with different amounts and types of interactions among loci---broadly referred to as epistasis. New high-throughput experimental techniques measuring the phenotypes of thousands of genotypes promise to bridge this theory with data. Yet, while impressive, thousands is still small relative to the size of genotype space. Moreover, experiments often assay a highly non-random subset of the fitness landscape. For example, a common experimental approach is to generate all possible 2M sequence intermediates between ancestral and evolved sequences differing by M much less than L mutations. Here, we ask to what extent the statistics of an empirical landscape constructed under distinct ascertainment protocols recapitulate the statistics of a random subset of the global landscape in a few well-studied random landscape models. We show that, in most landscapes, selecting mutations which occurred along an adaptive trajectory inflates the variance explained by lower order epistasis, reduces the number of local maxima, and increases the number of accessible paths relative to a random fitness landscape. Selecting the most beneficial or deleterious mutations, on the other hand, results in distortions to these statistics which depend more critically on the amount of epistasis in the global landscape. We then take advantage of several large-scale mutagenesis datasets to simulate the effects of ascertainment in more realistic settings.},
+  doi = {10.64898/2026.09.28.754994},
+  url = {https://doi.org/10.64898/2026.09.28.754994},
+  note = {Version 1},
+}
+
 @article{broom2020,
   title = {Ensemble-based enzyme design can recapitulate the effects of laboratory directed evolution in silico},
   author = {Broom, Aron and Rakotoharisoa, Rojo V. and Thompson, Michael C. and Zarifi, Niayesh and Nguyen, Erin and Mukhametzhanov, Nurzhan and Liu, Lin and Fraser, James S. and Chica, Roberto A.},
@@ -1075,6 +1085,20 @@
   url = {https://doi.org/10.1016/s0006-3495(01)76074-2},
 }
 
+@article{chrone2026,
+  title = {Native structure of the therapeutic IgG4 α4β5 integrin antibody natalizumab},
+  author = {Victor G. Chrone and Johan C. Jespersen and Daut C. Asani and Jens Hieronymus and Soumik Ray and Nicole H. Trier and Jette L. Frederiksen and Peter Højrup and Gunnar Houen},
+  year = {2026},
+  journal = {Biochimica et Biophysica Acta (BBA) - Proteins and Proteomics},
+  volume = {1874},
+  number = {6},
+  pages = {141174},
+  doi = {10.1016/j.bbapap.2026.141174},
+  pmid = {42648603},
+  url = {https://doi.org/10.1016/j.bbapap.2026.141174},
+  abstract = {The native structure of natalizumab, an IgG4/κ α4β5 integrin monoclonal therapeutic antibody used for treatment of multiple sclerosis, was determined by a combination of chemical cross-linking, mass spectrometry, biophysical, and immunochemical methods. This revealed a compact, closed, m-shaped ellipsoidal structure with the paratopes at each end. Physicochemical stress, in the form of elevated temperature and lowered pH, induced an open, Y-shaped conformation of the antibody. This conformational change may reflect what is happening by binding of antibodies to their cognate antigens, e.g., in the form of pathogen-associated molecular patterns on the surface of microorganisms, where the antibodies have an intrinsic ability to change conformation and expose their effector function sites. Thus, in the absence of their cognate antigen, antibodies circulate as closed, m-shaped, inactive molecules.},
+}
+
 @article{chu2023,
   title = {An all-atom protein generative model},
   author = {Chu, Alexander E. and Kim, Jinho and Cheng, Lucy and El Nesr, Gina and Xu, Minkai and Shuai, Richard W. and Huang, Po-Ssu},
@@ -1263,6 +1287,16 @@
   abstract = {Because of its great potential for diversity, the immunoglobulin heavy-chain complementarity-determining region 3 (HCDR3) is taken as an antibody molecule's most important component in conferring binding activity and specificity. For this reason, HCDR3s have been used as unique identifiers to investigate adaptive immune responses in vivo and to characterize in vitro selection outputs where display systems were employed. Here, we show that many different HCDR3s can be identified within a target-specific antibody population after in vitro selection. For each identified HCDR3, a number of different antibodies bearing differences elsewhere can be found. In such selected populations, all antibodies with the same HCDR3 recognize the target, albeit at different affinities. In contrast, within unselected populations, the majority of antibodies with the same HCDR3 sequence do not bind the target. In one HCDR3 examined in depth, all target-specific antibodies were derived from the same VDJ rearrangement, while non-binding antibodies with the same HCDR3 were derived from many different V and D gene rearrangements. Careful examination of previously published in vivo datasets reveals that HCDR3s shared between, and within, different individuals can also originate from rearrangements of different V and D genes, with up to 26 different rearrangements yielding the same identical HCDR3 sequence. On the basis of these observations, we conclude that the same HCDR3 can be generated by many different rearrangements, but that specific target binding is an outcome of unique rearrangements and VL pairing: the HCDR3 is necessary, albeit insufficient, for specific antibody binding.},
   doi = {10.3389/fimmu.2018.00395},
   url = {https://doi.org/10.3389/fimmu.2018.00395},
+}
+
+@misc{danwada2026,
+  title = {Evaluating Protein Language Model Embeddingsfor Structural Similarity in the Protein-Sequence Twilight Zone},
+  author = {DANWADA, S. and UDOMPRASERT, P. and RAYCHAWDHARY, N. and SEALS, C. D. and Wu, L. and Bhattacharya, S.},
+  year = {2026},
+  doi = {10.64898/2026.07.31.742099},
+  url = {https://doi.org/10.64898/2026.07.31.742099},
+  note = {Version 1},
+  abstract = {ABSTRACT Evaluating protein sequence similarity remains challenging in the protein-sequence twilight zone (20–35\% sequence identity), where traditional methods often fail. In this study, we evaluate whether mean-pooled embeddings from four protein language models: ESM-1b, ESM-2, ProtT5, and ProstT5 can estimate pairwise structural similarity without performing sequence alignment. The benchmark dataset includes 20,445 PISCES protein pairs with sequence identity ≤30\%, representing the protein-sequence twilight zone, with TM-align-derived TM min used as the structural ground truth. Protein embeddings are compared using cosine similarity, Euclidean- and Manhattan-derived similarities, an RBF kernel, and dot product. Among these similarity metrics, cosine similarity performs best across all four models. Moreover, ProstT5 achieves the highest Spearman correlation with TM min , followed by ESM-2, ProtT5, and ESM-1b, while all four PLMs outperform BLASTP overall. Furthermore, the advantage of PLM embeddings is most pronounced for protein pairs with the lowest sequence identity. ProstT5 also provides the best discrimination between structurally similar and dissimilar protein pairs. Moreover, it offers a favorable balance between similarity performance and the computational requirements of residue-level embedding generation and storage. Overall, these findings support PLM embeddings as an effective alignment-free approach for detecting structural relationships among proteins in the twilight zone.},
 }
 
 @article{dauparas2022,
@@ -3044,6 +3078,16 @@
   url = {https://doi.org/10.1073/pnas.2532018123},
 }
 
+@misc{jacobsen2026,
+  title = {pH-sensitive binder design with Proton-PottsMPNN},
+  author = {Jacobsen, C. P. and Deweid, L. and Birnbaum, F. and Gormsen, L. W. and Fryer, T. and Jagd, U. and Hald, A. and Rasch, M. G. and Jenkins, T. and Ovchinnikov, S.},
+  year = {2026},
+  doi = {10.64898/2026.09.30.755438},
+  url = {https://doi.org/10.64898/2026.09.30.755438},
+  note = {Version 1},
+  publisher = {bioRxiv},
+}
+
 @article{jaffe2022,
   title = {Functional antibodies exhibit light chain coherence},
   author = {Jaffe, David B. and Shahi, Payam and Adams, Bruce A. and Chrisman, Ashley M. and Finnegan, Peter M. and Raman, Nandhini and Royall, Ariel E. and Tsai, FuNien and Vollbrecht, Thomas and Reyes, Daniel S. and Hepler, N. Lance and McDonnell, Wyatt J.},
@@ -4051,6 +4095,16 @@
   abstract = {AlphaFold achieves unprecedented accuracy in modeling protein–protein complexes, yet the principles governing complex assembly remain unclear. Here, we develop a unified interpretability framework for AlphaFold-Multimer and AlphaFold3 to dissect the mechanisms underlying complex formation. We demonstrate that inter-protein coevolution is not a major determinant of assembly. Instead, complex structures are primarily driven by monomer geometry together with interface-level pattern matching between backbone complementarity and residue identities. By visualizing the iterative propagation of distance constraints during inference, we uncover a hierarchical process in which monomer-level constraints are established prior to cross-chain interactions, directly demonstrating that inter-chain geometry is inferred from monomer geometries rather than being encoded by coevolutionary signals. Application to antigen–antibody complexes further reveals that reduced prediction accuracy arises from the non-canonical and structurally plastic nature of immune interfaces, identifying accurate modeling of interface conformations and recognition of atypical antigen–antibody interaction patterns as key bottlenecks for improving immune complex prediction.},
   doi = {10.64898/2026.04.03.716280},
   url = {https://doi.org/10.64898/2026.04.03.716280},
+}
+
+@misc{li2026_B,
+  title = {Design-Evolution Synergy Enables New-to-Nature Enzyme Chemistry},
+  author = {Li, Z.-Q. and Zhang, R. K. and Xie, P.-P. and Kelly, J. and Zhang, Y. and Qin, Z.-Y. and Lambert, T. and Mukhopadhyay, O. and Hanley, D. and Danson, A. E. and Abramson, J. and Singh, S. and Wu, Z. and Kohli, P. and Liu, P. and Wang, J. and Arnold, F. H.},
+  year = {2026},
+  doi = {10.64898/2026.10.01.754751},
+  url = {https://doi.org/10.64898/2026.10.01.754751},
+  note = {Version 1},
+  publisher = {bioRxiv},
 }
 
 @article{li2026robust,
@@ -5218,6 +5272,16 @@
   url = {https://doi.org/10.1093/bioinformatics/btae618},
 }
 
+@misc{omidi2026,
+  title = {De Novo Design of Protein Switches with Diffusion-Based Ensemble Sampling},
+  author = {Omidi, A. and He, J. and Bui, J. M. and Gsponer, J. and Syed, S.},
+  year = {2026},
+  doi = {10.64898/2026.07.20.739027},
+  url = {https://doi.org/10.64898/2026.07.20.739027},
+  note = {Version 1},
+  abstract = {Protein switches are proteins that can respond to biochemical stimuli by rearranging their structural elements, essential for cells to transduce signals. The de novo design of such proteins requires amino acid sequences whose energy landscapes support multiple stimulus-dependent conformations, yet most current de novo protein design pipelines are optimized for single stable structures. Existing multi-state inverse-folding methods can design sequences compatible with multiple backbones, but they assume that suitable backbone ensembles are already available, often requiring expert knowledge. We introduce Diff-Switch, a framework for sampling switch-like backbone ensembles from pretrained protein diffusion models. Given a reference backbone structure and domain decomposition, our method preserves local domain geometry while encouraging diversity in global domain arrangements along user-specified collective variables, inspired by metadynamics. We implement this objective through a controlled diffusion sampler with reward-tilting for local similarity between the ensemble members and history-dependent bias in collective-variable space to avoid repeated sampling of the same global arrangement. The resulting ensembles provide candidate conformational states for downstream multi-state inverse folding. Across our evaluation set of 20 diverse proteins, using conformations from these generated ensembles improves the success rate of finding switch-compatible sequences over baseline sampling. We further apply the method to a real-world protein switch design task and characterize the resulting designs.},
+}
+
 @misc{orr2025,
   title = {An improved model for prediction of de novo designed proteins with diverse geometries},
   author = {Orr, Benjamin and Crilly, Stephanie E. and Akpinaroglu, Deniz and Zhu, Eleanor and Keiser, Michael J. and Kortemme, Tanja},
@@ -5598,6 +5662,17 @@
   abstract = {The binding complexes formed by proteins and small molecule ligands are ubiquitous and critical to life. Despite recent advancements in protein structure prediction, existing algorithms are so far unable to systematically predict the binding ligand structures along with their regulatory effects on protein folding. To address this discrepancy, we present NeuralPLexer, a computational approach that can directly predict protein–ligand complex structures solely using protein sequence and ligand molecular graph inputs. NeuralPLexer adopts a deep generative model to sample the three-dimensional structures of the binding complex and their conformational changes at an atomistic resolution. The model is based on a diffusion process that incorporates essential biophysical constraints and a multiscale geometric deep learning system to iteratively sample residue-level contact maps and all heavy-atom coordinates in a hierarchical manner. NeuralPLexer achieves state-of-the-art performance compared with all existing methods on benchmarks for both protein–ligand blind docking and flexible binding-site structure recovery. Moreover, owing to its specificity in sampling both ligand-free-state and ligand-bound-state ensembles, NeuralPLexer consistently outperforms AlphaFold2 in terms of global protein structure accuracy on both representative structure pairs with large conformational changes and recently determined ligand-binding proteins. NeuralPLexer predictions align with structure determination experiments for important targets in enzyme engineering and drug discovery, suggesting its potential for accelerating the design of functional proteins and small molecules at the proteome scale. Great advances in protein structure prediction have been made with recent deep learning-based methods, but proteins interact with their environment and can change shape drastically when binding to ligand molecules. To predict the 3D structure of these combined protein–ligand complexes, Qiao et al. developed a generative diffusion model with biophysical constraints and geometric deep learning.},
   doi = {10.1038/s42256-024-00792-z},
   url = {https://doi.org/10.1038/s42256-024-00792-z},
+}
+
+@article{qin2026,
+  title = {Simplifying in silico protein evolution with minimal screening by unZipro},
+  author = {Qin, Zhaohui and Zhao, Sanzeng and Deng, Zhaolong and Si, Xiaomin and Xing, Cheng and Zhang, Zhenfei and Zhang, Yumeng and Han, Xueying and Zhang, Jindong and Chen, Yang and Liu, Xiaoyi and Li, Jinhui and Fu, Lei and You, Liyuan and Murray, James W. and Liu, Huiyun and Li, Huifang and Li, Chengwei and Wu, Song and Li, Junzhou and Chen, Zhen and Song, Jiangning and Wang, Daowen and Ji, Xiang},
+  year = {2026},
+  journal = {Molecular Cell},
+  month = {September},
+  note = {Published online September 24, 2026},
+  doi = {10.1016/j.molcel.2026.08.028},
+  url = {https://doi.org/10.1016/j.molcel.2026.08.028},
 }
 
 @article{qiu2026,
@@ -6374,6 +6449,18 @@
   abstract = {We present a new estimator for computing free energy differences and thermodynamic expectations as well as their uncertainties from samples obtained from multiple equilibrium states via either simulation or experiment. The estimator, which we call the multistate Bennett acceptance ratio estimator (MBAR) because it reduces to the Bennett acceptance ratio estimator (BAR) when only two states are considered, has significant advantages over multiple histogram reweighting methods for combining data from multiple states. It does not require the sampled energy range to be discretized to produce histograms, eliminating bias due to energy binning and significantly reducing the time complexity of computing a solution to the estimating equations in many cases. Additionally, an estimate of the statistical uncertainty is provided for all estimated quantities. In the large sample limit, MBAR is unbiased and has the lowest variance of any known estimator for making use of equilibrium data collected from multiple states. We illustrate this method by producing a highly precise estimate of the potential of mean force for a DNA hairpin system, combining data from multiple optical tweezer measurements under constant force bias.},
   doi = {10.1063/1.2978177},
   url = {https://doi.org/10.1063/1.2978177},
+}
+
+@article{shortle1998,
+  title = {Clustering of low-energy conformations near the native structures of small proteins},
+  author = {Shortle, David and Simons, Kim T. and Baker, David},
+  year = {1998},
+  journal = {Proceedings of the National Academy of Sciences},
+  volume = {95},
+  number = {19},
+  pages = {11158-11162},
+  doi = {10.1073/pnas.95.19.11158},
+  url = {https://doi.org/10.1073/pnas.95.19.11158},
 }
 
 @article{shrock2023,
@@ -7310,6 +7397,17 @@
   url = {https://arxiv.org/abs/2509.18480},
 }
 
+@misc{wang2026msfold,
+  title = {Sampling in structure-token space enables accurate prediction of multiple protein conformations},
+  author = {Wang, Z. and Yu, Y. and Zheng, W.-M. and Yu, C. and Bu, D.},
+  year = {2026},
+  publisher = {bioRxiv},
+  doi = {10.64898/2026.03.03.708411},
+  url = {https://www.biorxiv.org/content/10.64898/2026.03.03.708411v3},
+  note = {Version 3},
+  abstract = {Proteins often function through multiple conformations, yet most structure-prediction methods are biased toward a single dominant state. Here we present MSFold, a training-free framework that explores the discrete, sequence-conditioned structure-token space of ESM3 using parallel tempering, coupling high-temperature exploration with low-temperature refinement to cross barriers between conformational states. Across 312 multi-conformation protein pairs, MSFold recovered both conformations in 51.6\% of cases, compared with 38.1\% for MSA Cluster and 37.8\% for AlphaFold3. This performance advantage persisted on a post-ESM3-cutoff evaluation set, arguing against simple structural memorization. We further introduce sequence log-likelihood, a reference-free confidence score based on sequence–structure consistency, which improves ranking of sampled conformations. Together, these results provide a practical means of accessing the conformational information encoded by protein language models and establish MSFold as an effective framework for multi-conformation prediction.},
+}
+
 @misc{wang2026_G,
   title = {EpiBench: Can LLMs Understand Epitopes for Antibody Drug Discovery?},
   author = {Zirui Wang and Jiaqi Wang and Qinghan Wang and Yuzhi Xu and Gang Du and Tingjun Hou and Odin Zhang},
@@ -7606,6 +7704,16 @@
   abstract = {Language models have enabled a new era of biological sequence modeling. However, extracting meaningful sequence-level embeddings from these models remains challenging. In this work, we introduce ProteinCLIP, which applies contrastive learning between a protein’s amino acid sequence and curated text describing its function. ProteinCLIP thus learns to take a pre-trained protein language model’s sequence embedding and refines it produce a function-centric embedding. We show that this embedding space yields sequence representations that enable state-of-the-art performance across a variety of important yet challenging tasks in the study of proteins – from predicting protein protein interactions to accurately detecting homologous proteins despite low sequence similarity. More broadly, ProteinCLIP demonstrates the effectiveness of multi-modal learning in biological contexts, and how such strategies can help isolate key signals from large models and further improve their utility.},
   doi = {10.1101/2024.05.14.594226},
   url = {https://doi.org/10.1101/2024.05.14.594226},
+}
+
+@misc{wu2026_B,
+  title = {Designing enzymes for new-to-nature chemistry and non-natural substrates with AlphaProtein Novo},
+  author = {Wu, Zachary and Abramson, Joshua and Frerix, Thomas and Chu, Alexander E and Zhang, Ruijie K and Schulz, Luca and Danson, Amy E and Kwan, Tristan O. C. and Li, Wenliang K and Kelly, Jacob and Li, Zi-Qi and Schneider, Rosalia G and Thillaisundaram, Ashok and Patani, Harshnira and Zambaldi, Vinicius F and Singh, Sukhdeep and La, David and Domecillo, Masy and Mora, Ariane N. and Reisenbauer, Julia C. and Zhang, Yu and Papa, Eliseo and Zemgulyte, Akvile and Wu, Yu-Han and Zidek, Augustin and Shi, Jiaxin and Margand, Grace and Assem, Naila and Stephen, Kate and Emrich, Charlie and Liu, Peng and Lucy, Colwell and Hassabis, Demis and Fergus, Rob and Arnold, Frances H. and Kohli, Pushmeet and Wang, Jue},
+  year = {2026},
+  doi = {10.64898/2026.10.01.756017},
+  url = {https://doi.org/10.64898/2026.10.01.756017},
+  note = {Version 1},
+  publisher = {bioRxiv},
 }
 
 @article{xie2023,
