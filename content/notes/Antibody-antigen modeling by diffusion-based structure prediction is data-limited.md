@@ -3,7 +3,7 @@ tags:
   - prediction/complexes
   - evidence/datasets
 created: 2026-04-05T17:25:38
-modified: "2026-07-17T10:38:09"
+modified: "2026-09-25"
 publicationHistory:
   "2026-03-16": "https://biomlzk.ghost.io/antibody-antigen-complex-prediction-by-af3-generation-methods-is-data-limited/"
 ---
@@ -11,6 +11,11 @@ publicationHistory:
 #### Summary
 
 **[[Antibody-antigen interactions|Antibody-antigen]] [[notes/Structure prediction|complex prediction]] by [[notes/Diffusion models|diffusion]]-based [[notes/Structure prediction|structure prediction]] methods is data-limited** [@zhang2026]. This is not true of other poor-performing tasks, such as small molecule docking. This was observed using a version of Protenix trained on four additional years of public data.
+
+#### Details
+
+In a subsequent study, [[Antibody-antigen complex prediction scales with training data and compute|self-distillation with synthetic antibody-antigen complexes improved performance during fine-tuning]], although its expanded SAbDab data and changed training settings confound attribution to distillation alone.
+
 
 #### Figures
 
