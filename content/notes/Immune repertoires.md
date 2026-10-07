@@ -5,7 +5,7 @@ aliases:
   - "Immune repertoires"
   - "tags/immune-repertoires"
 created: 2026-04-10T14:30:55
-modified: "2026-04-20T10:13:23"
+modified: "2026-10-07"
 tags:
   - antibodies/repertoires
 ---
@@ -16,3 +16,4 @@ Related:
 
 - [[notes/Affinity maturation|Affinity maturation]]
 - [[tags/antibodies|Antibodies]]
+- [[Public clonotypes are shared across individuals]]
