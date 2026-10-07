@@ -10,7 +10,7 @@ tags:
   - design/inverse-folding
 ---
 
-**Inverse folding** describes the problem of designing a sequence for a structure. Typically these are limited to the twenty canonical amino acids.
+**Inverse folding** describes the problem of designing a sequence for a structure. Typically these are limited to the twenty canonical amino acids. [[Distinct protonation states of side chains can be represented as discrete tokens in inverse folding models|Protonation states can also be represented as distinct tokens]].
 
 ## Methods
 
