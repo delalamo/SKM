@@ -142,7 +142,6 @@ def test_daily_uses_strict_cutoff_and_reports_partial_feed_failure(
   client = MemoryIssueClient()
   fetch = report([record()], failed=True)
   with (
-    patch("scripts.paperbot.daily.check_model", return_value={"model_hash": "model"}),
     patch("scripts.paperbot.daily.load_model", return_value=LoadedModel(None, 0, "model")),
     patch("scripts.paperbot.daily._score", return_value=[score]),
   ):
@@ -242,7 +241,6 @@ def test_unchanged_candidate_is_not_embedded(tmp_path: Path) -> None:
   fetch = report([current])
 
   with (
-    patch("scripts.paperbot.daily.check_model", return_value={"model_hash": "model"}),
     patch("scripts.paperbot.daily.load_model", return_value=LoadedModel(None, 0, "model")),
     patch("scripts.paperbot.daily._score", return_value=[]) as scorer,
   ):
@@ -285,7 +283,6 @@ def test_daily_limits_pubmed_revision_checks_to_managed_issue_pmids(
   empty = FetchReport(window, (), (), {"pubmed": 0})
 
   with (
-    patch("scripts.paperbot.daily.check_model", return_value={"model_hash": "model"}),
     patch("scripts.paperbot.daily.load_model", return_value=LoadedModel(None, 0, "model")),
     patch("scripts.paperbot.daily.fetch_all_sources", return_value=empty) as fetcher,
     patch("scripts.paperbot.daily._score", return_value=[]),
@@ -314,7 +311,6 @@ def test_daily_publishes_issues_without_project_configuration_or_token(
   fetch = report([record()])
 
   with (
-    patch("scripts.paperbot.daily.check_model", return_value={"model_hash": "model"}),
     patch("scripts.paperbot.daily.load_model", return_value=LoadedModel(None, 0, "model")),
     patch("scripts.paperbot.daily._score", return_value=[0.9]),
   ):

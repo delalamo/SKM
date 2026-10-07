@@ -3,12 +3,12 @@ tags:
   - prediction/ensembles
   - inference/guidance
 created: "2026-02-20T18:23:36"
-modified: "2026-04-21T05:01:15"
+modified: "2026-10-07T09:14:27"
 ---
 
 #### Summary
 
-Guidance potentials can be added to diffusion-based structure prediction methods for enhanced sampling of protein dynamics [@lam2026; @ohnuki2025]. However, the results do not necessarily reproduce the effectiveness of MSA subsampling.
+Guidance potentials can be added to diffusion-based structure prediction methods for enhanced sampling of protein dynamics [@lam2026; @ohnuki2025; @omidi2026]. However, the results do not necessarily reproduce the effectiveness of MSA subsampling.
 
 #### Details
 
