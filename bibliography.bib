@@ -251,6 +251,16 @@
   url = {https://doi.org/10.1038/s42003-023-05241-y},
 }
 
+@misc{bai2026,
+  title = {PANDA: Protein All-atom Nested-tree Denoising Architecture for End-to-End Generation},
+  author = {Bai, J. and Jiang, H.},
+  year = {2026},
+  doi = {10.64898/2026.09.11.750898},
+  url = {https://doi.org/10.64898/2026.09.11.750898},
+  note = {Version 1},
+  abstract = {Deep generative models have expanded the scope of computational protein design, yet most approaches still separate backbone generation from sequence assignment or rely on latent and torsional representations that do not operate directly on all atoms in Cartesian space. We present PANDA, an end-to-end generative architecture that performs denoising in a unified all-atom representation, recovering sequence identity directly from atomic occupancy patterns. By coupling global and local coordinate tracks and introducing a sampling strategy that preserves side-chain geometry, PANDA achieves the highest self-consistency design success across protein lengths among evaluated all-atom methods. For functional design it conditions on pairwise distances between motif atoms rather than fixing their coordinates, allowing the functional atoms to be positioned jointly with the scaffold. On the Atomic Motif Enzyme benchmark, PANDA preserves motif geometry and delivers substantially higher scaffolding success than previous approaches, particularly for larger motifs. PANDA thus provides an efficient route to high-quality all-atom generative design with flexible atomic-level control.},
+}
+
 @article{balazy2024,
   title = {LoRA-XS: Low-Rank Adaptation with Extremely Small Number of Parameters},
   author = {Bałazy, Klaudia and Banaei, Mohammadreza and Aberer, Karl and Tabor, Jacek},
@@ -502,6 +512,17 @@
   abstract = {Bovine pancreatic trypsin inhibitor (BPTI) binds to trypsin and anhydrotrypsin (an enzymatically inactive derivative of trypsin) with affinities of 6 x 10(-14) and 1.1 x 10(-13) M, respectively. We have taken advantage of the high affinity and specificity of this binding reaction to develop a protein tagging system in which biotinylated trypsin or biotinylated anhydrotrypsin is used as the reagent to detect recombinant fusion proteins into which BPTI has been inserted. Two proteins, opsin and growth hormone, were used as targets for insertional mutagenesis with BPTI. In each case, both domains of the fusion protein appear to be correctly folded. The fusion proteins can be specifically and efficiently detected by biotinylated trypsin or biotinylated anhydrotrypsin, as demonstrated by staining of transfected cells, protein blotting, affinity purification, and a mobility shift assay in SDS/polyacrylamide gels.},
   doi = {10.1073/pnas.90.1.337},
   url = {https://doi.org/10.1073/pnas.90.1.337},
+}
+
+@article{bourne2002,
+  title = {Three-dimensional structure of an immunoglobulin light-chain dimer with amyloidogenic properties},
+  author = {Bourne, P. C. and Ramsland, P. A. and Shan, L. and Fan, Z. C. and DeWitt, C. R. and Shultz, B. B. and Terzyan, S. S. and Moomaw, C. R. and Slaughter, C. A. and Guddat, L. W. and Edmundson, A. B.},
+  year = {2002},
+  journal = {Acta Crystallographica Section D: Biological Crystallography},
+  volume = {58},
+  pages = {815--823},
+  doi = {10.1107/S0907444902004183},
+  abstract = {The X-ray structure of an immunoglobulin light-chain dimer isolated from the urine as a "Bence-Jones protein" from a patient with multiple myeloma and amyloidosis (Sea) was determined at 1.94 A resolution and refined to R and R(free) factors of 0.22 and 0.25, respectively. This "amyloidogenic" protein crystallized in the orthorhombic P2(1)2(1)2(1) space group with unit-cell parameters a = 48.28, b = 83.32, c = 112.59 A as determined at 100 K. In the vital organs (heart and kidneys), the equivalent of the urinary protein produced fibrillar amyloid deposits which were fatal to the patient. Compared with the amyloidogenic Mcg light-chain dimer, the Sea protein was highly soluble in aqueous solutions and only crystallized at concentrations approaching 100 mg ml(-1). Both the Sea and Mcg proteins packed into crystals in highly ordered arrangements typical of strongly diffracting crystals of immunoglobulin fragments. Overall similarities and significant differences in the three-dimensional structures and crystalline properties are discussed for the Sea and Mcg Bence-Jones proteins, which together provide a generalized model of abnormalities present in lambda chains, facilitating a better understanding of amyloidosis of light-chain origin (AL).},
 }
 
 @article{boyer2023,
@@ -1030,6 +1051,16 @@
   url = {https://doi.org/10.64898/2025.12.12.694033},
 }
 
+@article{chow2026,
+  title = {Sequence and structural determinants of efficacious de novo chimaeric antigen receptors.},
+  author = {Arthur Chow and Hoyin Chu and Ruofan Li and Benan N Nalbant and Abdul Vehab Dozic and Laura C Kida and Zeyu Tang and Joseph R Palmeri and Caleb A Lareau},
+  year = {2026},
+  journal = {Nature biomedical engineering},
+  doi = {10.1038/s41551-026-01790-9},
+  url = {https://doi.org/10.1038/s41551-026-01790-9},
+  abstract = {Advances in generative protein design using artificial intelligence (AI) have enabled the rapid development of binders against heterogeneous targets, including tumour-associated antigens. Despite extensive biochemical characterization, these novel protein binders have had limited evaluation in candidate therapeutics, including chimaeric antigen receptor (CAR) T cells. Here we synthesize generative protein design workflows to screen 1,758 newly designed protein binders targeting BCMA, CD19 and CD22 for efficacy in scalable protein-binding, T-cell activation and in vivo killing assays. We characterize three main challenges that hinder the utility of de novo protein binders as CARs, including tonic signalling, occluded epitope engagement and off-target activity. We develop computational and experimental heuristics to overcome these limitations, including screens of sequence variants of individual parental structures, that retain on-target CAR activation while mitigating liabilities. Together, our framework accelerates the development of AI-designed proteins for future preclinical therapeutic screening, helping enable a new generation of cellular therapies.},
+}
+
 @article{christlet2001,
   title = {Database Analysis of O-Glycosylation Sites in Proteins},
   author = {Hema Thanka Christlet, T. and Veluraja, K.},
@@ -1195,6 +1226,19 @@
   abstract = {Programming biological function—designing bespoke proteins that execute specific tasks on demand—is a foundational goal of molecular engineering. Yet, current protein design paradigms remain fundamentally limited, typically requiring either an existing protein to evolve from, or deep, family-specific expertise to guide the design process. Here we introduce Pinal, a generative model that overcomes this barrier by translating functional descriptions in natural language directly into diverse and active proteins. This capability is built upon a 16-billion-parameter foundation model trained on an unprecedented synthetic corpus of 1.7 billion protein-text pairs, enabling it to ground functional language in the biophysical principles of protein structure. To provide definitive experimental validation, we tasked Pinal with designing four proteins from distinct functional classes: a fluorescent protein, a polyethylene terephthalate hydrolase, an alcohol dehydrogenase, and a metabolic H-protein. Remarkably, all four designs were functionally active and the two Pinal-designed enzymes achieved catalytic turnover for their respective reactions. Notably, the Pinal-designed H-protein even surpassed its natural counterpart, exhibiting 1.7-fold higher performance. Our results establish that natural language can serve as a programmable instruction set for biology, democratizing protein design and shifting the paradigm from the incremental modification of existing molecules to the direct creation of function from a conceptual description.},
   doi = {10.1101/2024.08.01.606258},
   url = {https://doi.org/10.1101/2024.08.01.606258},
+}
+
+@article{dai2026offtarget,
+  title = {Off-target reactivity in clinical monoclonal antibodies},
+  author = {Dai, Yile and Brouillard, Joseph and Jaycox, Jillian R. and Yeon, Sung M. and Huck, John D. and Yandamuri, Soumya S. and Zhong, Zhe and O'Connor, Kevin C. and Burnina, Irina and Henkel, Cameron and LeMay, Allie K. and Lilov, Asparouh and McGurk, Elizabeth and Morrill, Morgan and Parker, Liz and Sackett, Tricia and Sandberg, Chanita and Sivasubramanian, Arvind and Geoghegan, James C. and Ring, Aaron M.},
+  journal = {Structure},
+  year = {2026},
+  volume = {34},
+  number = {5},
+  pages = {747--757.e5},
+  doi = {10.1016/j.str.2026.02.012},
+  url = {https://doi.org/10.1016/j.str.2026.02.012},
+  abstract = {Biologics, including monoclonal antibodies (mAbs), are widely used therapeutics due to their high specificity, yet off-target interactions remain an underappreciated risk for safety and efficacy. To systematically assess antibody specificity, we applied rapid extracellular antigen profiling (REAP) to evaluate 174 FDA-approved and clinical-stage antibodies against 6,172 human extracellular proteins. We found a substantial burden of off-target reactivity, with 28\% of antibodies exhibiting at least one off-target hit. Structural and biophysical analyses revealed that off-target binding arises from antibody intrinsic properties and epitope mimicry, either within related protein families or across structurally unrelated proteins. We further identified new off-target interactions of tanezumab and engineered its variable domains to eliminate off-target binding while preserving target affinity and developability. These findings highlight the prevalence of specific off-target reactivity in therapeutic antibodies and underscore the importance of evaluating specificity early in biologic drug development.},
 }
 
 @article{damry2021,
@@ -1402,6 +1446,16 @@
   abstract = {Proteins have evolved over billions of years through extensive and coordinated substitutions, insertions and deletions (indels). Computational protein design cannot yet fully mimic nature’s ability to engineer new proteins from existing templates. Protein language models generate informative per-residue representations, but leveraging them to execute large-scale, function-preserving mutations and indels has remained beyond reach. We introduce Raygun, a generative AI framework that unlocks efficient miniaturization, modification, and augmentation of proteins, using a novel probabilistic encoding of protein sequences constructed from language model embeddings. Emulating evolution, Raygun shrinks proteins by 10-25\% (sometimes over 50\%) while preserving predicted structural integrity and fidelity, introduces extensive sequence diversity while preserving functional sites, and can expand proteins beyond their natural size. These capabilities unlock new opportunities in gene therapy and biotechnology. In cell-based validation, Raygun successfully miniaturized fluorescent proteins, two of which are smaller than 96\% of fluorescent proteins reported in FPbase, as well as TurboID, a synthetic biotin ligase widely adopted for proteomics. It also successfully expanded Epidermal Growth Factor (EGF), a natural binding partner to the EGFR protein, generating EGF variants with higher binding affinity than the wildtype. Raygun’s conceptual innovations in template-based protein design reveal that protein function can be encoded in a length-independent space. This fundamental insight bridges protein representation learning with evolutionary biology and could unlock the development of more efficient molecular tools and biological therapeutics.},
   doi = {10.1101/2024.08.13.607858},
   url = {https://doi.org/10.1101/2024.08.13.607858},
+}
+
+@article{devkota2026,
+  title = {Miniaturizing and modifying natural proteins with Raygun.},
+  author = {Kapil Devkota and Daichi Shonai and Joey Mao and Young Su Ko and Wei Wang and Scott Soderling and Rohit Singh},
+  year = {2026},
+  journal = {Nature},
+  doi = {10.1038/s41586-026-10842-8},
+  url = {https://doi.org/10.1038/s41586-026-10842-8},
+  abstract = {Proteins have evolved over billions of years through coordinated substitutions, insertions and deletions, yet computational protein design cannot fully replicate nature's ability to engineer new proteins from existing templates. Protein language models 1-3 generate informative per-residue representations, but harnessing them for large-scale, function-preserving sequence modifications has remained beyond reach. Here we introduce Raygun, a generative artificial intelligence framework that enables miniaturization, modification and augmentation of proteins, using a probabilistic encoding of protein sequences constructed from language model embeddings. Our key conceptual advance is to encode each protein not as a sequence of variable length in high-dimensional space, but as a probability distribution in fixed dimensions, making proteins of any length directly commensurable. Controlled by just two parameters governing substitutions and length changes, Raygun can shrink proteins by 10-25\% (sometimes more than 50\%), expand them beyond their natural size, and introduce extensive sequence diversity, all while preserving predicted structural integrity and functional sites. In cell-based validation, Raygun miniaturized fluorescent proteins (2 shorter than 96\% of fluorescent proteins in FPbase) and TurboID, a synthetic biotin ligase that has been widely adopted for proteomics. It also expanded epidermal growth factor (EGF), generating variants with higher EGFR-binding affinity than the wild type. These results show that protein function can be faithfully captured in a length-agnostic representation, enabling the kind of coordinated, large-scale sequence modifications that characterize natural protein evolution.},
 }
 
 @inproceedings{di2023,
@@ -3033,6 +3087,17 @@
   url = {https://openreview.net/forum?id=sTYuRVrdK3},
 }
 
+@misc{jang2026,
+  title = {Synthesizing State-of-the-Art Structure Predictions from Soup of Co-folding Models},
+  author = {Hyosoon Jang and Taewon Kim and Sungsoo Ahn},
+  year = {2026},
+  eprint = {2609.15552},
+  archiveprefix = {arXiv},
+  url = {https://arxiv.org/abs/2609.15552},
+  note = {Version 1},
+  abstract = {Co-folding models have advanced rapidly, yet no single model consistently performs best across all biomolecular complexes. This raises the question of whether independently trained co-folding models encode complementary information that can be transferred across co-folding models. We introduce SoupFold, which improves co-folding predictions by learning simple mappings between the representation spaces of co-folding models. At inference time, SoupFold transfers and incorporates representations from other co-folding models to update the representation used for structure prediction. Importantly, this does not re-train the co-folding models. We evaluate SoupFold on protein-protein and protein-ligand prediction tasks of FoldBench using AlphaFold3, Protenix, ESMFold2, and OpenDDE. By combining their representations, SoupFold achieves state-of-the-art performance on both protein-protein and protein-ligand structure prediction, showing that independently trained co-folding models encode complementary information that can be effectively transferred across models.},
+}
+
 @article{jeliazkov2018,
   title = {Repertoire Analysis of Antibody CDR-H3 Loops Suggests Affinity Maturation Does Not Typically Result in Rigidification},
   author = {Jeliazkov, Jeliazko R. and Sljoka, Adnan and Kuroda, Daisuke and Tsuchimura, Nobuyuki and Katoh, Naoki and Tsumoto, Kouhei and Gray, Jeffrey J.},
@@ -3114,6 +3179,17 @@
   abstract = {Designing protein mutants with both high stability and activity is a critical yet challenging task in protein engineering. Here, we introduce PRIME, a deep learning model, which can suggest protein mutants with improved stability and activity without any prior experimental mutagenesis data for the specified protein. Leveraging temperature-aware language modeling, PRIME demonstrated superior predictive ability compared to current state-of-the-art models on the public mutagenesis dataset across 283 protein assays. Furthermore, we validated PRIME's predictions on five proteins, examining the impact of the top 30 to 45 single-site mutations on various protein properties, including thermal stability, antigen-antibody binding affinity, and the ability to polymerize nonnatural nucleic acid or resilience to extreme alkaline conditions. More than 30\% of PRIME-recommended mutants exhibited superior performance compared to their premutation counterparts across all proteins and desired properties. We developed an efficient and effective method based on PRIME to rapidly obtain multisite mutants with enhanced activity and stability. Hence, PRIME demonstrates broad applicability in protein engineering.},
   doi = {10.1126/sciadv.adr2641},
   url = {https://doi.org/10.1126/sciadv.adr2641},
+}
+
+@misc{jiang2026supercompensators,
+  title = {Super compensatory substitutions restore protein function and confer mutational robustness},
+  author = {Jiang, W. and Yin, H. and Khan, S. S. and Abuduhaibaier, Y. and Carey, L. B.},
+  year = {2026},
+  publisher = {bioRxiv},
+  doi = {10.1101/2025.01.11.631697},
+  url = {https://www.biorxiv.org/content/10.1101/2025.01.11.631697v5},
+  note = {Version 5},
+  abstract = {Compensatory mutations can mitigate the fitness costs of deleterious mutations, yet their distribution, structural contexts, and evolutionary roles remain poorly characterized. Here, we systematically analyzed a public deep mutational scanning (DMS) dataset comprising ∼400,000 amino acid variants of imidazole glycerol-phosphate dehydratase (IGPD), with substitutions spanning the entire length of the protein. We found that roughly one-tenth of nonfunctional missense variants can regain function through additional substitutions, predominantly at solvent exposed residues with weak local contacts. Notably, we identified a distinct class of super compensatory substitutions that enhance fitness across diverse genetic backgrounds and buffer mutational effects, resulting in genotypes that occupy locally flatter regions of the fitness landscape. Comparative analyses of additional public DMS datasets across diverse proteins and assays revealed that super compensators recur across different natural sequence–function maps, indicating a broadly represented mode of compensatory effects that sustains mutational persistence and contributes to protein evolutionary robustness. Significance Compensatory mutations allow deleterious mutations to persist and even fix in populations, shaping protein evolution. Yet, comprehensive analyses of their prevalence and mechanisms have been lacking. Through a systematic analysis of large-scale deep mutational scanning (DMS) datasets, we identified a class of super compensatory substitutions that enhance fitness across diverse genetic backgrounds. Our results reveal a previously unrecognized mode of compensatory effects that promote mutational robustness in evolving proteins.},
 }
 
 @misc{jin2023,
@@ -3794,6 +3870,17 @@
   url = {https://doi.org/10.1073/pnas.1209312109},
 }
 
+@misc{levy2024,
+  title = {Solving Inverse Problems in Protein Space Using Diffusion-Based Priors},
+  author = {Axel Levy and Eric R. Chan and Sara Fridovich-Keil and Frédéric Poitevin and Ellen D. Zhong and Gordon Wetzstein},
+  year = {2024},
+  eprint = {2406.04239},
+  archiveprefix = {arXiv},
+  url = {https://arxiv.org/abs/2406.04239},
+  note = {arXiv version 2, revised 23 April 2025},
+  abstract = {The interaction of a protein with its environment can be understood and controlled via its 3D structure. Experimental methods for protein structure determination, such as X-ray crystallography or cryogenic electron microscopy, shed light on biological processes but introduce challenging inverse problems. Learning-based approaches have emerged as accurate and efficient methods to solve these inverse problems for 3D structure determination, but are specialized for a predefined type of measurement. Here, we introduce a versatile framework to turn biophysical measurements, such as cryo-EM density maps, into 3D atomic models. Our method combines a physics-based forward model of the measurement process with a pretrained generative model providing a task-agnostic, data-driven prior. Our method outperforms posterior sampling baselines on linear and non-linear inverse problems. In particular, it is the first diffusion-based method for refining atomic models from cryo-EM maps and building atomic models from sparse distance matrices.},
+}
+
 @article{lewis2024,
   title = {Scalable emulation of protein equilibrium ensembles with generative deep learning},
   author = {Lewis, Sarah and Hempel, Tim and Jiménez-Luna, José and Gastegger, Michael and Xie, Yu and Foong, Andrew Y. K. and Satorras, Victor García and Abdin, Osama and Veeling, Bastiaan S. and Zaporozhets, Iryna and Chen, Yaoyi and Yang, Soojung and Foster, Adam E. and Schneuing, Arne and Nigam, Jigyasa and Barbero, Federico and Stimper, Vincent and Campbell, Andrew and Yim, Jason and Lienen, Marten and Shi, Yu and Zheng, Shuxin and Schulz, Hannes and Munir, Usman and Sordillo, Roberto and Tomioka, Ryota and Clementi, Cecilia and Noé, Frank},
@@ -4143,6 +4230,19 @@
   abstract = {Invariant Point Attention (IPA) is a key algorithm for geometry-aware modeling in structural biology, central to many protein and RNA models. However, its quadratic complexity limits the input sequence length. We introduce FlashIPA, a factorized reformulation of IPA that leverages hardware-efficient FlashAttention to achieve linear scaling in GPU memory and wall-clock time with sequence length. FlashIPA matches or exceeds standard IPA performance while substantially reducing computational costs. FlashIPA extends training to previously unattainable lengths, and we demonstrate this by re-training generative models without length restrictions and generating structures of thousands of residues. FlashIPA is available at https://github.com/flagshippioneering/flash_ipa.},
   doi = {10.48550/arXiv.2505.11580},
   url = {https://arxiv.org/abs/2505.11580},
+}
+
+@article{liu2025af3score,
+  title = {{AF3Score}: A Score-Only Adaptation of {AlphaFold3} for Biomolecular Structure Evaluation},
+  author = {Liu, Yu and Yu, Qilin and Wang, Di and Chen, Mingchen},
+  year = {2025},
+  journal = {Journal of Chemical Information and Modeling},
+  volume = {65},
+  number = {15},
+  pages = {8207--8214},
+  doi = {10.1021/acs.jcim.5c00653},
+  url = {https://doi.org/10.1021/acs.jcim.5c00653},
+  abstract = {Scoring biomolecular complexes remains central to structural modeling efforts. Recent studies suggest that AlphaFold (AF) - a revolutionary deep learning model for biomolecular structure prediction - has implicitly learned an approximate biophysical energy function. While many researchers highly rely on AF-derived scores for structure evaluation, existing AlphaFold2-based implementations require iterative refinement of the input structure, leading to biased scoring. To address this limitation, we adapted AlphaFold3 into a score-only model, AF3Score, by directly feeding input coordinates into the confidence head while bypassing the diffusion-based structure module. AF3Score demonstrates robust performance in structural quality assessment across diverse systems, including monomeric proteins, protein-protein complexes, de novo designed binders, fold-switching proteins, and protein-ligand complexes. In benchmarking designed binder screening, AF3Score outperformed state-of-the-art methods for 8 out of 10 targets. Moreover, combining AF3Score with AlphaFold2-derived methods significantly improved the enrichment of experimentally validated binders, increasing the success rate from 15.2 to 31.6\%. Additionally, AF3Score effectively identified stable conformations in fold-switching proteins, whereas AlphaFold predominantly predicted only the dominant fold. These findings highlight the broad applicability of AF3Score, from high-throughput screening in de novo binder design to filtering docking-generated poses and molecular dynamics (MD) trajectories.},
 }
 
 @article{livesey2024,
@@ -6552,6 +6652,17 @@
   url = {https://doi.org/10.64898/2026.01.23.701250},
 }
 
+@article{tadiello2026,
+  title = {ABAG-Rank: Improving Model Selection of AlphaFold Antibody-Antigen Complexes by Learning to Rank.},
+  author = {Matteo Tadiello and Marko Ludaic and Vsevolod Viliuga and Arne Elofsson},
+  year = {2026},
+  journal = {Bioinformatics},
+  pages = {btag663},
+  doi = {10.1093/bioinformatics/btag663},
+  url = {https://doi.org/10.1093/bioinformatics/btag663},
+  abstract = {Motivation AlphaFold has transformed structural biology with an unprecedented accuracy in modelling protein structures and their interactions with biomolecules, with AlphaFold3 (AF3) achieving state-of-the-art performance. However, AF3 and other methods often struggle to accurately predict the structure of protein complexes that lack strong co-evolutionary information, such as antibody-antigen (Ab-Ag) complexes. One of the fundamental issues is that AF3 often generates accurate predictions, but fails to reliably distinguish them from the much larger set of incorrect ones. Results To address this, we propose ABAG-Rank, a deep neural network that provides an efficient and robust solution for model selection of Ab-Ag interactions from a pool of structural ensembles predicted with AlphaFold. Built on the permutation-invariant DeepSets architecture, ABAG-Rank can process variable-sized ensembles of structural decoys and is directly applicable to prediction settings in which the number of candidates may vary. We train a model on a redundancy-reduced set of all known antibody-antigen complexes and find that simple geometric descriptors, along with confidence scores from AlphaFold, provide rich information about interface quality without requiring intensive physics-based calculations. Our experiments demonstrate that ABAG-Rank significantly outperforms AF3 internal scoring and the ranking performance of existing deep learning baselines. Availability and implementation Source code can be found at: https://github.com/tadteo/ABAG-Rank or on Zenodo at https://doi.org/10.5281/zenodo.21132090.},
+}
+
 @article{tan2014,
   title = {High-throughput sequencing of natively paired antibody chains provides evidence for original antigenic sin shaping the antibody response to influenza vaccination},
   author = {Tan, Yann-Chong and Blum, Lisa K. and Kongpachith, Sarah and Ju, Chia-Hsin and Cai, Xiaoyong and Lindstrom, Tamsin M. and Sokolove, Jeremy and Robinson, William H.},
@@ -6584,6 +6695,17 @@
   abstract = {The AlphaFold Protein Structure Database (AFDB) offers unparalleled structural coverage at near-experimental accuracy, positioning it as a valuable resource for data-driven protein design. However, its direct use in training deep models that are sensitive to fine-grained atomic geometry, such as inverse folding, exposes a critical limitation. Comparative analysis of structural feature distributions reveals that AFDB structures exhibit distinct statistical regularities, reflecting a systematic geometric bias that deviates from the conformational diversity found in experimentally determined structures from the Protein Data Bank (PDB). While AFDB structures are cleaner and more idealized, PDB structures capture the intrinsic variability and physical realism essential for generalization in downstream tasks. To address this discrepancy, we introduce a Debiasing Structure AutoEncoder (DeSAE) that learns to reconstruct native-like conformations from intentionally corrupted backbone geometries. By training the model to recover plausible structural states, DeSAE implicitly captures a more robust and natural structural manifold. At inference, applying DeSAE to AFDB structures produces debiased structures that significantly improve inverse folding performance across multiple benchmarks. This work highlights the critical impact of subtle systematic biases in predicted structures and presents a principled framework for debiasing, significantly boosting the performance of structure-based learning tasks like inverse folding.},
   doi = {10.48550/arXiv.2506.08365},
   url = {https://arxiv.org/abs/2506.08365},
+}
+
+@misc{tartici2026,
+  title = {Inverse FoldDir: Structure-conditioned Protein Sequence Design by Dirichlet Flow Matching},
+  author = {TARTICI, A. and Stojkovic, M. and Tian, A. and Jewett, M. C. and Altman, R. B. and Wittmann, B. J.},
+  year = {2026},
+  publisher = {bioRxiv},
+  doi = {10.64898/2026.09.06.749733},
+  url = {https://www.biorxiv.org/content/10.64898/2026.09.06.749733v2},
+  note = {Version 2},
+  abstract = {1 Protein engineering has important implications in the bioeconomy, enabling applications in materials, medicine, and energy. A key challenge is designing protein sequences that have a specific form and function. Protein inverse folding seeks to address this challenge by identifying amino acid sequences compatible with a desired protein backbone. This task is central to protein redesign and can provide a sequence-design capability for de novo backbones produced by structure-generation methods. Ideally, inverse folding can provide diverse sequence alternatives, fixed residues or motifs, soft biochemical preferences at selected positions, and candidates that remain experimentally useful. We developed Inverse FoldDir, a controllable inverse-folding method that performs iterative denoising on the amino acid probability simplex. Given a backbone structure, the model updates all positions jointly through a learned Dirichlet flow, supporting full sequence generation, fixed-residue inpainting, and user-defined soft residue priors. On the held-out CATH 4.2 test set, Inverse FoldDir achieved a mean TM-score of 84.5 (on a 0-100 scale) and a mean C α RMSD of 1.76 Å, compared with 83.3 and 1.86 Å, respectively, for ESM-IF1, the strongest evaluated baseline on both metrics. Denoising trajectory analyses showed that positions commit at different rates and that some residues change identity late in generation, illustrating whole-sequence refinement rather than one-shot prediction or irreversible sequential decoding. We experimentally tested Inverse FoldDir in an anti-GFP nanobody redesign task, where two of 35 redesigned sequences retained reproducible sfGFP-binding signal across independent assay runs with approximately 43\% sequence divergence from the native nanobody. Inverse FoldDir is a structure-conditioned protein redesign method that combines structural recovery, user control, experimental validation, and a natural route toward future property-guided sampling.},
 }
 
 @article{tennenhouse2023,
@@ -6762,6 +6884,25 @@
   abstract = {Amino acid insertions and deletions (indels) are an abundant class of genetic variants. However, compared to substitutions, the effects of indels on protein stability are not well understood. To better understand indels here we analyse new and existing large-scale deep indel mutagenesis (DIM) of structurally diverse proteins. The effects of indels on protein stability vary extensively among and within proteins and are not well predicted by existing computational methods. To address this shortcoming we present INDELi, a series of models that combine experimental or predicted substitution effects and secondary structure information to provide good prediction of the effects of indels on both protein stability and pathogenicity. Moreover, quantifying the effects of indels on protein-protein interactions suggests that insertions can be an important class of gain-of-function variants. Our results provide an overview of the impact of indels on proteins and a method to predict their effects genome-wide.},
   doi = {10.1038/s41467-025-57510-5},
   url = {https://doi.org/10.1038/s41467-025-57510-5},
+}
+
+@misc{torchcraft2026,
+  title = {TorchCraft: Unified binder design by inverting an all-atom structure predictor},
+  author = {{TorchCraft Team} and Liu, Yu and Shen, Zhouhanyu and Li, Zhengyi and Huang, Xikun and Liu, Jiaqi and Gao, Shuxian and Yu, Qilin and Qin, Xiayan and Zhang, Yucheng and Chen, Mingchen},
+  year = {2026},
+  eprint = {2609.19770},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2609.19770},
+  abstract = {All-atom structure predictors model diverse molecular interactions, but using their learned structural priors for binder design remains challenging. Here we present TorchCraft, a unified binder-design framework that optimizes sequence logits through a frozen all-atom predictor. Implemented in TorchFold, TorchCraft combines confidence, contact, geometric, and sequence-prior objectives within a shared optimization procedure for minibinders, framework-conditioned VHHs, cyclic peptides, and ligand-binding proteins. Using pretrained AlphaFold 3 weights, TorchCraft generated representative minibinders and VHHs with experimentally measured binding across four targets in each format, without post hoc sequence redesign. Computational benchmarks further demonstrated the framework's applicability to cyclic peptides and ligand-conditioned pocket design. TorchCraft extends predictor inversion to multiple binder formats and molecular contexts, providing a common framework for reusing all-atom structural priors in design.},
+}
+
+@misc{torchfold2026,
+  title = {Improving antibody-antigen structure prediction through large-scale distillation of sequence pairs},
+  author = {Chen, Mingchen and Cao, Yunlong and {TorchFold Team}},
+  year = {2026},
+  note = {Changping Laboratory},
+  url = {https://torchx-cpl.github.io/assets/papers/torchfold.pdf},
+  abstract = {Antibody–antigen complex prediction remains limited by errors in epitope localization and binding orientation, while experimentally resolved complexes provide sparse training coverage of molecular recognition. Antibody discovery collections contain many additional sequence pairs whose complex structures are unknown. Here we introduce TorchFold, which uses two rounds of confidence-filtered structural distillation to convert these pairs into training examples for antibody–antigen co-folding. The predicted complexes extend epitope coverage and interface contact patterns beyond those represented in SAbDab. Retaining the AlphaFold3 architecture, TorchFold combines the distilled structures with interface-weighted coordinate supervision and a revised diffusion noise schedule. The complete training programme increases ranked FoldBench interface success from 34.0\% to 70.1\% at DockQ > 0.23 and achieves competitive performance across five benchmark collections. Among 297 pooled benchmark predictions with ipTM ≥ 0.8, 292 have successful interfaces (98.3\%), corresponding to acceptance of 31.1\% of the 956 scored interfaces. These results support structural distillation of antibody–antigen sequence pairs as a practical approach to expanding supervision for complex prediction. TorchFold provides training and inference code and an antibody–antigen checkpoint under the MIT license.},
 }
 
 @article{torres2023,
