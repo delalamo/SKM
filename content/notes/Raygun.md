@@ -3,7 +3,7 @@ tags:
   - design/sequence-generation
   - model-design/architectures
 created: "2026-09-25"
-modified: "2026-10-07T09:14:27"
+modified: "2026-09-25"
 ---
 
 #### Summary

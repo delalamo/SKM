@@ -2,7 +2,7 @@
 tags:
   - biophysics/interactions
 created: "2026-09-04"
-modified: "2026-10-07T09:14:27"
+modified: "2026-09-25"
 ---
 #### Summary
 **Free [[Light chains|antibody light chains]] can form homodimers through paired VL/VL and CL/CL** [@rennella2018; @rottenaicher2023]. The VL/VL interface resembles the VH/VL interface of an intact [[tags/antibodies|antibody]], and a C-terminal disulfide can covalently link the homodimer [@brumshtein2014; @rottenaicher2023].

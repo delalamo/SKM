@@ -3,7 +3,7 @@ title: Protein interface space remains far from complete despite recurring local
 tags:
   - biophysics/interactions
 created: 2024-10-02T16:11:39
-modified: "2026-10-07T09:14:27"
+modified: "2026-09-25"
 ---
 #### Summary
 

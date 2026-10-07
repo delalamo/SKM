@@ -4,7 +4,7 @@ tags:
   - prediction/variant-effects
   - prediction/complexes
 created: "2026-06-23"
-modified: "2026-10-07T09:14:27"
+modified: "2026-09-25"
 ---
 
 #### Summary

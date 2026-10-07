@@ -6,7 +6,7 @@ tags:
   - biophysics/dynamics
   - evidence/measurements
 created: "2026-09-15"
-modified: "2026-10-07T09:14:27"
+modified: "2026-10-07"
 ---
 
 #### Summary

@@ -5,7 +5,7 @@ aliases:
   - "Light chains"
   - "tags/light-chains"
 created: 2026-04-10T14:30:55
-modified: "2026-10-07T09:14:27"
+modified: "2026-09-25"
 tags:
   - antibodies/architecture
 ---

@@ -3,7 +3,7 @@ tags:
   - design/binders
   - design/directed-evolution
 created: 2025-10-27T12:55:37
-modified: "2026-10-07T09:14:27"
+modified: "2026-09-25"
 ---
 #### Summary
  **[[notes/Affinity maturation|Affinity maturation]] of *de novo* designed minibinders introduces mutations far from the active site** [@alcantar2025].

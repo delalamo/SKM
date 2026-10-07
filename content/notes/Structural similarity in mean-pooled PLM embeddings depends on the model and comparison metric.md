@@ -6,7 +6,7 @@ tags:
   - model-analysis/representation-geometry
   - prediction/structure
 created: "2024-11-14T03:05:00"
-modified: "2026-10-07T09:14:27"
+modified: "2026-09-25"
 ---
 
 #### Summary

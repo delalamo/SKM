@@ -1,7 +1,7 @@
 ---
 title: ESM
 created: 2026-04-10T14:30:55
-modified: "2026-10-07T09:14:27"
+modified: "2026-09-25"
 tags:
   - training/pretraining-and-scaling
   - inference/feature-extraction
