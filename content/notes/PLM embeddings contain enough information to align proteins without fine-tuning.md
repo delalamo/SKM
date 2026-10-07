@@ -3,12 +3,14 @@ tags:
   - evolution/homology
   - inference/feature-extraction
 created: "2025-02-10T07:37:30"
-modified: "2026-04-21T07:28:09"
+modified: "2026-10-07T08:57:03"
 ---
 
 ## Summary
 
 **[[notes/Protein language models|PLM]] embeddings contain enough information to be aligned without fine-tuning** [@kaminski2023], **and these alignments outperform purely sequence-based but not structure-based methods** ([@llinareslpez2022], [@hamamsy2023]). This could be since the embeddings of aligned positions in related sequences tend to co-[[Clustering|cluster]] [@mcwhite2023]. Alignment quality can be further improved by normalization [@pantolini2022], which does not require PLM fine-tuning. [@ashrafzadeh2023] surmise that the distance matrices implied by these embeddings are more effective than the [[notes/BLOSUM62|BLOSUM62]] matrix used by many sequence alignments by default.
+
+**[[Multiple sequence alignments]] can be constructed by aligning protein language model embeddings** [@hoang2026_B]. This outperforms traditional tools on regions with low sequence identity.
 
 ## Details
 
@@ -27,7 +29,15 @@ To improve alignment quality using "normalization" (per [@pantolini2022]), all d
 ![[ProtTuker.png]]
 *Ref [@pantolini2022]; EBA and EBA-plain refer to PLM-based alignment with and without normalization*
 
+![[aries-embedding-alignment.png]]
+
+_Ref [@hoang2026_B]_
+
 ## See also
 
 * [[Multiple sequence alignments]]
 * [[PLMs learn family-specific protein contacts from sequence context windows of about 20-40 amino acids]]
+
+## Sources
+
+- [Source issue #1037](https://github.com/delalamo/SKM/issues/1037).

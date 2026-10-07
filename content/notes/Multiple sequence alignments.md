@@ -1,7 +1,7 @@
 ---
 title: Multiple sequence alignments
 created: 2026-04-10T14:02:57
-modified: "2026-04-21T07:28:09"
+modified: "2026-10-07T08:57:03"
 tags:
   - evolution/homology
 ---
@@ -16,3 +16,7 @@ tags:
 * **The inclusion of MSAs improves zero-shot prediction using [[notes/Protein language models|PLMs]]** [@su2023]
 ![[MSA-effect-on-variant-effect-prediction.png]]
 	*Ref [@su2023]*
+
+#### See also
+
+- [[PLM embeddings contain enough information to align proteins without fine-tuning]]
