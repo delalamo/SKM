@@ -20,4 +20,4 @@ modified: "2026-04-21T05:01:15"
 * [[Most ML quality metrics cannot effectively predict enzyme activity after controlling for similarity to native]]
 * [[Protein folding neural networks cannot predict protein stability]]
 * [[pLDDT and PAE in protein folding neural networks are correlated]]
-* [[Distance between averaged PLM embeddings does not correlate with structural difference]]
+* [[Structural similarity in mean-pooled PLM embeddings depends on the model and comparison metric]]

@@ -3,7 +3,7 @@ title: ProteinMPNN
 tags:
   - design/inverse-folding
 created: "2026-04-10T14:02:57"
-modified: "2026-04-21T07:28:09"
+modified: "2026-09-28"
 ---
 
 **ProteinMPNN** is an [[notes/Inverse folding|inverse folding]] method that uses a message-passing neural network. It has extensive wet-lab validation.
@@ -18,6 +18,7 @@ modified: "2026-04-21T07:28:09"
 * **Sequence recovery can be improved by replacing the message-passing component with [[Invariant point attention]]** (see ProteinIPMP below; [@randolph2024]).
 * **Constrained inverse folding allows design of functional enzymes** [@sumida2024].
 * **Dauparas et al. [@dauparas2022] found that ProteinMPNN was insensitive to global sequence context.** In other words, removing information about sequence adjacency had no effect on sequence recovery. This could be a symptom of [[Over-squashing]].
+* [[notes/AbMPNN redesign of de novo-designed antibodies improved in silico success for TorchCraft VHH designs]]
 
 #### Variations
 

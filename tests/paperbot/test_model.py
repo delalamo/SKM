@@ -952,6 +952,55 @@ class ArtifactTests(unittest.TestCase):
     with self.assertRaisesRegex(ValueError, "does not match"):
       load_model(self.artifacts)
 
+  def test_daily_uses_saved_model_after_bibliography_changes(self) -> None:
+    from datetime import UTC, datetime
+    from unittest.mock import Mock
+
+    from scripts.paperbot.config import PaperbotConfig
+    from scripts.paperbot.daily import run_daily
+    from scripts.paperbot.records import PaperRecord
+    from scripts.paperbot.sources import FetchReport, FetchWindow
+
+    manifest = refresh_model(
+      self.bib, self.artifacts, encoder=self.FakeEncoder(),
+      strict_negative_quotas=False,
+    )
+    # Newly added bibliography entries need no abstract backfill or retraining
+    # for discovery to recognize them and score using the saved classifier.
+    self.bib.write_text(
+      self.bib.read_text() + "\n@article{new, title={New paper}, "
+      "author={Smith, A}, year={2026}, doi={10.1234/new}}\n",
+      encoding="utf-8",
+    )
+    with self.assertRaises(StaleModelError):
+      check_model(self.bib, self.artifacts, strict_negative_quotas=False)
+    window = FetchWindow.ending_at(datetime(2026, 7, 22, tzinfo=UTC))
+    paper = PaperRecord(
+      source="pubmed", source_id="12346", title="New paper",
+      abstract="New biology result.", doi="10.1234/new",
+    )
+    client = Mock()
+    client.list_issues.return_value = []
+    config = PaperbotConfig(bibliography_path=self.bib, artifact_dir=self.artifacts)
+    result = run_daily(
+      config, window, dry_run=True, github_token="",
+      fetch_report=FetchReport(window, (paper,), (), {"pubmed": 1}),
+      encoder=self.FakeEncoder(), github_client=client,
+    )
+    self.assertTrue(result.ok)
+    self.assertEqual(result.model_hash, manifest["model_hash"])
+    self.assertEqual(result.candidates[0].known_bib_key, "new")
+    self.assertEqual(load_model(self.artifacts).model_hash, manifest["model_hash"])
+
+    # A changed classifier must still stop the run before any GitHub access.
+    manifest_path = self.artifacts / "model_manifest.json"
+    manifest["model_hash"] = "a" * 64
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+    client.reset_mock()
+    with self.assertRaisesRegex(ValueError, "does not match"):
+      run_daily(config, window, dry_run=False, github_token="", github_client=client)
+    self.assertEqual(client.mock_calls, [])
+
   def test_positive_row_is_stable_when_abstract_changes(self) -> None:
     refresh_model(self.bib, self.artifacts, encoder=self.FakeEncoder(), strict_negative_quotas=False)
     original = [json.loads(line) for line in (self.artifacts / "positive_manifest.jsonl").read_text().splitlines()]
@@ -1013,6 +1062,8 @@ class ArtifactTests(unittest.TestCase):
     manifest_path.write_text(json.dumps(manifest))
     with self.assertRaises(StaleModelError):
       check_model(self.bib, self.artifacts, strict_negative_quotas=False)
+    with self.assertRaisesRegex(ValueError, "dependency versions"):
+      load_model(self.artifacts)
 
   def test_check_requires_the_complete_runtime_dependency_mapping(self) -> None:
     refresh_model(

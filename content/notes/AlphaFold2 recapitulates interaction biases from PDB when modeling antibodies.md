@@ -13,5 +13,5 @@ modified: "2026-04-21T10:30:31"
 *Ref [@mccoy2024]*
 
 #### See also
-- [[Protein-protein interaction interfaces are highly degenerate]]
+- [[Protein interface space remains far from complete despite recurring local geometries]]
 - [[Protein folding neural networks do not extrapolate to new ligand binding sites]]
