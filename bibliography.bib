@@ -545,6 +545,16 @@
   abstract = {De novo design of protein binders targeting extended, multi-site interaction surfaces remains difficult for current generative methods, which often produce limited structural diversity and predominantly helical topologies. Here, we advance diffusion-based binder design by guiding protein backbone generation through ′′seeds,′′ which are PDB-derived fragments selected for geometric complementarity to the target surface. To test this approach, we computationally generated seed-guided binders of the bacterial toxin RelE. RelB, the native antitoxin of RelE, engages two distinct interfaces with high surface complementarity, making it an appropriate test case. Seed-guided RFdiffusion produced backbones with substantially higher structural diversity and more target contacts than RFdiffusion alone. Experimental screening of 1,402 designs in a high-throughput bacterial survival assay identified multiple functional binders, including variants with nanomolar to low-micromolar affinity and one design with RelE neutralization comparable to RelB pep . Computational structure prediction and mutational analyses support that the designed interfaces rely on seed-derived contacts and adopt binding modes distinct from RelB. Molecular dynamics simulations and hydrogen-deuterium exchange experiments further suggest that one high-affinity design undergoes a conformational change upon binding. Notably, successful designs exhibited reduced cross-reactivity to RelE orthologs compared with RelB pep , suggesting that the extensive interfaces generated through seed-guided design can enable enhanced selectivity. These results establish motif scaffolding of surface-complementing seeds as an effective strategy for overcoming current limitations of de novo generative models, enabling the design of proteins that can engage challenging interface sites.},
 }
 
+@misc{brooks2026_C,
+  title = {Mutation choice biases the structure of empirical fitness landscapes},
+  author = {Brooks, C. and Desai, M. M. and Carlson, M. O.},
+  year = {2026},
+  abstract = {Evolution can be thought of as taking place in a fitness landscape which maps each genotype to a fitness value. This abstraction has motivated significant efforts to quantify the statistical properties of random fitness landscapes with different amounts and types of interactions among loci---broadly referred to as epistasis. New high-throughput experimental techniques measuring the phenotypes of thousands of genotypes promise to bridge this theory with data. Yet, while impressive, thousands is still small relative to the size of genotype space. Moreover, experiments often assay a highly non-random subset of the fitness landscape. For example, a common experimental approach is to generate all possible 2M sequence intermediates between ancestral and evolved sequences differing by M much less than L mutations. Here, we ask to what extent the statistics of an empirical landscape constructed under distinct ascertainment protocols recapitulate the statistics of a random subset of the global landscape in a few well-studied random landscape models. We show that, in most landscapes, selecting mutations which occurred along an adaptive trajectory inflates the variance explained by lower order epistasis, reduces the number of local maxima, and increases the number of accessible paths relative to a random fitness landscape. Selecting the most beneficial or deleterious mutations, on the other hand, results in distortions to these statistics which depend more critically on the amount of epistasis in the global landscape. We then take advantage of several large-scale mutagenesis datasets to simulate the effects of ascertainment in more realistic settings.},
+  doi = {10.64898/2026.09.28.754994},
+  url = {https://doi.org/10.64898/2026.09.28.754994},
+  note = {Version 1},
+}
+
 @article{broom2020,
   title = {Ensemble-based enzyme design can recapitulate the effects of laboratory directed evolution in silico},
   author = {Broom, Aron and Rakotoharisoa, Rojo V. and Thompson, Michael C. and Zarifi, Niayesh and Nguyen, Erin and Mukhametzhanov, Nurzhan and Liu, Lin and Fraser, James S. and Chica, Roberto A.},
@@ -3056,6 +3066,16 @@
   abstract = {How functional protein sequences are distributed in sequence space is fundamentally important for evolutionary theory and protein design, particularly if a large diversity of protein functions are hidden in evolutionarily unexplored areas of the sequence space. However, this question is understudied in part because experimental and computational studies use extant sequences as a starting point to study sequence space. Here, we study whether extant sequences are representative of the entire functional sequence space. Across thousands of protein families from vertebrates and bacteria we calculate the dimensionality and the volume of sequence space occupied by extant homologs. We find that the observed dimensionality and volume of extant sequence space are minuscule, many orders of magnitude smaller than what we estimated using a model of protein evolution. Simulating sequence evolution we then quantify the impact of phylogeny, selection, and epistasis on restricting the evolutionary exploration of sequence space. We find that sequence evolution from a single common ancestor, or a single point of origin in sequence space, is by far the largest limiting factor that reduces the dimensionality and volume of extant sequence space. These results indicate that there are vast areas of functional sequence space that have not been explored in evolution because of the excessive restrictions on natural exploration of the protein sequence space imposed by the point of origin effect. We suggest that protein design methods that rely on extant sequences may be limited in their ability to discover truly novel functions.},
   doi = {10.1073/pnas.2532018123},
   url = {https://doi.org/10.1073/pnas.2532018123},
+}
+
+@misc{jacobsen2026,
+  title = {pH-sensitive binder design with Proton-PottsMPNN},
+  author = {Jacobsen, C. P. and Deweid, L. and Birnbaum, F. and Gormsen, L. W. and Fryer, T. and Jagd, U. and Hald, A. and Rasch, M. G. and Jenkins, T. and Ovchinnikov, S.},
+  year = {2026},
+  doi = {10.64898/2026.09.30.755438},
+  url = {https://doi.org/10.64898/2026.09.30.755438},
+  note = {Version 1},
+  publisher = {bioRxiv},
 }
 
 @article{jaffe2022,
@@ -5634,6 +5654,17 @@
   url = {https://doi.org/10.1038/s42256-024-00792-z},
 }
 
+@article{qin2026,
+  title = {Simplifying in silico protein evolution with minimal screening by unZipro},
+  author = {Qin, Zhaohui and Zhao, Sanzeng and Deng, Zhaolong and Si, Xiaomin and Xing, Cheng and Zhang, Zhenfei and Zhang, Yumeng and Han, Xueying and Zhang, Jindong and Chen, Yang and Liu, Xiaoyi and Li, Jinhui and Fu, Lei and You, Liyuan and Murray, James W. and Liu, Huiyun and Li, Huifang and Li, Chengwei and Wu, Song and Li, Junzhou and Chen, Zhen and Song, Jiangning and Wang, Daowen and Ji, Xiang},
+  year = {2026},
+  journal = {Molecular Cell},
+  month = {September},
+  note = {Published online September 24, 2026},
+  doi = {10.1016/j.molcel.2026.08.028},
+  url = {https://doi.org/10.1016/j.molcel.2026.08.028},
+}
+
 @article{qiu2026,
   title = {Demystifying Multimodal Biomolecular Co-design With Intrinsic Geodesic Coupling},
   author = {Qiu, Keyue and Wang, Xintong and Zhang, Zhilong and Zhou, Hao and Ma, Wei-Ying},
@@ -6408,6 +6439,18 @@
   abstract = {We present a new estimator for computing free energy differences and thermodynamic expectations as well as their uncertainties from samples obtained from multiple equilibrium states via either simulation or experiment. The estimator, which we call the multistate Bennett acceptance ratio estimator (MBAR) because it reduces to the Bennett acceptance ratio estimator (BAR) when only two states are considered, has significant advantages over multiple histogram reweighting methods for combining data from multiple states. It does not require the sampled energy range to be discretized to produce histograms, eliminating bias due to energy binning and significantly reducing the time complexity of computing a solution to the estimating equations in many cases. Additionally, an estimate of the statistical uncertainty is provided for all estimated quantities. In the large sample limit, MBAR is unbiased and has the lowest variance of any known estimator for making use of equilibrium data collected from multiple states. We illustrate this method by producing a highly precise estimate of the potential of mean force for a DNA hairpin system, combining data from multiple optical tweezer measurements under constant force bias.},
   doi = {10.1063/1.2978177},
   url = {https://doi.org/10.1063/1.2978177},
+}
+
+@article{shortle1998,
+  title = {Clustering of low-energy conformations near the native structures of small proteins},
+  author = {Shortle, David and Simons, Kim T. and Baker, David},
+  year = {1998},
+  journal = {Proceedings of the National Academy of Sciences},
+  volume = {95},
+  number = {19},
+  pages = {11158-11162},
+  doi = {10.1073/pnas.95.19.11158},
+  url = {https://doi.org/10.1073/pnas.95.19.11158},
 }
 
 @article{shrock2023,
@@ -7344,6 +7387,17 @@
   url = {https://arxiv.org/abs/2509.18480},
 }
 
+@misc{wang2026msfold,
+  title = {Sampling in structure-token space enables accurate prediction of multiple protein conformations},
+  author = {Wang, Z. and Yu, Y. and Zheng, W.-M. and Yu, C. and Bu, D.},
+  year = {2026},
+  publisher = {bioRxiv},
+  doi = {10.64898/2026.03.03.708411},
+  url = {https://www.biorxiv.org/content/10.64898/2026.03.03.708411v3},
+  note = {Version 3},
+  abstract = {Proteins often function through multiple conformations, yet most structure-prediction methods are biased toward a single dominant state. Here we present MSFold, a training-free framework that explores the discrete, sequence-conditioned structure-token space of ESM3 using parallel tempering, coupling high-temperature exploration with low-temperature refinement to cross barriers between conformational states. Across 312 multi-conformation protein pairs, MSFold recovered both conformations in 51.6\% of cases, compared with 38.1\% for MSA Cluster and 37.8\% for AlphaFold3. This performance advantage persisted on a post-ESM3-cutoff evaluation set, arguing against simple structural memorization. We further introduce sequence log-likelihood, a reference-free confidence score based on sequence–structure consistency, which improves ranking of sampled conformations. Together, these results provide a practical means of accessing the conformational information encoded by protein language models and establish MSFold as an effective framework for multi-conformation prediction.},
+}
+
 @misc{wang2026_G,
   title = {EpiBench: Can LLMs Understand Epitopes for Antibody Drug Discovery?},
   author = {Zirui Wang and Jiaqi Wang and Qinghan Wang and Yuzhi Xu and Gang Du and Tingjun Hou and Odin Zhang},
@@ -7640,6 +7694,16 @@
   abstract = {Language models have enabled a new era of biological sequence modeling. However, extracting meaningful sequence-level embeddings from these models remains challenging. In this work, we introduce ProteinCLIP, which applies contrastive learning between a protein’s amino acid sequence and curated text describing its function. ProteinCLIP thus learns to take a pre-trained protein language model’s sequence embedding and refines it produce a function-centric embedding. We show that this embedding space yields sequence representations that enable state-of-the-art performance across a variety of important yet challenging tasks in the study of proteins – from predicting protein protein interactions to accurately detecting homologous proteins despite low sequence similarity. More broadly, ProteinCLIP demonstrates the effectiveness of multi-modal learning in biological contexts, and how such strategies can help isolate key signals from large models and further improve their utility.},
   doi = {10.1101/2024.05.14.594226},
   url = {https://doi.org/10.1101/2024.05.14.594226},
+}
+
+@misc{wu2026_B,
+  title = {Designing enzymes for new-to-nature chemistry and non-natural substrates with AlphaProtein Novo},
+  author = {Wu, Zachary and Abramson, Joshua and Frerix, Thomas and Chu, Alexander E and Zhang, Ruijie K and Schulz, Luca and Danson, Amy E and Kwan, Tristan O. C. and Li, Wenliang K and Kelly, Jacob and Li, Zi-Qi and Schneider, Rosalia G and Thillaisundaram, Ashok and Patani, Harshnira and Zambaldi, Vinicius F and Singh, Sukhdeep and La, David and Domecillo, Masy and Mora, Ariane N. and Reisenbauer, Julia C. and Zhang, Yu and Papa, Eliseo and Zemgulyte, Akvile and Wu, Yu-Han and Zidek, Augustin and Shi, Jiaxin and Margand, Grace and Assem, Naila and Stephen, Kate and Emrich, Charlie and Liu, Peng and Lucy, Colwell and Hassabis, Demis and Fergus, Rob and Arnold, Frances H. and Kohli, Pushmeet and Wang, Jue},
+  year = {2026},
+  doi = {10.64898/2026.10.01.756017},
+  url = {https://doi.org/10.64898/2026.10.01.756017},
+  note = {Version 1},
+  publisher = {bioRxiv},
 }
 
 @article{xie2023,

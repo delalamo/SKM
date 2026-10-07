@@ -5,12 +5,12 @@ aliases:
   - "Inverse folding"
   - "tags/inverse-folding"
 created: "2026-04-10T14:02:57"
-modified: "2026-09-25"
+modified: "2026-10-07"
 tags:
   - design/inverse-folding
 ---
 
-**Inverse folding** describes the problem of designing a sequence for a structure. Typically these are limited to the twenty canonical amino acids.
+**Inverse folding** describes the problem of designing a sequence for a structure. Typically these are limited to the twenty canonical amino acids. [[Distinct protonation states of side chains can be represented as discrete tokens in inverse folding models|Protonation states can also be represented as distinct tokens]].
 
 ## Methods
 
@@ -25,6 +25,8 @@ _See [[Hybrid sequence-structure models]] for a list of methods that incorporate
 ## Notes
 
 #### Training
+
+- [[Family-specific fine-tuning of inverse folding models allows design of functional proteins]].
 
 - **Training inverse folding models with backbone dihedral angles as features usually improved sequence recovery** [@jamasb2024].
  ![[Pasted-image-20240117115655.png]]

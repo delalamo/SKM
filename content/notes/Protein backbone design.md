@@ -65,3 +65,8 @@ tags:
  - 6WI5
  - 6WVS
  - 7MCD
+
+#### See also
+
+- [[Sequence redesign and partial diffusion are effective filters for de novo designed enzymes]]
+- [[Multiple-seed forward folding marginally improves precision on de novo designed enzymes]]

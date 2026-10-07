@@ -5,7 +5,7 @@ aliases:
   - "Structure prediction"
   - "tags/structure-prediction"
 created: "2026-04-10T14:02:57"
-modified: "2026-04-20T07:16:03"
+modified: "2026-10-07T09:15:08"
 tags:
   - prediction/structure
 ---
@@ -46,3 +46,7 @@ _Figure from [@ahdritz2024]_
 
 - **Formulating the sidechain prediction problem as a classification problem by binning chi angles, rather than a regression problem, let to improved performance** [@randolph2024].
 - **Sidechain prediction methods not sensitive to B-factor cutoffs.** The outcome of sidechain prediction model PIPPack was not strongly affected by B-factor values of protein structures in the training set [@randolph2024].
+
+#### See also
+
+- [[Native protein structures are more likely to lie in broad low-energy basins than narrow ones]]
