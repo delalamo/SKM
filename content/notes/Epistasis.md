@@ -5,7 +5,7 @@ aliases:
   - "Epistasis"
   - "tags/epistasis"
 created: 2026-04-10T14:02:57
-modified: "2026-04-20T07:16:03"
+modified: "2026-10-07T08:57:01"
 tags:
   - evolution/mutation-effects
 ---
@@ -34,6 +34,8 @@ _Figure from [@tsuboyama2023]_
  _Figure from [@tsuboyama2023]_
 
 #### Measuring epistasis
+
+- [[DMS experiments that explore all combinations of mutations between a starting and ending sequence show a distorted fitness landscape]].
 
 ![[Pasted-image-20241127060038.png]]
 _Figure from [@sandhu2024]_
