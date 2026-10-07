@@ -6,7 +6,7 @@ tags:
   - evidence/generalization
   - inference/llm-science
 created: "2026-09-16"
-modified: "2026-10-05"
+modified: "2026-10-07T08:57:04"
 ---
 
 #### Summary
@@ -32,6 +32,8 @@ A separate panel contains 59 recent assays from 19 studies. Sol reaches ρ = 0.3
 
 These are rankings of supplied substitution variants. The benchmark does not establish prospective wet-lab design success, clinical pathogenicity prediction, or performance across complete fitness landscapes.
 
+**Variant effect prediction using large language models can be improved by providing structural and evolutionary context** [@hao2026_J]. This was observed in a broad cross-section of LLMs.
+
 #### Figures
 
 ![[pg-llm-variant-ranking.png]]
@@ -44,8 +46,10 @@ These are rankings of supplied substitution variants. The benchmark does not est
 - [[General-purpose language models can propose ligand binders but do not reliably satisfy design constraints]]
 - [[Aggregate benchmark correlations can mask weak within-category performance]]
 - [[Protein language models are better zero-shot predictors for ranking closely related sequences than distantly related sequences]]
+- [[Structural tokens improve zero-shot variant effect prediction in ESM3, but only when structures are not computationally derived]]
 
 #### Sources
 
 - [Paper](https://doi.org/10.64898/2026.07.27.741045), August 19, 2026 revision.
 - [Authors' benchmark overview and results](https://www.proteingymllm.com/).
+- [Source issue #1041](https://github.com/delalamo/SKM/issues/1041).
