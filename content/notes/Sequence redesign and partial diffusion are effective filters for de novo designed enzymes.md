@@ -4,7 +4,7 @@ tags:
   - design/enzymes
   - evidence/design-validation
 created: "2026-10-07"
-modified: "2026-10-07T08:57:11"
+modified: "2026-10-07T09:15:08"
 ---
 
 #### Summary
@@ -13,7 +13,7 @@ modified: "2026-10-07T08:57:11"
 
 #### Details
 
-The approach may help identify broad sequence/structure basins, implying that such basins are more likely to contain true positives than narrow areas of the function space that score well. This is similar to an observation in [[Structure prediction|structural modeling]] that found that ground-truth structures were more likely to be found in broad well-scoring basins than narrow ones [@shortle1998].
+The approach may help identify broad sequence/structure basins, implying that such basins are more likely to contain true positives than narrow areas of the function space that score well. This is similar to an observation in [[Structure prediction|structural modeling]] that [[Native protein structures are more likely to lie in broad low-energy basins than narrow ones|ground-truth structures were more likely to be found in broad well-scoring basins than narrow ones]] [@shortle1998].
 
 #### Figures
 
