@@ -5634,6 +5634,17 @@
   url = {https://doi.org/10.1038/s42256-024-00792-z},
 }
 
+@article{qin2026,
+  title = {Simplifying in silico protein evolution with minimal screening by unZipro},
+  author = {Qin, Zhaohui and Zhao, Sanzeng and Deng, Zhaolong and Si, Xiaomin and Xing, Cheng and Zhang, Zhenfei and Zhang, Yumeng and Han, Xueying and Zhang, Jindong and Chen, Yang and Liu, Xiaoyi and Li, Jinhui and Fu, Lei and You, Liyuan and Murray, James W. and Liu, Huiyun and Li, Huifang and Li, Chengwei and Wu, Song and Li, Junzhou and Chen, Zhen and Song, Jiangning and Wang, Daowen and Ji, Xiang},
+  year = {2026},
+  journal = {Molecular Cell},
+  month = {September},
+  note = {Published online September 24, 2026},
+  doi = {10.1016/j.molcel.2026.08.028},
+  url = {https://doi.org/10.1016/j.molcel.2026.08.028},
+}
+
 @article{qiu2026,
   title = {Demystifying Multimodal Biomolecular Co-design With Intrinsic Geodesic Coupling},
   author = {Qiu, Keyue and Wang, Xintong and Zhang, Zhilong and Zhou, Hao and Ma, Wei-Ying},
@@ -7342,6 +7353,17 @@
   abstract = {Protein folding models have achieved groundbreaking results typically via a combination of integrating domain knowledge into the architectural blocks and training pipelines. Nonetheless, given the success of generative models across different but related problems, it is natural to question whether these architectural designs are a necessary condition to build performant models. In this paper, we introduce SimpleFold, the first flow-matching based protein folding model that solely uses general purpose transformer blocks. Protein folding models typically employ computationally expensive modules involving triangular updates, explicit pair representations or multiple training objectives curated for this specific domain. Instead, SimpleFold employs standard transformer blocks with adaptive layers and is trained via a generative flow-matching objective with an additional structural term. We scale SimpleFold to 3B parameters and train it on approximately 9M distilled protein structures together with experimental PDB data. On standard folding benchmarks, SimpleFold-3B achieves competitive performance compared to state-of-the-art baselines, in addition SimpleFold demonstrates strong performance in ensemble prediction which is typically difficult for models trained via deterministic reconstruction objectives. Due to its general-purpose architecture, SimpleFold shows efficiency in deployment and inference on consumer-level hardware. SimpleFold challenges the reliance on complex domain-specific architectures designs in protein folding, opening up an alternative design space for future progress.},
   doi = {10.48550/arXiv.2509.18480},
   url = {https://arxiv.org/abs/2509.18480},
+}
+
+@misc{wang2026msfold,
+  title = {Sampling in structure-token space enables accurate prediction of multiple protein conformations},
+  author = {Wang, Z. and Yu, Y. and Zheng, W.-M. and Yu, C. and Bu, D.},
+  year = {2026},
+  publisher = {bioRxiv},
+  doi = {10.64898/2026.03.03.708411},
+  url = {https://www.biorxiv.org/content/10.64898/2026.03.03.708411v3},
+  note = {Version 3},
+  abstract = {Proteins often function through multiple conformations, yet most structure-prediction methods are biased toward a single dominant state. Here we present MSFold, a training-free framework that explores the discrete, sequence-conditioned structure-token space of ESM3 using parallel tempering, coupling high-temperature exploration with low-temperature refinement to cross barriers between conformational states. Across 312 multi-conformation protein pairs, MSFold recovered both conformations in 51.6\% of cases, compared with 38.1\% for MSA Cluster and 37.8\% for AlphaFold3. This performance advantage persisted on a post-ESM3-cutoff evaluation set, arguing against simple structural memorization. We further introduce sequence log-likelihood, a reference-free confidence score based on sequence–structure consistency, which improves ranking of sampled conformations. Together, these results provide a practical means of accessing the conformational information encoded by protein language models and establish MSFold as an effective framework for multi-conformation prediction.},
 }
 
 @misc{wang2026_G,
