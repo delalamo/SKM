@@ -26,6 +26,8 @@ _See [[Hybrid sequence-structure models]] for a list of methods that incorporate
 
 #### Training
 
+- [[Family-specific fine-tuning of inverse folding models allows design of functional proteins]].
+
 - **Training inverse folding models with backbone dihedral angles as features usually improved sequence recovery** [@jamasb2024].
  ![[Pasted-image-20240117115655.png]]
  _Figure from [@jamasb2024]_

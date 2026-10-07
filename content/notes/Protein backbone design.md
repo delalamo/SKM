@@ -5,7 +5,7 @@ aliases:
   - "Protein backbone design"
   - "tags/protein-backbone-design"
 created: "2026-04-10T14:30:55"
-modified: "2026-09-25"
+modified: "2026-10-07"
 tags:
   - design/backbones
 ---
@@ -63,3 +63,8 @@ tags:
  - 6WI5
  - 6WVS
  - 7MCD
+
+#### See also
+
+- [[Sequence redesign and partial diffusion are effective filters for de novo designed enzymes]]
+- [[Multiple-seed forward folding marginally improves precision on de novo designed enzymes]]
