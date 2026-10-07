@@ -21,6 +21,8 @@ tags:
 - Inpainting using [[notes/RoseTTAFold|RosettaFold]] [@wang2022]
 - [[Pairwise motif distances allow functional atoms to move jointly with a designed scaffold|Pairwise motif-distance conditioning]] in all-atom design (PANDA).
 
+- [[Filters found to be effective in first-round de novo protein design can be effectively applied in subsequent rounds]].
+
 #### Datasets
 
 - Verkuil et al. [@verkuil2022] use a test set of 39 PDBs for their validation, although they cite someone else:
