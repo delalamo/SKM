@@ -24,11 +24,13 @@ tags:
   - antibodies/recognition
 ---
 
+#### Summary
+
 **A CDR definition specifies which residues belong to each complementarity-determining region.** [[Antibody numbering]] specifies the labels attached to those residues. These are separate choices: “Chothia numbering with Kabat CDRs” is meaningful, whereas “the CDR sequence” is incomplete unless its definition is stated. This page collects the boundary conventions; [[Complementarity-determining regions]] covers the loops' biology, conformations, and dynamics.
 
 The literature contains **several kinds of CDR definitions**: conventional numbered intervals, shortened or extended intervals for a particular analysis, unions of existing definitions, and alignment-derived antigen-binding regions. Contact-based residue selections are also used in humanization. These approaches need different kinds of equivalence information; an alignment-dependent method cannot be reduced to six universal endpoint numbers.
 
-## What is being defined?
+#### Details
 
 | Term | What it identifies | What it does not establish |
 | --- | --- | --- |
@@ -39,8 +41,6 @@ The literature contains **several kinds of CDR definitions**: conventional numbe
 | **Energetic hotspot** | A residue whose perturbation substantially changes binding energetics | That all contacting residues contribute equally to affinity |
 
 The sequence, structural, and contact perspectives explain why the conventions disagree. Wu and Kabat analyzed sequence variability [@wukabat1970], Chothia and Lesk compared loop conformations [@chothia1987], and MacCallum and colleagues measured antibody–antigen contacts [@maccallum1996]. The term *framework* is also definition-dependent at a CDR's edges: being outside a chosen CDR does not make a residue irrelevant to binding or loop geometry.
-
-## Definitions and their origins
 
 | Definition | Basis and purpose | Primary reference; interpretation |
 | --- | --- | --- |
