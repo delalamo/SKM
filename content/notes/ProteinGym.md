@@ -1,7 +1,7 @@
 ---
 title: ProteinGym
 created: 2026-04-10T14:30:55
-modified: "2026-10-09T06:06:37"
+modified: "2026-04-21T05:01:15"
 tags:
   - evidence/datasets
   - prediction/variant-effects
