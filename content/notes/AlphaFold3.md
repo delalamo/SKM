@@ -5,7 +5,7 @@ aliases:
   - "Alphafold3"
   - "tags/alphafold3"
 created: "2026-04-11T06:06:39"
-modified: "2026-04-20T10:13:23"
+modified: "2026-09-25"
 tags:
   - prediction/structure
   - prediction/complexes
@@ -19,7 +19,7 @@ _Architecture of AlphaFold3 from Abramson et al. [@abramson2024]_
 
 #### Architectural and ML contributions
 
-- PairFormer
+- PairFormer; [[Combining pair representations from co-folding models improves structure prediction|mapped pair representations from other co-folding models can improve generation]]
 - PDE: predicted distance error (replacing frame aligned point error)
 - Non-equivariant per-atom prediction, which leads to [[DL structure tools introduce chiral errors such as swapped chiral centers, D-amino acids, and cis-amide bonds|occasional errors when predicting chirality]]
 - [[Distillation|Cross-distillation]] from [[notes/AlphaFold2|AlphaFold2]]-Multimer v2.3 to avoid hallucination of low-[[notes/pLDDT|pLDDT]] regions

@@ -4,13 +4,15 @@ aliases:
   - Antibodies
   - "tags/protein-language-models/antibodies"
 created: "2026-04-10T14:30:55"
-modified: "2026-04-20T10:13:23"
+modified: "2026-10-07"
 tags:
   - antibodies/architecture
   - cell-biology/immune-signaling
 ---
 
 **Antibodies** are proteins with two [[Heavy chains|heavy chains]] and two [[notes/Light chains|light chains]] produced by [[notes/B cells|B cells]], central to the adaptive immune system. Their structure consists of a variable region (containing [[Complementarity-determining regions|CDRs]] and a framework region) and three constant regions (CH1, CH2, CH3). The variable region and CH1 form the [[Fab]], while the remainder forms the Fc region. [[B-cell receptors|B cell receptors]] are antibodies with an additional CH4 domain.
+
+Some antibodies can adopt [[Antibodies can adopt closed inactive conformations that shield the Fc region|closed, inactive conformations with their Fab arms folded over the Fc region]], shielding effector-function sites.
 
 ## Types of antibodies
 

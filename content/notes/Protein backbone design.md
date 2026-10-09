@@ -5,7 +5,7 @@ aliases:
   - "Protein backbone design"
   - "tags/protein-backbone-design"
 created: "2026-04-10T14:30:55"
-modified: "2026-04-20T07:16:03"
+modified: "2026-10-07"
 tags:
   - design/backbones
 ---
@@ -19,6 +19,9 @@ tags:
   - [[Surface-complementary seeds expand the structural diversity of diffusion-designed protein binders|Surface-complementary seeds can broaden binder topologies]].
 - [[Inversion of protein folding neural networks|Hallucination]] using [[notes/AlphaFold2|AlphaFold2]] and [[notes/RoseTTAFold|RosettaFold]]
 - Inpainting using [[notes/RoseTTAFold|RosettaFold]] [@wang2022]
+- [[Pairwise motif distances allow functional atoms to move jointly with a designed scaffold|Pairwise motif-distance conditioning]] in all-atom design (PANDA).
+
+- [[Filters found to be effective in first-round de novo protein design can be effectively applied in subsequent rounds]].
 
 #### Datasets
 
@@ -62,3 +65,8 @@ tags:
  - 6WI5
  - 6WVS
  - 7MCD
+
+#### See also
+
+- [[Sequence redesign and partial diffusion are effective filters for de novo designed enzymes]]
+- [[Multiple-seed forward folding marginally improves precision on de novo designed enzymes]]
