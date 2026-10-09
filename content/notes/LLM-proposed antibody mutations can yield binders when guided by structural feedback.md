@@ -6,7 +6,7 @@ tags:
   - inference/llm-science
   - evidence/design-validation
 created: "2026-09-16"
-modified: "2026-10-05"
+modified: "2026-10-09T06:06:37"
 ---
 
 #### Summary
@@ -18,8 +18,6 @@ modified: "2026-10-05"
 The LLM proposes local substitutions or broader redesigns of [[Complementarity-determining regions|CDRs]] within specified constraints. OpenDDE predicts antibody–antigen complexes and supplies structural confidence and interface evidence. The harness validates proposals, updates a candidate population, and makes successes and failures available to subsequent rounds. This feedback changes the search context without retraining the LLM.
 
 OpenDDE serves as a computational *oracle*: it evaluates proposed sequences rather than generating the CDR edits. Its scores are surrogate evidence, not measured affinity.
-
-#### Experimental support
 
 The report describes **38 binders among 80 synthesized designs (47.5%)**:
 
@@ -42,15 +40,13 @@ The computational comparison favors the complete harness, but direct LLM generat
 
 *Figure 3 from [@openddeharness2026]. Sensorgrams and binding counts provide experimental evidence; the displayed complexes are predictions. Sequence-diversity measures depend on CDR length and antibody format.*
 
-#### See also
+#### See Also
 
-- [[Large language models in molecular and protein design]]
+- [[tags/inference/llm-science|LLMs in science]]
 - [[General-purpose language models can propose ligand binders but do not reliably satisfy design constraints]]
 - [[LLM agents can autonomously coordinate protein design campaigns that yield experimental binders]]
 - [[Search algorithms are more important than language model choice for model-guided protein engineering and design]]
 - [[Protein structure prediction and design confidence metrics do not correlate with binding affinity]]
-
-#### Sources
 
 - [Technical report, September 10, 2026 repository revision](https://github.com/aurekaresearch/OpenDDE-Harness/blob/a0a8d1a07d92ab54947ef4d90ade982a682598d1/docs/assets/OpenDDE_harness_tech_report.pdf), especially Sections 2.1 and 3.1–3.3 and Figure 3.
 - [OpenDDE-Harness project](https://github.com/aurekaresearch/OpenDDE-Harness).

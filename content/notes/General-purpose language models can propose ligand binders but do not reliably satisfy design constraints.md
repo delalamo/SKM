@@ -4,7 +4,7 @@ tags:
   - evidence/design-validation
   - inference/llm-science
 created: "2026-09-15"
-modified: "2026-10-05"
+modified: "2026-10-09T06:06:37"
 ---
 
 #### Summary
@@ -25,9 +25,9 @@ The PFOA redesign followed a human-proposed topology change and literature guida
 
 [[ProteinMPNN]] or LigandMPNN redesign of selected backbones generally improved subsequent structure-prediction confidence. This is a computational comparison, not experimental evidence that a tool-augmented LLM produces better binders. Later models were used to critique sequences, not to repeat the initial experimental benchmark.
 
-#### See also
+#### See Also
 
-- [[Large language models in molecular and protein design]]
+- [[tags/inference/llm-science|LLMs in science]]
 - [[General-purpose language models can rank protein variants without specialist tools]]
 - [[LLM-proposed antibody mutations can yield binders when guided by structural feedback]]
 - [[LLM agents can autonomously coordinate protein design campaigns that yield experimental binders]]

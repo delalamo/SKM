@@ -19,4 +19,4 @@ Engineering sequences, folds, binding, catalytic function, and properties that m
 - [[tags/design/developability|Developability]]
 - [[tags/design/modular-proteins|Modular proteins]]
 
-[[Large language models in molecular and protein design]] compares evidence for general-purpose language models across molecular design tasks.
+[[tags/inference/llm-science|LLMs in science]] groups notes on general-purpose language models used to evaluate variants, propose sequences, and coordinate design tools.
