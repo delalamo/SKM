@@ -1,7 +1,7 @@
 ---
 title: Sparse autoencoder
 created: 2026-04-05T23:36:09
-modified: "2026-04-21T07:28:09"
+modified: "2026-10-07T08:57:06"
 tags:
   - model-analysis/interpretability
   - model-design/architectures
@@ -18,6 +18,7 @@ In the context of [[notes/Protein language models|protein language models]], the
 
 #### See also
 - [[Ordered SAEs are more steerable than top-k SAEs]]
+- [[Adding smoothness losses during SAE training can improve motif identification]]
 
 #### Code
 ```python
