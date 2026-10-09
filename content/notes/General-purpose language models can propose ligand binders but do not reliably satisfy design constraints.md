@@ -9,25 +9,10 @@ modified: "2026-10-09T06:06:37"
 
 #### Summary
 
-**General-purpose language models can propose experimentally active ligand-binding proteins from natural-language prompts, but the resulting proteins can deviate from the requested topology, binding motif, or oligomeric state** [@kim2026llmdesign]. Plausible verbal design rationales do not establish that those constraints were satisfied.
-
-#### Details
-
-The initial design models were ChatGPT 5 and its advanced-thinking variant, Claude Sonnet 4.5, and Gemini 2.5. Structure prediction and human filtering selected candidates for experimental testing.
-
-| Design task | Experimentally tested | Reported binding hits |
-| --- | ---: | ---: |
-| Metal-binding proteins | 12 | 3 |
-| PFOA binding, five-helix first round | 6 | 0 appreciable hits |
-| PFOA binding, six-helix second round | 8 | 2 |
-
-The PFOA redesign followed a human-proposed topology change and literature guidance. Its two hits showed ligand-dependent fluorine NMR broadening, but neither was monodisperse by size-exclusion chromatography.
-
-[[ProteinMPNN]] or LigandMPNN redesign of selected backbones generally improved subsequent structure-prediction confidence. This is a computational comparison, not experimental evidence that a tool-augmented LLM produces better binders. Later models were used to critique sequences, not to repeat the initial experimental benchmark.
+**General-purpose language models can propose experimentally active ligand-binding proteins from natural-language prompts, but the resulting proteins can deviate from the requested topology, binding motif, or oligomeric state** [@kim2026llmdesign]. [[ProteinMPNN]] or LigandMPNN redesign of selected backbones generally improved subsequent structure-prediction confidence.
 
 #### See Also
 
-- [[tags/inference/llm-science|LLMs in science]]
 - [[General-purpose language models can rank protein variants without specialist tools]]
 - [[LLM-proposed antibody mutations can yield binders when guided by structural feedback]]
 - [[LLM agents can autonomously coordinate protein design campaigns that yield experimental binders]]
