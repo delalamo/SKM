@@ -4,12 +4,12 @@ tags:
   - antibodies/architecture
   - antibodies/recognition
 created: 2026-04-10T14:02:57
-modified: "2026-04-21T07:28:09"
+modified: "2026-10-09T05:36:09"
 review:
   - "citation-fix"
 ---
 
-The **complementarity-determining regions** of [[tags/antibodies|antibodies]], abbreviated **CDRs** and sometimes collectively called **hypervariable regions**, are loops that mediate binding to antigens. They are the most difficult part of the protein to predict and get fine-tuned by [[notes/Affinity maturation|affinity maturation]] and [[Somatic hypermutation|somatic hypermutation]].
+The **complementarity-determining regions** of [[tags/antibodies|antibodies]], abbreviated **[[CDR definitions|CDRs]]** and sometimes collectively called **hypervariable regions**, are loops that mediate binding to antigens. They are the most difficult part of the protein to predict and get fine-tuned by [[notes/Affinity maturation|affinity maturation]] and [[Somatic hypermutation|somatic hypermutation]].
 
 ### General observations
 #### Confomational clustering
@@ -22,8 +22,7 @@ The **complementarity-determining regions** of [[tags/antibodies|antibodies]], a
 
 ### CDRH2
 
-* **The residue identity at heavy chain residue 71 (Chothia numbering) influences the conformation of CDRH2** ([[_Articles that need citations|citation needed]]).
-* **In Kabat numbering CDRH2 is slightly too short (reason unclear).**
+* **The residue identity at heavy chain residue 80 ([[Antibody numbering|IMGT numbering]]) influences the position and conformation of CDRH2** [@tramontano1990].
 * **[[HDX-MS]] data suggest that CDRH2 has decreased dynamics following [[notes/Affinity maturation|Affinity maturation]]** ([[_Articles that need citations|citation needed]]).
 
 ### CDRH3
@@ -38,7 +37,6 @@ The **complementarity-determining regions** of [[tags/antibodies|antibodies]], a
 ### CDRL2
 
 * **[[HDX-MS]] data suggest that CDRH2 has decreased dynamics following [[notes/Affinity maturation|affinity maturation]]** ([[_Articles that need citations|citation needed]]).
-* **In Kabat numbering this is slightly too short** (reason unclear; [[_Articles that need citations|citation needed]]).
 
 ### CDRL3
 

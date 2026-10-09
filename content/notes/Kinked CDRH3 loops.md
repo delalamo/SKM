@@ -16,11 +16,11 @@ tags:
 
 #### Details
 
-The precise definition by Weitzner et al uses the following two parameters:
-* $\mathbf{\tau_{101}}$: $C_{\alpha}$-$C_{\alpha}$-$C_{\alpha}$ pseudo-bond angle over the three C-terminal loop residues (Chothia 100X–101–102, IMGT 115-116-117).
-* $\mathbf{\alpha_{101}}$: $C_{\alpha}$-$C_{\alpha}$-$C_{\alpha}$-$C_{\alpha}$ pseudo-dihedral angle over the same three residues plus the next one (Chothia 103, IMGT 118).
+The precise definition by Weitzner et al uses the following two parameters, expressed here with IMGT residue indices:
+* $\mathbf{\tau_{116}}$: $C_{\alpha}$-$C_{\alpha}$-$C_{\alpha}$ pseudo-bond angle over the three C-terminal loop residues (IMGT 115–116–117).
+* $\mathbf{\alpha_{116}}$: $C_{\alpha}$-$C_{\alpha}$-$C_{\alpha}$-$C_{\alpha}$ pseudo-dihedral angle over the same three residues plus the next one (IMGT 118).
 
-Then, a two-parameter model is fit over these that includes a Gaussian component centered at $\mathbf{\tau_{101}}~101°$ (80% of structures) and a von Mises component centered at $\mathbf{\alpha_{101}}~39°$. This includes about 80% of structures in the PDB at the time of the Weitzner paper. Loops that fall into this component are considered kinked, while those that don't are considered extended or straight.
+Then, a two-parameter model is fit over these that includes a Gaussian component centered at $\mathbf{\tau_{116}}~101°$ (80% of structures) and a von Mises component centered at $\mathbf{\alpha_{116}}~39°$. This includes about 80% of structures in the PDB at the time of the Weitzner paper. Loops that fall into this component are considered kinked, while those that don't are considered extended or straight.
 
 #### Notes
 

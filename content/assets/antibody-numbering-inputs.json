@@ -1,0 +1,44 @@
+{
+  "description": "Deposited full chain sequences. Only the identified variable domain is mapped; sequence positions are one-based within this frozen input, not PDB author residue IDs.",
+  "retrieved": "2026-09-11",
+  "anarcii_version": "2.0.8",
+  "anarcii_mode": "accuracy",
+  "torch_version": "2.14.0",
+  "anarci_commit": "79f6c575056dedef86cb8f405ebb039197923eec",
+  "anarci_schemes_sha256": "856f4c942c226cbeabfabb69f8bfd4004f00f9b0aa6ce1e296636d2ce88f4b4b",
+  "examples": [
+    {
+      "id": "1N8Z_2",
+      "label": "Herceptin VH",
+      "pdb": "1N8Z",
+      "entity_id": 2,
+      "author_chain": "B",
+      "chain_type": "H",
+      "source_url": "https://www.rcsb.org/fasta/entry/1N8Z",
+      "structure_paper_doi": "10.1038/nature01392",
+      "sequence": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSSASTKGPSVFPLAPSSKSTSGGTAALGCLVKDYFPEPVTVSWNSGALTSGVHTFPAVLQSSGLYSLSSVVTVPSSSLGTQTYICNVNHKPSNTKVDKKVEP"
+    },
+    {
+      "id": "1MJU_1",
+      "label": "MS6-12 Vκ",
+      "pdb": "1MJU",
+      "entity_id": 1,
+      "author_chain": "L",
+      "chain_type": "K",
+      "source_url": "https://www.rcsb.org/fasta/entry/1MJU",
+      "structure_paper_doi": "10.1016/S0022-2836(03)00902-1",
+      "sequence": "DIVMTQAAPSVPVTPGESVSISCRSSKSLLHSNGNTYLYWFLQRPGQSPQLLIYRMSNLASGVPDRFSGSGSGTAFTLRISRVEAEDVGVYYCLQHLEYPFTFGAGTKLELKRADAAPTVSIFPPSSEQLTSGGASVVCFLNNFYPKDINVKWKIDGSERQNGVLNSWTDQDSKDSTYSMSSTLTLTKDEYERHNSYTCEATHKTSTSPIVKSFNRNEC"
+    },
+    {
+      "id": "5GRJ_2",
+      "label": "Avelumab Vλ",
+      "pdb": "5GRJ",
+      "entity_id": 2,
+      "author_chain": "L",
+      "chain_type": "L",
+      "source_url": "https://www.rcsb.org/fasta/entry/5GRJ",
+      "structure_paper_doi": "10.1038/cr.2016.102",
+      "sequence": "QSALTQPASVSGSPGQSITISCTGTSSDVGGYNYVSWYQQHPGKAPKLMIYDVSNRPSGVSNRFSGSKSGNTASLTISGLQAEDEADYYCSSYTSSSTRVFGTGTKVTVL"
+    }
+  ]
+}

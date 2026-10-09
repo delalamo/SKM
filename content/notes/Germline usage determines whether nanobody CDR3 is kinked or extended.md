@@ -4,13 +4,13 @@ tags:
   - antibodies/architecture
   - antibodies/repertoires
 created: "2026-04-05T23:36:09"
-modified: "2026-04-21T05:01:15"
+modified: "2026-10-09T05:36:09"
 ---
 #### Summary
 **[[Germline]] usage, specifically the V-gene, determines whether the [[Complementarity-determining regions|CDR3]] of [[Nanobodies|nanobodies]] is [[Kinked CDRH3 loops|kinked]] or extended** (Bahrami [@bahrami2023]). The two most common camelid germlines in the PDB, IGHV3S53 and IGHV3-3, are 75% extended and 82% kinked, respectively. In contrast, J-gene usage had no impact.
 
 #### Details
-As of the 2023 study, all kinked nanobody CDR3s have F37, F47, and mostly Q44, whereas all extended CDR3s have Y37, L47, and non-conserved 44.
+As of the 2023 study, all kinked nanobody CDR3s have F42, F52, and mostly Q49, whereas all extended CDR3s have Y42, L52, and non-conserved 49 (IMGT numbering).
 
 #### Figures
 ![[42003_2023_5241_Fig4_HTML.png]]
