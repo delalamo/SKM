@@ -1,10 +1,9 @@
 ---
 tags:
-  - inference/llm-science
   - antibodies/recognition
   - evidence/generalization
 created: "2026-09-25"
-modified: "2026-10-09T06:13:32"
+modified: "2026-09-25"
 ---
 
 #### Summary
