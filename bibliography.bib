@@ -2559,6 +2559,16 @@
   url = {https://doi.org/10.1021/acssynbio.3c00674},
 }
 
+@misc{hao2026_J,
+  title = {Evidence Scaling for Zero-Shot Protein Reasoning with Large Language Models},
+  author = {Hao, Z. and Wang, C. and Li, D. and Wang, Y.},
+  year = {2026},
+  abstract = {Large language models (LLMs) show emerging zero-shot capability for protein variant prediction, yet still lag behind specialized protein models. We ask whether this gap can be reduced by scaling access to biological evidence rather than adapting model parameters. We introduce BioEvidence, a training-free and model-agnostic interface that converts structural and evolutionary information from standard biological tools into compact evidence for frozen LLMs. On the ProteinGym benchmark, we observe evidence scaling: performance improves as evidence becomes richer. Structural and evolutionary evidence each improve performance, and combining them yields further gains, while mismatching the same evidence to the wrong variants degrades performance below the no-evidence baseline. Notably, BioEvidence enables zero-shot ranking to reach strong specialized protein predictors on matched evaluations, and the improvement persists on post-cutoff data released after the model's knowledge cutoff. Evidence also interacts with conventional scaling: for GPT-5.6 Sol, evidence at low reasoning effort outperforms the no-evidence condition at medium effort, while a six-model analysis associates stronger no-evidence performance with larger margins over evolutionary rank fusion. These results identify external evidence as a complementary scaling axis for scientific prediction alongside model capability and inference effort.},
+  doi = {10.64898/2026.09.27.754822},
+  url = {https://doi.org/10.64898/2026.09.27.754822},
+  note = {Version 1},
+}
+
 @article{haque2025,
   title = {Mechanistic Interpretability of Antibody Language Models Using SAEs},
   author = {Haque, Rebonto and Turnbull, Oliver M. and Parsan, Anisha and Parsan, Nithin and Yang, John J. and Deane, Charlotte M.},
@@ -9122,4 +9132,36 @@
   month = Feb,
   pages = {209},
   abstract = {Light chain (AL) amyloidosis is a debilitating disease in which mutant antibody light chains (LC), secreted by aberrant plasma cell clones, misfold and form insoluble fibrils, which can be deposited in various organs. In the majority of cases, the fibrillar deposits consist of LC variable domains (V L ) containing destabilizing mutations compared to their germline counterparts. This is also true for the patient LC FOR005. However, this pathogenic LC sequence contains an additional mutation in the constant domain (C L ). The mechanistic impact of C L mutations is not yet understood in the context of AL amyloidosis. Our analysis reveals that the FOR005 C L mutation influences the amyloid pathway in specific ways: (1) folding and stability of the patient C L domain are strongly impaired; (2) the mutation disrupts the LC dimer interface and weakens dimerization; (3) the C L mutation promotes proteolytic cleavage of the LC monomers resulting in an isolated, amyloidogenic V L domain while dimeric LCs are not cleaved. The enhanced proteolysis rates and the inability of full-length LCs to form amyloid fibrils even in the presence of a destabilized C L domain support a model for AL amyloidosis in which the C L domain plays a protective role and in which proteolytic cleavage precedes amyloid formation.},
+}
+
+@misc{kim2026llmdesign,
+  title = {De novo design of ligand binding proteins using large language models alone},
+  author = {Kim, N. H. and Hatstat, A. K. and Jo, H. and Wu, Y. and DeGrado, W. F.},
+  year = {2026},
+  publisher = {bioRxiv},
+  doi = {10.64898/2026.09.02.748987},
+  url = {https://www.biorxiv.org/content/10.64898/2026.09.02.748987v1},
+  note = {Version 1},
+  abstract = {Protein design has rapidly advanced with the advent of sequence- and structure-based machine learning models. However, reasoned design, which applies physicochemical principles and rules derived from sequence-structure-function relationships, has not seen the same benefits from generative machine learning models. Here, we test the ability of common large language models (LLMs; e.g. Claude, ChatGPT, and Gemini) to consider design principles to generate de novo proteins that bind metals and lipophilic small molecules without copying existing sequences. Common LLMs alone are able to 1) generate protein sequences to adopt a desired fold and bind the target ligand and 2) explain the principles that motivate the design choices. Following structure prediction and filtering, we selected a small set of designs (6 to 12 designs per query) for experimental validation, affording metal binders in one round of LLM-based design (25\% hit rate) and perfluorooctanoic acid binders in two rounds (25\% hit rate in the second round of design). Importantly, the LLMs produce detailed justification to accompany the de novo designed sequences, providing a conceptual framework on which designs can be evaluated. While the successful designs have some deviations from the prompted parameters and LLM-articulated design rationale, these campaigns provide a case study that highlights the utility of LLMs in making protein design more comprehensible and accessible to users without sophisticated design expertise.},
+}
+
+@article{arora2026pgllm,
+  title = {{PG-LLM}: Benchmarking General-Purpose Language Models for Protein Variant Ranking},
+  author = {Arora, Rohit and Chen, Leo Tianlai and Du, Melissa and Marks, Debora S. and Church, George M.},
+  year = {2026},
+  journal = {bioRxiv},
+  doi = {10.64898/2026.07.27.741045},
+  url = {https://doi.org/10.64898/2026.07.27.741045},
+  note = {Version posted August 19, 2026},
+  abstract = {ABSTRACT General-purpose frontier language models are being increasingly utilized for protein-design work, yet their ability to understand and evaluate variant effects remains unclear. Here, we introduce PG-LLM, a benchmark comprising 276 protein-variant prioritization tasks: 217 from ProteinGym and a temporally held-out set of 59 from recently published studies. Each task follows the same format: a language model is asked to rank a list of variant sequences given only the wild-type protein sequence and an assay description with no access to tools, multiple-sequence alignments, or protein structures. We evaluate thirteen language models and 95 published protein predictors on the same variants with the same evaluation metric. Claude Opus 5 (Max) and GPT 5.6 Sol (Max) are the best performing LLMs with Spearman correlations of ρ = 0.406 and 0.402 respectively. Opus 5 outperforms 49 of 95 published protein predictors, including 41 of 46 sequence-only methods, and approaches ESM2-650M at ρ = 0.411, but remains below the leading predictor VenusREM at ρ = 0.523. We observe that variant-ranking performance scales with test-time compute across GPT, Claude, and Gemini models, but gains taper before closing the gap to specialist protein predictors. To address contamination risk, we create a held-out evaluation set with 59 DMS assays from 19 studies whose scores first became public after January 2026. On this set, we observe performance and test time compute scaling trends similar to those on the 217 tasks derived from ProteinGym. PG-LLM shows that tool-free language models capture substantial protein-variant signal, outperforming many sequence-based predictors while remaining below the strongest specialized models.},
+}
+
+@techreport{openddeharness2026,
+  title = {Unlocking the Power of {LLM} Reasoning in Antibody Design with {OpenDDE-Harness}},
+  author = {{OpenDDE Project, Aureka AI Research}},
+  institution = {Aureka AI Research},
+  year = {2026},
+  url = {https://github.com/aurekaresearch/OpenDDE-Harness/blob/a0a8d1a07d92ab54947ef4d90ade982a682598d1/docs/assets/OpenDDE_harness_tech_report.pdf},
+  note = {Public technical report, repository revision September 10, 2026},
+  abstract = {Antibody design requires iterative search over sequence space under structural and developability constraints. We introduce OpenDDE-Harness, a framework that couples large language model (LLM) agents to OpenDDE-based structural evaluation for antibody design. Agents propose constrained antibody designs and interpret their outcomes; the execution layer validates proposals, runs molecular evaluations, applies quality gates, and maintains candidate populations and provenance. Persistent records make accepted, rejected, and failed designs available to later cycles without updating the LLM’s parameters. Across six computational antibody-design targets, the evaluated pipeline yielded higher mean structural-filter success and more successful CDR sequence clusters than the tested baselines. In a separate experimental campaign, 38 of 80 synthesized designs bound their targets across four target–format cohorts involving RAGE (17/20), TfR1 (11/20), CXCR4 mAb (4/20), and CXCR VHH (6/20), validated through Carterra SPR or BLI. These results support the use of LLM-guided design with structural feedback to prioritize antibodies for experimental testing.},
 }
