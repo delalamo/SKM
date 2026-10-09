@@ -1,0 +1,37 @@
+name: Test GitHub note commands
+
+on:
+  pull_request:
+    paths:
+      - "scripts/github/**"
+      - "tests/github/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/codex/**"
+      - ".github/workflows/codex-*.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/github/**"
+      - "tests/github/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/codex/**"
+      - ".github/workflows/codex-*.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: node --test tests/github/*.test.mjs
