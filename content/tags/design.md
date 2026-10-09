@@ -18,5 +18,3 @@ Engineering sequences, folds, binding, catalytic function, and properties that m
 - [[tags/design/directed-evolution|Directed evolution]]
 - [[tags/design/developability|Developability]]
 - [[tags/design/modular-proteins|Modular proteins]]
-
-[[tags/inference/llm-science|LLMs in science]] groups notes on general-purpose language models used to evaluate variants, propose sequences, and coordinate design tools.
