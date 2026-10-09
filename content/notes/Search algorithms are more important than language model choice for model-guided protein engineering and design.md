@@ -3,7 +3,7 @@ tags:
   - inference/sampling-and-search
   - design/directed-evolution
 created: "2026-03-20T07:32:50"
-modified: "2026-04-21T07:28:09"
+modified: "2026-10-09T06:20:21"
 ---
 
 #### Summary
@@ -15,5 +15,3 @@ modified: "2026-04-21T07:28:09"
 
 #### See also
 * [[Inference-time scaling of de novo designed proteins is more effective for harder targets]]
-
-20 March 2026: https://biomlzk.ghost.io/language-models-matter-less-than-search-algorithms-for-difficult-protein-design-tasks/

@@ -4,7 +4,7 @@ tags:
   - design/inverse-folding
   - design/backbones
 created: "2026-03-21T17:43:50"
-modified: "2026-08-19T16:32:04"
+modified: "2026-10-09T06:20:21"
 ---
 #### Summary
 **Training machine learning models for either [[notes/Inverse folding|inverse folding]] or [[notes/Protein backbone design|protein backbone design]] via [[notes/Diffusion models|diffusion]] exclusively on predicted models worsens performance** [@hsu2022; @su2023]. This was observed when training [[ESM-IF]] and [[Geometric Vector Perceptrons|GVP]] as well as when training using the [[Evoformer]] or the [[Hybrid sequence-structure models|hybrid sequence-structure method]] MIF-ST, but not [[SaProt]] (which uses tokens from the Foldseek alphabet). The latter study also looked at downstream performance and saw worse results. This was shown to be because predicted models are "too perfect" at a local level [@tan2025].
@@ -36,5 +36,3 @@ modified: "2026-08-19T16:32:04"
 * [[Adding noise while training non-Ab inverse folding models improves self-consistency while worsening sequence recovery]]
 * [[Focused protein sequence libraries are poor training sets]]
 * [[Computational models are less designable than experimental structures]]
-
-21 March 2026: https://biomlzk.ghost.io/training-protein-structure-based-neural-networks-exclusively-on-predicted-protein-structures-worsens-performance-on-experimental-structures-due-to-how-locally-perfect-the-training-data-/
