@@ -1,7 +1,7 @@
 ---
 title: Antibody numbering
 created: 2026-04-10T14:02:57
-modified: "2026-09-11T13:42:32"
+modified: "2026-10-09T05:36:09"
 aliases:
   - Antibody numbering conventions
   - Antibody numbering schemes
@@ -20,7 +20,9 @@ tags:
 
 **Antibody numbering assigns comparable labels to residues in variable-length immunoglobulin domains.** This is the reference page for numbering conventions in these notes, including [[tags/antibodies|antibodies]], [[Nanobodies|VHHs]], [[T-cell receptors|TCRs]], and shark IgNARs.
 
-A residue label needs a **scheme, domain/chain, number, and any insertion code**: for example, Kabat H100A. It is neither a sequence-array index nor necessarily the number already present in a PDB file. **Numbering and CDR definition are separate choices**: an antibody can use one set of residue labels and another set of CDR boundaries. Renumbering does not change the molecule or establish which residues contact antigen.
+**These notes use IMGT residue indices: V-domain numbering for variable domains and domain-qualified C-domain numbering for constant regions.** The hinge uses its subclass-specific IMGT hinge numbering. Other schemes appear only in explicitly labeled historical definitions and conversion comparisons; source figures retain their original labels.
+
+A residue label needs a **scheme, domain/chain, number, and any insertion code**: for example, IMGT VH 111.1. It is neither a sequence-array index nor necessarily the number already present in a PDB file. **Numbering and CDR definition are separate choices**: an antibody can use one set of residue labels and another set of CDR boundaries. Renumbering does not change the molecule or establish which residues contact antigen.
 
 ## Schemes and their origins
 
@@ -101,7 +103,7 @@ The two conserved cysteines usually form the **intradomain B–F disulfide**. Ex
 
 The expandable tables map **every occupied residue** of three deposited example domains across **IMGT, Kabat, Chothia, Martin, AHo, and WolfGuy**, and identify its IMGT region and conserved landmarks. Heavy, κ, and λ examples are separate because their correspondences differ. These are **sequence-specific assigned labels**, not a universal structural alignment or a list of every possible insertion.
 
-[Download the residue crosswalk](../assets/antibody-numbering-crosswalk.csv) and [frozen input sequences and provenance](../assets/antibody-numbering-inputs.json). Generated with **ANARCII 2.0.8, antibody accuracy model**, on 2026-09-11. IMGT assignments were converted by its bundled Kabat/Chothia/Martin/AHo routines; WolfGuy was assigned to the same alignment using the [ANARCI authors' pinned conversion implementation](https://github.com/oxpig/ANARCI/blob/79f6c575056dedef86cb8f405ebb039197923eec/lib/python/anarci/schemes.py). Amino-acid identity/order, unique labels, and conserved anchors were checked. The [reproduction script](https://github.com/delalamo/SKM/blob/main/scripts/generate_antibody_numbering.py) also validates the frozen data without rerunning a model [@greenshieldswatson2026; @dunbar2016].
+[Download the residue crosswalk](../assets/antibody-numbering-crosswalk.csv) and [frozen input sequences and provenance](../assets/antibody-numbering-inputs.json). Generated with **ANARCII 2.0.8, antibody accuracy model**, on 2026-09-11. IMGT assignments were converted by its bundled Kabat/Chothia/Martin/AHo routines; WolfGuy was assigned to the same alignment using the [ANARCI authors' pinned conversion implementation](https://github.com/oxpig/ANARCI/blob/79f6c575056dedef86cb8f405ebb039197923eec/lib/python/anarci/schemes.py). Amino-acid identity/order, unique labels, and conserved anchors were checked [@greenshieldswatson2026; @dunbar2016].
 
 <!-- BEGIN GENERATED CROSSWALK -->
 
@@ -526,4 +528,4 @@ In this reference's exon/domain partition, CH1 is EU **118–215**, the hinge ex
 
 ## Reporting a numbered sequence or structure
 
-Record the domain/chain identity, numbering scheme and implementation/version, CDR definition, insertion codes, and the correspondence to original sequence/PDB positions. For a composite construct such as an scFv, identify each VH/VL domain separately. This makes a statement such as “mutate H71” reproducible and avoids conflating variable-domain, full-chain, and constant-domain indices.
+Record the domain/chain identity, numbering scheme and implementation/version, CDR definition, insertion codes, and the correspondence to original sequence/PDB positions. For a composite construct such as an scFv, identify each VH/VL domain separately. This makes a statement such as “mutate IMGT VH 80” reproducible and avoids conflating variable-domain, full-chain, and constant-domain indices.
