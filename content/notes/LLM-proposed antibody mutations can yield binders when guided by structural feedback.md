@@ -6,7 +6,7 @@ tags:
   - inference/llm-science
   - evidence/design-validation
 created: "2026-09-16"
-modified: "2026-10-09T06:06:37"
+modified: "2026-10-09T06:13:32"
 ---
 
 #### Summary
@@ -42,7 +42,6 @@ The computational comparison favors the complete harness, but direct LLM generat
 
 #### See Also
 
-- [[tags/inference/llm-science|LLMs in science]]
 - [[General-purpose language models can propose ligand binders but do not reliably satisfy design constraints]]
 - [[LLM agents can autonomously coordinate protein design campaigns that yield experimental binders]]
 - [[Search algorithms are more important than language model choice for model-guided protein engineering and design]]

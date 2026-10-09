@@ -4,7 +4,7 @@ tags:
   - antibodies/recognition
   - evidence/generalization
 created: "2026-09-25"
-modified: "2026-10-09T06:06:37"
+modified: "2026-10-09T06:13:32"
 ---
 
 #### Summary
@@ -15,4 +15,3 @@ modified: "2026-10-09T06:06:37"
 
 - [[notes/Antibody structure prediction|Antibody structure prediction]]
 - [[Correct antibody-antigen prediction in AF3 and related models is partially determined by training set similarity]]
-- [[tags/inference/llm-science|LLMs in science]]

@@ -6,7 +6,7 @@ tags:
   - inference/llm-science
   - evidence/design-validation
 created: "2026-09-16"
-modified: "2026-10-09T06:06:37"
+modified: "2026-10-09T06:13:32"
 ---
 
 #### Summary
@@ -33,7 +33,6 @@ The computational campaigns preceded wet-lab testing. Binding was validated, but
 
 #### See Also
 
-- [[tags/inference/llm-science|LLMs in science]]
 - [[Ensembling structure prediction methods for filtering improves recovery]] — the separate result about the campaign's scoring tools.
 - [[LLM-proposed antibody mutations can yield binders when guided by structural feedback]]
 - [[General-purpose language models can propose ligand binders but do not reliably satisfy design constraints]]
