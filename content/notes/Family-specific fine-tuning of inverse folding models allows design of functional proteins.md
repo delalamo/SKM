@@ -5,7 +5,7 @@ tags:
   - training/fine-tuning
   - prediction/variant-effects
 created: "2026-10-07"
-modified: "2026-10-07T08:56:59"
+modified: "2026-10-09T04:56:38"
 ---
 
 #### Summary
@@ -23,7 +23,3 @@ _Ref [@qin2026]_
 - [[Base PLMs must usually be fine-tuned to generate functionally active sequences]]
 - [[Using evolutionary information for label smoothing during inverse folding training leads to improved fitness prediction]]
 - [[Inverse-folding-guided site-saturation libraries outperform random mutagenesis]]
-
-#### Sources
-
-- [Source issue #1030](https://github.com/delalamo/SKM/issues/1030).

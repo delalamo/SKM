@@ -4,7 +4,7 @@ tags:
   - model-analysis/interpretability
   - training/objectives-and-optimization
 created: "2026-10-07"
-modified: "2026-10-07T08:57:06"
+modified: "2026-10-09T04:56:38"
 ---
 
 #### Summary
@@ -20,7 +20,3 @@ _Ref [@hou2026_F]_
 #### See also
 
 - [[Sparse autoencoders recover protein-family and gene-ontology features from PLM representations]]
-
-#### Sources
-
-- [Source issue #1036](https://github.com/delalamo/SKM/issues/1036).
