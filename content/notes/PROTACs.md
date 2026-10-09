@@ -1,7 +1,7 @@
 ---
 title: PROTACs
 created: 2026-04-10T14:30:55
-modified: "2026-04-21T07:28:09"
+modified: "2026-10-09T06:14:45"
 tags:
   - cell-biology/therapeutic-mechanisms
 ---
@@ -16,6 +16,6 @@ tags:
 * AUTACs: autophagy-targeting chimeras, use a guanine derivative, recruit autophagy machinery
 * ATTECs: Autophagosome-tethering compounds, links warhead to autophagy protein LC3
 * LYTACs: lysosome-targeting chimeras, binds membrane-bound protein and extracellular domain of lysosome-shuttling receptor
-* AbTACs: [[tags/antibodies|Antibody]]-based PROTACs, bispecific antibodies that also use lysosomal degradation pathway
+* AbTACs: Antibody-based PROTACs, bispecific antibodies that also use lysosomal degradation pathway
 
 *This extensively cites Békés et al. [@bekes2022]*

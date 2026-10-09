@@ -3,7 +3,7 @@ title: ProteinMPNN
 tags:
   - design/inverse-folding
 created: "2026-04-10T14:02:57"
-modified: "2026-09-28"
+modified: "2026-10-09T06:14:45"
 ---
 
 **ProteinMPNN** is an [[notes/Inverse folding|inverse folding]] method that uses a message-passing neural network. It has extensive wet-lab validation.
@@ -22,7 +22,7 @@ modified: "2026-09-28"
 
 #### Variations
 
-* **AbMPNN**: A retrained version specifically designed for [[tags/antibodies|Antibodies]] [@dreyer2023]. Outperforms default ProteinMPNN on several metrics. However it is itself outperformed by AntiFold, trained on [[ESM-IF]] [@hoie2023].
+* **AbMPNN**: A retrained version specifically designed for Antibodies [@dreyer2023]. Outperforms default ProteinMPNN on several metrics. However it is itself outperformed by AntiFold, trained on [[ESM-IF]] [@hoie2023].
 * **MiniMPNN**: A modified version of ProteinMPNN that has $O(1)$ performance; i.e., it predicts the whole sequence in a single pass. Used by ProtPardelle [@chu2023].
 * **ProteinIPMP**: A version that uses [[Invariant point attention]], leading to accuracy improvements. Co-released with PIPPack.
 ![[ProteinIPMP-vs-ProteinMPNN.png]]

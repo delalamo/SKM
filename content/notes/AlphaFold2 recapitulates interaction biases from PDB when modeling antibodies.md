@@ -3,10 +3,10 @@ tags:
   - evidence/generalization
   - prediction/complexes
 created: 2024-05-08T17:57:58
-modified: "2026-04-21T10:30:31"
+modified: "2026-10-09T06:14:45"
 ---
 #### Summary
-**[[notes/AlphaFold2|AlphaFold2]] models interactions between [[tags/antibodies|antibodies]] and antigens using motifs found in non-antibody structural complexes in the PDB** [@mccoy2024]. Better antibody-antigen predictions recycle interactions from non-PDB structures.
+**[[notes/AlphaFold2|AlphaFold2]] models interactions between antibodies and antigens using motifs found in non-antibody structural complexes in the PDB** [@mccoy2024]. Better antibody-antigen predictions recycle interactions from non-PDB structures.
 
 #### Figures
 ![[Pasted-image-20240322071946.png]]

@@ -3,10 +3,10 @@ tags:
   - antibodies/nanobodies
   - antibodies/recognition
 created: "2025-02-28T03:15:38"
-modified: "2026-04-21T10:30:31"
+modified: "2026-10-09T06:14:45"
 ---
 #### Summary
-**[[Framework region|Framework]] residues of [[Nanobodies|nanobodies]] are more likely to be part of the paratope than those of [[tags/antibodies|antibodies]]** [@gordon2023; @ketaren2023]. Nanobodies with [[Kinked CDRH3 loops|extended CDR3 loops]] tend to involve framework residues more than those with kinked CDR3 loops (Bahrami [@bahrami2023]).
+**[[Framework region|Framework]] residues of [[Nanobodies|nanobodies]] are more likely to be part of the paratope than those of antibodies** [@gordon2023; @ketaren2023]. Nanobodies with [[Kinked CDRH3 loops|extended CDR3 loops]] tend to involve framework residues more than those with kinked CDR3 loops (Bahrami [@bahrami2023]).
 
 #### Figures
 ![[42003_2023_5241_Fig3_HTML.png]]

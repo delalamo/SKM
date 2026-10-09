@@ -3,12 +3,12 @@ tags:
   - prediction/complexes
   - evidence/generalization
 created: "2026-09-25"
-modified: "2026-10-09T06:13:32"
+modified: "2026-10-09T06:14:45"
 ---
 
 #### Summary
 
-**[[tags/antibodies|Antibody]]–antigen [[notes/Structure prediction|structure prediction]] accuracy decreases with antigen length across the predictors evaluated by TorchFold** (section 4.5) [@torchfold2026].
+**Antibody–antigen [[notes/Structure prediction|structure prediction]] accuracy decreases with antigen length across the predictors evaluated by TorchFold** (section 4.5) [@torchfold2026].
 
 #### Details
 

@@ -4,10 +4,10 @@ tags:
   - antibodies/architecture
   - biophysics/stability
 created: "2025-02-27T04:45:54"
-modified: "2026-04-21T07:28:09"
+modified: "2026-10-09T06:14:45"
 ---
 #### Summary
-**The process of [[Antibody humanization|humanization]] can cause [[tags/antibodies|Antibodies]] to become less stable** [@tennenhouse2023]. Humanization can also destabilize specific [[Complementarity-determining regions|CDRs]], leading to failure during humanization [@fernandezquintero2019].
+**The process of [[Antibody humanization|humanization]] can cause Antibodies to become less stable** [@tennenhouse2023]. Humanization can also destabilize specific [[Complementarity-determining regions|CDRs]], leading to failure during humanization [@fernandezquintero2019].
 
 #### Details
 Bahrami [@bahrami2023] give an example of a [[Nanobodies|nanobody]] that had its framework changed such that its [[Complementarity-determining regions|CDR3]] conformation changed from [[Kinked CDRH3 loops|kinked]] to extended. In the process its [[notes/Stability and thermostability|thermostability]] dropped by 10°C.

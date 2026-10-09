@@ -3,12 +3,12 @@ tags:
   - prediction/antibody-structure
   - inference/feature-extraction
 created: 2026-04-05T17:38:14
-modified: "2026-04-21T10:30:31"
+modified: "2026-10-09T06:14:45"
 ---
 
 #### Summary
 
-**[[notes/Antibody structure prediction|Predicting the structure of antibodies]] using embeddings from [[tags/antibodies|antibody]] [[notes/Protein language models|language models]] leads to equal or worse performance compared to using embeddings from generic protein language models** [@lee2023solvent; @kenlay2024]. The former found that training [[IgFold]] with with [[ESM]]2-35M embeddings gave comparable performance to using the AntiBERTy embeddings used by default, while the latter obtained better performance on ABodyBuilder3 ProtT5 embeddings compared to IgBERT and IgT5.
+**[[notes/Antibody structure prediction|Predicting the structure of antibodies]] using embeddings from antibody [[notes/Protein language models|language models]] leads to equal or worse performance compared to using embeddings from generic protein language models** [@lee2023solvent; @kenlay2024]. The former found that training [[IgFold]] with with [[ESM]]2-35M embeddings gave comparable performance to using the AntiBERTy embeddings used by default, while the latter obtained better performance on ABodyBuilder3 ProtT5 embeddings compared to IgBERT and IgT5.
 
 #### Figures
 

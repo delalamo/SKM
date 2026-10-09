@@ -3,10 +3,10 @@ tags:
   - antibodies/nanobodies
   - antibodies/architecture
 created: "2026-03-16T11:51:30"
-modified: "2026-04-21T07:28:09"
+modified: "2026-10-09T06:14:45"
 ---
 #### Summary
-**The [[Complementarity-determining regions#CDRH3|CDRH3]] loops of [[Nanobodies|nanobodies]] are 3-4 residues longer on average, but more compact, than those of [[tags/antibodies|antibodies]]** ([@gordon2023], Bahrami [@bahrami2023]).
+**The [[Complementarity-determining regions#CDRH3|CDRH3]] loops of [[Nanobodies|nanobodies]] are 3-4 residues longer on average, but more compact, than those of antibodies** ([@gordon2023], Bahrami [@bahrami2023]).
 
 #### Figures
 ![[Nanobodies-CDRH3-compactness.png]]

@@ -3,10 +3,10 @@ tags:
   - biophysics/interactions
   - cell-biology/immune-signaling
 created: 2024-05-18T08:33:34
-modified: "2026-04-21T10:30:31"
+modified: "2026-10-09T06:14:45"
 ---
 #### Summary
-**[[tags/antibodies|Antibodies]] and [[B-cell receptors]] have different binding kinetics.** This is due to the latter being on a 2D membrane [@garciasanchez2023].
+**Antibodies and [[B-cell receptors]] have different binding kinetics.** This is due to the latter being on a 2D membrane [@garciasanchez2023].
 
 #### Figures
 ![[Ab-BCR-binding-kinetics.png]]

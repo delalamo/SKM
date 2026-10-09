@@ -3,10 +3,10 @@ tags:
   - design/developability
   - antibodies/recognition
 created: "2024-04-15T02:57:00"
-modified: "2026-08-25T12:02:05"
+modified: "2026-10-09T06:14:45"
 ---
 #### Summary
-**[[tags/antibodies|Antibody]] [[notes/Antibody developability|hydrophobicity]] and [[notes/Antibody developability|polyreactivity]] sometimes correlate, but that varies between datasets** [@shehata2019; @chen2024polyreactivity].
+**Antibody [[notes/Antibody developability|hydrophobicity]] and [[notes/Antibody developability|polyreactivity]] sometimes correlate, but that varies between datasets** [@shehata2019; @chen2024polyreactivity].
 
 #### Details
 In B cell-derived mAbs analyzed by Shehata et al., HIC retention time and PSR score were only weakly coupled ($R^2 = 0.1249$). A larger human-antibody study instead found that heavy-chain CDR hydrophobicity and positive charge were associated with polyreactivity [@chen2024polyreactivity].

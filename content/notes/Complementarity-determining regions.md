@@ -4,12 +4,12 @@ tags:
   - antibodies/architecture
   - antibodies/recognition
 created: 2026-04-10T14:02:57
-modified: "2026-04-21T07:28:09"
+modified: "2026-10-09T06:14:45"
 review:
   - "citation-fix"
 ---
 
-The **complementarity-determining regions** of [[tags/antibodies|antibodies]], abbreviated **CDRs** and sometimes collectively called **hypervariable regions**, are loops that mediate binding to antigens. They are the most difficult part of the protein to predict and get fine-tuned by [[notes/Affinity maturation|affinity maturation]] and [[Somatic hypermutation|somatic hypermutation]].
+The **complementarity-determining regions** of antibodies, abbreviated **CDRs** and sometimes collectively called **hypervariable regions**, are loops that mediate binding to antigens. They are the most difficult part of the protein to predict and get fine-tuned by [[notes/Affinity maturation|affinity maturation]] and [[Somatic hypermutation|somatic hypermutation]].
 
 ### General observations
 #### Confomational clustering
@@ -50,7 +50,7 @@ The **complementarity-determining regions** of [[tags/antibodies|antibodies]], a
 *Also known as the DE loop*
 * Sequence variation in the DE loop exceeds that of the framework
 * Length variation found in [[Broadly neutralizing antibodies|broadly neutralizing antibodies]]
-* **Also known as the DE motif, since it connects the D and E strands of [[tags/antibodies|Antibodies]]; the name CDR4 is less common.**
+* **Also known as the DE motif, since it connects the D and E strands of Antibodies; the name CDR4 is less common.**
 * **PyIgClassify2 found four distinct clusters for length-6 light chain.** Two of these with exclusively [[notes/Light chains#Kappa subtype|kappa subtype]], one exclusively with [[notes/Light chains#Lambda subtype|lambda subtype]], and one mixed with both; almost all heavy chain structures have length-8 CDR4 and co-cluster [@kelow2020; @kelow2022].
 * **Also used in [[Nanobodies]] and can be engineered to improve binding** [@ketaren2023]
 * **Fernandez-Quintero et al. [@fernandezquintero2020] and Kelow et al. [@kelow2020] found that this can modulate the conformation of other CDRs, particularly CDRL1**

@@ -4,12 +4,12 @@ tags:
   - training/pretraining-and-scaling
   - evidence/datasets
 created: "2026-06-23"
-modified: "2026-09-25"
+modified: "2026-10-09T06:14:45"
 ---
 
 #### Summary
 
-**[[tags/antibodies|Antibody]]-antigen complex prediction appears to scale with training data and compute.** Co-folding performance appears to follow a scaling law dependent on both training data and compute [@jing2026]. High-quality synthetic antibody-antigen complexes supplied during training contribute to this performance [@torchfold2026].
+**Antibody-antigen complex prediction appears to scale with training data and compute.** Co-folding performance appears to follow a scaling law dependent on both training data and compute [@jing2026]. High-quality synthetic antibody-antigen complexes supplied during training contribute to this performance [@torchfold2026].
 
 #### Figures
 

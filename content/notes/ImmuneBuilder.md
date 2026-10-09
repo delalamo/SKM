@@ -1,12 +1,12 @@
 ---
 title: ImmuneBuilder
 created: 2026-04-10T14:30:55
-modified: "2026-04-21T07:28:09"
+modified: "2026-10-09T06:14:45"
 tags:
   - prediction/antibody-structure
 ---
 
-**ImmuneBuilder** is an [[notes/Antibody structure prediction|Antibody structure prediction]] method consisting of ABodyBuilder2 for [[tags/antibodies|antibodies]], NanoBodyBuilder2 for [[Nanobodies|nanobodies]], and TCRBuilder2 for [[T-cell receptors|TCRs]] [@abanades2023].
+**ImmuneBuilder** is an [[notes/Antibody structure prediction|Antibody structure prediction]] method consisting of ABodyBuilder2 for antibodies, NanoBodyBuilder2 for [[Nanobodies|nanobodies]], and TCRBuilder2 for [[T-cell receptors|TCRs]] [@abanades2023].
 
 #### Details
 

@@ -4,12 +4,12 @@ tags:
   - biophysics/molecular-simulation
   - design/developability
 created: "2024-08-22T05:13:06"
-modified: "2026-04-21T07:28:09"
+modified: "2026-10-09T06:14:45"
 ---
 
 #### Summary
 
-**[[tags/antibodies|Antibody]] [[notes/Antibody developability|developability]] predictions from computational models are highly sensitive to the method used to [[notes/Antibody structure prediction|predict the structure]]** ([@bashour2024], Victor Greiff's EMBL-EBI presentation, 2024). The use of short [[MD simulations]] can be used to partially offset this and will lead to distributions of predictions that match experimental distributions, but it's unclear if this is addressed at the per-antibody level.
+**Antibody [[notes/Antibody developability|developability]] predictions from computational models are highly sensitive to the method used to [[notes/Antibody structure prediction|predict the structure]]** ([@bashour2024], Victor Greiff's EMBL-EBI presentation, 2024). The use of short [[MD simulations]] can be used to partially offset this and will lead to distributions of predictions that match experimental distributions, but it's unclear if this is addressed at the per-antibody level.
 
 #### Figures
 

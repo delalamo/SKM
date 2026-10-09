@@ -5,12 +5,12 @@ tags:
   - antibodies/recognition
   - cell-biology/immune-signaling
 created: "2026-10-07"
-modified: "2026-10-07T08:58:18"
+modified: "2026-10-09T06:14:45"
 ---
 
 #### Summary
 
-**Between 55–75% of [[tags/antibodies|antibodies]] expressed by early immature human [[B cells]] recognize self-antigens**, including polyreactive and antinuclear specificities [@wardemann2003]. Most are removed at two developmental checkpoints.
+**Between 55–75% of antibodies expressed by early immature human [[B cells]] recognize self-antigens**, including polyreactive and antinuclear specificities [@wardemann2003]. Most are removed at two developmental checkpoints.
 
 #### See also
 

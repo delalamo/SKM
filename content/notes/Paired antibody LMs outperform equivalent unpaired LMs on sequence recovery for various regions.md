@@ -4,10 +4,10 @@ tags:
   - antibodies/architecture
   - evidence/datasets
 created: "2026-04-05T17:10:58"
-modified: "2026-04-21T07:28:09"
+modified: "2026-10-09T06:14:45"
 ---
 #### Summary
-**[[tags/antibodies|Antibody]] [[notes/Protein language models|language models]] trained on paired [[Heavy chains|heavy]] and [[notes/Light chains|light]] chains outperform equivalent models trained only on unpaired data** [@kenlay2024large]. They also outperform generic PLMs.
+**Antibody [[notes/Protein language models|language models]] trained on paired [[Heavy chains|heavy]] and [[notes/Light chains|light]] chains outperform equivalent models trained only on unpaired data** [@kenlay2024large]. They also outperform generic PLMs.
 
 #### Figures
 

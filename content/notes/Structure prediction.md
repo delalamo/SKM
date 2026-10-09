@@ -5,7 +5,7 @@ aliases:
   - "Structure prediction"
   - "tags/structure-prediction"
 created: "2026-04-10T14:02:57"
-modified: "2026-10-07T09:15:08"
+modified: "2026-10-09T06:14:45"
 tags:
   - prediction/structure
 ---
@@ -31,7 +31,7 @@ tags:
 - **EquiFold**: a method that needs to be fine-tuned on specific families of proteins
 - **EigenFold**: a method that uses diffusion to model the dynamics of proteins, albeit unsuccessfully
 
-#### For [[tags/antibodies|antibodies]]
+#### For antibodies
 
 _See [[notes/Antibody structure prediction|Antibody structure prediction]]_
 

@@ -4,10 +4,10 @@ tags:
   - design/developability
   - antibodies/maturation
 created: "2024-09-19T05:32:41"
-modified: "2026-04-21T07:28:09"
+modified: "2026-10-09T06:14:45"
 ---
 #### Summary
-**[[tags/antibodies|Antibodies]] from naive [[notes/B cells|B cells]] are more [[notes/Antibody developability|polyreactive]] than those from memory B cells or those that have been clinically approved** [@shehata2019].
+**Antibodies from naive [[notes/B cells|B cells]] are more [[notes/Antibody developability|polyreactive]] than those from memory B cells or those that have been clinically approved** [@shehata2019].
 
 #### Figures
 ![[Pasted-image-20240119161818.png]]
