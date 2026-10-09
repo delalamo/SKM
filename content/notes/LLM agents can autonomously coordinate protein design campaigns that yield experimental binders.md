@@ -21,7 +21,7 @@ modified: "2026-10-09T06:13:32"
 
 #### See Also
 
-- [[Ensembling structure prediction methods for filtering improves recovery]] — the separate result about the campaign's scoring tools.
+- [[Ensembling structure prediction methods for filtering improves recovery]]
 - [[LLM-proposed antibody mutations can yield binders when guided by structural feedback]]
 - [[General-purpose language models can propose ligand binders but do not reliably satisfy design constraints]]
 - [[Effectiveness of filtering metrics for de novo minibinder design vary by target]]
