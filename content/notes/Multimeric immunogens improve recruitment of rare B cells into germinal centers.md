@@ -10,7 +10,7 @@ modified: "2026-10-07T08:58:20"
 
 #### Summary
 
-**Multimeric immunogens can improve recruitment of rare [[B cells]] into germinal centers during [[Affinity maturation|affinity maturation]]** [@abbott2018]. In a mouse VRC01-class germline-targeting experiment, monomer immunization produced 200–500-fold lower targeted B-cell germinal-center occupancy than 60-mer immunization.
+**Multimeric immunogens can improve recruitment of rare [[B cells]] into germinal centers during [[Affinity maturation|affinity maturation]]** [@abbott2018]. In a mouse VRC01-class germline-targeting experiment, monomer immunization produced 200–500-fold lower targeted B-cell germinal-center occupancy than 60-mer immunization. This is presumably due to avidity.
 
 #### See also
 
