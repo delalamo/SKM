@@ -5,12 +5,12 @@ aliases:
   - "Developability"
   - "tags/antibody-developability"
 created: 2026-04-05T23:36:09
-modified: "2026-10-09T06:14:45"
+modified: "2026-10-05T20:20:15"
 tags:
   - design/developability
 ---
 
-Antibody developability refers to a series of properties linked to the development of antibodies as therapeutics. These arise because natural antibodies do not possess them to begin with, or because they arise during optimization as a consequence of affinity maturation via techniques such as [[Display methods|Yeast display]].
+[[tags/antibodies|Antibody]] developability refers to a series of properties linked to the development of antibodies as therapeutics. These arise because natural antibodies do not possess them to begin with, or because they arise during optimization as a consequence of affinity maturation via techniques such as [[Display methods|Yeast display]].
 
 #### General observations
 

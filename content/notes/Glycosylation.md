@@ -2,9 +2,9 @@
 tags:
   - design/developability
 created: 2026-04-10T14:30:55
-modified: "2026-10-09T06:14:45"
+modified: "2026-04-21T07:28:09"
 review:
   - "citation-fix"
 ---
 
-**Glycosylation** refers to the post-translation addition of sugars to amino acids. Antibodies are naturally glycosylated but as therapeutics are sensitive to the addition of more sugar groups. N-linked glycosylation sites include NG and N-!P-S/T-N where (!P is not Pro) [@tennenhouse2023], while O-linked glycosylation sites include T-V-X-P and S/T-P-X-P where X is anything** [@christlet2001].
+**Glycosylation** refers to the post-translation addition of sugars to amino acids. [[tags/antibodies|Antibodies]] are naturally glycosylated but as therapeutics are sensitive to the addition of more sugar groups. N-linked glycosylation sites include NG and N-!P-S/T-N where (!P is not Pro) [@tennenhouse2023], while O-linked glycosylation sites include T-V-X-P and S/T-P-X-P where X is anything** [@christlet2001].

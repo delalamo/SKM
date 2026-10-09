@@ -6,12 +6,12 @@ tags:
   - biophysics/dynamics
   - evidence/measurements
 created: "2026-09-15"
-modified: "2026-10-09T06:14:45"
+modified: "2026-10-07"
 ---
 
 #### Summary
 
-**Some antibodies can adopt closed, inactive conformations in which the [[Fab]] arms fold over the Fc region, shielding sites involved in effector functions** [@chrone2026]. In this model, inactivity concerns Fc-mediated effector activity; the antigen-binding sites can remain exposed.
+**Some [[tags/antibodies|antibodies]] can adopt closed, inactive conformations in which the [[Fab]] arms fold over the Fc region, shielding sites involved in effector functions** [@chrone2026]. In this model, inactivity concerns Fc-mediated effector activity; the antigen-binding sites can remain exposed.
 
 #### Details
 

@@ -3,12 +3,12 @@ title: Sources of sequence diversity in antibodies
 tags:
   - antibodies/repertoires
 created: 2026-04-10T14:30:55
-modified: "2026-10-09T06:14:45"
+modified: "2026-04-21T07:28:09"
 review:
   - "citation-fix"
 ---
 
-[@rees2020] outlines several sources of sequence diversity in antibodies:
+[@rees2020] outlines several sources of sequence diversity in [[tags/antibodies|antibodies]]:
 1. 1. N-nucleotide addition: Nucleotides removed at VH/DJ junction by exonucleases and new nucleotides added (no citation)
 2. P-diversity: Asymmetric nicking of hairpins at VH/DH junction to generate blunt ends that get ligated
 3. Movement of D-gene nucleotides into new reading frames. Occurs in mice but rare in humans

@@ -3,12 +3,12 @@ title: De novo antibody design
 tags:
   - design/antibodies
 created: 2026-04-10T14:30:55
-modified: "2026-10-09T06:14:45"
+modified: "2026-08-25T10:16:02"
 review:
   - "citation-fix"
 ---
 
-***De novo* antibody design** aims to create antibodies purely *in silico* that are capable of binding antigens at predefined epitopes in user-specified ways.
+***De novo* [[tags/antibodies|antibody]] design** aims to create antibodies purely *in silico* that are capable of binding antigens at predefined epitopes in user-specified ways.
 
 #### Summary of methods
 

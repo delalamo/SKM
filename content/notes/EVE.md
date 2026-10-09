@@ -1,7 +1,7 @@
 ---
 title: EVE
 created: 2026-04-10T14:02:57
-modified: "2026-10-09T06:14:45"
+modified: "2026-04-21T07:28:09"
 tags:
   - prediction/variant-effects
   - evolution/selection
@@ -14,5 +14,5 @@ EVE is a [[Variational autoencoders|VAE]]-based generative method for [[notes/Va
 
 #### Variations
 
-* **EVEscape** uses EVE results, solvent accessibility, and hydrophobicity/charge changes to predict the probability of specific amino acids to occur during antibody escape of viral proteins [@thadani2023]. It was spplied to the [[Spike protein]] of [[SARS-CoV-2]].
+* **EVEscape** uses EVE results, solvent accessibility, and hydrophobicity/charge changes to predict the probability of specific amino acids to occur during [[tags/antibodies|antibody]] escape of viral proteins [@thadani2023]. It was spplied to the [[Spike protein]] of [[SARS-CoV-2]].
 *

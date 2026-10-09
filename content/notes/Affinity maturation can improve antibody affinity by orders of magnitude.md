@@ -4,12 +4,12 @@ tags:
   - antibodies/maturation
   - antibodies/recognition
 created: "2026-10-07"
-modified: "2026-10-09T06:14:45"
+modified: "2026-10-07T08:58:23"
 ---
 
 #### Summary
 
-**[[Affinity maturation]] can improve the binding affinity of antibodies by orders of magnitude relative to inferred [[Germline|germline]] precursors** [@sprumont2023]. Some influenza-antibody lineages showed approximately 100–1,000-fold gains, although the magnitude varied across lineages.
+**[[Affinity maturation]] can improve the binding affinity of [[tags/antibodies|antibodies]] by orders of magnitude relative to inferred [[Germline|germline]] precursors** [@sprumont2023]. Some influenza-antibody lineages showed approximately 100–1,000-fold gains, although the magnitude varied across lineages.
 
 #### See also
 

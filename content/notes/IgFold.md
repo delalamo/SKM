@@ -1,13 +1,13 @@
 ---
 title: IgFold
 created: 2026-04-10T14:30:55
-modified: "2026-10-09T06:14:45"
+modified: "2026-04-21T07:28:09"
 tags:
   - prediction/antibody-structure
   - model-design/architectures
 ---
 
-**IgFold** is an antibody [[notes/Antibody structure prediction|structure prediction]] method that uses embeddings from the AntiBERTy [@ruffolo2021] and extensively uses [[Invariant point attention|invariant point attention]] [@ruffolo2023].
+**IgFold** is an [[tags/antibodies|antibody]] [[notes/Antibody structure prediction|structure prediction]] method that uses embeddings from the AntiBERTy [@ruffolo2021] and extensively uses [[Invariant point attention|invariant point attention]] [@ruffolo2023].
 
 #### Details
 

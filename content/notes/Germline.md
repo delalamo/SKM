@@ -1,12 +1,12 @@
 ---
 title: Germline
 created: 2026-04-10T14:30:55
-modified: "2026-10-09T06:14:45"
+modified: "2026-04-21T07:28:09"
 tags:
   - antibodies/repertoires
 ---
 
-**Germline** antibodies are antibodies that have not been subject to [[Somatic hypermutation|somatic hypermutation]].
+**Germline** [[tags/antibodies|antibodies]] are antibodies that have not been subject to [[Somatic hypermutation|somatic hypermutation]].
 
 #### Details
 ###### V-genes
