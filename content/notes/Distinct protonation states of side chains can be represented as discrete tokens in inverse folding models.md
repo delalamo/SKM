@@ -4,7 +4,7 @@ tags:
   - design/inverse-folding
   - design/binders
 created: "2026-10-07"
-modified: "2026-10-07T08:57:09"
+modified: "2026-10-09T04:56:38"
 ---
 
 #### Summary
@@ -26,7 +26,3 @@ _Ref [@jacobsen2026]_
 #### See also
 
 - [[Sequence recovery in inverse folding models is not correlated with self-consistency of generated designs]]
-
-#### Sources
-
-- [Source issue #1027](https://github.com/delalamo/SKM/issues/1027).

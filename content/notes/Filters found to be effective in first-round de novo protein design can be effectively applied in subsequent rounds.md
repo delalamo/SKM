@@ -4,7 +4,7 @@ tags:
   - design/enzymes
   - evidence/design-validation
 created: "2026-10-07"
-modified: "2026-10-07T08:57:08"
+modified: "2026-10-09T04:56:38"
 ---
 
 #### Summary
@@ -15,7 +15,3 @@ modified: "2026-10-07T08:57:08"
 
 - [[Effectiveness of filtering metrics for de novo minibinder design vary by target]]
 - [[Most ML quality metrics cannot effectively predict enzyme activity after controlling for similarity to native]]
-
-#### Sources
-
-- [Source issue #1033](https://github.com/delalamo/SKM/issues/1033).

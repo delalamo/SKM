@@ -5,7 +5,7 @@ tags:
   - evidence/measurements
   - evidence/datasets
 created: "2026-10-07"
-modified: "2026-10-07T08:57:01"
+modified: "2026-10-09T04:56:38"
 ---
 
 #### Summary
@@ -17,7 +17,3 @@ modified: "2026-10-07T08:57:01"
 - [[Focused protein sequence libraries are poor training sets]]
 - [[Fitness landscapes are locally smooth but globally rugged]]
 - [[Not all sequences with improved activity have plausible evolutionary paths via stepwise introduction of mutations]]
-
-#### Sources
-
-- [Source issue #1051](https://github.com/delalamo/SKM/issues/1051).

@@ -4,7 +4,7 @@ tags:
   - design/enzymes
   - evidence/design-validation
 created: "2026-10-07"
-modified: "2026-10-07T09:15:08"
+modified: "2026-10-09T04:56:38"
 ---
 
 #### Summary
@@ -26,7 +26,3 @@ _Ref [@wu2026_B]_
 - [[Partial structure diffusion can make de novo backbones more designable]]
 - [[Most ML quality metrics cannot effectively predict enzyme activity after controlling for similarity to native]]
 - [[Multiple-seed forward folding marginally improves precision on de novo designed enzymes]]
-
-#### Sources
-
-- [Source issue #982](https://github.com/delalamo/SKM/issues/982).
