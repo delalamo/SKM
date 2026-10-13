@@ -9,7 +9,7 @@ review:
   - "citation-fix"
 ---
 
-The **complementarity-determining regions** of [[tags/antibodies|antibodies]], abbreviated **[[CDR definitions|CDRs]]** and sometimes collectively called **hypervariable regions**, are loops that mediate binding to antigens. They are the most difficult part of the protein to predict and get fine-tuned by [[notes/Affinity maturation|affinity maturation]] and [[Somatic hypermutation|somatic hypermutation]].
+The **complementarity-determining regions** of [[tags/antibodies|antibodies]], abbreviated **CDRs** and sometimes collectively called **hypervariable regions**, are loops that mediate binding to antigens. They are the most difficult part of the protein to predict and get fine-tuned by [[notes/Affinity maturation|affinity maturation]] and [[Somatic hypermutation|somatic hypermutation]].
 
 ### General observations
 #### Confomational clustering
