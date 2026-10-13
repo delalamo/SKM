@@ -3,7 +3,7 @@ tags:
   - prediction/complexes
   - evidence/generalization
 created: "2026-09-25"
-modified: "2026-09-28T18:18:21"
+modified: "2026-10-09T06:13:32"
 ---
 
 #### Summary
@@ -26,5 +26,4 @@ For TorchFold, ranked success at [[DockQ]] > 0.23 fell across the following bins
 
 - [[Antigen size biases AlphaFold3 antibody-antigen confidence]] — confidence distributions rather than DockQ recovery.
 - [[ipTM is sensitive to construct length even when predicted interfaces are unchanged]] — score changes with an unchanged binding mode.
-- [[tags/antibodies/recognition|Antibody–antigen interactions]]
 - [[Protein-protein interactions]]

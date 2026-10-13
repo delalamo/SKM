@@ -110,6 +110,7 @@ Tag the question or finding, then add up to two substantive connections. Keep no
 | `inference/sampling-and-search` | Exploring candidate sequences, structures, or designs through sampling, recycles, decoding order, search algorithms, and increased inference compute. Physical MD sampling stays under biophysics/molecular-simulation. |
 | `inference/guidance`            | Steering a fixed model with rewards, constraints, gradients, activation edits, or importance reweighting. Backpropagation to an input is not model fine-tuning.                                                         |
 | `inference/ensembling`          | Combining predictions, scores, prompts, or samples from multiple model runs. Weight merging is documented separately under training/fine-tuning.                                                                        |
+| `inference/llm-science`         | Using general-purpose text language models to evaluate scientific evidence, propose scientific candidates, and coordinate scientific tools or research workflows. Specialist sequence and structure models use the relevant prediction or design tags. |
 
 ### model-design
 
