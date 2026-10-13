@@ -4,7 +4,7 @@ tags:
   - inference/feature-extraction
   - design/developability
 created: "2026-04-05T17:07:03"
-modified: "2026-07-28T14:12:17"
+modified: "2026-10-13T13:04:54"
 ---
 #### Summary
 **[[tags/antibodies|Antibody]]-specific [[notes/Protein language models|protein language models]] are worse for antibody [[notes/Antibody developability|expression prediction]] than generic [[notes/Protein language models|PLMs]]** [@kenlay2024large].
@@ -26,3 +26,4 @@ modified: "2026-07-28T14:12:17"
 #### See also
 - [[Antibody LMs outperform generic PLMs on intrafamily thermostability prediction]]
 - [[Random splits overestimate protein language model generalization on antibody expression prediction]]
+- [[Unmodified zero-shot PLM scores struggle to prioritize functional novelty and exceptionally fit variants]]

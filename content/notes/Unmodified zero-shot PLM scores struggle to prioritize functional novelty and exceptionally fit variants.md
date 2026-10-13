@@ -7,7 +7,7 @@ tags:
   - prediction/variant-effects
   - evidence/design-validation
 created: "2026-06-23"
-modified: "2026-09-25"
+modified: "2026-10-13T13:17:29"
 ---
 
 #### Summary
@@ -31,3 +31,5 @@ This bias can be overcome by subtracting PLM log-likelihoods from PSSM-derived l
 * [[Protein language models are better zero-shot predictors for ranking closely related sequences than distantly related sequences]]
 * [[Fitness prediction]]
 * [[Unbalanced composition of sequence data prevents protein fitness from being identifiable from sequence data alone]]
+* [[Generic PLMs outperform antibody-specific PLMs on zero-shot predictions of affinity changes]]
+* [[Antibody LMs are worse for expression prediction than generic PLMs]]
