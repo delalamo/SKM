@@ -1,0 +1,103 @@
+name: Find related notes with Codex
+
+on:
+  workflow_call:
+    inputs:
+      pr:
+        type: string
+        required: true
+    secrets:
+      OPENAI_API_KEY:
+        required: false
+  issue_comment:
+    types: [created]
+  # Only trusted default-branch scripts run; PR blobs are read as data via API.
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "content/notes/**.md"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: codex-related-${{ inputs.pr || github.event.pull_request.number || github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  find:
+    if: >-
+      inputs.pr != '' || github.event_name == 'pull_request_target' ||
+      (github.event.issue.pull_request && github.event.comment.body == '/codex related-notes')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pull-requests: read
+    outputs:
+      message: ${{ steps.codex.outputs.final-message }}
+      pr: ${{ steps.prepare.outputs.pr }}
+      sha: ${{ steps.prepare.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+      - uses: actions/github-script@v7
+        id: prepare
+        env:
+          PR_NUMBER: ${{ inputs.pr || github.event.pull_request.number || github.event.issue.number }}
+        with:
+          script: |
+            const { prepareRelated } = await import(`${process.env.GITHUB_WORKSPACE}/scripts/github/notes.mjs`);
+            await prepareRelated({ github, context, core, number: process.env.PR_NUMBER,
+              automatic: context.eventName === 'pull_request_target' });
+      - name: Check Codex configuration
+        if: steps.prepare.outputs.ready == 'true'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo '::error::Set the OPENAI_API_KEY repository secret to enable related-note searches. The imported PR is preserved.'
+            exit 1
+          fi
+      - name: Find connections
+        if: steps.prepare.outputs.ready == 'true'
+        id: codex
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          prompt-file: .github/codex/related-notes.md
+          sandbox: read-only
+          safety-strategy: drop-sudo
+
+  comment:
+    needs: find
+    if: needs.find.outputs.message != ''
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/github-script@v7
+        env:
+          MESSAGE: ${{ needs.find.outputs.message }}
+          PR_NUMBER: ${{ needs.find.outputs.pr }}
+          HEAD_SHA: ${{ needs.find.outputs.sha }}
+        with:
+          script: |
+            const issue_number = Number(process.env.PR_NUMBER);
+            const { data: pr } = await github.rest.pulls.get({ ...context.repo, pull_number: issue_number });
+            if (pr.state !== 'open' || pr.head.sha !== process.env.HEAD_SHA) {
+              core.notice('The PR changed during analysis; discarding outdated results.');
+              return;
+            }
+            const marker = '<!-- codex-related-notes -->';
+            const body = `${marker}\n## Related notes and See Also suggestions\n\nAnalyzed commit ${process.env.HEAD_SHA}. Suggestions only; this analysis did not edit note text.\n\n${process.env.MESSAGE}`;
+            if (body.length > 60000) throw new Error('Related-note report exceeds comment limit.');
+            const comments = await github.paginate(github.rest.issues.listComments, { ...context.repo, issue_number, per_page: 100 });
+            const previous = comments.find(c => c.user.login === 'github-actions[bot]' && c.body.startsWith(marker));
+            if (previous) {
+              await github.rest.issues.updateComment({ ...context.repo, comment_id: previous.id, body });
+            } else {
+              await github.rest.issues.createComment({ ...context.repo, issue_number, body });
+            }
