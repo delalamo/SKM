@@ -121,3 +121,14 @@ def test_sensitive_paperbot_paths_require_maintainer_code_ownership() -> None:
     "/tests/paperbot/",
   ):
     assert rules[path] == ("@delalamo",)
+
+
+def test_discovery_loads_retained_reports_before_daily_fetch() -> None:
+  workflow = yaml.safe_load(Path(".github/workflows/paper-discovery.yml").read_text())
+  assert workflow["permissions"]["actions"] == "read"
+  steps = workflow["jobs"]["discover"]["steps"]
+  daily = next(step for step in steps if step.get("id") == "daily")
+  script = daily["run"]
+  assert script.index("scripts.paperbot.recovery") < script.index('args+=(--history-dir')
+  assert script.index('args+=(--history-dir') < script.index('python -m scripts.paperbot "${args[@]}"')
+  assert '[[ -z "${PAPERBOT_SINCE:-}" && -z "${PAPERBOT_UNTIL:-}" ]]' in script
