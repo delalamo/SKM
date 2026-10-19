@@ -90,6 +90,7 @@ def build_parser() -> argparse.ArgumentParser:
   daily.add_argument("--since", help="exact manual backfill start (ISO 8601)")
   daily.add_argument("--until", help="exact manual backfill end (ISO 8601)")
   daily.add_argument("--dry-run", action="store_true")
+  daily.add_argument("--history-dir", type=Path, help="directory of previous daily JSON reports")
   daily.add_argument("--report", type=Path, help="write the complete JSON run report")
   daily.add_argument(
     "--project-queue",
@@ -208,8 +209,15 @@ def main(argv: Sequence[str] | None = None) -> int:
         ncbi_api_key=os.getenv("NCBI_API_KEY", ""),
         github_client=client,
         defer_project=bool(args.project_queue and project_enabled),
+        previous_reports=(
+          [json.loads(path.read_text(encoding="utf-8"))
+           for path in sorted(_resolve_output(root, args.history_dir).glob("*.json"))]
+          if args.history_dir and not args.since else ()
+        ),
       )
       payload = result.to_dict()
+      if args.report:
+        _write_json(_resolve_output(root, args.report), payload)
       if args.project_queue and project_enabled:
         queue = write_project_queue(
           client,

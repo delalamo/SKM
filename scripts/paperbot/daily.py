@@ -35,6 +35,7 @@ from .github import (
   upsert_paper_issue,
 )
 from .model import LoadedModel, Specter2Encoder, load_model, score_documents
+from .recovery import arxiv_recovery_window
 from .records import PaperRecord, first_author_key, normalize_title
 from .sources import FetchReport, FetchWindow, SourceFailure, fetch_all_sources
 
@@ -134,6 +135,7 @@ class DailyResult:
   candidates: tuple[CandidateResult, ...]
   feed_errors: tuple[Mapping[str, Any], ...]
   publish_errors: tuple[str, ...]
+  arxiv_query_since: str = ""
 
   @property
   def blocking_feed_errors(self) -> tuple[Mapping[str, Any], ...]:
@@ -161,6 +163,7 @@ class DailyResult:
       "as_of": self.as_of,
       "logical_since": self.logical_since,
       "query_since": self.query_since,
+      "arxiv_query_since": self.arxiv_query_since or self.query_since,
       "dry_run": self.dry_run,
       "model_hash": self.model_hash,
       "source_counts": dict(self.source_counts),
@@ -187,6 +190,7 @@ def run_daily(
   github_client: GitHubClient | None = None,
   project_client: ProjectClient | None = None,
   defer_project: bool = False,
+  previous_reports: Iterable[Mapping[str, Any]] = (),
 ) -> DailyResult:
   """Run one idempotent discovery tranche.
 
@@ -213,11 +217,13 @@ def run_daily(
 
   client = github_client or GitHubClient(config.repository, github_token)
   issue_index = load_managed_issues(client)
+  arxiv_window = arxiv_recovery_window(window, previous_reports)
   report = fetch_report or fetch_all_sources(
     window,
     contact_email=config.contact_email,
     ncbi_api_key=ncbi_api_key,
     known_pubmed_ids=_managed_pubmed_ids(issue_index),
+    arxiv_window=arxiv_window,
   )
   bibliography = BibliographyIndex.load(config.bibliography_path)
   candidates = _prepare_candidates(report.records, bibliography, issue_index, model.model_hash)
@@ -330,6 +336,7 @@ def run_daily(
     )
 
   return DailyResult(
+    arxiv_query_since=arxiv_window.query_since.isoformat(),
     as_of=window.until.isoformat(),
     logical_since=window.logical_since.isoformat(),
     query_since=window.query_since.isoformat(),

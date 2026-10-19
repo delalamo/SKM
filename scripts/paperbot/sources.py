@@ -1683,6 +1683,7 @@ def fetch_all_sources(
   ncbi_api_key: str = "",
   known_pubmed_ids: Iterable[str] = (),
   fetchers: Mapping[str, Fetcher] | None = None,
+  arxiv_window: FetchWindow | None = None,
   provider_retry_delays: Sequence[float] = PROVIDER_RETRY_DELAYS,
   sleep: Callable[[float], None] = time.sleep,
 ) -> FetchReport:
@@ -1714,7 +1715,8 @@ def fetch_all_sources(
   results: list[SourceResult] = []
   for name, fetcher in providers.items():
     print(f"paperbot: fetching {name}", flush=True)
-    source_result = _fetch_source(name, fetcher, window, http)
+    source_window = arxiv_window if name == "arxiv" and arxiv_window else window
+    source_result = _fetch_source(name, fetcher, source_window, http)
     print(
       f"paperbot: completed {name}: {len(source_result.records)} records, "
       f"{len(source_result.errors)} errors",
@@ -1729,7 +1731,7 @@ def fetch_all_sources(
         flush=True,
       )
       sleep(delay)
-      retried = _fetch_source(name, fetcher, window, http)
+      retried = _fetch_source(name, fetcher, source_window, http)
       source_result = SourceResult(
         name,
         records=deduplicate_records([*source_result.records, *retried.records]),

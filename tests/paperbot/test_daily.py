@@ -527,3 +527,26 @@ def test_project_queue_refuses_stale_open_issue_after_partial_rescore(
       repository="delalamo/SKM",
       model_hash="new-model",
     )
+
+
+def test_daily_uses_and_reports_arxiv_recovery_window(tmp_path: Path) -> None:
+  config = make_config(tmp_path, "")
+  window = FetchWindow.ending_at(datetime(2026, 10, 25, tzinfo=UTC))
+  failed_window = FetchWindow.ending_at(datetime(2026, 10, 19, tzinfo=UTC))
+  previous = {
+    "as_of": failed_window.until.isoformat(),
+    "logical_since": failed_window.logical_since.isoformat(),
+    "query_since": failed_window.query_since.isoformat(),
+    "feed_errors": [{"source": "arxiv", "status": 429}],
+    "source_counts": {"arxiv": 0},
+  }
+  with (
+    patch("scripts.paperbot.daily.load_model", return_value=LoadedModel(None, 0, "model")),
+    patch("scripts.paperbot.daily.fetch_all_sources", return_value=FetchReport(window, (), (), {"arxiv": 0})) as fetcher,
+  ):
+    result = run_daily(config, window, dry_run=True, github_token="token",
+                       github_client=MemoryIssueClient(), previous_reports=[previous])
+  assert fetcher.call_args.args[0] == window
+  assert fetcher.call_args.kwargs["arxiv_window"].query_since == failed_window.query_since
+  assert result.to_dict()["arxiv_query_since"] == failed_window.query_since.isoformat()
+  assert result.to_dict()["query_since"] == window.query_since.isoformat()
