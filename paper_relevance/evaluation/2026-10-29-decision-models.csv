@@ -1,0 +1,61 @@
+work_id,title,stratum_weight,specter2,kev_0_8b,rizzo_flow_1_7b,rizzo_flow_4b,von,von_short,laya_short,d1_omni,d1_omni_short
+doi:10.26434/chemrxiv.15011236,Foldability Is an Intrinsic Property of Protein Sequences: A Lattice Model Study with Information-Theoretic Approach and Unsupervised Machine Learning,1.0,0.9203,0.476,0.9169,0.9708,0.6501,0.6828,0.7653,0.2683,0.2985
+doi:10.64898/2026.10.28.762643,Efficient biological design via genomic in-context learning,1.0,0.8912,0.5869,0.9129,0.9783,0.6729,0.6503,0.731,0.2242,0.2764
+arxiv:2503.21450,CMADiff: Cross-Modal Aligned Diffusion for Controllable Protein Generation,1.0,0.8825,0.5154,0.9816,0.9903,0.6405,0.6622,0.8164,0.2899,0.3331
+doi:10.64898/2026.10.28.762509,Illuminating phage dark matter beyond the reach of structural alignments with PhageFlare,1.0,0.8794,0.5135,0.8576,0.9742,0.6543,0.6712,0.7354,0.3023,0.4392
+doi:10.64898/2026.10.23.761395,Multi-resolution humanness scoring of antibodies via a region-isolated language model,1.0,0.8672,0.5018,0.9268,0.9904,0.6513,0.6683,0.8307,0.3622,0.3932
+arxiv:2610.40867,GraphTFactor: A graph-based approach for proteins transcription factor prediction,1.0,0.8584,0.4172,0.8636,0.9633,0.6752,0.6742,0.7958,0.3351,0.3263
+doi:10.26434/chemrxiv.15011207,"Frozen sequence encoders with gradient boosting match the state of the art on drug–target affinity domain generalization, and a sequence defect in the Davis kinase benchmark",1.0,0.8474,0.4316,0.5735,0.957,0.6556,0.6766,0.8019,0.2085,0.4458
+doi:10.64898/2026.10.27.762236,MutQA: A Cross-Validated Q&A Dataset for Genetic Mutations,1.0,0.8408,0.4306,0.6261,0.868,0.6577,0.676,0.6762,0.2281,0.3505
+doi:10.1007/978-1-0716-5687-7_21,Using the Function Prediction Server and Queryome for Functional Protein Design.,1.0,0.8399,0.3844,0.9706,0.9707,0.6404,0.6827,0.7103,0.2485,0.393
+doi:10.26434/chemrxiv.15011267,SandCat: OpenMM Framework for Prospective Cryptic Pocket Discovery,1.0,0.8137,0.5154,0.9459,0.9811,0.6762,0.6644,0.7842,0.4709,0.3503
+doi:10.64898/2026.10.28.762481,Refactored intracellular domains enhance CAR expression and function,3.9,0.7027,0.5861,0.8893,0.9808,0.6545,0.6695,0.6614,0.3543,0.2681
+doi:10.1126/science.aen6356,Milestone cancer vaccine success leaves hard questions unanswered.,3.9,0.6629,0.4452,0.6782,0.6327,0.6229,0.6093,0.7802,0.3898,0.3747
+arxiv:2610.39295,There Is No Free Lunch in RLVR: Every pass@1 Gain Has a pass@k Price,3.9,0.6515,0.2741,0.3173,0.1315,0.6292,0.6568,0.8438,0.5117,0.2805
+doi:10.64898/2026.10.24.761522,Rugnux: from diffraction images to structure at synchrotrons and XFELs in one program,3.9,0.6443,0.5058,0.7196,0.9578,0.6759,0.6889,0.7193,0.435,0.4766
+doi:10.1021/acs.analchem.6c05321,Collision Induced Unfolding Predicts the Aggregation of Glycoengineered Monoclonal Antibodies,3.9,0.6401,0.5036,0.9409,0.9819,0.6416,0.6509,0.6696,0.2672,0.5012
+doi:10.26434/chemrxiv.15011220,Coarse-Graining in Drug Discovery: Opportunities and Challenges for Martini 3 in Small-Molecule Binding,3.9,0.6289,0.3518,0.7719,0.9622,0.645,0.6711,0.6924,0.2722,0.3018
+doi:10.1101/2025.09.08.674806,Single molecule studies of the bacterial curli protein CsgA reveal a structurally dynamic monomeric structure,3.9,0.6211,0.4669,0.7454,0.9548,0.6325,0.6215,0.6301,0.3112,0.4418
+doi:10.3324/haematol.2026.302172,Second time's the charm: B-cell maturation antigen CAR-T after GPRC5D CAR-T cells.,3.9,0.6092,0.4198,0.3378,0.976,0.5986,0.6503,0.5785,0.2965,0.3893
+doi:10.1007/978-1-0716-5687-7_19,An Effective Pipeline to Develop Modification-Specific Intracellular Antibodies Using AI Tools.,3.9,0.6,0.6018,0.9342,0.9604,0.6665,0.7036,0.7321,0.2347,0.2674
+arxiv:2610.40254,Statistical Analysis of Synthetic Data with Verification: A Linear Regression Framework,3.9,0.5992,0.4111,0.3475,0.1172,0.6478,0.6964,0.7939,0.485,0.4292
+doi:10.1007/978-1-0716-5567-2_25,Large Language Models in RNA-RNA Interaction Prediction.,3.9,0.587,0.4937,0.8634,0.4945,0.655,0.6621,0.7168,0.3174,0.4013
+doi:10.26434/chemrxiv.15009546,Revisiting Artifact Suppression in Electrospray Ionization Deconvolution,3.9,0.5842,0.3673,0.2115,0.4289,0.6632,0.7058,0.7032,0.4895,0.3541
+doi:10.1016/j.jmgm.2026.109639,"Pose-recovery-qualified multi-conformer, multi-seed docking prioritizes GalA2 as a structural hypothesis for human N-terminal maltase-glucoamylase.",3.9,0.5802,0.3505,0.8531,0.9778,0.6111,0.6563,0.7471,0.4161,0.2495
+doi:10.64898/2026.10.27.762310,Vault Packaging Dynamics: Cargo Loading Stabilizes MVP Conformation for High-Payload Cytokine Delivery in Cancer Therapy,3.9,0.5664,0.4244,0.9278,0.9792,0.6856,0.6542,0.4675,0.4174,0.3663
+arxiv:2608.19491,Activation-Keyed Momentum: An Anisotropic Momentum Update via the Delta Rule,3.9,0.5593,0.4365,0.6887,0.4094,0.6658,0.6936,0.8179,0.3144,0.4275
+doi:10.1007/978-1-0716-5567-2_18,Graph Neural Networks for Structure-Aware RNA-RNA Interaction Modeling.,3.9,0.5481,0.4306,0.9451,0.7994,0.6662,0.6689,0.8527,0.244,0.3261
+arxiv:2610.39614,Emergence of the transformer architecture as the score of entropic laws of random measures,3.9,0.5381,0.3105,0.5931,0.7381,0.6164,0.6737,0.7595,0.3629,0.282
+arxiv:2609.17474,Iterative Calibration and Learning: Mitigating Teacher Bias in LLM Distillation without Target-Domain Reward Feedback,3.9,0.5349,0.4633,0.5284,0.3337,0.655,0.6649,0.8669,0.3149,0.2705
+doi:10.64898/2026.10.26.761778,A computational investigation of pathways for ex vivo differentiation and dysfunction of healthy and patient T cells,3.9,0.5346,0.3998,0.7954,0.8236,0.6475,0.6792,0.6788,0.2326,0.3463
+doi:10.1371/journal.pbio.3004064,Full-length genomes evolve in parallel in a long-term evolution experiment with phage φX174.,3.9,0.515,0.4174,0.8351,0.8876,0.6114,0.6461,0.6847,0.375,0.2634
+doi:10.64898/2026.10.28.762484,Customizable bead-based platform for EV surface protein immunocapture and detection in plasma,30.6,0.4572,0.4038,0.8705,,0.6526,0.6892,0.656,0.1915,0.3234
+doi:10.3389/fbioe.2026.1943548,Synthetic genome shuffling of poxviruses in yeast generates novel poxvirus candidates with potential oncolytic properties.,30.6,0.4467,0.4709,0.6231,,0.6731,0.6982,0.7841,0.3484,0.5433
+doi:10.64898/2026.03.23.713575,PhagePickr: A bacteria-centric computational tool for designing resistance-aware phage cocktails,30.6,0.4138,0.4828,0.9356,,0.6844,0.6608,0.7172,0.2253,0.4351
+arxiv:2610.39703,"Computing with Coupled Oscillator Networks: Optimization, Memory, and Modern AI Primitives",30.6,0.3995,0.2682,0.2169,,0.6173,0.6701,0.6322,0.2906,0.3518
+arxiv:2601.04104,Point-Group Equivariant Neural Networks for Local Dynamics in Lattice Systems,30.6,0.3553,0.356,0.6691,,0.6265,0.6487,0.8271,0.3869,0.286
+doi:10.1093/nar/gkag1022,EWSR1 associates with the 40S ribosomal subunit and represses translation to maintain endoplasmic reticulum homeostasis.,30.6,0.3151,0.403,0.709,,0.6834,0.6938,0.566,0.2449,0.4598
+doi:10.1109/tpami.2026.3748100,Towards Generalized Pedestrian Attribute Recognition Via Hierarchical Prompts and Visual-Semantic Interaction.,30.6,0.2803,0.3074,0.0242,,0.6739,0.6826,0.8145,0.3923,0.5098
+doi:10.1109/tcbbio.2026.3748139,MolCLW: Molecular Contrastive Learning With Learnable Weighted Substructures.,30.6,0.2728,0.55,0.9106,,0.6657,0.6971,0.7629,0.2311,0.4063
+arxiv:2610.39194,Zero-Complement Extrapolation: Parameter Recovery and Classification in Severely Imbalanced Logistic Regression under Rank-Deficient Regimes,30.6,0.27,0.361,0.4801,,0.6028,0.656,0.8322,0.3085,0.4518
+doi:10.21873/invivo.14506,Real-world Impact of the 21-Gene Recurrence Score on Adjuvant Treatment Decisions in Early Breast Cancer.,30.6,0.2396,0.3587,0.2954,,0.6402,0.6765,0.6118,0.3085,0.2419
+arxiv:2307.04754,Dynamic Strategy Selection,30.6,0.2392,0.3399,0.4609,,0.6432,0.6909,0.8469,0.5829,0.1473
+doi:10.2147/ijn.s642155,The Current Landscape of Exosome-Based Strategies for Breast Cancer Brain Metastasis: From Mechanistic Insights to Therapeutic Potential.,30.6,0.2389,0.3485,0.7591,,0.6667,0.6928,0.64,0.2214,0.5631
+arxiv:2610.40113,Non-Gaussian transport in tempered fractional Laplace motion,30.6,0.2335,0.3781,0.5814,,0.6765,0.6867,0.782,0.2994,0.4421
+doi:10.32687/0869-866x-2026-34-5-1261-1267,[The assessment of clinical significance of psychological counseling under genetic testing on mutations BRCA1/BRCA2].,30.6,0.2167,0.3084,0.2285,,0.6431,0.6688,0.6939,0.5395,0.379
+arxiv:2610.39540,The Cost of Working Memory in Streaming Mean Estimation,30.6,0.2027,0.2786,0.6406,,0.6552,0.675,0.8205,0.4879,0.509
+doi:10.1371/journal.pone.0361202,Coupling between adhesome assembly and 3D chromatin organization.,349.4,0.1609,0.3661,0.7844,,0.5911,0.6116,0.623,0.3114,0.3107
+doi:10.2196/101294,Supplementing the Interference Preservation Hypothesis With Motivational Interviewing-Based Feedback in a Rural Military Veteran With Moral Injury: Formative Case Study.,349.4,0.154,0.3451,0.0716,,0.6709,0.7026,0.5921,0.4409,0.3911
+doi:10.64898/2026.10.21.760751,Multimodal epi-mode 3D quantitative phase and fluorescence microscopy enables supervised volumetric virtual fluorescence in bulk tissue,349.4,0.148,0.3949,0.7622,,0.6281,0.6328,0.6373,0.2255,0.4189
+doi:10.3758/s13414-026-03367-9,Phasic alertness: Do warning tones exacerbate interference from salient distractors?,349.4,0.1301,0.3027,0.6135,,0.6364,0.684,0.6111,0.3203,0.5034
+doi:10.1007/s10147-026-03222-9,Local ablative therapy plus systemic treatment versus systemic therapy alone in oligometastatic non-small cell lung cancer: a systematic review and meta-analysis of randomized trials.,349.4,0.1126,0.3497,0.3558,,0.6638,0.6718,0.6089,0.2718,0.3132
+doi:10.1111/1742-6723.70381,Rural Pathologies: A Late Presentation Special.,349.4,0.1055,0.2963,0.15,,0.6587,0.6746,0.6316,0.3041,0.3169
+doi:10.7759/cureus.117031,Artificial Intelligence in Contemporary Dentistry: Applications Across Dental Specialties and Future Challenges.,349.4,0.0963,0.338,0.064,,0.6611,0.6898,0.7662,0.2412,0.3449
+doi:10.3389/fimmu.2026.1956268,"Telitacicept for the treatment of Sjögren's disease complicated by unilateral vocal fold immobility, severe hypergammaglobulinemia, and diabetes: a case report.",349.4,0.0785,0.4508,0.8862,,0.6486,0.6871,0.6149,0.3839,0.4382
+doi:10.3389/fpsyg.2026.1987633,Generative artificial intelligence literacy profiles differ in academic self-efficacy and subjective well-being among adolescents.,349.4,0.0722,0.2335,0.0841,,0.6769,0.6826,0.7615,0.4681,0.5301
+doi:10.3389/fvets.2026.1929108,Digital educational games in veterinary education: a scoping review with comparison to human medical education.,349.4,0.059,0.2641,0.0575,,0.6563,0.6923,0.7365,0.3541,0.4846
+doi:10.1007/s12028-026-02703-z,Systematic Review and Prognostic-Factor Meta-analysis of Residual or End-of-Treatment Hematoma Burden after Minimally Invasive Evacuation for Spontaneous Intracerebral Hemorrhage.,349.4,0.044,0.2788,0.1113,,0.6539,0.5542,0.7567,0.4012,0.4166
+doi:10.5820/aian.3302.2026.30,The Burden of Depressive Symptoms in a Cohort of American Indians During the COVID-19 Pandemic: The Strong Heart C4R Study.,349.4,0.0323,0.3264,0.0563,,0.6172,0.6702,0.5011,0.2911,0.2499
+doi:10.1080/09593985.2026.2727934,"Effect of square-stepping exercises on mobility, balance and knee joint position sense in individuals with multiple sclerosis.",349.4,0.0305,0.2317,0.1057,,0.6296,0.5752,0.6797,0.2783,0.418
+doi:10.1021/acs.jpclett.6c01989,Wavelength-Dependent Photoluminescence Mapping of Depth-Dependent Degradation Under Thermal Stress in Phenethylammonium Tetrafluoroborate Treated Perovskite Solar Cells.,349.4,0.0212,0.3155,0.0619,,0.6773,0.6392,0.6148,0.2098,0.2838
+doi:10.1002/smll.76429,Fluorinated Plastic Crystal Cation Enables Stable Inorganic-Rich Interphase in Lithium Metal Batteries.,349.4,0.0115,0.2887,0.3229,0.0181,0.6165,0.6717,0.7138,0.2461,0.4986
