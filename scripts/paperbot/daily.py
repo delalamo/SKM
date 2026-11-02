@@ -7,7 +7,7 @@ import json
 import os
 import re
 import tempfile
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
@@ -33,6 +33,13 @@ from .github import (
   rescore_managed_issues,
   sync_project,
   upsert_paper_issue,
+)
+from .jev import (
+  AbstractLookup,
+  JevDecider,
+  candidate_document,
+  fill_missing_abstracts,
+  resolver_lookup,
 )
 from .model import LoadedModel, Specter2Encoder, load_model, score_documents
 from .records import PaperRecord, first_author_key, normalize_title
@@ -134,6 +141,7 @@ class DailyResult:
   candidates: tuple[CandidateResult, ...]
   feed_errors: tuple[Mapping[str, Any], ...]
   publish_errors: tuple[str, ...]
+  decision: Mapping[str, Any] = field(default_factory=dict)
 
   @property
   def blocking_feed_errors(self) -> tuple[Mapping[str, Any], ...]:
@@ -171,6 +179,7 @@ class DailyResult:
       "feed_errors": list(self.feed_errors),
       "blocking_feed_errors": list(self.blocking_feed_errors),
       "publish_errors": list(self.publish_errors),
+      "decision": dict(self.decision),
     }
 
 
@@ -187,6 +196,9 @@ def run_daily(
   github_client: GitHubClient | None = None,
   project_client: ProjectClient | None = None,
   defer_project: bool = False,
+  jev_api_key: str = "",
+  jev_decider: JevDecider | None = None,
+  abstract_lookup: AbstractLookup | None = None,
 ) -> DailyResult:
   """Run one idempotent discovery tranche.
 
@@ -209,7 +221,15 @@ def run_daily(
   ):
     raise ValueError("PROJECTS_TOKEN is required when Project publishing is configured")
 
-  model = load_model(config.artifact_dir)
+  use_jev = config.decision_backend == "jev"
+  decision_info: dict[str, Any] = {"backend": config.decision_backend}
+  if use_jev:
+    # Fail before any write when the Jev credential or bibliography is unusable.
+    decider = jev_decider or JevDecider.from_config(config, api_key=jev_api_key)
+    model_hash = decider.model_hash
+  else:
+    model = load_model(config.artifact_dir)
+    model_hash = model.model_hash
 
   client = github_client or GitHubClient(config.repository, github_token)
   issue_index = load_managed_issues(client)
@@ -220,25 +240,57 @@ def run_daily(
     known_pubmed_ids=_managed_pubmed_ids(issue_index),
   )
   bibliography = BibliographyIndex.load(config.bibliography_path)
-  candidates = _prepare_candidates(report.records, bibliography, issue_index, model.model_hash)
+  records = list(report.records)
+  if use_jev:
+    lookup = abstract_lookup
+    if lookup is None and config.jev_fetch_missing_abstracts:
+      lookup = resolver_lookup(config.contact_email)
+    records, abstract_stats = fill_missing_abstracts(
+      records,
+      known_abstract=lambda record: _known_abstract(record, issue_index, bibliography),
+      lookup=lookup,
+    )
+    decision_info["abstracts"] = abstract_stats
+  candidates = _prepare_candidates(records, bibliography, issue_index, model_hash)
 
   stale_issues = [
     issue
     for issue in issue_index.issues
-    if issue.state == "open" and issue.meta.get("model_hash") != model.model_hash
+    if issue.state == "open" and issue.meta.get("model_hash") != model_hash
   ]
-  documents = [(_issue_title(issue), _issue_abstract(issue)) for issue in stale_issues]
-  documents.extend(
-    (candidate.record.title, candidate.record.abstract)
-    for candidate in candidates
-    if candidate.needs_score
-  )
-  scores = _score(documents, model, encoder=encoder)
+  scores: list[float | None]
+  if use_jev:
+    jev_documents: list[Mapping[str, Any]] = [
+      {"title": _issue_title(issue), "abstract": _issue_abstract(issue, required=False)}
+      for issue in stale_issues
+    ]
+    jev_documents.extend(
+      candidate_document(candidate.record)
+      for candidate in candidates
+      if candidate.needs_score
+    )
+    scores = list(decider.score(jev_documents))
+    decision_info.update(decider.report())
+  else:
+    documents = [(_issue_title(issue), _issue_abstract(issue)) for issue in stale_issues]
+    documents.extend(
+      (candidate.record.title, candidate.record.abstract)
+      for candidate in candidates
+      if candidate.needs_score
+    )
+    scores = list(_score(documents, model, encoder=encoder))
   stale_scores = {
-    issue.number: score for issue, score in zip(stale_issues, scores[: len(stale_issues)])
+    issue.number: score
+    for issue, score in zip(stale_issues, scores[: len(stale_issues)])
+    if score is not None
   }
+  undecided_stale = [
+    issue.number
+    for issue, score in zip(stale_issues, scores[: len(stale_issues)])
+    if score is None
+  ]
   candidate_scores = iter(scores[len(stale_issues) :])
-  resolved_scores: dict[str, float] = {}
+  resolved_scores: dict[str, float | None] = {}
   for candidate in candidates:
     if candidate.needs_score:
       resolved_scores[candidate.record.canonical_id] = next(candidate_scores)
@@ -261,6 +313,11 @@ def run_daily(
     )
 
   publish_errors: list[str] = []
+  if undecided_stale:
+    publish_errors.append(
+      "could not re-decide open issues: "
+      + ", ".join(f"#{number}" for number in undecided_stale)
+    )
   if not dry_run:
     ensure_paper_label(client)
     try:
@@ -269,7 +326,7 @@ def run_daily(
       rescore_managed_issues(
         client,
         lambda issue: stale_scores[issue.number],
-        model.model_hash,
+        model_hash,
         project=project,
         index=issue_index,
       )
@@ -285,11 +342,15 @@ def run_daily(
     if not candidate.needs_score:
       action = "unchanged"
       issue_number = existing.number if existing else None
+    elif score is None:
+      action = "decision-failed"
+      issue_number = existing.number if existing else None
+      publish_errors.append(f"{record.canonical_id}: no relevance decision was made")
     elif dry_run:
       if existing:
         action = "would-update"
         issue_number = existing.number
-      elif score > config.relevance_threshold:
+      elif score > config.decision_threshold:
         action = "would-create"
         issue_number = None
       else:
@@ -305,8 +366,8 @@ def run_daily(
           candidate.bibkey,
           candidate.known_bib_key,
           index=issue_index,
-          model_hash=model.model_hash,
-          cutoff=config.relevance_threshold,
+          model_hash=model_hash,
+          cutoff=config.decision_threshold,
         )
         action = upsert.action
         issue_number = upsert.issue.number if upsert.issue else None
@@ -320,7 +381,7 @@ def run_daily(
       CandidateResult(
         work_id=record.canonical_id,
         title=record.title,
-        score=score,
+        score=-1.0 if score is None else score,
         action=action,
         issue_number=issue_number,
         bibkey=candidate.bibkey,
@@ -334,14 +395,40 @@ def run_daily(
     logical_since=window.logical_since.isoformat(),
     query_since=window.query_since.isoformat(),
     dry_run=dry_run,
-    model_hash=model.model_hash,
+    model_hash=model_hash,
     source_counts=report.source_counts,
     fetched_count=len(report.records),
     stale_open_issues=len(stale_issues),
     candidates=tuple(results),
     feed_errors=tuple(_failure_dict(error) for error in report.errors),
     publish_errors=tuple(publish_errors),
+    decision=decision_info,
   )
+
+
+def decision_model_hash(config: PaperbotConfig) -> str:
+  """Return the hash identifying the configured decision procedure."""
+
+  if config.decision_backend == "jev":
+    from .jev import decision_hash
+
+    return decision_hash(config)
+  return load_model(config.artifact_dir).model_hash
+
+
+def _known_abstract(
+  record: PaperRecord, issues: ManagedIssueIndex, bibliography: BibliographyIndex
+) -> str:
+  existing = issues.find(record)
+  if existing is not None:
+    abstract = _issue_abstract(existing, required=False)
+    if abstract:
+      return abstract
+  try:
+    known = bibliography.find(record)
+  except ValueError:
+    return ""
+  return known.work.abstract if known else ""
 
 
 def _managed_pubmed_ids(issues: ManagedIssueIndex) -> tuple[str, ...]:
@@ -568,9 +655,11 @@ def _issue_title(issue: ManagedIssue) -> str:
   return title
 
 
-def _issue_abstract(issue: ManagedIssue) -> str:
+def _issue_abstract(issue: ManagedIssue, *, required: bool = True) -> str:
   match = ABSTRACT_SECTION_RE.search(issue.body)
   if not match or not match.group(1).strip():
+    if not required:
+      return ""
     raise GitHubError(f"managed issue #{issue.number} has no abstract to rescore")
   return match.group(1).strip()
 
@@ -621,6 +710,7 @@ __all__ = [
   "BibliographyIndex",
   "CandidateResult",
   "DailyResult",
+  "decision_model_hash",
   "render_paper_bibtex",
   "run_daily",
   "sync_project_queue",

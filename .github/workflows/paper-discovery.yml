@@ -55,10 +55,35 @@ jobs:
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.12"
-          cache: pip
-          cache-dependency-path: requirements-paperbot.lock
+
+      # The Jev backend is pure standard-library Python and calls TypeSafe's
+      # hosted API, so it needs no PyTorch, model download, or GPU. Only the
+      # local SPECTER2 backend installs the pinned ML stack.
+      - name: Select the relevance decision backend
+        id: backend
+        shell: bash
+        run: |
+          set -euo pipefail
+          backend=$(python -I -c 'import tomllib; print(tomllib.load(open("paperbot.toml", "rb")).get("decision", {}).get("backend", "specter2"))')
+          case "$backend" in
+            jev|specter2) echo "name=$backend" >> "$GITHUB_OUTPUT" ;;
+            *) echo "::error::Unsupported decision backend: $backend"; exit 1 ;;
+          esac
+          echo "Using the $backend decision backend"
+
+      - name: Require the Jev credential
+        if: steps.backend.outputs.name == 'jev'
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        shell: bash
+        run: |
+          if [[ -z "${TYPESAFE_API_KEY:-}" ]]; then
+            echo "::error::Add a TYPESAFE_API_KEY repository secret to use the Jev decision backend"
+            exit 1
+          fi
 
       - name: Cache SPECTER2 weights
+        if: steps.backend.outputs.name == 'specter2'
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
         with:
           path: ~/.cache/huggingface
@@ -67,12 +92,14 @@ jobs:
             ${{ hashFiles('requirements-paperbot.lock', 'paperbot.toml') }}
 
       - name: Install CPU-only PyTorch
+        if: steps.backend.outputs.name == 'specter2'
         run: >-
           python -m pip install
           --index-url https://download.pytorch.org/whl/cpu
           "torch==2.13.0"
 
       - name: Install pinned paperbot dependencies
+        if: steps.backend.outputs.name == 'specter2'
         run: python -m pip install --requirement requirements-paperbot.lock
 
       - name: Fetch and rank the daily tranche
@@ -80,6 +107,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+          PAPERBOT_METADATA_CACHE: ${{ runner.temp }}/paperbot-abstract-cache.json
           PAPERBOT_AS_OF: ${{ inputs.as_of }}
           PAPERBOT_SINCE: ${{ inputs.since }}
           PAPERBOT_UNTIL: ${{ inputs.until }}

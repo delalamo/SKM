@@ -6,8 +6,28 @@ artifacts = "paper_relevance"
 abstract_exceptions = "paper_relevance/abstract_exceptions.json"
 
 [discovery]
+# Cutoff for the SPECTER2 backend only; Jev uses [jev].accept_threshold.
 relevance_threshold = 0.80
 recovery_hours = 72
+
+[decision]
+# "jev" asks TypeSafe's Jev decision model (requires TYPESAFE_API_KEY);
+# "specter2" uses the locally trained SPECTER2 classifier below.
+backend = "jev"
+
+[jev]
+# Pin a versioned model so the decision hash only changes deliberately.
+model = "jev-1.14.0"
+endpoint = "https://api.typesafe.ai/v1/systemone"
+# A new issue is opened only when P(accept) is strictly above this value.
+accept_threshold = 0.5
+# Bibliography context sent with every candidate paper.
+similar_papers = 12
+rejected_papers = 5
+max_context_tokens = 24000
+max_abstract_chars = 1500
+max_workers = 4
+fetch_missing_abstracts = true
 
 [model]
 base = "allenai/specter2_base"

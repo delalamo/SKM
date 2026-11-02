@@ -63,6 +63,7 @@ def test_repo_root_requires_its_own_config(
 def test_project_sync_uses_the_saved_model_without_requiring_fresh_training(
   monkeypatch: pytest.MonkeyPatch,
 ) -> None:
+  monkeypatch.setenv("PAPERBOT_DECISION_BACKEND", "specter2")
   saved_model = LoadedModel(None, 0, "trained-model")
   monkeypatch.setattr("scripts.paperbot.cli.load_model", lambda _: saved_model)
   monkeypatch.setattr(
@@ -76,3 +77,25 @@ def test_project_sync_uses_the_saved_model_without_requiring_fresh_training(
   assert main(["daily", "--sync-project", "queue.json"]) == 0
   assert sync.call_args.kwargs["expected_model_hash"] == "trained-model"
   assert sync.call_args.kwargs["projects_token"] == "project-token"
+
+
+def test_project_sync_under_jev_uses_the_offline_decision_hash(
+  monkeypatch: pytest.MonkeyPatch,
+) -> None:
+  from scripts.paperbot.config import load_config
+  from scripts.paperbot.jev import decision_hash
+
+  monkeypatch.setenv("PAPERBOT_DECISION_BACKEND", "jev")
+  monkeypatch.delenv("TYPESAFE_API_KEY", raising=False)
+  monkeypatch.setattr(
+    "scripts.paperbot.cli.load_model",
+    Mock(side_effect=AssertionError("Jev runs never load the SPECTER2 model")),
+  )
+  sync = Mock(return_value=1)
+  monkeypatch.setattr("scripts.paperbot.cli.sync_project_queue", sync)
+  monkeypatch.setenv("PROJECTS_TOKEN", "project-token")
+
+  assert main(["daily", "--sync-project", "queue.json"]) == 0
+  expected = decision_hash(load_config())
+  assert expected.startswith("jev:")
+  assert sync.call_args.kwargs["expected_model_hash"] == expected

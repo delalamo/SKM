@@ -1,13 +1,52 @@
 # Paper reading queue setup
 
-Daily issue creation needs no user-managed API key. SPECTER2 and the logistic
-regression run locally on the Actions runner, and GitHub supplies the temporary
-`GITHUB_TOKEN` used to create, label, update, comment on, and reopen issues.
-There is no OpenAI client, API call, credit requirement, or secret.
+## Decision backends
+
+`paperbot.toml` selects who decides whether a fetched paper becomes an issue:
+
+- `[decision] backend = "jev"` (the default on this branch) asks TypeSafe's
+  [Jev](https://docs.typesafe.ai/models) decision model one yes/no (`noul`)
+  question per paper through `POST https://api.typesafe.ai/v1/systemone`.
+  Jev's probability of "yes" is the issue's **Relevance** score, and a new
+  issue is opened only when it is strictly above `[jev] accept_threshold`.
+  Each request carries context built from `bibliography.bib`: the candidate,
+  the most similar bibliography works with (truncated) abstracts, similar
+  papers previously rejected through `negative`-labelled issues
+  (`issue_negatives.jsonl`), and as many further bibliography titles as fit the
+  `max_context_tokens` budget (about 22k tokens for the current bibliography,
+  under Jev's 32k per-question default). Similarity is a dependency-free BM25
+  ranking. Papers whose feed omits an abstract are first matched to an abstract
+  already shown in their issue or bibliography entry, then looked up through
+  the same Europe PMC/PubMed/arXiv/bioRxiv/Crossref resolver used by
+  `backfill-bibliography`; papers that still have none are decided from their
+  title. This backend uses only the Python standard library, so the workflow
+  skips PyTorch and the SPECTER2 download. It requires a `TYPESAFE_API_KEY`
+  repository secret.
+- `backend = "specter2"` uses the locally trained SPECTER2 classifier described
+  below and `[discovery] relevance_threshold`. It needs no API key.
+
+`PAPERBOT_DECISION_BACKEND=jev|specter2` overrides the file for local runs.
+Managed issues record a decision hash (`jev:<sha256>` for Jev) covering the
+pinned Jev model, prompt version, question text, and context settings. The
+bibliography is deliberately excluded, so bibliography edits do not re-decide
+open issues. Changing the backend, model, prompt, or context settings
+re-decides every open issue on the next run. Closed issues are never reopened.
+A credential or billing error (HTTP 401/402/403) stops the run before any
+issue is written. Other per-paper failures are reported as `decision-failed`,
+mark the run as failed, and are retried on the next run.
+
+## SPECTER2 backend
+
+With `backend = "specter2"`, daily issue creation needs no user-managed API
+key. SPECTER2 and the logistic regression run locally on the Actions runner,
+and GitHub supplies the temporary `GITHUB_TOKEN` used to create, label, update,
+comment on, and reopen issues.
 
 For the issue-only reading queue:
 
-1. Merge the workflow and paperbot files into the default branch.
+1. Merge the workflow and paperbot files into the default branch. For the
+   Jev backend, add the `TYPESAFE_API_KEY` repository secret (Settings →
+   Secrets and variables → Actions); the workflow fails fast without it.
 2. Optionally add `PAPERBOT_CONTACT_EMAIL=<API contact address>` and the
    `NCBI_API_KEY` secret. The key only raises NCBI's request-rate allowance.
 3. Create a repository label named `negative`. To mark a paper as irrelevant,

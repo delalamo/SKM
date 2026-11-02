@@ -9,6 +9,8 @@ from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_CONFIG_PATH = REPO_ROOT / "paperbot.toml"
+DECISION_BACKENDS = ("specter2", "jev")
+DEFAULT_JEV_ENDPOINT = "https://api.typesafe.ai/v1/systemone"
 
 
 @dataclass(frozen=True)
@@ -30,6 +32,25 @@ class PaperbotConfig:
   project_owner: str = ""
   project_number: int | None = None
   project_field: str = "Relevance"
+  # Which component decides whether a fetched paper becomes an issue.
+  decision_backend: str = "specter2"
+  jev_model: str = "jev-1.14.0"
+  jev_endpoint: str = DEFAULT_JEV_ENDPOINT
+  jev_accept_threshold: float = 0.5
+  jev_similar_papers: int = 12
+  jev_rejected_papers: int = 5
+  jev_max_context_tokens: int = 24000
+  jev_max_abstract_chars: int = 1500
+  jev_max_workers: int = 4
+  jev_fetch_missing_abstracts: bool = True
+
+  @property
+  def decision_threshold(self) -> float:
+    """Strict cutoff a new paper's score must exceed to open an issue."""
+
+    if self.decision_backend == "jev":
+      return self.jev_accept_threshold
+    return self.relevance_threshold
 
   @property
   def positive_embeddings_path(self) -> Path:
@@ -130,6 +151,34 @@ def load_config(
   model = _section(raw, "model")
   discovery = _section(raw, "discovery")
   paths = _section(raw, "paths")
+  decision = _section(raw, "decision")
+  jev = _section(raw, "jev")
+
+  backend = os.getenv(
+    "PAPERBOT_DECISION_BACKEND", str(decision.get("backend", "specter2"))
+  ).strip().casefold()
+  if backend not in DECISION_BACKENDS:
+    raise ValueError(
+      f"decision backend must be one of {', '.join(DECISION_BACKENDS)}: {backend!r}"
+    )
+  jev_threshold = float(jev.get("accept_threshold", 0.5))
+  if not 0.0 <= jev_threshold < 1.0:
+    raise ValueError("jev accept_threshold must be in [0, 1)")
+  jev_endpoint = str(jev.get("endpoint", DEFAULT_JEV_ENDPOINT)).strip()
+  if not jev_endpoint.startswith("https://"):
+    raise ValueError("jev endpoint must use https")
+  jev_counts = {
+    name: int(jev.get(name, default))
+    for name, default in (
+      ("similar_papers", 12),
+      ("rejected_papers", 5),
+      ("max_context_tokens", 24000),
+      ("max_abstract_chars", 1500),
+      ("max_workers", 4),
+    )
+  }
+  if any(value < 0 for value in jev_counts.values()) or jev_counts["max_workers"] < 1:
+    raise ValueError("jev context sizes must be non-negative and max_workers positive")
 
   owner = os.getenv("PAPER_PROJECT_OWNER", str(project.get("owner", "")))
   number_text = os.getenv("PAPER_PROJECT_NUMBER", str(project.get("number", ""))).strip()
@@ -175,4 +224,14 @@ def load_config(
     project_field=os.getenv(
       "PAPER_PROJECT_FIELD", str(project.get("relevance_field", "Relevance"))
     ),
+    decision_backend=backend,
+    jev_model=str(jev.get("model", "jev-1.14.0")).strip(),
+    jev_endpoint=jev_endpoint,
+    jev_accept_threshold=jev_threshold,
+    jev_similar_papers=jev_counts["similar_papers"],
+    jev_rejected_papers=jev_counts["rejected_papers"],
+    jev_max_context_tokens=jev_counts["max_context_tokens"],
+    jev_max_abstract_chars=jev_counts["max_abstract_chars"],
+    jev_max_workers=jev_counts["max_workers"],
+    jev_fetch_missing_abstracts=bool(jev.get("fetch_missing_abstracts", True)),
   )
