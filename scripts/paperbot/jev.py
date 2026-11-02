@@ -61,6 +61,7 @@ TASK_DESCRIPTION = (
   "rejected by the curator; 'other_bibliography_titles' show the breadth of "
   "the curator's interests."
 )
+CONTEXT_LAYOUTS = ("ranked", "prefix")
 RETRYABLE_STATUS = {408, 409, 425, 429, 500, 502, 503, 504}
 TOKEN_RE = re.compile(r"[a-z0-9]+")
 STOPWORDS = frozenset(
@@ -190,10 +191,18 @@ class BibliographyContext:
   rejected_papers: int = 5
   max_context_tokens: int = 24000
   max_abstract_chars: int = 1500
+  # "ranked": everything ordered by similarity to the candidate (best for a
+  # hosted model). "prefix": a fixed block of bibliography titles first so a
+  # self-hosted server's prefix cache can reuse it across papers, then a few
+  # similar papers, then the candidate.
+  layout: str = "ranked"
 
   def __post_init__(self) -> None:
+    if self.layout not in CONTEXT_LAYOUTS:
+      raise ValueError(f"context layout must be one of {', '.join(CONTEXT_LAYOUTS)}")
     self._accepted_index = BM25Index(self.accepted)
     self._rejected_index = BM25Index(self.rejected)
+    self._prefix: dict[str, Any] | None = None
 
   @classmethod
   def from_config(cls, config: PaperbotConfig) -> "BibliographyContext":
@@ -207,6 +216,7 @@ class BibliographyContext:
       rejected_papers=config.jev_rejected_papers,
       max_context_tokens=config.jev_max_context_tokens,
       max_abstract_chars=config.jev_max_abstract_chars,
+      layout=config.jev_context_layout,
     )
 
   def _paper(self, document: ContextDocument) -> dict[str, str]:
@@ -217,7 +227,63 @@ class BibliographyContext:
       value["abstract"] = _truncate(document.abstract, self.max_abstract_chars)
     return value
 
+  def _fixed_prefix(self) -> dict[str, Any]:
+    """Candidate-independent context, identical for every request."""
+
+    if self._prefix is None:
+      prefix: dict[str, Any] = {
+        "task": TASK_DESCRIPTION,
+        "bibliography_size": len(self.accepted),
+        "bibliography_titles": [],
+        "previously_rejected_titles": [],
+      }
+      title_budget = int(self.max_context_tokens * 0.6) - _approx_tokens(prefix)
+      # Newest work first: it best reflects the curator's current interests.
+      order = sorted(
+        range(len(self.accepted)),
+        key=lambda i: (-int(self.accepted[i].year[:4] or 0) if self.accepted[i].year[:4].isdigit() else 0, i),
+      )
+      for index in order:
+        cost = _approx_tokens(self.accepted[index].title) + 2
+        if cost > title_budget:
+          break
+        prefix["bibliography_titles"].append(self.accepted[index].title)
+        title_budget -= cost
+      rejected_budget = int(self.max_context_tokens * 0.1)
+      for document in self.rejected[: max(0, self.rejected_papers) * 10]:
+        cost = _approx_tokens(document.title) + 2
+        if cost > rejected_budget:
+          break
+        prefix["previously_rejected_titles"].append(document.title)
+        rejected_budget -= cost
+      self._prefix = prefix
+    return self._prefix
+
+  def _prefix_state(self, candidate: Mapping[str, Any]) -> dict[str, Any]:
+    prefix = self._fixed_prefix()
+    state: dict[str, Any] = {**prefix, "similar_bibliography_papers": []}
+    budget = (
+      self.max_context_tokens
+      - _approx_tokens(prefix)
+      - _approx_tokens(dict(candidate))
+      - 40
+    )
+    query = f"{candidate.get('title', '')} {candidate.get('abstract', '')}"
+    for index, score in self._accepted_index.rank(query)[: self.similar_papers]:
+      if score <= 0:
+        break
+      paper = self._paper(self.accepted[index])
+      cost = _approx_tokens(paper) + 2
+      if cost > budget:
+        break
+      state["similar_bibliography_papers"].append(paper)
+      budget -= cost
+    state["candidate_paper"] = dict(candidate)
+    return state
+
   def state(self, candidate: Mapping[str, Any]) -> dict[str, Any]:
+    if self.layout == "prefix":
+      return self._prefix_state(candidate)
     query = f"{candidate.get('title', '')} {candidate.get('abstract', '')}"
     state: dict[str, Any] = {
       "task": TASK_DESCRIPTION,
@@ -284,6 +350,7 @@ def decision_hash(config: PaperbotConfig) -> str:
     "rejected_papers": config.jev_rejected_papers,
     "max_context_tokens": config.jev_max_context_tokens,
     "max_abstract_chars": config.jev_max_abstract_chars,
+    "layout": config.jev_context_layout,
   }
   payload = json.dumps(spec, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
   return "jev:" + hashlib.sha256(payload.encode("utf-8")).hexdigest()
@@ -303,6 +370,15 @@ def _urllib_transport(
     return error.code, error.read(), dict(error.headers or {})
 
 
+def is_loopback(endpoint: str) -> bool:
+  """Whether *endpoint* is a self-hosted server on this machine."""
+
+  import urllib.parse
+
+  host = (urllib.parse.urlparse(endpoint).hostname or "").casefold()
+  return host in {"127.0.0.1", "localhost", "::1"}
+
+
 class JevClient:
   """Minimal client for ``POST /v1/systemone``."""
 
@@ -317,7 +393,7 @@ class JevClient:
     timeout: float = 60.0,
     sleep: Callable[[float], None] = time.sleep,
   ) -> None:
-    if not api_key:
+    if not api_key and not is_loopback(endpoint):
       raise ValueError("TYPESAFE_API_KEY is required for Jev decisions")
     self.api_key = api_key
     self.model = model
@@ -333,11 +409,12 @@ class JevClient:
       ensure_ascii=False,
     ).encode("utf-8")
     headers = {
-      "Authorization": f"Bearer {self.api_key}",
       "Content-Type": "application/json",
       "Accept": "application/json",
       "User-Agent": "SKM-Paperbot/1.0 (+https://github.com/delalamo/SKM)",
     }
+    if self.api_key:
+      headers["Authorization"] = f"Bearer {self.api_key}"
     last_error: JevError | None = None
     for attempt in range(self.attempts):
       try:

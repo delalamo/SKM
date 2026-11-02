@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import re
 import tomllib
 from dataclasses import dataclass
 from pathlib import Path
@@ -43,6 +44,7 @@ class PaperbotConfig:
   jev_max_abstract_chars: int = 1500
   jev_max_workers: int = 4
   jev_fetch_missing_abstracts: bool = True
+  jev_context_layout: str = "ranked"
 
   @property
   def decision_threshold(self) -> float:
@@ -164,9 +166,14 @@ def load_config(
   jev_threshold = float(jev.get("accept_threshold", 0.5))
   if not 0.0 <= jev_threshold < 1.0:
     raise ValueError("jev accept_threshold must be in [0, 1)")
-  jev_endpoint = str(jev.get("endpoint", DEFAULT_JEV_ENDPOINT)).strip()
-  if not jev_endpoint.startswith("https://"):
-    raise ValueError("jev endpoint must use https")
+  jev_endpoint = os.getenv(
+    "PAPERBOT_JEV_ENDPOINT", str(jev.get("endpoint", DEFAULT_JEV_ENDPOINT))
+  ).strip()
+  if not (
+    jev_endpoint.startswith("https://")
+    or re.match(r"^http://(127\.0\.0\.1|localhost|\[::1\])(:\d+)?/", jev_endpoint)
+  ):
+    raise ValueError("jev endpoint must use https, or plain http on a loopback address")
   jev_counts = {
     name: int(jev.get(name, default))
     for name, default in (
@@ -225,7 +232,7 @@ def load_config(
       "PAPER_PROJECT_FIELD", str(project.get("relevance_field", "Relevance"))
     ),
     decision_backend=backend,
-    jev_model=str(jev.get("model", "jev-1.14.0")).strip(),
+    jev_model=os.getenv("PAPERBOT_JEV_MODEL", str(jev.get("model", "jev-1.14.0"))).strip(),
     jev_endpoint=jev_endpoint,
     jev_accept_threshold=jev_threshold,
     jev_similar_papers=jev_counts["similar_papers"],
@@ -234,4 +241,5 @@ def load_config(
     jev_max_abstract_chars=jev_counts["max_abstract_chars"],
     jev_max_workers=jev_counts["max_workers"],
     jev_fetch_missing_abstracts=bool(jev.get("fetch_missing_abstracts", True)),
+    jev_context_layout=str(jev.get("context_layout", "ranked")),
   )

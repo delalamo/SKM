@@ -304,3 +304,60 @@ def test_daily_aborts_before_writing_when_jev_rejects_the_credential(tmp_path: P
     )
   assert not client.issues
   assert len(transport.requests) == 1
+
+
+def test_self_hosted_loopback_server_needs_no_key() -> None:
+  transport = FakeTransport([(200, answer(0.4))])
+  client = JevClient(
+    "", model="kev-latest", endpoint="http://127.0.0.1:8009/v1/systemone",
+    transport=transport,
+  )
+  client.ask({}, {})
+  assert "Authorization" not in transport.headers[0]
+  with pytest.raises(ValueError, match="TYPESAFE_API_KEY"):
+    JevClient("", model="m", endpoint="https://example.test/v1/systemone")
+
+
+@pytest.mark.parametrize(
+  ("endpoint", "ok"),
+  [
+    ("http://127.0.0.1:8009/v1/systemone", True),
+    ("http://localhost:8017/v1/systemone", True),
+    ("http://example.test/v1/systemone", False),
+  ],
+)
+def test_config_only_allows_plain_http_on_loopback(
+  tmp_path: Path, endpoint: str, ok: bool
+) -> None:
+  path = tmp_path / "paperbot.toml"
+  path.write_text(f'[jev]\nendpoint = "{endpoint}"\n', encoding="utf-8")
+  if ok:
+    assert load_config(path).jev_endpoint == endpoint
+  else:
+    with pytest.raises(ValueError, match="loopback"):
+      load_config(path)
+
+
+def test_prefix_layout_keeps_a_shared_prefix_and_puts_the_candidate_last() -> None:
+  context = BibliographyContext(
+    [
+      ContextDocument("Antibody CDR design", "Language models design antibody loops.", "2025"),
+      ContextDocument("Protein folding", "Structure prediction.", "2024"),
+    ],
+    [ContextDocument("Soil ecology", "")],
+    similar_papers=1,
+    layout="prefix",
+  )
+  first = context.state({"title": "Antibody loops", "abstract": "CDR"})
+  second = context.state({"title": "Protein folding methods", "abstract": "structure"})
+  assert list(first)[-1] == "candidate_paper"
+  shared = ("task", "bibliography_titles", "previously_rejected_titles")
+  assert all(first[key] == second[key] for key in shared)
+  assert first["bibliography_titles"] == ["Antibody CDR design", "Protein folding"]
+  assert first["similar_bibliography_papers"][0]["title"] == "Antibody CDR design"
+  assert second["similar_bibliography_papers"][0]["title"] == "Protein folding"
+
+
+def test_unknown_layout_is_rejected() -> None:
+  with pytest.raises(ValueError, match="layout"):
+    BibliographyContext([], layout="random")
