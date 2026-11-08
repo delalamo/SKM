@@ -11,5 +11,12 @@ private/
 replit.nix
 .env
 **/*.pyc
+**/__pycache__/
+.pytest_cache/
+# Content-addressed cache of source PDFs and JATS files (never committed).
+.sources/
+_tools/node/node_modules
+_tools/node/test-results
+_tools/node/out
 content/MOCs/\[*.md
 content/notes/\[*.md
