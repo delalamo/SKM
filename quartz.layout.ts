@@ -1,5 +1,9 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import { QuartzComponentProps } from "./quartz/components/types"
+
+const isPaperNote = (page: QuartzComponentProps) =>
+  (page.fileData.frontmatter?.cssclasses ?? []).includes("paper-margin")
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -42,14 +46,29 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer(),
+    Component.ConditionalRender({
+      component: Component.DesktopOnly(Component.TableOfContents()),
+      condition: isPaperNote,
+    }),
   ],
   right: [
-    Component.Graph({
-      localGraph: { showTags: false, fontSize: 0.85 },
-      globalGraph: { showTags: false, fontSize: 0.85 },
+    // Paper notes use the page width for their margin notes; their links to
+    // claims live in those notes, so the graph and backlinks are left out.
+    Component.ConditionalRender({
+      component: Component.Graph({
+        localGraph: { showTags: false, fontSize: 0.85 },
+        globalGraph: { showTags: false, fontSize: 0.85 },
+      }),
+      condition: (page) => !isPaperNote(page),
     }),
-    Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
+    Component.ConditionalRender({
+      component: Component.DesktopOnly(Component.TableOfContents()),
+      condition: (page) => !isPaperNote(page),
+    }),
+    Component.ConditionalRender({
+      component: Component.Backlinks(),
+      condition: (page) => !isPaperNote(page),
+    }),
   ],
   afterBody: [
     Component.ConditionalRender({

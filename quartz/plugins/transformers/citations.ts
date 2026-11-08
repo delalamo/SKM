@@ -17,6 +17,17 @@ const defaultOptions: Options = {
   csl: "apa",
 }
 
+// Folders of the annotated knowledge base (see CLAUDE.md).
+const KNOWLEDGE_BASE_FOLDERS = [
+  "Papers",
+  "Claims",
+  "Topics",
+  "Concepts",
+  "Glossary",
+  "Datasets",
+  "Indexes",
+]
+
 const citationShimAttr = "data-citation-shim"
 const inlineCitationTextPattern = /(^|[\s(;,\-])@[A-Za-z0-9_{]/
 
@@ -116,17 +127,29 @@ export const Citations: QuartzTransformerPlugin<Partial<Options>> = (userOpts) =
         }
       })
 
-      // Add rehype-citation to the list of plugins
-      plugins.push([
-        rehypeCitation,
-        {
-          bibliography: opts.bibliographyFile,
-          suppressBibliography: opts.suppressBibliography,
-          linkCitations: opts.linkCitations,
-          csl: opts.csl,
-          lang,
-        },
-      ])
+      // Add rehype-citation to the list of plugins. Knowledge-base notes cite through
+      // links to paper notes, and full-text papers may contain "@" in addresses and
+      // handles, so Pandoc citations are only processed in the legacy notes.
+      const citationOptions = {
+        bibliography: opts.bibliographyFile,
+        suppressBibliography: opts.suppressBibliography,
+        linkCitations: opts.linkCitations,
+        csl: opts.csl,
+        lang,
+      }
+      plugins.push(function scopedCitations(this: unknown) {
+        const transformer = (rehypeCitation as unknown as (this: unknown, o: unknown) => any).call(
+          this,
+          citationOptions,
+        )
+        return (tree: unknown, file: { data: { relativePath?: string } }) => {
+          const relativePath = file.data.relativePath ?? ""
+          if (KNOWLEDGE_BASE_FOLDERS.some((folder) => relativePath.startsWith(folder + "/"))) {
+            return
+          }
+          return transformer(tree, file)
+        }
+      })
 
       // Transform the HTML of the citattions; add data-no-popover property to the citation links
       // using https://github.com/syntax-tree/unist-util-visit as they're just anochor links

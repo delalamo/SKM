@@ -3,7 +3,8 @@ import { QuartzComponent, QuartzComponentProps } from "./types"
 import HeaderConstructor from "./Header"
 import BodyConstructor from "./Body"
 import { JSResourceToScriptElement, StaticResources } from "../util/resources"
-import { FullSlug, RelativeURL, joinSegments, normalizeHastElement } from "../util/path"
+import { FullSlug, RelativeURL, joinSegments } from "../util/path"
+import { transcludeElement } from "../util/transclude"
 import { clone } from "../util/clone"
 import { visit } from "unist-util-visit"
 import { Root, Element, ElementContent } from "hast"
@@ -123,7 +124,7 @@ function renderTranscludes(
             }
 
             node.children = [
-              normalizeHastElement(blockNode, slug, transcludeTarget),
+              transcludeElement(blockNode, slug, transcludeTarget),
               {
                 type: "element",
                 tagName: "a",
@@ -165,7 +166,7 @@ function renderTranscludes(
 
           node.children = [
             ...(page.htmlAst.children.slice(startIdx, endIdx) as ElementContent[]).map((child) =>
-              normalizeHastElement(child as Element, slug, transcludeTarget),
+              transcludeElement(child as Element, slug, transcludeTarget),
             ),
             {
               type: "element",
@@ -195,7 +196,7 @@ function renderTranscludes(
               ],
             },
             ...(page.htmlAst.children as ElementContent[]).map((child) =>
-              normalizeHastElement(child as Element, slug, transcludeTarget),
+              transcludeElement(child as Element, slug, transcludeTarget),
             ),
             {
               type: "element",

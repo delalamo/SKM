@@ -1,4 +1,24 @@
 @use "./base.scss";
+// Margin layout and colours of paper notes: the same file Obsidian loads as a snippet.
+@use "../../content/.obsidian/snippets/paper-margin";
+
+@use "./variables.scss" as *;
+
+// Paper notes need the width for their margin column: on desktop the right
+// sidebar (graph, backlinks) is dropped and the table of contents moves left.
+@media all and ($desktop) {
+  body:has(article.paper-margin) .page {
+    max-width: calc(1200px + 600px);
+
+    & > #quartz-body {
+      grid-template-columns: #{$sidePanelWidth} auto 0;
+
+      & > .right.sidebar {
+        display: none;
+      }
+    }
+  }
+}
 
 // ── Footnotes → References ───────────────────────────────────────────────────
 //
@@ -7,7 +27,7 @@
 // The block contains an h2 labelled "Footnotes" (screen-reader only by default).
 // We repurpose it as a visible "References" section styled like other headings.
 
-section[data-footnotes] {
+article:not(.paper-margin) section[data-footnotes] {
   margin-top: 3rem;
   padding-top: 1rem;
   border-top: 1px solid var(--lightgray);

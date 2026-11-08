@@ -1,0 +1,151 @@
+/*
+ * Two-column layout and colour system for paper notes (spec section 6).
+ *
+ * One stylesheet for both renderers: Obsidian loads it as a CSS snippet, and
+ * Quartz imports it from quartz/styles/custom.scss. A note opts in with
+ * `cssclasses: [paper-margin]`. Margin callouts (`> [!claim|margin llm …]`)
+ * float into a right-hand column 35% wide when the note is at least 760 px
+ * wide, and drop back inline below that. Each callout paints itself from its
+ * own colour, so the colours hold in every theme.
+ *
+ *   claim    orange      230 110 0    highlight <mark class="pm-claim">, 20%
+ *   context  dark yellow 196 145 0    highlight <mark class="pm-context">, 250 204 21 at 38%
+ *   eq       blue        37 99 235
+ *   cite     grey        120 120 120  (collapsed by default)
+ *   status   steel       100 116 139  (full-width banner)
+ */
+
+.callout[data-callout="claim"] { --pm-rgb: 230, 110, 0; }
+.callout[data-callout="context"] { --pm-rgb: 196, 145, 0; }
+.callout[data-callout="eq"] { --pm-rgb: 37, 99, 235; }
+.callout[data-callout="cite"] { --pm-rgb: 120, 120, 120; }
+.callout[data-callout="status"] { --pm-rgb: 100, 116, 139; }
+.callout[data-callout="provenance"] { --pm-rgb: 13, 148, 136; }
+
+.callout:is(
+    [data-callout="claim"],
+    [data-callout="context"],
+    [data-callout="eq"],
+    [data-callout="cite"],
+    [data-callout="status"],
+    [data-callout="provenance"]
+  ) {
+  /* Quartz reads --color/--border/--bg, Obsidian --callout-color; paint directly as well. */
+  --color: rgb(var(--pm-rgb));
+  --border: rgba(var(--pm-rgb), 0.85);
+  --bg: rgba(var(--pm-rgb), 0.08);
+  --callout-color: var(--pm-rgb);
+  background-color: rgba(var(--pm-rgb), 0.08);
+  border: 0;
+  border-left: 3px solid rgba(var(--pm-rgb), 0.85);
+  border-radius: 4px;
+  font-size: 0.88em;
+  line-height: 1.45;
+}
+
+.callout:is(
+    [data-callout="claim"],
+    [data-callout="context"],
+    [data-callout="eq"],
+    [data-callout="cite"],
+    [data-callout="status"],
+    [data-callout="provenance"]
+  )
+  .callout-title {
+  color: rgb(var(--pm-rgb));
+}
+
+/* Icons: Obsidian uses Lucide names, Quartz the icon variables of callouts.scss. */
+.markdown-rendered .callout[data-callout="claim"] { --callout-icon: lucide-link; }
+.markdown-rendered .callout[data-callout="context"] { --callout-icon: lucide-info; }
+.markdown-rendered .callout[data-callout="eq"] { --callout-icon: lucide-sigma; }
+.markdown-rendered .callout[data-callout="cite"] { --callout-icon: lucide-book-open; }
+.markdown-rendered .callout[data-callout="status"] { --callout-icon: lucide-file-text; }
+article .callout[data-callout="claim"] { --callout-icon: var(--callout-icon-note); }
+article .callout[data-callout="context"] { --callout-icon: var(--callout-icon-info); }
+article .callout[data-callout="eq"] { --callout-icon: var(--callout-icon-abstract); }
+article .callout[data-callout="cite"] { --callout-icon: var(--callout-icon-quote); }
+article .callout[data-callout="status"] { --callout-icon: var(--callout-icon-info); }
+
+/* Highlights pair a passage with its callout by colour. */
+mark.pm-claim,
+mark.pm-context {
+  color: inherit;
+  padding: 0 1px;
+  border-radius: 2px;
+}
+mark.pm-claim { background-color: rgba(230, 110, 0, 0.2); }
+mark.pm-context { background-color: rgba(250, 204, 21, 0.38); }
+
+/* Hover definitions for acronyms. */
+abbr[title] {
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+  cursor: help;
+}
+
+/* Numeric citation links read as superscript [N]. */
+.paper-margin a[href*="-ref-"] {
+  font-size: 0.72em;
+  vertical-align: super;
+  line-height: 0;
+  text-decoration: none;
+}
+.paper-margin a[href*="-ref-"]::before { content: "["; }
+.paper-margin a[href*="-ref-"]::after { content: "]"; }
+.paper-margin .callout[data-callout="cite"] a[href*="-ref-"] {
+  font-size: inherit;
+  vertical-align: baseline;
+}
+
+/* Two-column layout for wide panes. */
+article.paper-margin,
+.paper-margin .markdown-preview-sizer {
+  container: paper / inline-size;
+}
+
+@container paper (min-width: 760px) {
+  /* Quartz: margin callouts and main-column blocks are children of <article>. */
+  article.paper-margin > .callout[data-callout-metadata~="margin"] {
+    float: right;
+    clear: right;
+    width: 35%;
+    margin: 0 0 0.75rem 0;
+    box-sizing: border-box;
+  }
+  article.paper-margin > :not(.callout[data-callout-metadata~="margin"]):not(.callout[data-callout="status"]) {
+    margin-right: calc(35% + 2.5%);
+  }
+
+  /* Obsidian reading view: every block sits in its own wrapper div. */
+  .paper-margin .markdown-preview-sizer > div:has(> .callout[data-callout-metadata~="margin"]) {
+    float: right;
+    clear: right;
+    width: 35%;
+    margin: 0 0 0.75rem 0;
+  }
+  .paper-margin
+    .markdown-preview-sizer
+    > div:not(:has(> .callout[data-callout-metadata~="margin"])):not(:has(> .callout[data-callout="status"])):not(.markdown-preview-pusher):not(.mod-header):not(.mod-footer) {
+    margin-right: calc(35% + 2.5%);
+  }
+}
+
+article.paper-margin::after,
+.paper-margin .markdown-preview-sizer::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Hide one category of margin note at a time: cssclasses: [paper-margin, pm-hide-cite]. */
+.pm-hide-claim .callout[data-callout="claim"],
+.pm-hide-context .callout[data-callout="context"],
+.pm-hide-eq .callout[data-callout="eq"],
+.pm-hide-cite .callout[data-callout="cite"] {
+  display: none;
+}
+.pm-hide-claim mark.pm-claim,
+.pm-hide-context mark.pm-context {
+  background-color: transparent;
+}

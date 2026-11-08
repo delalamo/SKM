@@ -8,6 +8,8 @@ import { toHtml } from "hast-util-to-html"
 import { write } from "./helpers"
 import { i18n } from "../../i18n"
 
+const PAPER_INDEX_CHARS = 2000
+
 export type ContentIndexMap = Map<FullSlug, ContentDetails>
 export type ContentDetails = {
   slug: FullSlug
@@ -109,7 +111,11 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
             title: file.data.frontmatter?.title!,
             links: file.data.links ?? [],
             tags: file.data.frontmatter?.tags ?? [],
-            content: file.data.text ?? "",
+            // Every visitor downloads the search index; for full-text paper notes,
+            // keep only the opening (title, authors, abstract).
+            content: file.data.relativePath?.startsWith("Papers/")
+              ? (file.data.text ?? "").slice(0, PAPER_INDEX_CHARS)
+              : (file.data.text ?? ""),
             richContent: opts?.rssFullHtml
               ? escapeHTML(toHtml(tree as Root, { allowDangerousHtml: true }))
               : undefined,

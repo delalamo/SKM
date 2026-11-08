@@ -1,0 +1,128 @@
+name: Knowledge base
+
+# Checks the annotated knowledge base (see CLAUDE.md): tool tests with
+# mutation tests for every validator rule, an idempotent pipeline, the
+# validator itself, and the paper-note layout in a real browser.
+
+on:
+  pull_request:
+    paths:
+      - "content/**"
+      - "_tools/**"
+      - "bibliography.bib"
+      - "quartz/**"
+      - "quartz.config.ts"
+      - "quartz.layout.ts"
+      - ".githooks/**"
+      - ".github/workflows/vault.yml"
+  push:
+    branches: [main]
+    paths:
+      - "content/**"
+      - "_tools/**"
+      - "bibliography.bib"
+      - "quartz/**"
+      - "quartz.config.ts"
+      - "quartz.layout.ts"
+      - ".githooks/**"
+      - ".github/workflows/vault.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vault-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tools:
+    name: Tool tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: |
+          pip install -r _tools/requirements.txt
+          npm ci
+      - name: Unit, idempotency and mutation tests
+        run: python -m pytest _tools/tests -q
+
+  vault:
+    name: Pipeline and validator
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: |
+          pip install -r _tools/requirements.txt
+          npm ci
+      - name: Generated content is up to date
+        run: |
+          python _tools/run_pipeline.py --no-validate
+          git diff --exit-code || { echo "::error::Run python3 _tools/run_pipeline.py and commit the result"; exit 1; }
+      - name: A second run changes nothing
+        run: |
+          python _tools/run_pipeline.py --no-validate
+          git diff --exit-code
+      - name: Validator
+        run: python _tools/validate_vault.py --katex node_modules/katex
+      - name: No new legacy notes
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch --no-tags --depth=1 origin "${{ github.base_ref }}"
+          added=$(git diff --name-only --diff-filter=A "origin/${{ github.base_ref }}" -- content/notes content/tags content/review)
+          if [ -n "$added" ]; then
+            echo "::error::New files in the legacy zone; add knowledge-base notes instead:"
+            echo "$added"
+            exit 1
+          fi
+
+  layout:
+    name: Layout test
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: |
+          pip install -r _tools/requirements.txt
+          npm ci
+          npm install --no-save playwright@1.63.0
+          npx playwright install --with-deps chromium
+      - name: Fixture vault
+        run: python _tools/check_layout.py --out _tools/node/out/fixture
+      - name: Paper notes of this vault
+        run: |
+          npx quartz build
+          python _tools/check_layout.py --site public --out _tools/node/out/vault
+      - name: Screenshots
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: layout-screenshots
+          path: _tools/node/out
+          if-no-files-found: ignore

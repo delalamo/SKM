@@ -133,10 +133,16 @@ def _emit(value: Any, indent: int, lines: list[str], key: str) -> None:
     raise TypeError(f"cannot emit {type(value).__name__} for key {key!r}")
 
 
+# The pre-commit hook (.githooks/pre-commit) appends these at the end of the
+# frontmatter, so the emitter keeps them last to agree with it.
+TRAILING = ("created", "modified")
+
+
 def dump(data: dict[str, Any], order: tuple[str, ...] = ()) -> str:
   """Emit frontmatter (without fences). Keys in ``order`` come first."""
-  keys = [key for key in order if key in data]
-  keys += [key for key in data if key not in keys]
+  keys = [key for key in order if key in data and key not in TRAILING]
+  keys += [key for key in data if key not in keys and key not in TRAILING]
+  keys += [key for key in TRAILING if key in data]
   lines: list[str] = []
   for key in keys:
     _emit(data[key], 0, lines, key)
@@ -160,12 +166,11 @@ PAPER_ORDER = (
 CLAIM_ORDER = (
   "id", "type", "status", "evidence_strength", "scope", "topics", "kb_supporting",
   "kb_qualifying", "kb_contradicting", "kb_pending", "independence", "provenance",
-  "redirect_from", "created", "modified", "publicationHistory", "tags",
+  "redirect_from", "publicationHistory", "tags",
 )
-TOPIC_ORDER = ("type", "aliases", "redirect_from", "created", "modified", "tags")
+TOPIC_ORDER = ("type", "aliases", "redirect_from", "tags")
 CONCEPT_ORDER = (
-  "type", "aliases", "introduced_by", "topics", "provenance", "redirect_from", "created",
-  "modified", "tags",
+  "type", "aliases", "introduced_by", "topics", "provenance", "redirect_from", "tags",
 )
 DATASET_ORDER = (
   "type", "aliases", "provider", "product", "vintage", "geography", "unit", "access_class",

@@ -32,3 +32,15 @@ jobs:
 
       - name: Build site
         run: npx quartz build
+
+      - name: Every published URL still resolves
+        run: python3 _tools/check_legacy_urls.py public _tools/data/legacy_urls.txt
+
+      - name: Site fits GitHub Pages (1 GB limit)
+        run: |
+          size=$(du -sm public | cut -f1)
+          echo "Site size: ${size} MB"
+          if [ "$size" -gt 900 ]; then
+            echo "::error::The built site is ${size} MB; GitHub Pages allows 1 GB"
+            exit 1
+          fi

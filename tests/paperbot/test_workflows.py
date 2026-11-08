@@ -33,6 +33,12 @@ def _git(repo: Path, *arguments: str) -> str:
     ("requirements-paperbot.lock", True),
     ("paperbot.toml", True),
     (".github/workflows/paper-tests.yml", True),
+    # The knowledge-base tools have their own workflow (vault.yml).
+    ("_tools/validate_vault.py", False),
+    ("_tools/tests/conftest.py", False),
+    ("content/Papers/example2024.md", False),
+    ("tests/conftest.py", True),
+    ("scripts/example.py", True),
   ],
 )
 def test_change_detection_skips_bibliography_but_keeps_code_tests(

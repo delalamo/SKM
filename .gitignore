@@ -5,6 +5,13 @@ public
 prof
 tsconfig.tsbuildinfo
 .obsidian
+# …except the vault's margin-layout snippet and the setting that enables it.
+!content/.obsidian/
+content/.obsidian/*
+!content/.obsidian/snippets/
+!content/.obsidian/appearance.json
+content/.obsidian/snippets/*
+!content/.obsidian/snippets/paper-margin.css
 .quartz-cache
 private/
 .replit

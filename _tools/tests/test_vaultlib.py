@@ -56,6 +56,37 @@ def test_links_parse_alias_block_and_table_pipe():
   ]
 
 
+def _load_hook():
+  import importlib.machinery
+  import importlib.util
+
+  from conftest import REPO
+
+  loader = importlib.machinery.SourceFileLoader("pre_commit_hook", str(REPO / ".githooks" / "pre-commit"))
+  spec = importlib.util.spec_from_loader("pre_commit_hook", loader)
+  module = importlib.util.module_from_spec(spec)
+  loader.exec_module(module)
+  return module
+
+
+def test_pre_commit_stamps_are_already_canonical():
+  """The commit hook and the generators must agree, or CI's idempotency check fails."""
+  hook = _load_hook()
+  fm = {"id": "C-0001", "type": "claim", "status": "proposed", "topics": ["[[A]]"], "tags": ["claim"]}
+  canonical = frontmatter.compose(fm, "\nBody.\n", frontmatter.CLAIM_ORDER)
+  for status in ("A", "M"):
+    stamped = hook.stamp(canonical, status, "2026-11-08T10:00:00")
+    data, body = frontmatter.parse(stamped)
+    assert frontmatter.compose(data, body, frontmatter.CLAIM_ORDER) == stamped
+    restamped = hook.stamp(stamped, "M", "2026-11-09T10:00:00")
+    data, body = frontmatter.parse(restamped)
+    assert frontmatter.compose(data, body, frontmatter.CLAIM_ORDER) == restamped
+  only_modified = canonical.replace("tags: [claim]\n", 'tags: [claim]\nmodified: "2026-01-01T00:00:00"\n')
+  stamped = hook.stamp(only_modified, "M", "2026-11-08T10:00:00")
+  data, body = frontmatter.parse(stamped)
+  assert frontmatter.compose(data, body, frontmatter.CLAIM_ORDER) == stamped
+
+
 def test_parse_authors_handles_both_name_orders():
   authors = parse_authors("Fernández-Quintero, Monica L. and Jane Smith")
   assert [(a.family, a.initial) for a in authors] == [("Fernández-Quintero", "M"), ("Smith", "J")]

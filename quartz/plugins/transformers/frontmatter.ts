@@ -17,6 +17,17 @@ const defaultOptions: Options = {
   language: "yaml",
 }
 
+// Folders of the annotated knowledge base (see CLAUDE.md).
+const KNOWLEDGE_BASE_FOLDERS = [
+  "Papers",
+  "Claims",
+  "Topics",
+  "Concepts",
+  "Glossary",
+  "Datasets",
+  "Indexes",
+]
+
 function coalesceAliases(data: { [key: string]: any }, aliases: string[]) {
   for (const alias of aliases) {
     if (data[alias] !== undefined && data[alias] !== null) return data[alias]
@@ -81,10 +92,27 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
             if (tags) data.tags = [...new Set(tags.map((tag: string) => slugTag(tag)))]
 
             const aliases = coerceToArray(coalesceAliases(data, ["aliases", "alias"]))
+            // In the knowledge base, aliases are names readers search for ("Alpha 2020",
+            // "PLMs"); several notes may share one, so they must not become pages.
+            // Old URLs are kept with redirect_from instead.
+            const relativePath = (file.data.relativePath ?? "") as string
+            const inKnowledgeBase = KNOWLEDGE_BASE_FOLDERS.some((folder) =>
+              relativePath.startsWith(folder + "/"),
+            )
             if (aliases) {
               data.aliases = aliases // frontmatter
-              file.data.aliases = getAliasSlugs(aliases)
-              allSlugs.push(...file.data.aliases)
+              if (!inKnowledgeBase) {
+                file.data.aliases = getAliasSlugs(aliases)
+                allSlugs.push(...file.data.aliases)
+              }
+            }
+
+            const redirects = coerceToArray(data.redirect_from)
+            if (redirects) {
+              data.redirect_from = redirects
+              const slugs = getAliasSlugs(redirects)
+              file.data.aliases = [...(file.data.aliases ?? []), ...slugs]
+              allSlugs.push(...slugs)
             }
 
             if (data.permalink != null && data.permalink.toString() !== "") {
@@ -140,6 +168,7 @@ declare module "vfile" {
     } & Partial<{
         tags: string[]
         aliases: string[]
+        redirect_from: string[]
         modified: string
         created: string
         published: string

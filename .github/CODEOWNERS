@@ -7,3 +7,5 @@
 /scripts/paperbot/ @delalamo
 /paper_relevance/ @delalamo
 /tests/paperbot/ @delalamo
+/_tools/ @delalamo
+/.github/workflows/vault.yml @delalamo

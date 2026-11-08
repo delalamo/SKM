@@ -28,7 +28,13 @@ from typing import Optional
 FRONTMATTER_RE = re.compile(r"\A---\n(.*?)\n---\n", re.DOTALL)
 FIELD_RE        = re.compile(r"^(created|modified):\s*.+$", re.MULTILINE)
 
-WATCHED_PREFIXES = ("content/notes/", "content/MOCs/")
+WATCHED_PREFIXES = (
+    "content/notes/",
+    "content/Claims/",
+    "content/Topics/",
+    "content/Concepts/",
+    "content/Datasets/",
+)
 
 
 def now_iso() -> str:
@@ -96,9 +102,13 @@ def stamp(text: str, status: str, ts: str) -> Optional[str]:
             changed  = True
 
     else:  # 'M'
-        # Add created if missing
+        # Add created if missing, just before modified: the knowledge-base
+        # tools (_tools/vaultlib/frontmatter.py) keep created, modified last.
         if not has_created:
-            new_fm += f'\ncreated: "{ts}"'
+            if has_modified:
+                new_fm = re.sub(r'^(modified:)', f'created: "{ts}"\n\\1', new_fm, count=1, flags=re.MULTILINE)
+            else:
+                new_fm += f'\ncreated: "{ts}"'
             changed  = True
         # Update modified
         if has_modified:

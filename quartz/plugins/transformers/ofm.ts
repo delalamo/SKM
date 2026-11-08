@@ -87,7 +87,6 @@ const calloutMapping = {
   bug: "bug",
   example: "example",
   quote: "quote",
-  cite: "quote",
 } as const
 
 const arrowMapping: Record<string, string> = {
@@ -289,8 +288,9 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
                   }
                 }
 
-                // internal link
-                const url = fp + anchor
+                // internal link. Block anchors drop the caret: the target element's id is
+                // the bare block ID, so `[[#^alp20-ref-4|4]]` must link to `#alp20-ref-4`.
+                const url = fp + anchor.replace(/^#\^/, "#")
 
                 return {
                   type: "link",

@@ -119,6 +119,7 @@ jobs:
               ':(glob)paper_relevance/**' \
               ':(glob)scripts/**' \
               ':(glob)tests/paperbot/**' \
+              ':(exclude,glob)_tools/**' \
               .github/workflows/paper-discovery.yml \
               .github/workflows/paper-tests.yml
           relevant_status=$?
