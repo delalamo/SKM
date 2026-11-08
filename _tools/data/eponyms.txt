@@ -1,0 +1,48 @@
+# Surnames that appear in claim summaries as parts of terms, not as authors
+# ("Kabat numbering", "Boltzmann distribution", "Potts model"). The
+# claim-summary author rule never flags these. Add a name only when it is
+# used as a term; a citation of the person's work still belongs in Evidence.
+Anfinsen
+Bayes
+Berendsen
+Bernoulli
+Boltzmann
+Chothia
+Coulomb
+Debye
+Dirichlet
+Ewald
+Fisher
+Fourier
+Gaussian
+Gibbs
+Gumbel
+Hamiltonian
+Hessian
+Ising
+Jacobian
+Jarzynski
+Kabat
+Kabsch
+Kendall
+Kolmogorov
+Kullback
+Langevin
+Laplace
+Leibler
+Lennard-Jones
+Levinthal
+Lipschitz
+Markov
+Metropolis
+Michaelis
+Menten
+Pearson
+Poisson
+Potts
+Ramachandran
+Shannon
+Spearman
+Verlet
+Wasserstein
+Wilcoxon

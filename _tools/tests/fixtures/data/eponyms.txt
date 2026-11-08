@@ -1,0 +1,3 @@
+# Names that appear in terms rather than as authors (e.g. "Kabat numbering").
+Kabat
+Boltzmann

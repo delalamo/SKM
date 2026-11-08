@@ -1,0 +1,6 @@
+# Author surnames that are also ordinary words; flagged only in author
+# contexts ("Beta et al.", "Beta (2020)", "Beta and Gamma", "Beta's").
+alpha
+beta
+gamma
+delta

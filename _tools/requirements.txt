@@ -1,0 +1,5 @@
+# Python dependencies of the knowledge-base tools in _tools/ (Python 3.12+).
+# The paperbot has its own lock file (requirements-paperbot.lock).
+PyYAML==6.0.3
+pyspellchecker==0.9.1
+pytest==9.2.0
